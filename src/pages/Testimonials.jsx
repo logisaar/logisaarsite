@@ -1,3 +1,5 @@
+import abinashImg from "../image/Abinash Mishra.png";
+
 import React from 'react';
 import { Star, Quote, Users, TrendingUp } from 'lucide-react';
 import { testimonials } from '../data/mockData';
@@ -88,15 +90,14 @@ const Testimonials = () => {
                 {/* Google Map Embed */}
                 <div className="mt-6 rounded overflow-hidden border border-slate-700">
                   <iframe
-                    title={`Location of ${testimonial.name}`}
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119743.53788635868!2d85.73805150943434!3d20.30086486875611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909d2d5170aa5%3A0xfc580e2b68b33fa8!2sBhubaneswar%2C%20Odisha!5e0!3m2!1sen!2sin!4v1752832133773!5m2!1sen!2sin"
-                    width="100%"
-                    height="200"
-                    style={{ border: 0 }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  ></iframe>
+  src={testimonial.mapEmbedUrl}
+  width="100%"
+  height="200"
+  style={{ border: 0 }}
+  allowFullScreen=""
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+/>
                 </div>
                 
                 {/* Hover Effect */}
@@ -118,13 +119,13 @@ const Testimonials = () => {
             </blockquote>
             <div className="flex items-center justify-center space-x-4">
               <img
-                src="/api/placeholder/80/80"
-                alt="Sarah Johnson"
+                src={abinashImg}
+                alt="Abinash Mishra"
                 className="w-16 h-16 rounded-full object-cover border-4 border-cyan-400/20"
               />
               <div className="text-left">
-                <div className="font-semibold text-white text-lg">Sarah Johnson</div>
-                <div className="text-cyan-400">CEO, TechFlow Inc</div>
+                <div className="font-semibold text-white text-lg">Abinash Mishra</div>
+                <div className="text-cyan-400">CA,Swosti Consultancy</div>
                 <div className="flex items-center space-x-1 mt-1">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />

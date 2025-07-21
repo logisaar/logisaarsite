@@ -13,14 +13,6 @@ import krishnacatpetshopImg from "../image/krishna_cat.jpg";
 import Brew_Haven_CoffeeImg from "../image/Brew_Haven_Coffee_Shop.jpg";
 import go_poochImg from "../image/go_pooch.png";
 import LogiSaarImg from "../image/logisaar.png";
-import Rae_Digital_Creative_StudioImg from "../image/Rae_Digital_Creative_Studio.png";
-import IrinaImg from "../image/Irina_Linnik.png";
-import EmilyImg from "../image/emily.png";
-import vintazaImg from "../image/vintaza.png";
-import abinashImg from "../image/Abinash Mishra.png";
-import infinityImg from "../image/infinity.png";
-import gopoochImg from "../image/gopooch.png";
-
 
 
 
@@ -28,6 +20,7 @@ import gopoochImg from "../image/gopooch.png";
 
 export const projects = [
  
+  
   {
   id: 1,
   title: "Infinity Rehab Website",
@@ -43,7 +36,7 @@ export const projects = [
   solution: "Built a fully responsive web platform with dynamic content, contact forms, and patient-focused UI.",
   technologies: ["Node.js", "Express", "EJS", "MongoDB", "Bootstrap", "Formspree"]
 },
-    {
+ {
   id: 2,
   title: "Swosti Consultancy Website",
   client: "Swosti Consultancy",
@@ -58,6 +51,7 @@ export const projects = [
   solution: "Designed and developed a fast, mobile-first website with backend integration and contact forms.",
   technologies: ["Node.js", "Express", "EJS", "MongoDB", "Bootstrap", "SEO Tools"]
 },
+
   {
   id: 3,
   title: "Krishna Cat Pet Shop Website",
@@ -72,10 +66,11 @@ export const projects = [
   challenge: "Designing a visually appealing, mobile-friendly site to build trust with pet lovers.",
   solution: "Built an intuitive, responsive web layout with clear navigation, gallery, and contact sections.",
   technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Google Maps API"]
-},
- {
+}
+,
+  {
   id: 4,
-  title: "Brew Haven Coffee Shop ",
+  title: "Brew Haven Coffee Shop Website",
   client: "Brew Haven",
   description: "A modern and inviting website for Brew Haven, a specialty coffee shop offering a rich menu and a cozy café experience.",
   image: Brew_Haven_CoffeeImg, 
@@ -89,11 +84,11 @@ export const projects = [
   technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "AOS Animations"]
 }
 ,
-   {
+  {
   id: 5,
-  title: "Go Pooch! Pet Grooming ",
+  title: "Go Pooch! Pet Grooming Website",
   client: "Go Pooch!",
-  description: "A cheerful and professional website for pet grooming services, offering expert care for furry friends along with an online shop..........",
+  description: "A cheerful and professional website for pet grooming services, offering expert care for furry friends along with an online shop.",
   image: go_poochImg , 
   tags: ["React", "CSS Modules", "Responsive Design", "Animations", "E-Commerce"],
   category: "Pet Services Website",
@@ -105,7 +100,7 @@ export const projects = [
   technologies: ["React", "React Router", "CSS Modules", "Framer Motion", "Tailwind CSS"]
 }
 ,
-   {
+ {
   id: 6,
   title: "Professional Services Platform",
   client: "Logishaan Technology Solutions",
@@ -129,130 +124,128 @@ export const projects = [
     "Interaction Design"
   ]
 }
+
 ];
 
 export const testimonials = [
   {
     id: 1,
-    name: "Vintaza Cafe",
-    position: "Owner",
-    company: "Vintaza",
+    name: "Sarah Johnson",
+    position: "CEO",
+    company: "TechFlow Inc",
     rating: 5,
-    text: "LogiSaar helped bring our café’s luxury ambiance to the digital world. Their creative vision and seamless execution elevated our brand presence remarkably.",
-    image: vintazaImg, 
+    text: "LogiSaar transformed our e-commerce vision into reality. Their technical expertise and attention to detail resulted in a 300% increase in our conversion rates.",
+    image: "/api/placeholder/150/150",
     projectId: 1,
-    location: "Bhubaneswar, India",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.2648417907003!2d85.7411068!3d20.289302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1907bfbc469731%3A0x5b2caa8048b46a63!2sVintaza!5e0!3m2!1sen!2sin!4v1753128751001!5m2!1sen!2sin"
+    location: "Mumbai, India"
   },
   {
     id: 2,
-    name: "Swosti Consultancy",
-    position: "Founder",
-    company: "Swosti Consultancy",
+    name: "Michael Chen",
+    position: "CTO",
+    company: "MindfulCare Health",
     rating: 5,
-    text: "LogiSaar captured the essence of our decades-long legacy in finance and law with a website that reflects both professionalism and trust. Their attention to detail and seamless collaboration helped us modernize our digital presence without compromising our values.",
-    image: abinashImg,
+    text: "The mobile app LogiSaar developed exceeded our expectations. The user experience is incredible, and we've seen amazing user engagement since launch.",
+    image: "/api/placeholder/150/150",
     projectId: 2,
-    location: "Bhubaneswar, India",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3743.3151387326843!2d85.84760157523546!3d20.245760981214875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a73aa307d065%3A0xda43fe03e32fa65d!2sSwosti%20Consultancy!5e0!3m2!1sen!2sin!4v1753128893288!5m2!1sen!2sin"
+    location: "Bangalore, India"
   },
   {
     id: 3,
-    name: "Infinity Rehab",
-    position: "Healthcare Partner",
-    company: "Infinity Rehab",
+    name: "Emily Rodriguez",
+    position: "Product Manager",
+    company: "DataViz Solutions",
     rating: 5,
-    text: "LogiSaar designed a website that truly reflects our mission—combining expert therapy solutions with compassionate care. Their thoughtful approach and technical brilliance elevated our online presence and strengthened our brand trust.",
-    image: infinityImg, 
+    text: "Working with LogiSaar was a game-changer. They delivered a complex analytics dashboard that has revolutionized how we make data-driven decisions.",
+    image: "/api/placeholder/150/150",
     projectId: 3,
-    location: "Bhubaneswar, India",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.6045356442473!2d85.79177287523626!3d20.275229481192255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a7be289e7491%3A0xb7a865f6341ca304!2sINFINITY%20MULTIREHAB%20%7C%20Best%20Prosthetic%20%7C%20Artificial%20limb%2Fleg%20%7C%20Orthotic%20%7C%20Caliper%20braces%20provider%20in%20Bhubaneswar%20ODISHA%20%7C%20TOP!5e0!3m2!1sen!2sin!4v1753128990916!5m2!1sen!2sin"
+    location: "New York, USA"
   },
   {
     id: 4,
-    name: "Go Pooch!",
+    name: "David Williams",
     position: "Founder",
-    company: "Go Pooch!",
+    company: "EduLearn Academy",
     rating: 5,
-    text: "LogiSaar brought our pet brand to life online with a fun, vibrant, and user-friendly website. Their team perfectly captured the spirit of Go Pooch! and helped us connect better with pet lovers across the city.",
-    image: gopoochImg, 
+    text: "LogiSaar's expertise in educational technology is outstanding. Our learning platform has helped thousands of students achieve their goals.",
+    image: "/api/placeholder/150/150",
     projectId: 4,
-    location: "Tellapur, Gopanpalle, Hyderabad, Telangana 500046",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.1125510266106!2d78.29847629999999!3d17.454326299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93f4417011b1%3A0x3a1bb1064c0c6b52!2sGo%20Pooch*21!5e0!3m2!1sen!2sin!4v1753129066893!5m2!1sen!2sin"
+    location: "London, UK"
+  },
+  {
+    id: 5,
+    name: "Lisa Thompson",
+    position: "Operations Director",
+    company: "SmartHome Technologies",
+    rating: 5,
+    text: "The IoT dashboard LogiSaar created is incredibly intuitive and powerful. It's helped us achieve 25% energy savings across all our installations.",
+    image: "/api/placeholder/150/150",
+    projectId: 5,
+    location: "Sydney, Australia"
   }
 ];
 
 export const team = [
- {
-  id: 1,
-  name: "Chinmya Kumar Panda",
-  position: "Python Full-Stack Developer & Market Analyst",
-  bio: "Experienced Python full-stack developer and market analyst with expertise in building scalable web applications, automating workflows, and conducting data-driven market research. Skilled at combining backend engineering with analytical insights to support strategic business decisions.",
-  image: chinmyaImg,
-  skills: [
-    "Python", "Django", "FastAPI", "React", "PostgreSQL",
-    "Pandas", "NumPy", "Power BI", "Data Analysis", "Market Research"
-  ],
-  linkedin: "",
-  github: "https://github.com/Sketchy-Guy"
-}
-
-,
   {
-  id: 2,
-  name: "Swayam Sidhart Sahoo",
-  position: "UI/UX Designer & Interaction Specialist",
-  bio: "Creative UI/UX designer with 8+ years of experience crafting intuitive, user-centric digital experiences. Expert in wireframing, prototyping, and visual design for web and mobile platforms, with a strong eye for detail and usability.",
-  image: swayamImg,
-  skills: ["Figma", "Adobe XD", "Sketch", "User Research", "Wireframing", "Prototyping", "Interaction Design", "Responsive Design"],
-  linkedin: "https://www.linkedin.com/in/swayam-siddharth-sahoo-569454263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-  github: ""
-}
-,
+    id: 1,
+    name: "Chinmya Kumar Panda",
+    position: "Lead Full-Stack Developer",
+    bio: "10+ years of experience in web development with expertise in React, Node.js, and cloud technologies.",
+    image: chinmyaImg,
+    skills: ["React", "Node.js", "AWS", "MongoDB", "TypeScript"],
+    linkedin: "https://linkedin.com/in/alexkumar",
+    github: "https://github.com/alexkumar"
+  },
   {
-  id: 3,
-  name: "Subrajit Jena",
-  position: "Full-Stack Developer & UI Engineer",
-  bio: "Versatile full-stack developer with a strong focus on building responsive, high-performance web applications. Experienced in both frontend and backend technologies with a passion for crafting clean, user-friendly interfaces.",
-  image: subraImg,
-  skills: ["React", "Next.js", "Node.js", "Express", "MongoDB", "Tailwind CSS", "REST APIs", "Git"],
-  linkedin: "www.linkedin.com/in/subrajit-jena-740066263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-  github: "https://github.com/subra098"
-}
-,
+    id: 2,
+    name: "Swayam Sidhart Sahoo",
+    position: "Senior Mobile Developer",
+    bio: "Specialized in React Native and Flutter development with 8+ years of mobile app experience.",
+    image: swayamImg,
+    skills: ["React Native", "Flutter", "iOS", "Android", "Firebase"],
+    linkedin: "https://linkedin.com/in/priyasharma",
+    github: "https://github.com/priyasharma"
+  },
   {
-  id: 4,
-  name: "Biswanath P S Kar",
-  position: "Full-Stack Developer & Software Engineer",
-  bio: "Experienced full-stack developer with a strong background in building scalable web applications. Proficient in JavaScript, modern frameworks, and backend development, with a passion for clean code and efficient architecture.",
-  image: biswanathImg,
-  skills: ["JavaScript", "React", "Node.js", "Express", "MongoDB", "Git", "REST APIs"],
-  linkedin: "https://www.linkedin.com/in/biswanatha-prasanna-satyabrata-kar-b05b71346?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", 
-  github: "https://github.com/Bpska" 
-}
-,
+    id: 3,
+    name: "Subrajit Jena",
+    position: "UI/UX Designer",
+    bio: "Creative designer with expertise in modern UI/UX design, prototyping, and user research.",
+    image: subraImg,
+    skills: ["Figma", "Adobe XD", "Sketch", "Prototyping", "User Research"],
+    linkedin: "https://linkedin.com/in/rahulpatel",
+    dribbble: "https://dribbble.com/rahulpatel"
+  },
   {
-  id: 5,
-  name: "Dibyagyani Mahanta",
-  position: "Full-Stack Developer & Problem Solver",
-  bio: "Adaptable full-stack developer with a passion for solving complex problems through clean, scalable code. Proficient in both frontend and backend technologies, with a strong foundation in modern web development practices.",
-  image: dibyaImg,
-  skills: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "MongoDB", "Git"],
-  linkedin: "https://www.linkedin.com/in/dibyagyani-mohanta-a43198349?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-  github: "https://github.com/Faredhub"
-}
-,
+    id: 4,
+    name: "Biswanath P S Kar",
+    position: "Software Engineer",
+    bio: "Experienced software engineer specializing in frontend and backend development.",
+    image: biswanathImg,
+    skills: ["JavaScript", "React", "Node.js"],
+    linkedin: "",
+    github: ""
+  },
   {
-  id: 6,
-  name: "Anubhav Mohanty",
-  position: "Market Analyst & Research Strategist",
-  bio: "Insight-driven market analyst skilled in interpreting data trends, analyzing consumer behavior, and developing strategic insights to support business growth. Experienced in creating data visualizations and performing competitor analysis.",
-  image: AnubhavImg,
-  skills: ["Market Research", "Data Analysis", "Excel", "Power BI", "SQL", "Competitive Analysis", "Consumer Insights"],
-  linkedin: "https://www.linkedin.com/in/anubhab-mohanty-am?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", 
-  github: "https://github.com/Amohnaty023"
-}
-
+    id: 5,
+    name: "Dibyagyani Mahanta",
+    position: "Product Manager",
+    bio: "Skilled product manager with a focus on agile methodologies and user-centric design.",
+    image: dibyaImg,
+    skills: ["Agile", "Scrum", "User Research"],
+    linkedin: "",
+    github: ""
+  },
+  {
+    id: 6,
+    name: "Anubhav Mohanty",
+    position: "QA Engineer",
+    bio: "Detail-oriented QA engineer ensuring high-quality software releases.",
+    image: AnubhavImg,
+    skills: ["Testing", "Automation", "Selenium"],
+    linkedin: "",
+    github: ""
+  }
 ];
 
 export const services = [
@@ -345,44 +338,41 @@ export const services = [
 
 export const blogPosts = [
   {
-  id: 1,
-  title: "The Future of Web Development: Trends to Watch in 2024",
-  excerpt: "Discover the key trends transforming web development in 2024, including AI-powered tools, serverless architecture, PWAs, and edge computing.",
-  content: "As we step into 2024, the web development landscape is evolving rapidly...",
-  author: "Rae Digital Creative Studio",
-  date: "2024-02-23",
-  category: "Web Development",
-  tags: ["Web Development", "AI", "Serverless", "PWAs", "Jamstack", "Edge Computing", "Motion UI"],
-  image: Rae_Digital_Creative_StudioImg,
-  readTime: "7 min read"
-}
-,
- {
-  id: 2,
-  title: "Mobile App Development: Native vs Cross‑Platform",
-  excerpt: "A comprehensive comparison of native and cross‑platform mobile development approaches to help you choose the right strategy.",
-  content: "In the ever-evolving world of mobile app development, choosing the right approach is crucial...",
-  author: "Irina Linnik",
-  date: "2024-08-05",
-  category: "Mobile Development",
-  tags: ["Mobile Development", "Native", "Cross‑Platform", "React Native", "Flutter", "Performance"],
-  image: IrinaImg,
-  readTime: "7 min read"
-}
-,
+    id: 1,
+    title: "The Future of Web Development: Trends to Watch in 2024",
+    excerpt: "Explore the latest trends shaping the web development landscape, from AI integration to serverless architecture.",
+    content: "Web development is evolving rapidly...",
+    author: "Alex Kumar",
+    date: "2024-01-15",
+    category: "Web Development",
+    tags: ["Web Development", "Trends", "AI", "Serverless"],
+    image: "/api/placeholder/800/400",
+    readTime: "5 min read"
+  },
   {
-  id: 3,
-  title: "UI/UX Design Best Practices for 2024",
-  excerpt: "Master the essential UI/UX principles and emerging design trends to create intuitive and inclusive digital experiences this year.",
-  content: "As we enter 2024, the importance of user-centered design continues to grow...",
-  author: "Emily Stevens",
-  date: "2024-03-01",
-  category: "Design",
-  tags: ["UI/UX", "User-Centered Design", "Accessibility", "Microinteractions", "Motion UI", "AI Tools"],
-  image: EmilyImg,
-  readTime: "6 min read"
-}
-
+    id: 2,
+    title: "Mobile App Development: Native vs Cross-Platform",
+    excerpt: "A comprehensive comparison of native and cross-platform mobile development approaches.",
+    content: "When deciding on mobile app development...",
+    author: "Priya Sharma",
+    date: "2024-01-10",
+    category: "Mobile Development",
+    tags: ["Mobile", "React Native", "Flutter", "iOS", "Android"],
+    image: "/api/placeholder/800/400",
+    readTime: "7 min read"
+  },
+  {
+    id: 3,
+    title: "UI/UX Design Best Practices for 2024",
+    excerpt: "Essential design principles and practices for creating exceptional user experiences.",
+    content: "Great design is about more than aesthetics...",
+    author: "Rahul Patel",
+    date: "2024-01-05",
+    category: "Design",
+    tags: ["UI/UX", "Design", "User Experience", "Figma"],
+    image: "/api/placeholder/800/400",
+    readTime: "6 min read"
+  }
 ];
 
 export const companyStats = [
