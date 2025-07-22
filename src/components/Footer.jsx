@@ -21,9 +21,9 @@ const Footer = () => {
           {/* Contact Information */}
           <div>
             <h3 className="text-white text-lg font-semibold mb-4">Contact Information</h3>
-            <p className="mb-2">Email: <a href="mailto:youremail@example.com" className="text-emerald-400 hover:underline">youremail@example.com</a></p>
-            <p className="mb-2">Phone: <a href="tel:+1234567890" className="text-emerald-400 hover:underline">+1 (234) 567-890</a></p>
-            <p>Address: 1234 Logisaar St, Suite 100<br />City, State, ZIP</p>
+            <p className="mb-2">Email: <a href="mailto:youremail@example.com" className="text-emerald-400 hover:underline">logisaar@gmail.com</a></p>
+            <p className="mb-2">Phone: <a href="tel:+1234567890" className="text-emerald-400 hover:underline">+91 781-5014-638 , +91 801-8640-398</a></p>
+            <p>Address:  Logisaar St, chandaka <br />Bhubaneswar, Odisha</p>
           </div>
 
           {/* Quick Navigation Links */}
@@ -51,7 +51,7 @@ const Footer = () => {
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-emerald-400">
                 <Instagram size={24} />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-emerald-400">
+              <a href="https://www.instagram.com/logisaar?igsh=NnJ0enpyd3pnamFs" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-emerald-400">
                 <Twitter size={24} />
               </a>
             </div>

@@ -37,7 +37,7 @@ const Blog = () => {
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
               Insights, tutorials, and industry trends from our team of developers and designers. 
-              Stay updated with the latest in web development and technology.
+              Stay updated with the latest in web development and technologys.
             </p>
           </div>
         </div>
