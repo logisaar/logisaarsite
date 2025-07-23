@@ -6,6 +6,7 @@ import TechStack from '../components/TechStack';
 import ClientImpact from '../components/ClientImpact';
 import ContactCTA from '../components/ContactCTA';
 import ProjectCarousel3D from '../components/ProjectCarousel3D';
+import OfferSection from '../components/OfferSection';
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <WhyChooseUs />
       <TechStack />
       <ProjectCarousel3D />
+      <OfferSection />
       <ClientImpact />
       <ContactCTA />
     </div>
