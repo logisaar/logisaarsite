@@ -57,15 +57,15 @@ const Contact = () => {
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      value: "+91 781-5014-638",
+      link: "tel:+91 781-5014-638",
       color: "from-green-400 to-teal-500"
     },
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email",
-      value: "hello@logisaar.com",
-      link: "mailto:hello@logisaar.com",
+      value: "logisaar@gmail.com",
+      link: "mailto:logisaar@gmail.com",
       color: "from-blue-400 to-cyan-500"
     },
     {

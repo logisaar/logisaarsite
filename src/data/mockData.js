@@ -186,72 +186,91 @@ export const team = [
  {
   id: 1,
   name: "Chinmya Kumar Panda",
-  position: "Python Full-Stack Developer & Market Analyst",
-  bio: "Experienced Python full-stack developer and market analyst with expertise in building scalable web applications, automating workflows, and conducting data-driven market research. Skilled at combining backend engineering with analytical insights to support strategic business decisions.",
+  position: "Founder & CEO",
+  bio: "Founder and CEO with market analysis. Proven track record in building tech-driven solutions, leading cross-functional teams, and driving business growth through innovation, data insights, and product vision. Passionate about combining technology and strategy to deliver impactful user experiences and sustainable value.",
   image: chinmyaImg,
   skills: [
-    "Python", "Django", "FastAPI", "React", "PostgreSQL",
-    "Pandas", "NumPy", "Power BI", "Data Analysis", "Market Research"
+    "Leadership", "Product Strategy", "Business Development", ,
+    "Market Analysis", "Python", "Django", "Data-Driven Decision Making",
+    "Team Management", "Startup Growth"
   ],
   linkedin: "",
   github: "https://github.com/Sketchy-Guy"
 }
 
+
 ,
-  {
+ {
   id: 2,
   name: "Swayam Sidhart Sahoo",
-  position: "UI/UX Designer & Interaction Specialist",
-  bio: "Creative UI/UX designer with 8+ years of experience crafting intuitive, user-centric digital experiences. Expert in wireframing, prototyping, and visual design for web and mobile platforms, with a strong eye for detail and usability.",
+  position: "Chief Design Officer & Senior Banking Manager",
+  bio: "Creative UI/UX designer with 2+ years of experience crafting intuitive, user-centric digital experiences. Expert in wireframing, prototyping, and visual design for web and mobile platforms, with a strong eye for detail and usability.",
   image: swayamImg,
   skills: ["Figma", "Adobe XD", "Sketch", "User Research", "Wireframing", "Prototyping", "Interaction Design", "Responsive Design"],
   linkedin: "https://www.linkedin.com/in/swayam-siddharth-sahoo-569454263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   github: ""
 }
+
 ,
-  {
+ {
   id: 3,
   name: "Subrajit Jena",
-  position: "Full-Stack Developer & UI Engineer",
-  bio: "Versatile full-stack developer with a strong focus on building responsive, high-performance web applications. Experienced in both frontend and backend technologies with a passion for crafting clean, user-friendly interfaces.",
+  position: "Project Manager & Full-Stack Developer",
+  bio: "Project manager and full-stack developer with a strong command of modern web technologies and agile methodologies. Skilled at leading development teams, managing project lifecycles, and delivering scalable web applications with clean, user-focused design. Combines technical expertise with strong organizational and communication skills to ensure timely and successful project delivery.",
   image: subraImg,
-  skills: ["React", "Next.js", "Node.js", "Express", "MongoDB", "Tailwind CSS", "REST APIs", "Git"],
-  linkedin: "www.linkedin.com/in/subrajit-jena-740066263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  skills: [
+    "Project Management", "Scrum", "React", "Next.js",
+    "Node.js", "Express", "MongoDB", "Tailwind CSS",
+    "REST APIs", "Git", "Team Leadership", "Time Management"
+  ],
+  linkedin: "https://www.linkedin.com/in/subrajit-jena-740066263",
   github: "https://github.com/subra098"
 }
+
 ,
-  {
+ {
   id: 4,
   name: "Biswanath P S Kar",
-  position: "Full-Stack Developer & Software Engineer",
-  bio: "Experienced full-stack developer with a strong background in building scalable web applications. Proficient in JavaScript, modern frameworks, and backend development, with a passion for clean code and efficient architecture.",
+  position: "Co-Founder & Managing Director",
+  bio: "Co-founder and managing director with a strong technical foundation in full-stack development and a proven ability to lead teams, drive strategic initiatives, and deliver robust digital solutions. Combines technical acumen with business insight to oversee product development, manage operations, and ensure sustainable growth.",
   image: biswanathImg,
-  skills: ["JavaScript", "React", "Node.js", "Express", "MongoDB", "Git", "REST APIs"],
-  linkedin: "https://www.linkedin.com/in/biswanatha-prasanna-satyabrata-kar-b05b71346?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", 
-  github: "https://github.com/Bpska" 
+  skills: [
+    "Team Leadership", "Project Oversight", "Strategic Planning",
+    "JavaScript", "React", "Node.js", "Express",
+    "Git", "REST APIs", "Technical Architecture", "Product Execution"
+  ],
+  linkedin: "https://www.linkedin.com/in/biswanatha-prasanna-satyabrata-kar-b05b71346",
+  github: "https://github.com/Bpska"
 }
+
 ,
   {
   id: 5,
   name: "Dibyagyani Mahanta",
-  position: "Full-Stack Developer & Problem Solver",
+  position: "Chief Technology Officer",
   bio: "Adaptable full-stack developer with a passion for solving complex problems through clean, scalable code. Proficient in both frontend and backend technologies, with a strong foundation in modern web development practices.",
   image: dibyaImg,
   skills: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "MongoDB", "Git"],
   linkedin: "https://www.linkedin.com/in/dibyagyani-mohanta-a43198349?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   github: "https://github.com/Faredhub"
 }
+
 ,
-  {
+ {
   id: 6,
   name: "Anubhav Mohanty",
-  position: "Market Analyst & Research Strategist",
-  bio: "Insight-driven market analyst skilled in interpreting data trends, analyzing consumer behavior, and developing strategic insights to support business growth. Experienced in creating data visualizations and performing competitor analysis.",
+  position: "Client Acquisition Executive",
+  bio: "Dynamic client acquisition executive with a talent for building strong client relationships, identifying business opportunities, and driving customer growth. Experienced in lead generation, market research, and communication strategies that align with organizational goals. Skilled at bridging the gap between customer needs and business solutions.",
   image: AnubhavImg,
-  skills: ["Market Research", "Data Analysis", "Excel", "Power BI", "SQL", "Competitive Analysis", "Consumer Insights"],
-  linkedin: "https://www.linkedin.com/in/anubhab-mohanty-am?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", 
+  skills: [
+    "Client Acquisition", "Lead Generation", "CRM Tools", "Market Research",
+    "Sales Strategy", "Communication", "Negotiation", "Data Analysis",
+    "Power BI", "Excel"
+  ],
+  linkedin: "https://www.linkedin.com/in/anubhab-mohanty-am",
   github: "https://github.com/Amohnaty023"
 }
+
 
 ];
 
