@@ -19,7 +19,7 @@ const ProjectCarousel3D = () => {
   useEffect(() => {
     if (isAutoPlaying && !isDragging) {
       intervalRef.current = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % totalSlides);
+        setCurrentIndex((prev) => (prev + .5) % totalSlides);
       }, 5000);
     }
 
@@ -47,9 +47,9 @@ const ProjectCarousel3D = () => {
     
     if (Math.abs(deltaX) > 80) {
       if (deltaX > 0) {
-        setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+        setCurrentIndex((prev) => (prev - .5 + totalSlides) % totalSlides);
       } else {
-        setCurrentIndex((prev) => (prev + 1) % totalSlides);
+        setCurrentIndex((prev) => (prev + .5) % totalSlides);
       }
       setStartX(clientX);
     }
@@ -67,13 +67,13 @@ const ProjectCarousel3D = () => {
   };
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % totalSlides);
+    setCurrentIndex((prev) => (prev + .5) % totalSlides);
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 4000);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+    setCurrentIndex((prev) => (prev - .5 + totalSlides) % totalSlides);
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 4000);
   };
