@@ -27,16 +27,34 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    const url = "https://script.google.com/macros/s/AKfycby3ujCTfq3rPzs0H8eVqhhzrUXDuNB4_NyG8YxLFZQvLPodndPy_qwW72X6jv5eSWOabw/exec";
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-
-    // Show success toast
-    toast({
-      title: "Message sent successfully!",
-      description: "We'll get back to you within 24 hours.",
-      variant: "default"
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+         body: new URLSearchParams({
+        Name: formData.name,
+        Email: formData.email,
+        Phone: formData.phone,
+        Company: formData.company,
+        Project: formData.project, // Selected dropdown value
+        Budget: formData.budget,
+        Timeline: formData.timeline,
+        Message: formData.message
+      })
     });
+      const data = await response.text();
+      console.log("Success:", data); // Log the response from the Google Script
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you within 24 hours.",
+        variant: "default"
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({ title: "Error", description: "Failed to send message.", variant: "destructive" });
+    }
 
     // Reset form
     setFormData({
@@ -49,7 +67,7 @@ const Contact = () => {
       timeline: '',
       message: ''
     });
-    
+
     setIsSubmitting(false);
   };
 
@@ -212,7 +230,7 @@ const Contact = () => {
                         className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all"
                         placeholder="Your Company"
                       />
-                    </div>
+                  </div>
                   </div>
                   
                   <div>
