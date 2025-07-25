@@ -20,10 +20,12 @@ const Navbar = () => {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
     { path: '/services', label: 'Services' },
+    { path: '/offer', label: 'Offer' },
     { path: '/projects', label: 'Projects' },
     { path: '/testimonials', label: 'Testimonials' },
     { path: '/contact', label: 'Contact' },
     { path: '/blog', label: 'Blog' }
+    
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -37,6 +39,10 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <img src={logo} alt="LogiSaar Logo" className="h-10 w-auto" />
+            <span className="text-2xl font-semibold">
+              <span className="text-emerald-400">logi</span>
+              <span className="text-violet-600">saar</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

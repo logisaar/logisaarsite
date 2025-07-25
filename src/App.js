@@ -12,14 +12,16 @@ import Services from './pages/Services';
 import Testimonials from './pages/Testimonials';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
-
+import Offer from './pages/Offer';
 
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         <Navbar />
         <Routes>
@@ -31,6 +33,7 @@ function App() {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/offer" element={<Offer />} />
         </Routes>
         <Toaster />
         <Footer />
