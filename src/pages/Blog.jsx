@@ -34,7 +34,7 @@ const Blog = () => {
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               Our <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">Blog</span>
-            </h1>
+          </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
               Insights, tutorials, and industry trends from our team of developers and designers. 
               Stay updated with the latest in web development and technologys.
