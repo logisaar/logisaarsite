@@ -32,11 +32,11 @@ const Testimonials = () => {
               <div className="text-slate-300">Average Rating</div>
             </div>
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">
-              <div className="text-3xl font-bold text-purple-400 mb-2">30+</div>
+              <div className="text-3xl font-bold text-purple-400 mb-2">7+</div>
               <div className="text-slate-300">Happy Clients</div>
             </div>
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">
-              <div className="text-3xl font-bold text-green-400 mb-2">50+</div>
+              <div className="text-3xl font-bold text-green-400 mb-2">8+</div>
               <div className="text-slate-300">Projects Completed</div>
             </div>
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">

@@ -173,10 +173,10 @@ const Hero = () => {
         style={{ zIndex: 1 }}
       />
       
-      {/* Premium Gradient Orbs */}
-      <div className="absolute top-20 left-10 w-80 h-80 bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-600 rounded-full opacity-5 blur-3xl animate-smooth-blink" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-800 rounded-full opacity-5 blur-3xl animate-smooth-blink" style={{ animationDelay: '2s' }} />
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-amber-400 via-orange-500 to-red-600 rounded-full opacity-3 blur-3xl animate-smooth-blink" style={{ animationDelay: '4s' }} />
+      {/* New Subtle Gradient Glowing Shapes */}
+      <div className="absolute top-16 left-12 w-72 h-72 rounded-full bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-600 opacity-10 blur-3xl animate-pulse-slow" />
+      <div className="absolute bottom-16 right-12 w-96 h-96 rounded-full bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-800 opacity-10 blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-r from-amber-400 via-orange-500 to-red-600 opacity-5 blur-3xl animate-pulse-slow" style={{ animationDelay: '4s' }} />
       
       {/* Professional Floating Elements */}
       <div className="absolute top-1/4 left-1/4 animate-float">
@@ -254,19 +254,19 @@ const Hero = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-gradient-to-r from-transparent via-slate-700 to-transparent">
             <div className="text-center group hover:scale-110 transition-all duration-500 cursor-pointer">
               <div className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-500 bg-clip-text text-transparent mb-2 filter drop-shadow-lg">
-                50+
+                8+
               </div>
               <div className="text-slate-400 text-sm font-medium tracking-wide">Enterprise Projects</div>
             </div>
             <div className="text-center group hover:scale-110 transition-all duration-500 cursor-pointer">
               <div className="text-4xl font-bold bg-gradient-to-r from-violet-400 to-purple-500 bg-clip-text text-transparent mb-2 filter drop-shadow-lg">
-                30+
+                4+
               </div>
               <div className="text-slate-400 text-sm font-medium tracking-wide">Global Partners</div>
             </div>
             <div className="text-center group hover:scale-110 transition-all duration-500 cursor-pointer">
               <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2 filter drop-shadow-lg">
-                5+
+                2+
               </div>
               <div className="text-slate-400 text-sm font-medium tracking-wide">Years Innovation</div>
             </div>
