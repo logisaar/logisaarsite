@@ -31,9 +31,9 @@ const About = () => {
   ];
 
   const achievements = [
-    { number: "50+", label: "Projects Completed", icon: <Target className="h-6 w-6" /> },
-    { number: "30+", label: "Happy Clients", icon: <Users className="h-6 w-6" /> },
-    { number: "5+", label: "Years Experience", icon: <Award className="h-6 w-6" /> },
+    { number: "8+", label: "Projects Completed", icon: <Target className="h-6 w-6" /> },
+    { number: "7+", label: "Happy Clients", icon: <Users className="h-6 w-6" /> },
+    { number: "2+", label: "Years Experience", icon: <Award className="h-6 w-6" /> },
     { number: "99%", label: "Client Satisfaction", icon: <Heart className="h-6 w-6" /> }
   ];
 
@@ -65,7 +65,7 @@ const About = () => {
               </h2>
               <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
                 <p>
-                  Founded in 2025, LogiSaar began as a small team of passionate developers who believed 
+                  Founded in 2024, LogiSaar began as a small team of passionate developers who believed 
                   that great software could transform businesses. What started as a vision to bridge the 
                   gap between innovative technology and practical business solutions has grown into a 
                   trusted partner for companies worldwide.

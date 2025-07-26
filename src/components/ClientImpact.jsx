@@ -14,9 +14,9 @@ const ClientImpact = () => {
     },
     {
       icon: <Users className="h-8 w-8" />,
-      metric: "2M+",
+      metric: "200+",
       label: "Users Reached",
-      description: "Our applications have reached over 2 million active users globally",
+      description: "Our applications have reached over 2 hundred active users globally",
       color: "from-blue-400 to-cyan-500"
     },
     {
