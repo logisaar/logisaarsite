@@ -7,6 +7,7 @@ import ClientImpact from '../components/ClientImpact';
 import ContactCTA from '../components/ContactCTA';
 import ProjectCarousel3D from '../components/ProjectCarousel3D';
 import OfferSection from '../components/OfferSection';
+import GoogleReviews from '../components/GoogleReviews';
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <ProjectCarousel3D />
       <OfferSection />
       <ClientImpact />
+      <GoogleReviews />
       <ContactCTA />
     </div>
   );

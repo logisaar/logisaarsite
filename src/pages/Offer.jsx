@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Offer = () => {
+  const [showForm, setShowForm] = useState(false);
+
+  const toggleForm = () => {
+    setShowForm(prev => !prev);
+  };
+
   return (
     <section className="py-20 bg-gradient-to-br from-gray-900 via-slate-900 to-black text-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,9 +43,130 @@ const Offer = () => {
               <li>Opportunity to contribute to live projects</li>
               <li>Potential for full-time employment after internship</li>
             </ul>
-            <div className="text-lg font-bold text-cyan-400 text-center">
-              Apply now to start your journey with us!
+            <div className="text-center mb-4">
+              <button
+                onClick={toggleForm}
+                className="inline-flex justify-center rounded-md border border-transparent bg-cyan-400 py-2 px-6 text-sm font-medium text-black shadow-sm hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2"
+              >
+                {showForm ? 'Hide Application Form' : 'Apply'}
+              </button>
             </div>
+            {showForm && (
+              <form className="space-y-4" onSubmit={e => e.preventDefault()}>
+                <div>
+                  <label htmlFor="fullName" className="block text-sm font-medium text-white">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    required
+                    className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-700 text-white shadow-sm focus:border-cyan-400 focus:ring-cyan-400 sm:text-sm p-2"
+                    placeholder="Your full name"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-white">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-700 text-white shadow-sm focus:border-cyan-400 focus:ring-cyan-400 sm:text-sm p-2"
+                    placeholder="you@example.com"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-white">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-700 text-white shadow-sm focus:border-cyan-400 focus:ring-cyan-400 sm:text-sm p-2"
+                    placeholder="+1234567890"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="university" className="block text-sm font-medium text-white">
+                    University / College Name
+                  </label>
+                  <input
+                    type="text"
+                    id="university"
+                    name="university"
+                    required
+                    className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-700 text-white shadow-sm focus:border-cyan-400 focus:ring-cyan-400 sm:text-sm p-2"
+                    placeholder="Your university or college"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="degree" className="block text-sm font-medium text-white">
+                    Degree / Program
+                  </label>
+                  <input
+                    type="text"
+                    id="degree"
+                    name="degree"
+                    required
+                    className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-700 text-white shadow-sm focus:border-cyan-400 focus:ring-cyan-400 sm:text-sm p-2"
+                    placeholder="Your degree or program"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="year" className="block text-sm font-medium text-white">
+                    Year of Study
+                  </label>
+                  <input
+                    type="number"
+                    id="year"
+                    name="year"
+                    min="1"
+                    max="10"
+                    required
+                    className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-700 text-white shadow-sm focus:border-cyan-400 focus:ring-cyan-400 sm:text-sm p-2"
+                    placeholder="Your current year of study"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="resume" className="block text-sm font-medium text-white">
+                    Upload Resume
+                  </label>
+                  <input
+                    type="file"
+                    id="resume"
+                    name="resume"
+                    accept=".pdf,.doc,.docx"
+                    className="mt-1 block w-full text-white"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="notes" className="block text-sm font-medium text-white">
+                    Additional Notes
+                  </label>
+                  <textarea
+                    id="notes"
+                    name="notes"
+                    rows="3"
+                    className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-700 text-white shadow-sm focus:border-cyan-400 focus:ring-cyan-400 sm:text-sm p-2"
+                    placeholder="Any additional information"
+                  ></textarea>
+                </div>
+                <div className="text-center">
+                  <button
+                    type="submit"
+                    className="inline-flex justify-center rounded-md border border-transparent bg-cyan-400 py-2 px-4 text-sm font-medium text-black shadow-sm hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2"
+                  >
+                    Submit Application
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
         </div>
       </div>
