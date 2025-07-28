@@ -103,7 +103,7 @@ const ClientImpact = () => {
         </div>
 
         {/* Bottom testimonial */}
-        <div className="mt-16 text-center">
+        {/* <div className="mt-16 text-center">
           <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 max-w-4xl mx-auto">
             <blockquote className="text-xl md:text-2xl text-slate-300 italic mb-6">
               "LogiSaar didn't just build our platform; they transformed our entire business model. 
@@ -121,7 +121,7 @@ const ClientImpact = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
