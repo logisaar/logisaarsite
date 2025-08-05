@@ -20,7 +20,7 @@ const Home = () => {
       <ProjectCarousel3D />
       <OfferSection />
       <ClientImpact />
-      <GoogleReviews />
+      {/* <GoogleReviews /> */}
       <ContactCTA />
     </div>
   );
