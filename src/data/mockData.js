@@ -289,7 +289,7 @@ export const services = [
       "E-commerce Integration"
     ],
     technologies: ["React", "Vue.js", "Angular", "Node.js", "Python", "PHP"],
-    startingPrice: "₹10K – ₹3,50K+",
+    startingPrice: "₹10K – ₹50K+",
     deliveryTime: "4-8 weeks"
   },
   {
@@ -306,7 +306,7 @@ export const services = [
       "Analytics Integration"
     ],
     technologies: ["React Native", "Flutter", "Swift", "Kotlin", "Firebase"],
-    startingPrice: "₹40K – ₹1.3M+",
+    startingPrice: "₹20K – ₹5L+",
     deliveryTime: "8-12 weeks"
   },
   {
@@ -340,7 +340,7 @@ export const services = [
       "Multi-vendor Support"
     ],
     technologies: ["Shopify", "WooCommerce", "Magento", "Stripe", "PayPal"],
-    startingPrice: "₹75K – ₹3.5L+",
+    startingPrice: "₹25K – ₹3.5L+",
     deliveryTime: "6-10 weeks"
   },
   {
