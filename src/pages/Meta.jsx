@@ -14,11 +14,10 @@ const Testimonials = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Client <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">Testimonials</span>
+              Our  <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">Social Proof</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Hear what our clients say about their experience working with LogiSaar. 
-              Their success stories are our greatest achievement.
+             Because results speak louder than ads — every project we deliver turns into a story worth sharing, just like the best posts on your social feed.
             </p>
           </div>
         </div>
@@ -76,11 +75,7 @@ const Testimonials = () => {
                 
                 {/* Client Info */}
                 <div className="flex items-center space-x-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover border-2 border-slate-700"
-                  />
+                  
                   <div>
                     <div className="font-semibold text-white">{testimonial.name}</div>
                     <div className="text-cyan-400 text-sm">{testimonial.position}</div>
