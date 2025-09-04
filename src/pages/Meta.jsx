@@ -24,7 +24,7 @@ const Testimonials = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats Section
       <section className="py-12 bg-slate-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
@@ -46,7 +46,7 @@ const Testimonials = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials Grid */}
       <section className="py-20">
@@ -89,7 +89,7 @@ const Testimonials = () => {
                 </div>
 
                 {/* Google Map Embed */}
-                <div className="mt-6 rounded overflow-hidden border border-slate-700">
+                {/* <div className="mt-6 rounded overflow-hidden border border-slate-700">
                   <iframe
   src={testimonial.mapEmbedUrl}
   width="100%"
@@ -99,7 +99,7 @@ const Testimonials = () => {
   loading="lazy"
   referrerPolicy="no-referrer-when-downgrade"
 />
-                </div>
+                </div> */}
                 
                 {/* Hover Effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/0 via-transparent to-purple-400/0 group-hover:from-cyan-400/5 group-hover:to-purple-400/5 transition-all duration-300"></div>
@@ -119,20 +119,8 @@ const Testimonials = () => {
               a product; they delivered a solution that revolutionized how we operate."
             </blockquote>
             <div className="flex items-center justify-center space-x-4">
-              <img
-                src={abinashImg}
-                alt="Abinash Mishra"
-                className="w-16 h-16 rounded-full object-cover border-4 border-cyan-400/20"
-              />
-              <div className="text-left">
-                <div className="font-semibold text-white text-lg">Abinash Mishra</div>
-                <div className="text-cyan-400">CA,Swosti Consultancy</div>
-                <div className="flex items-center space-x-1 mt-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-              </div>
+           
+           
             </div>
           </div>
         </div>
@@ -164,7 +152,7 @@ const Testimonials = () => {
               <div className="inline-flex p-4 rounded-xl bg-gradient-to-r from-purple-500 to-pink-600 text-white mb-6 group-hover:scale-110 transition-transform">
                 <Users className="h-8 w-8" />
               </div>
-              <div className="text-3xl font-bold text-purple-400 mb-2">2M+</div>
+              <div className="text-3xl font-bold text-purple-400 mb-2">20+</div>
               <div className="text-white font-semibold mb-2">Users Reached</div>
               <div className="text-slate-300 text-sm">Through our applications</div>
             </div>

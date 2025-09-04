@@ -184,7 +184,7 @@ const ProjectCarousel3D = () => {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="absolute top-3 right-3 z-20 p-2 rounded-full bg-gray-800/80 hover:bg-emerald-500/80 transition-colors border border-gray-600/50 shadow-lg"
+                      className="absolute top-3 left-3 z-20 p-2 rounded-full bg-orange-700 hover:bg-emerald-500/80 transition-colors border border-gray-600/50 shadow-lg"
                       onClick={e => e.stopPropagation()}
                       title={`Visit ${project.title}`}
                     >

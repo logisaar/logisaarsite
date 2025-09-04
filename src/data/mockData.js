@@ -9,17 +9,16 @@ import subraImg from "../image/subra.png";
 import AnubhavImg from "../image/anubhav.png";
 import swosticonsultancyImg from "../image/swostic_consultancy.png";
 import Infinity_RehabImg from "../image/Infinity_Rehab.png";
-import krishnacatpetshopImg from "../image/krishna_cat.jpg";
 import Brew_Haven_CoffeeImg from "../image/Brew_Haven_Coffee_Shop.jpg";
 import go_poochImg from "../image/go_pooch.png";
 import LogiSaarImg from "../image/logisaar.png";
 import Rae_Digital_Creative_StudioImg from "../image/Rae_Digital_Creative_Studio.png";
 import IrinaImg from "../image/Irina_Linnik.png";
 import EmilyImg from "../image/emily.png";
-import vintazaImg from "../image/vintaza.png";
-import abinashImg from "../image/Abinash Mishra.png";
-import infinityImg from "../image/infinity.png";
-import gopoochImg from "../image/gopooch.png";
+import kopalin from "../image/kopalin.jpg";
+import sakosales from "../image/sakosales.jpg";
+import luxryfashion from "../image/luxryfashion.jpg";
+import chandan from "../image/chandan.jpg";
 
 
 
@@ -64,7 +63,7 @@ export const projects = [
   title: "Krishna Cat Pet Shop Website",
   client: "Krishna Chandra Behera",
   description: "A dedicated cat breeding and adoption website, connecting loving families with beautiful, healthy cats.",
-  image: krishnacatpetshopImg, 
+  image: kopalin, 
   tags: ["HTML", "CSS", "JavaScript", "Responsive Design", "SEO"],
   category: "Pet Shop Website",
   year: "2024",
@@ -135,7 +134,7 @@ export const projects = [
     title: "BABA BRAND FASHION",
     client: "BABA BRAND FASHION",
     description: "Luxury fashion brand offering exclusive designer wear and premium collections.",
-    image: vintazaImg, // Placeholder image, replace with actual if available
+    image: luxryfashion, // Placeholder image, replace with actual if available
     tags: ["Luxury", "Fashion", "E-Commerce", "Brand"],
     category: "Fashion Brand",
     year: "2024",
@@ -150,9 +149,9 @@ export const projects = [
     title: "SAKO SALES",
     client: "SAKO SALES",
     description: "Premium Electric & Hardware Suppliest",
-    image: vintazaImg, // Placeholder image, replace with actual if available
+    image: sakosales, // Placeholder image, replace with actual if available
     tags: ["Luxury", "Fashion", "E-Commerce", "Brand"],
-    category: "Fashion Brand",
+    category: "Hardware",
     year: "2024",
     url: "https://www.sakosales.in/",
     results: "Established a strong online presence and increased luxury brand engagement.",
@@ -163,54 +162,76 @@ export const projects = [
 ];
 
 export const testimonials = [
-  {
+    {
     id: 1,
-    name: "Vintaza Cafe",
-    position: "Owner",
-    company: "Vintaza",
-    rating: 5,
-    text: "LogiSaar helped bring our café’s luxury ambiance to the digital world. Their creative vision and seamless execution elevated our brand presence remarkably.",
-    image: vintazaImg, 
+    name: "Facebook Ads",
+    text: "We create targeted Facebook ad campaigns with precise audience segmentation, compelling creatives, and performance tracking to maximize engagement and conversions for your brand.",
     projectId: 1,
     location: "Bhubaneswar, India",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.2648417907003!2d85.7411068!3d20.289302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1907bfbc469731%3A0x5b2caa8048b46a63!2sVintaza!5e0!3m2!1sen!2sin!4v1753128751001!5m2!1sen!2sin"
   },
   {
     id: 2,
-    name: "Swosti Consultancy",
-    position: "Founder",
-    company: "Swosti Consultancy",
-    rating: 5,
-    text: "LogiSaar captured the essence of our decades-long legacy in finance and law with a website that reflects both professionalism and trust. Their attention to detail and seamless collaboration helped us modernize our digital presence without compromising our values.",
-    image: abinashImg,
+    name: "Instagram Ads",
+    text: "From eye-catching story ads to influencer collaborations, we design Instagram campaigns that build brand visibility, grow followers, and turn engagement into measurable results.",
     projectId: 2,
     location: "Bhubaneswar, India",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3743.3151387326843!2d85.84760157523546!3d20.245760981214875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a73aa307d065%3A0xda43fe03e32fa65d!2sSwosti%20Consultancy!5e0!3m2!1sen!2sin!4v1753128893288!5m2!1sen!2sin"
   },
   {
     id: 3,
-    name: "Infinity Rehab",
-    position: "Healthcare Partner",
-    company: "Infinity Rehab",
-    rating: 5,
-    text: "LogiSaar designed a website that truly reflects our mission—combining expert therapy solutions with compassionate care. Their thoughtful approach and technical brilliance elevated our online presence and strengthened our brand trust.",
-    image: infinityImg, 
+    name: "Custom Logo Design",
+    text: "Our design team crafts professional, memorable logos tailored to your brand’s identity. We focus on simplicity, uniqueness, and scalability so your logo works across all platforms.",
     projectId: 3,
     location: "Bhubaneswar, India",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.6045356442473!2d85.79177287523626!3d20.275229481192255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a7be289e7491%3A0xb7a865f6341ca304!2sINFINITY%20MULTIREHAB%20%7C%20Best%20Prosthetic%20%7C%20Artificial%20limb%2Fleg%20%7C%20Orthotic%20%7C%20Caliper%20braces%20provider%20in%20Bhubaneswar%20ODISHA%20%7C%20TOP!5e0!3m2!1sen!2sin!4v1753128990916!5m2!1sen!2sin"
   },
   {
     id: 4,
-    name: "Go Pooch!",
-    position: "Founder",
-    company: "Go Pooch!",
-    rating: 5,
-    text: "LogiSaar brought our pet brand to life online with a fun, vibrant, and user-friendly website. Their team perfectly captured the spirit of Go Pooch! and helped us connect better with pet lovers across the city.",
-    image: gopoochImg, 
+    name: "Video Marketing",
+    text: "Engaging promotional videos, product explainers, and ad creatives that tell your brand story. We handle concept, editing, and delivery to make your content stand out online.",
     projectId: 4,
-    location: "Tellapur, Gopanpalle, Hyderabad, Telangana 500046",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.1125510266106!2d78.29847629999999!3d17.454326299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93f4417011b1%3A0x3a1bb1064c0c6b52!2sGo%20Pooch*21!5e0!3m2!1sen!2sin!4v1753129066893!5m2!1sen!2sin"
-  }
+    location: "Bhubaneswar, India",
+  },
+  {
+    id: 5,
+    name: "Custom Banner Design",
+    text: "We design tailored banners for websites, social media, and events that align with your brand style. High-quality visuals ensure maximum impact and recall for your campaigns.",
+    projectId: 5,
+    location: "Bhubaneswar, India",
+  },
+  {
+    id: 6,
+    name: "SEO Optimization",
+    text: "Improve your website’s ranking with on-page SEO, keyword research, backlink strategies, and analytics-driven improvements. Our goal is to drive sustainable organic traffic growth.",
+    projectId: 6,
+    location: "Bhubaneswar, India",
+  },
+  {
+    id: 7,
+    name: "Content Writing & Copywriting",
+    text: "Powerful blog posts, ad copies, and website content that are optimized for SEO and designed to engage, inform, and convert your target audience.",
+    projectId: 7,
+    location: "Bhubaneswar, India",
+  },
+  {
+    id: 8,
+    name: "Social Media Management",
+    text: "Complete social media handling — from daily posts and engagement to community management and analytics reporting — so your brand always stays active online.",
+    projectId: 8,
+    location: "Bhubaneswar, India",
+  },
+  {
+    id: 9,
+    name: "Email Marketing",
+    text: "Build stronger customer relationships with personalized email campaigns, automated sequences, and newsletters that keep your audience engaged and informed.",
+    projectId: 9,
+    location: "Bhubaneswar, India",
+  },
+  {
+    id: 10,
+    name: "Website Design & Development",
+    text: "Custom, responsive websites designed to reflect your brand identity and optimized for performance, user experience, and conversions across all devices.",
+    projectId: 10,
+    location: "Bhubaneswar, India",
+  },
 ];
 
 export const team = [
@@ -306,7 +327,7 @@ export const team = [
   name: "Chandan Sethy",
   position: "Social media manager",
   bio: "Dealing with the most useful and accruated social media activation in this era of Tech",
-  image: AnubhavImg,
+  image: chandan,
   skills: [
     "Social Media Strategy", "Content Marketing", "Facebook Ads Manager", "Market Research",
     "LinkedIn Campaigns", "Meta Business Suite", "YouTube Optimization", 
