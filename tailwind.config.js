@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
   	extend: {
+		fontFamily: {
+        doodle: ['"Gloria Hallelujah"', 'cursive'],
+      },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',

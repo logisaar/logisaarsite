@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, ExternalLink, Calendar, Tag } from 'lucide-react';
 import { projects } from '../data/mockData';
 
+
+
 const ProjectCarousel3D = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);

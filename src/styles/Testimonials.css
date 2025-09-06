@@ -1,0 +1,102 @@
+@keyframes pulseBackground {
+  0% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 0.5; }
+}
+
+@keyframes textGlow {
+  0%, 100% { text-shadow: 0 0 10px rgba(255, 255, 0, 0.7); }
+  50% { text-shadow: 0 0 20px rgba(255, 0, 0, 0.9); }
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0) rotate(6deg); }
+  50% { transform: translateY(-15px) rotate(6deg); }
+}
+
+@keyframes floatDown {
+  0%, 100% { transform: translateY(0) rotate(-6deg); }
+  50% { transform: translateY(15px) rotate(-6deg); }
+}
+
+@keyframes slideLeft {
+  0%, 100% { transform: translateX(0) rotate(3deg); }
+  50% { transform: translateX(-10px) rotate(3deg); }
+}
+
+@keyframes slideRight {
+  0%, 100% { transform: translateX(0) rotate(-3deg); }
+  50% { transform: translateX(10px) rotate(-3deg); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes twinkleDelay {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+  25%, 75% { opacity: 0.2; }
+}
+
+@keyframes pulseFast {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+}
+
+@keyframes orbitReverse {
+  0% { transform: rotate(0deg) translateX(-50px) rotate(0deg); }
+  100% { transform: rotate(-360deg) translateX(-50px) rotate(360deg); }
+}
+
+/* Particle Animations */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: particleMove 15s infinite linear;
+}
+
+.particle-1 { width: 15px; height: 15px; background: rgba(255, 0, 0, 0.6); top: 20%; left: 10%; }
+.particle-2 { width: 20px; height: 20px; background: rgba(0, 255, 0, 0.6); top: 50%; left: 70%; }
+.particle-3 { width: 10px; height: 10px; background: rgba(0, 0, 255, 0.6); top: 80%; left: 30%; }
+
+@keyframes particleMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(100vw, 100vh); }
+}
+
+/* Glowing Borders */
+.border-glow-pink { border-color: #ff69b4; box-shadow: 0 0 15px #ff69b4; }
+.border-glow-blue { border-color: #00b4d8; box-shadow: 0 0 15px #00b4d8; }
+.border-glow-green { border-color: #00ff00; box-shadow: 0 0 15px #00ff00; }
+.border-glow-purple { border-color: #800080; box-shadow: 0 0 15px #800080; }
+
+.animate-pulse-background { animation: pulseBackground 6s infinite; }
+.animate-text-glow { animation: textGlow 3s infinite; }
+.animate-fade-in-out { animation: fadeInOut 4s infinite; }
+.animate-float-up { animation: floatUp 6s infinite; }
+.animate-float-down { animation: floatDown 6s infinite; }
+.animate-slide-left { animation: slideLeft 5s infinite; }
+.animate-slide-right { animation: slideRight 5s infinite; }
+.animate-twinkle { animation: twinkle 2s infinite; }
+.animate-twinkle-delay { animation: twinkleDelay 2.5s infinite; }
+.animate-pulse-fast { animation: pulseFast 1s infinite; }
+.animate-spin-slow { animation: spinSlow 10s linear infinite; }
+.animate-orbit { animation: orbit 12s linear infinite; }
+.animate-orbit-reverse { animation: orbitReverse 12s linear infinite; }
