@@ -16,9 +16,10 @@ const Testimonials = () => {
       {/* Content Overlay */}
       <div className="relative top-20 z-10 min-h-screen flex flex-col items-center justify-center">
         {/* Heading */}
-        <h1 className="font-doodle text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-pink-500 to-teal-400 mb-12 animate-text-glow text-center">
-  Ignite Your Visual Vibe!
-</h1>
+  <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-pink-500 to-teal-400 mb-12 animate-text-glow text-center">
+          Ignite Your Visual Vibe!
+        </h1> 
+
 
 
        <p className="font-funny text-xl md:text-2xl text-white/90 mb-16 max-w-4xl mx-auto text-center animate-fade-in-out">
