@@ -48,7 +48,7 @@ const Footer = () => {
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-emerald-400">
                 <Github size={24} />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-emerald-400">
+              <a href="https://www.instagram.com/logisaar?utm_source=ig_web_button_share_sheet&igsh=MTdsb3FuZ3F5NjB0dQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-emerald-400">
                 <Instagram size={24} />
               </a>
               <a href="https://www.instagram.com/logisaar?igsh=NnJ0enpyd3pnamFs" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-emerald-400">

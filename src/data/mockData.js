@@ -295,17 +295,17 @@ export const team = [
   github: "https://github.com/Bpska"
 }
 
-,
-  {
-  id: 5,
-  name: "Dibyagyani Mohanta",
-  position: "Chief Technology Officer",
-  bio: "Adaptable full-stack developer with a passion for solving complex problems through clean, scalable code. Proficient in both frontend and backend technologies, with a strong foundation in modern web development practices.",
-  image: dibyaImg,
-  skills: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "NestJS", "NextJS", "react Native","Solidity","Git"],
-  linkedin: "https://www.linkedin.com/in/dibyagyani-mohanta-a43198349?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-  github: "https://github.com/Faredhub"
-}
+// ,
+//   {
+//   id: 5,
+//   name: "Dibyagyani Mohanta",
+//   position: "Chief Technology Officer",
+//   bio: "Adaptable full-stack developer with a passion for solving complex problems through clean, scalable code. Proficient in both frontend and backend technologies, with a strong foundation in modern web development practices.",
+//   image: dibyaImg,
+//   skills: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "NestJS", "NextJS", "react Native","Solidity","Git"],
+//   linkedin: "https://www.linkedin.com/in/dibyagyani-mohanta-a43198349?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+//   github: "https://github.com/Faredhub"
+// }
 
 ,
  {
@@ -426,6 +426,25 @@ export const services = [
     startingPrice: "₹9K – ₹50K+ (monthly)",
     deliveryTime: "Ongoing"
   }
+  ,
+  {
+  id: 6,
+  title: "Personal Portfolio Development",
+  description: "Professional and eye-catching personal portfolios to showcase your skills, projects, and achievements online.",
+  icon: "💼",
+  features: [
+    "Modern and Elegant Design",
+    "Fully Responsive Layout",
+    "Smooth Animations & Transitions",
+    "Fast Performance & SEO Friendly",
+    "Social Media & Contact Integration",
+    "Custom Domain & Hosting Setup"
+  ],
+  technologies: ["React", "Next.js", "Three.js", "Tailwind CSS", "GSAP", "Framer Motion"],
+  startingPrice: "₹1799 – ₹5K+",
+  deliveryTime: "2-4 weeks"
+}
+
 ];
 
 export const blogPosts = [
