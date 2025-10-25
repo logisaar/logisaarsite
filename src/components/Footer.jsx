@@ -22,7 +22,8 @@ const Footer = () => {
           <div>
             <h3 className="text-white text-lg font-semibold mb-4">Contact Information</h3>
             <p className="mb-2">Email: <a href="mailto:logisaar@gmail.com" className="text-emerald-400 hover:underline">logisaar@gmail.com</a></p>
-            <p className="mb-2">Phone: <a href="tel:91 7815014638 , +91 8018640398" className="text-emerald-400 hover:underline">+91 (7815) 014-638 , +91 (8018) 640-398</a></p>
+            <p className="mb-2">Phone: <a href="tel:91 7815014638" className="text-emerald-400 hover:underline">+91 781-5014-638</a></p>
+            <p className="mb-2">Phone: <a href="tel:91 8249585134" className="text-emerald-400 hover:underline">+91 824-9585-134</a></p>
             <p>Address:  Logisaar St, chandaka <br />Bhubaneswar, Odisha</p>
           </div>
 

@@ -41,8 +41,8 @@ const ContactCTA = () => {
             </div>
             <h3 className="text-xl font-semibold text-white mb-2">Call Us</h3>
             <p className="text-slate-300 mb-4">Speak directly with our experts</p>
-            <a href="tel:+1234567890" className="text-purple-400 hover:text-purple-300 transition-colors font-medium">
-              +91 781-5014-638
+            <a href="tel:781-5014-638" className="text-purple-400 hover:text-purple-300 transition-colors font-medium">
+              781-5014-638
             </a>
           </div>
 
@@ -52,7 +52,7 @@ const ContactCTA = () => {
             </div>
             <h3 className="text-xl font-semibold text-white mb-2">Email Us</h3>
             <p className="text-slate-300 mb-4">Send us your project details</p>
-            <a href="mailto:hello@logisaar.com" className="text-blue-400 hover:text-blue-300 transition-colors font-medium">
+            <a href="mailto:logisaar@gmail.com" className="text-blue-400 hover:text-blue-300 transition-colors font-medium">
               logisaar@gmail.com
             </a>
           </div>
