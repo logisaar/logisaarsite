@@ -87,8 +87,7 @@ export const projects = [
   challenge: "Designing a visually appealing and functional site to reflect Brew Haven’s unique coffee culture.",
   solution: "Built a responsive website with intuitive navigation, interactive menu, and offer section.",
   technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "AOS Animations"]
-}
-,
+},
    {
   id: 5,
   title: "Go Pooch! Pet Grooming ",
@@ -295,33 +294,19 @@ export const team = [
   github: "https://github.com/Bpska"
 }
 
-// ,
-//   {
-//   id: 5,
-//   name: "Dibyagyani Mohanta",
-//   position: "Chief Technology Officer",
-//   bio: "Adaptable full-stack developer with a passion for solving complex problems through clean, scalable code. Proficient in both frontend and backend technologies, with a strong foundation in modern web development practices.",
-//   image: dibyaImg,
-//   skills: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "NestJS", "NextJS", "react Native","Solidity","Git"],
-//   linkedin: "https://www.linkedin.com/in/dibyagyani-mohanta-a43198349?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-//   github: "https://github.com/Faredhub"
-// }
+,
+  {
+  id: 5,
+  name: "Dibyagyani Mohanta",
+  position: "Chief Technology Officer",
+  bio: "Adaptable full-stack developer with a passion for solving complex problems through clean, scalable code. Proficient in both frontend and backend technologies, with a strong foundation in modern web development practices.",
+  image: dibyaImg,
+  skills: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "NestJS", "NextJS", "react Native","Solidity","Git"],
+  linkedin: "https://www.linkedin.com/in/dibyagyani-mohanta-a43198349?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  github: "https://github.com/Faredhub"
+}
 
 ,
- {
-  id: 6,
-  name: "Anubhav Mohanty",
-  position: "Client Acquisition Executive",
-  bio: "Dynamic client acquisition executive with a talent for building strong client relationships, identifying business opportunities, and driving customer growth. Experienced in lead generation, market research, and communication strategies that align with organizational goals. Skilled at bridging the gap between customer needs and business solutions.",
-  image: AnubhavImg,
-  skills: [
-    "Client Acquisition", "Lead Generation", "CRM Tools", "Market Research",
-    "Sales Strategy", "Communication", "Negotiation", "Data Analysis",
-    "Power BI", "Excel"
-  ],
-  linkedin: "https://www.linkedin.com/in/anubhab-mohanty-am",
-  github: "https://github.com/Amohnaty023"
-},
  {
   id: 6,
   name: "Chandan Sethy",
