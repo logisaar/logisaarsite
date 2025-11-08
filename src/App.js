@@ -13,6 +13,7 @@ import Testimonials from './pages/Meta';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import Offer from './pages/Offer';
+import InternHiring from './pages/InternHiring';
 
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -34,6 +35,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/offer" element={<Offer />} />
+          <Route path="/intern-hiring" element={<InternHiring />} />
         </Routes>
         <Toaster />
         <Footer />
