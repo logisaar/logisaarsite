@@ -266,7 +266,7 @@ export const testimonials = [
     name: "Custom Logo Design",
     text: "Our design team crafts professional, memorable logos tailored to your brand’s identity. We focus on simplicity, uniqueness, and scalability so your logo works across all platforms.",
     projectId: 3,
-    location: "Bhubaneswar, India",
+    location: "Bhubaneswar, India.",
   },
   {
     id: 4,
