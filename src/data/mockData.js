@@ -9,7 +9,7 @@ import subraImg from "../image/subra.png";
 import AnubhavImg from "../image/anubhav.png";
 import swosticonsultancyImg from "../image/swostic_consultancy.png";
 import Infinity_RehabImg from "../image/Infinity_Rehab.png";
-import Brew_Haven_CoffeeImg from "../image/Brew_Haven_Coffee_Shop.jpg";
+import Linchan from "../image/Linchans_taste.png"
 import go_poochImg from "../image/go_pooch.png";
 import LogiSaarImg from "../image/logisaar.png";
 import Rae_Digital_Creative_StudioImg from "../image/Rae_Digital_Creative_Studio.png";
@@ -19,6 +19,13 @@ import kopalin from "../image/kopalin.jpg";
 import sakosales from "../image/sakosales.jpg";
 import luxryfashion from "../image/luxryfashion.jpg";
 import chandan from "../image/chandan.jpg";
+import frunko from "../image/frunko.jpg";
+import cmc from "../image/cmc.jpg";
+import pass_flow from "../image/pass_flow.jpg";
+import nit_education from "../image/nit_education.png";
+// import NIT_website from "../image/NIT_website.png";
+import nit_feedback_system from "../image/NIT_feedback_system.png";
+
 
 
 
@@ -28,23 +35,23 @@ import chandan from "../image/chandan.jpg";
 export const projects = [
  
  
-  {
-  id: 1,
-  title: "Infinity Rehab Website",
-  client: "Infinity Rehab & Wellness",
-  description: "Professional physiotherapy and rehabilitation website offering personalized treatment programs and online appointment booking.",
-  image:Infinity_RehabImg,
-  tags: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "MongoDB"],
-  category: "Healthcare Website",
-  year: "2024",
-  url: "https://infinityrehab.in",
-  results: "Increased patient engagement by 60% and improved appointment booking efficiency.",
-  challenge: "Designing a modern, informative, and user-friendly website for healthcare services.",
-  solution: "Built a fully responsive web platform with dynamic content, contact forms, and patient-focused UI.",
-  technologies: ["Node.js", "Express", "EJS", "MongoDB", "Bootstrap", "Formspree"]
-},
+//   {
+//   id: 1,
+//   title: "Infinity Rehab Website",
+//   client: "Infinity Rehab & Wellness",
+//   description: "Professional physiotherapy and rehabilitation website offering personalized treatment programs and online appointment booking.",
+//   image:Infinity_RehabImg,
+//   tags: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "MongoDB"],
+//   category: "Healthcare Website",
+//   year: "2024",
+//   url: "https://infinityrehab.in",
+//   results: "Increased patient engagement by 60% and improved appointment booking efficiency.",
+//   challenge: "Designing a modern, informative, and user-friendly website for healthcare services.",
+//   solution: "Built a fully responsive web platform with dynamic content, contact forms, and patient-focused UI.",
+//   technologies: ["Node.js", "Express", "EJS", "MongoDB", "Bootstrap", "Formspree"]
+// },
     {
-  id: 2,
+  id: 1,
   title: "Swosti Consultancy Website",
   client: "Swosti Consultancy",
   description: "Corporate consultancy website providing expert business solutions, career guidance, and project management services.",
@@ -58,27 +65,27 @@ export const projects = [
   solution: "Designed and developed a fast, mobile-first website with backend integration and contact forms.",
   technologies: ["Node.js", "Express", "EJS", "MongoDB", "Bootstrap", "SEO Tools"]
 },
-  {
-  id: 3,
-  title: "Krishna Cat Pet Shop Website",
-  client: "Krishna Chandra Behera",
-  description: "A dedicated cat breeding and adoption website, connecting loving families with beautiful, healthy cats.",
-  image: kopalin, 
-  tags: ["HTML", "CSS", "JavaScript", "Responsive Design", "SEO"],
-  category: "Pet Shop Website",
-  year: "2024",
-  url: "https://kapalingitatales.com", 
-  results: "Enhanced local visibility and 3x increase in pet adoption inquiries within 2 months.",
-  challenge: "Designing a visually appealing, mobile-friendly site to build trust with pet lovers.",
-  solution: "Built an intuitive, responsive web layout with clear navigation, gallery, and contact sections.",
-  technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Google Maps API"]
-},
+//   {
+//   id: 3,
+//   title: "Krishna Cat Pet Shop Website",
+//   client: "Krishna Chandra Behera",
+//   description: "A dedicated cat breeding and adoption website, connecting loving families with beautiful, healthy cats.",
+//   image: kopalin, 
+//   tags: ["HTML", "CSS", "JavaScript", "Responsive Design", "SEO"],
+//   category: "Pet Shop Website",
+//   year: "2024",
+//   url: "https://kapalingitatales.com", 
+//   results: "Enhanced local visibility and 3x increase in pet adoption inquiries within 2 months.",
+//   challenge: "Designing a visually appealing, mobile-friendly site to build trust with pet lovers.",
+//   solution: "Built an intuitive, responsive web layout with clear navigation, gallery, and contact sections.",
+//   technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Google Maps API"]
+// },
  {
-  id: 4,
-  title: "Linchan's Cafe",
+  id: 2,
+  title: "Linchan's taste",
   client: "Linchan's",
   description: "A modern and inviting website for Brew Haven, a specialty coffee shop offering a rich menu and a cozy café experience.",
-  image: Brew_Haven_CoffeeImg, 
+  image: Linchan, 
   tags: ["HTML", "CSS", "JavaScript", "Responsive Design", "UI/UX"],
   category: "Restaurant/Café Website",
   year: "2024",
@@ -87,49 +94,49 @@ export const projects = [
   challenge: "Designing a visually appealing and functional site to reflect Brew Haven’s unique coffee culture.",
   solution: "Built a responsive website with intuitive navigation, interactive menu, and offer section.",
   technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "AOS Animations"]
-},
-   {
-  id: 5,
-  title: "Go Pooch! Pet Grooming ",
-  client: "Go Pooch!",
-  description: "A cheerful and professional website for pet grooming services, offering expert care for furry friends along with an online shop..........",
-  image: go_poochImg , 
-  tags: ["React", "CSS Modules", "Responsive Design", "Animations", "E-Commerce"],
-  category: "Pet Services Website",
-  year: "2024",
-  url: "https://go-pooch.com", 
-  results: "Boosted customer bookings and improved online brand visibility by 70% within 2 months.",
-  challenge: "Creating a playful and professional UI that appeals to pet lovers and builds trust.",
-  solution: "Built a clean, responsive website with animated pet visuals and seamless navigation.",
-  technologies: ["React", "React Router", "CSS Modules", "Framer Motion", "Tailwind CSS"]
 }
 ,
-   {
-  id: 6,
-  title: "Professional Services Platform",
-  client: "Logishaan Technology Solutions",
-  description: "Comprehensive digital solutions engineered for enterprise-grade performance and scalability.",
-  image: LogiSaarImg, 
-  tags: ["Web Engineering", "Mobile Solutions", "Experience Design"],
-  category: "IT Services",
-  year: "2024",
-  url: "https://infinityrehab.in/", 
-  results: "Improved client efficiency by 60%, enabled scalable digital transformation across industries.",
-  challenge: "Delivering versatile and enterprise-grade tech services that scale and adapt to modern business needs.",
-  solution: "Developed a service platform featuring modern web/mobile engineering and intuitive UX design systems.",
-  technologies: [
-    "Microservices Architecture",
-    "Advanced SEO",
-    "Cloud Integration",
-    "Cross-Platform Development",
-    "Real-time Sync",
-    "AI Integration",
-    "User Research",
-    "Interaction Design"
-  ]
-},
+//    {
+//   id: 5,
+//   title: "Go Pooch! Pet Grooming ",
+//   client: "Go Pooch!",
+//   description: "A cheerful and professional website for pet grooming services, offering expert care for furry friends along with an online shop..........",
+//   image: go_poochImg , 
+//   tags: ["React", "CSS Modules", "Responsive Design", "Animations", "E-Commerce"],
+//   category: "Pet Services Website",
+//   year: "2024",
+//   url: "https://go-pooch.com", 
+//   results: "Boosted customer bookings and improved online brand visibility by 70% within 2 months.",
+//   challenge: "Creating a playful and professional UI that appeals to pet lovers and builds trust.",
+//   solution: "Built a clean, responsive website with animated pet visuals and seamless navigation.",
+//   technologies: ["React", "React Router", "CSS Modules", "Framer Motion", "Tailwind CSS"]
+// },
+//   {
+//   id: 6,
+//   title: "Professional Services Platform",
+//   client: "Logishaan Technology Solutions",
+//   description: "Comprehensive digital solutions engineered for enterprise-grade performance and scalability.",
+//   image: LogiSaarImg, 
+//   tags: ["Web Engineering", "Mobile Solutions", "Experience Design"],
+//   category: "IT Services",
+//   year: "2024",
+//   url: "https://infinityrehab.in/", 
+//   results: "Improved client efficiency by 60%, enabled scalable digital transformation across industries.",
+//   challenge: "Delivering versatile and enterprise-grade tech services that scale and adapt to modern business needs.",
+//   solution: "Developed a service platform featuring modern web/mobile engineering and intuitive UX design systems.",
+//   technologies: [
+//     "Microservices Architecture",
+//     "Advanced SEO",
+//     "Cloud Integration",
+//     "Cross-Platform Development",
+//     "Real-time Sync",
+//     "AI Integration",
+//     "User Research",
+//     "Interaction Design"
+//   ]
+// },
  {
-    id: 7,
+    id: 3,
     title: "BABA BRAND FASHION",
     client: "BABA BRAND FASHION",
     description: "Luxury fashion brand offering exclusive designer wear and premium collections.",
@@ -144,7 +151,7 @@ export const projects = [
     technologies: ["React", "TailwindCSS", "Node.js", "Express", "MongoDB"]
   },
  {
-    id: 8,
+    id: 4,
     title: "SAKO SALES",
     client: "SAKO SALES",
     description: "Premium Electric & Hardware Suppliest",
@@ -158,6 +165,85 @@ export const projects = [
     solution: "Developed a modern, elegant, and responsive e-commerce platform with seamless navigation and brand storytelling.",
     technologies: ["React", "TailwindCSS", "Node.js", "Express", "MongoDB"]
   },
+
+  {
+  id: 5,
+  title: "FRUNKO",
+  client: "Frunko",
+  description: "A subscription service for daily delivery of fresh oat bowls and fruit salads.",
+  image: frunko,
+  tags: ["Health", "Food", "Subscription", "E-Commerce", "Wellness"],
+  category: "Food & Beverage",
+  year: "2025",
+  url: "https://www.frunko.in/auth",
+  results: "Launched a user-friendly subscription platform that attracted a strong initial customer base and established a recurring revenue model.",
+  challenge: "To create an engaging and seamless user experience that simplifies the process of signing up for a daily meal subscription.",
+  solution: "Developed a clean, mobile-first web application with an intuitive plan selection process, clear nutritional information, and a simple checkout flow to maximize conversions.",
+  technologies: ["React", "TailwindCSS", "Node.js", "Express", "MongoDB"]
+ },
+ {
+  id: 6,
+  title: "CMC Infratech",
+  client: "CMC Infratech Pvt. Ltd.",
+  description: "Leading infrastructure and construction company in Odisha specializing in heavy equipment rental, operation & maintenance, and industrial project works.",
+  image: cmc,
+  tags: ["Infrastructure", "Construction", "Corporate", "B2B", "Odisha"],
+  category: "Construction",
+  year: "2024",
+  url: "https://www.cmcinfratech.com/",
+  results: "Successfully showcased the company's extensive project portfolio and heavy machinery fleet, reinforcing their industry leadership in Odisha.",
+  challenge: "To design a professional and modern corporate website that clearly communicates the company's large-scale capabilities, services, and trusted client base.",
+  solution: "Developed a clean, informative, and responsive website highlighting their story, vision, key services (like heavy equipment rental and industrial projects), and major clients.",
+  technologies: ["React", "TailwindCSS", "Node.js", "Express", "MongoDB"]
+ },
+ {
+  id: 7,
+  title: "DIGITAL GATEPASS SYSTEM",
+  client: "Educational Sector",
+  description: "A comprehensive system for students to request, manage, and track their campus gate passes digitally.",
+  image: pass_flow,
+  tags: ["Management System", "Student Services", "Web App", "Dashboard", "SaaS"],
+  category: "Education Technology",
+  year: "2025",
+  url: "https://pass-flow.vercel.app/",
+  results: "Streamlined the gate pass process, reducing administrative workload and providing students with a transparent real-time tracking system.",
+  challenge: "To replace a manual, paper-based gate pass system with an efficient, secure, and easy-to-use digital solution for a large student body.",
+  solution: "Built a role-based web application with a student-facing dashboard for requests and an admin panel for approvals, featuring real-time status updates, QR code verification, and insightful analytics.",
+  technologies: ["React", "TailwindCSS", "Node.js", "Express", "MongoDB"]
+ },
+ {
+  id: 8,
+  title: "Nalanda Institute of Technology",
+  client: "Nalanda Institute of Technology",
+  description: "Official website for an educational institution, highlighting its achievements, faculty, and campus infrastructure.",
+  image: nit_education,
+  tags: ["Education", "Institute", "University Website", "Corporate", "Academics"],
+  category: "Education",
+  year: "2024",
+  url: "https://www.thenalanda.com/",
+  results: "Established a strong, professional online presence that effectively showcases the institute's key statistics and achievements to prospective students and stakeholders.",
+  challenge: "To create a modern and credible website that effectively communicates the institute's scale, achievements, and commitment to excellence in a visually appealing format.",
+  solution: "Developed a clean, responsive website featuring an intuitive navigation and a compelling 'By the Numbers' section to quickly convey the institute's strengths, such as student enrollment, placement rate, and campus size.",
+  technologies: ["React", "TailwindCSS", "Node.js", "Express", "MongoDB"]
+},
+
+{
+  id: 9,
+  title: "Faculty Feedback System",
+  client: "NIT Faculty Portal",
+  description: "A comprehensive web platform for students to rate faculty performance and for administrators to analyze teaching quality with real-time analytics.",
+  image: nit_feedback_system, 
+  tags: ["React", "Node.js", "Express", "MongoDB", "Chart.js", "Tailwind CSS"],
+  category: "Web Application",
+  year: "2025",
+  url: "https://www.thenalandaexam.in/",
+  results: "Automated faculty evaluation process, reduced manual workload by 80%, and provided actionable insights via analytics dashboard.",
+  challenge: "Building a secure and scalable system to collect, analyze, and visualize feedback data from multiple departments.",
+  solution: "Developed a full-stack MERN application with role-based access, data visualization, and admin management features.",
+  technologies: ["React", "Node.js", "Express", "MongoDB", "Chart.js", "Tailwind CSS"]
+},
+
+
 ];
 
 export const testimonials = [
@@ -180,7 +266,7 @@ export const testimonials = [
     name: "Custom Logo Design",
     text: "Our design team crafts professional, memorable logos tailored to your brand’s identity. We focus on simplicity, uniqueness, and scalability so your logo works across all platforms.",
     projectId: 3,
-    location: "Bhubaneswar, India",
+    location: "Bhubaneswar, India.",
   },
   {
     id: 4,
@@ -307,6 +393,20 @@ export const team = [
 }
 
 ,
+ {
+  id: 6,
+  name: "Anubhav Mohanty",
+  position: "Client Acquisition Executive",
+  bio: "Dynamic client acquisition executive with a talent for building strong client relationships, identifying business opportunities, and driving customer growth. Experienced in lead generation, market research, and communication strategies that align with organizational goals. Skilled at bridging the gap between customer needs and business solutions.",
+  image: AnubhavImg,
+  skills: [
+    "Client Acquisition", "Lead Generation", "CRM Tools", "Market Research",
+    "Sales Strategy", "Communication", "Negotiation", "Data Analysis",
+    "Power BI", "Excel"
+  ],
+  linkedin: "https://www.linkedin.com/in/anubhab-mohanty-am",
+  github: "https://github.com/Amohnaty023"
+},
  {
   id: 6,
   name: "Chandan Sethy",
