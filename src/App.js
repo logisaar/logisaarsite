@@ -14,6 +14,7 @@ import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import Offer from './pages/Offer';
 import InternHiring from './pages/InternHiring';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -36,6 +37,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/offer" element={<Offer />} />
           <Route path="/intern-hiring" element={<InternHiring />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
         <Toaster />
         <Footer />

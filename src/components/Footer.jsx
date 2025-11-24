@@ -60,6 +60,19 @@ const Footer = () => {
         </div>
 
       </div>
+
+      {/* Bottom Links Section */}
+      <div className="border-t border-gray-700 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex gap-6 text-sm">
+              <Link to="/privacy-policy" className="text-gray-400 hover:text-emerald-400">Privacy Policy</Link>
+              <a href="#" className="text-gray-400 hover:text-emerald-400">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Copyright Notice at bottom */}
       <div className="border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
         &copy; 2025 logisaar. All Rights Reserved
