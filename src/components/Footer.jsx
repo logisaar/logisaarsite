@@ -67,7 +67,8 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex gap-6 text-sm">
               <Link to="/privacy-policy" className="text-gray-400 hover:text-emerald-400">Privacy Policy</Link>
-              <a href="#" className="text-gray-400 hover:text-emerald-400">Terms of Service</a>
+              <Link to="/terms-and-conditions" className="text-gray-400 hover:text-emerald-400">Terms of Service</Link>
+              <Link to="/refund-policy" className="text-gray-400 hover:text-emerald-400">Refund Policy</Link>
             </div>
           </div>
         </div>

@@ -11,10 +11,13 @@ import ProjectDetail from './pages/ProjectDetail';
 import Services from './pages/Services';
 import Testimonials from './pages/Meta';
 import Contact from './pages/Contact';
-import Blog from './pages/Blog';
-import Offer from './pages/Offer';
-import InternHiring from './pages/InternHiring';
+
+
+
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsAndConditions from './pages/TermsAndConditions';
+import RefundPolicy from './pages/RefundPolicy';
+import Checkout from './pages/Checkout';
 
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -34,10 +37,13 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/offer" element={<Offer />} />
-          <Route path="/intern-hiring" element={<InternHiring />} />
+
+
+
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
         <Toaster />
         <Footer />
