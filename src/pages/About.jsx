@@ -1,40 +1,26 @@
 import React from 'react';
-import { Code, Heart, Zap, Users, Award, Target } from 'lucide-react';
+import { Code, Heart, Zap, Users, Award, Target, BookOpen, ShieldCheck, MapPin, Phone, CheckCircle } from 'lucide-react';
 import { team } from '../data/mockData';
 
 const About = () => {
-  const values = [
+  const divisions = [
     {
       icon: <Code className="h-8 w-8" />,
-      title: "Innovation First",
-      description: "We stay ahead of the curve, constantly exploring new technologies and methodologies to deliver cutting-edge solutions.",
+      title: "LogiSaar Technologies",
+      subtitle: "IT & Digital Solutions",
+      description: "Delivering professional technology services including website/web app development, software automation, and digital transformation.",
+      features: ["Web & App Development", "Software Solutions", "Cloud Systems", "Business Analytics"],
       color: "from-cyan-400 to-blue-500"
     },
     {
-      icon: <Heart className="h-8 w-8" />,
-      title: "Client-Centric",
-      description: "Your success is our success. We build lasting relationships by understanding your unique needs and delivering exceptional value.",
-      color: "from-purple-400 to-pink-500"
-    },
-    {
-      icon: <Zap className="h-8 w-8" />,
-      title: "Quality Excellence",
-      description: "We maintain the highest standards in everything we do, from code quality to user experience and customer service.",
-      color: "from-green-400 to-teal-500"
-    },
-    {
-      icon: <Users className="h-8 w-8" />,
-      title: "Collaborative Spirit",
-      description: "We work as an extension of your team, fostering open communication and transparency throughout the development process.",
-      color: "from-orange-400 to-red-500"
+      icon: <BookOpen className="h-8 w-8" />,
+      title: "TECHXERA",
+      subtitle: "Education & Skill Development",
+      description: "Focusing on affordable, practical, and industry-aligned education to empower individuals with career-oriented skills.",
+      features: ["Technical Training", "Skill Development", "Workshops & Mentorship", "Digital Learning"],
+      color: "from-purple-400 to-pink-500",
+      link: "https://techxera.in"
     }
-  ];
-
-  const achievements = [
-    { number: "8+", label: "Projects Completed", icon: <Target className="h-6 w-6" /> },
-    { number: "7+", label: "Happy Clients", icon: <Users className="h-6 w-6" /> },
-    { number: "2+", label: "Years Experience", icon: <Award className="h-6 w-6" /> },
-    { number: "99%", label: "Client Satisfaction", icon: <Heart className="h-6 w-6" /> }
   ];
 
   return (
@@ -48,53 +34,52 @@ const About = () => {
               About <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">LogiSaar</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              We are a passionate team of developers, designers, and digital strategists dedicated to 
-              transforming ideas into exceptional digital experiences that drive business growth.
+              A division of <span className="text-cyan-400 font-semibold">LTBCPS Solutions</span> — committed to delivering high-quality digital, educational, and lifestyle solutions.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Our Story */}
-      <section className="py-20 bg-slate-800/50">
+      {/* Company Overview */}
+      <section className="py-12 bg-slate-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Our <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">Story</span>
+                Who We <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">Are</span>
               </h2>
               <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
                 <p>
-                  Founded in 2024, LogiSaar began as a small team of passionate developers who believed 
-                  that great software could transform businesses. What started as a vision to bridge the 
-                  gap between innovative technology and practical business solutions has grown into a 
-                  trusted partner for companies worldwide.
+                  LTBCPS Solutions is a legally registered partnership firm operating under the Indian Partnership Act, 1932, established on 30th October 2025.
+                  Headquartered in Bhubaneswar, Odisha, we are dedicated to empowering individuals, startups, and enterprises through reliable and scalable services.
                 </p>
                 <p>
-                  Our journey has been marked by continuous learning, adaptation, and an unwavering 
-                  commitment to excellence. We've had the privilege of working with startups, SMEs, 
-                  and enterprise clients, helping them navigate the digital landscape and achieve 
-                  their business objectives.
-                </p>
-                <p>
-                  Today, we're proud to be recognized as a leading software development agency, 
-                  but we remain true to our core values: innovation, quality, and client success. 
-                  Every project we undertake is an opportunity to create something exceptional.
+                  We operate with a strong focus on technology innovation, skill development, and sustainable business practices.
+                  Our goal is to become a trusted multi-domain organization that drives growth and positive change across India.
                 </p>
               </div>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-r from-cyan-400/20 to-purple-600/20 rounded-2xl p-8 backdrop-blur-sm border border-slate-700">
-                <div className="grid grid-cols-2 gap-6">
-                  {achievements.map((achievement, index) => (
-                    <div key={index} className="text-center">
-                      <div className="inline-flex p-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white mb-3">
-                        {achievement.icon}
-                      </div>
-                      <div className="text-2xl font-bold text-white">{achievement.number}</div>
-                      <div className="text-slate-300 text-sm">{achievement.label}</div>
+              <div className="bg-gradient-to-r from-cyan-400/10 to-purple-600/10 rounded-2xl p-8 backdrop-blur-sm border border-slate-700">
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="p-2 bg-slate-800 rounded-lg border border-slate-700">
+                      <Target className="h-6 w-6 text-cyan-400" />
                     </div>
-                  ))}
+                    <div>
+                      <h3 className="text-white font-semibold text-lg">Our Mission</h3>
+                      <p className="text-slate-400">To deliver reliable digital services, accessible education, and quality wellness products while contributing to employment generation and technological growth.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="p-2 bg-slate-800 rounded-lg border border-slate-700">
+                      <Zap className="h-6 w-6 text-purple-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-semibold text-lg">Our Vision</h3>
+                      <p className="text-slate-400">To become a trusted multi-domain organization empowering individuals and businesses through innovation, knowledge, and sustainable development.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -102,48 +87,101 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Values */}
+      {/* Our Divisions */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Our <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">Values</span>
+              Our <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">Divisions</span>
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              These core principles guide everything we do and shape how we approach every project.
+              Specialized sectors driving innovation and growth.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {values.map((value, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {divisions.map((division, index) => (
               <div
                 key={index}
-                className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105"
+                className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 h-full"
               >
-                <div className={`inline-flex p-4 rounded-xl bg-gradient-to-r ${value.color} text-white mb-6 group-hover:scale-110 transition-transform`}>
-                  {value.icon}
+                <div className={`inline-flex p-4 rounded-xl bg-gradient-to-r ${division.color} text-white mb-6 group-hover:scale-110 transition-transform`}>
+                  {division.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-cyan-400 transition-colors">
-                  {value.title}
+                <h3 className="text-xl font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors">
+                  {division.link ? (
+                    <a href={division.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                      {division.title}
+                    </a>
+                  ) : (
+                    division.title
+                  )}
                 </h3>
-                <p className="text-slate-300 leading-relaxed">
-                  {value.description}
+                <p className="text-cyan-400 text-sm font-medium mb-4">{division.subtitle}</p>
+                <p className="text-slate-300 mb-6 leading-relaxed text-sm">
+                  {division.description}
                 </p>
+                <ul className="space-y-2">
+                  {division.features.map((feature, i) => (
+                    <li key={i} className="flex items-center text-slate-400 text-sm">
+                      <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mr-2"></div>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Our Team */}
+      {/* Ethics & Commitment */}
       <section className="py-20 bg-slate-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
+                <ShieldCheck className="mr-3 text-cyan-400" /> Business Ethics & Compliance
+              </h3>
+              <ul className="space-y-4">
+                {[
+                  "We follow transparent and ethical business practices",
+                  "All transactions are conducted securely and responsibly",
+                  "Customer data privacy and payment security are strictly maintained",
+                  "Services are delivered as described on our official platforms"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start text-slate-300">
+                    <CheckCircle className="h-5 w-5 text-green-400 mr-3 mt-1 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
+                <Heart className="mr-3 text-purple-400" /> Commitment to Customers
+              </h3>
+              <p className="text-slate-300 leading-relaxed mb-6">
+                We aim to deliver high-quality services with transparency, timely support, and long-term value. Customer satisfaction and trust remain our highest priorities.
+              </p>
+              <div className="bg-slate-900/50 rounded-xl p-6 border border-slate-700">
+                <h4 className="text-white font-semibold mb-2">Business Type</h4>
+                <p className="text-slate-400 text-sm">Partnership Firm (Registered under the Indian Partnership Act, 1932)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Team */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Meet Our <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">Team</span>
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              The talented individuals who bring your digital visions to life.
+              The talented individuals who bring our vision to life.
             </p>
           </div>
 
@@ -161,19 +199,19 @@ const About = () => {
                   />
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                
+
                 <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors">
                   {member.name}
                 </h3>
-                
+
                 <p className="text-cyan-400 font-medium mb-4">
                   {member.position}
                 </p>
-                
+
                 <p className="text-slate-300 mb-6 leading-relaxed">
                   {member.bio}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2 justify-center mb-6">
                   {member.skills.map((skill, skillIndex) => (
                     <span
@@ -184,7 +222,7 @@ const About = () => {
                     </span>
                   ))}
                 </div>
-                
+
                 <div className="flex justify-center space-x-4">
                   {member.linkedin && (
                     <a
@@ -223,17 +261,34 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission Statement */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center bg-gradient-to-r from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl p-12 border border-slate-700">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-              Our <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">Mission</span>
-            </h2>
-            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-4xl mx-auto">
-              To empower businesses with innovative digital solutions that drive growth, 
-              enhance user experiences, and create lasting value in an ever-evolving digital landscape.
-            </p>
+      {/* Corporate Info Footer Section */}
+      <section className="py-12 border-t border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h4 className="text-white font-bold mb-4 flex items-center justify-center md:justify-start">
+                <MapPin className="mr-2 text-cyan-400" /> Registered Office
+              </h4>
+              <p className="text-slate-400 leading-relaxed">
+                Plot No-7491493, Bisudhananda Nagara, Sampur,<br />
+                Khandagiri, PO Ghatikia,<br />
+                PS Bharatpur, Bhubaneswar – 751003, Odisha, India
+              </p>
+            </div>
+            <div>
+              <h4 className="text-white font-bold mb-4 flex items-center justify-center md:justify-start">
+                <Phone className="mr-2 text-purple-400" /> Customer Support
+              </h4>
+              <p className="text-slate-400 leading-relaxed">
+                For any service-related queries, support, or concerns, please reach us through our official communication channels provided on our website.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-white font-bold mb-4">About LTBCPS Solutions</h4>
+              <p className="text-slate-500 text-sm">
+                LTBCPS Solutions is a committed partnership firm delivering high-quality digital, educational, and lifestyle solutions.
+              </p>
+            </div>
           </div>
         </div>
       </section>
