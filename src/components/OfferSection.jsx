@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { services } from '../data/mockData';
 
 const OfferSection = () => {
@@ -28,11 +29,16 @@ const OfferSection = () => {
               <div className="text-sm text-slate-400">
                 Delivery Time: {service.deliveryTime}
               </div>
+              <div className="mt-6">
+                <Link to="/checkout" className="inline-block w-full py-2 px-4 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-semibold rounded-lg text-center hover:from-emerald-600 hover:to-cyan-600 transition-all shadow-lg hover:shadow-emerald-500/25">
+                  Buy Now
+                </Link>
+              </div>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 
