@@ -31,7 +31,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              About <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">LogiSaar</span>
+              About <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">LTBCPS Solutions</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
               A division of <span className="text-cyan-400 font-semibold">LTBCPS Solutions</span> — committed to delivering high-quality digital, educational, and lifestyle solutions.
