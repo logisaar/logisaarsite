@@ -399,6 +399,23 @@ export const team = [
 
 export const services = [
   {
+    id: 0,
+    title: "Professional Consultation",
+    description: "Get expert guidance on your project with a one-on-one consultation session to discuss requirements, technology stack, and implementation strategy",
+    icon: "💬",
+    features: [
+      "30-Minute Consultation Call",
+      "Project Scope Analysis",
+      "Technology Recommendations",
+      "Cost Estimation",
+      "Timeline Planning",
+      "Expert Q&A Session"
+    ],
+    technologies: ["Strategy", "Planning", "Architecture", "Best Practices"],
+    startingPrice: "₹499",
+    deliveryTime: "30 minutes"
+  },
+  {
     id: 1,
     title: "Website Development",
     description: "Custom websites built with modern technologies for optimal performance and user experience",
@@ -412,7 +429,7 @@ export const services = [
       "E-commerce Integration"
     ],
     technologies: ["React", "Vue.js", "Angular", "Node.js", "Python", "PHP"],
-    startingPrice: "₹10K – ₹50K+",
+    startingPrice: "₹25,000",
     deliveryTime: "4-8 weeks"
   },
   {
@@ -429,7 +446,7 @@ export const services = [
       "Analytics Integration"
     ],
     technologies: ["React Native", "Flutter", "Swift", "Kotlin", "Firebase"],
-    startingPrice: "₹20K – ₹5L+",
+    startingPrice: "₹75,000",
     deliveryTime: "8-12 weeks"
   },
   {
@@ -446,7 +463,7 @@ export const services = [
       "Design Systems"
     ],
     technologies: ["Figma", "Adobe XD", "Sketch", "InVision", "Principle"],
-    startingPrice: "₹10K – ₹1L",
+    startingPrice: "₹15,000",
     deliveryTime: "2-4 weeks"
   },
   {
@@ -463,7 +480,7 @@ export const services = [
       "Multi-vendor Support"
     ],
     technologies: ["Shopify", "WooCommerce", "Magento", "Stripe", "PayPal"],
-    startingPrice: "₹25K – ₹3.5L+",
+    startingPrice: "₹50,000",
     deliveryTime: "6-10 weeks"
   },
   {
@@ -480,7 +497,7 @@ export const services = [
       "24/7 Support"
     ],
     technologies: ["Google Analytics", "SEMrush", "Ahrefs", "WordPress", "Monitoring Tools"],
-    startingPrice: "₹9K – ₹50K+ (monthly)",
+    startingPrice: "₹12,000/month",
     deliveryTime: "Ongoing"
   }
   ,
@@ -498,8 +515,59 @@ export const services = [
       "Custom Domain & Hosting Setup"
     ],
     technologies: ["React", "Next.js", "Three.js", "Tailwind CSS", "GSAP", "Framer Motion"],
-    startingPrice: "₹1799 – ₹5K+",
+    startingPrice: "₹2,999",
     deliveryTime: "2-4 weeks"
+  },
+  {
+    id: 7,
+    title: "AI & Automation Solutions",
+    description: "Intelligent automation systems to streamline workflows and enhance business efficiency with cutting-edge AI.",
+    icon: "🤖",
+    features: [
+      "Process Automation",
+      "Chatbot Integration",
+      "Predictive Analytics",
+      "NLP Solutions",
+      "Computer Vision",
+      "Workflow Optimization"
+    ],
+    technologies: ["OpenAI API", "Python", "TensorFlow", "PyTorch", "UiPath", "Zapier"],
+    startingPrice: "₹1,50,000",
+    deliveryTime: "6-12 weeks"
+  },
+  {
+    id: 8,
+    title: "Agentic AI Development",
+    description: "Autonomous AI agents designed to perform complex tasks, make decisions, and interact intelligently.",
+    icon: "🧠",
+    features: [
+      "Autonomous Decision Making",
+      "Multi-Agent Systems",
+      "Task Execution",
+      "Knowledge Retrieval",
+      "Adaptive Learning",
+      "Custom AI Models"
+    ],
+    technologies: ["LangChain", "AutoGPT", "Vector Databases", "LlamaIndex", "Deep Learning"],
+    startingPrice: "₹3,00,000",
+    deliveryTime: "8-16 weeks"
+  },
+  {
+    id: 9,
+    title: "Custom CRM Software",
+    description: "Tailored Customer Relationship Management software to boost sales, marketing, and customer support.",
+    icon: "👥",
+    features: [
+      "Lead Management",
+      "Sales Pipeline Tracking",
+      "Customer Support Portal",
+      "Email Marketing Integration",
+      "Reporting & Analytics",
+      "Mobile App Access"
+    ],
+    technologies: ["React", "Node.js", "PostgreSQL", "AWS", "Docker", "Redis"],
+    startingPrice: "₹80K – ₹8L+",
+    deliveryTime: "10-14 weeks"
   }
 
 ];
