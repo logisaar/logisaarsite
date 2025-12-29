@@ -18,6 +18,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import RefundPolicy from './pages/RefundPolicy';
 import Checkout from './pages/Checkout';
+import Payment from './pages/Payment';
 
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -44,6 +45,7 @@ function App() {
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/refund-policy" element={<RefundPolicy />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/payment" element={<Payment />} />
         </Routes>
         <Toaster />
         <Footer />

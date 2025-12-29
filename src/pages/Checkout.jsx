@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { CreditCard, ShoppingCart, Lock, ShieldCheck, Banknote, Smartphone, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 export default function Checkout() {
+    const location = useLocation();
+    const { service } = location.state || {};
+
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -15,13 +18,36 @@ export default function Checkout() {
 
     const [paymentMethod, setPaymentMethod] = useState('card');
 
+    // Parse price from string (e.g., "₹999") or use default
+    // Removing non-numeric characters except dot to get raw number
+    const rawPrice = service?.startingPrice ? service.startingPrice.replace(/[^0-9.]/g, '') : "499.00";
+    const serviceName = service?.title || "Professional Consultation";
+    const displayPrice = service?.startingPrice || "₹499.00";
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    const navigate = useNavigate();
+
     const handlePayment = (e) => {
         e.preventDefault();
-        alert("This is a demo checkout. No actual payment will be processed.");
+        // Basic validation
+        if (!formData.firstName || !formData.email || !formData.phone) {
+            alert("Please fill in all required fields (Name, Email, Phone).");
+            return;
+        }
+
+        // In a real app, you would integrate Paytm JS Checkout here.
+        // For this demo/verification, we redirect to the payment success/status page.
+        navigate('/payment', {
+            state: {
+                orderDetails: {
+                    amount: rawPrice,
+                    id: "ORD-" + Date.now()
+                }
+            }
+        });
     };
 
     return (
@@ -103,8 +129,8 @@ export default function Checkout() {
                                 <button
                                     onClick={() => setPaymentMethod('card')}
                                     className={`p-4 rounded-xl border flex flex-col items-center justify-center transition-all ${paymentMethod === 'card'
-                                            ? 'border-emerald-500 bg-emerald-500/10 text-emerald-400'
-                                            : 'border-slate-700 bg-slate-800/30 text-slate-400 hover:border-emerald-500/50 hover:text-emerald-300'
+                                        ? 'border-emerald-500 bg-emerald-500/10 text-emerald-400'
+                                        : 'border-slate-700 bg-slate-800/30 text-slate-400 hover:border-emerald-500/50 hover:text-emerald-300'
                                         }`}
                                 >
                                     <CreditCard className="w-6 h-6 mb-2" />
@@ -113,8 +139,8 @@ export default function Checkout() {
                                 <button
                                     onClick={() => setPaymentMethod('upi')}
                                     className={`p-4 rounded-xl border flex flex-col items-center justify-center transition-all ${paymentMethod === 'upi'
-                                            ? 'border-emerald-500 bg-emerald-500/10 text-emerald-400'
-                                            : 'border-slate-700 bg-slate-800/30 text-slate-400 hover:border-emerald-500/50 hover:text-emerald-300'
+                                        ? 'border-emerald-500 bg-emerald-500/10 text-emerald-400'
+                                        : 'border-slate-700 bg-slate-800/30 text-slate-400 hover:border-emerald-500/50 hover:text-emerald-300'
                                         }`}
                                 >
                                     <Smartphone className="w-6 h-6 mb-2" />
@@ -123,8 +149,8 @@ export default function Checkout() {
                                 <button
                                     onClick={() => setPaymentMethod('netbanking')}
                                     className={`p-4 rounded-xl border flex flex-col items-center justify-center transition-all ${paymentMethod === 'netbanking'
-                                            ? 'border-emerald-500 bg-emerald-500/10 text-emerald-400'
-                                            : 'border-slate-700 bg-slate-800/30 text-slate-400 hover:border-emerald-500/50 hover:text-emerald-300'
+                                        ? 'border-emerald-500 bg-emerald-500/10 text-emerald-400'
+                                        : 'border-slate-700 bg-slate-800/30 text-slate-400 hover:border-emerald-500/50 hover:text-emerald-300'
                                         }`}
                                 >
                                     <Banknote className="w-6 h-6 mb-2" />
@@ -167,7 +193,7 @@ export default function Checkout() {
                             onClick={handlePayment}
                             className="w-full bg-gradient-to-r from-emerald-500 to-emerald-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-emerald-500/30 transition-all hover:scale-[1.02] active:scale-[0.98] border border-emerald-400/20"
                         >
-                            Pay ₹499.00
+                            Pay {displayPrice}
                         </button>
 
                         <p className="text-center text-xs text-slate-400 flex justify-center items-center">
@@ -187,10 +213,10 @@ export default function Checkout() {
                         <div className="space-y-4 mb-6">
                             <div className="flex justify-between items-start pb-4 border-b border-white/10">
                                 <div>
-                                    <h3 className="font-medium text-slate-200">Professional Consultation</h3>
-                                    <p className="text-sm text-slate-500">1 Hour Session (Online)</p>
+                                    <h3 className="font-medium text-slate-200">{serviceName}</h3>
+                                    <p className="text-sm text-slate-500">Service Request</p>
                                 </div>
-                                <span className="font-semibold text-emerald-400">₹499.00</span>
+                                <span className="font-semibold text-emerald-400">{displayPrice}</span>
                             </div>
                             <div className="flex justify-between items-start pb-4 border-b border-white/10">
                                 <div>
@@ -203,7 +229,7 @@ export default function Checkout() {
 
                         <div className="flex justify-between items-center mb-8 pt-2">
                             <span className="text-lg font-bold text-slate-200">Total</span>
-                            <span className="text-2xl font-bold text-emerald-400">₹499.00</span>
+                            <span className="text-2xl font-bold text-emerald-400">{displayPrice}</span>
                         </div>
 
                         <div className="bg-slate-800/50 p-4 rounded-xl border border-white/10">

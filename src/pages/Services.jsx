@@ -12,7 +12,7 @@ const Services = () => {
       color: "from-cyan-400 to-blue-500"
     },
     {
-      step: "02", 
+      step: "02",
       title: "Design & Architecture",
       description: "Our team creates wireframes, mockups, and technical architecture that align with your vision.",
       color: "from-purple-400 to-pink-500"
@@ -42,7 +42,7 @@ const Services = () => {
               Our <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">Services</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Comprehensive digital solutions tailored to your business needs. From concept to deployment, 
+              Comprehensive digital solutions tailored to your business needs. From concept to deployment,
               we deliver excellence at every stage of your digital journey.
             </p>
           </div>
@@ -66,15 +66,15 @@ const Services = () => {
                     {/* <div className="text-slate-400 text-sm">Starting from</div> */}
                   </div>
                 </div>
-                
+
                 <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
                   {service.title}
                 </h3>
-                
+
                 <p className="text-slate-300 mb-6 leading-relaxed">
                   {service.description}
                 </p>
-                
+
                 <div className="space-y-3 mb-6">
                   {service.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center space-x-3">
@@ -83,7 +83,7 @@ const Services = () => {
                     </div>
                   ))}
                 </div>
-                
+
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center space-x-2">
                     <Clock className="h-5 w-5 text-slate-400" />
@@ -95,7 +95,7 @@ const Services = () => {
                     ))}
                   </div>
                 </div>
-                
+
                 <div className="flex flex-wrap gap-2 mb-6">
                   {service.technologies.map((tech, techIndex) => (
                     <span
@@ -106,9 +106,10 @@ const Services = () => {
                     </span>
                   ))}
                 </div>
-                
+
                 <Link
-                  to="/contact"
+                  to="/checkout"
+                  state={{ service: service }}
                   className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-6 py-3 rounded-full font-medium hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 hover:scale-105"
                 >
                   <span>Get Started</span>
@@ -141,15 +142,15 @@ const Services = () => {
                 <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r ${step.color} text-white font-bold text-xl mb-6 group-hover:scale-110 transition-transform`}>
                   {step.step}
                 </div>
-                
+
                 <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-cyan-400 transition-colors">
                   {step.title}
                 </h3>
-                
+
                 <p className="text-slate-300 leading-relaxed">
                   {step.description}
                 </p>
-                
+
                 {index < processSteps.length - 1 && (
                   <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-cyan-400/50 to-purple-600/50 transform -translate-x-8"></div>
                 )}
