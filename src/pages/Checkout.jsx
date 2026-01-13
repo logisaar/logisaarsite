@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CreditCard, ShoppingCart, Lock, ShieldCheck, Banknote, Smartphone, ArrowRight } from 'lucide-react';
+import { CreditCard, ShoppingCart, Lock, ShieldCheck, Banknote, Smartphone, ArrowRight, AlertCircle } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 export default function Checkout() {
@@ -18,11 +18,15 @@ export default function Checkout() {
 
     const [paymentMethod, setPaymentMethod] = useState('card');
 
-    // Parse price from string (e.g., "₹999") or use default
-    // Removing non-numeric characters except dot to get raw number
-    const rawPrice = service?.startingPrice ? service.startingPrice.replace(/[^0-9.]/g, '') : "499.00";
-    const serviceName = service?.title || "Professional Consultation";
-    const displayPrice = service?.startingPrice || "₹499.00";
+    // Fixed Consultation Fee
+    const consultationFee = "499.00";
+    const displayConsultationFee = "₹499.00";
+
+    const serviceName = service?.title || "Service Request";
+    const serviceEstimatedPrice = service?.startingPrice || "N/A";
+
+    const rawPrice = consultationFee; // Amount to be paid now
+    const displayPrice = displayConsultationFee; // Amount to display as Total
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -214,22 +218,29 @@ export default function Checkout() {
                             <div className="flex justify-between items-start pb-4 border-b border-white/10">
                                 <div>
                                     <h3 className="font-medium text-slate-200">{serviceName}</h3>
-                                    <p className="text-sm text-slate-500">Service Request</p>
+                                    <p className="text-sm text-slate-500">Selected Service</p>
                                 </div>
-                                <span className="font-semibold text-emerald-400">{displayPrice}</span>
+                                <span className="font-semibold text-slate-400">{serviceEstimatedPrice}*</span>
                             </div>
                             <div className="flex justify-between items-start pb-4 border-b border-white/10">
                                 <div>
-                                    <h3 className="font-medium text-slate-200">Service Fee</h3>
-                                    <p className="text-sm text-slate-500">Processing & Taxes</p>
+                                    <h3 className="font-medium text-slate-200">Consultation Fee</h3>
+                                    <p className="text-sm text-emerald-400">Due Now</p>
                                 </div>
-                                <span className="font-semibold text-emerald-400">₹0.00</span>
+                                <span className="font-semibold text-emerald-400">{displayConsultationFee}</span>
                             </div>
                         </div>
 
+                        <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-4 mb-6 flex items-start space-x-3">
+                            <AlertCircle className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" />
+                            <p className="text-sm text-yellow-200/90 leading-relaxed">
+                                <span className="font-semibold text-yellow-400">Note:</span> The service price shown is an estimate. <span className="text-white font-medium">You are paying the Consultation Fee first</span> to proceed.
+                            </p>
+                        </div>
+
                         <div className="flex justify-between items-center mb-8 pt-2">
-                            <span className="text-lg font-bold text-slate-200">Total</span>
-                            <span className="text-2xl font-bold text-emerald-400">{displayPrice}</span>
+                            <span className="text-lg font-bold text-slate-200">Total Due</span>
+                            <span className="text-2xl font-bold text-emerald-400">{displayConsultationFee}</span>
                         </div>
 
                         <div className="bg-slate-800/50 p-4 rounded-xl border border-white/10">

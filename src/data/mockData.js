@@ -398,23 +398,7 @@ export const team = [
 ];
 
 export const services = [
-  {
-    id: 0,
-    title: "Professional Consultation",
-    description: "Get expert guidance on your project with a one-on-one consultation session to discuss requirements, technology stack, and implementation strategy",
-    icon: "💬",
-    features: [
-      "30-Minute Consultation Call",
-      "Project Scope Analysis",
-      "Technology Recommendations",
-      "Cost Estimation",
-      "Timeline Planning",
-      "Expert Q&A Session"
-    ],
-    technologies: ["Strategy", "Planning", "Architecture", "Best Practices"],
-    startingPrice: "₹499",
-    deliveryTime: "30 minutes"
-  },
+
   {
     id: 1,
     title: "Website Development",

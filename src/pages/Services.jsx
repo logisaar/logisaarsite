@@ -62,8 +62,7 @@ const Services = () => {
                   <div className="text-4xl">{service.icon}</div>
                   <div className="text-right">
                     <div className="text-2xl font-bold text-cyan-400">{service.startingPrice}</div>
-                    {/* Removed "Starting from" text as per user request */}
-                    {/* <div className="text-slate-400 text-sm">Starting from</div> */}
+                    <div className="text-emerald-400 text-xs font-semibold mt-1">Consultation Fee: ₹499</div>
                   </div>
                 </div>
 
