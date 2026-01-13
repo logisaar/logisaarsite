@@ -60,10 +60,6 @@ const Services = () => {
               >
                 <div className="flex items-start justify-between mb-6">
                   <div className="text-4xl">{service.icon}</div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-cyan-400">{service.startingPrice}</div>
-                    <div className="text-emerald-400 text-xs font-semibold mt-1">Consultation Fee: ₹499</div>
-                  </div>
                 </div>
 
                 <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
@@ -104,6 +100,21 @@ const Services = () => {
                       {tech}
                     </span>
                   ))}
+                </div>
+
+                <div className="mb-6 pt-4 border-t border-slate-700/50">
+                  <div className="flex items-baseline space-x-2 mb-1">
+                    <span className="text-lg text-slate-500 font-medium">Est. Price:</span>
+                    <span className="text-xl text-slate-400 font-semibold">{service.startingPrice}</span>
+                  </div>
+                  <div className="text-emerald-400 text-sm font-bold mb-3">Consultation Fee: ₹499</div>
+
+                  <div className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 rounded-lg p-3">
+                    <p className="text-yellow-400 text-xs font-medium flex items-start">
+                      <span className="mr-1 mt-0.5">*</span>
+                      Final price of the project will be decided after consultation.
+                    </p>
+                  </div>
                 </div>
 
                 <Link
