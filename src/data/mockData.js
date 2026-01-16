@@ -516,8 +516,7 @@ export const services = [
       "Workflow Optimization"
     ],
     technologies: ["OpenAI API", "Python", "TensorFlow", "PyTorch", "UiPath", "Zapier"],
-    startingPrice: "₹80,000",
-    averagePrice: "₹1,20,000",
+    startingPrice: "₹85,000",
     deliveryTime: "6-12 weeks"
   },
   {
@@ -534,8 +533,7 @@ export const services = [
       "Custom AI Models"
     ],
     technologies: ["LangChain", "AutoGPT", "Vector Databases", "LlamaIndex", "Deep Learning"],
-    startingPrice: "₹1,50,000",
-    averagePrice: "₹2,50,000",
+    startingPrice: "₹1,00,000",
     deliveryTime: "8-16 weeks"
   },
   {
@@ -552,8 +550,7 @@ export const services = [
       "Mobile App Access"
     ],
     technologies: ["React", "Node.js", "PostgreSQL", "AWS", "Docker", "Redis"],
-    startingPrice: "₹50,000",
-    averagePrice: "₹1,50,000",
+    startingPrice: "₹75,000",
     deliveryTime: "10-14 weeks"
   }
 
