@@ -107,6 +107,12 @@ const Services = () => {
                     <span className="text-lg text-slate-500 font-medium">Est. Price:</span>
                     <span className="text-xl text-slate-400 font-semibold">{service.startingPrice}</span>
                   </div>
+                  {service.averagePrice && (
+                    <div className="flex items-baseline space-x-2 mb-1">
+                      <span className="text-lg text-slate-500 font-medium">Avg. Price:</span>
+                      <span className="text-xl text-slate-300 font-semibold">{service.averagePrice}</span>
+                    </div>
+                  )}
                   <div className="text-emerald-400 text-sm font-bold mb-3">Consultation Fee: ₹499</div>
 
                   <div className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 rounded-lg p-3">
