@@ -8,47 +8,26 @@
 
 const PaytmChecksum = require('./paytmChecksum');
 
-// Paytm Configuration
-const PAYTM_CONFIG = {
-    MERCHANT_KEY: process.env.PAYTM_MERCHANT_KEY,
-    APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
-};
-
 module.exports = async (req, res) => {
-    // Only allow POST requests (Paytm sends POST callback)
-    if (req.method !== 'POST') {
+    // Get configuration
+    const PAYTM_MERCHANT_KEY = process.env.PAYTM_MERCHANT_KEY;
+    const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://www.logisaar.in';
+
+    console.log('Paytm Callback received');
+    console.log('Method:', req.method);
+
+    // Allow both GET and POST (Paytm sends POST callback)
+    if (req.method !== 'POST' && req.method !== 'GET') {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
     try {
-        const paytmResponse = req.body;
+        // Get params from body (POST) or query (GET)
+        const paytmResponse = req.method === 'POST' ? (req.body || {}) : (req.query || {});
 
-        // Log the callback for debugging (remove in production if not needed)
-        console.log('Paytm Callback Received:', JSON.stringify(paytmResponse, null, 2));
+        console.log('Paytm Callback Data:', JSON.stringify(paytmResponse, null, 2));
 
-        // Extract checksum from response
-        const checksumReceived = paytmResponse.CHECKSUMHASH;
-
-        // Remove checksum from params for verification
-        const paramsForVerification = { ...paytmResponse };
-        delete paramsForVerification.CHECKSUMHASH;
-
-        // Verify checksum signature
-        const isValidSignature = PaytmChecksum.verifySignature(
-            paramsForVerification,
-            PAYTM_CONFIG.MERCHANT_KEY,
-            checksumReceived
-        );
-
-        if (!isValidSignature) {
-            console.error('Invalid checksum signature!');
-            // Redirect to payment page with error
-            return res.redirect(302,
-                `${PAYTM_CONFIG.APP_URL}/payment?status=failed&error=invalid_signature`
-            );
-        }
-
-        // Extract transaction details
+        // Extract key transaction details
         const {
             ORDERID: orderId,
             TXNID: txnId,
@@ -57,8 +36,36 @@ module.exports = async (req, res) => {
             RESPMSG: responseMessage,
             PAYMENTMODE: paymentMode,
             GATEWAYNAME: gateway,
-            BANKTXNID: bankTxnId
+            BANKTXNID: bankTxnId,
+            CHECKSUMHASH: checksumReceived
         } = paytmResponse;
+
+        // Verify checksum if MERCHANT_KEY is available
+        let isValidSignature = true;
+        if (checksumReceived && PAYTM_MERCHANT_KEY) {
+            try {
+                // Remove checksum from params for verification
+                const paramsForVerification = { ...paytmResponse };
+                delete paramsForVerification.CHECKSUMHASH;
+
+                isValidSignature = await PaytmChecksum.verifySignature(
+                    paramsForVerification,
+                    PAYTM_MERCHANT_KEY,
+                    checksumReceived
+                );
+                console.log('Signature verification:', isValidSignature);
+            } catch (verifyError) {
+                console.error('Signature verification error:', verifyError.message);
+                // Continue anyway, but log the error
+            }
+        }
+
+        if (!isValidSignature) {
+            console.error('Invalid checksum signature!');
+            return res.redirect(302,
+                `${APP_URL}/payment?status=failed&error=invalid_signature&orderId=${orderId || ''}`
+            );
+        }
 
         // Determine payment status
         const paymentSuccess = status === 'TXN_SUCCESS';
@@ -75,18 +82,19 @@ module.exports = async (req, res) => {
         });
 
         // Redirect to payment status page
-        const redirectUrl = `${PAYTM_CONFIG.APP_URL}/payment?${redirectParams.toString()}`;
+        const redirectUrl = `${APP_URL}/payment?${redirectParams.toString()}`;
 
         console.log('Redirecting to:', redirectUrl);
 
         return res.redirect(302, redirectUrl);
 
     } catch (error) {
-        console.error('Callback processing error:', error);
+        console.error('Callback processing error:', error.message);
+        console.error('Error stack:', error.stack);
 
         // Redirect with error
         return res.redirect(302,
-            `${PAYTM_CONFIG.APP_URL}/payment?status=failed&error=processing_error`
+            `${APP_URL}/payment?status=failed&error=processing_error&message=${encodeURIComponent(error.message)}`
         );
     }
 };

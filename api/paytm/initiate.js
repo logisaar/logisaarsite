@@ -9,93 +9,111 @@
 const https = require('https');
 const PaytmChecksum = require('./paytmChecksum');
 
-// Paytm Configuration from Environment Variables
-const PAYTM_CONFIG = {
-    MID: process.env.PAYTM_MID,
-    MERCHANT_KEY: process.env.PAYTM_MERCHANT_KEY,
-    WEBSITE: process.env.PAYTM_WEBSITE || 'DEFAULT',
-    INDUSTRY_TYPE: process.env.PAYTM_INDUSTRY_TYPE || 'Retail',
-    // Production: securegw.paytm.in | Sandbox: securegw-stage.paytm.in
-    HOST: process.env.PAYTM_HOST || 'securegw.paytm.in',
-    CALLBACK_URL: process.env.NEXT_PUBLIC_APP_URL
-        ? `${process.env.NEXT_PUBLIC_APP_URL}/api/paytm/callback`
-        : 'http://localhost:3000/api/paytm/callback'
-};
-
 module.exports = async (req, res) => {
+    // CORS headers - set these first
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+    res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+
+    // Handle preflight
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
+    }
+
     // Only allow POST requests
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
-    // CORS headers
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
-    if (req.method === 'OPTIONS') {
-        return res.status(200).end();
-    }
+    // Get configuration from environment variables
+    const PAYTM_MID = process.env.PAYTM_MID;
+    const PAYTM_MERCHANT_KEY = process.env.PAYTM_MERCHANT_KEY;
+    const PAYTM_WEBSITE = process.env.PAYTM_WEBSITE || 'DEFAULT';
+    const PAYTM_HOST = process.env.PAYTM_HOST || 'securegw.paytm.in';
+    const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://www.logisaar.in';
+    const CALLBACK_URL = `${APP_URL}/api/paytm/callback`;
 
     try {
-        const { amount, customerId, email, phone, firstName, lastName } = req.body;
+        // Log for debugging (will appear in Vercel Function Logs)
+        console.log('Paytm Initiate - Starting...');
+        console.log('MID configured:', !!PAYTM_MID);
+        console.log('Key configured:', !!PAYTM_MERCHANT_KEY);
+        console.log('Callback URL:', CALLBACK_URL);
+
+        const { amount, customerId, email, phone, firstName, lastName } = req.body || {};
 
         // Validate required fields
         if (!amount || !email || !phone) {
+            console.log('Missing fields:', { amount, email, phone });
             return res.status(400).json({
                 error: 'Missing required fields: amount, email, phone'
             });
         }
 
         // Validate environment configuration
-        if (!PAYTM_CONFIG.MID || !PAYTM_CONFIG.MERCHANT_KEY) {
+        if (!PAYTM_MID || !PAYTM_MERCHANT_KEY) {
             console.error('Paytm credentials not configured');
+            console.log('MID:', PAYTM_MID);
+            console.log('KEY length:', PAYTM_MERCHANT_KEY ? PAYTM_MERCHANT_KEY.length : 0);
             return res.status(500).json({
                 error: 'Payment gateway not configured properly'
             });
         }
 
         // Generate unique order ID
-        const orderId = `ORD_${Date.now()}_${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
+        const orderId = `ORD${Date.now()}${Math.random().toString(36).substr(2, 6).toUpperCase()}`;
 
         // Customer ID (use email hash if not provided)
-        const custId = customerId || `CUST_${Buffer.from(email).toString('base64').substr(0, 20)}`;
+        const custId = customerId || `CUST${Date.now()}`;
 
-        // Paytm transaction parameters
-        const paytmParams = {
-            body: {
-                requestType: 'Payment',
-                mid: PAYTM_CONFIG.MID,
-                websiteName: PAYTM_CONFIG.WEBSITE,
-                orderId: orderId,
-                callbackUrl: PAYTM_CONFIG.CALLBACK_URL,
-                txnAmount: {
-                    value: parseFloat(amount).toFixed(2),
-                    currency: 'INR'
-                },
-                userInfo: {
-                    custId: custId,
-                    email: email,
-                    mobile: phone,
-                    firstName: firstName || '',
-                    lastName: lastName || ''
-                }
+        console.log('Order ID:', orderId);
+        console.log('Customer ID:', custId);
+
+        // Paytm transaction parameters (body only for checksum)
+        const paytmBody = {
+            requestType: 'Payment',
+            mid: PAYTM_MID,
+            websiteName: PAYTM_WEBSITE,
+            orderId: orderId,
+            callbackUrl: CALLBACK_URL,
+            txnAmount: {
+                value: parseFloat(amount).toFixed(2),
+                currency: 'INR'
+            },
+            userInfo: {
+                custId: custId,
+                email: email,
+                mobile: phone.replace(/\D/g, ''),
+                firstName: firstName || '',
+                lastName: lastName || ''
             }
         };
 
+        console.log('Generating checksum...');
+
         // Generate checksum for the body
         const checksum = await PaytmChecksum.generateSignature(
-            JSON.stringify(paytmParams.body),
-            PAYTM_CONFIG.MERCHANT_KEY
+            JSON.stringify(paytmBody),
+            PAYTM_MERCHANT_KEY
         );
 
-        paytmParams.head = {
-            signature: checksum
+        console.log('Checksum generated successfully');
+
+        // Full params with head and body
+        const paytmParams = {
+            body: paytmBody,
+            head: {
+                signature: checksum
+            }
         };
 
+        console.log('Calling Paytm API...');
+
         // Call Paytm API to get transaction token
-        const txnToken = await initiateTransaction(paytmParams, orderId);
+        const txnToken = await initiateTransaction(paytmParams, orderId, PAYTM_MID, PAYTM_HOST);
+
+        console.log('Transaction token received');
 
         // Return token and order details to frontend
         return res.status(200).json({
@@ -103,12 +121,13 @@ module.exports = async (req, res) => {
             orderId: orderId,
             txnToken: txnToken,
             amount: parseFloat(amount).toFixed(2),
-            mid: PAYTM_CONFIG.MID,
-            callbackUrl: PAYTM_CONFIG.CALLBACK_URL
+            mid: PAYTM_MID,
+            callbackUrl: CALLBACK_URL
         });
 
     } catch (error) {
-        console.error('Payment initiation error:', error);
+        console.error('Payment initiation error:', error.message);
+        console.error('Error stack:', error.stack);
         return res.status(500).json({
             error: 'Failed to initiate payment',
             message: error.message
@@ -119,14 +138,17 @@ module.exports = async (req, res) => {
 /**
  * Call Paytm API to initiate transaction and get token
  */
-function initiateTransaction(paytmParams, orderId) {
+function initiateTransaction(paytmParams, orderId, mid, host) {
     return new Promise((resolve, reject) => {
         const postData = JSON.stringify(paytmParams);
 
+        console.log('Paytm API Host:', host);
+        console.log('Request path:', `/theia/api/v1/initiateTransaction?mid=${mid}&orderId=${orderId}`);
+
         const options = {
-            hostname: PAYTM_CONFIG.HOST,
+            hostname: host,
             port: 443,
-            path: `/theia/api/v1/initiateTransaction?mid=${PAYTM_CONFIG.MID}&orderId=${orderId}`,
+            path: `/theia/api/v1/initiateTransaction?mid=${mid}&orderId=${orderId}`,
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -142,25 +164,29 @@ function initiateTransaction(paytmParams, orderId) {
             });
 
             response.on('end', () => {
+                console.log('Paytm API Response:', data);
+
                 try {
                     const result = JSON.parse(data);
 
                     if (result.body && result.body.txnToken) {
                         resolve(result.body.txnToken);
                     } else if (result.body && result.body.resultInfo) {
-                        reject(new Error(
-                            result.body.resultInfo.resultMsg || 'Transaction initiation failed'
-                        ));
+                        const errMsg = result.body.resultInfo.resultMsg || 'Transaction initiation failed';
+                        console.error('Paytm Error:', result.body.resultInfo);
+                        reject(new Error(errMsg));
                     } else {
-                        reject(new Error('Invalid response from Paytm'));
+                        reject(new Error('Invalid response from Paytm: ' + data));
                     }
                 } catch (parseError) {
-                    reject(new Error('Failed to parse Paytm response'));
+                    console.error('Parse error:', parseError);
+                    reject(new Error('Failed to parse Paytm response: ' + data));
                 }
             });
         });
 
         request.on('error', (error) => {
+            console.error('Request error:', error);
             reject(error);
         });
 

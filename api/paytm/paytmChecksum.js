@@ -22,41 +22,6 @@ function decrypt(encrypted, key) {
     return decrypted;
 }
 
-function generateSignature(params, key) {
-    if (typeof params !== 'object' && typeof params !== 'string') {
-        throw new Error('params must be of type object or string');
-    }
-    
-    const data = typeof params === 'object' 
-        ? getStringByParams(params) 
-        : params;
-    
-    return generateSignatureByString(data, key);
-}
-
-function verifySignature(params, key, checksum) {
-    if (typeof params !== 'object' && typeof params !== 'string') {
-        throw new Error('params must be of type object or string');
-    }
-    
-    const data = typeof params === 'object' 
-        ? getStringByParams(params) 
-        : params;
-    
-    return verifySignatureByString(data, key, checksum);
-}
-
-function generateSignatureByString(params, key) {
-    const salt = generateRandomString(4);
-    return calculateChecksum(params, key, salt);
-}
-
-function verifySignatureByString(params, key, checksum) {
-    const paytmHash = decrypt(checksum, key);
-    const salt = paytmHash.substr(paytmHash.length - 4);
-    return paytmHash === calculateHash(params, salt);
-}
-
 function generateRandomString(length) {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -69,17 +34,17 @@ function generateRandomString(length) {
 function getStringByParams(params) {
     const sortedKeys = Object.keys(params).sort();
     let result = '';
-    
+
     for (const key of sortedKeys) {
-        let value = params[key] !== null && params[key] !== undefined 
-            ? params[key].toString() 
+        let value = params[key] !== null && params[key] !== undefined
+            ? params[key].toString()
             : '';
         if (value.includes('REFUND')) {
             value = '';
         }
         result += (result.length > 0 ? '|' : '') + value;
     }
-    
+
     return result;
 }
 
@@ -93,9 +58,54 @@ function calculateChecksum(params, key, salt) {
     return encrypt(hash, key);
 }
 
+/**
+ * Generate signature - Returns a Promise for compatibility
+ */
+function generateSignature(params, key) {
+    return new Promise((resolve, reject) => {
+        try {
+            if (typeof params !== 'object' && typeof params !== 'string') {
+                throw new Error('params must be of type object or string');
+            }
+
+            const data = typeof params === 'object'
+                ? getStringByParams(params)
+                : params;
+
+            const salt = generateRandomString(4);
+            const checksum = calculateChecksum(data, key, salt);
+            resolve(checksum);
+        } catch (error) {
+            reject(error);
+        }
+    });
+}
+
+/**
+ * Verify signature - Returns a Promise for compatibility
+ */
+function verifySignature(params, key, checksum) {
+    return new Promise((resolve, reject) => {
+        try {
+            if (typeof params !== 'object' && typeof params !== 'string') {
+                throw new Error('params must be of type object or string');
+            }
+
+            const data = typeof params === 'object'
+                ? getStringByParams(params)
+                : params;
+
+            const paytmHash = decrypt(checksum, key);
+            const salt = paytmHash.substr(paytmHash.length - 4);
+            const isValid = paytmHash === calculateHash(data, salt);
+            resolve(isValid);
+        } catch (error) {
+            reject(error);
+        }
+    });
+}
+
 module.exports = {
     generateSignature,
-    verifySignature,
-    generateSignatureByString,
-    verifySignatureByString
+    verifySignature
 };
