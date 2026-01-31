@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { CreditCard, ShoppingCart, Lock, ShieldCheck, Banknote, Smartphone, ArrowRight, AlertCircle } from 'lucide-react';
+import { CreditCard, ShoppingCart, Lock, ShieldCheck, Loader2, AlertCircle } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 export default function Checkout() {
     const location = useLocation();
+    const navigate = useNavigate();
     const { service } = location.state || {};
 
     const [formData, setFormData] = useState({
@@ -16,7 +17,8 @@ export default function Checkout() {
         zip: '',
     });
 
-    const [paymentMethod, setPaymentMethod] = useState('card');
+    const [isProcessing, setIsProcessing] = useState(false);
+    const [error, setError] = useState('');
 
     // Fixed Consultation Fee
     const consultationFee = "499.00";
@@ -25,33 +27,105 @@ export default function Checkout() {
     const serviceName = service?.title || "Service Request";
     const serviceEstimatedPrice = service?.startingPrice || "N/A";
 
-    const rawPrice = consultationFee; // Amount to be paid now
-    const displayPrice = displayConsultationFee; // Amount to display as Total
+    const rawPrice = consultationFee;
+    const displayPrice = displayConsultationFee;
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
+        setError('');
     };
 
-    const navigate = useNavigate();
-
-    const handlePayment = (e) => {
+    const handlePayment = async (e) => {
         e.preventDefault();
+        setError('');
+
         // Basic validation
         if (!formData.firstName || !formData.email || !formData.phone) {
-            alert("Please fill in all required fields (Name, Email, Phone).");
+            setError("Please fill in all required fields (Name, Email, Phone).");
             return;
         }
 
-        // In a real app, you would integrate Paytm JS Checkout here.
-        // For this demo/verification, we redirect to the payment success/status page.
-        navigate('/payment', {
-            state: {
-                orderDetails: {
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.email)) {
+            setError("Please enter a valid email address.");
+            return;
+        }
+
+        // Phone validation (10 digits)
+        const phoneRegex = /^[6-9]\d{9}$/;
+        if (!phoneRegex.test(formData.phone.replace(/\D/g, ''))) {
+            setError("Please enter a valid 10-digit Indian mobile number.");
+            return;
+        }
+
+        setIsProcessing(true);
+
+        try {
+            // Call our serverless API to initiate payment
+            const response = await fetch('/api/paytm/initiate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
                     amount: rawPrice,
-                    id: "ORD-" + Date.now()
-                }
+                    email: formData.email,
+                    phone: formData.phone.replace(/\D/g, ''),
+                    firstName: formData.firstName,
+                    lastName: formData.lastName,
+                    address: formData.address,
+                    city: formData.city,
+                    zip: formData.zip,
+                    serviceName: serviceName
+                }),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || 'Failed to initiate payment');
             }
-        });
+
+            // Initialize Paytm checkout
+            if (window.Paytm && window.Paytm.CheckoutJS) {
+                const config = {
+                    root: "",
+                    flow: "DEFAULT",
+                    data: {
+                        orderId: data.orderId,
+                        token: data.txnToken,
+                        tokenType: "TXN_TOKEN",
+                        amount: data.amount
+                    },
+                    merchant: {
+                        mid: data.mid,
+                        redirect: true
+                    },
+                    handler: {
+                        notifyMerchant: function (eventName, data) {
+                            console.log("Paytm Event:", eventName, data);
+                        },
+                        transactionStatus: function (paymentStatus) {
+                            console.log("Payment Status:", paymentStatus);
+                        }
+                    }
+                };
+
+                // Initialize and invoke Paytm checkout
+                await window.Paytm.CheckoutJS.init(config);
+                window.Paytm.CheckoutJS.invoke();
+            } else {
+                // Fallback: Redirect to Paytm payment page
+                const paytmUrl = `https://securegw.paytm.in/theia/api/v1/showPaymentPage?mid=${data.mid}&orderId=${data.orderId}&txnToken=${data.txnToken}`;
+                window.location.href = paytmUrl;
+            }
+
+        } catch (err) {
+            console.error('Payment Error:', err);
+            setError(err.message || 'Payment initiation failed. Please try again.');
+            setIsProcessing(false);
+        }
     };
 
     return (
@@ -67,6 +141,14 @@ export default function Checkout() {
                     {/* Left Column: Billing Details & Payment */}
                     <div className="space-y-8">
 
+                        {/* Error Message */}
+                        {error && (
+                            <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 flex items-start space-x-3 animate-in fade-in duration-300">
+                                <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+                                <p className="text-sm text-red-200">{error}</p>
+                            </div>
+                        )}
+
                         {/* Billing Details */}
                         <div className="backdrop-blur-xl bg-white/5 border border-white/10 p-6 rounded-2xl shadow-lg">
                             <h2 className="text-xl font-semibold text-white mb-6 flex items-center">
@@ -77,132 +159,109 @@ export default function Checkout() {
                                 <input
                                     type="text"
                                     name="firstName"
-                                    placeholder="First Name"
+                                    placeholder="First Name *"
+                                    value={formData.firstName}
                                     className="p-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none text-white placeholder-slate-500"
                                     onChange={handleChange}
+                                    disabled={isProcessing}
                                 />
                                 <input
                                     type="text"
                                     name="lastName"
                                     placeholder="Last Name"
+                                    value={formData.lastName}
                                     className="p-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none text-white placeholder-slate-500"
                                     onChange={handleChange}
+                                    disabled={isProcessing}
                                 />
                                 <input
                                     type="email"
                                     name="email"
-                                    placeholder="Email Address"
+                                    placeholder="Email Address *"
+                                    value={formData.email}
                                     className="p-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none md:col-span-2 text-white placeholder-slate-500"
                                     onChange={handleChange}
+                                    disabled={isProcessing}
                                 />
                                 <input
                                     type="tel"
                                     name="phone"
-                                    placeholder="Phone Number"
+                                    placeholder="Phone Number * (10 digits)"
+                                    value={formData.phone}
                                     className="p-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none md:col-span-2 text-white placeholder-slate-500"
                                     onChange={handleChange}
+                                    disabled={isProcessing}
                                 />
                                 <input
                                     type="text"
                                     name="address"
                                     placeholder="Street Address"
+                                    value={formData.address}
                                     className="p-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none md:col-span-2 text-white placeholder-slate-500"
                                     onChange={handleChange}
+                                    disabled={isProcessing}
                                 />
                                 <input
                                     type="text"
                                     name="city"
                                     placeholder="City"
+                                    value={formData.city}
                                     className="p-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none text-white placeholder-slate-500"
                                     onChange={handleChange}
+                                    disabled={isProcessing}
                                 />
                                 <input
                                     type="text"
                                     name="zip"
                                     placeholder="ZIP / Postal Code"
+                                    value={formData.zip}
                                     className="p-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none text-white placeholder-slate-500"
                                     onChange={handleChange}
+                                    disabled={isProcessing}
                                 />
                             </form>
                         </div>
 
-                        {/* Payment Methods */}
+                        {/* Payment Info */}
                         <div className="backdrop-blur-xl bg-white/5 border border-white/10 p-6 rounded-2xl shadow-lg">
-                            <h2 className="text-xl font-semibold text-white mb-6 text-center">Select Payment Method</h2>
-                            <div className="grid grid-cols-3 gap-4">
-                                <button
-                                    onClick={() => setPaymentMethod('card')}
-                                    className={`p-4 rounded-xl border flex flex-col items-center justify-center transition-all ${paymentMethod === 'card'
-                                        ? 'border-emerald-500 bg-emerald-500/10 text-emerald-400'
-                                        : 'border-slate-700 bg-slate-800/30 text-slate-400 hover:border-emerald-500/50 hover:text-emerald-300'
-                                        }`}
-                                >
-                                    <CreditCard className="w-6 h-6 mb-2" />
-                                    <span className="text-sm font-medium">Card</span>
-                                </button>
-                                <button
-                                    onClick={() => setPaymentMethod('upi')}
-                                    className={`p-4 rounded-xl border flex flex-col items-center justify-center transition-all ${paymentMethod === 'upi'
-                                        ? 'border-emerald-500 bg-emerald-500/10 text-emerald-400'
-                                        : 'border-slate-700 bg-slate-800/30 text-slate-400 hover:border-emerald-500/50 hover:text-emerald-300'
-                                        }`}
-                                >
-                                    <Smartphone className="w-6 h-6 mb-2" />
-                                    <span className="text-sm font-medium">UPI</span>
-                                </button>
-                                <button
-                                    onClick={() => setPaymentMethod('netbanking')}
-                                    className={`p-4 rounded-xl border flex flex-col items-center justify-center transition-all ${paymentMethod === 'netbanking'
-                                        ? 'border-emerald-500 bg-emerald-500/10 text-emerald-400'
-                                        : 'border-slate-700 bg-slate-800/30 text-slate-400 hover:border-emerald-500/50 hover:text-emerald-300'
-                                        }`}
-                                >
-                                    <Banknote className="w-6 h-6 mb-2" />
-                                    <span className="text-sm font-medium">NetBanking</span>
-                                </button>
-                            </div>
-
-                            {/* Payment Details Placeholders */}
-                            <div className="mt-6">
-                                {paymentMethod === 'card' && (
-                                    <div className="space-y-4 animate-in fade-in slide-in-from-top-2 duration-300">
-                                        <input type="text" placeholder="Card Number" className="w-full p-3 bg-slate-800/50 border border-slate-700 rounded-lg outline-none text-white" />
-                                        <div className="grid grid-cols-2 gap-4">
-                                            <input type="text" placeholder="MM/YY" className="p-3 bg-slate-800/50 border border-slate-700 rounded-lg outline-none text-white" />
-                                            <input type="text" placeholder="CVC" className="p-3 bg-slate-800/50 border border-slate-700 rounded-lg outline-none text-white" />
-                                        </div>
-                                    </div>
-                                )}
-                                {paymentMethod === 'upi' && (
-                                    <div className="space-y-4 animate-in fade-in slide-in-from-top-2 duration-300">
-                                        <input type="text" placeholder="Enter UPI ID (e.g. user@oksbi)" className="w-full p-3 bg-slate-800/50 border border-slate-700 rounded-lg outline-none text-white" />
-                                        <p className="text-xs text-slate-500">A payment request will be sent to your UPI app.</p>
-                                    </div>
-                                )}
-                                {paymentMethod === 'netbanking' && (
-                                    <div className="space-y-4 animate-in fade-in slide-in-from-top-2 duration-300">
-                                        <select className="w-full p-3 bg-slate-800/50 border border-slate-700 rounded-lg outline-none text-white">
-                                            <option className="text-black">Select Bank</option>
-                                            <option className="text-black">State Bank of India</option>
-                                            <option className="text-black">HDFC Bank</option>
-                                            <option className="text-black">ICICI Bank</option>
-                                            <option className="text-black">Axis Bank</option>
-                                        </select>
-                                    </div>
-                                )}
+                            <h2 className="text-xl font-semibold text-white mb-4 flex items-center">
+                                <CreditCard className="w-5 h-5 mr-2 text-emerald-400" />
+                                Payment Method
+                            </h2>
+                            <div className="flex items-center space-x-4 p-4 bg-slate-800/30 rounded-xl border border-slate-700">
+                                <img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/2/24/Paytm_Logo_%28standalone%29.svg"
+                                    alt="Paytm"
+                                    className="h-8 w-auto"
+                                />
+                                <div>
+                                    <p className="text-white font-medium">Paytm Secure Payment</p>
+                                    <p className="text-sm text-slate-400">Pay via UPI, Cards, Net Banking, Wallets</p>
+                                </div>
                             </div>
                         </div>
 
                         <button
                             onClick={handlePayment}
-                            className="w-full bg-gradient-to-r from-emerald-500 to-emerald-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-emerald-500/30 transition-all hover:scale-[1.02] active:scale-[0.98] border border-emerald-400/20"
+                            disabled={isProcessing}
+                            className={`w-full font-bold py-4 rounded-xl shadow-lg transition-all border border-emerald-400/20 flex items-center justify-center ${isProcessing
+                                    ? 'bg-slate-700 text-slate-400 cursor-not-allowed'
+                                    : 'bg-gradient-to-r from-emerald-500 to-emerald-700 text-white hover:shadow-emerald-500/30 hover:scale-[1.02] active:scale-[0.98]'
+                                }`}
                         >
-                            Pay {displayPrice}
+                            {isProcessing ? (
+                                <>
+                                    <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                                    Processing...
+                                </>
+                            ) : (
+                                `Pay ${displayPrice}`
+                            )}
                         </button>
 
                         <p className="text-center text-xs text-slate-400 flex justify-center items-center">
                             <Lock className="w-3 h-3 mr-1" />
-                            Your payment is processed securely.
+                            Your payment is processed securely via Paytm.
                         </p>
 
                     </div>
