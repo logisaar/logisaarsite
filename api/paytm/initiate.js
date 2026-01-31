@@ -60,6 +60,8 @@ module.exports = async (req, res) => {
     const PAYTM_MID = process.env.PAYTM_MID;
     const PAYTM_MERCHANT_KEY = process.env.PAYTM_MERCHANT_KEY;
     const PAYTM_WEBSITE = process.env.PAYTM_WEBSITE || 'DEFAULT';
+    const PAYTM_INDUSTRY_TYPE = process.env.PAYTM_INDUSTRY_TYPE || 'Retail';
+    const PAYTM_CHANNEL_ID = process.env.PAYTM_CHANNEL_ID || 'WEB';
     const PAYTM_HOST = process.env.PAYTM_HOST || 'securegw.paytm.in';
     const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://www.logisaar.in';
     const CALLBACK_URL = `${APP_URL}/api/paytm/callback`;
@@ -70,6 +72,9 @@ module.exports = async (req, res) => {
         console.log('KEY:', PAYTM_MERCHANT_KEY ? 'SET (' + PAYTM_MERCHANT_KEY.length + ' chars)' : 'NOT SET');
         console.log('HOST:', PAYTM_HOST);
         console.log('WEBSITE:', PAYTM_WEBSITE);
+        console.log('CHANNEL_ID:', PAYTM_CHANNEL_ID);
+        console.log('INDUSTRY_TYPE:', PAYTM_INDUSTRY_TYPE);
+        console.log('CALLBACK_URL:', CALLBACK_URL);
 
         // Parse request body
         let body;
@@ -109,9 +114,10 @@ module.exports = async (req, res) => {
 
         console.log('Order ID:', orderId);
         console.log('Customer ID:', custId);
+        console.log('Mobile:', mobileNumber);
         console.log('Amount:', amount);
 
-        // Paytm transaction parameters
+        // Paytm transaction parameters - Full format as per Paytm docs
         const paytmBody = {
             requestType: 'Payment',
             mid: PAYTM_MID,
@@ -124,13 +130,14 @@ module.exports = async (req, res) => {
             },
             userInfo: {
                 custId: custId,
-                email: email,
                 mobile: mobileNumber,
+                email: email,
                 firstName: firstName || '',
                 lastName: lastName || ''
             }
         };
 
+        console.log('Paytm Body:', JSON.stringify(paytmBody));
         console.log('Generating checksum with official library...');
 
         // Generate checksum using official Paytm library
@@ -139,7 +146,7 @@ module.exports = async (req, res) => {
             PAYTM_MERCHANT_KEY
         );
 
-        console.log('Checksum generated successfully');
+        console.log('Checksum generated:', checksum.substring(0, 20) + '...');
 
         // Full params with head and body
         const paytmParams = {
@@ -152,6 +159,7 @@ module.exports = async (req, res) => {
         // Call Paytm API using fetch
         const paytmUrl = `https://${PAYTM_HOST}/theia/api/v1/initiateTransaction?mid=${PAYTM_MID}&orderId=${orderId}`;
         console.log('Calling Paytm API:', paytmUrl);
+        console.log('Request Payload:', JSON.stringify(paytmParams));
 
         const paytmResponse = await fetch(paytmUrl, {
             method: 'POST',
@@ -163,7 +171,7 @@ module.exports = async (req, res) => {
 
         const responseText = await paytmResponse.text();
         console.log('Paytm Response Status:', paytmResponse.status);
-        console.log('Paytm Response:', responseText.substring(0, 500));
+        console.log('Paytm Response:', responseText);
 
         let result;
         try {
