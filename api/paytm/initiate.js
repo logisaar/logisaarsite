@@ -63,7 +63,8 @@ module.exports = async (req, res) => {
     const PAYTM_INDUSTRY_TYPE = process.env.PAYTM_INDUSTRY_TYPE || 'Retail';
     const PAYTM_CHANNEL_ID = process.env.PAYTM_CHANNEL_ID || 'WEB';
     const PAYTM_HOST = process.env.PAYTM_HOST || 'securegw.paytm.in';
-    const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://www.logisaar.in';
+    // Remove trailing slash from APP_URL to prevent double slashes
+    const APP_URL = (process.env.NEXT_PUBLIC_APP_URL || 'https://www.logisaar.in').replace(/\/+$/, '');
     const CALLBACK_URL = `${APP_URL}/api/paytm/callback`;
 
     try {

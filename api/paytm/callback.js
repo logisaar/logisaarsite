@@ -12,7 +12,8 @@ const PaytmChecksum = require('paytmchecksum');
 module.exports = async (req, res) => {
     // Get configuration
     const PAYTM_MERCHANT_KEY = process.env.PAYTM_MERCHANT_KEY;
-    const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://www.logisaar.in';
+    // Remove trailing slash from APP_URL to prevent double slashes
+    const APP_URL = (process.env.NEXT_PUBLIC_APP_URL || 'https://www.logisaar.in').replace(/\/+$/, '');
 
     console.log('Paytm Callback received');
     console.log('Method:', req.method);
