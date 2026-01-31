@@ -6,7 +6,8 @@
  * Handles payment callback from Paytm and verifies signature
  */
 
-const PaytmChecksum = require('./paytmChecksum');
+// Use official Paytm checksum library
+const PaytmChecksum = require('paytmchecksum');
 
 module.exports = async (req, res) => {
     // Get configuration
@@ -48,7 +49,7 @@ module.exports = async (req, res) => {
                 const paramsForVerification = { ...paytmResponse };
                 delete paramsForVerification.CHECKSUMHASH;
 
-                isValidSignature = await PaytmChecksum.verifySignature(
+                isValidSignature = PaytmChecksum.verifySignature(
                     paramsForVerification,
                     PAYTM_MERCHANT_KEY,
                     checksumReceived

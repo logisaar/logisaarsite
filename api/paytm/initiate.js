@@ -6,7 +6,8 @@
  * Generates transaction token for Paytm JS Checkout
  */
 
-const PaytmChecksum = require('./paytmChecksum');
+// Use official Paytm checksum library
+const PaytmChecksum = require('paytmchecksum');
 
 /**
  * Parse request body - handles both pre-parsed and raw body
@@ -130,9 +131,9 @@ module.exports = async (req, res) => {
             }
         };
 
-        console.log('Generating checksum...');
+        console.log('Generating checksum with official library...');
 
-        // Generate checksum for the body
+        // Generate checksum using official Paytm library
         const checksum = await PaytmChecksum.generateSignature(
             JSON.stringify(paytmBody),
             PAYTM_MERCHANT_KEY
@@ -148,7 +149,7 @@ module.exports = async (req, res) => {
             }
         };
 
-        // Call Paytm API using fetch (better for serverless)
+        // Call Paytm API using fetch
         const paytmUrl = `https://${PAYTM_HOST}/theia/api/v1/initiateTransaction?mid=${PAYTM_MID}&orderId=${orderId}`;
         console.log('Calling Paytm API:', paytmUrl);
 
