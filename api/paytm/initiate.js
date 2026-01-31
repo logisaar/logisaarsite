@@ -9,6 +9,36 @@
 const https = require('https');
 const PaytmChecksum = require('./paytmChecksum');
 
+/**
+ * Parse request body - handles both pre-parsed and raw body
+ */
+async function parseBody(req) {
+    // If body is already parsed (object), return it
+    if (req.body && typeof req.body === 'object' && Object.keys(req.body).length > 0) {
+        return req.body;
+    }
+
+    // Otherwise, parse raw body
+    return new Promise((resolve, reject) => {
+        let data = '';
+        req.on('data', chunk => {
+            data += chunk;
+        });
+        req.on('end', () => {
+            try {
+                if (data) {
+                    resolve(JSON.parse(data));
+                } else {
+                    resolve({});
+                }
+            } catch (e) {
+                reject(new Error('Invalid JSON in request body'));
+            }
+        });
+        req.on('error', reject);
+    });
+}
+
 module.exports = async (req, res) => {
     // CORS headers - set these first
     res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -35,13 +65,24 @@ module.exports = async (req, res) => {
     const CALLBACK_URL = `${APP_URL}/api/paytm/callback`;
 
     try {
-        // Log for debugging (will appear in Vercel Function Logs)
         console.log('Paytm Initiate - Starting...');
         console.log('MID configured:', !!PAYTM_MID);
         console.log('Key configured:', !!PAYTM_MERCHANT_KEY);
-        console.log('Callback URL:', CALLBACK_URL);
 
-        const { amount, customerId, email, phone, firstName, lastName } = req.body || {};
+        // Parse request body
+        let body;
+        try {
+            body = await parseBody(req);
+            console.log('Parsed body:', JSON.stringify(body));
+        } catch (parseError) {
+            console.error('Body parse error:', parseError.message);
+            return res.status(400).json({
+                error: 'Invalid request body',
+                message: parseError.message
+            });
+        }
+
+        const { amount, customerId, email, phone, firstName, lastName } = body;
 
         // Validate required fields
         if (!amount || !email || !phone) {
@@ -54,8 +95,6 @@ module.exports = async (req, res) => {
         // Validate environment configuration
         if (!PAYTM_MID || !PAYTM_MERCHANT_KEY) {
             console.error('Paytm credentials not configured');
-            console.log('MID:', PAYTM_MID);
-            console.log('KEY length:', PAYTM_MERCHANT_KEY ? PAYTM_MERCHANT_KEY.length : 0);
             return res.status(500).json({
                 error: 'Payment gateway not configured properly'
             });
@@ -64,13 +103,13 @@ module.exports = async (req, res) => {
         // Generate unique order ID
         const orderId = `ORD${Date.now()}${Math.random().toString(36).substr(2, 6).toUpperCase()}`;
 
-        // Customer ID (use email hash if not provided)
+        // Customer ID
         const custId = customerId || `CUST${Date.now()}`;
 
         console.log('Order ID:', orderId);
-        console.log('Customer ID:', custId);
+        console.log('Callback URL:', CALLBACK_URL);
 
-        // Paytm transaction parameters (body only for checksum)
+        // Paytm transaction parameters
         const paytmBody = {
             requestType: 'Payment',
             mid: PAYTM_MID,
@@ -84,7 +123,7 @@ module.exports = async (req, res) => {
             userInfo: {
                 custId: custId,
                 email: email,
-                mobile: phone.replace(/\D/g, ''),
+                mobile: String(phone).replace(/\D/g, ''),
                 firstName: firstName || '',
                 lastName: lastName || ''
             }
@@ -98,7 +137,7 @@ module.exports = async (req, res) => {
             PAYTM_MERCHANT_KEY
         );
 
-        console.log('Checksum generated successfully');
+        console.log('Checksum generated');
 
         // Full params with head and body
         const paytmParams = {
@@ -108,12 +147,12 @@ module.exports = async (req, res) => {
             }
         };
 
-        console.log('Calling Paytm API...');
+        console.log('Calling Paytm API at:', PAYTM_HOST);
 
         // Call Paytm API to get transaction token
         const txnToken = await initiateTransaction(paytmParams, orderId, PAYTM_MID, PAYTM_HOST);
 
-        console.log('Transaction token received');
+        console.log('Transaction token received successfully');
 
         // Return token and order details to frontend
         return res.status(200).json({
@@ -142,8 +181,7 @@ function initiateTransaction(paytmParams, orderId, mid, host) {
     return new Promise((resolve, reject) => {
         const postData = JSON.stringify(paytmParams);
 
-        console.log('Paytm API Host:', host);
-        console.log('Request path:', `/theia/api/v1/initiateTransaction?mid=${mid}&orderId=${orderId}`);
+        console.log('Request to Paytm:', postData.substring(0, 200) + '...');
 
         const options = {
             hostname: host,
@@ -164,7 +202,8 @@ function initiateTransaction(paytmParams, orderId, mid, host) {
             });
 
             response.on('end', () => {
-                console.log('Paytm API Response:', data);
+                console.log('Paytm Response Status:', response.statusCode);
+                console.log('Paytm Response:', data.substring(0, 500));
 
                 try {
                     const result = JSON.parse(data);
@@ -173,21 +212,26 @@ function initiateTransaction(paytmParams, orderId, mid, host) {
                         resolve(result.body.txnToken);
                     } else if (result.body && result.body.resultInfo) {
                         const errMsg = result.body.resultInfo.resultMsg || 'Transaction initiation failed';
-                        console.error('Paytm Error:', result.body.resultInfo);
+                        console.error('Paytm Error:', JSON.stringify(result.body.resultInfo));
                         reject(new Error(errMsg));
                     } else {
-                        reject(new Error('Invalid response from Paytm: ' + data));
+                        reject(new Error('Invalid response from Paytm'));
                     }
                 } catch (parseError) {
-                    console.error('Parse error:', parseError);
-                    reject(new Error('Failed to parse Paytm response: ' + data));
+                    console.error('Parse error:', parseError.message);
+                    reject(new Error('Failed to parse Paytm response'));
                 }
             });
         });
 
         request.on('error', (error) => {
-            console.error('Request error:', error);
-            reject(error);
+            console.error('HTTPS Request error:', error.message);
+            reject(new Error('Network error connecting to Paytm: ' + error.message));
+        });
+
+        request.setTimeout(25000, () => {
+            request.destroy();
+            reject(new Error('Request to Paytm timed out'));
         });
 
         request.write(postData);
