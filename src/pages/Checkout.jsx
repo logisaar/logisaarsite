@@ -117,7 +117,7 @@ export default function Checkout() {
                 window.Paytm.CheckoutJS.invoke();
             } else {
                 // Fallback: Redirect to Paytm payment page
-                const paytmUrl = `https://securegw.paytm.in/theia/api/v1/showPaymentPage?mid=${data.mid}&orderId=${data.orderId}&txnToken=${data.txnToken}`;
+                const paytmUrl = `https://secure.paytmpayments.com/theia/api/v1/showPaymentPage?mid=${data.mid}&orderId=${data.orderId}&txnToken=${data.txnToken}`;
                 window.location.href = paytmUrl;
             }
 
@@ -245,8 +245,8 @@ export default function Checkout() {
                             onClick={handlePayment}
                             disabled={isProcessing}
                             className={`w-full font-bold py-4 rounded-xl shadow-lg transition-all border border-emerald-400/20 flex items-center justify-center ${isProcessing
-                                    ? 'bg-slate-700 text-slate-400 cursor-not-allowed'
-                                    : 'bg-gradient-to-r from-emerald-500 to-emerald-700 text-white hover:shadow-emerald-500/30 hover:scale-[1.02] active:scale-[0.98]'
+                                ? 'bg-slate-700 text-slate-400 cursor-not-allowed'
+                                : 'bg-gradient-to-r from-emerald-500 to-emerald-700 text-white hover:shadow-emerald-500/30 hover:scale-[1.02] active:scale-[0.98]'
                                 }`}
                         >
                             {isProcessing ? (
