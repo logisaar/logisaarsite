@@ -20,9 +20,11 @@ export default function Checkout() {
     const [isProcessing, setIsProcessing] = useState(false);
     const [error, setError] = useState('');
 
-    // Fixed Consultation Fee
-    const consultationFee = "499.00";
-    const displayConsultationFee = "₹499.00";
+    // Dynamic Consultation Fee based on service
+    // Site Upgrade Consultation uses ₹10, others use ₹499
+    const isSiteUpgradeConsultation = service?.title === "Site Upgrade Consultation";
+    const consultationFee = isSiteUpgradeConsultation ? "10.00" : "499.00";
+    const displayConsultationFee = isSiteUpgradeConsultation ? "₹10.00" : "₹499.00";
 
     const serviceName = service?.title || "Service Request";
     const serviceEstimatedPrice = service?.startingPrice || "N/A";

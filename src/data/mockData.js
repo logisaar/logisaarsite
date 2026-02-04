@@ -552,6 +552,23 @@ export const services = [
     technologies: ["React", "Node.js", "PostgreSQL", "AWS", "Docker", "Redis"],
     startingPrice: "₹75,000",
     deliveryTime: "10-14 weeks"
+  },
+  {
+    id: 10,
+    title: "Site Upgrade Consultation",
+    description: "Expert consultation for upgrading your existing website with modern technologies, improved performance, and enhanced user experience.",
+    icon: "🔧",
+    features: [
+      "Site Performance Analysis",
+      "Technology Stack Review",
+      "Security Assessment",
+      "SEO Audit",
+      "User Experience Evaluation",
+      "Upgrade Roadmap"
+    ],
+    technologies: ["Performance Tools", "Security Scanners", "Analytics", "SEO Tools"],
+    startingPrice: "₹10",
+    deliveryTime: "1-2 days"
   }
 
 ];
