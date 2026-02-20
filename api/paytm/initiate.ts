@@ -1,49 +1,13 @@
-/**
- * Paytm Payment Initiation API
- * Vercel Serverless Function
- * 
- * POST /api/paytm/initiate
- * Generates transaction token for Paytm JS Checkout
- */
+import type { VercelRequest, VercelResponse } from '@vercel/node';
+import PaytmChecksum from 'paytmchecksum';
 
-const PaytmChecksum = require('paytmchecksum');
-
-/**
- * Parse request body - handles both pre-parsed and raw body
- */
-async function parseBody(req) {
-    if (req.body && typeof req.body === 'object' && Object.keys(req.body).length > 0) {
-        return req.body;
-    }
-
-    return new Promise((resolve, reject) => {
-        let data = '';
-        req.on('data', chunk => {
-            data += chunk;
-        });
-        req.on('end', () => {
-            try {
-                if (data) {
-                    resolve(JSON.parse(data));
-                } else {
-                    resolve({});
-                }
-            } catch (e) {
-                reject(new Error('Invalid JSON in request body'));
-            }
-        });
-        req.on('error', reject);
-    });
-}
-
-module.exports = async (req, res) => {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
     // CORS headers
     res.setHeader('Access-Control-Allow-Credentials', 'true');
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
     res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
 
-    // Handle preflight
     if (req.method === 'OPTIONS') {
         return res.status(200).end();
     }
@@ -52,38 +16,16 @@ module.exports = async (req, res) => {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
-    // Get configuration from environment
     const PAYTM_MID = process.env.PAYTM_MID;
     const PAYTM_MERCHANT_KEY = process.env.PAYTM_MERCHANT_KEY;
     const PAYTM_WEBSITE = process.env.PAYTM_WEBSITE || 'DEFAULT';
-    
-    // IMPORTANT: Use the NEW official Paytm domain
     const PAYTM_HOST = process.env.PAYTM_HOST || 'secure.paytmpayments.com';
-    
     const APP_URL = (process.env.NEXT_PUBLIC_APP_URL || 'https://logisaar.com').replace(/\/+$/, '');
     const CALLBACK_URL = `${APP_URL}/api/paytm/callback`;
 
     try {
-        console.log('=== Paytm Initiate Started ===');
-        console.log('MID:', PAYTM_MID ? PAYTM_MID.substring(0, 8) + '...' : 'NOT SET');
-        console.log('KEY:', PAYTM_MERCHANT_KEY ? 'SET (' + PAYTM_MERCHANT_KEY.length + ' chars)' : 'NOT SET');
-        console.log('HOST:', PAYTM_HOST);
-        console.log('CALLBACK_URL:', CALLBACK_URL);
+        const { amount, customerId, email, phone, firstName, lastName, planName } = req.body || {};
 
-        let body;
-        try {
-            body = await parseBody(req);
-            console.log('Request body:', JSON.stringify(body));
-        } catch (parseError) {
-            return res.status(400).json({
-                error: 'Invalid request body',
-                message: parseError.message
-            });
-        }
-
-        const { amount, customerId, email, phone, firstName, lastName, planName } = body;
-
-        // Validate required fields
         if (!amount || !email || !phone) {
             return res.status(400).json({
                 error: 'Missing required fields: amount, email, phone',
@@ -91,7 +33,6 @@ module.exports = async (req, res) => {
             });
         }
 
-        // Validate environment
         if (!PAYTM_MID || !PAYTM_MERCHANT_KEY) {
             return res.status(500).json({
                 error: 'Payment gateway not configured',
@@ -99,12 +40,10 @@ module.exports = async (req, res) => {
             });
         }
 
-        // Generate unique order ID
         const orderId = `ORD${Date.now()}`;
         const custId = customerId || `CUST${Date.now()}`;
         const mobileNumber = String(phone).replace(/\D/g, '');
 
-        // Paytm transaction parameters
         const paytmBody = {
             requestType: 'Payment',
             mid: PAYTM_MID,
@@ -124,9 +63,6 @@ module.exports = async (req, res) => {
             }
         };
 
-        console.log('Generating checksum...');
-        
-        // Generate checksum using official Paytm library
         const checksum = await PaytmChecksum.generateSignature(
             JSON.stringify(paytmBody),
             PAYTM_MERCHANT_KEY
@@ -134,49 +70,38 @@ module.exports = async (req, res) => {
 
         const paytmParams = {
             body: paytmBody,
-            head: {
-                signature: checksum
-            }
+            head: { signature: checksum }
         };
 
-        // Call Paytm API
         const paytmUrl = `https://${PAYTM_HOST}/theia/api/v1/initiateTransaction?mid=${PAYTM_MID}&orderId=${orderId}`;
-        console.log('Calling Paytm API:', paytmUrl);
 
         const paytmResponse = await fetch(paytmUrl, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(paytmParams)
         });
 
         const responseText = await paytmResponse.text();
-        console.log('Paytm Response Status:', paytmResponse.status);
-        console.log('Paytm Response:', responseText);
-
-        let result;
+        let result: any;
         try {
             result = JSON.parse(responseText);
-        } catch (e) {
+        } catch {
             return res.status(500).json({
                 error: 'Invalid response from Paytm',
                 rawResponse: responseText.substring(0, 200)
             });
         }
 
-        if (result.body && result.body.txnToken) {
-            console.log('Transaction token received!');
+        if (result.body?.txnToken) {
             return res.status(200).json({
                 success: true,
-                orderId: orderId,
+                orderId,
                 txnToken: result.body.txnToken,
                 amount: parseFloat(amount).toFixed(2),
                 mid: PAYTM_MID,
                 callbackUrl: CALLBACK_URL
             });
-        } else if (result.body && result.body.resultInfo) {
-            console.error('Paytm rejected:', JSON.stringify(result.body.resultInfo));
+        } else if (result.body?.resultInfo) {
             return res.status(400).json({
                 error: 'Paytm rejected the request',
                 message: result.body.resultInfo.resultMsg,
@@ -188,13 +113,10 @@ module.exports = async (req, res) => {
                 response: result
             });
         }
-
-    } catch (error) {
-        console.error('=== Payment Error ===');
-        console.error('Error:', error.message);
+    } catch (error: any) {
         return res.status(500).json({
             error: 'Failed to initiate payment',
             message: error.message
         });
     }
-};
+}

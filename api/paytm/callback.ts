@@ -1,19 +1,9 @@
-/**
- * Paytm Payment Callback API
- * Vercel Serverless Function
- * 
- * POST /api/paytm/callback
- * Handles payment callback from Paytm and verifies signature
- */
+import type { VercelRequest, VercelResponse } from '@vercel/node';
+import PaytmChecksum from 'paytmchecksum';
 
-const PaytmChecksum = require('paytmchecksum');
-
-module.exports = async (req, res) => {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
     const PAYTM_MERCHANT_KEY = process.env.PAYTM_MERCHANT_KEY;
     const APP_URL = (process.env.NEXT_PUBLIC_APP_URL || 'https://logisaar.com').replace(/\/+$/, '');
-
-    console.log('Paytm Callback received');
-    console.log('Method:', req.method);
 
     if (req.method !== 'POST' && req.method !== 'GET') {
         return res.status(405).json({ error: 'Method not allowed' });
@@ -21,7 +11,6 @@ module.exports = async (req, res) => {
 
     try {
         const paytmResponse = req.method === 'POST' ? (req.body || {}) : (req.query || {});
-        console.log('Paytm Callback Data:', JSON.stringify(paytmResponse, null, 2));
 
         const {
             ORDERID: orderId,
@@ -30,12 +19,10 @@ module.exports = async (req, res) => {
             STATUS: status,
             RESPMSG: responseMessage,
             PAYMENTMODE: paymentMode,
-            GATEWAYNAME: gateway,
             BANKTXNID: bankTxnId,
             CHECKSUMHASH: checksumReceived
         } = paytmResponse;
 
-        // Verify checksum
         let isValidSignature = true;
         if (checksumReceived && PAYTM_MERCHANT_KEY) {
             try {
@@ -47,14 +34,12 @@ module.exports = async (req, res) => {
                     PAYTM_MERCHANT_KEY,
                     checksumReceived
                 );
-                console.log('Signature verification:', isValidSignature);
-            } catch (verifyError) {
-                console.error('Signature verification error:', verifyError.message);
+            } catch {
+                console.error('Signature verification error');
             }
         }
 
         if (!isValidSignature) {
-            console.error('Invalid checksum signature!');
             return res.redirect(302,
                 `${APP_URL}/payment?status=failed&error=invalid_signature&orderId=${orderId || ''}`
             );
@@ -72,15 +57,11 @@ module.exports = async (req, res) => {
             bankTxnId: bankTxnId || ''
         });
 
-        const redirectUrl = `${APP_URL}/payment?${redirectParams.toString()}`;
-        console.log('Redirecting to:', redirectUrl);
+        return res.redirect(302, `${APP_URL}/payment?${redirectParams.toString()}`);
 
-        return res.redirect(302, redirectUrl);
-
-    } catch (error) {
-        console.error('Callback processing error:', error.message);
+    } catch (error: any) {
         return res.redirect(302,
             `${APP_URL}/payment?status=failed&error=processing_error&message=${encodeURIComponent(error.message)}`
         );
     }
-};
+}
