@@ -2,6 +2,14 @@
     "outputDirectory": "dist",
     "rewrites": [
         {
+            "source": "/api/paytm/initiate",
+            "destination": "/api/paytm/initiate.cjs"
+        },
+        {
+            "source": "/api/paytm/callback",
+            "destination": "/api/paytm/callback.cjs"
+        },
+        {
             "source": "/api/:path*",
             "destination": "/api/:path*"
         },
@@ -34,11 +42,11 @@
         }
     ],
     "functions": {
-        "api/paytm/initiate.js": {
+        "api/paytm/initiate.cjs": {
             "memory": 512,
             "maxDuration": 30
         },
-        "api/paytm/callback.js": {
+        "api/paytm/callback.cjs": {
             "memory": 512,
             "maxDuration": 30
         }
