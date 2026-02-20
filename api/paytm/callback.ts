@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+// @ts-ignore - paytmchecksum has no type declarations
 import PaytmChecksum from 'paytmchecksum';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
