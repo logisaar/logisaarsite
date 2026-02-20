@@ -6,30 +6,23 @@
  * Handles payment callback from Paytm and verifies signature
  */
 
-// Use official Paytm checksum library
 const PaytmChecksum = require('paytmchecksum');
 
 module.exports = async (req, res) => {
-    // Get configuration
     const PAYTM_MERCHANT_KEY = process.env.PAYTM_MERCHANT_KEY;
-    // Remove trailing slash from APP_URL to prevent double slashes
-    const APP_URL = (process.env.NEXT_PUBLIC_APP_URL || 'https://www.logisaar.in').replace(/\/+$/, '');
+    const APP_URL = (process.env.NEXT_PUBLIC_APP_URL || 'https://logisaar.com').replace(/\/+$/, '');
 
     console.log('Paytm Callback received');
     console.log('Method:', req.method);
 
-    // Allow both GET and POST (Paytm sends POST callback)
     if (req.method !== 'POST' && req.method !== 'GET') {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
     try {
-        // Get params from body (POST) or query (GET)
         const paytmResponse = req.method === 'POST' ? (req.body || {}) : (req.query || {});
-
         console.log('Paytm Callback Data:', JSON.stringify(paytmResponse, null, 2));
 
-        // Extract key transaction details
         const {
             ORDERID: orderId,
             TXNID: txnId,
@@ -42,11 +35,10 @@ module.exports = async (req, res) => {
             CHECKSUMHASH: checksumReceived
         } = paytmResponse;
 
-        // Verify checksum if MERCHANT_KEY is available
+        // Verify checksum
         let isValidSignature = true;
         if (checksumReceived && PAYTM_MERCHANT_KEY) {
             try {
-                // Remove checksum from params for verification
                 const paramsForVerification = { ...paytmResponse };
                 delete paramsForVerification.CHECKSUMHASH;
 
@@ -58,7 +50,6 @@ module.exports = async (req, res) => {
                 console.log('Signature verification:', isValidSignature);
             } catch (verifyError) {
                 console.error('Signature verification error:', verifyError.message);
-                // Continue anyway, but log the error
             }
         }
 
@@ -69,10 +60,8 @@ module.exports = async (req, res) => {
             );
         }
 
-        // Determine payment status
         const paymentSuccess = status === 'TXN_SUCCESS';
 
-        // Build redirect URL with payment details
         const redirectParams = new URLSearchParams({
             status: paymentSuccess ? 'success' : 'failed',
             orderId: orderId || '',
@@ -83,18 +72,13 @@ module.exports = async (req, res) => {
             bankTxnId: bankTxnId || ''
         });
 
-        // Redirect to payment status page
         const redirectUrl = `${APP_URL}/payment?${redirectParams.toString()}`;
-
         console.log('Redirecting to:', redirectUrl);
 
         return res.redirect(302, redirectUrl);
 
     } catch (error) {
         console.error('Callback processing error:', error.message);
-        console.error('Error stack:', error.stack);
-
-        // Redirect with error
         return res.redirect(302,
             `${APP_URL}/payment?status=failed&error=processing_error&message=${encodeURIComponent(error.message)}`
         );

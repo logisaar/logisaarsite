@@ -6,19 +6,16 @@
  * Generates transaction token for Paytm JS Checkout
  */
 
-// Use official Paytm checksum library
 const PaytmChecksum = require('paytmchecksum');
 
 /**
  * Parse request body - handles both pre-parsed and raw body
  */
 async function parseBody(req) {
-    // If body is already parsed (object), return it
     if (req.body && typeof req.body === 'object' && Object.keys(req.body).length > 0) {
         return req.body;
     }
 
-    // Otherwise, parse raw body
     return new Promise((resolve, reject) => {
         let data = '';
         req.on('data', chunk => {
@@ -40,7 +37,7 @@ async function parseBody(req) {
 }
 
 module.exports = async (req, res) => {
-    // CORS headers - set these first
+    // CORS headers
     res.setHeader('Access-Control-Allow-Credentials', 'true');
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
@@ -51,21 +48,19 @@ module.exports = async (req, res) => {
         return res.status(200).end();
     }
 
-    // Only allow POST requests
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
-    // Get configuration from environment variables
+    // Get configuration from environment
     const PAYTM_MID = process.env.PAYTM_MID;
     const PAYTM_MERCHANT_KEY = process.env.PAYTM_MERCHANT_KEY;
     const PAYTM_WEBSITE = process.env.PAYTM_WEBSITE || 'DEFAULT';
-    const PAYTM_INDUSTRY_TYPE = process.env.PAYTM_INDUSTRY_TYPE || 'Retail';
-    const PAYTM_CHANNEL_ID = process.env.PAYTM_CHANNEL_ID || 'WEB';
-    // Updated to use the new official Paytm domain (old: securegw.paytm.in)
+    
+    // IMPORTANT: Use the NEW official Paytm domain
     const PAYTM_HOST = process.env.PAYTM_HOST || 'secure.paytmpayments.com';
-    // Remove trailing slash from APP_URL to prevent double slashes
-    const APP_URL = (process.env.NEXT_PUBLIC_APP_URL || 'https://www.logisaar.in').replace(/\/+$/, '');
+    
+    const APP_URL = (process.env.NEXT_PUBLIC_APP_URL || 'https://logisaar.com').replace(/\/+$/, '');
     const CALLBACK_URL = `${APP_URL}/api/paytm/callback`;
 
     try {
@@ -73,25 +68,20 @@ module.exports = async (req, res) => {
         console.log('MID:', PAYTM_MID ? PAYTM_MID.substring(0, 8) + '...' : 'NOT SET');
         console.log('KEY:', PAYTM_MERCHANT_KEY ? 'SET (' + PAYTM_MERCHANT_KEY.length + ' chars)' : 'NOT SET');
         console.log('HOST:', PAYTM_HOST);
-        console.log('WEBSITE:', PAYTM_WEBSITE);
-        console.log('CHANNEL_ID:', PAYTM_CHANNEL_ID);
-        console.log('INDUSTRY_TYPE:', PAYTM_INDUSTRY_TYPE);
         console.log('CALLBACK_URL:', CALLBACK_URL);
 
-        // Parse request body
         let body;
         try {
             body = await parseBody(req);
             console.log('Request body:', JSON.stringify(body));
         } catch (parseError) {
-            console.error('Body parse error:', parseError.message);
             return res.status(400).json({
                 error: 'Invalid request body',
                 message: parseError.message
             });
         }
 
-        const { amount, customerId, email, phone, firstName, lastName } = body;
+        const { amount, customerId, email, phone, firstName, lastName, planName } = body;
 
         // Validate required fields
         if (!amount || !email || !phone) {
@@ -101,7 +91,7 @@ module.exports = async (req, res) => {
             });
         }
 
-        // Validate environment configuration
+        // Validate environment
         if (!PAYTM_MID || !PAYTM_MERCHANT_KEY) {
             return res.status(500).json({
                 error: 'Payment gateway not configured',
@@ -109,17 +99,12 @@ module.exports = async (req, res) => {
             });
         }
 
-        // Generate unique order ID (alphanumeric only, max 50 chars)
+        // Generate unique order ID
         const orderId = `ORD${Date.now()}`;
         const custId = customerId || `CUST${Date.now()}`;
         const mobileNumber = String(phone).replace(/\D/g, '');
 
-        console.log('Order ID:', orderId);
-        console.log('Customer ID:', custId);
-        console.log('Mobile:', mobileNumber);
-        console.log('Amount:', amount);
-
-        // Paytm transaction parameters - Full format as per Paytm docs
+        // Paytm transaction parameters
         const paytmBody = {
             requestType: 'Payment',
             mid: PAYTM_MID,
@@ -139,18 +124,14 @@ module.exports = async (req, res) => {
             }
         };
 
-        console.log('Paytm Body:', JSON.stringify(paytmBody));
-        console.log('Generating checksum with official library...');
-
+        console.log('Generating checksum...');
+        
         // Generate checksum using official Paytm library
         const checksum = await PaytmChecksum.generateSignature(
             JSON.stringify(paytmBody),
             PAYTM_MERCHANT_KEY
         );
 
-        console.log('Checksum generated:', checksum.substring(0, 20) + '...');
-
-        // Full params with head and body
         const paytmParams = {
             body: paytmBody,
             head: {
@@ -158,10 +139,9 @@ module.exports = async (req, res) => {
             }
         };
 
-        // Call Paytm API using fetch
+        // Call Paytm API
         const paytmUrl = `https://${PAYTM_HOST}/theia/api/v1/initiateTransaction?mid=${PAYTM_MID}&orderId=${orderId}`;
         console.log('Calling Paytm API:', paytmUrl);
-        console.log('Request Payload:', JSON.stringify(paytmParams));
 
         const paytmResponse = await fetch(paytmUrl, {
             method: 'POST',
@@ -179,7 +159,6 @@ module.exports = async (req, res) => {
         try {
             result = JSON.parse(responseText);
         } catch (e) {
-            console.error('Failed to parse Paytm response');
             return res.status(500).json({
                 error: 'Invalid response from Paytm',
                 rawResponse: responseText.substring(0, 200)
@@ -213,7 +192,6 @@ module.exports = async (req, res) => {
     } catch (error) {
         console.error('=== Payment Error ===');
         console.error('Error:', error.message);
-        console.error('Stack:', error.stack);
         return res.status(500).json({
             error: 'Failed to initiate payment',
             message: error.message

@@ -3,6 +3,10 @@
         {
             "source": "/api/:path*",
             "destination": "/api/:path*"
+        },
+        {
+            "source": "/((?!api/).*)",
+            "destination": "/index.html"
         }
     ],
     "headers": [
@@ -29,8 +33,12 @@
         }
     ],
     "functions": {
-        "api/**/*.js": {
-            "memory": 256,
+        "api/paytm/initiate.js": {
+            "memory": 512,
+            "maxDuration": 30
+        },
+        "api/paytm/callback.js": {
+            "memory": 512,
             "maxDuration": 30
         }
     }
