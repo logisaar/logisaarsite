@@ -12,6 +12,7 @@ const navLinks = [
   { to: "/services", label: "Services" },
   { to: "/portfolio", label: "Portfolio" },
   { to: "/pricing", label: "Pricing" },
+  { to: "/web-development-odisha", label: "Odisha" },
   { to: "/contact", label: "Contact" },
 ];
 

@@ -9,6 +9,7 @@ import aboutTeam from "@/assets/about-team.jpg";
 import JourneyTimeline from "@/components/about/JourneyTimeline";
 import TeamSection from "@/components/about/TeamSection";
 import ValueCard from "@/components/about/ValueCard";
+import SEO from "@/components/SEO";
 
 const values = [
   { icon: Lightbulb, title: "Innovation First", description: "We stay ahead of tech trends to deliver cutting-edge solutions that push boundaries and redefine what's possible.", color: "hsl(170 80% 45%)", tagline: "ALWAYS AHEAD →", size: "large" as const },
@@ -81,6 +82,11 @@ const About = () => {
 
   return (
     <Layout>
+      <SEO
+        title="About LogiSaar | Web Development Agency in Odisha"
+        description="LogiSaar was founded in 2025 by Chinmay Kumar Panda in Odisha. 15+ projects delivered. Building custom software for businesses across Bhubaneswar, Cuttack, and all of Odisha."
+        canonical="https://logisaar.in/about"
+      />
       {/* Hero */}
       <section className="min-h-[70vh] flex items-center relative overflow-hidden">
         <GradientMesh />
@@ -116,9 +122,10 @@ const About = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              {["In a remarkably short span of time, Logisaar successfully delivered 10+ projects within the first two months, demonstrating our strong execution capability, client-first approach, and commitment to quality. Our projects span across web development, software solutions, automation, and digital platforms, helping organizations streamline operations and enhance their online presence.",
+              {["LogiSaar is co-founded by Chinmay Kumar Panda and Biswanatha — two Computer Science engineers and full-stack developers based in Odisha. Together, they started LogiSaar in September 2025 with a mission to bring enterprise-quality software to businesses across Odisha. Their combined expertise spans React, Next.js, AI systems, mobile development, and digital growth strategy.",
+                "We are proudly Odisha-based and have served clients in Bhubaneswar, Cuttack, Nalanda, and beyond. Our mission is to make premium digital products accessible to every serious business in Odisha.",
+                "In a remarkably short span of time, Logisaar successfully delivered 15+ projects within the first few months, demonstrating our strong execution capability, client-first approach, and commitment to quality. Our projects span across web development, software solutions, automation, and digital platforms, helping organizations streamline operations and enhance their online presence.",
                 "Beyond commercial software development, Logisaar has also expanded into the education and skill-development sector through its dedicated sub-brand TECHXERA. TECHXERA was first launched in Nalanda as a programming club with the mission to bridge the gap between academic learning and real-world industry requirements.",
-                "Through TECHXERA, we provide hands-on training in modern technologies, artificial intelligence, programming and development, problem-solving, and professional communication skills — preparing students to become confident, job-ready, and future-focused technologists.",
                 "At Logisaar, we believe in continuous innovation, ethical practices, and long-term partnerships. Our goal is not just to deliver software, but to create impact-driven digital experiences and nurture the next generation of technology leaders.",
                 "Let's build the future — together."
               ].map((text, i) => (

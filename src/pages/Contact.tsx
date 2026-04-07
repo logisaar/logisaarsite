@@ -1,16 +1,16 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Layout from "@/components/Layout";
-
 import TextReveal from "@/components/creative/TextReveal";
 import MagneticButton from "@/components/creative/MagneticButton";
 import { useToast } from "@/hooks/use-toast";
 import { submitForm } from "@/lib/submitForm";
 import contactBg from "@/assets/contact-bg.jpg";
+import SEO from "@/components/SEO";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -38,6 +38,12 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Contact LogiSaar | Web Developer in Bhubaneswar & Cuttack, Odisha"
+        description="Contact Chinmay Kumar Panda at LogiSaar for website development, SEO or AI solutions in Odisha. Call +91 78150 14638 or WhatsApp us now."
+        keywords="contact LogiSaar, web developer Bhubaneswar, web developer Cuttack, hire web developer Odisha"
+        canonical="https://logisaar.in/contact"
+      />
       {/* Split screen layout */}
       <section className="min-h-screen grid md:grid-cols-2">
         {/* Left - Gradient mesh with big text */}
@@ -79,18 +85,59 @@ const Contact = () => {
               transition={{ delay: 1 }}
               className="mt-12 space-y-4"
             >
-              {[
-                { icon: Mail, text: "logisaar@gmail.com" },
-                { icon: Phone, text: "+91 781-5014-638" },
-                { icon: MapPin, text: "Odisha, India" },
-              ].map(({ icon: Icon, text }) => (
-                <div key={text} className="flex items-center gap-3 text-white/80 justify-center md:justify-start">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center shrink-0">
-                    <Icon className="text-white" size={18} />
-                  </div>
-                  <span className="text-sm">{text}</span>
+              {/* Email */}
+              <a
+                href="mailto:logisaar@gmail.com"
+                className="flex items-center gap-3 text-white/80 justify-center md:justify-start hover:text-white transition-colors"
+              >
+                <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center shrink-0">
+                  <Mail className="text-white" size={18} />
                 </div>
-              ))}
+                <span className="text-sm">logisaar@gmail.com</span>
+              </a>
+
+              {/* Phone */}
+              <a
+                href="tel:+917815014638"
+                className="flex items-center gap-3 text-white/80 justify-center md:justify-start hover:text-white transition-colors"
+              >
+                <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center shrink-0">
+                  <Phone className="text-white" size={18} />
+                </div>
+                <span className="text-sm">+91 78150 14638</span>
+              </a>
+
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/917815014638"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-white/80 justify-center md:justify-start hover:text-white transition-colors"
+              >
+                <div className="w-10 h-10 rounded-xl bg-green-500 flex items-center justify-center shrink-0">
+                  <MessageCircle className="text-white" size={18} />
+                </div>
+                <span className="text-sm">WhatsApp Us — Quick Response Guaranteed</span>
+              </a>
+
+              {/* Address */}
+              <div className="flex items-center gap-3 text-white/80 justify-center md:justify-start">
+                <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center shrink-0">
+                  <MapPin className="text-white" size={18} />
+                </div>
+                <span className="text-sm">Cuttack, Odisha, India</span>
+              </div>
+
+              {/* Geo coverage note */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.3 }}
+                className="text-white/50 text-xs mt-6 max-w-xs mx-auto md:mx-0"
+              >
+                Based in Odisha, we work with businesses across Bhubaneswar, Cuttack, Puri, Sambalpur,
+                Rourkela and all of Odisha.
+              </motion.p>
             </motion.div>
           </div>
         </div>

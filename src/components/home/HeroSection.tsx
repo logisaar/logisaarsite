@@ -11,16 +11,16 @@ import AnimatedCounter from "@/components/creative/AnimatedCounter";
 import HeroProjectCards from "@/components/home/HeroProjectCards";
 
 const subtitles = [
-  "Web & App Development",
-  "AI-Powered Solutions",
-  "Experience Design",
-  "Growth Engineering",
+  "Custom CRM & Business Software",
+  "AI-Powered Web Solutions",
+  "E-Commerce & Mobile Apps",
+  "SEO & Google Growth",
 ];
 
 const stats = [
-  { value: 8, suffix: "+", label: "Enterprise Projects" },
-  { value: 4, suffix: "+", label: "Global Partners" },
-  { value: 2, suffix: "+", label: "Years Innovation" },
+  { value: 15, suffix: "+", label: "Projects Delivered" },
+  { value: 8, suffix: "+", label: "Happy Clients" },
+  { value: 5, suffix: "+", label: "Industries Served" },
   { value: 99, suffix: "%", label: "Success Rate" },
 ];
 
@@ -62,16 +62,27 @@ const HeroSection = () => {
           {/* Left side — 3 cols */}
           <div className="lg:col-span-3 text-center lg:text-left">
             {/* Main headline */}
+            {/* Geo trust badge */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-medium px-4 py-1.5 rounded-full mb-6"
+            >
+              <span>📍</span>
+              <span>Odisha-Based Studio | Serving All of India</span>
+            </motion.div>
+
             <TextReveal
-              text="We Build Software"
+              text="Odisha's Premium"
               as="h1"
               className="font-display text-[10vw] md:text-[6vw] lg:text-[4.5vw] font-bold leading-[1.1] tracking-tight"
               delay={0.3}
             />
             <TextReveal
-              text="That Drives Growth"
+              text="Web Development Studio"
               as="h1"
-              className="font-display text-[10vw] md:text-[6vw] lg:text-[4.5vw] font-bold leading-[1.1] tracking-tight text-gradient mb-8"
+              className="font-display text-[10vw] md:text-[6vw] lg:text-[4.5vw] font-bold leading-[1.1] tracking-tight text-gradient mb-6"
               delay={0.5}
             />
 
@@ -80,7 +91,7 @@ const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2 }}
-              className="h-10 flex items-center justify-center lg:justify-start mb-12"
+              className="h-10 flex items-center justify-center lg:justify-start"
             >
               <span className="text-lg md:text-xl text-muted-foreground font-light">
                 {typed}
@@ -93,6 +104,16 @@ const HeroSection = () => {
                 </motion.span>
               </span>
             </motion.div>
+
+            {/* Geo subtext */}
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.4 }}
+              className="text-sm text-muted-foreground/80 mt-3 mb-10"
+            >
+              Serving businesses in Bhubaneswar, Cuttack &amp; across Odisha — 15+ projects delivered
+            </motion.p>
 
             {/* CTA buttons */}
             <motion.div
