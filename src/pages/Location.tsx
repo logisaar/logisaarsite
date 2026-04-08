@@ -25,7 +25,7 @@ const faqSchema = {
       name: "Which is the best web development company in Bhubaneswar?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "LogiSaar is a premium web development studio based in Odisha, delivering custom websites, CRM systems, and AI solutions for businesses in Bhubaneswar, Cuttack, and across Odisha.",
+        text: "LogiSaar is a premium web development studio based in Odisha, delivering custom websites, CRM systems, and AI solutions for businesses in Bhubaneswar, Cuttack, Bhadrak, Rourkela, and across Odisha.",
       },
     },
     {
@@ -79,7 +79,7 @@ const odishaServices = [
   {
     icon: Megaphone,
     title: "SEO Services in Bhubaneswar & Cuttack",
-    desc: "Rank on Google and get local customers in Bhubaneswar, Cuttack, and all of Odisha with our proven SEO and Google review strategies.",
+    desc: "Rank on Google and get local customers in Bhubaneswar, Cuttack, Bhadrak, Rourkela, and all of Odisha with our proven SEO and Google review strategies.",
   },
   {
     icon: Palette,
@@ -97,9 +97,9 @@ const Location = () => {
   return (
     <Layout>
       <SEO
-        title="Web Development Company in Odisha | Bhubaneswar & Cuttack | LogiSaar"
-        description="LogiSaar is Odisha's trusted web development company. We build custom websites, CRM, e-commerce & AI tools for businesses in Bhubaneswar, Cuttack, Puri, Rourkela, Sambalpur and all of Odisha. Call +91 78150 14638."
-        keywords="web development company Odisha, web design Bhubaneswar, web design Cuttack, website developer Puri, SEO Odisha, CRM development Odisha, mobile app development Odisha"
+        title="Web Development Company in Odisha | Bhubaneswar, Cuttack, Bhadrak & Rourkela | LogiSaar"
+        description="LogiSaar is Odisha's trusted web development company. We build custom websites, CRM, e-commerce & AI tools for businesses in Bhubaneswar, Cuttack, Bhadrak, Rourkela, Puri, Sambalpur and all of Odisha. Call +91 78150 14638."
+        keywords="web development company Odisha, web design Bhubaneswar, web design Cuttack, website developer Bhadrak, website developer Rourkela, website developer Puri, SEO Odisha, CRM development Odisha, mobile app development Odisha"
         canonical="https://logisaar.in/web-development-odisha"
         jsonLd={faqSchema}
       />
@@ -134,7 +134,7 @@ const Location = () => {
             className="text-muted-foreground text-lg mt-6 max-w-2xl"
           >
             Premium websites, CRM systems, AI tools and SEO services for businesses in Bhubaneswar,
-            Cuttack and all of Odisha.
+            Cuttack, Bhadrak, Rourkela and all of Odisha.
           </motion.p>
         </div>
       </section>

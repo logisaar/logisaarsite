@@ -8,8 +8,8 @@ export default function TravelWebsite() {
     <>
       <SEO
         title="Tours & Travel Website Development in Odisha | LogiSaar"
-        description="Custom travel websites for tour operators and travel agents in Odisha. Online booking, Razorpay payment, SEO for Odisha tourism. Get direct bookings. LogiSaar: +91 78150 14638"
-        keywords="travel website development Odisha, tour website Bhubaneswar, travel agency website Cuttack, Odisha tourism website, travel booking website Odisha, LogiSaar"
+        description="Custom travel websites for tour operators and travel agents in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha. Online booking, Razorpay payment, SEO for Odisha tourism. Get direct bookings. LogiSaar: +91 78150 14638"
+        keywords="travel website development Odisha, tour website Bhubaneswar, travel agency website Cuttack, Odisha tourism website, travel website Bhadrak, tour agency website Rourkela, travel booking website Odisha, LogiSaar"
         canonical="https://logisaar.in/services/travel-website"
       />
       <ServicePageLayout

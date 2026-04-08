@@ -8,8 +8,8 @@ export default function AILeadFollowup() {
     <>
       <SEO
         title="AI Lead Follow-Up System for Businesses in Odisha | LogiSaar"
-        description="Automate lead follow-up via WhatsApp, email and voice calls. Never lose a lead again. AI-powered sales automation for businesses in Bhubaneswar, Cuttack and Odisha. LogiSaar: +91 78150 14638"
-        keywords="AI lead follow-up Odisha, sales automation Bhubaneswar, WhatsApp automation Odisha, CRM automation Cuttack, AI sales system Odisha, LogiSaar"
+        description="Automate lead follow-up via WhatsApp, email and voice calls. Never lose a lead again. AI-powered sales automation for businesses in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha. LogiSaar: +91 78150 14638"
+        keywords="AI lead follow-up Odisha, sales automation Bhubaneswar, WhatsApp automation Odisha, CRM automation Cuttack, AI lead system Bhadrak, AI sales automation Rourkela, AI sales system Odisha, LogiSaar"
         canonical="https://logisaar.in/services/ai-lead-followup"
       />
       <ServicePageLayout

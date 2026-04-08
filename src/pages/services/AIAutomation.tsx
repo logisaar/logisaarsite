@@ -8,8 +8,8 @@ export default function AIAutomation() {
     <>
       <SEO
         title="AI Automation Services for Businesses in Odisha | LogiSaar"
-        description="Custom AI automation for Odisha businesses. WhatsApp automation, invoice generation, lead nurturing, workflow automation. Save 20+ hours/week. LogiSaar: +91 78150 14638"
-        keywords="AI automation Odisha, business automation Bhubaneswar, WhatsApp automation Cuttack, workflow automation Odisha, n8n automation Odisha, LogiSaar"
+        description="Custom AI automation for businesses in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha. WhatsApp automation, invoice generation, lead nurturing, workflow automation. Save 20+ hours/week. LogiSaar: +91 78150 14638"
+        keywords="AI automation Odisha, business automation Bhubaneswar, WhatsApp automation Cuttack, workflow automation Odisha, AI automation Bhadrak, business automation Rourkela, n8n automation Odisha, LogiSaar"
         canonical="https://logisaar.in/services/ai-automation"
       />
       <ServicePageLayout

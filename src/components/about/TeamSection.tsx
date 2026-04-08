@@ -18,8 +18,8 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   { name: "Chinmay Kumar Panda", role: "Founder & CEO", initials: "CKP", accentColor: "hsl(170 80% 45%)", photo: chinmayPhoto, bio: "Building intelligent digital solutions that empower businesses to scale.", expertise: ["AI/ML", "Product Strategy", "Full-Stack"], quote: "Let's build the future — together.", achievement: "Turning Ideas into Impact Since Day One" },
-  { name: "BPS Kar", role: "Co-Founder & MD", initials: "BK", accentColor: "hsl(260 70% 58%)", photo: bpsPhoto, bio: "Driving growth through strategic partnerships and operations.", expertise: ["Business Strategy", "Operations", "Growth"] },
-  { name: "Subrajit Jena", role: "CTO", initials: "SJ", accentColor: "hsl(210 90% 55%)", photo: subraPhoto, bio: "Architecting scalable systems with modern technologies.", expertise: ["System Architecture", "Cloud", "DevOps"] },
+  // { name: "BPS Kar", role: "Co-Founder & MD", initials: "BK", accentColor: "hsl(260 70% 58%)", photo: bpsPhoto, bio: "Driving growth through strategic partnerships and operations.", expertise: ["Business Strategy", "Operations", "Growth"] },
+  // { name: "Subrajit Jena", role: "CTO", initials: "SJ", accentColor: "hsl(210 90% 55%)", photo: subraPhoto, bio: "Architecting scalable systems with modern technologies.", expertise: ["System Architecture", "Cloud", "DevOps"] },
 ];
 
 const SmokeParticle = ({ delay, x, size }: { delay: number; x: number; size: number }) => (
@@ -67,12 +67,12 @@ const RocketEmoji = () => {
         animate={
           launched
             ? {
-                y: [0, -5, 8, -10, 5, -30, -1500],
-                x: [0, 10, -8, 15, -5, 50, 300],
-                rotate: [0, -15, 20, -25, 30, 360, 900],
-                scale: [1, 1.1, 0.9, 1.2, 1, 1.5, 2],
-                opacity: [1, 1, 1, 1, 1, 0.8, 0],
-              }
+              y: [0, -5, 8, -10, 5, -30, -1500],
+              x: [0, 10, -8, 15, -5, 50, 300],
+              rotate: [0, -15, 20, -25, 30, 360, 900],
+              scale: [1, 1.1, 0.9, 1.2, 1, 1.5, 2],
+              opacity: [1, 1, 1, 1, 1, 0.8, 0],
+            }
             : { y: 0, x: 0, rotate: 0, scale: 1, opacity: 1 }
         }
         transition={
@@ -105,9 +105,8 @@ const TeamMemberCard = ({
       initial={{ opacity: 0, y: 60 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: index * 0.12, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className={`relative group rounded-2xl ${
-        isFeature ? "md:col-span-2 md:row-span-2 overflow-visible" : "overflow-hidden"
-      }`}
+      className={`relative group rounded-2xl ${isFeature ? "md:col-span-2 md:row-span-2 overflow-visible" : "overflow-hidden"
+        }`}
       style={{
         background: `linear-gradient(145deg, hsl(220 25% 6%), hsl(220 25% 10%))`,
         border: "1px solid hsl(220 20% 15%)",
@@ -122,9 +121,8 @@ const TeamMemberCard = ({
       <div className={`relative z-10 flex flex-col h-full ${isFeature ? "p-12 md:p-16" : "p-8"}`}>
         {/* Large number watermark */}
         <span
-          className={`absolute top-4 right-6 font-bold select-none pointer-events-none ${
-            isFeature ? "text-[10rem]" : "text-[5rem]"
-          }`}
+          className={`absolute top-4 right-6 font-bold select-none pointer-events-none ${isFeature ? "text-[10rem]" : "text-[5rem]"
+            }`}
           style={{ opacity: 0.03, color: "white", fontFamily: "'Space Grotesk', sans-serif" }}
         >
           {String(index + 1).padStart(2, "0")}
@@ -132,9 +130,8 @@ const TeamMemberCard = ({
 
         {/* Avatar circle with initials */}
         <motion.div
-          className={`rounded-full flex items-center justify-center mb-6 font-bold tracking-wide overflow-hidden ${
-            isFeature ? "w-48 h-48 text-4xl" : "w-28 h-28 text-xl"
-          }`}
+          className={`rounded-full flex items-center justify-center mb-6 font-bold tracking-wide overflow-hidden ${isFeature ? "w-48 h-48 text-4xl" : "w-28 h-28 text-xl"
+            }`}
           style={{
             background: member.photo ? "none" : `linear-gradient(135deg, ${member.accentColor}, ${member.accentColor}88)`,
             boxShadow: `0 8px 30px ${member.accentColor}30`,
@@ -151,9 +148,8 @@ const TeamMemberCard = ({
 
         {/* Name - editorial oversized */}
         <h3
-          className={`font-display font-bold leading-tight mb-1 ${
-            isFeature ? "text-4xl md:text-5xl" : "text-xl md:text-2xl"
-          }`}
+          className={`font-display font-bold leading-tight mb-1 ${isFeature ? "text-4xl md:text-5xl" : "text-xl md:text-2xl"
+            }`}
           style={{ color: "white" }}
         >
           {member.name}
@@ -180,9 +176,8 @@ const TeamMemberCard = ({
           {member.expertise.map((tag) => (
             <span
               key={tag}
-              className={`rounded-full border font-mono uppercase tracking-wider ${
-                isFeature ? "px-4 py-1.5 text-[11px]" : "px-2.5 py-0.5 text-[9px]"
-              }`}
+              className={`rounded-full border font-mono uppercase tracking-wider ${isFeature ? "px-4 py-1.5 text-[11px]" : "px-2.5 py-0.5 text-[9px]"
+                }`}
               style={{
                 color: member.accentColor,
                 borderColor: `${member.accentColor}40`,

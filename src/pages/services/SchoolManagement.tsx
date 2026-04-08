@@ -8,8 +8,8 @@ export default function SchoolManagement() {
     <>
       <SEO
         title="School Management System in Odisha | LogiSaar"
-        description="Custom school management software for schools, colleges and coaching centers in Odisha. Manage attendance, fees, results and parents from one dashboard. Contact LogiSaar: +91 78150 14638"
-        keywords="school management system Odisha, school software Bhubaneswar, college management system Cuttack, student management software Odisha, school ERP Odisha, LogiSaar"
+        description="Custom school management software for schools, colleges and coaching centers in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha. Manage attendance, fees, results and parents from one dashboard. Contact LogiSaar: +91 78150 14638"
+        keywords="school management system Odisha, school software Bhubaneswar, college management system Cuttack, student management software Bhadrak, school ERP Rourkela, school management system Bhadrak, school software Rourkela, LogiSaar"
         canonical="https://logisaar.in/services/school-management-system"
       />
       <ServicePageLayout

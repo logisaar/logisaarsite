@@ -326,8 +326,8 @@ const Services = () => {
     <Layout>
       <SEO
         title="Web Development & Software Solutions in Odisha | LogiSaar"
-        description="School management system, hotel software, AI lead follow-up, QR menu, CRM, AI automation and more — built for businesses in Bhubaneswar, Cuttack and Odisha. LogiSaar: +91 78150 14638"
-        keywords="web development services Odisha, school management system Odisha, hotel software Bhubaneswar, AI automation Odisha, custom CRM Cuttack, QR menu restaurant Odisha, LogiSaar"
+        description="School management system, hotel software, AI lead follow-up, QR menu, CRM, AI automation and more — built for businesses in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha. LogiSaar: +91 78150 14638"
+        keywords="web development services Odisha, school management system Odisha, hotel software Bhubaneswar, AI automation Odisha, custom CRM Cuttack, QR menu restaurant Odisha, web development Bhadrak, software company Rourkela, LogiSaar"
         canonical="https://logisaar.in/services"
       />
 
