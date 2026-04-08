@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import chinmayPhoto from "@/assets/team/chinmay.jpg";
 import bpsPhoto from "@/assets/team/bps.jpg";
+import subraPhoto from "@/assets/team/subra jpeg.jpeg";
 
 interface TeamMember {
   name: string;
@@ -18,8 +19,7 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   { name: "Chinmay Kumar Panda", role: "Founder & CEO", initials: "CKP", accentColor: "hsl(170 80% 45%)", photo: chinmayPhoto, bio: "Building intelligent digital solutions that empower businesses to scale.", expertise: ["AI/ML", "Product Strategy", "Full-Stack"], quote: "Let's build the future — together.", achievement: "Turning Ideas into Impact Since Day One" },
   { name: "BPS Kar", role: "Co-Founder & MD", initials: "BK", accentColor: "hsl(260 70% 58%)", photo: bpsPhoto, bio: "Driving growth through strategic partnerships and operations.", expertise: ["Business Strategy", "Operations", "Growth"] },
-  { name: "Dibyagyani Mohanta", role: "CTO", initials: "DM", accentColor: "hsl(210 90% 55%)", bio: "Architecting scalable systems with modern technologies.", expertise: ["System Architecture", "Cloud", "DevOps"] },
-  { name: "Swayam Siddharth Sahoo", role: "CDO", initials: "SS", accentColor: "hsl(30 90% 55%)", bio: "Crafting intuitive experiences through design thinking.", expertise: ["UI/UX", "Design Systems", "Branding"] },
+  { name: "Subrajit Jena", role: "CTO", initials: "SJ", accentColor: "hsl(210 90% 55%)", photo: subraPhoto, bio: "Architecting scalable systems with modern technologies.", expertise: ["System Architecture", "Cloud", "DevOps"] },
 ];
 
 const SmokeParticle = ({ delay, x, size }: { delay: number; x: number; size: number }) => (
