@@ -10,7 +10,7 @@ export default function AIReceptionist() {
         title="AI Receptionist for Businesses in Odisha | LogiSaar"
         description="24/7 AI receptionist for clinics, hotels, salons and businesses in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha. Handle calls, bookings and WhatsApp enquiries automatically. LogiSaar: +91 78150 14638"
         keywords="AI receptionist Odisha, virtual receptionist Bhubaneswar, AI voice assistant Cuttack, automated call handling Odisha, AI receptionist Bhadrak, virtual receptionist Rourkela, AI chatbot receptionist Odisha, LogiSaar"
-        canonical="https://logisaar.in/services/ai-receptionist"
+        canonical="https://www.logisaar.in/services/ai-receptionist"
       />
       <ServicePageLayout
         hero={{

@@ -22,7 +22,7 @@ const localBusinessSchema = {
   name: "LogiSaar",
   description:
     "Custom web development, CRM, AI automation and SEO services for businesses in Odisha",
-  url: "https://logisaar.in",
+  url: "https://www.logisaar.in",
   telephone: "+917815014638",
   email: "logisaar@gmail.com",
   address: {
@@ -198,7 +198,7 @@ const Index = () => {
         title="Website Development Company in Odisha | LogiSaar"
         description="LogiSaar is Odisha's leading web development company. We build custom websites, CRM systems, e-commerce platforms & AI tools for businesses in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha. Starting ₹2,999."
         keywords="web development company Odisha, website design Bhubaneswar, website design Cuttack, website design Bhadrak, website design Rourkela, custom CRM Odisha, e-commerce development Odisha, SEO services Odisha, AI development Odisha, LogiSaar"
-        canonical="https://logisaar.in/"
+        canonical="https://www.logisaar.in/"
         jsonLd={localBusinessSchema}
       />
 

@@ -10,7 +10,7 @@ export default function QRMenu() {
         title="QR Code Digital Menu for Restaurants in Odisha | LogiSaar"
         description="Replace paper menus with a beautiful QR code digital menu. Customers scan, order and pay from their phone. Built for restaurants, cafes and dhabas in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha. LogiSaar: +91 78150 14638"
         keywords="QR code menu Odisha, digital menu restaurant Bhubaneswar, QR menu system Cuttack, restaurant ordering system Odisha, QR menu Bhadrak, digital menu Rourkela, contactless menu Odisha, LogiSaar"
-        canonical="https://logisaar.in/services/qr-menu-system"
+        canonical="https://www.logisaar.in/services/qr-menu-system"
       />
       <ServicePageLayout
         hero={{

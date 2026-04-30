@@ -100,7 +100,7 @@ const Location = () => {
         title="Web Development Company in Odisha | Bhubaneswar, Cuttack, Bhadrak & Rourkela | LogiSaar"
         description="LogiSaar is Odisha's trusted web development company. We build custom websites, CRM, e-commerce & AI tools for businesses in Bhubaneswar, Cuttack, Bhadrak, Rourkela, Puri, Sambalpur and all of Odisha. Call +91 78150 14638."
         keywords="web development company Odisha, web design Bhubaneswar, web design Cuttack, website developer Bhadrak, website developer Rourkela, website developer Puri, SEO Odisha, CRM development Odisha, mobile app development Odisha"
-        canonical="https://logisaar.in/web-development-odisha"
+        canonical="https://www.logisaar.in/web-development-odisha"
         jsonLd={faqSchema}
       />
 

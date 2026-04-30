@@ -10,7 +10,7 @@ export default function ProposalSoftware() {
         title="Proposal Software for Freelancers in India | LogiSaar"
         description="Send beautiful branded proposals with digital signatures and payment links. Built for Indian freelancers and agencies. Close more clients faster. LogiSaar: +91 78150 14638"
         keywords="proposal software India, freelancer proposal tool, digital proposal software Odisha, e-signature proposal India, client proposal software freelancer, LogiSaar"
-        canonical="https://logisaar.in/services/proposal-software"
+        canonical="https://www.logisaar.in/services/proposal-software"
       />
       <ServicePageLayout
         hero={{

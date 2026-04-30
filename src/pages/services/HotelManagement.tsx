@@ -10,7 +10,7 @@ export default function HotelManagement() {
         title="Hotel Management System in Odisha | LogiSaar"
         description="Custom hotel management software for hotels, resorts and homestays in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha. Online booking, billing, housekeeping and guest management. LogiSaar: +91 78150 14638"
         keywords="hotel management system Odisha, resort software Bhubaneswar, hotel booking system Cuttack, property management software Odisha, hotel software Bhadrak, hotel management system Rourkela, hospitality software Odisha, LogiSaar"
-        canonical="https://logisaar.in/services/hotel-management-system"
+        canonical="https://www.logisaar.in/services/hotel-management-system"
       />
       <ServicePageLayout
         hero={{

@@ -129,7 +129,7 @@ const Pricing = () => {
         title="Website Development Pricing in Odisha | LogiSaar"
         description="Transparent pricing for websites, CRM, mobile apps & AI tools in Odisha. Static website from ₹2,999. Custom CRM from ₹75,000. No hidden charges."
         keywords="website development cost Odisha, web design price Bhubaneswar, CRM development cost Odisha, LogiSaar pricing"
-        canonical="https://logisaar.in/pricing"
+        canonical="https://www.logisaar.in/pricing"
       />
       {/* Hero */}
       <section className="min-h-[50vh] flex items-end relative overflow-hidden pb-16">

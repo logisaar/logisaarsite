@@ -85,7 +85,7 @@ const About = () => {
       <SEO
         title="About LogiSaar | Web Development Agency in Odisha"
         description="LogiSaar was founded in 2025 by Chinmay Kumar Panda in Odisha. 15+ projects delivered. Building custom software for businesses across Bhubaneswar, Cuttack, and all of Odisha."
-        canonical="https://logisaar.in/about"
+        canonical="https://www.logisaar.in/about"
       />
       {/* Hero */}
       <section className="min-h-[70vh] flex items-center relative overflow-hidden">

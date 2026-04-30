@@ -10,7 +10,7 @@ export default function CustomCRM() {
         title="Custom CRM Development in Odisha | LogiSaar"
         description="Own your CRM forever. We build fully custom CRM systems for businesses in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha. Replace Zoho and Salesforce with a CRM built exactly for your workflow. LogiSaar: +91 78150 14638"
         keywords="custom CRM Odisha, CRM development Bhubaneswar, sales CRM Cuttack, business CRM software Odisha, custom CRM Bhadrak, CRM software Rourkela, replace Zoho CRM Odisha, LogiSaar"
-        canonical="https://logisaar.in/services/custom-crm"
+        canonical="https://www.logisaar.in/services/custom-crm"
       />
       <ServicePageLayout
         hero={{

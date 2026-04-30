@@ -42,7 +42,7 @@ const Contact = () => {
         title="Contact LogiSaar | Web Developer in Bhubaneswar, Cuttack, Bhadrak & Rourkela, Odisha"
         description="Contact Chinmay Kumar Panda at LogiSaar for website development, SEO or AI solutions in Odisha. Serving Bhubaneswar, Cuttack, Bhadrak, Rourkela and all of Odisha. Call +91 78150 14638 or WhatsApp us now."
         keywords="contact LogiSaar, web developer Bhubaneswar, web developer Cuttack, web developer Bhadrak, web developer Rourkela, hire web developer Odisha"
-        canonical="https://logisaar.in/contact"
+        canonical="https://www.logisaar.in/contact"
       />
       {/* Split screen layout */}
       <section className="min-h-screen grid md:grid-cols-2">
