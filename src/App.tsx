@@ -10,8 +10,7 @@ import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
-import Checkout from "./pages/Checkout";
-import Payment from "./pages/Payment";
+
 import Location from "./pages/Location";
 import NotFound from "./pages/NotFound";
 import PageTransition from "./components/PageTransition";
@@ -40,8 +39,7 @@ const AnimatedRoutes = () => {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/payment" element={<Payment />} />
+
           <Route path="/web-development-odisha" element={<Location />} />
           {/* Industry-specific service pages */}
           <Route path="/services/school-management-system" element={<SchoolManagement />} />

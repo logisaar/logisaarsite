@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,8 +17,18 @@ const Contact = () => {
   const { toast } = useToast();
   const [submitting, setSubmitting] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
+  const [searchParams] = useSearchParams();
   const formRef = useRef(null);
   const formInView = useInView(formRef, { once: true, amount: 0.2 });
+
+  useEffect(() => {
+    const service = searchParams.get("service");
+    const price = searchParams.get("price");
+    if (service) {
+      const msg = `Hi, I'm interested in the ${service} service${price ? ` (starting at ${price})` : ""}. Please share more details and next steps.`;
+      setFormData((prev) => ({ ...prev, message: msg }));
+    }
+  }, [searchParams]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));

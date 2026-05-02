@@ -208,7 +208,7 @@ const Pricing = () => {
                     variant={plan.popular ? "default" : "outline"}
                     className={`w-full group/btn rounded-xl ${plan.popular ? "bg-gradient-primary hover:opacity-90 border-0 text-white" : ""}`}
                   >
-                    <Link to={`/checkout?plan=${encodeURIComponent(plan.name)}&price=${encodeURIComponent(plan.price.replace(/[^\d.]/g, ""))}`}>
+                    <Link to={`/contact?service=${encodeURIComponent(plan.name)}&price=${encodeURIComponent(plan.price)}`}>
                       Get Started
                       <ArrowRight size={14} className="ml-1 group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
@@ -230,7 +230,7 @@ const Pricing = () => {
               GST applicable as per government norms. EMI available on orders above ₹50,000.
             </p>
             <p className="text-muted-foreground text-sm">
-              We accept payments via <strong className="text-foreground">Paytm</strong> and bank transfer.
+              We accept payments via bank transfer.
               International clients can pay via wire transfer or PayPal.
             </p>
             <p className="text-muted-foreground text-sm mt-4">

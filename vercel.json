@@ -21,22 +21,11 @@
     ],
     "routes": [
         {
-            "src": "/api/(.*)",
-            "dest": "/api/$1"
-        },
-        {
             "src": "/(.+\\.[^/]+)$",
             "dest": "/$1"
         },
         {
             "src": "/",
-            "dest": "/index.html"
-        },
-        {
-            "src": "/(checkout|payment)",
-            "headers": {
-                "X-Robots-Tag": "noindex, nofollow"
-            },
             "dest": "/index.html"
         },
         {
@@ -54,35 +43,17 @@
     ],
     "headers": [
         {
-            "source": "/api/(.*)",
+            "source": "/(.*)",
             "headers": [
                 {
-                    "key": "Access-Control-Allow-Credentials",
-                    "value": "true"
+                    "key": "X-Content-Type-Options",
+                    "value": "nosniff"
                 },
                 {
-                    "key": "Access-Control-Allow-Origin",
-                    "value": "*"
-                },
-                {
-                    "key": "Access-Control-Allow-Methods",
-                    "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
-                },
-                {
-                    "key": "Access-Control-Allow-Headers",
-                    "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+                    "key": "X-Frame-Options",
+                    "value": "DENY"
                 }
             ]
         }
-    ],
-    "functions": {
-        "api/paytm/initiate.ts": {
-            "memory": 512,
-            "maxDuration": 30
-        },
-        "api/paytm/callback.ts": {
-            "memory": 512,
-            "maxDuration": 30
-        }
-    }
+    ]
 }

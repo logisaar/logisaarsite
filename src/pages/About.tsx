@@ -85,6 +85,7 @@ const About = () => {
       <SEO
         title="About LogiSaar | Web Development Agency in Odisha"
         description="LogiSaar was founded in 2025 by Chinmay Kumar Panda in Odisha. 15+ projects delivered. Building custom software for businesses across Bhubaneswar, Cuttack, and all of Odisha."
+        keywords="about LogiSaar, web development agency Odisha, Chinmay Kumar Panda, software company Bhubaneswar, IT company Cuttack, LogiSaar team"
         canonical="https://www.logisaar.in/about"
       />
       {/* Hero */}
