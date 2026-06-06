@@ -32,7 +32,7 @@ const sections = [
           <li>Request a quote or consultation</li>
           <li>Apply for a job or partnership</li>
           <li>Communicate with us via email, phone, or chat</li>
-          <li>Register for an account on our platform</li>
+          <li>Register or sign in to an account on our platform (including using third-party authentication services like Google Login and Truecaller Login)</li>
         </ul>
         <p className="mt-4">This information may include your name, email address, phone number, company name, job title, billing information, and any other details you choose to provide.</p>
       </>
@@ -107,6 +107,8 @@ const sections = [
       <>
         <p>We use the following third-party services that may collect information as described in their respective privacy policies:</p>
         <ul className="list-disc pl-6 space-y-2 mt-3">
+          <li><strong>Google Login / Google Sign-In:</strong> To authenticate your identity and facilitate quick, secure account creation and login. We only access basic profile details (such as your name, email address, and profile photo) as authorized by your Google account settings.</li>
+          <li><strong>Truecaller Login / Truecaller SDK:</strong> To instantly verify your mobile number and automatically pre-fill your contact details using your verified Truecaller profile information.</li>
           <li><strong>Google Analytics:</strong> For website analytics and usage tracking</li>
           <li><strong>Firebase:</strong> For app development, analytics, and backend services</li>
           <li><strong>Google Play Services:</strong> For Android application functionality and performance monitoring</li>
