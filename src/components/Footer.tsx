@@ -22,6 +22,8 @@ const footerLinks = {
     { label: "Portfolio", to: "/portfolio" },
     { label: "Pricing", to: "/pricing" },
     { label: "Contact", to: "/contact" },
+    { label: "Privacy Policy", to: "/privacy-policy" },
+    { label: "Terms & Conditions", to: "/terms-conditions" },
   ],
   Locations: [
     { label: "Web Development in Bhubaneswar", to: "/web-development-odisha" },
