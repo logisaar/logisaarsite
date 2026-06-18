@@ -7,16 +7,8 @@ const WhatsAppButton = () => {
   return (
     <div className="fixed bottom-6 right-6 z-[9999] group" title="Chat on WhatsApp">
       {/* Pulsing rings */}
-      <motion.span
-        className="absolute inset-0 rounded-full bg-green-500 opacity-30"
-        animate={{ scale: [1, 1.7], opacity: [0.35, 0] }}
-        transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut" }}
-      />
-      <motion.span
-        className="absolute inset-0 rounded-full bg-green-500 opacity-20"
-        animate={{ scale: [1, 2.2], opacity: [0.25, 0] }}
-        transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut", delay: 0.4 }}
-      />
+      <span className="absolute inset-0 rounded-full bg-green-500 pointer-events-none animate-ripple-1" />
+      <span className="absolute inset-0 rounded-full bg-green-500 pointer-events-none animate-ripple-2" />
 
       {/* Tooltip */}
       <span className="absolute bottom-full right-0 mb-2 whitespace-nowrap bg-gray-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
@@ -32,6 +24,7 @@ const WhatsAppButton = () => {
         className="relative flex items-center justify-center w-14 h-14 rounded-full bg-green-500 shadow-lg hover:bg-green-600 transition-colors"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
       >
         {/* WhatsApp SVG icon */}
         <svg

@@ -22,8 +22,12 @@ const footerLinks = {
     { label: "Portfolio", to: "/portfolio" },
     { label: "Pricing", to: "/pricing" },
     { label: "Contact", to: "/contact" },
+  ],
+  Legal: [
     { label: "Privacy Policy", to: "/privacy-policy" },
-    { label: "Terms & Conditions", to: "/terms-conditions" },
+    { label: "Terms of Service", to: "/terms-conditions" },
+    { label: "Cookie Policy", to: "/cookie-policy" },
+    { label: "Refund Policy", to: "/refund-policy" },
   ],
   Locations: [
     { label: "Web Development in Bhubaneswar", to: "/web-development-odisha" },
@@ -74,7 +78,7 @@ const Footer = () => {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <footer className="relative bg-foreground text-background/80" ref={ref}>
+    <footer className="relative bg-foreground text-background/80 overflow-hidden" ref={ref}>
       <DecorativeShapes variant="footer" />
 
       {/* Breathing gradient line */}
@@ -104,10 +108,10 @@ const Footer = () => {
           </MagneticButton>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-10 gap-x-6">
           {/* Brand column */}
           <motion.div
-            className="lg:col-span-2"
+            className="lg:col-span-1"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.8 }}
@@ -119,7 +123,7 @@ const Footer = () => {
               Elite development studio crafting modern software solutions. Engineering excellence for businesses worldwide.
             </p>
             {/* Social icons */}
-            <div className="flex gap-3 mt-6">
+            <div className="flex gap-2 mt-6 flex-wrap">
               {socialLinks.map((s) => (
                 <MagneticButton key={s.label} strength={0.3}>
                   <a
@@ -161,13 +165,13 @@ const Footer = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.6, duration: 0.8 }}
+            transition={{ delay: 0.7, duration: 0.8 }}
           >
             <h4 className="font-display font-semibold text-background mb-4 text-sm uppercase tracking-wider">Get in Touch</h4>
             <ul className="space-y-3 text-sm text-background/50">
               <li className="flex items-center gap-2">
                 <Mail size={14} className="text-primary shrink-0" />
-                <a href="mailto:logisaar@gmail.com" className="hover:text-primary transition-colors">
+                <a href="mailto:logisaar@gmail.com" className="hover:text-primary transition-colors break-all">
                   logisaar@gmail.com
                 </a>
               </li>

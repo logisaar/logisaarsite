@@ -1,385 +1,414 @@
-import { motion } from "framer-motion";
-import Layout from "@/components/Layout";
-import SEO from "@/components/SEO";
+import LegalPageLayout from "@/components/legal/LegalPageLayout";
 
 const sections = [
   {
-    title: "Acceptance of Terms",
+    id: "acceptance-of-terms",
+    title: "1. Acceptance of Terms",
     content: (
       <>
-        <p>By accessing or using the website <a href="https://logisaar.in" className="text-primary underline underline-offset-4 hover:opacity-80">logisaar.in</a> and any services provided by Logisaar Technology Pvt Ltd ("Logisaar", "we", "us", or "our"), you agree to be bound by these Terms & Conditions. If you do not agree with any part of these terms, you must not use our website or services.</p>
-        <p className="mt-4">These terms apply to all visitors, users, clients, and any person or entity accessing our platform or engaging our services. We reserve the right to update these terms at any time, and continued use constitutes acceptance of such changes.</p>
-        <p className="mt-4"><strong>Effective Date:</strong> June 6, 2026</p>
+        <p>These Terms of Service ("Terms") constitute a legally binding agreement between you ("User", "Customer", "Client", "You") and Logisaar Technologies Private Limited ("Logisaar", "Company", "We", "Us", "Our").</p>
+        <p>By accessing, browsing, registering for, purchasing, subscribing to, or using any website, application, software, platform, product, service, API, educational platform, SaaS offering, client portal, dashboard, or digital service operated by Logisaar Technologies Private Limited, you agree to be bound by these Terms.</p>
+        <p>If you do not agree with these Terms, you must discontinue use immediately.</p>
       </>
     ),
   },
   {
-    title: "Definitions",
+    id: "applicability",
+    title: "2. Applicability",
     content: (
       <>
-        <p>For the purpose of these Terms & Conditions, the following definitions apply:</p>
+        <p>These Terms apply to:</p>
+        <ul className="list-disc pl-6 space-y-1 mt-2">
+          <li>logisaar.in</li>
+          <li>All Logisaar websites</li>
+          <li>Mobile applications</li>
+          <li>SaaS platforms</li>
+          <li>APIs</li>
+          <li>CRM systems</li>
+          <li>ERP systems</li>
+          <li>Educational platforms</li>
+          <li>Client portals</li>
+          <li>Future products</li>
+          <li>Future brands</li>
+          <li>Future subsidiaries and affiliated services owned or operated by Logisaar Technologies Private Limited</li>
+        </ul>
+        <p className="mt-4">Unless separate terms are expressly published for a specific product.</p>
+      </>
+    ),
+  },
+  {
+    id: "eligibility",
+    title: "3. Eligibility",
+    content: (
+      <>
+        <p>You must be at least eighteen (18) years old and legally capable of entering into a binding agreement.</p>
+        <p>By using the Services, you represent and warrant that you satisfy these requirements.</p>
+      </>
+    ),
+  },
+  {
+    id: "account-registration",
+    title: "4. Account Registration",
+    content: (
+      <>
+        <p>Certain services require account registration.</p>
+        <p>You agree to:</p>
         <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li><strong>"Company", "We", "Us", "Our"</strong> refers to Logisaar Technology Pvt Ltd</li>
-          <li><strong>"Client", "User", "You", "Your"</strong> refers to the individual or entity using our services or website</li>
-          <li><strong>"Services"</strong> refers to all products, solutions, and offerings provided by Logisaar, including but not limited to website development, web applications, mobile applications, SaaS products, software development, digital marketing, UI/UX design, IT consulting, and cloud-based services</li>
-          <li><strong>"Website"</strong> refers to logisaar.in and all related subdomains and platforms</li>
-          <li><strong>"Agreement"</strong> refers to these Terms & Conditions along with any project-specific contracts or statements of work</li>
-          <li><strong>"Content"</strong> includes all text, graphics, logos, images, software, and other materials on our website or delivered as part of our services</li>
+          <li>Provide accurate information</li>
+          <li>Maintain updated information</li>
+          <li>Keep credentials secure</li>
+          <li>Be responsible for all activity under your account</li>
+        </ul>
+        <p className="mt-4">The Company shall not be liable for losses arising from unauthorized account access caused by user negligence.</p>
+      </>
+    ),
+  },
+  {
+    id: "user-responsibilities",
+    title: "5. User Responsibilities",
+    content: (
+      <>
+        <p>Users shall:</p>
+        <ul className="list-disc pl-6 space-y-2 mt-3">
+          <li>Comply with applicable laws</li>
+          <li>Respect intellectual property rights</li>
+          <li>Maintain account security</li>
+          <li>Use services only for lawful purposes</li>
+          <li>Provide truthful information</li>
+        </ul>
+        <p className="mt-4">Users are solely responsible for content uploaded, submitted, transmitted, or shared through the Services.</p>
+      </>
+    ),
+  },
+  {
+    id: "prohibited-activities",
+    title: "6. Prohibited Activities",
+    content: (
+      <>
+        <p>Users shall not:</p>
+        <ul className="list-disc pl-6 space-y-2 mt-3">
+          <li>Violate laws</li>
+          <li>Upload malware</li>
+          <li>Attempt unauthorized access</li>
+          <li>Circumvent security controls</li>
+          <li>Reverse engineer proprietary software</li>
+          <li>Interfere with system operations</li>
+          <li>Engage in fraud</li>
+          <li>Distribute harmful content</li>
+          <li>Infringe intellectual property rights</li>
+          <li>Abuse support systems</li>
+        </ul>
+        <p className="mt-4">The Company may suspend or terminate accounts involved in prohibited activities without notice.</p>
+      </>
+    ),
+  },
+  {
+    id: "payments",
+    title: "7. Payments",
+    content: (
+      <>
+        <p>Certain Services may require payment.</p>
+        <p>Payments may be processed through:</p>
+        <ul className="list-disc pl-6 space-y-1 mt-2">
+          <li>Razorpay</li>
+          <li>Zaakpay</li>
+          <li>Banking Partners</li>
+          <li>Authorized Payment Providers</li>
+        </ul>
+        <p className="mt-4">Users agree to pay all applicable charges, taxes, fees, subscriptions, and service costs.</p>
+        <p>Failure to make payment may result in suspension or termination of services.</p>
+      </>
+    ),
+  },
+  {
+    id: "subscriptions",
+    title: "8. Subscriptions",
+    content: (
+      <>
+        <p>For subscription-based services:</p>
+        <ul className="list-disc pl-6 space-y-2 mt-3">
+          <li>Fees may be charged periodically.</li>
+          <li>Subscriptions may renew automatically unless cancelled.</li>
+          <li>Users remain responsible for payment obligations incurred before cancellation.</li>
+        </ul>
+        <p className="mt-4">Specific subscription terms may be provided for individual products.</p>
+      </>
+    ),
+  },
+  {
+    id: "refunds",
+    title: "9. Refunds",
+    content: (
+      <>
+        <p>Refund eligibility shall be governed by the applicable Refund and Cancellation Policy published by the Company.</p>
+        <p>Unless otherwise expressly stated:</p>
+        <ul className="list-disc pl-6 space-y-2 mt-3">
+          <li>Fees paid are generally non-refundable.</li>
+          <li>Setup fees are non-refundable.</li>
+          <li>Development charges are non-refundable once work has commenced.</li>
         </ul>
       </>
     ),
   },
   {
-    title: "Eligibility and User Requirements",
+    id: "intellectual-property",
+    title: "10. Intellectual Property",
     content: (
       <>
-        <p>By using our services, you represent and warrant that:</p>
-        <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li>You are at least 18 years of age or the age of majority in your jurisdiction</li>
-          <li>You have the legal capacity to enter into binding contracts</li>
-          <li>You are not located in a country subject to sanctions or trade restrictions</li>
-          <li>You will provide accurate, current, and complete information during registration or service engagement</li>
-          <li>Your use of our services complies with all applicable local, state, national, and international laws</li>
+        <p>All intellectual property rights relating to:</p>
+        <ul className="list-disc pl-6 space-y-1 mt-2">
+          <li>Software</li>
+          <li>Source Code</li>
+          <li>Applications</li>
+          <li>Designs</li>
+          <li>Logos</li>
+          <li>Trademarks</li>
+          <li>Documentation</li>
+          <li>Content</li>
+          <li>Databases</li>
         </ul>
-        <p className="mt-4">If you are using our services on behalf of a business or entity, you represent that you have the authority to bind that entity to these terms.</p>
+        <p className="mt-4">are owned by Logisaar Technologies Private Limited or its licensors unless otherwise stated.</p>
+        <p>No ownership rights are transferred through use of the Services.</p>
       </>
     ),
   },
   {
-    title: "User Accounts and Registration",
+    id: "user-content",
+    title: "11. User Content",
     content: (
       <>
-        <p>Certain services may require you to create an account. When you register, you agree to:</p>
-        <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li>Provide accurate and complete registration information</li>
-          <li>Maintain and update your account information promptly</li>
-          <li>Keep your login credentials confidential and secure</li>
-          <li>Notify us immediately of any unauthorized use of your account</li>
-          <li>Accept responsibility for all activities under your account</li>
+        <p>Users retain ownership of content uploaded by them.</p>
+        <p>Users grant the Company a worldwide, non-exclusive, royalty-free license to:</p>
+        <ul className="list-disc pl-6 space-y-1 mt-2">
+          <li>Host</li>
+          <li>Store</li>
+          <li>Process</li>
+          <li>Reproduce</li>
+          <li>Display</li>
+          <li>Transmit</li>
         </ul>
-        <p className="mt-4">We reserve the right to suspend or terminate accounts that violate these terms or engage in fraudulent or harmful activities.</p>
+        <p className="mt-4">such content solely for the operation and improvement of Services.</p>
+        <p>Users represent that they possess all necessary rights to the content they upload.</p>
       </>
     ),
   },
   {
-    title: "Services Offered",
+    id: "feedback",
+    title: "12. Feedback",
     content: (
       <>
-        <p>Logisaar Technology Pvt Ltd provides the following services:</p>
-        <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li><strong>Website Development:</strong> Custom website design and development using modern frameworks and technologies</li>
-          <li><strong>Web Applications:</strong> Scalable, secure, and feature-rich web application development</li>
-          <li><strong>Mobile Applications:</strong> Native and cross-platform mobile app development for iOS and Android</li>
-          <li><strong>SaaS Products:</strong> Cloud-based software-as-a-service solutions for various business needs</li>
-          <li><strong>Software Development:</strong> Custom software solutions tailored to business requirements</li>
-          <li><strong>Digital Marketing Solutions:</strong> SEO, social media marketing, and digital strategy services</li>
-          <li><strong>UI/UX Design:</strong> User interface and user experience design for digital products</li>
-          <li><strong>IT Consulting:</strong> Technology consulting and strategic advisory services</li>
-          <li><strong>Cloud-Based Services:</strong> Cloud infrastructure, deployment, and management solutions</li>
-        </ul>
-        <p className="mt-4">The scope, timeline, and deliverables for each service will be defined in a separate Statement of Work (SOW) or project agreement.</p>
+        <p>Any suggestions, ideas, recommendations, comments, or feedback submitted to the Company may be used without restriction and without compensation.</p>
       </>
     ),
   },
   {
-    title: "Payments and Billing",
+    id: "service-availability",
+    title: "13. Service Availability",
     content: (
       <>
-        <p>Payment terms for our services are as follows:</p>
+        <p>The Company does not guarantee:</p>
         <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li>Payment terms will be outlined in the project proposal, invoice, or contract</li>
-          <li>Payments are due as per the agreed schedule unless otherwise stated</li>
-          <li>All prices are in Indian Rupees (INR) unless specified otherwise</li>
-          <li>Applicable taxes (GST, etc.) will be added to invoices as required by law</li>
-          <li>Late payments may incur additional charges as specified in the project agreement</li>
-          <li>We accept payments via bank transfer, UPI, and other mutually agreed methods</li>
+          <li>Continuous availability</li>
+          <li>Error-free operation</li>
+          <li>Uninterrupted access</li>
+          <li>Compatibility with all devices</li>
         </ul>
+        <p className="mt-4">Maintenance, upgrades, outages, and technical failures may occur.</p>
       </>
     ),
   },
   {
-    title: "Subscription Services",
+    id: "beta-services",
+    title: "14. Beta Services",
     content: (
       <>
-        <p>For subscription-based services and SaaS products:</p>
+        <p>Products designated as beta, testing, preview, experimental, or early access may:</p>
         <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li>Subscriptions are billed on a monthly or annual basis as agreed</li>
-          <li>Subscription fees are non-refundable except as expressly stated in the refund policy</li>
-          <li>We reserve the right to modify subscription pricing with 30 days' notice</li>
-          <li>Non-payment may result in service suspension or account termination</li>
-          <li>Cancellation of subscription will take effect at the end of the current billing cycle</li>
+          <li>Contain defects</li>
+          <li>Experience downtime</li>
+          <li>Be modified without notice</li>
         </ul>
+        <p className="mt-4">Use of beta services is entirely at the user's risk.</p>
       </>
     ),
   },
   {
-    title: "Refund and Cancellation Policy",
+    id: "third-party-services",
+    title: "15. Third-Party Services",
     content: (
       <>
-        <p>Our refund and cancellation policy is as follows:</p>
+        <p>The Services may integrate with third-party providers.</p>
+        <p>The Company shall not be responsible for:</p>
         <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li><strong>Project-Based Services:</strong> Refunds for custom development projects are handled on a case-by-case basis as defined in the project contract. Typically, deposits are non-refundable once work has commenced</li>
-          <li><strong>SaaS Subscriptions:</strong> Monthly subscriptions may be cancelled anytime, with access continuing until the end of the paid billing period. No prorated refunds for partial months</li>
-          <li><strong>Digital Products:</strong> All sales of digital products and software licenses are final unless explicitly stated otherwise</li>
-          <li><strong>Cancellation:</strong> Either party may cancel a project with written notice as per the terms in the applicable service agreement</li>
-        </ul>
-        <p className="mt-4">Any refund will be processed within 15 business days of approval.</p>
-      </>
-    ),
-  },
-  {
-    title: "Intellectual Property Rights",
-    content: (
-      <>
-        <p><strong>Our Intellectual Property:</strong> All content, trademarks, logos, designs, software code, and materials on our website and platform are the property of Logisaar Technology Pvt Ltd unless otherwise stated. You may not reproduce, distribute, or create derivative works without our prior written consent.</p>
-        <p className="mt-4"><strong>Deliverables:</strong> Upon full payment, we transfer the intellectual property rights of the custom-developed deliverables (code, designs, etc.) to the client, subject to the following:</p>
-        <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li>We retain the right to use third-party libraries, frameworks, and tools licensed under their respective open-source or commercial licenses</li>
-          <li>We reserve the right to display the work in our portfolio unless a non-disclosure agreement is in place</li>
-          <li>We retain ownership of our pre-existing tools, methodologies, and reusable components</li>
-        </ul>
-        <p className="mt-4"><strong>User Content:</strong> You retain ownership of any content you provide to us. By submitting content, you grant us a license to use it for the purpose of providing our services.</p>
-      </>
-    ),
-  },
-  {
-    title: "User Responsibilities",
-    content: (
-      <>
-        <p>As a user of our services, you agree to:</p>
-        <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li>Provide timely feedback, approvals, and required materials for project delivery</li>
-          <li>Comply with all applicable laws and regulations</li>
-          <li>Maintain the confidentiality of any proprietary information shared with you</li>
-          <li>Not use our services for any illegal or unauthorized purpose</li>
-          <li>Ensure that any content or data you provide does not infringe on third-party rights</li>
-          <li>Cooperate with us to ensure timely delivery of services</li>
+          <li>Third-party content</li>
+          <li>Third-party services</li>
+          <li>Third-party failures</li>
+          <li>Third-party privacy practices</li>
         </ul>
       </>
     ),
   },
   {
-    title: "Prohibited Activities",
+    id: "disclaimer-warranties",
+    title: "16. Disclaimer of Warranties",
     content: (
       <>
-        <p>You agree not to engage in any of the following prohibited activities:</p>
+        <p>To the maximum extent permitted by law, the Services are provided on an "AS IS" and "AS AVAILABLE" basis.</p>
+        <p>The Company disclaims all warranties including:</p>
         <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li>Using our services for any unlawful purpose or in violation of any applicable law</li>
-          <li>Attempting to gain unauthorized access to our systems, servers, or networks</li>
-          <li>Uploading or transmitting viruses, malware, or any malicious code</li>
-          <li>Interfering with or disrupting the integrity or performance of our services</li>
-          <li>Reverse engineering, decompiling, or disassembling our software or platform</li>
-          <li>Using our services to send unsolicited communications (spam)</li>
-          <li>Impersonating any person or entity or misrepresenting your affiliation</li>
-          <li>Engaging in any activity that could harm our reputation or business operations</li>
+          <li>Merchantability</li>
+          <li>Fitness for a particular purpose</li>
+          <li>Non-infringement</li>
+          <li>Availability</li>
+          <li>Reliability</li>
         </ul>
-        <p className="mt-4">Violation of these prohibitions may result in immediate suspension or termination of services and legal action.</p>
       </>
     ),
   },
   {
-    title: "Third-Party Links and Services",
+    id: "limitation-liability",
+    title: "17. Limitation of Liability",
     content: (
       <>
-        <p>Our website and services may contain links to third-party websites, tools, or services that are not owned or controlled by Logisaar. We are not responsible for the content, privacy practices, or terms of these third-party platforms.</p>
-        <p className="mt-4">We may integrate with third-party services including but not limited to payment gateways, analytics providers, cloud hosting services, and communication tools. Your use of these services is subject to their respective terms and conditions.</p>
-        <p className="mt-4">We recommend reviewing the terms and privacy policies of any third-party services before using them in conjunction with our services.</p>
+        <p>To the maximum extent permitted by law:</p>
+        <p>Logisaar Technologies Private Limited, its directors, officers, employees, contractors, affiliates, and representatives shall not be liable for:</p>
+        <ul className="list-disc pl-6 space-y-1 mt-2">
+          <li>Indirect damages</li>
+          <li>Incidental damages</li>
+          <li>Consequential damages</li>
+          <li>Special damages</li>
+          <li>Punitive damages</li>
+          <li>Loss of profits</li>
+          <li>Loss of revenue</li>
+          <li>Loss of business</li>
+          <li>Loss of data</li>
+          <li>Business interruption</li>
+        </ul>
+        <p className="mt-4">arising from use of the Services.</p>
+        <p>In no event shall the Company's aggregate liability exceed the amount actually paid by the user to the Company during the twelve (12) months preceding the claim.</p>
       </>
     ),
   },
   {
-    title: "Limitation of Liability",
+    id: "indemnification",
+    title: "18. Indemnification",
     content: (
       <>
-        <p>To the maximum extent permitted by applicable law, Logisaar Technology Pvt Ltd and its directors, employees, partners, and affiliates shall not be liable for:</p>
+        <p>Users agree to indemnify and hold harmless the Company from claims, damages, liabilities, losses, costs, and expenses arising from:</p>
         <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li>Any indirect, incidental, special, consequential, or punitive damages</li>
-          <li>Loss of profits, revenue, data, or business opportunities</li>
-          <li>Service interruption or downtime beyond our reasonable control</li>
-          <li>Damages arising from your use or inability to use our services</li>
-          <li>Content or actions of third parties</li>
+          <li>Violation of these Terms</li>
+          <li>Violation of laws</li>
+          <li>Infringement of third-party rights</li>
+          <li>User content</li>
+          <li>Misuse of Services</li>
         </ul>
-        <p className="mt-4">Our total liability for any claim arising from these terms or our services shall not exceed the amount paid by you for the specific service giving rise to the claim. This limitation applies regardless of the legal theory on which the claim is based.</p>
       </>
     ),
   },
   {
-    title: "Disclaimer of Warranties",
+    id: "suspension-termination",
+    title: "19. Suspension and Termination",
     content: (
       <>
-        <p>Our services are provided on an "as is" and "as available" basis without warranties of any kind, either express or implied, including but not limited to:</p>
+        <p>The Company may suspend or terminate access without prior notice where:</p>
         <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li>Implied warranties of merchantability, fitness for a particular purpose, or non-infringement</li>
-          <li>Warranties that the services will be uninterrupted, error-free, or secure</li>
-          <li>Warranties regarding the accuracy, reliability, or completeness of any content</li>
+          <li>Terms are violated</li>
+          <li>Fraud is suspected</li>
+          <li>Security risks arise</li>
+          <li>Legal obligations require action</li>
         </ul>
-        <p className="mt-4">We do not guarantee that our services will meet your specific requirements or that defects will be corrected. We make no warranty regarding the results obtained from the use of our services.</p>
+        <p className="mt-4">Termination does not affect accrued rights and obligations.</p>
       </>
     ),
   },
   {
-    title: "Indemnification",
+    id: "force-majeure",
+    title: "20. Force Majeure",
     content: (
       <>
-        <p>You agree to indemnify, defend, and hold harmless Logisaar Technology Pvt Ltd, its directors, employees, agents, and affiliates from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable legal fees) arising out of or related to:</p>
+        <p>The Company shall not be liable for delays or failures caused by circumstances beyond reasonable control including:</p>
         <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li>Your use or misuse of our services</li>
-          <li>Your violation of these Terms & Conditions</li>
-          <li>Your violation of any applicable law or third-party right</li>
-          <li>Any content or data you provide or submit through our services</li>
-          <li>Any dispute between you and another user or third party</li>
+          <li>Natural disasters</li>
+          <li>Power failures</li>
+          <li>Internet disruptions</li>
+          <li>Government actions</li>
+          <li>Cyber attacks</li>
+          <li>Labor disputes</li>
         </ul>
-        <p className="mt-4">We reserve the right to assume the exclusive defense and control of any matter subject to indemnification, and you agree to cooperate with our defense of such claims.</p>
       </>
     ),
   },
   {
-    title: "Account Suspension and Termination",
+    id: "assignment",
+    title: "21. Assignment",
     content: (
       <>
-        <p>We reserve the right to suspend or terminate your account or access to our services at any time, without prior notice, for the following reasons:</p>
-        <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li>Violation of these Terms & Conditions</li>
-          <li>Engagement in prohibited or illegal activities</li>
-          <li>Non-payment of fees</li>
-          <li>Request by law enforcement or government authority</li>
-          <li>Extended period of inactivity</li>
-          <li>Disruption or threat to our services or users</li>
-        </ul>
-        <p className="mt-4">Upon termination, your right to use our services will immediately cease. Provisions of these terms that by their nature should survive termination shall survive, including but not limited to intellectual property provisions, warranty disclaimers, indemnification, and limitations of liability.</p>
+        <p>The Company may assign or transfer its rights and obligations under these Terms without user consent.</p>
+        <p>Users may not assign their rights without prior written approval.</p>
       </>
     ),
   },
   {
-    title: "Confidentiality",
+    id: "modifications",
+    title: "22. Modifications",
     content: (
       <>
-        <p>Both parties agree to maintain the confidentiality of any proprietary or confidential information disclosed during the course of business. Confidential information includes but is not limited to:</p>
-        <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li>Business strategies, processes, and methodologies</li>
-          <li>Technical specifications and source code</li>
-          <li>Client lists and business data</li>
-          <li>Financial information and pricing details</li>
-          <li>Project plans and trade secrets</li>
-        </ul>
-        <p className="mt-4">This confidentiality obligation shall survive the termination of our agreement and continue for a period of three years, or indefinitely for trade secrets.</p>
+        <p>The Company reserves the right to modify these Terms at any time.</p>
+        <p>Updated versions become effective upon publication.</p>
+        <p>Continued use constitutes acceptance of revised Terms.</p>
       </>
     ),
   },
   {
-    title: "Governing Law and Jurisdiction",
+    id: "governing-law",
+    title: "23. Governing Law",
     content: (
       <>
-        <p>These Terms & Conditions shall be governed by and construed in accordance with the laws of India. Any disputes arising out of or relating to these terms or our services shall be subject to the exclusive jurisdiction of the courts in Cuttack, Odisha, India.</p>
-        <p className="mt-4">Before initiating legal proceedings, both parties agree to attempt to resolve disputes through good faith negotiations for a period of 30 days. If the dispute remains unresolved, it may be referred to arbitration in accordance with the Arbitration and Conciliation Act, 1996.</p>
+        <p>These Terms shall be governed by the laws of India.</p>
       </>
     ),
   },
   {
-    title: "Changes to Terms",
+    id: "jurisdiction",
+    title: "24. Jurisdiction",
     content: (
       <>
-        <p>We reserve the right to modify, update, or replace these Terms & Conditions at any time. Changes will be effective immediately upon posting the revised terms on this page. We will notify users of material changes via:</p>
-        <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li>A prominent notice on our website</li>
-          <li>Email notification (if we have your contact information)</li>
-        </ul>
-        <p className="mt-4">Your continued use of our services after any changes constitutes acceptance of the updated terms. We encourage you to review this page periodically for the latest information on our terms.</p>
+        <p>All disputes shall be subject to the exclusive jurisdiction of the competent courts located in Bhubaneswar, Odisha, India.</p>
       </>
     ),
   },
   {
-    title: "Contact Information",
+    id: "entire-agreement",
+    title: "25. Entire Agreement",
     content: (
       <>
-        <p>If you have any questions, concerns, or requests regarding these Terms & Conditions, please contact us:</p>
-        <div className="mt-4 space-y-2">
-          <p><strong>Company:</strong> Logisaar Technology Pvt Ltd</p>
-          <p><strong>Website:</strong> <a href="https://logisaar.in" className="text-primary underline underline-offset-4">https://logisaar.in</a></p>
-          <p><strong>Email:</strong> <a href="mailto:logisaar@gmail.com" className="text-primary underline underline-offset-4">logisaar@gmail.com</a></p>
-        </div>
+        <p>These Terms, together with the Privacy Policy and any product-specific policies, constitute the entire agreement between the user and the Company.</p>
+      </>
+    ),
+  },
+  {
+    id: "contact",
+    title: "26. Contact",
+    content: (
+      <>
+        <p>For legal notices, compliance matters, support requests, and contractual communications:</p>
+        <p><strong>Email:</strong> <a href="mailto:contact@logisaar.in" className="text-primary underline underline-offset-4">contact@logisaar.in</a></p>
       </>
     ),
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.08 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
-  },
-};
-
 const TermsConditions = () => {
   return (
-    <Layout>
-      <SEO
-        title="Terms & Conditions | Logisaar Technology Pvt Ltd"
-        description="Read the Terms & Conditions of Logisaar Technology Pvt Ltd. Learn about the terms governing the use of our website, services, software products, and digital solutions."
-        keywords="terms and conditions Logisaar, terms of service, software company terms, Logisaar Technology Pvt Ltd terms, website terms"
-        canonical="https://logisaar.in/terms-conditions"
-      />
-
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 via-background to-background pt-32 pb-16">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <p className="text-primary font-medium text-xs uppercase tracking-[0.2em] mb-4">
-              Legal
-            </p>
-            <h1 className="font-display text-4xl md:text-6xl font-bold mb-6">
-              Terms & Conditions
-            </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Last updated: June 6, 2026
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Content */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="max-w-3xl mx-auto"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {sections.map((section) => (
-              <motion.div
-                key={section.title}
-                variants={itemVariants}
-                className="mb-12 last:mb-0"
-              >
-                <h2 className="font-display text-2xl md:text-3xl font-bold mb-4 text-foreground">
-                  {section.title}
-                </h2>
-                <div className="text-muted-foreground leading-relaxed text-base">
-                  {section.content}
-                </div>
-                <div className="mt-6 h-px bg-border" />
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-    </Layout>
+    <LegalPageLayout
+      title="Terms of Service"
+      lastUpdated="18 June 2026"
+      seoTitle="Terms of Service | Logisaar Technologies Private Limited"
+      seoDescription="Read the Terms of Service of Logisaar Technologies Private Limited. Learn about the terms governing the use of our websites, platforms, applications, and services."
+      seoKeywords="terms of service, Logisaar, Logisaar Technologies, terms software company, Logisaar terms, website conditions"
+      seoCanonical="https://logisaar.in/terms-conditions"
+      sections={sections}
+    />
   );
 };
 

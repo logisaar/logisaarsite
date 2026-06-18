@@ -14,6 +14,8 @@ import Contact from "./pages/Contact";
 import Location from "./pages/Location";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
+import CookiePolicy from "./pages/CookiePolicy";
+import RefundPolicy from "./pages/RefundPolicy";
 import NotFound from "./pages/NotFound";
 import PageTransition from "./components/PageTransition";
 // Service pages
@@ -55,6 +57,9 @@ const AnimatedRoutes = () => {
           <Route path="/services/custom-crm" element={<CustomCRM />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/terms-of-service" element={<TermsConditions />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </PageTransition>
