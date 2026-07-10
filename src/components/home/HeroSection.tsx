@@ -1,182 +1,267 @@
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-import FloatingCodeSymbols from "@/components/FloatingCodeSymbols";
-import TextReveal from "@/components/creative/TextReveal";
-import MagneticButton from "@/components/creative/MagneticButton";
-import AnimatedCounter from "@/components/creative/AnimatedCounter";
-import HeroProjectCards from "@/components/home/HeroProjectCards";
-
-const subtitles = [
-  "Custom CRM & Business Software",
-  "AI-Powered Web Solutions",
-  "E-Commerce & Mobile Apps",
-  "SEO & Google Growth",
-];
-
-const stats = [
-  { value: 15, suffix: "+", label: "Projects Delivered" },
-  { value: 8, suffix: "+", label: "Happy Clients" },
-  { value: 5, suffix: "+", label: "Industries Served" },
-  { value: 99, suffix: "%", label: "Success Rate" },
-];
+import { gsap } from "gsap";
+import AnimatedButton from "@/components/creative/AnimatedButton";
 
 const HeroSection = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const [subtitleIdx, setSubtitleIdx] = useState(0);
-  const [typed, setTyped] = useState("");
-  const [deleting, setDeleting] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const headlineRef = useRef<HTMLHeadingElement>(null);
+  const subheadRef = useRef<HTMLParagraphElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+  const taglineRef = useRef<HTMLDivElement>(null);
+  const productsCardRef = useRef<HTMLDivElement>(null);
+  const buildersCardRef = useRef<HTMLDivElement>(null);
+  const productsValRef = useRef<HTMLDivElement>(null);
+  const buildersValRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const current = subtitles[subtitleIdx];
-    let timeout: ReturnType<typeof setTimeout>;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (!deleting && typed.length < current.length) {
-      timeout = setTimeout(() => setTyped(current.slice(0, typed.length + 1)), 60);
-    } else if (!deleting && typed.length === current.length) {
-      timeout = setTimeout(() => setDeleting(true), 2000);
-    } else if (deleting && typed.length > 0) {
-      timeout = setTimeout(() => setTyped(typed.slice(0, -1)), 30);
-    } else if (deleting && typed.length === 0) {
-      setDeleting(false);
-      setSubtitleIdx((prev) => (prev + 1) % subtitles.length);
+    if (prefersReducedMotion) {
+      gsap.set([taglineRef.current, headlineRef.current, subheadRef.current, ctaRef.current, productsCardRef.current, buildersCardRef.current], {
+        opacity: 1,
+        y: 0,
+      });
+      return;
     }
 
-    return () => clearTimeout(timeout);
-  }, [typed, deleting, subtitleIdx]);
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: "cubic-bezier(0.4, 0, 0.2, 1)" } });
+
+      // 1. Tagline fade-up
+      if (taglineRef.current) {
+        tl.fromTo(
+          taglineRef.current,
+          { opacity: 0, y: 15 },
+          { opacity: 1, y: 0, duration: 0.5 }
+        );
+      }
+
+      // 2. Headline fade-up
+      if (headlineRef.current) {
+        tl.fromTo(
+          headlineRef.current,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.6 },
+          "-=0.4"
+        );
+      }
+
+      // 2. Subhead staggered
+      tl.fromTo(
+        subheadRef.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.6 },
+        "-=0.5"
+      );
+
+      // 3. CTAs
+      tl.fromTo(
+        ctaRef.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.6 },
+        "-=0.5"
+      );
+
+
+      // 5. Products card fade-up
+      if (productsCardRef.current) {
+        tl.fromTo(
+          productsCardRef.current,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.6 },
+          "-=0.4"
+        );
+      }
+
+      // 6. Builders card fade-up
+      if (buildersCardRef.current) {
+        tl.fromTo(
+          buildersCardRef.current,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.6 },
+          "-=0.5"
+        );
+      }
+
+      // Ken Burns looping effect on background images
+      gsap.to(".hero-bg-image", {
+        scale: 1.06,
+        xPercent: 1.5,
+        yPercent: 0.8,
+        duration: 25,
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+      });
+
+      // Staggered Number Count-Up Animation
+      const counters = { products: 0, builders: 0 };
+      tl.to(counters, {
+        products: 25,
+        builders: 500,
+        duration: 1.8,
+        ease: "power2.out",
+        onUpdate: () => {
+          if (productsValRef.current) {
+            productsValRef.current.innerText = Math.floor(counters.products) + "+";
+          }
+          if (buildersValRef.current) {
+            buildersValRef.current.innerText = Math.floor(counters.builders) + "+";
+          }
+        }
+      }, "-=0.3");
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex flex-col justify-center overflow-hidden">
-      
-      <FloatingCodeSymbols />
+    <section
+      ref={containerRef}
+      className="relative min-h-[85vh] flex flex-col justify-start md:justify-center overflow-hidden bg-white text-foreground"
+    >
+      {/* Responsive hero background images */}
+      <div
+        className="hero-bg-image absolute inset-0 bg-cover bg-center pointer-events-none z-0 md:hidden"
+        style={{ backgroundImage: "url('/smartphone background.png')" }}
+      />
+      <div
+        className="hero-bg-image absolute inset-0 bg-cover bg-center pointer-events-none z-0 hidden md:block"
+        style={{ backgroundImage: "url('/hero background.png')" }}
+      />
 
-      {/* Animated grid overlay */}
-      <div className="absolute inset-0 animated-grid pointer-events-none z-[1]" />
+      {/* Subtle grid — very faint */}
+      <div className="absolute inset-0 animated-grid pointer-events-none z-[1] opacity-40" />
 
-      <div className="container mx-auto px-4 relative z-10 pt-32 pb-20">
-        {/* Split layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-8 items-center">
-          {/* Left side — 3 cols */}
-          <div className="lg:col-span-3 text-center lg:text-left">
-            {/* Main headline */}
-            {/* Geo trust badge */}
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-medium px-4 py-1.5 rounded-full mb-6"
-            >
-              <span>📍</span>
-              <span>Odisha-Based Studio | Serving All of India</span>
-            </motion.div>
-
-            <TextReveal
-              text="Odisha's Premium"
-              as="h1"
-              className="font-display text-[10vw] md:text-[6vw] lg:text-[4.5vw] font-bold leading-[1.1] tracking-tight"
-              delay={0.3}
-            />
-            <TextReveal
-              text="Web Development Studio"
-              as="h1"
-              className="font-display text-[10vw] md:text-[6vw] lg:text-[4.5vw] font-bold leading-[1.1] tracking-tight text-gradient mb-6"
-              delay={0.5}
-            />
-
-            {/* Typewriter subtitle */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.2 }}
-              className="h-10 flex items-center justify-center lg:justify-start"
-            >
-              <span className="text-lg md:text-xl text-muted-foreground font-light">
-                {typed}
-                <motion.span
-                  animate={{ opacity: [1, 0] }}
-                  transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
-                  className="text-primary ml-0.5"
-                >
-                  |
-                </motion.span>
-              </span>
-            </motion.div>
-
-            {/* Geo subtext */}
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.4 }}
-              className="text-sm text-muted-foreground/80 mt-3 mb-10"
-            >
-              Serving businesses in Bhubaneswar, Cuttack &amp; across Odisha — 15+ projects delivered
-            </motion.p>
-
-            {/* CTA buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-wrap gap-5 justify-center lg:justify-start"
-            >
-              <MagneticButton strength={0.2}>
-                <Button asChild size="lg" className="group bg-gradient-primary hover:opacity-90 border-0 text-primary-foreground shadow-glow px-10 py-6 text-base">
-                  <Link to="/portfolio">
-                    View Our Work
-                    <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </Button>
-              </MagneticButton>
-              <MagneticButton strength={0.2}>
-                <Button asChild variant="outline" size="lg" className="px-10 py-6 text-base border-2 border-primary/20 hover:border-primary/50 hover:bg-primary/5">
-                  <Link to="/contact">Get a Quote</Link>
-                </Button>
-              </MagneticButton>
-            </motion.div>
+      <div className="container mx-auto px-4 relative z-10 pt-24 pb-12 md:pt-36">
+        <div className="flex flex-col items-center text-center">
+          {/* Tagline / Subpoint */}
+          <div
+            ref={taglineRef}
+            className="text-sm md:text-base font-semibold text-primary uppercase tracking-[0.25em] mb-4 font-mono opacity-0"
+          >
+            Tech that gives you results
           </div>
 
-          {/* Right side — 2 cols */}
-          <div className="lg:col-span-2 overflow-visible">
-            <HeroProjectCards dragConstraintsRef={heroRef} />
+          {/* Headline — Space Grotesk 700, centered, max-width ~780px */}
+          <h1
+            ref={headlineRef}
+            className="font-display font-bold tracking-[-0.02em] leading-[1.05] mb-6 opacity-0 mx-auto"
+            style={{ fontSize: "clamp(48px, 6vw, 72px)", maxWidth: "780px" }}
+          >
+            We build native <span className="text-gradient">AI</span> technology
+          </h1>
+
+          {/* Subhead — Inter 400/500 */}
+          <p
+            ref={subheadRef}
+            className="text-lg md:text-xl text-muted-foreground font-normal leading-relaxed max-w-2xl mb-8 opacity-0 mx-auto text-balance"
+          >
+            AI solutions that deliver business results. Practical AI education that builds future innovators. We build intelligent technology for modern businesses while TechXera equips students with real-world AI skills to build careers, create businesses, and thrive independently.
+          </p>
+
+          {/* CTA: 2 primary buttons */}
+          <div
+            ref={ctaRef}
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-4 opacity-0"
+          >
+            <AnimatedButton
+              as={Link}
+              to="/solutions"
+              className="shadow-glow"
+            >
+              Our Solutions
+              <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform relative z-20" />
+            </AnimatedButton>
+            <Button
+              asChild
+              variant="outline"
+              className="h-12 px-8 text-base border-2 border-primary/30 hover:border-primary/60 hover:bg-primary/5 hover:text-primary text-foreground rounded-full transition-all duration-200 hover:-translate-y-[2px]"
+            >
+              <Link to="/techxera">
+                Explore TechXera
+                <ArrowRight size={18} className="ml-2 opacity-60" />
+              </Link>
+            </Button>
           </div>
+
+          {/* Secondary text links */}
+          <div className="flex flex-wrap items-center justify-center gap-x-1 text-sm text-muted-foreground mb-6">
+            <span>Looking for</span>
+            <Link
+              to="/techxera#chalk-to-choice"
+              className="text-primary hover:underline font-medium"
+            >
+              Chalk to Choice
+            </Link>
+            <span>?</span>
+            <span className="mx-1">·</span>
+            <span>Just want to talk?</span>
+            <Link
+              to="/contact"
+              className="text-primary hover:underline font-medium ml-1"
+            >
+              Contact us
+            </Link>
+          </div>
+
+
         </div>
-
-        {/* Stats bar — glass cards */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.8, ease: [0.16, 1, 0.3, 1] }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-24"
-        >
-          {stats.map((stat) => (
-            <div key={stat.label} className="glass-card text-center py-6 px-4">
-              <p className="font-display text-4xl md:text-5xl font-bold text-gradient leading-none">
-                <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-              </p>
-              <p className="text-muted-foreground text-xs mt-2 uppercase tracking-wider">{stat.label}</p>
-            </div>
-          ))}
-        </motion.div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      {/* Floating 500+ Builders Card at bottom-right */}
+      <div
+        ref={buildersCardRef}
+        className="absolute bottom-12 right-8 z-20 max-w-[280px] hidden lg:block opacity-0"
       >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="w-6 h-10 rounded-full border-2 border-primary/30 flex justify-center pt-2"
-        >
-          <motion.div className="w-1 h-2 rounded-full bg-primary/50" />
-        </motion.div>
-      </motion.div>
+        <div className="liquid-glass p-4 flex items-center gap-3.5 rounded-2xl">
+          <div
+            ref={buildersValRef}
+            className="h-12 min-w-[3rem] px-2.5 rounded-xl bg-gradient-primary flex items-center justify-center text-white font-bold text-lg font-display shrink-0 select-none shadow-sm"
+            style={{ filter: "drop-shadow(0 0 3px rgba(255, 255, 255, 0.8))" }}
+          >
+            500+
+          </div>
+          <div className="text-left space-y-0.5">
+            <h4 className="font-bold text-foreground text-xs font-display">Future AI Builders</h4>
+            <p className="text-[10px] text-muted-foreground leading-relaxed">
+              Project-based programs designed for industry readiness.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Floating 25+ Products Card at bottom-left */}
+      <div
+        ref={productsCardRef}
+        className="absolute bottom-12 left-8 z-20 max-w-[280px] hidden lg:block opacity-0"
+      >
+        <div className="liquid-glass p-4 flex items-center gap-3.5 rounded-2xl">
+          <div
+            ref={productsValRef}
+            className="h-12 min-w-[3rem] px-2.5 rounded-xl bg-gradient-primary flex items-center justify-center text-white font-bold text-lg font-display shrink-0 select-none shadow-sm"
+            style={{ filter: "drop-shadow(0 0 3px rgba(255, 255, 255, 0.8))" }}
+          >
+            25+
+          </div>
+          <div className="text-left space-y-0.5">
+            <h4 className="font-bold text-foreground text-xs font-display">Products Shipped</h4>
+            <p className="text-[10px] text-muted-foreground leading-relaxed">
+              Custom AI systems & web platforms deployed to production.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom scroll indicator */}
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 hidden md:block">
+        <div className="w-6 h-10 rounded-full border-2 border-primary/30 flex justify-center pt-2">
+          <div className="w-1 h-2 rounded-full bg-primary/50 animate-bounce" />
+        </div>
+      </div>
     </section>
   );
 };

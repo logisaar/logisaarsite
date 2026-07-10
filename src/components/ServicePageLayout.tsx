@@ -47,7 +47,7 @@ export interface ServicePageProps {
   cta?: { headline?: string };
 }
 
-const WHATSAPP_BASE = "https://wa.me/917815014638?text=";
+const WHATSAPP_BASE = "https://wa.me/918596072510?text=";
 
 const howItWorks = [
   { n: "01", title: "Discovery & Setup", desc: "We understand your workflow, goals and requirements. We scope the project and share a detailed proposal." },
@@ -160,8 +160,8 @@ export default function ServicePageLayout({
                 className="flex items-center gap-2 mt-6"
               >
                 <Phone size={13} className="text-muted-foreground" />
-                <a href="tel:+917815014638" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  +91 78150 14638
+                <a href="tel:+918596072510" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  +91 85960 72510
                 </a>
                 <span className="text-muted-foreground/40 text-sm mx-1">•</span>
                 <span className="text-sm text-muted-foreground">Free consultation</span>
@@ -435,9 +435,9 @@ export default function ServicePageLayout({
               </MagneticButton>
               <MagneticButton strength={0.1}>
                 <Button asChild variant="outline" size="lg" className="rounded-full border-2 border-primary/20 hover:border-primary/50 px-10">
-                  <a href="tel:+917815014638">
+                  <a href="tel:+918596072510">
                     <Phone size={15} className="mr-2" />
-                    +91 78150 14638
+                    +91 85960 72510
                   </a>
                 </Button>
               </MagneticButton>

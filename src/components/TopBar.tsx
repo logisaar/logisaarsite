@@ -36,7 +36,7 @@ const socialLinks = [
 
 const TopBar = () => {
   return (
-    <div className="fixed top-0 left-0 right-0 z-[60] hidden md:block bg-foreground text-background">
+    <div className="fixed top-0 left-0 right-0 z-[10000] hidden md:block bg-foreground text-background">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-1.5 text-xs">
           <div className="flex items-center gap-5">
@@ -44,9 +44,9 @@ const TopBar = () => {
               <Mail size={13} />
               <span>logisaar@gmail.com</span>
             </a>
-            <a href="tel:+917815014638" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
+            <a href="tel:+918596072510" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
               <Phone size={13} />
-              <span>+91 78150 14638</span>
+              <span>+91 85960 72510</span>
             </a>
           </div>
           <div className="flex items-center gap-3">

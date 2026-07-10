@@ -1,0 +1,314 @@
+# ==============================================================================
+# LOGISAAR WEBSITE SPECIFICATION & STRUCTURE
+# ==============================================================================
+# This document contains the complete details about the website design system,
+# layout, colors, typography, animations, components, routing, and contents.
+# ==============================================================================
+
+site_metadata:
+  name: "LogiSaar"
+  tagline: "Elite software engineering and product design studio"
+  focus_region: "Odisha, India (Bhubaneswar, Cuttack)"
+  base_url: "https://www.logisaar.in/"
+  contact_email: "logisaar@gmail.com"
+  contact_phone: "+91 78150 14638"
+  whatsapp_url: "https://wa.me/917815014638"
+  starting_price: "₹2,999"
+  social_links:
+    instagram: "https://www.instagram.com/logisaar"
+    linkedin: "https://www.linkedin.com/company/logisaar/"
+    facebook: "https://www.facebook.com/share/1CavFRY28Y/"
+    twitter: "https://x.com/logisaar" # Placeholder (setup in footer)
+    github: "https://github.com/logisaar" # Placeholder (setup in footer)
+
+technology_stack:
+  core:
+    framework: "React v18.3.1 (Vite + TypeScript)"
+    routing: "React Router DOM v6.30.1"
+    query_management: "TanStack React Query v5.83.0"
+  styling:
+    css_framework: "Tailwind CSS v3.4.17"
+    component_library: "Shadcn UI (Radix UI)"
+    animation_library: "Framer Motion v12.34.1"
+    icons: "Lucide React v0.462.0"
+  build_tooling:
+    builder: "Vite v5.4.19"
+    linter: "ESLint v9.32.0"
+    tester: "Vitest v3.2.4"
+
+design_system:
+  typography:
+    sans_serif_font: "Inter (weights 300, 400, 500, 600, 700, 800)"
+    display_font: "Space Grotesk (weights 400, 500, 600, 700)"
+  colors:
+    light_mode:
+      background: "hsl(0, 0%, 100%)" # Pure White
+      foreground: "hsl(220, 25%, 10%)" # Slate Black / Charcoal
+      primary: "hsl(170, 80%, 40%)" # Teal / Emerald
+      primary_foreground: "hsl(0, 0%, 100%)" # White text on Teal
+      secondary: "hsl(220, 15%, 96%)" # Very Light Gray / Cool Off-White
+      secondary_foreground: "hsl(220, 25%, 10%)"
+      accent: "hsl(210, 90%, 50%)" # Royal Blue
+      accent_foreground: "hsl(0, 0%, 100%)"
+      muted: "hsl(220, 15%, 96%)"
+      muted_foreground: "hsl(220, 10%, 45%)"
+      destructive: "hsl(0, 84%, 60%)" # Bright Red
+      destructive_foreground: "hsl(0, 0%, 100%)"
+      border: "hsl(220, 15%, 91%)"
+      input: "hsl(220, 15%, 91%)"
+      ring: "hsl(170, 80%, 40%)"
+      card: "hsl(0, 0%, 100%)"
+      card_foreground: "hsl(220, 25%, 10%)"
+      sidebar:
+        background: "hsl(0, 0%, 98%)"
+        foreground: "hsl(240, 5.3%, 26.1%)"
+        primary: "hsl(240, 5.9%, 10%)"
+        accent: "hsl(240, 4.8%, 95.9%)"
+        border: "hsl(220, 13%, 91%)"
+    dark_mode:
+      background: "hsl(220, 20%, 6%)" # Deep Dark Space Gray
+      foreground: "hsl(220, 15%, 95%)" # Off-white
+      primary: "hsl(170, 80%, 45%)" # Bright Teal
+      primary_foreground: "hsl(0, 0%, 100%)"
+      secondary: "hsl(220, 20%, 15%)" # Slate Gray
+      secondary_foreground: "hsl(220, 15%, 95%)"
+      accent: "hsl(210, 90%, 55%)" # Royal Light Blue
+      accent_foreground: "hsl(0, 0%, 100%)"
+      muted: "hsl(220, 20%, 15%)"
+      muted_foreground: "hsl(220, 10%, 55%)"
+      destructive: "hsl(0, 62.8%, 30.6%)" # Crimson / Burgundy Red
+      destructive_foreground: "hsl(210, 40%, 98%)"
+      border: "hsl(220, 20%, 15%)"
+      input: "hsl(220, 20%, 15%)"
+      ring: "hsl(170, 80%, 45%)"
+      card: "hsl(220, 20%, 9%)"
+      card_foreground: "hsl(220, 15%, 95%)"
+      sidebar:
+        background: "hsl(240, 5.9%, 10%)"
+        foreground: "hsl(240, 4.8%, 95.9%)"
+        primary: "hsl(224.3, 76.3%, 48%)"
+        accent: "hsl(240, 3.7%, 15.9%)"
+        border: "hsl(240, 3.7%, 15.9%)"
+  design_utilities:
+    text_gradient: "Linear gradient (135deg) from Primary Teal to Accent Blue"
+    bg_gradient_primary: "Linear gradient (135deg) from Primary Teal to Accent Blue"
+    bg_gradient_primary_hover: "Linear gradient (135deg) from darker Teal to darker Accent Blue"
+    border_gradient: "Gradient border outline from Primary Teal to Accent Blue"
+    shadow_glow: "Box shadow glow effect combining Primary Teal (opacity 0.3) and Accent Blue (opacity 0.2)"
+    shadow_glow_sm: "Subtle box shadow glow effect using Teal (opacity 0.2)"
+    glass_card: "Background opacity (3% light / 5% dark) with blur (16px) and border (8% light / 10% dark)"
+    noise_texture: "Turbulence fractalNoise overlay texture at 3% opacity"
+    animated_grid: "Gridlines using primary color at 8% opacity with animation grid-pulse"
+    diagonal_stripes: "Repeating linear gradient at -45deg with primary color at 2% opacity"
+
+animations:
+  transitions:
+    page_transition: "Framer Motion AnimatePresence 'wait' layout transition with smooth fade-in and scale effects"
+  keyframes:
+    accordion_down: "Expands height smoothly from 0 to full height"
+    accordion_up: "Collapses height smoothly to 0"
+    float: "Translates Y position up to -20px and back in 6s infinite loop"
+    pulse_glow: "Pulsates shadow glow offset size up to 12px using primary color"
+    code_float: "Y translation (up to -40px) and rotation (up to 5deg) with opacity shift (0.08 to 0.25) in 8s infinite loop"
+    marquee: "Horizontal translation from X: 0 to X: -50% for infinite sliding carousel"
+    shimmer: "Moving light reflection effect across background in 3s infinite loop"
+    gradient_shift: "Moves the gradient position (0% to 100%) in 4s infinite loop"
+    ripple: "Scales element up 2x and fades opacity to 0 in 2s loop"
+
+page_structure:
+  layout_wrapper: "Layout.tsx wraps all page elements globally to provide structure"
+  components:
+    - name: "TopBar"
+      purpose: "Sticky sub-header showing contact email, phone number, and social icons (Instagram, Facebook, LinkedIn)"
+    - name: "Navbar"
+      purpose: "Smart responsive navigation. Floating rounded capsule when scrolled; shrinks logo. Contains desktop navigation links, mobile slide-down menu, and a 'Get a Quote' call-to-action button"
+    - name: "Footer"
+      purpose: "Detailed, dynamic site footer. Features large 'Ready to start?' CTA, social icons, multi-column directory, newsletter, contacts, and copyright details"
+    - name: "WhatsAppButton"
+      purpose: "Sticky floating action button in the bottom corner for direct client WhatsApp redirection"
+    - name: "ScrollToTop"
+      purpose: "Floating button that appears on scroll to quickly return to the top of the page"
+    - name: "LeadCaptureModal"
+      purpose: "Popup dialog box to collect client details, project details, and email addresses for lead gen"
+
+footer_structure:
+  cta_banner:
+    heading: "Ready to start?"
+    button:
+      label: "Let's Talk"
+      to: "/contact"
+  logo_and_about:
+    description: "Elite development studio crafting modern software solutions. Engineering excellence for businesses worldwide."
+  columns:
+    Services:
+      - { label: "Web Engineering", to: "/services" }
+      - { label: "Mobile Solutions", to: "/services" }
+      - { label: "AI & Automation", to: "/services" }
+      - { label: "Growth Engineering", to: "/services" }
+      - { label: "Experience Design", to: "/services" }
+      - { label: "Motion Design", to: "/services" }
+    Company:
+      - { label: "About Us", to: "/about" }
+      - { label: "Portfolio", to: "/portfolio" }
+      - { label: "Pricing", to: "/pricing" }
+      - { label: "Contact", to: "/contact" }
+    Legal:
+      - { label: "Privacy Policy", to: "/privacy-policy" }
+      - { label: "Terms of Service", to: "/terms-conditions" }
+      - { label: "Cookie Policy", to: "/cookie-policy" }
+      - { label: "Refund Policy", to: "/refund-policy" }
+    Locations:
+      - { label: "Web Development in Bhubaneswar", to: "/web-development-odisha" }
+      - { label: "Web Development in Cuttack", to: "/web-development-odisha" }
+      - { label: "Web Development in Odisha", to: "/web-development-odisha" }
+    Contact:
+      email: "logisaar@gmail.com"
+      phone: "+91 78150 14638"
+      whatsapp: "WhatsApp Us (+91 78150 14638)"
+      address: "Cuttack, Odisha, India"
+  bottom_bar:
+    copyright: "© 2025–[Current Year] LogiSaar. Built in Odisha 🇮🇳"
+
+pages_directory:
+  main_routes:
+    - path: "/"
+      component: "Index.tsx"
+      title: "Home"
+      description: "Company introduction. Features animated hero, tech stack marquee, stats, key services, testimonials, project carousel, choice points, and contact CTA."
+    - path: "/about"
+      component: "About.tsx"
+      title: "About Us"
+      description: "Company journey timeline, core values card gallery, and team members details."
+    - path: "/services"
+      component: "Services.tsx"
+      title: "Our Services"
+      description: "In-depth overview of Web Engineering, Mobile Solutions, AI & Automation, Growth Engineering, Experience Design, and Motion Design."
+    - path: "/portfolio"
+      component: "Portfolio.tsx"
+      title: "Our Portfolio"
+      description: "Filterable grid showcasing completed projects (Swosti Consultancy, Linchan's Taste, Baba Brand Fashion, Sako Sales, CMC Infratech, Digital Gatepass System, Nalanda Institute of Technology, Faculty Feedback System)."
+    - path: "/pricing"
+      component: "Pricing.tsx"
+      title: "Pricing Plans"
+      description: "Interactive cards showing price tiers (Basic, Growth, Enterprise, Custom CRM) starting at ₹2,999."
+    - path: "/contact"
+      component: "Contact.tsx"
+      title: "Contact Us"
+      description: "Interactive contact page containing a multi-step query capture form, email/phone contact methods, and location map details."
+    - path: "/web-development-odisha"
+      component: "Location.tsx"
+      title: "Web Development in Odisha"
+      description: "Dedicated landing page optimized for regional SEO, focusing on custom development in Bhubaneswar, Cuttack, and Odisha."
+  
+  services_subpages:
+    - path: "/services/school-management-system"
+      component: "SchoolManagement.tsx"
+      title: "School Management System"
+      description: "Feature set: Attendance, student portals, grade books, fees management, messaging."
+    - path: "/services/hotel-management-system"
+      component: "HotelManagement.tsx"
+      title: "Hotel Management System"
+      description: "Feature set: Room booking, check-in/out, POS integration, housekeeping updates, reporting."
+    - path: "/services/ai-lead-followup"
+      component: "AILeadFollowup.tsx"
+      title: "AI Lead Followup"
+      description: "Feature set: Automated response, sentiment analysis, multi-channel messaging, calendar sync."
+    - path: "/services/ai-receptionist"
+      component: "AIReceptionist.tsx"
+      title: "AI Receptionist"
+      description: "Feature set: 24/7 call answering, call routing, booking scheduling, query resolution, voice customizations."
+    - path: "/services/proposal-software"
+      component: "ProposalSoftware.tsx"
+      title: "Proposal Software"
+      description: "Feature set: Custom templates, digital signatures, tracking & analytics, client collaboration."
+    - path: "/services/qr-menu-system"
+      component: "QRMenu.tsx"
+      title: "QR Menu System"
+      description: "Feature set: Contactless scanning, digital checkout, custom branding, instant menu changes."
+    - path: "/services/travel-website"
+      component: "TravelWebsite.tsx"
+      title: "Travel Website"
+      description: "Feature set: Booking engine, itineraries builder, destination search, payment gateway, multi-currency support."
+    - path: "/services/ai-automation"
+      component: "AIAutomation.tsx"
+      title: "AI & Workflow Automation"
+      description: "Feature set: Business processes integration, AI custom models, chatbots, data analysis tools."
+    - path: "/services/custom-crm"
+      component: "CustomCRM.tsx"
+      title: "Custom CRM Solutions"
+      description: "Feature set: Customer pipelines, team workflows, automated email workflows, customizable dashboards."
+
+  legal_routes:
+    - path: "/privacy-policy"
+      component: "PrivacyPolicy.tsx"
+      title: "Privacy Policy"
+    - path: "/terms-conditions"
+      component: "TermsConditions.tsx"
+      title: "Terms and Conditions"
+    - path: "/terms-of-service"
+      component: "TermsConditions.tsx"
+      title: "Terms of Service"
+    - path: "/cookie-policy"
+      component: "CookiePolicy.tsx"
+      title: "Cookie Policy"
+    - path: "/refund-policy"
+      component: "RefundPolicy.tsx"
+      title: "Refund Policy"
+
+  error_routes:
+    - path: "*"
+      component: "NotFound.tsx"
+      title: "404 Page Not Found"
+
+data_structures:
+  projects:
+    - title: "Swosti Consultancy"
+      category: "Web Development"
+      industry: "Corporate / Consultancy"
+      url: "https://www.swosticonsultancy.com/"
+      tags: ["React", "Corporate", "Responsive"]
+    - title: "Linchan's Taste"
+      category: "Web Development"
+      industry: "Restaurant / F&B"
+      url: "https://linchans.in/"
+      tags: ["Restaurant", "Booking", "UI/UX"]
+    - title: "BABA BRAND FASHION"
+      category: "E-Commerce"
+      industry: "E-Commerce / Fashion"
+      url: "https://www.bababrandfashion.in/"
+      tags: ["E-Commerce", "Fashion", "Payments"]
+    - title: "SAKO SALES"
+      category: "Web Development"
+      industry: "B2B / Marketplace"
+      url: "https://www.sakosales.in/"
+      tags: ["Marketplace", "B2B", "Inventory"]
+    - title: "CMC Infratech"
+      category: "Web Development"
+      industry: "Construction / Infrastructure"
+      url: "https://www.cmcinfratech.com/"
+      tags: ["Construction", "Portfolio", "Dashboard"]
+    - title: "Digital Gatepass System"
+      category: "AI Integration"
+      industry: "AI / EdTech"
+      url: "https://pass-flow.vercel.app/"
+      tags: ["EdTech", "Automation", "QR System"]
+    - title: "Nalanda Institute of Technology"
+      category: "Web Development"
+      industry: "Education"
+      url: "https://www.thenalanda.com/"
+      tags: ["Education", "Portal", "CMS"]
+    - title: "Faculty Feedback System"
+      category: "AI Integration"
+      industry: "AI / Analytics"
+      url: "https://www.thenalandaexam.in/"
+      tags: ["AI", "Analytics", "Web App"]
+  testimonials:
+    - client: "Swosti Consultancy"
+      role: "Corporate Client"
+      quote: "LogiSaar delivered a stunning website that perfectly represents our brand. The team's attention to detail and modern design sensibility exceeded our expectations."
+    - client: "Linchan's Taste"
+      role: "Restaurant & Café"
+      quote: "Our online presence has completely transformed. The booking system and food gallery they built drive real customers to our doors every day."
+    - client: "CMC Infratech"
+      role: "Construction & Infrastructure"
+      quote: "Professional, reliable, and incredibly innovative. LogiSaar built us a platform that streamlines our project management and client communications."

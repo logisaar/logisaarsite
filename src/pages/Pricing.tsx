@@ -236,7 +236,7 @@ const Pricing = () => {
             <p className="text-muted-foreground text-sm mt-4">
               Need a custom quote?{" "}
               <a
-                href="https://wa.me/917815014638?text=Hi%20LogiSaar%2C%20I%20want%20to%20get%20a%20custom%20quote"
+                href="https://wa.me/918596072510?text=Hi%20LogiSaar%2C%20I%20want%20to%20get%20a%20custom%20quote"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary underline underline-offset-4 hover:opacity-80"
@@ -244,8 +244,8 @@ const Pricing = () => {
                 WhatsApp us
               </a>{" "}
               or{" "}
-              <a href="tel:+917815014638" className="text-primary underline underline-offset-4 hover:opacity-80">
-                call +91 78150 14638
+              <a href="tel:+918596072510" className="text-primary underline underline-offset-4 hover:opacity-80">
+                call +91 85960 72510
               </a>
             </p>
           </motion.div>

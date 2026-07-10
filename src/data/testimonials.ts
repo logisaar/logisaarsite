@@ -1,20 +1,27 @@
 export const testimonials = [
   {
+    id: "swosti",
     name: "Swosti Consultancy",
-    role: "Corporate Client",
-    content: "LogiSaar delivered a stunning website that perfectly represents our brand. The team's attention to detail and modern design sensibility exceeded our expectations.",
+    role: "Business Consulting",
+    content: "LogiSaar transformed the way we handle consultations and client requests. The platform is fast, reliable and extremely easy to use.",
     avatar: "SC",
+    rating: 5
   },
   {
-    name: "Linchan's Taste",
-    role: "Restaurant & Café",
-    content: "Our online presence has completely transformed. The booking system and food gallery they built drive real customers to our doors every day.",
-    avatar: "LT",
-  },
-  {
-    name: "CMC Infratech",
+    id: "cmc",
+    name: "CMC Infratech Pvt. Ltd.",
     role: "Construction & Infrastructure",
-    content: "Professional, reliable, and incredibly innovative. LogiSaar built us a platform that streamlines our project management and client communications.",
-    avatar: "CI",
+    content: "The digital gatepass system built by LogiSaar has improved our campus security and visitor management significantly.",
+    avatar: "CMC",
+    rating: 5,
+    featured: true
   },
+  {
+    id: "bababrand",
+    name: "Baba Brand Fashion",
+    role: "E-commerce",
+    content: "From design to deployment, the team was very professional and delivered our e-commerce platform beyond expectations.",
+    avatar: "BB",
+    rating: 5
+  }
 ];

@@ -4,12 +4,15 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { Agentation } from "agentation";
 import Index from "./pages/Index";
 import About from "./pages/About";
-import Services from "./pages/Services";
+import Solutions from "./pages/Solutions";
 import Portfolio from "./pages/Portfolio";
-import Pricing from "./pages/Pricing";
+import TechXera from "./pages/TechXera";
+import Products from "./pages/Products";
 import Contact from "./pages/Contact";
+import Careers from "./pages/Careers";
 
 import Location from "./pages/Location";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -18,16 +21,17 @@ import CookiePolicy from "./pages/CookiePolicy";
 import RefundPolicy from "./pages/RefundPolicy";
 import NotFound from "./pages/NotFound";
 import PageTransition from "./components/PageTransition";
-// Service pages
-import SchoolManagement from "./pages/services/SchoolManagement";
-import HotelManagement from "./pages/services/HotelManagement";
-import AILeadFollowup from "./pages/services/AILeadFollowup";
-import AIReceptionist from "./pages/services/AIReceptionist";
-import ProposalSoftware from "./pages/services/ProposalSoftware";
-import QRMenu from "./pages/services/QRMenu";
-import TravelWebsite from "./pages/services/TravelWebsite";
-import AIAutomation from "./pages/services/AIAutomation";
-import CustomCRM from "./pages/services/CustomCRM";
+import RouteScrollReset from "./components/RouteScrollReset";
+// Solution pages
+import AIPoweredSchoolERP from "./pages/solutions/AIPoweredSchoolERP";
+import HotelManagement from "./pages/solutions/HotelManagement";
+import AILeadFollowup from "./pages/solutions/AILeadFollowup";
+import AIReceptionist from "./pages/solutions/AIReceptionist";
+import ProposalSoftware from "./pages/solutions/ProposalSoftware";
+import QRMenu from "./pages/solutions/QRMenu";
+import TravelWebsite from "./pages/solutions/TravelWebsite";
+import AIAutomation from "./pages/solutions/AIAutomation";
+import CustomCRM from "./pages/solutions/CustomCRM";
 
 const queryClient = new QueryClient();
 
@@ -39,22 +43,24 @@ const AnimatedRoutes = () => {
         <Routes location={location}>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
+          <Route path="/solutions" element={<Solutions />} />
           <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/techxera" element={<TechXera />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/careers" element={<Careers />} />
 
           <Route path="/web-development-odisha" element={<Location />} />
-          {/* Industry-specific service pages */}
-          <Route path="/services/school-management-system" element={<SchoolManagement />} />
-          <Route path="/services/hotel-management-system" element={<HotelManagement />} />
-          <Route path="/services/ai-lead-followup" element={<AILeadFollowup />} />
-          <Route path="/services/ai-receptionist" element={<AIReceptionist />} />
-          <Route path="/services/proposal-software" element={<ProposalSoftware />} />
-          <Route path="/services/qr-menu-system" element={<QRMenu />} />
-          <Route path="/services/travel-website" element={<TravelWebsite />} />
-          <Route path="/services/ai-automation" element={<AIAutomation />} />
-          <Route path="/services/custom-crm" element={<CustomCRM />} />
+          {/* Industry-specific solutions pages */}
+          <Route path="/solutions/ai-powered-school-erp" element={<AIPoweredSchoolERP />} />
+          <Route path="/solutions/hotel-management-system" element={<HotelManagement />} />
+          <Route path="/solutions/ai-lead-followup" element={<AILeadFollowup />} />
+          <Route path="/solutions/ai-receptionist" element={<AIReceptionist />} />
+          <Route path="/solutions/proposal-software" element={<ProposalSoftware />} />
+          <Route path="/solutions/qr-menu-system" element={<QRMenu />} />
+          <Route path="/solutions/travel-website" element={<TravelWebsite />} />
+          <Route path="/solutions/ai-automation" element={<AIAutomation />} />
+          <Route path="/solutions/custom-crm" element={<CustomCRM />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/terms-of-service" element={<TermsConditions />} />
@@ -73,8 +79,17 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <RouteScrollReset />
         <AnimatedRoutes />
       </BrowserRouter>
+      {import.meta.env.DEV && (
+        <Agentation
+          endpoint="http://localhost:4747"
+          onSessionCreated={(sessionId) => {
+            console.log("Agentation Session started:", sessionId);
+          }}
+        />
+      )}
     </TooltipProvider>
   </QueryClientProvider>
 );

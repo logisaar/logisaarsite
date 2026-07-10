@@ -8,10 +8,10 @@ import LeadCaptureModal from "./LeadCaptureModal";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden">
+    <div className="min-h-screen flex flex-col overflow-x-clip">
       <TopBar />
       <Navbar />
-      <main className="flex-1 pt-20 md:pt-[116px]">{children}</main>
+      <main className="flex-1">{children}</main>
       <Footer />
       <WhatsAppButton />
       <ScrollToTop />

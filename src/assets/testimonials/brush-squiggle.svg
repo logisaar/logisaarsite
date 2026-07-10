@@ -1,0 +1,16 @@
+<svg viewBox="0 0 300 350" xmlns="http://www.w3.org/2000/svg" class="brush-squiggle" fill="none">
+  <path d="M15 40
+           C 60 10, 140 5, 200 25
+           C 250 42, 280 30, 270 60
+           C 260 95, 290 110, 265 140"
+        stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+  <path d="M15 40 C 60 10, 140 5, 200 25 C 250 42, 280 30, 270 60"
+        stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.5" transform="translate(2,4)"/>
+
+  <path d="M270 60 C 285 180, 285 260, 260 320
+           C 240 315, 180 335, 120 330
+           C 60 325, 20 300, 25 260"
+        stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+  <path d="M270 60 C 285 180, 285 260, 260 320 C 240 315, 180 335, 120 330"
+        stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.5" transform="translate(-3,3)"/>
+</svg>

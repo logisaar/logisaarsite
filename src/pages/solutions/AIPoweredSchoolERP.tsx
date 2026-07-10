@@ -3,22 +3,22 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 import { SchoolIllustration } from "@/components/illustrations";
 import SEO from "@/components/SEO";
 
-export default function SchoolManagement() {
+export default function AIPoweredSchoolERP() {
   return (
     <>
       <SEO
-        title="School Management System in Odisha | LogiSaar"
-        description="Custom school management software for schools, colleges and coaching centers in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha. Manage attendance, fees, results and parents from one dashboard. Contact LogiSaar: +91 78150 14638"
-        keywords="school management system Odisha, school software Bhubaneswar, college management system Cuttack, student management software Bhadrak, school ERP Rourkela, school management system Bhadrak, school software Rourkela, LogiSaar"
-        canonical="https://www.logisaar.in/services/school-management-system"
+        title="AI-Powered School ERP in Odisha | LogiSaar"
+        description="Custom AI-powered School ERP software for schools, colleges, and coaching centers in Bhubaneswar, Cuttack, Bhadrak, Rourkela, and across Odisha. Manage attendance, fees, results, and parents from one dashboard. Contact LogiSaar: +91 78150 14638"
+        keywords="AI-powered school ERP Odisha, school ERP software Bhubaneswar, college ERP system Cuttack, student management software Bhadrak, school ERP Rourkela, school ERP Bhadrak, school software Rourkela, LogiSaar"
+        canonical="https://www.logisaar.in/solutions/ai-powered-school-erp"
       />
       <ServicePageLayout
         hero={{
           badge: "For Schools, Colleges & Coaching Centers",
-          h1: "Smart School Management System",
+          h1: "AI-Powered School ERP",
           h2: "Built for Odisha Schools, Colleges & Coaching Centers",
-          body: "Manage students, attendance, fees, results, timetables and staff — all from one powerful dashboard. Built custom for your institution.",
-          waMessage: "Hi LogiSaar, I want a School Management System for my institution.",
+          body: "Manage students, admissions, grading, smart fee collection, WhatsApp messaging, and AI attendance — all from one powerful ERP dashboard built custom for your institution.",
+          waMessage: "Hi LogiSaar, I want an AI-Powered School ERP for my institution.",
         }}
         illustration={<SchoolIllustration />}
         painPoints={[

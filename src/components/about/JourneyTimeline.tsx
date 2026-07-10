@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -170,10 +170,29 @@ const FloatingParticles = () => {
 const ProgressRail = ({
   scrollYProgress,
   total,
+  containerRef,
 }: {
   scrollYProgress: any;
   total: number;
+  containerRef: React.RefObject<HTMLDivElement>;
 }) => {
+  const handleDotClick = (index: number) => {
+    if (!containerRef.current) return;
+    const container = containerRef.current;
+    const rect = container.getBoundingClientRect();
+    const scrollTop = window.scrollY;
+    const containerTop = scrollTop + rect.top;
+    const containerHeight = rect.height;
+    const viewportHeight = window.innerHeight;
+    const scrollRange = containerHeight - viewportHeight;
+    const targetScroll = containerTop + (index / (total - 1)) * scrollRange;
+
+    window.scrollTo({
+      top: targetScroll,
+      behavior: "smooth"
+    });
+  };
+
   return (
     <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-[60%] max-w-2xl z-20">
       {/* Rail background */}
@@ -189,10 +208,19 @@ const ProgressRail = ({
       </div>
 
       {/* Dots */}
-      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between">
+      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between items-center">
         {Array.from({ length: total }).map((_, i) => {
           const dotProgress = i / (total - 1);
-          return <RailDot key={i} scrollYProgress={scrollYProgress} threshold={dotProgress} />;
+          return (
+            <button
+              key={i}
+              onClick={() => handleDotClick(i)}
+              className="focus:outline-none transition-transform hover:scale-125 active:scale-95 cursor-pointer z-30 flex items-center justify-center p-1"
+              aria-label={`Go to milestone ${i + 1}`}
+            >
+              <RailDot scrollYProgress={scrollYProgress} threshold={dotProgress} />
+            </button>
+          );
         })}
       </div>
     </div>
@@ -299,7 +327,65 @@ const JourneyTimeline = ({ milestones }: JourneyTimelineProps) => {
     offset: ["start start", "end end"],
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${(milestones.length - 1) * 25}%`]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${((milestones.length - 1) / milestones.length) * 100}%`]);
+
+  useEffect(() => {
+    if (isMobile) return;
+
+    let snapTimeout: NodeJS.Timeout;
+    let isSnapping = false;
+
+    const handleScroll = () => {
+      if (!containerRef.current) return;
+      if (isSnapping) return;
+
+      clearTimeout(snapTimeout);
+
+      snapTimeout = setTimeout(() => {
+        const container = containerRef.current;
+        if (!container) return;
+
+        const rect = container.getBoundingClientRect();
+        const scrollTop = window.scrollY;
+        const containerTop = scrollTop + rect.top;
+        const containerHeight = rect.height;
+        const viewportHeight = window.innerHeight;
+        const scrollRange = containerHeight - viewportHeight;
+
+        // Snapping window: only snap when the timeline is active in viewport
+        // and we are scrolling through the stages.
+        if (rect.top <= 20 && rect.bottom >= viewportHeight - 20) {
+          const relativeScroll = scrollTop - containerTop;
+          const progress = relativeScroll / scrollRange;
+          
+          const totalMilestones = milestones.length;
+          const nearestIndex = Math.round(progress * (totalMilestones - 1));
+          const targetRelativeScroll = (nearestIndex / (totalMilestones - 1)) * scrollRange;
+          const targetScroll = containerTop + targetRelativeScroll;
+
+          // Only snap if we are not already close to the target
+          if (Math.abs(scrollTop - targetScroll) > 15) {
+            isSnapping = true;
+            window.scrollTo({
+              top: targetScroll,
+              behavior: "smooth"
+            });
+            
+            // Wait for smooth scroll animation to finish
+            setTimeout(() => {
+              isSnapping = false;
+            }, 800);
+          }
+        }
+      }, 250); // Debounce to detect when scroll stops
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(snapTimeout);
+    };
+  }, [isMobile, milestones.length]);
 
   if (isMobile) {
     return <MobileTimeline milestones={milestones} />;
@@ -340,7 +426,7 @@ const JourneyTimeline = ({ milestones }: JourneyTimelineProps) => {
         </motion.div>
 
         {/* Progress rail */}
-        <ProgressRail scrollYProgress={scrollYProgress} total={milestones.length} />
+        <ProgressRail scrollYProgress={scrollYProgress} total={milestones.length} containerRef={containerRef} />
       </div>
     </div>
   );

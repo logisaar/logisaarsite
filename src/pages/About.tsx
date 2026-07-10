@@ -1,22 +1,11 @@
-import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
-import { Users, Target, Lightbulb, Shield } from "lucide-react";
 import GradientMesh from "@/components/creative/GradientMesh";
-import MarqueeText from "@/components/creative/MarqueeText";
 import DecorativeShapes from "@/components/creative/DecorativeShapes";
-import aboutTeam from "@/assets/about-team.jpg";
-import JourneyTimeline from "@/components/about/JourneyTimeline";
 import TeamSection from "@/components/about/TeamSection";
-import ValueCard from "@/components/about/ValueCard";
+import JourneyTimeline from "@/components/about/JourneyTimeline";
 import SEO from "@/components/SEO";
-
-const values = [
-  { icon: Lightbulb, title: "Innovation First", description: "We stay ahead of tech trends to deliver cutting-edge solutions that push boundaries and redefine what's possible.", color: "hsl(170 80% 45%)", tagline: "ALWAYS AHEAD →", size: "large" as const },
-  { icon: Target, title: "Result-Driven", description: "Every project is built around measurable business outcomes.", color: "hsl(260 70% 58%)", tagline: "100% ROI FOCUS", size: "normal" as const },
-  { icon: Users, title: "Client-Centric", description: "Your vision drives everything we build. Full transparency, always.", color: "hsl(220 80% 50%)", tagline: "YOUR VISION FIRST", size: "normal" as const },
-  { icon: Shield, title: "Quality Assured", description: "Rigorous testing and best practices ensure reliable, scalable products that stand the test of time.", color: "hsl(30 90% 55%)", tagline: "ZERO COMPROMISES", size: "wide" as const },
-];
+import { BookOpen, Fingerprint, Milestone, Cpu, Sparkles, GraduationCap, Beaker, HelpCircle } from "lucide-react";
 
 const milestones = [
   { year: "Sep 2025", title: "Founded", description: "Logisaar was born with a vision to build intelligent, future-ready digital solutions." },
@@ -25,185 +14,330 @@ const milestones = [
   { year: "2026", title: "Growing Impact", description: "Expanding globally while nurturing the next generation of technology leaders." },
 ];
 
-const letterColors = [
-  "hsl(170, 80%, 45%)", // L
-  "hsl(210, 90%, 55%)", // o
-  "hsl(260, 70%, 58%)", // g
-  "hsl(30, 90%, 55%)",  // i
-  "hsl(330, 80%, 55%)", // S
-  "hsl(140, 70%, 45%)", // a
-  "hsl(190, 85%, 50%)", // a
-  "hsl(0, 80%, 55%)",   // r
-];
-
-const InteractiveTitle = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const letters = "LogiSaar".split("");
-
-  return (
-    <div className="mb-4 cursor-default">
-      <motion.p
-        className="font-display text-xl md:text-3xl font-bold text-muted-foreground mb-1"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-      >
-        We are
-      </motion.p>
-      <h1 className="font-display text-6xl md:text-[10rem] font-bold leading-[0.9]">
-        {letters.map((letter, i) => (
-        <motion.span
-          key={i}
-          className="inline-block"
-          initial={{ y: "110%", opacity: 0 }}
-          animate={{ y: "0%", opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 + i * 0.06, ease: [0.16, 1, 0.3, 1] }}
-          onPointerEnter={() => setHoveredIndex(i)}
-          onPointerLeave={() => setHoveredIndex(null)}
-          style={{
-            color: hoveredIndex === i ? letterColors[i] : undefined,
-            transition: "color 0.15s ease-out",
-          }}
-          whileHover={{ scale: 1.1, y: -8, transition: { type: "spring", stiffness: 400, damping: 15 } }}
-        >
-          {letter}
-        </motion.span>
-      ))}
-      </h1>
-    </div>
-  );
-};
-
 const About = () => {
-  const storyRef = useRef(null);
-  const storyInView = useInView(storyRef, { once: true, amount: 0.3 });
-  const valuesRef = useRef(null);
-  const valuesInView = useInView(valuesRef, { once: true, amount: 0.2 });
-
   return (
     <Layout>
       <SEO
-        title="About LogiSaar | Web Development Agency in Odisha"
-        description="LogiSaar was founded in 2025 by Chinmay Kumar Panda in Odisha. 15+ projects delivered. Building custom software for businesses across Bhubaneswar, Cuttack, and all of Odisha."
-        keywords="about LogiSaar, web development agency Odisha, Chinmay Kumar Panda, software company Bhubaneswar, IT company Cuttack, LogiSaar team"
+        title="About Logisaar | AI-Native Technology Company in Odisha"
+        description="Logisaar is an AI-native technology company based in Odisha. We build custom AI systems, ship AI-native products, and train engineers via TechXera."
+        keywords="about Logisaar, AI company Odisha, Chinmay Kumar Panda, Biswanath Prasanna Satyabrata Kar, software engineering Bhubaneswar, IT company Cuttack"
         canonical="https://www.logisaar.in/about"
       />
-      {/* Hero */}
-      <section className="min-h-[70vh] flex items-center relative overflow-hidden">
+
+      {/* Hero Header */}
+      <section className="min-h-[50vh] flex items-center relative overflow-hidden">
         <GradientMesh />
         <DecorativeShapes variant="hero" />
         <div className="container mx-auto px-4 relative z-10 pt-32 pb-20">
           <div className="max-w-3xl">
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-primary font-medium text-xs uppercase tracking-[0.2em] mb-6"
+              className="text-primary font-mono text-xs uppercase tracking-[0.2em] mb-4"
             >
-              About Us
+              WHO WE ARE
             </motion.p>
-            <InteractiveTitle />
-            <motion.p
+            <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-              className="text-muted-foreground text-lg leading-relaxed max-w-xl"
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="font-display text-5xl md:text-7xl font-bold leading-tight"
             >
-              Logisaar was founded in September 2025 with a clear vision — to build intelligent, reliable, and future-ready digital solutions that empower businesses and individuals to grow in a technology-driven world.
+              An AI-native <br />
+              <span className="text-gradient">technology company.</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="text-muted-foreground text-base md:text-lg mt-6 max-w-xl leading-relaxed"
+            >
+              Logisaar is an engineering company building AI software, intelligent automation systems, and practical AI education. We help businesses modernize with AI while empowering students and professionals to build the technology of tomorrow.
             </motion.p>
           </div>
         </div>
       </section>
 
-      <MarqueeText text="INNOVATION  ·  QUALITY  ·  EXCELLENCE  ·  PARTNERSHIP  ·  " />
-
-      {/* Story - with isometric illustration */}
-      <section className="py-32 relative overflow-hidden" ref={storyRef}>
-        <DecorativeShapes variant="section" />
+      {/* ── Section 1: Why Logisaar Exists ── */}
+      <section className="py-24 relative overflow-hidden border-t border-border/30 bg-background">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              {["LogiSaar is co-founded by Chinmay Kumar Panda and Biswanatha — two Computer Science engineers and full-stack developers based in Odisha. Together, they started LogiSaar in September 2025 with a mission to bring enterprise-quality software to businesses across Odisha. Their combined expertise spans React, Next.js, AI systems, mobile development, and digital growth strategy.",
-                "We are proudly Odisha-based and have served clients in Bhubaneswar, Cuttack, Nalanda, and beyond. Our mission is to make premium digital products accessible to every serious business in Odisha.",
-                "In a remarkably short span of time, Logisaar successfully delivered 15+ projects within the first few months, demonstrating our strong execution capability, client-first approach, and commitment to quality. Our projects span across web development, software solutions, automation, and digital platforms, helping organizations streamline operations and enhance their online presence.",
-                "Beyond commercial software development, Logisaar has also expanded into the education and skill-development sector through its dedicated sub-brand TECHXERA. TECHXERA was first launched in Nalanda as a programming club with the mission to bridge the gap between academic learning and real-world industry requirements.",
-                "At Logisaar, we believe in continuous innovation, ethical practices, and long-term partnerships. Our goal is not just to deliver software, but to create impact-driven digital experiences and nurture the next generation of technology leaders.",
-                "Let's build the future — together."
-              ].map((text, i) => (
-                <motion.p
-                  key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={storyInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: i * 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-muted-foreground leading-relaxed mb-4"
-                >
-                  {text}
-                </motion.p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-5 space-y-4">
+              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
+                <HelpCircle size={13} />
+                <span>Purpose</span>
+              </div>
+              <h2 className="font-display text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">
+                Why Logisaar Exists
+              </h2>
+              <p className="text-xl font-bold text-gradient pt-2">
+                We created Logisaar to solve all three.
+              </p>
+            </div>
+            <div className="lg:col-span-7 space-y-4">
+              {[
+                { label: "01", text: "Businesses struggle to adopt AI." },
+                { label: "02", text: "Students struggle to gain industry skills." },
+                { label: "03", text: "Developers struggle to build production-ready software." },
+              ].map((item) => (
+                <div key={item.label} className="glass-card p-6 border border-border/50 flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-mono font-bold text-sm shrink-0">
+                    {item.label}
+                  </div>
+                  <p className="text-base font-semibold text-foreground">
+                    {item.text}
+                  </p>
+                </div>
               ))}
             </div>
-            {/* Isometric illustration of devices */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={storyInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: 0.3, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="aspect-square rounded-3xl relative overflow-hidden group border border-border/30 shadow-2xl"
-            >
-              <img
-                src={aboutTeam}
-                alt="Our team collaborating"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-primary/10" />
-              {/* Decorative accent shapes */}
-              <motion.div
-                className="absolute -top-4 -right-4 w-24 h-24 rounded-full border-2 border-primary/20"
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              />
-              <motion.div
-                className="absolute -bottom-3 -left-3 w-16 h-16 rounded-xl border-2 border-primary/15 rotate-45"
-                animate={{ rotate: [45, 405] }}
-                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              />
-            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Timeline */}
+      {/* ── Section 2: What We Build ── */}
+      <section className="py-24 relative overflow-hidden bg-secondary/15 border-t border-border/30">
+        <div className="absolute inset-0 animated-grid pointer-events-none opacity-20" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-4 space-y-4">
+              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
+                <Fingerprint size={13} />
+                <span>Portfolio</span>
+              </div>
+              <h2 className="font-display text-3xl font-bold">What We Build</h2>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                We focus on shifting technology from theory to concrete, deployed systems across software development, educational frameworks, and advanced agentic research.
+              </p>
+            </div>
+            <div className="lg:col-span-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                {/* AI Software */}
+                <div className="glass-card p-6 border border-border/50 flex flex-col justify-between h-full">
+                  <div>
+                    <h3 className="font-display font-bold text-foreground text-lg mb-4 flex items-center gap-2">
+                      <Cpu size={18} className="text-primary" />
+                      AI Software
+                    </h3>
+                    <ul className="space-y-2 text-sm text-muted-foreground font-medium">
+                      <li className="flex items-center gap-2">
+                        <span className="w-1 h-1 rounded-full bg-primary" />
+                        Enterprise applications
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="w-1 h-1 rounded-full bg-primary" />
+                        Automation
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="w-1 h-1 rounded-full bg-primary" />
+                        AI systems
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* AI Products */}
+                <div className="glass-card p-6 border border-border/50 flex flex-col justify-between h-full">
+                  <div>
+                    <h3 className="font-display font-bold text-foreground text-lg mb-4 flex items-center gap-2">
+                      <Sparkles size={18} className="text-primary" />
+                      AI Products
+                    </h3>
+                    <div className="space-y-4">
+                      <div>
+                        <div className="font-bold text-sm text-foreground flex items-center gap-2">
+                          ScanLoyal
+                          <span className="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold">
+                            Main Product
+                          </span>
+                        </div>
+                        <p className="text-xs text-muted-foreground leading-relaxed font-medium mt-1">
+                          Customer loyalty & Google Review growth suite.
+                        </p>
+                      </div>
+                      <div className="border-t border-border/40 pt-3">
+                        <div className="font-semibold text-sm text-foreground">
+                          Hyperlocal Community App <span className="text-muted-foreground font-normal text-xs">(Name TBA)</span>
+                        </div>
+                        <p className="text-xs text-muted-foreground leading-relaxed font-medium mt-1">
+                          Hyperlocal community application.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* AI Education */}
+                <div className="glass-card p-6 border border-border/50 flex flex-col justify-between h-full">
+                  <div>
+                    <h3 className="font-display font-bold text-foreground text-lg mb-4 flex items-center gap-2">
+                      <GraduationCap size={18} className="text-primary" />
+                      AI Education
+                    </h3>
+                    <div className="space-y-3">
+                      <div>
+                        <div className="font-semibold text-sm text-foreground">TechXera</div>
+                        <ul className="mt-1 space-y-1.5 text-xs text-muted-foreground pl-3 list-disc font-medium">
+                          <li>Chalk to Choice</li>
+                          <li>Workshops</li>
+                          <li>Training</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* AI Research */}
+                <div className="glass-card p-6 border border-border/50 flex flex-col justify-between h-full">
+                  <div>
+                    <h3 className="font-display font-bold text-foreground text-lg mb-4 flex items-center gap-2">
+                      <Beaker size={18} className="text-primary" />
+                      AI Research
+                    </h3>
+                    <ul className="space-y-2 text-sm text-muted-foreground font-medium">
+                      <li className="flex items-center gap-2">
+                        <span className="w-1 h-1 rounded-full bg-primary" />
+                        Agentic AI
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="w-1 h-1 rounded-full bg-primary" />
+                        LLMs
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="w-1 h-1 rounded-full bg-primary" />
+                        Automation
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="w-1 h-1 rounded-full bg-primary" />
+                        Future products
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section 3: Origins & Foundation ── */}
+      <section className="py-24 relative overflow-hidden border-t border-border/30 bg-background">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-4 space-y-4">
+              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
+                <Milestone size={13} />
+                <span>Our Story</span>
+              </div>
+              <h2 className="font-display text-3xl font-bold">Origins & Foundation</h2>
+            </div>
+            <div className="lg:col-span-8 space-y-6 text-muted-foreground text-sm md:text-base leading-relaxed font-medium">
+              <p>
+                Logisaar was founded in September 2025 by Chinmay Kumar Panda and Biswanath Prasanna Satyabrata Kar — two Computer Science engineers and full-stack developers based in Odisha. Driven by a desire to build high-performance software systems locally, they established the company's registered base in Cuttack, Odisha.
+              </p>
+              <p>
+                In a brief timeline, we successfully built and shipped 15+ custom web, database, and automation projects. This rapid progression proved our execution capabilities and confirmed the local demand for specialized engineering.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section 4: Where We're Going ── */}
+      <section className="py-24 relative overflow-hidden bg-secondary/15 border-t border-border/30">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-4 space-y-4">
+              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
+                <BookOpen size={13} />
+                <span>Our Vision</span>
+              </div>
+              <h2 className="font-display text-3xl font-bold">Where We're Going</h2>
+            </div>
+            <div className="lg:col-span-8 space-y-8">
+              <div className="space-y-4 text-muted-foreground text-sm md:text-base leading-relaxed font-medium">
+                <p>
+                  We believe AI should become practical, accessible, and useful for every business—not just large enterprises.
+                </p>
+                <p>
+                  Over the coming years, Logisaar is focused on building AI products, AI-first enterprise software, and educational platforms that prepare the next generation of engineers for an AI-driven world.
+                </p>
+              </div>
+              
+              <div className="border-t border-border/60 pt-6">
+                <h4 className="font-mono text-xs tracking-wider uppercase text-muted-foreground mb-4">
+                  Our ambition is simple:
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {[
+                    { title: "Build globally.", desc: "Creating world-class technology solutions." },
+                    { title: "Start from Odisha.", desc: "Nurturing local talent and tech footprint." },
+                    { title: "Create lasting impact.", desc: "Delivering sustainable engineering value." },
+                  ].map((amb) => (
+                    <div key={amb.title} className="p-4 rounded-xl border border-primary/10 bg-primary/5">
+                      <div className="font-bold text-foreground text-sm flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                        {amb.title}
+                      </div>
+                      <p className="text-xs text-muted-foreground mt-1 leading-normal font-medium">
+                        {amb.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section 5: Journey Timeline ── */}
       <JourneyTimeline milestones={milestones} />
 
-      {/* Team */}
+      {/* ── Section 6: Founders ── */}
       <TeamSection />
 
-      {/* Values - with unique colors */}
-      <section className="py-32 relative overflow-hidden" ref={valuesRef}>
-        {/* Animated dot grid background */}
-        <div className="absolute inset-0 animated-grid" />
+      {/* ── Section 7: Our Values ── */}
+      <section className="py-24 relative overflow-hidden bg-secondary/15 border-t border-border/30">
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={valuesInView ? { opacity: 1, y: 0 } : {}}
-            className="text-center mb-20"
-          >
-            <p className="text-primary font-medium text-xs uppercase tracking-[0.2em] mb-4">Our Values</p>
-            <h2 className="font-display text-4xl md:text-6xl font-bold">
-              What <span className="text-gradient">Drives</span> Us
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <span className="text-primary text-xs font-mono uppercase tracking-[0.2em] block">
+              Principles
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white">
+              Our Values
             </h2>
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {values.map((v, i) => (
-              <ValueCard
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              { title: "Build First", desc: "We prioritize writing code and deploying real software over writing slides or conceptual designs." },
+              { title: "Think Long Term", desc: "We engineer systems and build relationships that stand the test of time, choosing sustainability over shortcuts." },
+              { title: "Ship Fast", desc: "We value speed, momentum, and continuous iteration to get feedback and deliver value rapidly." },
+              { title: "Learn Continuously", desc: "We stay curious, embrace new paradigms, and share knowledge to keep pushing technical boundaries." },
+              { title: "Own Outcomes", desc: "We take absolute responsibility for what we build and its ultimate impact on the client and user." },
+              { title: "Help Others Grow", desc: "We support our team, our clients, and our students through education and mentorship via TechXera." },
+            ].map((v, i) => (
+              <div 
                 key={v.title}
-                icon={v.icon}
-                title={v.title}
-                description={v.description}
-                tagline={v.tagline}
-                color={v.color}
-                size={v.size}
-                index={i}
-                isInView={valuesInView}
-              />
+                className="glass-card p-6 border border-border/50 bg-white/40 dark:bg-slate-900/40 flex flex-col justify-between hover:border-primary/30 transition-all duration-300"
+              >
+                <div className="space-y-4">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-mono font-bold text-sm">
+                    {String(i + 1).padStart(2, "0")}
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="font-display font-bold text-foreground text-lg">
+                      {v.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed font-medium">
+                      {v.desc}
+                    </p>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>

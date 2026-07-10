@@ -98,7 +98,7 @@ const Location = () => {
     <Layout>
       <SEO
         title="Web Development Company in Odisha | Bhubaneswar, Cuttack, Bhadrak & Rourkela | LogiSaar"
-        description="LogiSaar is Odisha's trusted web development company. We build custom websites, CRM, e-commerce & AI tools for businesses in Bhubaneswar, Cuttack, Bhadrak, Rourkela, Puri, Sambalpur and all of Odisha. Call +91 78150 14638."
+        description="LogiSaar is Odisha's trusted web development company. We build custom websites, CRM, e-commerce & AI tools for businesses in Bhubaneswar, Cuttack, Bhadrak, Rourkela, Puri, Sambalpur and all of Odisha. Call +91 85960 72510."
         keywords="web development company Odisha, web design Bhubaneswar, web design Cuttack, website developer Bhadrak, website developer Rourkela, website developer Puri, SEO Odisha, CRM development Odisha, mobile app development Odisha"
         canonical="https://www.logisaar.in/web-development-odisha"
         jsonLd={faqSchema}
@@ -305,7 +305,7 @@ const Location = () => {
                   className="group bg-green-500 hover:bg-green-600 border-0 text-white px-10 py-6 text-base rounded-full"
                 >
                   <a
-                    href="https://wa.me/917815014638?text=Hi%20LogiSaar%2C%20I%20want%20a%20free%20website%20quote%20for%20my%20Odisha%20business"
+                    href="https://wa.me/918596072510?text=Hi%20LogiSaar%2C%20I%20want%20a%20free%20website%20quote%20for%20my%20Odisha%20business"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -321,9 +321,9 @@ const Location = () => {
                   variant="outline"
                   className="px-10 py-6 text-base rounded-full border-2 border-primary/20 hover:border-primary/50"
                 >
-                  <a href="tel:+917815014638">
+                  <a href="tel:+918596072510">
                     <Phone size={18} className="mr-2" />
-                    +91 78150 14638
+                    +91 85960 72510
                   </a>
                 </Button>
               </MagneticButton>

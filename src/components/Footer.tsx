@@ -9,18 +9,20 @@ import { ArrowRight } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const footerLinks = {
-  Services: [
-    { label: "Web Engineering", to: "/services" },
-    { label: "Mobile Solutions", to: "/services" },
-    { label: "AI & Automation", to: "/services" },
-    { label: "Growth Engineering", to: "/services" },
-    { label: "Experience Design", to: "/services" },
-    { label: "Motion Design", to: "/services" },
+  Solutions: [
+    { label: "Web Engineering", to: "/solutions" },
+    { label: "Mobile Solutions", to: "/solutions" },
+    { label: "AI & Automation", to: "/solutions" },
+    { label: "Growth Engineering", to: "/solutions" },
+    { label: "Experience Design", to: "/solutions" },
+    { label: "Motion Design", to: "/solutions" },
   ],
   Company: [
     { label: "About Us", to: "/about" },
     { label: "Portfolio", to: "/portfolio" },
-    { label: "Pricing", to: "/pricing" },
+    { label: "TechXera", to: "/techxera" },
+    { label: "Products", to: "/products" },
+    { label: "Careers", to: "/careers" },
     { label: "Contact", to: "/contact" },
   ],
   Legal: [
@@ -120,7 +122,7 @@ const Footer = () => {
               <img src={logo} alt="LogiSaar" className="h-24 w-auto drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-background/50">
-              Elite development studio crafting modern software solutions. Engineering excellence for businesses worldwide.
+              AI-native technology company based in Odisha. We build AI systems and AI-native software, train builders through TechXera, and ship our own products.
             </p>
             {/* Social icons */}
             <div className="flex gap-2 mt-6 flex-wrap">
@@ -167,9 +169,19 @@ const Footer = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.7, duration: 0.8 }}
           >
-            <h4 className="font-display font-semibold text-background mb-4 text-sm uppercase tracking-wider">Get in Touch</h4>
+            <h4 className="font-display font-semibold text-background mb-4 text-sm uppercase tracking-wider">Registered Office</h4>
             <ul className="space-y-3 text-sm text-background/50">
-              <li className="flex items-center gap-2">
+              <li className="flex items-start gap-2">
+                <MapPin size={14} className="text-primary shrink-0 mt-1" />
+                <span>
+                  Logisaar Technologies Private Limited<br />
+                  Cuttack, Odisha, India
+                </span>
+              </li>
+              <li className="text-xs text-background/40 font-mono">
+                CIN: U62012OD2026PTC053632
+              </li>
+              <li className="flex items-center gap-2 pt-2">
                 <Mail size={14} className="text-primary shrink-0" />
                 <a href="mailto:logisaar@gmail.com" className="hover:text-primary transition-colors break-all">
                   logisaar@gmail.com
@@ -192,16 +204,12 @@ const Footer = () => {
                   WhatsApp Us
                 </a>
               </li>
-              <li className="flex items-center gap-2">
-                <MapPin size={14} className="text-primary shrink-0" />
-                Cuttack, Odisha, India
-              </li>
             </ul>
           </motion.div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-background/10 text-center text-xs text-background/30">
-          © 2025–{new Date().getFullYear()} LogiSaar. Built in Odisha 🇮🇳
+          © 2025–{new Date().getFullYear()} LogiSaar. Registered in India. Built in Odisha 🇮🇳
         </div>
       </div>
     </footer>
