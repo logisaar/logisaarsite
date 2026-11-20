@@ -1268,7 +1268,7 @@ const TechXera = () => {
                     </Button>
                     <Button asChild className="flex-1 bg-gradient-primary hover:opacity-90 text-white rounded-full py-4 h-auto font-semibold border-0">
                       <a
-                        href="https://wa.me/917815014638?text=Hi%20Logisaar%20IKURO%2C%20I%27m%20interested%20in%20registering%20for%20the%20Chalk%20to%20Choice%20program."
+                        href="https://wa.me/918596072510?text=Hi%20Logisaar%20IKURO%2C%20I%27m%20interested%20in%20registering%20for%20the%20Chalk%20to%20Choice%20program."
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center gap-2"
@@ -2221,13 +2221,13 @@ const TechXera = () => {
                       <div className="text-[10px] font-mono text-muted-foreground">Inquiries &amp; Registration:</div>
                       <div className="text-xs text-foreground font-medium">
                         📧 techxeraclub@thenalanda.com <br />
-                        📞 +91 78150 14638
+                        📞 +91 85960 72510
                       </div>
                     </div>
 
                     <Button asChild className="w-full bg-gradient-primary hover:opacity-95 text-white rounded-full py-4 h-auto font-semibold">
                       <a
-                        href="https://wa.me/917815014638?text=Hi%20Logisaar%20IKURO%2C%20I%27m%20interested%20in%20registering%20for%20the%20Chalk%20to%20Choice%20program."
+                        href="https://wa.me/918596072510?text=Hi%20Logisaar%20IKURO%2C%20I%27m%20interested%20in%20registering%20for%20the%20Chalk%20to%20Choice%20program."
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center gap-2"
