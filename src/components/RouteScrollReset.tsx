@@ -19,12 +19,26 @@ const RouteScrollReset = () => {
 
   useEffect(() => {
     if (!hash) return;
-    // Wait a beat so the page (and its transition) has rendered the target.
     const id = decodeURIComponent(hash.slice(1));
-    const timer = window.setTimeout(() => {
-      document.getElementById(id)?.scrollIntoView({ behavior: "auto", block: "start" });
-    }, 350);
-    return () => window.clearTimeout(timer);
+    // The target can appear late (page transition) and the layout can shift while the old page leaves,
+    // so keep it aligned for a short while, and stop as soon as the visitor scrolls themselves.
+    let elapsed = 0;
+    const stop = () => window.clearInterval(timer);
+    const timer = window.setInterval(() => {
+      elapsed += 100;
+      const el = document.getElementById(id);
+      if (el) {
+        const margin = (parseFloat(getComputedStyle(el).scrollMarginTop) || 0) + (parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0);
+        if (Math.abs(el.getBoundingClientRect().top - margin) > 2) el.scrollIntoView({ behavior: "instant", block: "start" });
+      }
+      if (elapsed >= 2000) stop();
+    }, 100);
+    const events = ["wheel", "touchmove", "keydown", "pointerdown"] as const;
+    events.forEach((e) => window.addEventListener(e, stop, { passive: true, once: true }));
+    return () => {
+      stop();
+      events.forEach((e) => window.removeEventListener(e, stop));
+    };
   }, [pathname, hash]);
 
   return null;

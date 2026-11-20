@@ -14,9 +14,10 @@ import { SERVICES } from "@/data/company";
 import { INDUSTRIES, SOLUTIONS, priceLine, type Solution } from "@/data/solutions";
 
 const CARD = "flex h-full flex-col rounded-2xl border border-border bg-card p-6";
-const BTN = "min-h-[2.75rem] rounded-full border-0 bg-primary px-6 font-semibold text-primary-on hover:bg-primary/90";
-const BTN_OUTLINE = "min-h-[2.75rem] rounded-full border-2 border-primary/40 px-6 font-semibold";
-const ANCHOR = "scroll-mt-[calc(var(--header-h)+1rem)]";
+const BTN = "h-auto min-h-[2.75rem] whitespace-normal rounded-full border-0 bg-primary px-6 font-semibold text-primary-on hover:bg-primary/90";
+const BTN_OUTLINE = "h-auto min-h-[2.75rem] whitespace-normal rounded-full border-2 border-primary/40 px-6 font-semibold";
+// The global scroll-padding-top already keeps anchors clear of the fixed header
+const ANCHOR = "";
 
 // Keep in step with About "How we work" and the Contact page "What happens next".
 const PROJECT_STEPS = [
@@ -75,7 +76,7 @@ const SolutionCard = ({ sol }: { sol: Solution }) => {
           {price.from}
           {price.monthly && <span className="font-normal text-muted-foreground"> + {price.monthly}</span>}
         </p>
-        <div className="mt-auto flex flex-col gap-3 pt-5 sm:flex-row">
+        <div className="mt-auto flex flex-col gap-3 pt-5">
           <Button asChild className={`${BTN} flex-1`}>
             <Link to={sol.path}>
               View details<span className="sr-only"> for {sol.name}</span>

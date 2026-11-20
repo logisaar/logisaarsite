@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { LucideIcon, ChevronDown, MessageCircle, Phone, ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import { CONTACT } from "@/lib/contact";
 import GradientMesh from "@/components/creative/GradientMesh";
 import MagneticButton from "@/components/creative/MagneticButton";
 
@@ -47,7 +48,7 @@ export interface ServicePageProps {
   cta?: { headline?: string };
 }
 
-const WHATSAPP_BASE = "https://wa.me/918596072510?text=";
+const WHATSAPP_BASE = `${CONTACT.whatsapp}?text=`;
 
 const howItWorks = [
   { n: "01", title: "Discovery & Setup", desc: "We understand your workflow, goals and requirements. We scope the project and share a detailed proposal." },
@@ -134,7 +135,7 @@ export default function ServicePageLayout({
                 className="flex flex-col sm:flex-row gap-3"
               >
                 <MagneticButton strength={0.15}>
-                  <Button asChild size="lg" className="group bg-green-500 hover:bg-green-600 border-0 text-white px-8 rounded-full">
+                  <Button asChild size="lg" className="group bg-primary hover:bg-primary/90 border-0 text-primary-on px-8 rounded-full">
                     <a href={waUrl} target="_blank" rel="noopener noreferrer">
                       <MessageCircle size={17} className="mr-2" />
                       Get a Free Demo
@@ -160,10 +161,10 @@ export default function ServicePageLayout({
                 className="flex items-center gap-2 mt-6"
               >
                 <Phone size={13} className="text-muted-foreground" />
-                <a href="tel:+918596072510" className="text-sm text-muted-foreground hover:text-primary-ink transition-colors">
-                  +91 85960 72510
+                <a href={CONTACT.tel} className="inline-flex min-h-[2.75rem] items-center text-sm text-muted-foreground hover:text-primary-ink transition-colors">
+                  {CONTACT.phone}
                 </a>
-                <span className="text-muted-foreground/40 text-sm mx-1">•</span>
+                <span aria-hidden="true" className="text-muted-foreground text-sm mx-1">•</span>
                 <span className="text-sm text-muted-foreground">Free consultation</span>
               </motion.div>
             </div>
@@ -426,7 +427,7 @@ export default function ServicePageLayout({
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <MagneticButton strength={0.15}>
-                <Button asChild size="lg" className="group bg-green-500 hover:bg-green-600 border-0 text-white px-10 rounded-full">
+                <Button asChild size="lg" className="group bg-primary hover:bg-primary/90 border-0 text-primary-on px-10 rounded-full">
                   <a href={waUrl} target="_blank" rel="noopener noreferrer">
                     <MessageCircle size={17} className="mr-2" />
                     WhatsApp Us Now
@@ -435,9 +436,9 @@ export default function ServicePageLayout({
               </MagneticButton>
               <MagneticButton strength={0.1}>
                 <Button asChild variant="outline" size="lg" className="rounded-full border-2 border-primary/20 hover:border-primary/50 px-10">
-                  <a href="tel:+918596072510">
+                  <a href={CONTACT.tel}>
                     <Phone size={15} className="mr-2" />
-                    +91 85960 72510
+                    {CONTACT.phone}
                   </a>
                 </Button>
               </MagneticButton>

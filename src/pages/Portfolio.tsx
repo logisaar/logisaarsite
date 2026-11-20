@@ -55,7 +55,7 @@ const Portfolio = () => {
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
-                className={`relative px-6 py-2.5 text-sm rounded-full transition-all duration-300 font-medium ${active === cat ? "text-white" : "text-muted-foreground hover:text-foreground bg-secondary/50"}`}
+                className={`relative min-h-[2.75rem] px-6 py-2.5 text-sm rounded-full transition-all duration-300 font-medium ${active === cat ? "text-white" : "text-muted-foreground hover:text-foreground bg-secondary/50"}`}
               >
                 {active === cat && (
                   <motion.div layoutId="filter-bg" className="absolute inset-0 bg-gradient-primary rounded-full -z-10" transition={{ type: "spring", stiffness: 300, damping: 30 }} />

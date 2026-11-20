@@ -67,7 +67,7 @@ const MilestonePanel = ({
         <div className="flex items-center gap-3 mb-8">
           <span
             className="font-mono text-sm tracking-widest"
-            style={{ color: "hsl(170 80% 45% / 0.7)" }}
+            style={{ color: "hsl(170 80% 45%)" }}
           >
             {chapterNum}
           </span>
@@ -292,7 +292,7 @@ const MobileTimeline = ({ milestones }: { milestones: Milestone[] }) => (
           <div className="relative z-10">
             <span
               className="font-mono text-xs tracking-widest block mb-4"
-              style={{ color: "hsl(170 80% 45% / 0.6)" }}
+              style={{ color: "hsl(170 80% 45%)" }}
             >
               {String(i + 1).padStart(2, "0")} /
             </span>
