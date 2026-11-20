@@ -50,8 +50,8 @@ for (const w of [375, 1280]) {
   const checked = await p.locator("fieldset input:checked").count();
   ok(`[${w}] chip toggles with Space`, checked === 1);
 
-  await p.locator("#email").fill("qa@example.com");
-  await p.locator("#message").fill("Automated QA message, please ignore.");
+  await p.locator("#email").fill("qa-test@logisaar.com");
+  await p.locator("#message").fill("Round 5 QA test submission, please ignore.");
 
   // failure path (simulated): keep text, show inline message
   if (!LIVE) {
