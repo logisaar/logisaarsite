@@ -18,6 +18,7 @@ const footerLinks = {
     { label: "About Us", to: "/about" },
     { label: "Portfolio", to: "/portfolio" },
     { label: "IKURO", to: "/ikuro" },
+    { label: "HeyLane", to: "/heylane" },
     { label: "Products", to: "/products" },
     { label: "Careers", to: "/careers" },
     { label: "Contact", to: "/contact" },

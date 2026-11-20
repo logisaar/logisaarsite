@@ -26,6 +26,7 @@ const PAGE_GREETING: Record<string, string> = {
   "/": "Hi! I'm Logi. I'll walk you through Logisaar.",
   "/careers": "We're hiring! Want help applying?",
   "/ikuro": "IKURO helps students decide better.",
+  "/heylane": "HeyLane is made by Logisaar too.",
   "/solutions": "Pick a solution and I'll explain it.",
   "/contact": "WhatsApp is the fastest way to reach the team.",
 };

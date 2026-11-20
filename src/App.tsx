@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Solutions from "./pages/Solutions";
 import Portfolio from "./pages/Portfolio";
 import Ikuro from "./pages/Ikuro";
+import HeyLane from "./pages/HeyLane";
 import Products from "./pages/Products";
 import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
@@ -54,6 +55,7 @@ const AnimatedRoutes = () => {
           <Route path="/ikuro" element={<Ikuro />} />
           <Route path="/techxera" element={<Navigate to="/ikuro" replace />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/heylane" element={<HeyLane />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />
 

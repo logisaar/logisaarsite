@@ -9,6 +9,8 @@ import ChalkToChoiceAsset from "@/components/home/ChalkToChoiceAsset";
 import MarqueeText from "@/components/creative/MarqueeText";
 import SEO from "@/components/SEO";
 import Eyebrow from "@/components/Eyebrow";
+import HlPhone from "@/components/heylane/HlPhone";
+import "@/components/heylane/heylane.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { 
@@ -656,106 +658,48 @@ const Index = () => {
 
       <GradientDivider />
 
-      {/* ── Section: Products Snapshot ── */}
+      {/* ── Section: Products Snapshot (HeyLane) ── */}
       <section data-logi="We build our own products as well." className="py-section relative overflow-hidden bg-background">
         <div className="container mx-auto px-gutter relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-5 space-y-6">
+            <div className="lg:col-span-6 space-y-6">
               <Eyebrow>HeyLane · A Logisaar product</Eyebrow>
-              <h2 className="font-display text-h2 font-bold">
-                We don't just build for clients. <span className="text-gradient">We build our own.</span>
-              </h2>
+              {/* HeyLane's own logo (official SVG, unchanged) and a thin accent in its colour */}
+              <div className="border-l-2 pl-6 space-y-5" style={{ borderColor: "#007F5F" }}>
+                <img src="/brand/heylane/HeyLane-Horizontal.svg" width={1644} height={344} alt="HeyLane" className="-my-3 h-auto w-[min(14rem,70%)]" />
+                <h2 className="font-display text-h2 font-bold">
+                  We don't just build for clients. <span className="text-gradient">We build our own.</span>
+                </h2>
+              </div>
               <p className="text-muted-foreground text-body leading-relaxed">
-                HeyLane is our hyperlocal super app connecting local businesses with customers nearby: discovery, direct chat, loyalty rewards and automatic GST invoices, all in one place.
+                HeyLane is our neighbourhood app for Bhubaneswar: people find local places and hear from their own contacts first; businesses get billing, chat and a loyalty programme in one product.
               </p>
-              <div>
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
                 <MagneticButton strength={0.1}>
                   <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full px-8">
-                    <a href="https://heylane.in/" target="_blank" rel="noopener noreferrer">
-                      Visit HeyLane
-                      <ArrowRight size={16} className="ml-2" />
-                    </a>
+                    <Link to="/heylane">
+                      Explore HeyLane
+                      <ArrowRight size={16} className="ml-2" aria-hidden="true" />
+                    </Link>
                   </Button>
                 </MagneticButton>
+                <a
+                  href="https://heylane.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[2.75rem] items-center gap-1 font-semibold text-primary-ink hover:underline"
+                >
+                  heylane.in
+                  <ArrowRight size={14} aria-hidden="true" />
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
               </div>
             </div>
 
-            <div className="lg:col-span-7">
-              <div className="rounded-2xl border border-border bg-card p-4 shadow-2xl relative overflow-hidden aspect-[16/10] flex flex-col justify-between group">
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-accent/5 to-transparent pointer-events-none" />
-                
-                {/* Browser Header */}
-                <div className="flex justify-between items-center border-b border-border/40 pb-3 mb-3">
-                  <div className="flex gap-1.5">
-                    <span className="w-3 h-3 rounded-full bg-red-500/60" />
-                    <span className="w-3 h-3 rounded-full bg-yellow-500/60" />
-                    <span className="w-3 h-3 rounded-full bg-green-500/60" />
-                  </div>
-                  <div className="bg-secondary/40 border border-border px-4 py-0.5 rounded-md text-label text-muted-foreground font-mono select-none">
-                    heylane.in
-                  </div>
-                  <div className="w-6" /> {/* Spacer to center URL */}
-                </div>
-                
-                {/* Visual Dashboard Preview */}
-                <div className="flex-1 grid grid-cols-12 gap-3 overflow-hidden text-label">
-                  {/* Left Column: Loyalty Card Mockup */}
-                  <div className="col-span-7 bg-secondary/20 rounded-xl border border-border/40 p-3.5 flex flex-col justify-between">
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <h4 className="font-bold text-foreground text-body-sm font-display">Kalinga Café</h4>
-                        <p className="text-label text-muted-foreground font-mono">Loyalty Card</p>
-                      </div>
-                      <span className="bg-green-500/10 text-primary-ink border border-green-500/20 text-label px-2 py-0.5 rounded-full font-semibold">Active</span>
-                    </div>
-
-                    {/* Coffee Cups Stamps Grid */}
-                    <div className="grid grid-cols-5 gap-1.5 my-3">
-                      {[1, 2, 3, 4].map((i) => (
-                        <div key={i} className="aspect-square bg-primary/20 border border-primary/45 rounded-lg flex items-center justify-center text-primary-ink text-label font-bold font-mono">
-                          ✓
-                        </div>
-                      ))}
-                      <div className="aspect-square bg-secondary border border-border/60 rounded-lg flex items-center justify-center text-muted-foreground/45 text-label">
-                        5
-                      </div>
-                    </div>
-
-                    <div className="flex justify-between items-center text-label border-t border-border/20 pt-2 text-muted-foreground">
-                      <span>4 of 5 visits complete</span>
-                      <span className="text-primary-ink font-bold">1 Free Coffee next!</span>
-                    </div>
-                  </div>
-
-                  {/* Right Column: GBP Growth & QR Stats */}
-                  <div className="col-span-5 flex flex-col gap-3">
-                    {/* Google Business Profile Growth Box */}
-                    <div className="bg-primary/5 rounded-xl border border-primary/20 p-3 flex flex-col justify-center flex-1">
-                      <p className="text-label uppercase font-mono tracking-wider text-muted-foreground">GST Invoice</p>
-                      <h5 className="font-bold text-foreground text-body mt-0.5 font-display">Auto</h5>
-                      <p className="text-label text-muted-foreground mt-0.5 leading-tight">Generated for every order for businesses with GSTIN.</p>
-                    </div>
-
-                    {/* QR Code trigger mockup */}
-                    <div className="bg-secondary/20 rounded-xl border border-border/40 p-3 flex items-center gap-3 shrink-0">
-                      <div className="w-10 h-10 bg-card border border-border rounded-lg flex items-center justify-center text-foreground font-mono font-bold text-label shrink-0 select-none">
-                        QR
-                      </div>
-                      <div className="leading-tight">
-                        <p className="font-semibold text-foreground text-label">Shop Chat</p>
-                        <p className="text-label text-muted-foreground mt-0.5">Customers message the shop directly</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Footer block */}
-                <div className="border-t border-border/40 mt-3 pt-3 flex justify-between items-center text-label text-muted-foreground">
-                  <span>Hyperlocal super app</span>
-                  <a href="https://heylane.in/" target="_blank" rel="noopener noreferrer" className="text-primary-ink font-mono font-semibold hover:underline inline-flex items-center gap-1">
-                    heylane.in <ArrowRight size={10} />
-                  </a>
-                </div>
+            {/* A member pass, shown the way the app shows it. Sample data, labelled inside the frame. */}
+            <div className="lg:col-span-6">
+              <div data-theme="heylane" className="mx-auto max-w-md rounded-3xl p-8">
+                <HlPhone screen="pass" />
               </div>
             </div>
           </div>

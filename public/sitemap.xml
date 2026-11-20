@@ -66,6 +66,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.logisaar.in/heylane</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.logisaar.in/ikuro</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

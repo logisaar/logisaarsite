@@ -153,7 +153,7 @@ const About = () => {
                           </span>
                         </div>
                         <p className="text-xs text-muted-foreground leading-relaxed font-medium mt-1">
-                          Customer loyalty & Google Review growth suite.
+                          Neighbourhood app for local places and businesses.
                         </p>
                       </div>
                       <div className="border-t border-border/40 pt-3">

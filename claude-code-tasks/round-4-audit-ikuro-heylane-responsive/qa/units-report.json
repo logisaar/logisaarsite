@@ -1,38 +1,55 @@
 {
- "ikuro@375": {
-  "http": 200,
-  "overflow": 0,
-  "smallText": 0,
-  "smallTargets": 30,
-  "height": 14493,
-  "sampleText": [],
-  "sampleTargets": [
-   "151x36 a \"\"",
-   "106x37 button \"All Programs\"",
-   "109x37 button \"Development\"",
-   "152x37 button \"Artificial Intelligence\"",
-   "110x37 button \"Business & BI\"",
-   "120x37 button \"Creative Media\""
-  ]
- },
- "ikuro@1280": {
-  "http": 200,
-  "overflow": 0,
-  "smallText": 0,
-  "smallTargets": 22,
-  "height": 8950,
-  "sampleText": [],
-  "sampleTargets": [
-   "90x36 a \"Enroll\"",
-   "88x36 button \"Syllabus\""
-  ]
- },
- "ikuro@1280-zoom200": {
+ "heylane@375": {
   "http": 200,
   "overflow": 0,
   "smallText": 0,
   "smallTargets": 0,
-  "height": 18455,
+  "height": 16790,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "heylane@1280": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 10107,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "heylane@1280-zoom200": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 21321,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "products@375": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 3538,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "products@1280": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 1980,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "products@1280-zoom200": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 3964,
   "sampleText": [],
   "sampleTargets": []
  }

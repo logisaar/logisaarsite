@@ -1,0 +1,75 @@
+/* HeyLane page theme. Fonts are declared here and only fetched where the families are used (this route),
+   the Bricolage file is also preloaded from the page. Tokens from HeyLane docs/03-DESIGN.md. */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/fonts/heylane/bricolage-grotesque-latin-standard-normal.woff2") format("woff2");
+}
+@font-face { font-family: "Geist"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/heylane/geist-sans-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Geist"; font-style: normal; font-weight: 500; font-display: swap; src: url("/fonts/heylane/geist-sans-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Geist"; font-style: normal; font-weight: 600; font-display: swap; src: url("/fonts/heylane/geist-sans-latin-600-normal.woff2") format("woff2"); }
+
+[data-theme="heylane"] {
+  --hl-night: #0b3328;  --hl-night-2: #0f3e31;
+  --hl-emerald: #007f5f; --hl-emerald-deep: #00684e;
+  --hl-mint: #ddede4;   --hl-paper: #f4f3ee;  --hl-card: #ffffff;
+  --hl-ink: #0d1714;    --hl-ink-2: #4a5651;  --hl-ink-3: #5e6964;
+  --hl-line: #dee2dc;   --hl-gold: #f5b321;   --hl-gold-deep: #8f6200;
+  --hl-sos: #b53832;
+  --hl-radius-control: 0.75rem; --hl-radius-card: 1.5rem; --hl-radius-card-lg: 2rem;
+  --hl-ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* map the shared shadcn variables (HSL triplets) so shared components follow */
+  --primary: 165 100% 25%;
+  --primary-foreground: 0 0% 100%;
+  --on-primary: 0 0% 100%;
+  --primary-ink: 165 100% 25%;
+  --background: 51 18% 94%;
+  --foreground: 160 26% 7%;
+  --secondary: 140 22% 90%;
+  --muted: 140 22% 90%;
+  --muted-foreground: 150 6% 33%;
+  --border: 100 9% 87%;
+  --ring: 165 100% 25%;
+  --focus-ring: 165 100% 25%;
+  background-color: var(--hl-paper);
+  color: var(--hl-ink);
+  font-family: "Geist", system-ui, sans-serif;
+}
+[data-theme="heylane"] :is(h1, h2, h3, .hl-display) {
+  font-family: "Bricolage Grotesque", "Geist", sans-serif;
+  letter-spacing: -0.02em; /* never tighter than -0.035em */
+}
+
+/* night bands: white text, mint accents, white focus rings */
+[data-theme="heylane"] .hl-night { background: var(--hl-night); color: #fff; --focus-ring: 0 0% 100%; --primary-ink: 140 28% 88%; }
+
+/* buttons: gold fill with night text on dark, emerald fill on light, outline variants */
+[data-theme="heylane"] .hl-btn { display: inline-flex; min-height: 2.75rem; align-items: center; justify-content: center; gap: 0.5rem; border-radius: 62rem; padding: 0.625rem 1.5rem; font-weight: 600; font-size: 1rem; transition: transform 0.2s var(--hl-ease), background-color 0.2s; text-decoration: none; }
+[data-theme="heylane"] .hl-btn:hover { transform: translateY(-2px); }
+[data-theme="heylane"] .hl-btn:active { transform: translateY(0) scale(0.98); }
+[data-theme="heylane"] .hl-btn-gold { background: var(--hl-gold); color: var(--hl-night); }
+[data-theme="heylane"] .hl-btn-gold:hover { background: #ffc233; }
+[data-theme="heylane"] .hl-btn-emerald { background: var(--hl-emerald); color: #fff; }
+[data-theme="heylane"] .hl-btn-emerald:hover { background: var(--hl-emerald-deep); }
+[data-theme="heylane"] .hl-btn-outline-light { border: 1.5px solid rgba(255, 255, 255, 0.7); color: #fff; }
+[data-theme="heylane"] .hl-btn-outline-light:hover { background: rgba(255, 255, 255, 0.1); }
+[data-theme="heylane"] .hl-btn-outline { border: 1.5px solid var(--hl-emerald); color: var(--hl-emerald-deep); }
+[data-theme="heylane"] .hl-btn-outline:hover { background: var(--hl-mint); }
+
+/* cards and tags */
+[data-theme="heylane"] .hl-card { background: var(--hl-card); border: 1px solid var(--hl-line); border-radius: var(--hl-radius-card); }
+[data-theme="heylane"] .hl-tag { display: inline-flex; align-items: center; border-radius: 62rem; background: var(--hl-mint); color: var(--hl-emerald-deep); padding: 0.125rem 0.625rem; font-size: 0.8125rem; font-weight: 500; line-height: 1.4; }
+[data-theme="heylane"] .hl-tag-muted { background: #ebebe6; color: var(--hl-ink-2); }
+
+/* linked cards lift 2px; photos zoom 1.02 inside their frame */
+[data-theme="heylane"] .hl-lift { transition: transform 0.25s var(--hl-ease), box-shadow 0.25s; }
+[data-theme="heylane"] .hl-lift:hover { transform: translateY(-2px); box-shadow: 0 12px 30px -12px rgba(13, 23, 20, 0.2); }
+[data-theme="heylane"] .hl-zoom img { transition: transform 0.6s var(--hl-ease); }
+[data-theme="heylane"] .hl-zoom:hover img { transform: scale(1.03); }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="heylane"] .hl-btn, [data-theme="heylane"] .hl-lift, [data-theme="heylane"] .hl-zoom img { transition: none; }
+}
