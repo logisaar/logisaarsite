@@ -144,7 +144,7 @@ const TestimonialsSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section className="py-32 bg-secondary/30 relative overflow-hidden" ref={ref}>
+    <section data-logi="Real words from real clients." className="py-32 bg-secondary/30 relative overflow-hidden" ref={ref}>
       
       {/* Background watercolor smears and dot matrices */}
       {/* Top-left dotted grid */}

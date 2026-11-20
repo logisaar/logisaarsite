@@ -105,10 +105,8 @@
     "height": 391
   },
   "logo": {
-    "src": "/logo-2x.png",
-    "sourceSize": [
-      1247,
-      358
-    ]
+    "base": "/brand/logisaar-logo",
+    "width": 480,
+    "height": 114
   }
 }

@@ -7,7 +7,7 @@ import MagneticButton from "@/components/creative/MagneticButton";
 import DecorativeShapes from "@/components/creative/DecorativeShapes";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import logo from "@/assets/logo.png";
+import BrandLogo from "@/components/BrandLogo";
 
 const footerLinks = {
   Solutions: [
@@ -91,26 +91,7 @@ const Footer = () => {
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="container mx-auto px-4 pt-24 pb-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-16"
-        >
-          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-background leading-[0.95] mb-6">
-            Ready to <span className="italic font-light">start</span>?
-          </h2>
-          <MagneticButton strength={0.15}>
-            <Button asChild size="lg" className="group bg-gradient-primary hover:opacity-90 border-0 text-white px-10 py-6 text-base rounded-full">
-              <Link to="/contact">
-                Let's Talk
-                <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-          </MagneticButton>
-        </motion.div>
-
+      <div className="container mx-auto px-4 pt-16 pb-8 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-10 gap-x-6">
           {/* Brand column */}
           <motion.div
@@ -120,7 +101,7 @@ const Footer = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
           >
             <Link to="/">
-              <img src={logo} alt="LogiSaar" className="h-24 w-auto drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]" />
+              <BrandLogo variant="white" className="h-14" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-background/50">
               Software, AI agents and business automation from Bhubaneswar, Odisha. Makers of HeyLane and IKURO.

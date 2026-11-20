@@ -1040,7 +1040,7 @@ const TechXera = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white dark:bg-background pt-24 pb-16">
+      <section data-logi="IKURO helps students decide better." className="relative min-h-[90vh] flex items-center overflow-hidden bg-white dark:bg-background pt-24 pb-16">
         <DecorativeShapes variant="hero" />
 
         {/* Subtle grid background */}
@@ -1205,7 +1205,7 @@ const TechXera = () => {
       </section>
 
       {/* Chalk to Choice Segment */}
-      <section className="py-20 relative overflow-hidden border-t border-border/30 bg-secondary/15">
+      <section data-logi="Chalk to Choice is part of IKURO." className="py-20 relative overflow-hidden border-t border-border/30 bg-secondary/15">
         <div className="absolute inset-0 animated-grid pointer-events-none opacity-20" />
         <div className="container mx-auto px-6 relative z-10 max-w-[1300px]">
 
@@ -1289,7 +1289,7 @@ const TechXera = () => {
       </section>
 
       {/* Flagship Programs / Courses Area */}
-      <section ref={coursesRef} className="py-24 relative overflow-hidden bg-background">
+      <section data-logi="Pick a program that fits you." ref={coursesRef} className="py-24 relative overflow-hidden bg-background">
         <div className="container mx-auto px-6 max-w-[1300px]">
 
           {/* Header block */}
@@ -1533,7 +1533,7 @@ const TechXera = () => {
       </section>
 
       {/* Learning Journey Timeline */}
-      <section className="py-24 bg-secondary/15 border-t border-b border-border/30 relative overflow-hidden">
+      <section data-logi="Why students choose this path." className="py-24 bg-secondary/15 border-t border-b border-border/30 relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-[1300px]">
 
           <div className="text-center mb-16 max-w-2xl mx-auto space-y-4">
@@ -1732,7 +1732,7 @@ const TechXera = () => {
       </section>
 
       {/* Final Call to Action */}
-      <section className="py-24 relative overflow-hidden bg-background">
+      <section data-logi="Questions? WhatsApp us anytime." className="py-24 relative overflow-hidden bg-background">
         <div className="container mx-auto px-6 max-w-[1300px]">
 
           <div className="max-w-4xl mx-auto rounded-[2rem] border border-border bg-white dark:bg-card p-10 md:p-16 text-center relative overflow-hidden shadow-2xl">

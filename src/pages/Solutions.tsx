@@ -290,7 +290,7 @@ const Solutions = () => {
       />
 
       {/* Hero */}
-      <section className="min-h-[50vh] flex items-end relative overflow-hidden pb-16">
+      <section data-logi="Pick a solution and I'll explain it." className="min-h-[50vh] flex items-end relative overflow-hidden pb-16">
         <GradientMesh />
         <div className="container mx-auto px-4 relative z-10 pt-32">
           <motion.div
@@ -309,7 +309,7 @@ const Solutions = () => {
       </section>
 
       {/* Expandable Solutions Grid */}
-      <section className="py-20 bg-background">
+      <section data-logi="Ready-made, then made yours." className="py-20 bg-background">
         <div className="container mx-auto px-4 animate-fadeIn">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

@@ -121,6 +121,7 @@ const HeroSection = () => {
   return (
     <section
       ref={containerRef}
+      data-logi="Scroll down. I will walk you through it."
       className="relative min-h-[85vh] flex flex-col justify-start md:justify-center overflow-hidden bg-white text-foreground"
     >
       {/* Responsive hero background images */}

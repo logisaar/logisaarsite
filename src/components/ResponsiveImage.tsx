@@ -10,7 +10,8 @@ interface Props extends Omit<ImgHTMLAttributes<HTMLImageElement>, "src" | "srcSe
 
 /** AVIF + WebP at 800w / 1600w, lazy by default, with explicit dimensions. */
 const ResponsiveImage = ({ image, alt, priority = false, sizes = "(min-width: 1024px) 50vw, 100vw", ...rest }: Props) => (
-  <picture>
+  // display: contents keeps <picture> out of layout, so h-full / object-cover on the <img> behave as with a bare <img>
+  <picture style={{ display: "contents" }}>
     <source type="image/avif" srcSet={`${image.base}-800.avif 800w, ${image.base}-1600.avif 1600w`} sizes={sizes} />
     <source type="image/webp" srcSet={`${image.base}-800.webp 800w, ${image.base}-1600.webp 1600w`} sizes={sizes} />
     <img

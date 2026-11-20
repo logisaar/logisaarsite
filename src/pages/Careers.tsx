@@ -149,7 +149,7 @@ const Careers = () => {
       </section>
 
       {/* Open roles */}
-      <section id="roles" className="py-20 bg-secondary/40 scroll-mt-28">
+      <section id="roles" data-logi="Two roles open. Pick the one that fits you." className="py-20 bg-secondary/40 scroll-mt-28">
         <div className="container mx-auto px-4 max-w-5xl">
           <motion.div {...fade()} className="mb-12">
             <p className="text-primary font-mono text-xs uppercase tracking-widest font-bold mb-3">Open roles</p>
@@ -195,7 +195,7 @@ const Careers = () => {
       </section>
 
       {/* How it works */}
-      <section className="py-20 bg-background">
+      <section data-logi="Training first, full pay from month two." className="py-20 bg-background">
         <div className="container mx-auto px-4 max-w-5xl">
           <motion.div {...fade()} className="mb-12">
             <p className="text-primary font-mono text-xs uppercase tracking-widest font-bold mb-3">How it works</p>
@@ -221,7 +221,7 @@ const Careers = () => {
       </section>
 
       {/* Apply */}
-      <section id="apply" className="py-20 bg-secondary/40 scroll-mt-24">
+      <section id="apply" data-logi="Two minutes to apply. We call you back." className="py-20 bg-secondary/40 scroll-mt-24">
         <div className="container mx-auto px-4 max-w-3xl">
           <motion.div {...fade()} className="mb-10 text-center">
             <p className="text-primary font-mono text-xs uppercase tracking-widest font-bold mb-3">Apply</p>

@@ -121,20 +121,31 @@ for (const [src, out, w] of [
   report.push([path.basename(out), fs.statSync(src).size, fs.statSync(out).size]);
 }
 
-// ── 6. logo: 2x PNG at displayed size (header is h-10ish → 2x), source untouched
-const logoSrc = fs.existsSync(O("logo", "logo.png")) ? O("logo", "logo.png") : P("logo.png");
-const lm = await sharp(logoSrc).metadata();
-await sharp(logoSrc).resize({ height: 120, withoutEnlargement: true }).png({ compressionLevel: 9, palette: true }).toFile(P("logo-2x.png"));
-report.push(["logo-2x.png", fs.statSync(logoSrc).size, fs.statSync(P("logo-2x.png")).size]);
-manifest["logo"] = { src: "/logo-2x.png", sourceSize: [lm.width, lm.height] };
+// ── 6. brand logo (public/brand/*, supplied from the official artwork) ─────
+// Old logo files are moved (not deleted) to src/assets/_originals/old-logo/.
+ensure(O("old-logo"));
+for (const [from, to] of [[P("logo.png"), "logo.png"], [P("logo-2x.png"), "logo-2x.png"], [P("favicon.png"), "favicon.png"], [A("logo.png"), "assets-logo.png"], [path.join(ROOT, "RUID8f3cea3bb7aa4daabc6d2ba95d9c3393.png"), "../logisaar-logo-source.png"]]) {
+  if (fs.existsSync(from) && !fs.existsSync(path.join(O("old-logo"), to))) fs.renameSync(from, path.join(O("old-logo"), to));
+}
+const B = (f) => P("brand", f);
+const brandSizes = [["logisaar-logo", 480], ["logisaar-logo-white", 480], ["logisaar-mark", 128]];
+for (const [name, w] of brandSizes) {
+  const src = B(`${name}.png`);
+  for (const [ext, enc] of [["webp", (i) => i.webp({ quality: 90, alphaQuality: 100, effort: 6 })], ["png", (i) => i.png({ compressionLevel: 9, palette: true, quality: 95 })]]) {
+    const out = B(`${name}-${w}.${ext}`);
+    await enc(sharp(src).resize({ width: w })).toFile(out);
+    report.push([`brand/${name}-${w}.${ext}`, fs.statSync(B(`${name}.${ext}`)).size, fs.statSync(out).size]);
+  }
+}
+const lm = await sharp(B("logisaar-logo.png")).metadata();
+manifest["logo"] = { base: "/brand/logisaar-logo", width: 480, height: Math.round((480 * lm.height) / lm.width) };
 
-// ── 7. favicons + manifest from favicon.png ────────────────────────────────
-const fav = P("favicon.png");
-if (!fs.existsSync(O("logo", "favicon.png"))) { ensure(O("logo")); fs.copyFileSync(fav, O("logo", "favicon.png")); }
-const sq = (n) => sharp(O("logo", "favicon.png")).resize(n, n, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } });
+// ── 7. favicons + manifest from brand/logisaar-mark.png ────────────────────
+const sq = (n) => sharp(B("logisaar-mark.png")).resize(n, n, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } });
 await sq(180).png().toFile(P("apple-touch-icon.png"));
 await sq(192).png().toFile(P("icon-192.png"));
 await sq(512).png().toFile(P("icon-512.png"));
+await sq(48).png().toFile(P("favicon.png"));
 // ICO (16/32/48, PNG-encoded entries)
 const icoSizes = [16, 32, 48];
 const pngs = await Promise.all(icoSizes.map((n) => sq(n).png().toBuffer()));

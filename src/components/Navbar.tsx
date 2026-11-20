@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, User, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { openLeadModal } from "@/components/LeadCaptureModal";
+import BrandLogo from "@/components/BrandLogo";
 import MagneticButton from "@/components/creative/MagneticButton";
 
 const navLinks = [
@@ -81,10 +82,9 @@ const Navbar = () => {
       >
         <div className="flex items-center justify-between gap-8">
           <Link to="/" className="shrink-0">
-            <img
-              src="/logo-2x.png"
-              alt="LogiSaar"
-              className={`w-auto transition-all duration-500 ${scrolled ? "h-9 md:h-11" : "h-12 md:h-15"}`}
+            <BrandLogo
+              priority
+              className={`transition-all duration-500 ${scrolled ? "h-[38px]" : "h-9 md:h-11"}`}
             />
           </Link>
 

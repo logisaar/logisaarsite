@@ -46,7 +46,7 @@ const Contact = () => {
         canonical="https://www.logisaar.in/contact"
       />
       
-      <section className="min-h-screen grid md:grid-cols-2">
+      <section data-logi="WhatsApp is the fastest way to reach the team." className="min-h-screen grid md:grid-cols-2">
         {/* Left Side — Brand Contacts */}
         <div className="relative flex items-center justify-center py-32 md:py-0 overflow-hidden">
           <img src={contactBg} alt="" className="absolute inset-0 w-full h-full object-cover" />

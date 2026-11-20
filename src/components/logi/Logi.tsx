@@ -1,28 +1,54 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import gsap from "gsap";
 import { answer, MAIN_OPTIONS, type LogiReply } from "./answers";
 import "./logi.css";
 
 /**
- * Logi, Logisaar's roaming site companion.
- * - follows the cursor lazily, perches on h2 headings, sleeps after 22 s idle
- * - drag and throw it; it bounces off the screen edges
- * - shows tips for elements with data-logi="text" (once each) and data-logi-hover="text"
- * - click to chat: quick replies, keyword answers, WhatsApp hand-off
- * - touch devices and prefers-reduced-motion: parked bottom-right, no roaming or animation loop
+ * Logi, Logisaar's site companion. It does not follow the cursor.
+ *
+ * Tour: every element with data-logi="tip" is a stop. When scrolling settles, the stop that holds the
+ * middle of the viewport becomes the active one; Logi walks (GSAP, hop arc, squash on landing) to a
+ * perch beside that section's heading, then shows the tip. Scrolling back walks it back.
+ * Idle: breathing, blinking, looking toward the section, an occasional hop; sleeps after 25 s without scroll.
+ * Routes: Logi stays mounted, walks off the edge on navigation and walks back in with a page greeting.
+ * Reduced motion: static, parked bottom-right, no tween, no tour; still clickable and chat works.
  */
 
-const SIZE = 84;
-const IDLE_SLEEP_MS = 22000;
+const SIZE = 96;
+const MARGIN = 16;
+const TOP_SAFE = 124; // keep clear of the navbar capsule
+const SLEEP_MS = 25000;
 
-interface ChatMsg {
-  id: number;
-  who: "bot" | "me";
-  text: string;
-  link?: LogiReply["link"];
-}
+const PAGE_GREETING: Record<string, string> = {
+  "/": "Hi! I'm Logi. I'll walk you through Logisaar.",
+  "/careers": "We're hiring! Want help applying?",
+  "/ikuro": "IKURO helps students decide better.",
+  "/solutions": "Pick a solution and I'll explain it.",
+  "/contact": "WhatsApp is the fastest way to reach the team.",
+};
+const DEFAULT_GREETING = "Hi! I'm Logi. Click me if you need help.";
 
+interface ChatMsg { id: number; who: "bot" | "me"; text: string; link?: LogiReply["link"] }
+
+type Pt = { x: number; y: number };
+const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v));
 const pick = <T,>(a: T[]): T => a[Math.floor(Math.random() * a.length)];
+
+/** Visible rect of an element's text (headings are block-wide, so measure the text itself). */
+const textRect = (el: Element): DOMRect => {
+  const r = document.createRange();
+  r.selectNodeContents(el);
+  const rects = [...r.getClientRects()];
+  if (!rects.length) return el.getBoundingClientRect();
+  const left = Math.min(...rects.map((q) => q.left)), right = Math.max(...rects.map((q) => q.right));
+  const top = Math.min(...rects.map((q) => q.top)), bottom = Math.max(...rects.map((q) => q.bottom));
+  return new DOMRect(left, top, right - left, bottom - top);
+};
+
+const AVOID = "button, a[href], input, textarea, select, h1, h2, h3, label, [data-logi-avoid]";
+const overlaps = (a: { x: number; y: number }, r: DOMRect, pad = 6) =>
+  a.x < r.right + pad && a.x + SIZE > r.left - pad && a.y < r.bottom + pad && a.y + SIZE > r.top - pad;
 
 const Logi = () => {
   const { pathname } = useLocation();
@@ -40,30 +66,40 @@ const Logi = () => {
   const [typing, setTyping] = useState(false);
   const [draft, setDraft] = useState("");
 
-  // mutable engine state shared with the animation loop
+  // engine state (not React state: updated every frame)
   const S = useRef({
-    x: 0, y: 0, vx: 0, vy: 0, tx: 0, ty: 0,
-    mode: "follow" as "follow" | "park" | "thrown",
-    lastMove: 0, mx: 0, my: 0,
-    drag: false, dragOff: [0, 0], dragHist: [] as number[][],
-    sleeping: false, open: false, mood: 0, blink: 0, nextBlink: 2, hop: 0,
-    said: {} as Record<string, number>,
-    reduce: false, touch: false,
+    x: 0, y: 0,            // rendered position (viewport px, top-left of the 96px box)
+    arc: 0,                // hop height while walking
+    sx: 1, sy: 1,          // squash and stretch
+    rot: 0,                // waddle
+    hop: 0, mood: 0, blink: 0, nextBlink: 2,
+    sleeping: false, open: false, drag: false, away: true, ready: false,
+    reduce: false,
+    dragOff: [0, 0] as number[],
+    look: { x: innerWidth / 2, y: innerHeight / 2 } as Pt,
+    stopEl: null as Element | null,
+    userMoved: false,
+    lastScroll: performance.now(),
+    tipAt: {} as Record<string, number>,
+    walk: null as gsap.core.Tween | null,
   });
-  const sayRef = useRef<(text: string, ms?: number) => void>(() => {});
+  const api = useRef({
+    say: (_t: string, _ms?: number) => {},
+    evaluate: (_force?: boolean) => {},
+    enterPage: (_first: boolean) => {},
+    leavePage: () => {},
+  });
 
-  // ── chat ────────────────────────────────────────────────────────────────
+  // ── chat ──────────────────────────────────────────────────────────────
   const botSay = useCallback((reply: LogiReply) => {
     setTyping(true);
-    const delay = S.current.reduce ? 0 : 650;
     window.setTimeout(() => {
       setTyping(false);
       setMsgs((m) => [...m, { id: ++idRef.current, who: "bot", text: reply.text, link: reply.link }]);
       setQuick(reply.quick ?? []);
       S.current.hop = 0.6;
-    }, delay);
+    }, S.current.reduce ? 0 : 650);
   }, []);
-
   const userSay = useCallback((text: string) => {
     setMsgs((m) => [...m, { id: ++idRef.current, who: "me", text }]);
     setQuick([]);
@@ -71,42 +107,29 @@ const Logi = () => {
   }, [botSay]);
 
   const toggleChat = useCallback((force?: boolean) => {
-    const next = force === undefined ? !S.current.open : force;
-    S.current.open = next;
+    const st = S.current;
+    const next = force === undefined ? !st.open : force;
+    st.open = next;
     setOpen(next);
     if (next) {
       rootRef.current?.classList.remove("talk");
-      S.current.sleeping = false;
-      rootRef.current?.classList.remove("sleep");
-      S.current.hop = 1;
-      if (S.current.mode === "thrown") S.current.mode = "follow"; // stop bouncing, dock beside the chat
-      setMsgs((m) => {
-        if (m.length) return m;
-        return [{ id: ++idRef.current, who: "bot", text: "Hi! I'm Logi. I live on this website and help visitors find their way." }];
-      });
+      st.sleeping = false; rootRef.current?.classList.remove("sleep");
+      st.hop = 1;
+      setMsgs((m) => (m.length ? m : [{ id: ++idRef.current, who: "bot", text: "Hi! I'm Logi. I live on this website and help visitors find their way." }]));
     } else {
       bodyRef.current?.focus({ preventScroll: true });
+      window.setTimeout(() => api.current.evaluate(true), 400); // resume the tour
     }
   }, []);
 
-  // first open: ask the opening question
   const askedRef = useRef(false);
   useEffect(() => {
-    if (open && !askedRef.current) {
-      askedRef.current = true;
-      botSay({ text: "What brings you here today?", quick: MAIN_OPTIONS });
-    }
-    if (open) {
-      const t = window.setTimeout(() => inputRef.current?.focus({ preventScroll: true }), 300);
-      return () => window.clearTimeout(t);
-    }
+    if (!open) return;
+    if (!askedRef.current) { askedRef.current = true; botSay({ text: "What brings you here today?", quick: MAIN_OPTIONS }); }
+    const t = window.setTimeout(() => inputRef.current?.focus({ preventScroll: true }), 300);
+    return () => window.clearTimeout(t);
   }, [open, botSay]);
-
-  useEffect(() => {
-    const el = logRef.current;
-    if (el) el.scrollTop = el.scrollHeight;
-  }, [msgs, typing]);
-
+  useEffect(() => { const el = logRef.current; if (el) el.scrollTop = el.scrollHeight; }, [msgs, typing]);
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") toggleChat(false); };
@@ -114,80 +137,183 @@ const Logi = () => {
     return () => window.removeEventListener("keydown", onKey);
   }, [open, toggleChat]);
 
-  // ── engine: movement, drag, drawing ─────────────────────────────────────
+  // ── engine ────────────────────────────────────────────────────────────
   useEffect(() => {
     const root = rootRef.current!, body = bodyRef.current!, cv = canvasRef.current!, bubble = bubbleRef.current!;
     const ctx = cv.getContext("2d")!;
-    ctx.scale(2, 2);
     const st = S.current;
     st.reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    st.touch = matchMedia("(hover: none)").matches;
-    const { reduce, touch } = st;
-    const parked = reduce || touch;
-    st.mode = parked ? "park" : "follow";
-    const clampX = (x: number) => Math.max(16, Math.min(innerWidth - SIZE - 16, x));
-    const clampY = (y: number) => Math.max(90, Math.min(innerHeight - SIZE - 16, y));
-    const parkPos = () => ({ x: innerWidth - SIZE - 18, y: innerHeight - SIZE - 18 });
-    const start = parkPos();
-    st.x = st.tx = parked ? start.x : innerWidth - 130;
-    st.y = st.ty = parked ? start.y : innerHeight - 140;
-    st.mx = innerWidth / 2; st.my = innerHeight / 2; st.lastMove = performance.now();
+    const k = (SIZE / 84) * 1.12;
+    ctx.setTransform(2 * k, 0, 0, 2 * k, (SIZE * 2 - 84 * 2 * k) / 2, (SIZE * 2 - 84 * 2 * k) / 2);
 
+    const corner = (): Pt => ({ x: innerWidth - SIZE - MARGIN, y: innerHeight - SIZE - MARGIN });
+    const offRight = (y: number): Pt => ({ x: innerWidth + SIZE, y });
+    const place = () => {
+      const s = st;
+      root.style.transform = `translate3d(${Math.round(s.x)}px,${Math.round(s.y - s.arc)}px,0)`;
+      body.style.transform = `rotate(${s.rot}deg) scale(${s.sx},${s.sy})`;
+    };
+
+    // speech bubble
     let bubbleT = 0;
-    const say = (text: string, ms = 3200) => {
-      if (st.open) return;
+    const say = (text: string, ms = 4000) => {
+      if (st.open || !text) return;
       bubble.textContent = text;
       root.classList.add("talk");
       st.mood = 1;
       window.clearTimeout(bubbleT);
       bubbleT = window.setTimeout(() => root.classList.remove("talk"), ms);
     };
-    sayRef.current = say;
-    const wake = () => { st.sleeping = false; root.classList.remove("sleep"); st.hop = 1; };
-
-    const onMouseMove = (e: MouseEvent) => {
-      st.mx = e.clientX; st.my = e.clientY; st.lastMove = performance.now();
-      if (st.sleeping) wake();
+    api.current.say = say;
+    const placeBubble = () => {
+      if (!root.classList.contains("talk")) return;
+      const bw = bubble.offsetWidth, cx = st.x + SIZE / 2;
+      const lft = clamp(cx - bw / 2, 8, innerWidth - bw - 8);
+      bubble.style.left = lft - st.x + "px";
+      bubble.style.setProperty("--tail", cx - lft + "px");
+      root.classList.toggle("below", st.y < 170);
     };
-    const onScroll = () => { st.lastMove = performance.now(); if (st.sleeping) wake(); };
-    if (!parked) {
-      window.addEventListener("mousemove", onMouseMove);
-    }
+
+    const wake = () => {
+      st.lastScroll = performance.now();
+      if (st.sleeping) { st.sleeping = false; root.classList.remove("sleep"); st.hop = 1; }
+    };
+
+    // ── perch spot beside a section's heading, kept clear of interactive elements ──
+    const perchFor = (section: Element | null): Pt => {
+      const c = corner();
+      if (!section) return c;
+      const head = section.querySelector("h1, h2, [data-logi-anchor]");
+      const cands: Pt[] = [];
+      if (head && innerWidth >= 768) {
+        const t = textRect(head);
+        if (t.bottom > TOP_SAFE - 20 && t.top < innerHeight - SIZE) {
+          const y = clamp(t.top + t.height / 2 - SIZE / 2, TOP_SAFE, innerHeight - SIZE - MARGIN);
+          cands.push({ x: clamp(t.right + 20, MARGIN, innerWidth - SIZE - MARGIN), y });
+          cands.push({ x: clamp(t.right + 20, MARGIN, innerWidth - SIZE - MARGIN), y: clamp(y + SIZE + 8, TOP_SAFE, innerHeight - SIZE - MARGIN) });
+          cands.push({ x: clamp(t.right + 20, MARGIN, innerWidth - SIZE - MARGIN), y: clamp(y - SIZE - 8, TOP_SAFE, innerHeight - SIZE - MARGIN) });
+        }
+      }
+      cands.push(c);
+      cands.push({ x: c.x, y: clamp(innerHeight * 0.55, TOP_SAFE, c.y) });
+      cands.push({ x: c.x, y: clamp(innerHeight * 0.35, TOP_SAFE, c.y) });
+      const rects = [...document.querySelectorAll(AVOID)]
+        .filter((e) => !root.contains(e) && !e.closest(".logi-chat") && !e.closest("nav, header"))
+        .map((e) => (/^H[1-3]$/.test(e.tagName) ? textRect(e) : e.getBoundingClientRect()))
+        .filter((r) => r.width > 0 && r.bottom > 0 && r.top < innerHeight && r.width * r.height < 60000); // ignore whole-card links
+      let best = cands[0], bestN = Infinity;
+      for (const c0 of cands) {
+        const n = rects.filter((r) => overlaps(c0, r)).length;
+        if (n < bestN) { best = c0; bestN = n; if (n === 0) break; }
+      }
+      return best;
+    };
+
+    // ── walking ──
+    const walkTo = (to: Pt, onDone?: () => void, from?: Pt) => {
+      st.walk?.kill();
+      if (from) { st.x = from.x; st.y = from.y; }
+      if (st.reduce) { st.x = to.x; st.y = to.y; place(); onDone?.(); return; }
+      const dist = Math.hypot(to.x - st.x, to.y - st.y);
+      const dur = clamp(0.9 + dist / 1800, 0.9, 1.4);
+      const hopH = clamp(dist / 8, 22, 60);
+      const p = { t: 0 };
+      const sx0 = st.x, sy0 = st.y;
+      st.walk = gsap.to(p, {
+        t: 1, duration: dur, ease: "power2.inOut",
+        onUpdate: () => {
+          st.x = sx0 + (to.x - sx0) * p.t;
+          st.y = sy0 + (to.y - sy0) * p.t;
+          st.arc = Math.sin(p.t * Math.PI) * hopH;
+          st.rot = Math.sin(p.t * Math.PI * 7) * 7 * Math.sin(p.t * Math.PI);
+          const stretch = Math.sin(p.t * Math.PI) * 0.08;
+          st.sx = 1 - stretch * 0.5; st.sy = 1 + stretch;
+        },
+        onComplete: () => {
+          st.arc = 0; st.rot = 0;
+          gsap.timeline()
+            .to(st, { sx: 1.16, sy: 0.82, duration: 0.1, ease: "power2.out" })
+            .to(st, { sx: 1, sy: 1, duration: 0.45, ease: "elastic.out(1.1,0.4)" });
+          onDone?.();
+        },
+      });
+    };
+
+    // ── tour ──
+    const stops = (): Element[] => [...document.querySelectorAll("[data-logi]")];
+    const activeStop = (): Element | null => {
+      const mid = innerHeight * 0.5;
+      let best: Element | null = null, bestScore = -1;
+      for (const el of stops()) {
+        const r = el.getBoundingClientRect();
+        if (r.height < 60 || r.bottom < 0 || r.top > innerHeight) continue;
+        const vis = Math.min(r.bottom, innerHeight) - Math.max(r.top, 0);
+        const holdsMid = r.top <= mid && r.bottom >= mid;
+        const score = (holdsMid ? 1e6 : 0) + vis;
+        if (score > bestScore) { bestScore = score; best = el; }
+      }
+      return best;
+    };
+    const tipFor = (el: Element) => (el as HTMLElement).dataset.logi || "";
+    const evaluate = (force = false) => {
+      if (st.reduce || st.open || st.drag || st.away || !st.ready) return;
+      const el = activeStop();
+      if (!el) return;
+      const changed = el !== st.stopEl;
+      if (!changed && !force) return;
+      st.stopEl = el; st.userMoved = false;
+      wake();
+      const target = perchFor(el);
+      walkTo(target, () => {
+        const key = tipFor(el), now = performance.now();
+        if (key && (!st.tipAt[key] || now - st.tipAt[key] > 15000)) { st.tipAt[key] = now; say(key, 4200); }
+      });
+      st.look = { x: innerWidth / 2, y: clamp(el.getBoundingClientRect().top + el.getBoundingClientRect().height / 2, 0, innerHeight) };
+    };
+    api.current.evaluate = evaluate;
+
+    let scrollT = 0;
+    const onScroll = () => {
+      wake();
+      window.clearTimeout(scrollT);
+      // tour decisions wait until scrolling settles
+      scrollT = window.setTimeout(() => {
+        // a user drag only pauses the tour until the next stop
+        const el = activeStop();
+        if (st.userMoved && el === st.stopEl) return;
+        evaluate();
+      }, 260);
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
 
-    // drag + throw (mouse/pen only)
-    let moved = false;
+    // ── drag (mouse, pen, touch) ──
+    let moved = false, downPt: Pt = { x: 0, y: 0 };
     const onDown = (e: PointerEvent) => {
-      if (touch || reduce) return;
-      moved = false;
-      st.drag = true; st.dragOff = [e.clientX - st.x, e.clientY - st.y]; st.dragHist = [];
+      moved = false; downPt = { x: e.clientX, y: e.clientY };
+      st.dragOff = [e.clientX - st.x, e.clientY - st.y];
       body.setPointerCapture(e.pointerId);
+      st.drag = true; st.walk?.kill(); st.arc = 0; st.rot = 0;
     };
     const onMove = (e: PointerEvent) => {
       if (!st.drag) return;
-      if (Math.hypot(e.movementX, e.movementY) > 2) moved = true;
-      st.x = e.clientX - st.dragOff[0]; st.y = e.clientY - st.dragOff[1];
-      st.dragHist.push([e.clientX, e.clientY, performance.now()]);
-      if (st.dragHist.length > 5) st.dragHist.shift();
+      if (!moved && Math.hypot(e.clientX - downPt.x, e.clientY - downPt.y) < 6) return;
+      moved = true;
+      st.x = clamp(e.clientX - st.dragOff[0], 0, innerWidth - SIZE);
+      st.y = clamp(e.clientY - st.dragOff[1], 0, innerHeight - SIZE);
     };
     const onUp = () => {
       if (!st.drag) return;
       st.drag = false;
-      const h = st.dragHist;
-      if (moved && h.length > 1) {
-        const a = h[0], b = h[h.length - 1], dt = Math.max(16, b[2] - a[2]);
-        st.vx = ((b[0] - a[0]) / dt) * 16; st.vy = ((b[1] - a[1]) / dt) * 16;
-        st.mode = "thrown";
-        say(pick(["Wheee!", "Careful, I bounce!", "Again! Again!"]));
-      }
+      if (moved) { st.userMoved = true; gsap.fromTo(st, { sy: 0.85, sx: 1.12 }, { sy: 1, sx: 1, duration: 0.5, ease: "elastic.out(1,0.4)" }); say(pick(["Wheee!", "Nice spot!", "I'll stay here for now."]), 2200); }
     };
     const onClick = () => { if (moved) { moved = false; return; } toggleChat(); };
     body.addEventListener("pointerdown", onDown);
     body.addEventListener("pointermove", onMove);
     body.addEventListener("pointerup", onUp);
+    body.addEventListener("pointercancel", onUp);
     body.addEventListener("click", onClick);
 
-    // dot body
+    // ── drawing ──
     const dots: { x: number; y: number; d: number }[] = [];
     const R = 30, sp = 5.2;
     for (let y = -R; y <= R; y += sp) for (let x = -R; x <= R; x += sp) {
@@ -195,18 +321,18 @@ const Logi = () => {
       if (d <= 1) dots.push({ x, y, d });
     }
     const draw = (t: number) => {
-      const c = SIZE / 2, cy = c + 4;
-      ctx.clearRect(0, 0, SIZE, SIZE);
-      st.mood *= 0.98; st.hop *= 0.9;
-      if (!reduce && t > st.nextBlink) { st.blink = 1; st.nextBlink = t + 2.5 + Math.random() * 3; }
+      const W = 84, c = W / 2, cy = c + 4;
+      ctx.clearRect(-20, -20, W + 40, W + 40);
+      st.mood *= 0.985; st.hop *= 0.9;
+      if (!st.reduce && t > st.nextBlink) { st.blink = 1; st.nextBlink = t + 2.5 + Math.random() * 3; }
       st.blink *= 0.78;
-      const rect = { x: st.x + c, y: st.y + cy };
-      const lx = st.open || reduce ? -0.6 : Math.max(-1, Math.min(1, (st.mx - rect.x) / 300));
-      const ly = st.open || reduce ? -0.3 : Math.max(-1, Math.min(1, (st.my - rect.y) / 300));
+      const cxp = st.x + SIZE / 2, cyp = st.y + SIZE / 2;
+      const dx = st.open ? -0.5 : clamp((st.look.x - cxp) / 400, -1, 1), dy = st.open ? -0.2 : clamp((st.look.y - cyp) / 400, -1, 1);
+      const reduce = st.reduce;
       const breathe = reduce ? 0 : Math.sin(t * 2.2) * 0.03;
       const bounce = reduce ? 0 : -Math.abs(Math.sin(st.hop * Math.PI)) * 6;
       const eyeH = st.sleeping ? 0.6 : 7 * (1 - Math.min(1, st.blink * 1.6));
-      const ex = lx * 5, ey = ly * 4 - 4;
+      const ex = dx * 5, ey = dy * 4 - 4;
       const wob = reduce ? 0 : 1;
       ctx.fillStyle = "#9BE7BF"; ctx.beginPath(); ctx.arc(c + Math.sin(t * 3) * 1.5 * wob, cy - R - 4 + bounce, 1.8, 0, 6.28); ctx.fill();
       ctx.fillStyle = st.mood > 0.3 ? "#00D162" : "#5FDC98"; ctx.beginPath(); ctx.arc(c + Math.sin(t * 3) * 3 * wob, cy - R - 10 + bounce, 3.2, 0, 6.28); ctx.fill();
@@ -223,130 +349,96 @@ const Logi = () => {
       }
     };
 
-    // behaviour
-    let wanderT = 0;
-    let perchEl: Element | null = null;
-    const choose = (now: number) => {
-      if (st.open || st.drag || st.mode === "thrown") return;
-      const idle = now - st.lastMove;
-      if (parked) { const p = parkPos(); st.tx = p.x; st.ty = p.y; return; }
-      if (idle > IDLE_SLEEP_MS && !st.sleeping) { st.sleeping = true; root.classList.add("sleep"); }
-      if (idle < 3500) {
-        const ox = st.mx > innerWidth - 220 ? -130 : 60, oy = st.my > innerHeight - 200 ? -120 : 40;
-        st.tx = clampX(st.mx + ox); st.ty = clampY(st.my + oy); perchEl = null;
-      } else if (!st.sleeping && now > wanderT) {
-        wanderT = now + 6000 + Math.random() * 4000;
-        const hs = [...document.querySelectorAll("h2, .perch")].filter((h) => { const r = h.getBoundingClientRect(); return r.top > 100 && r.bottom < innerHeight - 60; });
-        if (hs.length && Math.random() < 0.65) { perchEl = pick(hs); }
-        else {
-          perchEl = null;
-          st.tx = clampX(80 + Math.random() * (innerWidth - 260)); st.ty = clampY(140 + Math.random() * (innerHeight - 300));
-          if (Math.random() < 0.4) say(pick(["Just stretching my dots.", "Click me if you have a question!", "Scroll on, it gets better.", "Psst. Try dragging me."]));
-        }
-      }
-      if (perchEl) {
-        const r = perchEl.getBoundingClientRect();
-        if (r.bottom < 0 || r.top > innerHeight) perchEl = null;
-        else { st.tx = clampX(Math.min(r.right + 10, r.left + r.width / 2 + 160)); st.ty = clampY(r.top - SIZE + 18); }
-      }
-    };
-
-    const place = () => {
-      root.style.transform = `translate3d(${Math.round(st.x)}px,${Math.round(st.y)}px,0)`;
-      root.classList.toggle("left", st.x > innerWidth / 2);
-      if (root.classList.contains("talk")) {
-        const bw = bubble.offsetWidth, cxp = st.x + SIZE / 2;
-        const lft = Math.max(8, Math.min(innerWidth - bw - 8, cxp - bw / 2));
-        bubble.style.left = lft - st.x + "px";
-        bubble.style.setProperty("--tail", cxp - lft + "px");
-        root.classList.toggle("below", st.y < 150);
-      }
-    };
-
-    let raf = 0;
+    // ── per-frame: dock while chatting, occasional hop, sleep, apply transform ──
     const t0 = performance.now();
-    let last = t0;
-    const frame = (now: number) => {
-      raf = requestAnimationFrame(frame);
-      const dt = Math.min(48, now - last) / 16; last = now;
-      choose(now);
-      if (st.open) {
-        // chat open: dock bottom-right, ignore follow/throw physics
-        const gx = clampX(innerWidth - SIZE - 24), gy = clampY(innerHeight - SIZE - 24);
-        st.x += (gx - st.x) * 0.15; st.y += (gy - st.y) * 0.15;
-        st.vx = st.vy = 0;
-        if (Math.abs(gx - st.x) < 0.5 && Math.abs(gy - st.y) < 0.5) { st.x = gx; st.y = gy; }
-      } else if (st.mode === "thrown") {
-        st.vy += 0.6 * dt; st.x += st.vx * dt; st.y += st.vy * dt; st.vx *= 0.99;
-        if (st.x < 16 || st.x > innerWidth - SIZE - 16) { st.vx *= -0.7; st.x = clampX(st.x); }
-        if (st.y > innerHeight - SIZE - 16) {
-          st.vy *= -0.55; st.y = innerHeight - SIZE - 16;
-          if (Math.abs(st.vy) < 2) { st.mode = "follow"; st.lastMove = 0; }
-        }
-        if (st.y < 90) { st.vy = Math.abs(st.vy) * 0.6; st.y = 90; }
-      } else if (!st.drag) {
-        const k = st.sleeping ? 0.01 : 0.045;
-        st.vx = (st.vx + (st.tx - st.x) * k) * 0.82; st.vy = (st.vy + (st.ty - st.y) * k) * 0.82;
-        st.x += st.vx * dt; st.y += st.vy * dt;
+    let nextHop = performance.now() + 6000 + Math.random() * 4000;
+    let dockedOpen = false;
+    const tick = () => {
+      const now = performance.now();
+      if (st.open && !dockedOpen) {
+        dockedOpen = true; st.walk?.kill();
+        const c = corner(); walkTo({ x: c.x - 8, y: c.y - 8 });
+      } else if (!st.open && dockedOpen) dockedOpen = false;
+      if (!st.reduce && !st.open && !st.drag && !st.away && st.ready) {
+        if (now > nextHop && !st.sleeping) { st.hop = 1; nextHop = now + 6000 + Math.random() * 5000; }
+        if (!st.sleeping && now - st.lastScroll > SLEEP_MS) { st.sleeping = true; root.classList.add("sleep"); }
       }
-      const speed = Math.hypot(st.vx, st.vy), stretch = Math.min(0.18, speed / 60), ang = Math.atan2(st.vy, st.vx);
-      body.style.transform = `rotate(${ang}rad) scale(${1 + stretch},${1 - stretch}) rotate(${-ang}rad)`;
+      placeBubble();
       place();
       draw((now - t0) / 1000);
     };
+    if (st.reduce) {
+      // static render: parked bottom-right, no ticker animation
+      const c = corner(); st.x = c.x; st.y = c.y; st.ready = true; st.away = false;
+      place(); draw(0);
+    } else gsap.ticker.add(tick);
+
+    // ── entrance / page changes ──
+    const enterPage = (first: boolean) => {
+      const greet = PAGE_GREETING[location.pathname] ?? DEFAULT_GREETING;
+      const c = corner();
+      st.stopEl = null; st.userMoved = false;
+      const done = () => {
+        st.away = false; st.ready = true;
+        say(greet, 4500);
+        // after the greeting, start the tour from whatever section is in view
+        window.setTimeout(() => evaluate(true), 4800);
+      };
+      if (st.reduce) { st.x = c.x; st.y = c.y; st.away = false; st.ready = true; place(); window.setTimeout(() => say(greet, 4500), 400); return; }
+      if (first) {
+        // pop up from the bottom-right with a bounce
+        st.x = c.x; st.y = c.y + SIZE * 2; st.sx = 0.6; st.sy = 0.6;
+        gsap.timeline({ onComplete: done })
+          .to(st, { y: c.y, duration: 0.7, ease: "bounce.out" })
+          .to(st, { sx: 1, sy: 1, duration: 0.5, ease: "elastic.out(1,0.5)" }, 0);
+      } else {
+        // walk in from the right edge
+        walkTo(c, done, offRight(c.y));
+      }
+    };
+    api.current.enterPage = enterPage;
+    api.current.leavePage = () => {
+      if (st.reduce || st.away) return;
+      st.away = true; st.ready = false;
+      root.classList.remove("talk");
+      walkTo(offRight(clamp(st.y, TOP_SAFE, innerHeight - SIZE - MARGIN)));
+    };
 
     const onResize = () => {
-      if (parked) { const p = parkPos(); st.x = st.tx = p.x; st.y = st.ty = p.y; place(); if (reduce) draw(0); }
-      else { st.x = clampX(st.x); st.y = clampY(st.y); }
+      if (st.reduce) { const c = corner(); st.x = c.x; st.y = c.y; place(); return; }
+      st.x = clamp(st.x, 0, innerWidth - SIZE); st.y = clamp(st.y, 0, innerHeight - SIZE);
+      if (!st.away) window.setTimeout(() => evaluate(true), 250);
     };
     window.addEventListener("resize", onResize);
+    const onVisible = () => { st.lastScroll = performance.now(); };
+    document.addEventListener("visibilitychange", onVisible);
 
-    if (reduce) { place(); draw(0); }       // static: no animation loop at all
-    else raf = requestAnimationFrame(frame);
-
-    // greeting, once per session
-    let greeted = false;
-    try { greeted = !!sessionStorage.getItem("logi_greeted"); sessionStorage.setItem("logi_greeted", "1"); } catch { /* ignore */ }
-    const greetT = window.setTimeout(() => {
-      if (greeted) return;
-      say(touch ? "Hi! I'm Logi. Tap me if you need help." : "Hi! I'm Logi. I'll tag along. Click me to chat, drag me to move me.");
-    }, 1800);
-
-    // hover tips for call-to-action elements
-    let lastHover: Element | null = null;
-    const onOver = (e: MouseEvent) => {
-      const el = (e.target as Element | null)?.closest?.("[data-logi-hover]") ?? null;
-      if (el && el !== lastHover && !st.open && Math.random() < 0.6) say((el as HTMLElement).dataset.logiHover ?? "", 2200);
-      lastHover = el;
-    };
-    if (!touch) document.addEventListener("mouseover", onOver);
+    // first load: 1.5 s, then pop up
+    const entranceT = window.setTimeout(() => enterPage(true), st.reduce ? 0 : 1500);
+    if (!st.reduce) { st.x = corner().x; st.y = innerHeight + SIZE * 2; place(); }
 
     return () => {
-      cancelAnimationFrame(raf);
-      window.clearTimeout(greetT); window.clearTimeout(bubbleT);
-      window.removeEventListener("mousemove", onMouseMove);
+      window.clearTimeout(entranceT); window.clearTimeout(scrollT); window.clearTimeout(bubbleT);
+      st.walk?.kill();
+      gsap.ticker.remove(tick);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
-      document.removeEventListener("mouseover", onOver);
+      document.removeEventListener("visibilitychange", onVisible);
       body.removeEventListener("pointerdown", onDown);
       body.removeEventListener("pointermove", onMove);
       body.removeEventListener("pointerup", onUp);
+      body.removeEventListener("pointercancel", onUp);
       body.removeEventListener("click", onClick);
     };
   }, [toggleChat]);
 
-  // contextual tips: re-scan for [data-logi] whenever the route changes
+  // route changes: walk off, then walk back in with a page-specific greeting
+  const firstRoute = useRef(true);
   useEffect(() => {
-    const st = S.current;
-    let io: IntersectionObserver | undefined;
-    const t = window.setTimeout(() => {
-      io = new IntersectionObserver((ents) => ents.forEach((en) => {
-        const k = (en.target as HTMLElement).dataset.logi;
-        if (k && en.isIntersecting && !st.said[k]) { st.said[k] = 1; window.setTimeout(() => sayRef.current(k), 600); }
-      }), { threshold: 0.45 });
-      document.querySelectorAll("[data-logi]").forEach((el) => io!.observe(el));
-    }, 900); // after the page transition mounts the new page
-    return () => { window.clearTimeout(t); io?.disconnect(); };
+    if (firstRoute.current) { firstRoute.current = false; return; }
+    api.current.leavePage();
+    const t = window.setTimeout(() => api.current.enterPage(false), 1000);
+    return () => window.clearTimeout(t);
   }, [pathname]);
 
   const onSubmit = (e: React.FormEvent) => {
@@ -376,6 +468,10 @@ const Logi = () => {
 
       <section id="logi-chat" className={`logi-chat${open ? " on" : ""}`} role="dialog" aria-label="Chat with Logi" aria-hidden={!open}>
         <header>
+          <picture>
+            <source type="image/webp" srcSet="/brand/logisaar-mark-128.webp" />
+            <img src="/brand/logisaar-mark-128.png" width={28} height={27} alt="" className="logi-mark" />
+          </picture>
           <b>Logi</b>
           <span>Logisaar assistant</span>
           <button type="button" className="logi-x" aria-label="Close chat" onClick={() => toggleChat(false)} tabIndex={open ? 0 : -1}>×</button>
@@ -385,7 +481,7 @@ const Logi = () => {
             <div key={m.id} className={`logi-m ${m.who}`}>
               {m.text}
               {m.link && (m.link.to ? (
-                <><br /><Link to={m.link.to} onClick={() => { if (S.current.touch) toggleChat(false); }}>{m.link.label} →</Link></>
+                <><br /><Link to={m.link.to} onClick={() => { if (innerWidth < 768) toggleChat(false); }}>{m.link.label} →</Link></>
               ) : (
                 <><br /><a href={m.link.href} target="_blank" rel="noopener noreferrer">{m.link.label} ↗</a></>
               ))}

@@ -822,9 +822,9 @@ const Index = () => {
                     alt={logo.name}
                     className={`${
                       logo.name === "Sako Sales"
-                        ? "max-h-[82px] md:max-h-[96px] w-[95%]"
-                        : "max-h-[64px] md:max-h-[76px] w-[85%]"
-                    } h-auto object-contain transition-transform duration-300 group-hover:scale-105`}
+                        ? "h-[82px] md:h-[96px] max-w-[95%]"
+                        : "h-[64px] md:h-[76px] max-w-[85%]"
+                    } w-auto object-contain transition-transform duration-300 group-hover:scale-105`}
                   />
                 ) : (
                   logo.render()

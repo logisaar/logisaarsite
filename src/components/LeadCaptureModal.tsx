@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import { useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -11,6 +10,8 @@ import quoteIllustration from "@/assets/quote-illustration.webp";
 import {
   Dialog,
   DialogContent,
+  DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -46,7 +47,6 @@ const LeadCaptureModal = () => {
   const [animState, setAnimState] = useState<AnimState>("closed");
   const [showNotification, setShowNotification] = useState(false);
   const { toast } = useToast();
-  const { pathname } = useLocation();
 
   const form = useForm<LeadFormValues>({
     resolver: zodResolver(leadSchema),
@@ -65,23 +65,6 @@ const LeadCaptureModal = () => {
     window.addEventListener(OPEN_EVENT, handler);
     return () => window.removeEventListener(OPEN_EVENT, handler);
   }, [animState, openModal]);
-
-  // Home page only: once per session after 60% scroll
-  useEffect(() => {
-    if (pathname !== "/") return;
-    let shown = false;
-    try { shown = !!sessionStorage.getItem(SESSION_KEY); } catch { /* ignore */ }
-    if (shown) return;
-    const onScroll = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      if (max > 0 && window.scrollY / max >= 0.6) {
-        window.removeEventListener("scroll", onScroll);
-        openModal();
-      }
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [pathname, openModal]);
 
   const handleClose = useCallback(() => {
     if (animState !== "visible") return;
@@ -162,6 +145,8 @@ const LeadCaptureModal = () => {
             else handleClose();
           }}
         >
+          <DialogTitle className="sr-only">Get a free quote from Logisaar</DialogTitle>
+          <DialogDescription className="sr-only">Share your name, email and mobile number and we will get back to you.</DialogDescription>
           <motion.div
             variants={suctionVariants}
             initial="visible"
