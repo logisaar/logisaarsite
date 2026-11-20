@@ -2,13 +2,14 @@ import { Clock, AlertTriangle, TrendingUp, MessageSquare, FileText, Database, Ma
 import ServicePageLayout from "@/components/ServicePageLayout";
 import { AIAutomationIllustration } from "@/components/illustrations";
 import SEO from "@/components/SEO";
+import { claim, solutionById } from "@/data/solutions";
 
 export default function AIAutomation() {
   return (
     <>
       <SEO
         title="AI Automation Services for Businesses in Odisha | LogiSaar"
-        description="Custom AI automation for businesses in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha. WhatsApp automation, invoice generation, lead nurturing, workflow automation. Save 20+ hours/week. LogiSaar: +91 78150 14638"
+        description="Custom AI automation for businesses in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha. WhatsApp automation, invoice generation, lead nurturing, workflow automation. Takes repetitive work off your team."
         keywords="AI automation Odisha, business automation Bhubaneswar, WhatsApp automation Cuttack, workflow automation Odisha, AI automation Bhadrak, business automation Rourkela, n8n automation Odisha, LogiSaar"
         canonical="https://www.logisaar.in/solutions/ai-automation"
       />
@@ -16,7 +17,7 @@ export default function AIAutomation() {
         hero={{
           badge: "AI & Workflow Automation",
           h1: "AI Automation for Odisha Businesses",
-          h2: "Automate Repetitive Tasks — Save 20+ Hours Every Week",
+          h2: claim("automation-h2"),
           body: "From WhatsApp automation to invoice generation, lead nurturing to report creation — we build custom AI workflows that run your business on autopilot.",
           waMessage: "Hi LogiSaar, I want AI Automation for my business.",
         }}
@@ -24,7 +25,7 @@ export default function AIAutomation() {
         painPoints={[
           { icon: Clock, title: "Your team wastes hours on repetitive tasks", description: "Data entry, follow-up messages, report generation — all can be automated to free your team for real work." },
           { icon: AlertTriangle, title: "Human errors cost you clients and money", description: "Manual processes cause mistakes. AI automation is consistent, error-free and available 24/7." },
-          { icon: TrendingUp, title: "Your competitors are already automating", description: "Businesses using AI automation outperform manual-process competitors by 3x in productivity." },
+          { icon: TrendingUp, title: "Your competitors are already automating", description: claim("automation-3x") },
         ]}
         features={[
           { icon: MessageSquare, name: "WhatsApp Business Automation", desc: "Automate replies, follow-ups, order confirmations and broadcasts on WhatsApp Business API." },
@@ -37,7 +38,7 @@ export default function AIAutomation() {
         pricing={[
           {
             name: "Starter",
-            price: "₹20,000",
+            price: solutionById("ai-automation-suite").from,
             features: ["2-3 workflow automations", "WhatsApp or email automation", "Google Sheets integration", "Basic chatbot", "30-day support", "Documentation provided"],
           },
           {

@@ -2,13 +2,14 @@ import { GraduationCap, Clock, Banknote, EyeOff, UserPlus, Bell, CreditCard, Fil
 import ServicePageLayout from "@/components/ServicePageLayout";
 import { SchoolIllustration } from "@/components/illustrations";
 import SEO from "@/components/SEO";
+import { claim, solutionById } from "@/data/solutions";
 
 export default function AIPoweredSchoolERP() {
   return (
     <>
       <SEO
         title="AI-Powered School ERP in Odisha | LogiSaar"
-        description="Custom AI-powered School ERP software for schools, colleges, and coaching centers in Bhubaneswar, Cuttack, Bhadrak, Rourkela, and across Odisha. Manage attendance, fees, results, and parents from one dashboard. Contact LogiSaar: +91 78150 14638"
+        description="Custom AI-powered School ERP software for schools, colleges, and coaching centers in Bhubaneswar, Cuttack, Bhadrak, Rourkela, and across Odisha. Manage attendance, fees, results, and parents from one dashboard. Contact"
         keywords="AI-powered school ERP Odisha, school ERP software Bhubaneswar, college ERP system Cuttack, student management software Bhadrak, school ERP Rourkela, school ERP Bhadrak, school software Rourkela, LogiSaar"
         canonical="https://www.logisaar.in/solutions/ai-powered-school-erp"
       />
@@ -41,7 +42,7 @@ export default function AIPoweredSchoolERP() {
         pricing={[
           {
             name: "Starter",
-            price: "₹35,000",
+            price: solutionById("school-management").from,
             features: ["Up to 300 students", "1 branch", "Attendance + Fee module", "Results management", "Basic parent alerts", "Admin dashboard"],
           },
           {

@@ -2,13 +2,14 @@ import { DollarSign, Settings, UserX, Users, KanbanSquare, Bell, Mail, SlidersHo
 import ServicePageLayout from "@/components/ServicePageLayout";
 import { CRMIllustration } from "@/components/illustrations";
 import SEO from "@/components/SEO";
+import { claim, solutionById } from "@/data/solutions";
 
 export default function CustomCRM() {
   return (
     <>
       <SEO
         title="Custom CRM Development in Odisha | LogiSaar"
-        description="Own your CRM forever. We build fully custom CRM systems for businesses in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha. Replace Zoho and Salesforce with a CRM built exactly for your workflow. LogiSaar: +91 78150 14638"
+        description="Own your CRM forever. We build fully custom CRM systems for businesses in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha. Replace Zoho and Salesforce with a CRM built exactly for your workflow."
         keywords="custom CRM Odisha, CRM development Bhubaneswar, sales CRM Cuttack, business CRM software Odisha, custom CRM Bhadrak, CRM software Rourkela, replace Zoho CRM Odisha, LogiSaar"
         canonical="https://www.logisaar.in/solutions/custom-crm"
       />
@@ -22,7 +23,7 @@ export default function CustomCRM() {
         }}
         illustration={<CRMIllustration />}
         painPoints={[
-          { icon: DollarSign, title: "Generic CRMs charge monthly fees forever", description: "Salesforce, Zoho and HubSpot cost ₹3,000–₹30,000/month forever. A custom CRM pays for itself in under a year." },
+          { icon: DollarSign, title: "Generic CRMs charge monthly fees forever", description: claim("crm-cost") },
           { icon: Settings, title: "Off-the-shelf CRMs don't fit your workflow", description: "You end up adapting your entire business process to the software instead of the other way around." },
           { icon: UserX, title: "Your sales team avoids using the CRM", description: "Complex tools with bad UX get abandoned. A purpose-built CRM that matches your team's workflow gets used daily." },
         ]}
@@ -37,7 +38,7 @@ export default function CustomCRM() {
         pricing={[
           {
             name: "Starter",
-            price: "₹45,000",
+            price: solutionById("custom-crm").from,
             features: ["Up to 5 users", "Lead & contact management", "Visual pipeline board", "Task reminders", "Basic reports", "Excel import/export", "Full source code"],
           },
           {

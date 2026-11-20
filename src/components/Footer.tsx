@@ -8,11 +8,11 @@ import BrandLogo from "@/components/BrandLogo";
 
 const footerLinks = {
   Solutions: [
-    { label: "Software development", to: "/solutions" },
-    { label: "AI agent development", to: "/solutions" },
-    { label: "Business automation", to: "/solutions" },
-    { label: "AI software", to: "/solutions" },
-    { label: "Ready-made solutions", to: "/solutions" },
+    { label: "Software development", to: "/solutions#software-development" },
+    { label: "AI agent development", to: "/solutions#ai-agents" },
+    { label: "Business automation", to: "/solutions#business-automation" },
+    { label: "AI software", to: "/solutions#ai-software" },
+    { label: "Ready-made solutions", to: "/solutions#ready-made" },
   ],
   Company: [
     { label: "About Us", to: "/about" },

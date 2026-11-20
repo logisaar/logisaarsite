@@ -2,13 +2,14 @@ import { Building2, XCircle, AlertTriangle, Globe, CalendarCheck, Receipt, Shirt
 import ServicePageLayout from "@/components/ServicePageLayout";
 import { HotelIllustration } from "@/components/illustrations";
 import SEO from "@/components/SEO";
+import { claim, solutionById } from "@/data/solutions";
 
 export default function HotelManagement() {
   return (
     <>
       <SEO
         title="Hotel Management System in Odisha | LogiSaar"
-        description="Custom hotel management software for hotels, resorts and homestays in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha. Online booking, billing, housekeeping and guest management. LogiSaar: +91 78150 14638"
+        description="Custom hotel management software for hotels, resorts and homestays in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha. Online booking, billing, housekeeping and guest management."
         keywords="hotel management system Odisha, resort software Bhubaneswar, hotel booking system Cuttack, property management software Odisha, hotel software Bhadrak, hotel management system Rourkela, hospitality software Odisha, LogiSaar"
         canonical="https://www.logisaar.in/solutions/hotel-management-system"
       />
@@ -17,7 +18,7 @@ export default function HotelManagement() {
           badge: "For Hotels, Resorts & Homestays",
           h1: "Hotel & Resort Management System",
           h2: "For Hotels, Resorts, Homestays & Lodges Across Odisha",
-          body: "Manage bookings, check-ins, housekeeping, billing and guest experience from one powerful platform. Reduce staff workload by 60%.",
+          body: `Manage bookings, check-ins, housekeeping, billing and guest experience from one powerful platform. ${claim("hotel-workload")}`,
           waMessage: "Hi LogiSaar, I want a Hotel Management System for my property.",
         }}
         illustration={<HotelIllustration />}
@@ -37,7 +38,7 @@ export default function HotelManagement() {
         pricing={[
           {
             name: "Starter",
-            price: "₹40,000",
+            price: solutionById("hotel-management").from,
             features: ["Up to 20 rooms", "Booking calendar", "Check-in/checkout", "Billing & invoicing", "Staff management", "Basic reports"],
           },
           {
@@ -56,7 +57,7 @@ export default function HotelManagement() {
           { q: "Does it work for small homestays too?", a: "Absolutely. Our Starter plan is designed for small properties with up to 20 rooms and is very easy to use." },
           { q: "Can I manage multiple hotel properties?", a: "Yes, the Enterprise plan supports multi-property management from one unified dashboard." },
           { q: "Will it integrate with OTAs like MakeMyTrip or Booking.com?", a: "Yes, OTA channel manager integration is included in the Enterprise plan to prevent double bookings." },
-          { q: "How is guest data kept secure?", a: "All data is encrypted and hosted on secure cloud servers with daily automated backups and 99.9% uptime." },
+          { q: "How is guest data kept secure?", a: claim("hotel-uptime") },
         ]}
       />
     </>

@@ -2,13 +2,14 @@ import { Timer, UserX, TrendingDown, MessageSquare, Mail, Phone, Award, Database
 import ServicePageLayout from "@/components/ServicePageLayout";
 import { AILeadIllustration } from "@/components/illustrations";
 import SEO from "@/components/SEO";
+import { claim, solutionById } from "@/data/solutions";
 
 export default function AILeadFollowup() {
   return (
     <>
       <SEO
         title="AI Lead Follow-Up System for Businesses in Odisha | LogiSaar"
-        description="Automate lead follow-up via WhatsApp, email and voice calls. Never lose a lead again. AI-powered sales automation for businesses in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha. LogiSaar: +91 78150 14638"
+        description="Automate lead follow-up via WhatsApp, email and voice calls. Never lose a lead again. AI-powered sales automation for businesses in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha."
         keywords="AI lead follow-up Odisha, sales automation Bhubaneswar, WhatsApp automation Odisha, CRM automation Cuttack, AI lead system Bhadrak, AI sales automation Rourkela, AI sales system Odisha, LogiSaar"
         canonical="https://www.logisaar.in/solutions/ai-lead-followup"
       />
@@ -22,9 +23,9 @@ export default function AILeadFollowup() {
         }}
         illustration={<AILeadIllustration />}
         painPoints={[
-          { icon: Timer, title: "Leads go cold within hours", description: "78% of customers buy from whoever responds first. Manual follow-up is always too slow to compete." },
+          { icon: Timer, title: "Leads go cold within hours", description: claim("lead-78") },
           { icon: UserX, title: "Sales team forgets follow-ups", description: "Leads fall through the cracks when your team is busy or overwhelmed with other work." },
-          { icon: TrendingDown, title: "No follow-up system = lost revenue", description: "Every ignored lead is money left on the table. On average, businesses lose 60% of leads to no follow-up." },
+          { icon: TrendingDown, title: "No follow-up system = lost revenue", description: claim("lead-60") },
         ]}
         features={[
           { icon: MessageSquare, name: "Instant WhatsApp Follow-Up on New Lead", desc: "Within seconds of a lead submitting a form, they receive a personalized WhatsApp message." },
@@ -37,8 +38,8 @@ export default function AILeadFollowup() {
         pricing={[
           {
             name: "Starter",
-            price: "₹25,000",
-            period: " setup + ₹5,000/mo",
+            price: solutionById("ai-lead-followup").from,
+            period: ` setup + ${solutionById("ai-lead-followup").monthly}/mo`,
             features: ["WhatsApp automation", "Email drip sequences", "Google Sheets CRM", "Lead capture forms", "Basic analytics", "30-day support"],
           },
           {

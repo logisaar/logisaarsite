@@ -1,6 +1,7 @@
 import { CONTACT } from "@/lib/contact";
 import { getImage } from "@/data/images";
 import { PROJECTS_DELIVERED } from "@/data/company";
+import { solutionById, priceLine } from "@/data/solutions";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import { useState } from "react";
 import Layout from "@/components/Layout";
@@ -23,10 +24,6 @@ import MagneticButton from "@/components/creative/MagneticButton";
 import AnimatedButton from "@/components/creative/AnimatedButton";
 
 // Import dashboard assets
-const schoolErpImg = getImage("mockups", "school-erp");
-const aiReceptionistImg = getImage("mockups", "ai-receptionist");
-const smartCrmImg = getImage("mockups", "smart-crm");
-const hotelMgmtImg = getImage("mockups", "hotel-management");
 
 // Import project assets
 const swostiImg = getImage("projects", "swosti");
@@ -86,76 +83,22 @@ const GradientDivider = () => (
   </div>
 );
 
-const solutionsData = [
-  {
-    id: "school-erp",
-    title: "AI-Powered School ERP",
-    icon: "🏫",
-    iconBg: "bg-amber-500/10 border border-amber-500/20 text-amber-500 dark:bg-amber-500/5",
-    desc: "Complete solution to manage students, staff, fees, attendance and communication in one intelligent platform.",
-    features: [
-      "Admissions & student profiles",
-      "Automated attendance alerts",
-      "Fee collection & invoicing",
-      "Exams, reports & analytics"
-    ],
-    price: "₹35,000",
-    path: "/solutions/ai-powered-school-erp",
-    img: schoolErpImg,
-    aspect: "1639/960"
-  },
-  {
-    id: "hotel-management",
-    title: "Hotel Management System",
-    icon: "🏨",
-    iconBg: "bg-blue-500/10 border border-blue-500/20 text-blue-500 dark:bg-blue-500/5",
-    desc: "Streamline bookings, front desk, housekeeping, billing and guest experience across your hotel operations.",
-    features: [
-      "Real-time room booking",
-      "Housekeeping management",
-      "Billing & invoicing",
-      "Reports & analytics"
-    ],
-    price: "₹40,000",
-    path: "/solutions/hotel-management-system",
-    img: hotelMgmtImg,
-    aspect: "1693/929"
-  },
-  {
-    id: "ai-receptionist",
-    title: "24x7 AI Receptionist",
-    icon: "🤖",
-    iconBg: "bg-purple-500/10 border border-purple-500/20 text-purple-500 dark:bg-purple-500/5",
-    desc: "AI receptionist that answers calls, qualifies leads, books appointments and never misses an opportunity.",
-    features: [
-      "24/7 call answering",
-      "Lead qualification",
-      "Smart scheduling",
-      "WhatsApp integration"
-    ],
-    price: "₹20,000",
-    path: "/solutions/ai-receptionist",
-    img: aiReceptionistImg,
-    aspect: "1563/1006"
-  },
-  {
-    id: "custom-crm",
-    title: "Custom CRM & Business Automation",
-    icon: "💼",
-    iconBg: "bg-rose-500/10 border border-rose-500/20 text-rose-500 dark:bg-rose-500/5",
-    desc: "Manage leads, automate follow-ups, close more deals and grow your business with powerful automation.",
-    features: [
-      "Pipeline & lead management",
-      "Workflow automation",
-      "Email & WhatsApp automation",
-      "Analytics & reporting"
-    ],
-    price: "₹45,000",
-    path: "/solutions/custom-crm",
-    img: smartCrmImg,
-    aspect: "1607/979"
-  }
-];
+// Home shows four of the ready-made solutions, all values from src/data/solutions.ts
+const HOME_SOLUTION_IDS = ["school-management", "hotel-management", "ai-receptionist", "custom-crm"];
+const solutionsData = HOME_SOLUTION_IDS.map((id) => {
+  const s = solutionById(id);
+  const price = priceLine(s);
+  return {
+    id: s.id,
+    title: s.name,
+    desc: s.summary,
+    features: s.highlights,
+    price: s.from,
+    monthly: price.monthly,
+    path: s.path,
+    img: s.mockup ?? s.img,
+  };
+});
 
 const portfolioData = [
   {
@@ -468,7 +411,7 @@ const Index = () => {
                   {/* Footer Row */}
                   <div className="flex items-center justify-between mt-auto pt-2.5 border-t border-border/40">
                     <div className="text-label font-semibold px-2.5 py-1 rounded-md bg-primary/10 text-primary-ink dark:text-primary-ink border border-primary/20 font-mono">
-                      From {sol.price}
+                      From {sol.price}{sol.monthly ? ` + ${sol.monthly}` : ""}
                     </div>
                     <span className="text-label font-semibold text-muted-foreground group-hover:text-primary-ink transition-colors flex items-center gap-1">
                       Explore <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform" />

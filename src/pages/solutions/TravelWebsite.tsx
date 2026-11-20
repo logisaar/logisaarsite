@@ -2,13 +2,14 @@ import { DollarSign, Search, MessageCircle, MapPin, CalendarCheck, CreditCard, S
 import ServicePageLayout from "@/components/ServicePageLayout";
 import { TravelIllustration } from "@/components/illustrations";
 import SEO from "@/components/SEO";
+import { claim, solutionById } from "@/data/solutions";
 
 export default function TravelWebsite() {
   return (
     <>
       <SEO
         title="Tours & Travel Website Development in Odisha | LogiSaar"
-        description="Custom travel websites for tour operators and travel agents in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha. Online booking, Razorpay payment, SEO for Odisha tourism. Get direct bookings. LogiSaar: +91 78150 14638"
+        description="Custom travel websites for tour operators and travel agents in Bhubaneswar, Cuttack, Bhadrak, Rourkela and across Odisha. Online booking, Razorpay payment, SEO for Odisha tourism. Get direct bookings."
         keywords="travel website development Odisha, tour website Bhubaneswar, travel agency website Cuttack, Odisha tourism website, travel website Bhadrak, tour agency website Rourkela, travel booking website Odisha, LogiSaar"
         canonical="https://www.logisaar.in/solutions/travel-website"
       />
@@ -22,7 +23,7 @@ export default function TravelWebsite() {
         }}
         illustration={<TravelIllustration />}
         painPoints={[
-          { icon: DollarSign, title: "Losing bookings to OTAs like MakeMyTrip", description: "Paying 15-20% commission on every booking when you could get direct bookings from your own site." },
+          { icon: DollarSign, title: "Losing bookings to OTAs like MakeMyTrip", description: claim("travel-commission") },
           { icon: Search, title: "No online presence for Odisha tours", description: "Tourists searching for Puri, Konark, Chilika tours can't find you — you're invisible on Google." },
           { icon: MessageCircle, title: "WhatsApp-only booking is unprofessional", description: "Serious clients expect a proper booking system with confirmation and payment receipts." },
         ]}
@@ -37,7 +38,7 @@ export default function TravelWebsite() {
         pricing={[
           {
             name: "Starter",
-            price: "₹20,000",
+            price: solutionById("travel-website").from,
             features: ["Up to 10 tour packages", "Beautiful package listings", "WhatsApp enquiry button", "Mobile-first design", "Google Maps integration", "Basic SEO setup"],
           },
           {

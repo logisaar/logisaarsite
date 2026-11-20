@@ -1,335 +1,348 @@
-import { getImage } from "@/data/images";
-import ResponsiveImage from "@/components/ResponsiveImage";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Check, MessageCircle, Sparkles, ChevronDown, ChevronUp } from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
+import { ArrowRight, Check, MessageCircle } from "lucide-react";
 import Layout from "@/components/Layout";
-import GradientMesh from "@/components/creative/GradientMesh";
-import TextReveal from "@/components/creative/TextReveal";
 import SEO from "@/components/SEO";
+import Eyebrow from "@/components/Eyebrow";
+import ResponsiveImage from "@/components/ResponsiveImage";
+import ServiceVignette from "@/components/solutions/ServiceVignette";
+import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { whatsappLink } from "@/lib/contact";
+import { SERVICES } from "@/data/company";
+import { INDUSTRIES, SOLUTIONS, priceLine, type Solution } from "@/data/solutions";
 
-// ─── 9 Industry Solutions Data ───────────────────────────────────────────────
-const industrySolutions = [
-  {
-    id: "school-management",
-    name: "AI-Powered School ERP",
-    badge: "Education",
-    badgeColor: "bg-blue-500/15 text-blue-400 border-blue-500/20",
-    tagline: "Run your entire institution from one dashboard.",
-    desc: "Built for schools, colleges and coaching centers in Odisha. Manage students, admissions, fee structures and academic reporting in one place.",
-    from: "₹35,000",
-    img: getImage("services", "school"),
-    features: [
-      "Student admission & digital profiles",
-      "Automated attendance + WhatsApp alerts to parents",
-      "Online fee collection & payment tracking",
-      "Exam results & report card generation",
-      "Timetable, staff & multi-branch support",
-      "Parent communication portal"
-    ],
-    techStack: ["React / Next.js", "Node.js API", "PostgreSQL database", "WhatsApp Cloud API"],
-    wa: "Hi Logisaar, I'm interested in the AI-Powered School ERP solution.",
-    path: "/solutions/ai-powered-school-erp"
-  },
-  {
-    id: "hotel-management",
-    name: "Hotel Management System",
-    badge: "Hospitality",
-    badgeColor: "bg-amber-500/15 text-amber-400 border-amber-500/20",
-    tagline: "Reduce staff workload by 60%.",
-    desc: "Manage bookings, check-ins, billing and housekeeping for hotels, resorts and homestays across Odisha. Prevent double bookings and maximize occupancy.",
-    from: "₹40,000",
-    img: getImage("services", "hotel"),
-    features: [
-      "Real-time room booking & availability calendar",
-      "Online booking engine for your website",
-      "Automated invoicing & billing generation",
-      "Housekeeping & staff task management",
-      "Guest history & preferences profile",
-      "Revenue analytics & occupancy reports"
-    ],
-    techStack: ["React SPA", "Tailwind CSS", "Node.js backend", "MongoDB / Firebase"],
-    wa: "Hi Logisaar, I'm interested in the Hotel Management System solution.",
-    path: "/solutions/hotel-management-system"
-  },
-  {
-    id: "ai-lead-followup",
-    name: "AI Lead Follow-Up System",
-    badge: "AI + Sales",
-    badgeColor: "bg-purple-500/15 text-purple-400 border-purple-500/20",
-    tagline: "Convert leads 24/7.",
-    desc: "Your AI follows up with every incoming lead instantly via WhatsApp, email and smart voice calls. Never miss a response time window.",
-    from: "₹25,000 + ₹5K/mo",
-    img: getImage("services", "ai-lead"),
-    features: [
-      "Instant WhatsApp follow-up upon submission",
-      "Automated email drip sequences",
-      "AI voice call follow-up (optional integration)",
-      "Lead scoring & priority tagging",
-      "CRM integration (Zoho, HubSpot, Google Sheets)",
-      "Conversion analytics dashboard"
-    ],
-    techStack: ["OpenAI API / Llama-3", "Vapi / Twilio voice pipelines", "n8n / Make integration", "Node.js"],
-    wa: "Hi Logisaar, I'm interested in the AI Lead Follow-Up System.",
-    path: "/solutions/ai-lead-followup"
-  },
-  {
-    id: "ai-receptionist",
-    name: "AI Receptionist",
-    badge: "AI + Service",
-    badgeColor: "bg-teal-500/15 text-teal-400 border-teal-500/20",
-    tagline: "Never miss a call or booking.",
-    desc: "An AI agent that answers calls, logs bookings, and handles WhatsApp enquiries 24/7. Trained on your custom business FAQs.",
-    from: "₹20,000 + ₹4K/mo",
-    img: getImage("services", "ai-receptionist"),
-    features: [
-      "24/7 AI voice call answering",
-      "WhatsApp auto-reply & booking",
-      "Appointment scheduling & calendar sync",
-      "FAQ training based on your custom files",
-      "Call transcriptions & sentiment summary",
-      "Bilingual capabilities: English + Odia"
-    ],
-    techStack: ["Retell AI / Exotel voice gateway", "GPT-4o custom fine-tuning", "Google Calendar API", "FastAPI"],
-    wa: "Hi Logisaar, I'm interested in the AI Receptionist solution.",
-    path: "/solutions/ai-receptionist"
-  },
-  {
-    id: "proposal-software",
-    name: "Proposal Software",
-    badge: "Freelancers",
-    badgeColor: "bg-pink-500/15 text-pink-400 border-pink-500/20",
-    tagline: "Close clients 3x faster.",
-    desc: "Send beautiful branded interactive proposals with legally valid e-signatures and instant payment links. Built for modern freelancers and agencies.",
-    from: "₹15,000",
-    img: getImage("services", "proposal"),
-    features: [
-      "Branded proposal templates (logo & colors)",
-      "Interactive pricing packages clients can select",
-      "Digital e-signature (legally valid in India)",
-      "Real-time open & read tracking notifications",
-      "Automatic follow-up reminders",
-      "Razorpay / PayTM payment link triggers"
-    ],
-    techStack: ["React SPA", "PDF rendering server", "Webhook tracking", "Razorpay APIs"],
-    wa: "Hi Logisaar, I'm interested in the Proposal Software solution.",
-    path: "/solutions/proposal-software"
-  },
-  {
-    id: "qr-menu-system",
-    name: "QR Code Menu System",
-    badge: "Food & Beverage",
-    badgeColor: "bg-orange-500/15 text-orange-400 border-orange-500/20",
-    tagline: "Scan, order, pay — no waiter, no paper.",
-    desc: "Digital menu cards for restaurants, cafes, and dhabas across Odisha. Customers scan a table-specific QR code, browse items, and pay from their phone.",
-    from: "₹12,000",
-    img: getImage("services", "qr-menu"),
-    features: [
-      "Table-specific QR code generation — no app download",
-      "Digital catalog with high-quality photos",
-      "Real-time menu updates — no printing costs",
-      "Direct table ordering system",
-      "UPI / QR code payment at table",
-      "Daily sales & order metrics dashboard"
-    ],
-    techStack: ["Vite + React webapp", "Firebase Realtime DB", "UPI Deep links", "Node.js QR generator"],
-    wa: "Hi Logisaar, I'm interested in the QR Code Menu System.",
-    path: "/solutions/qr-menu-system"
-  },
-  {
-    id: "travel-website",
-    name: "Tours & Travel Website",
-    badge: "Tourism",
-    badgeColor: "bg-green-500/15 text-green-400 border-green-500/20",
-    tagline: "Get direct bookings from Odisha tourists.",
-    desc: "Direct booking travel systems for operators in Odisha. Built with tour listing tools, automated itineraries, and localized SEO.",
-    from: "₹20,000",
-    img: getImage("services", "travel"),
-    features: [
-      "Tour package listings with photo galleries",
-      "Online booking calendar & slots availability",
-      "Razorpay / UPI payment integrations",
-      "Odisha-tourism target keyword SEO setup",
-      "Customer reviews & blog engine",
-      "Mobile-responsive administration portal"
-    ],
-    techStack: ["Next.js/React templates", "Tailwind CSS", "Razorpay Node SDK", "SEO Schema templates"],
-    wa: "Hi Logisaar, I'm interested in the Tours & Travel Website solution.",
-    path: "/solutions/travel-website"
-  },
-  {
-    id: "ai-automation-suite",
-    name: "AI Automation Suite",
-    badge: "Automation",
-    badgeColor: "bg-indigo-500/15 text-indigo-400 border-indigo-500/20",
-    tagline: "Save 20+ hours a week.",
-    desc: "Replace manual business workflows with automated AI routines. Connect sheets, CRMs, WhatsApp, and email alerts into a unified sync.",
-    from: "₹20,000",
-    img: getImage("services", "ai-automation"),
-    features: [
-      "WhatsApp Business API event automation",
-      "Automated PDF invoice & reports generation",
-      "Google Sheets & local database syncing",
-      "Email drip and auto-reply setups",
-      "Website and social chatbot integrations",
-      "n8n / Make workflow administration triggers"
-    ],
-    techStack: ["Python scripts", "Make.com / n8n pipelines", "Anthropic / OpenAI API", "WhatsApp Cloud API"],
-    wa: "Hi Logisaar, I'm interested in the AI Automation Suite solution.",
-    path: "/solutions/ai-automation"
-  },
-  {
-    id: "custom-crm",
-    name: "Custom CRM System",
-    badge: "Sales",
-    badgeColor: "bg-cyan-500/15 text-cyan-400 border-cyan-500/20",
-    tagline: "Own your CRM forever.",
-    desc: "A sales pipeline custom built for your exact operational workflow. One-time fee, full source code ownership, zero monthly licenses.",
-    from: "₹45,000",
-    img: getImage("services", "crm"),
-    features: [
-      "Visual sales pipeline (Kanban board stages)",
-      "Lead scoring & detailed contact timelines",
-      "WhatsApp Business & Gmail API integrations",
-      "Revenue tracking & staff performance charts",
-      "Custom role-based permissions access",
-      "Full source code repository handoff"
-    ],
-    techStack: ["React / TypeScript", "Node.js Express API", "PostgreSQL database", "Vercel / VPS hosting"],
-    wa: "Hi Logisaar, I'm interested in the Custom CRM System.",
-    path: "/solutions/custom-crm"
-  }
+const CARD = "flex h-full flex-col rounded-2xl border border-border bg-card p-6";
+const BTN = "min-h-[2.75rem] rounded-full border-0 bg-primary px-6 font-semibold text-primary-on hover:bg-primary/90";
+const BTN_OUTLINE = "min-h-[2.75rem] rounded-full border-2 border-primary/40 px-6 font-semibold";
+const ANCHOR = "scroll-mt-[calc(var(--header-h)+1rem)]";
+
+// Keep in step with About "How we work" and the Contact page "What happens next".
+const PROJECT_STEPS = [
+  { title: "Free call", text: "Tell us what is slowing your business down. We listen first." },
+  { title: "Clear plan and fixed quote", text: "You get the scope and the full price in writing before any work starts." },
+  { title: "Build with regular demos", text: "You see working software as it grows, and tell us what to change." },
+  { title: "Launch and support", text: "We go live together and stay around afterwards." },
 ];
 
-// ─── Solution Card Component ───────────────────────────────────────────────
-const SolutionCard = ({ sol }: { sol: typeof industrySolutions[0] }) => {
+// TODO(owner): confirm the wording of these three ways of working.
+const WAYS = [
+  { title: "Ready-made, then customised", text: "Start from one of the systems above and we adapt it to how your business runs. Fastest to go live." },
+  { title: "Custom project", text: "Tell us what you need and we build it from scratch: software, an AI agent or an automation." },
+  {
+    title: "Monthly support",
+    text: `AI agent solutions have a monthly fee after setup: ${SOLUTIONS.filter((s) => s.monthly)
+      .map((s) => `${s.monthly}/month for the ${s.name}`)
+      .join(", ")}.`,
+  },
+];
+
+// TODO(owner): confirm each FAQ answer before launch.
+const FAQ = [
+  { q: "Can you change a ready-made system to fit us?", a: "Yes. The ready-made systems are a starting point. We adapt screens, fields and reports to how your team works." },
+  { q: "How do prices work?", a: "Each solution shows its starting price. After a free call you get a written scope and a fixed quote, so you see the full cost before work begins." },
+  { q: "Do you work with clients outside India?", a: "Yes. We run calls and delivery online and work with clients in India and abroad." },
+  { q: "What happens after launch?", a: "We stay available for fixes and improvements. AI agent solutions have a monthly fee, shown on their cards and detail pages." },
+];
+
+const SolutionCard = ({ sol }: { sol: Solution }) => {
+  const price = priceLine(sol);
   return (
-    <motion.div
-      whileHover={{ y: -8, transition: { type: "spring", stiffness: 280, damping: 20 } }}
-      className="group rounded-3xl border border-border bg-card overflow-hidden flex flex-col hover:border-primary/40 hover:shadow-2xl transition-all duration-300"
-    >
-      {/* Product Image Header */}
-      <div className="relative overflow-hidden" style={{ height: 220 }}>
-        <ResponsiveImage
-          image={sol.img}
-          alt={sol.name}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          loading="lazy"
-        />
-        {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/10 to-transparent" />
-        {/* Badge */}
-        <span className={`absolute top-4 left-4 text-xs font-bold px-3 py-1.5 rounded-full border backdrop-blur-sm ${sol.badgeColor}`}>
-          {sol.badge}
-        </span>
-        {/* Price tag */}
-        <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/10">
-          From {sol.from}
-        </div>
-      </div>
-
-      <div className="p-6 flex flex-col flex-1">
-        <div>
-          <h3 className="font-display text-xl font-bold text-foreground">
-            {sol.name}
-          </h3>
-          <p className="text-primary-ink text-xs font-semibold mt-1">{sol.tagline}</p>
-          <p className="text-muted-foreground text-sm leading-relaxed mt-3">{sol.desc}</p>
-        </div>
-
-        {/* Feature list - Fully Visible */}
-        <ul className="space-y-2 mt-5 flex-1">
-          {sol.features.map((f) => (
-            <li key={f} className="flex items-start gap-2 text-sm">
-              <Check size={13} className="text-primary-ink mt-1 shrink-0" />
-              <span className="text-muted-foreground leading-relaxed">{f}</span>
-            </li>
-          ))}
-        </ul>
-
-        {/* Tech Stack Details */}
-        <div className="mt-6 pt-4 border-t border-border/50">
-          <h4 className="text-xs uppercase font-mono tracking-wider text-muted-foreground mb-2">Technology Stack</h4>
-          <div className="flex flex-wrap gap-2">
-            {sol.techStack.map((tech) => (
-              <span key={tech} className="text-label font-mono bg-secondary text-foreground/80 border border-border px-2.5 py-0.5 rounded-md">
-                {tech}
-              </span>
-            ))}
+    <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card">
+      <div className="bg-secondary/60 p-4">
+        <div className="overflow-hidden rounded-xl border border-border bg-card">
+          <div className="flex items-center gap-1.5 border-b border-border bg-secondary px-3 py-2" aria-hidden="true">
+            <span className="h-2 w-2 rounded-full bg-border" />
+            <span className="h-2 w-2 rounded-full bg-border" />
+            <span className="h-2 w-2 rounded-full bg-border" />
+          </div>
+          <div className="relative aspect-[16/10] overflow-hidden">
+            <ResponsiveImage
+              image={sol.img}
+              alt={`${sol.name} screen`}
+              sizes="(min-width: 64em) 30vw, (min-width: 40em) 45vw, 90vw"
+              className="h-full w-full object-cover object-top"
+            />
+            <span className="absolute left-3 top-3 rounded-full bg-foreground px-3 py-1 text-label font-semibold text-background">{sol.industry}</span>
           </div>
         </div>
-
-        {/* WhatsApp & Direct Link Actions */}
-        <div className="mt-6 pt-4 border-t border-border/50 flex flex-col gap-3">
-          <Button asChild className="w-full bg-green-500 hover:bg-green-600 border-0 text-white rounded-xl text-xs gap-2 py-4 h-auto">
-            <a href={`https://wa.me/918596072510?text=${encodeURIComponent(sol.wa)}`} target="_blank" rel="noopener noreferrer">
-              <MessageCircle size={15} fill="currentColor" />
-              Request Details / Order via WhatsApp
+      </div>
+      <div className="flex flex-1 flex-col p-6">
+        <h3 className="font-display text-h3 font-bold text-foreground">{sol.name}</h3>
+        <p className="mt-2 text-body-sm text-muted-foreground">{sol.outcome}</p>
+        <p className="mt-4 font-semibold text-foreground">
+          {price.from}
+          {price.monthly && <span className="font-normal text-muted-foreground"> + {price.monthly}</span>}
+        </p>
+        <div className="mt-auto flex flex-col gap-3 pt-5 sm:flex-row">
+          <Button asChild className={`${BTN} flex-1`}>
+            <Link to={sol.path}>
+              View details<span className="sr-only"> for {sol.name}</span>
+            </Link>
+          </Button>
+          <Button asChild variant="outline" className={`${BTN_OUTLINE} flex-1 gap-2`}>
+            <a href={whatsappLink(sol.wa)} target="_blank" rel="noopener noreferrer">
+              <MessageCircle size={16} aria-hidden="true" />
+              Ask on WhatsApp<span className="sr-only"> about {sol.name} (opens in a new tab)</span>
             </a>
           </Button>
-          <Link to={sol.path} className="text-xs text-muted-foreground hover:text-primary-ink transition-colors text-center font-mono uppercase tracking-wider mt-1">
-            Explore Direct Link
-          </Link>
         </div>
       </div>
-    </motion.div>
+    </article>
   );
 };
 
-// ─── Page Component ──────────────────────────────────────────────────────────
 const Solutions = () => {
+  const reduce = useReducedMotion();
+  const [industry, setIndustry] = useState<(typeof INDUSTRIES)[number]>("All");
+  const shown = industry === "All" ? SOLUTIONS : SOLUTIONS.filter((s) => s.industry === industry);
+
+  // The page's one scroll-drawn line (How a project works)
+  const stepsRef = useRef<HTMLOListElement>(null);
+  const { scrollYProgress } = useScroll({ target: stepsRef, offset: ["start 75%", "end 60%"] });
+  const line = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
+
   return (
     <Layout>
       <SEO
-        title="Web Systems & custom AI Solutions in Odisha | Logisaar"
-        description="Custom AI workflows, school and hotel management dashboards, WhatsApp integrations, AI receptionists, and proposal tools. Built with AI in Odisha."
-        keywords="school management software Odisha, hotel software Bhubaneswar, AI receptionists Cuttack, AI automation Odisha, custom CRM Odisha, Logisaar"
+        title="Solutions | Custom software, AI agents and business automation | Logisaar"
+        description="Custom software, AI agents and business automation for growing businesses, plus ready-made systems for schools, hotels, sales teams and more. Fixed quote before we start."
+        keywords="custom software development, AI agent development, business automation, AI software, school management software Odisha, hotel software, AI receptionist, custom CRM, Logisaar"
         canonical="https://www.logisaar.in/solutions"
       />
 
-      {/* Hero */}
-      <section data-logi="Pick a solution and I'll explain it." className="min-h-[50svh] flex items-end relative overflow-hidden pb-16">
-        <GradientMesh />
-        <div className="container mx-auto px-gutter relative z-10 pt-section-sm">
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary-ink text-xs font-semibold px-4 py-1.5 rounded-full mb-6"
-          >
-            <Sparkles size={12} /> 15+ Projects Deployed Globally
+      {/* 1. Hero */}
+      <section
+        data-logi-dock
+        className="relative overflow-hidden bg-background pb-section-sm"
+        style={{ paddingTop: "calc(var(--header-h) + clamp(1.5rem, 4vw, 3rem))" }}
+      >
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden bg-cover bg-center opacity-50 md:block" style={{ backgroundImage: "url('/hero-bg.svg')" }} />
+        <div aria-hidden="true" className="animated-grid pointer-events-none absolute inset-0 opacity-30" />
+        <div className="container relative z-10 mx-auto max-w-3xl px-gutter text-center">
+          <motion.div initial={reduce ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+            <Eyebrow>Solutions</Eyebrow>
           </motion.div>
-          <TextReveal text="Productized software" as="h1" className="font-display text-5xl md:text-7xl font-bold leading-[0.95]" delay={0.2} />
-          <TextReveal text="& custom AI models." as="h2" className="font-display text-3xl md:text-5xl font-bold text-gradient leading-[0.95] mt-2" delay={0.5} />
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} className="text-muted-foreground text-base md:text-lg mt-6 max-w-xl">
-            We deliver tailor-made systems faster and at lower costs because we build with AI, not just for it.
+          <motion.h1
+            initial={reduce ? false : { opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="mt-4 text-balance font-display text-h1 font-bold text-foreground"
+          >
+            Software, AI agents and automation, built around your business
+          </motion.h1>
+          <motion.p
+            initial={reduce ? false : { opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            data-logi-avoid
+            className="mx-auto mt-6 max-w-2xl text-balance text-lead text-muted-foreground"
+          >
+            Start from one of our ready-made systems or have us build exactly what you need. Either way you get a clear plan and a fixed quote first.
           </motion.p>
+          <motion.div
+            initial={reduce ? false : { opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          >
+            <Button asChild className={BTN}>
+              <Link to="/contact">Start a project</Link>
+            </Button>
+            <Button asChild variant="outline" className={BTN_OUTLINE}>
+              <a href="#ready-made">See ready-made solutions</a>
+            </Button>
+          </motion.div>
         </div>
       </section>
 
-      {/* Expandable Solutions Grid */}
-      <section data-logi="Ready-made, then made yours." className="py-section bg-background">
-        <div className="container mx-auto px-gutter animate-fadeIn">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            className="text-center mb-14"
-          >
-            <p className="text-primary-ink text-xs font-mono uppercase tracking-[0.2em] mb-3">Product Menu</p>
-            <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
-              Industry-Specific <span className="text-gradient">Solutions</span>
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
-              Purpose-built software for specific industries — deployed faster, priced better, and tailored to exactly how your business works.
-            </p>
-          </motion.div>
+      {/* 2. Four services */}
+      {SERVICES.map((s, i) => (
+        <section
+          key={s.id}
+          id={s.id}
+          aria-labelledby={`${s.id}-h`}
+          data-logi={`${s.name}: ${s.promise}`}
+          className={`${ANCHOR} py-section ${i % 2 === 0 ? "bg-secondary/40" : "bg-background"}`}
+        >
+          <div className="container mx-auto grid max-w-6xl items-center gap-10 px-gutter lg:grid-cols-2 lg:gap-14">
+            <motion.div
+              className={i % 2 === 1 ? "lg:order-2" : ""}
+              initial={reduce ? false : { opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6 }}
+            >
+              <Eyebrow>{s.name}</Eyebrow>
+              <h2 id={`${s.id}-h`} className="mt-3 text-balance font-display text-h2 font-bold text-foreground">{s.promise}</h2>
+              <p className="mt-4 text-body text-muted-foreground">{s.desc}</p>
+              <div className="mt-6 grid gap-6 sm:grid-cols-2">
+                <div>
+                  <h3 className="font-display text-body font-bold text-foreground">Typical examples</h3>
+                  <ul className="mt-3 space-y-2">
+                    {s.examples.map((e) => (
+                      <li key={e} className="flex items-start gap-2 text-body-sm text-muted-foreground">
+                        <Check size={16} aria-hidden="true" className="mt-0.5 shrink-0 text-primary-ink" />
+                        {e}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-display text-body font-bold text-foreground">What you get</h3>
+                  <ul className="mt-3 space-y-2">
+                    {s.deliverables.map((e) => (
+                      <li key={e} className="flex items-start gap-2 text-body-sm text-muted-foreground">
+                        <Check size={16} aria-hidden="true" className="mt-0.5 shrink-0 text-primary-ink" />
+                        {e}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              {/* TODO(owner): confirm the examples and deliverables for each service. */}
+              <Button asChild className={`${BTN} mt-8`}>
+                <Link to="/contact">
+                  Discuss your project<span className="sr-only"> ({s.name})</span>
+                </Link>
+              </Button>
+            </motion.div>
+            <motion.div
+              initial={reduce ? false : { opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <ServiceVignette id={s.id} />
+            </motion.div>
+          </div>
+        </section>
+      ))}
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {industrySolutions.map((sol) => (
-              <SolutionCard key={sol.id} sol={sol} />
+      {/* 3. Ready-made solutions */}
+      <section id="ready-made" aria-labelledby="ready-h" data-logi="Ready-made, then made yours." className={`${ANCHOR} bg-background py-section`}>
+        <div className="container mx-auto px-gutter">
+          <div className="mx-auto max-w-2xl text-center">
+            <Eyebrow>Ready-made solutions</Eyebrow>
+            <h2 id="ready-h" className="mt-3 text-balance font-display text-h2 font-bold text-foreground">Proven systems, customised to your business</h2>
+            <p className="mt-4 text-body text-muted-foreground">Prices are starting prices. After a free call you get a fixed quote in writing.</p>
+          </div>
+
+          <div role="group" aria-label="Filter by industry" className="mx-auto mt-8 flex max-w-4xl flex-wrap justify-center gap-2">
+            {INDUSTRIES.map((name) => {
+              const on = industry === name;
+              return (
+                <button
+                  key={name}
+                  type="button"
+                  aria-pressed={on}
+                  onClick={() => setIndustry(name)}
+                  className={`inline-flex min-h-[2.75rem] items-center rounded-full border px-4 text-body-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[hsl(var(--focus-ring))] ${
+                    on ? "border-primary bg-primary text-primary-on" : "border-border bg-card text-foreground hover:border-primary/50"
+                  }`}
+                >
+                  {name}
+                </button>
+              );
+            })}
+          </div>
+          <p className="mt-4 text-center text-label text-muted-foreground" role="status" aria-live="polite">
+            Showing {shown.length} {shown.length === 1 ? "solution" : "solutions"}
+            {industry !== "All" ? ` for ${industry.toLowerCase()}` : ""}
+          </p>
+
+          <motion.ul layout={!reduce} className="mx-auto mt-8 grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <AnimatePresence mode="popLayout" initial={false}>
+              {shown.map((sol) => (
+                <motion.li
+                  key={sol.id}
+                  layout={!reduce}
+                  initial={reduce ? false : { opacity: 0, scale: 0.97 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={reduce ? { opacity: 0, transition: { duration: 0 } } : { opacity: 0, scale: 0.97 }}
+                  transition={{ duration: reduce ? 0 : 0.25 }}
+                >
+                  <SolutionCard sol={sol} />
+                </motion.li>
+              ))}
+            </AnimatePresence>
+          </motion.ul>
+          {/* TODO(owner): third-party tools such as WhatsApp, Razorpay and Google Calendar are listed on detail pages as "works with" integrations only. */}
+        </div>
+      </section>
+
+      {/* 4. How a project works */}
+      <section data-logi="Four steps, no surprises." aria-labelledby="steps-h" className="bg-secondary/40 py-section">
+        <div className="container mx-auto max-w-3xl px-gutter">
+          <div className="text-center">
+            <Eyebrow>How a project works</Eyebrow>
+            <h2 id="steps-h" className="mt-3 font-display text-h2 font-bold text-foreground">From first call to launch</h2>
+          </div>
+          <ol ref={stepsRef} className="relative mt-12 space-y-10 pl-14">
+            <span aria-hidden="true" className="absolute bottom-2 left-[1.1875rem] top-2 w-0.5 bg-border" />
+            <motion.span
+              aria-hidden="true"
+              className="absolute bottom-2 left-[1.1875rem] top-2 w-0.5 origin-top bg-primary"
+              style={{ scaleY: reduce ? 1 : line }}
+            />
+            {PROJECT_STEPS.map((st, i) => (
+              <li key={st.title} className="relative">
+                <span className="absolute -left-14 flex h-10 w-10 items-center justify-center rounded-full bg-primary font-display text-body font-bold text-primary-on">{i + 1}</span>
+                <h3 className="font-display text-h3 font-bold text-foreground">{st.title}</h3>
+                <p className="mt-1 text-body text-muted-foreground">{st.text}</p>
+              </li>
             ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* 5. Ways to work with us */}
+      <section data-logi="Pick the way that suits you." aria-labelledby="ways-h" className="bg-background py-section">
+        <div className="container mx-auto px-gutter">
+          <div className="mx-auto max-w-2xl text-center">
+            <Eyebrow>Ways to work with us</Eyebrow>
+            <h2 id="ways-h" className="mt-3 font-display text-h2 font-bold text-foreground">Three ways to start</h2>
+          </div>
+          <ul className="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-3">
+            {WAYS.map((w) => (
+              <li key={w.title} className={CARD}>
+                <h3 className="font-display text-h3 font-bold text-foreground">{w.title}</h3>
+                <p className="mt-2 text-body-sm text-muted-foreground">{w.text}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* 6. FAQ + contact CTA */}
+      <section aria-labelledby="faq-h" className="bg-secondary/40 py-section-sm">
+        <div className="container mx-auto max-w-3xl px-gutter">
+          <h2 id="faq-h" className="text-center font-display text-h2 font-bold text-foreground">Common questions</h2>
+          <Accordion type="single" collapsible className="mt-8 rounded-2xl border border-border bg-card px-6">
+            {FAQ.map((f, i) => (
+              <AccordionItem key={f.q} value={`q${i}`}>
+                <AccordionTrigger className="min-h-[2.75rem] text-left text-body font-semibold">{f.q}</AccordionTrigger>
+                <AccordionContent className="text-body-sm text-muted-foreground">{f.a}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+
+          <div className="mt-14 text-center">
+            <h2 className="font-display text-h2 font-bold text-foreground">Tell us what slows your business down</h2>
+            <p className="mt-3 text-body text-muted-foreground">We reply with questions or a call slot, then send a clear plan and a fixed quote.</p>
+            <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Button asChild className={BTN}>
+                <Link to="/contact">
+                  Start a project <ArrowRight size={16} aria-hidden="true" className="ml-2" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" className={BTN_OUTLINE}>
+                <a href={whatsappLink("Hi Logisaar, I'd like to talk about a project.")} target="_blank" rel="noopener noreferrer">
+                  Chat on WhatsApp<span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
