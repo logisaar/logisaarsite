@@ -231,14 +231,21 @@ const About = () => {
                 <Milestone size={13} />
                 <span>Our Story</span>
               </div>
-              <h2 className="font-display text-3xl font-bold">Origins & Foundation</h2>
+              <h2 className="font-display text-3xl font-bold">Founded by two engineers from Odisha</h2>
             </div>
-            <div className="lg:col-span-8 space-y-6 text-muted-foreground text-sm md:text-base leading-relaxed font-medium">
+            <div className="lg:col-span-8 space-y-6 text-muted-foreground text-body font-medium">
+              {/* TODO(owner): add the founders' own reason for starting Logisaar (a sentence or two in their voice); the story below uses only facts already public on the site. */}
               <p>
-                Logisaar was founded in September 2025 by Chinmay Kumar Panda and Biswanath Prasanna Satyabrata Kar — two Computer Science engineers and full-stack developers based in Odisha. Driven by a desire to build high-performance software systems locally, they established the company's registered base in Cuttack, Odisha.
+                Logisaar was founded in September 2025 by <strong className="text-foreground">Chinmay Kumar Panda</strong> and <strong className="text-foreground">Biswanath Prasanna Satyabrata Kar</strong>, two Computer Science engineers and full-stack developers from Odisha.
               </p>
               <p>
-                In a brief timeline, we successfully built and shipped 15+ custom web, database, and automation projects. This rapid progression proved our execution capabilities and confirmed the local demand for specialized engineering.
+                They started with a simple idea: build high-performance software for businesses close to home, and do it properly. The company&rsquo;s registered base is in Cuttack, with the team working from Bhubaneswar.
+              </p>
+              <p>
+                Chinmay leads product strategy, AI engineering and business growth. Biswanath leads system architecture, cloud infrastructure and engineering operations.
+              </p>
+              <p>
+                In a short time the team built and shipped 15+ custom web, database and automation projects. That confirmed there is real local demand for specialised engineering, and it set the direction for what Logisaar builds today: software, AI agents, automation and its own products, IKURO and HeyLane.
               </p>
             </div>
           </div>
