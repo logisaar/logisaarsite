@@ -1,10 +1,208 @@
 {
+ "home@320": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 10692,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "home@375": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 10467,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "home@414": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 10371,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "home@768": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 9666,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "home@1024": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 8926,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "home@1280": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 8794,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "home@1440": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 8808,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "home@1920": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 8958,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "home@1280-zoom200": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 18873,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "ikuro@320": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 15363,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "ikuro@375": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 14632,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "ikuro@414": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 14234,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "ikuro@768": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 10386,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "ikuro@1024": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 8896,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "ikuro@1280": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 9034,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "ikuro@1440": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 9190,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "ikuro@1920": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 9302,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "ikuro@1280-zoom200": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 18538,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "heylane@320": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 16701,
+  "sampleText": [],
+  "sampleTargets": []
+ },
  "heylane@375": {
   "http": 200,
   "overflow": 0,
   "smallText": 0,
   "smallTargets": 0,
   "height": 16790,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "heylane@414": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 16754,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "heylane@768": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 11848,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "heylane@1024": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 10338,
   "sampleText": [],
   "sampleTargets": []
  },
@@ -17,12 +215,138 @@
   "sampleText": [],
   "sampleTargets": []
  },
+ "heylane@1440": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 10364,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "heylane@1920": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 10524,
+  "sampleText": [],
+  "sampleTargets": []
+ },
  "heylane@1280-zoom200": {
   "http": 200,
   "overflow": 0,
   "smallText": 0,
   "smallTargets": 0,
   "height": 21321,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "careers@320": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 1,
+  "height": 5988,
+  "sampleText": [],
+  "sampleTargets": [
+   "126x15 a \"contact@logisaar.com\""
+  ]
+ },
+ "careers@375": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 1,
+  "height": 5714,
+  "sampleText": [],
+  "sampleTargets": [
+   "126x15 a \"contact@logisaar.com\""
+  ]
+ },
+ "careers@414": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 1,
+  "height": 5573,
+  "sampleText": [],
+  "sampleTargets": [
+   "126x15 a \"contact@logisaar.com\""
+  ]
+ },
+ "careers@768": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 1,
+  "height": 3738,
+  "sampleText": [],
+  "sampleTargets": [
+   "126x15 a \"contact@logisaar.com\""
+  ]
+ },
+ "careers@1024": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 1,
+  "height": 3398,
+  "sampleText": [],
+  "sampleTargets": [
+   "126x15 a \"contact@logisaar.com\""
+  ]
+ },
+ "careers@1280": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 1,
+  "height": 3446,
+  "sampleText": [],
+  "sampleTargets": [
+   "126x15 a \"contact@logisaar.com\""
+  ]
+ },
+ "careers@1440": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 1,
+  "height": 3494,
+  "sampleText": [],
+  "sampleTargets": [
+   "126x15 a \"contact@logisaar.com\""
+  ]
+ },
+ "careers@1920": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 1,
+  "height": 3542,
+  "sampleText": [],
+  "sampleTargets": [
+   "126x15 a \"contact@logisaar.com\""
+  ]
+ },
+ "careers@1280-zoom200": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 1,
+  "height": 7300,
+  "sampleText": [],
+  "sampleTargets": [
+   "252x29 a \"contact@logisaar.com\""
+  ]
+ },
+ "products@320": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 3660,
   "sampleText": [],
   "sampleTargets": []
  },
@@ -35,12 +359,57 @@
   "sampleText": [],
   "sampleTargets": []
  },
+ "products@414": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 3495,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "products@768": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 2154,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "products@1024": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 1876,
+  "sampleText": [],
+  "sampleTargets": []
+ },
  "products@1280": {
   "http": 200,
   "overflow": 0,
   "smallText": 0,
   "smallTargets": 0,
   "height": 1980,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "products@1440": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 2011,
+  "sampleText": [],
+  "sampleTargets": []
+ },
+ "products@1920": {
+  "http": 200,
+  "overflow": 0,
+  "smallText": 0,
+  "smallTargets": 0,
+  "height": 2019,
   "sampleText": [],
   "sampleTargets": []
  },
