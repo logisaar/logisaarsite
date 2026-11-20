@@ -17,11 +17,6 @@
             "source": "/techxera",
             "destination": "/ikuro",
             "permanent": true
-        },
-        {
-            "source": "/favicon.ico",
-            "destination": "/favicon.png",
-            "permanent": true
         }
     ],
     "headers": [

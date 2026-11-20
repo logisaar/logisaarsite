@@ -23,19 +23,19 @@ import {
 } from "@/components/testimonial";
 
 // Import all client brand logos
-import logoSwosti from "@/assets/all brand logos/swosti logo.png";
-import logoCmc from "@/assets/all brand logos/cmc logo.webp";
-import logoBaba from "@/assets/all brand logos/baba brand fashion.png";
-import logoEklabhya from "@/assets/all brand logos/eklabhya classes.png";
-import logoAmruta from "@/assets/all brand logos/amruta bhojan.png";
-import logoLinchans from "@/assets/all brand logos/linchans.png";
-import logoJnsBio from "@/assets/all brand logos/jns biology.png";
-import logoJns from "@/assets/all brand logos/jns.png";
-import logoVastu from "@/assets/all brand logos/massom vastu guru.png";
-import logoNit from "@/assets/all brand logos/nit-logo.png";
-import logoSako from "@/assets/all brand logos/sako sales.png";
-import logoRenuka from "@/assets/all brand logos/the renuka.png";
-import logoVinayak from "@/assets/all brand logos/vinayak.png";
+import logoSwosti from "@/assets/brand-logos/swosti.webp";
+import logoCmc from "@/assets/brand-logos/cmc.webp";
+import logoBaba from "@/assets/brand-logos/baba-brand-fashion.webp";
+import logoEklabhya from "@/assets/brand-logos/eklabhya-classes.webp";
+import logoAmruta from "@/assets/brand-logos/amruta-bhojan.webp";
+import logoLinchans from "@/assets/brand-logos/linchans.webp";
+import logoJnsBio from "@/assets/brand-logos/jns-biology.webp";
+import logoJns from "@/assets/brand-logos/jns.webp";
+import logoVastu from "@/assets/brand-logos/massom-vastu-guru.webp";
+import logoNit from "@/assets/brand-logos/nit.webp";
+import logoSako from "@/assets/brand-logos/sako-sales.webp";
+import logoRenuka from "@/assets/brand-logos/the-renuka.webp";
+import logoVinayak from "@/assets/brand-logos/vinayak.webp";
 
 const TESTIMONIALS_ROW1 = [
   {

@@ -1,0 +1,114 @@
+{
+  "mockups/ai-receptionist": {
+    "base": "/images/mockups/ai-receptionist",
+    "width": 800,
+    "height": 515
+  },
+  "mockups/hotel-management": {
+    "base": "/images/mockups/hotel-management",
+    "width": 800,
+    "height": 439
+  },
+  "mockups/school-erp": {
+    "base": "/images/mockups/school-erp",
+    "width": 800,
+    "height": 469
+  },
+  "mockups/smart-crm": {
+    "base": "/images/mockups/smart-crm",
+    "width": 800,
+    "height": 487
+  },
+  "services/ai-automation": {
+    "base": "/images/services/ai-automation",
+    "width": 800,
+    "height": 800
+  },
+  "services/ai-lead": {
+    "base": "/images/services/ai-lead",
+    "width": 800,
+    "height": 800
+  },
+  "services/ai-receptionist": {
+    "base": "/images/services/ai-receptionist",
+    "width": 800,
+    "height": 800
+  },
+  "services/crm": {
+    "base": "/images/services/crm",
+    "width": 800,
+    "height": 800
+  },
+  "services/hotel": {
+    "base": "/images/services/hotel",
+    "width": 800,
+    "height": 800
+  },
+  "services/proposal": {
+    "base": "/images/services/proposal",
+    "width": 800,
+    "height": 800
+  },
+  "services/qr-menu": {
+    "base": "/images/services/qr-menu",
+    "width": 800,
+    "height": 800
+  },
+  "services/school": {
+    "base": "/images/services/school",
+    "width": 800,
+    "height": 800
+  },
+  "services/travel": {
+    "base": "/images/services/travel",
+    "width": 800,
+    "height": 800
+  },
+  "projects/bababrand": {
+    "base": "/images/projects/bababrand",
+    "width": 800,
+    "height": 391
+  },
+  "projects/cmcinfratech": {
+    "base": "/images/projects/cmcinfratech",
+    "width": 800,
+    "height": 394
+  },
+  "projects/gatepass": {
+    "base": "/images/projects/gatepass",
+    "width": 800,
+    "height": 388
+  },
+  "projects/linchans": {
+    "base": "/images/projects/linchans",
+    "width": 800,
+    "height": 390
+  },
+  "projects/nalanda-exam": {
+    "base": "/images/projects/nalanda-exam",
+    "width": 800,
+    "height": 390
+  },
+  "projects/nalanda": {
+    "base": "/images/projects/nalanda",
+    "width": 800,
+    "height": 412
+  },
+  "projects/sakosales": {
+    "base": "/images/projects/sakosales",
+    "width": 800,
+    "height": 391
+  },
+  "projects/swosti": {
+    "base": "/images/projects/swosti",
+    "width": 800,
+    "height": 391
+  },
+  "logo": {
+    "src": "/logo-2x.png",
+    "sourceSize": [
+      1247,
+      358
+    ]
+  }
+}

@@ -1,3 +1,5 @@
+import { getImage } from "@/data/images";
+import ResponsiveImage from "@/components/ResponsiveImage";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -18,7 +20,7 @@ const industrySolutions = [
     tagline: "Run your entire institution from one dashboard.",
     desc: "Built for schools, colleges and coaching centers in Odisha. Manage students, admissions, fee structures and academic reporting in one place.",
     from: "₹35,000",
-    img: "/images/services/school.png",
+    img: getImage("services", "school"),
     features: [
       "Student admission & digital profiles",
       "Automated attendance + WhatsApp alerts to parents",
@@ -39,7 +41,7 @@ const industrySolutions = [
     tagline: "Reduce staff workload by 60%.",
     desc: "Manage bookings, check-ins, billing and housekeeping for hotels, resorts and homestays across Odisha. Prevent double bookings and maximize occupancy.",
     from: "₹40,000",
-    img: "/images/services/hotel.png",
+    img: getImage("services", "hotel"),
     features: [
       "Real-time room booking & availability calendar",
       "Online booking engine for your website",
@@ -60,7 +62,7 @@ const industrySolutions = [
     tagline: "Convert leads 24/7.",
     desc: "Your AI follows up with every incoming lead instantly via WhatsApp, email and smart voice calls. Never miss a response time window.",
     from: "₹25,000 + ₹5K/mo",
-    img: "/images/services/ai-lead.png",
+    img: getImage("services", "ai-lead"),
     features: [
       "Instant WhatsApp follow-up upon submission",
       "Automated email drip sequences",
@@ -81,7 +83,7 @@ const industrySolutions = [
     tagline: "Never miss a call or booking.",
     desc: "An AI agent that answers calls, logs bookings, and handles WhatsApp enquiries 24/7. Trained on your custom business FAQs.",
     from: "₹20,000 + ₹4K/mo",
-    img: "/images/services/ai-receptionist.png",
+    img: getImage("services", "ai-receptionist"),
     features: [
       "24/7 AI voice call answering",
       "WhatsApp auto-reply & booking",
@@ -102,7 +104,7 @@ const industrySolutions = [
     tagline: "Close clients 3x faster.",
     desc: "Send beautiful branded interactive proposals with legally valid e-signatures and instant payment links. Built for modern freelancers and agencies.",
     from: "₹15,000",
-    img: "/images/services/proposal.png",
+    img: getImage("services", "proposal"),
     features: [
       "Branded proposal templates (logo & colors)",
       "Interactive pricing packages clients can select",
@@ -123,7 +125,7 @@ const industrySolutions = [
     tagline: "Scan, order, pay — no waiter, no paper.",
     desc: "Digital menu cards for restaurants, cafes, and dhabas across Odisha. Customers scan a table-specific QR code, browse items, and pay from their phone.",
     from: "₹12,000",
-    img: "/images/services/qr-menu.png",
+    img: getImage("services", "qr-menu"),
     features: [
       "Table-specific QR code generation — no app download",
       "Digital catalog with high-quality photos",
@@ -144,7 +146,7 @@ const industrySolutions = [
     tagline: "Get direct bookings from Odisha tourists.",
     desc: "Direct booking travel systems for operators in Odisha. Built with tour listing tools, automated itineraries, and localized SEO.",
     from: "₹20,000",
-    img: "/images/services/travel.png",
+    img: getImage("services", "travel"),
     features: [
       "Tour package listings with photo galleries",
       "Online booking calendar & slots availability",
@@ -165,7 +167,7 @@ const industrySolutions = [
     tagline: "Save 20+ hours a week.",
     desc: "Replace manual business workflows with automated AI routines. Connect sheets, CRMs, WhatsApp, and email alerts into a unified sync.",
     from: "₹20,000",
-    img: "/images/services/ai-automation.png",
+    img: getImage("services", "ai-automation"),
     features: [
       "WhatsApp Business API event automation",
       "Automated PDF invoice & reports generation",
@@ -186,7 +188,7 @@ const industrySolutions = [
     tagline: "Own your CRM forever.",
     desc: "A sales pipeline custom built for your exact operational workflow. One-time fee, full source code ownership, zero monthly licenses.",
     from: "₹45,000",
-    img: "/images/services/crm.png",
+    img: getImage("services", "crm"),
     features: [
       "Visual sales pipeline (Kanban board stages)",
       "Lead scoring & detailed contact timelines",
@@ -210,8 +212,8 @@ const SolutionCard = ({ sol }: { sol: typeof industrySolutions[0] }) => {
     >
       {/* Product Image Header */}
       <div className="relative overflow-hidden" style={{ height: 220 }}>
-        <img
-          src={sol.img}
+        <ResponsiveImage
+          image={sol.img}
           alt={sol.name}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           loading="lazy"

@@ -1,11 +1,13 @@
-import nalandaImg from "@/assets/projects/nalanda.png";
-import nalandaExamImg from "@/assets/projects/nalanda-exam.png";
-import swostiImg from "@/assets/projects/swosti.png";
-import linchansImg from "@/assets/projects/linchans.png";
-import bababrandImg from "@/assets/projects/bababrand.png";
-import sakosalesImg from "@/assets/projects/sakosales.png";
-import cmcinfratechImg from "@/assets/projects/cmcinfratech.png";
-import gatepassImg from "@/assets/projects/gatepass.png";
+import { getImage } from "@/data/images";
+
+const nalandaImg = getImage("projects", "nalanda");
+const nalandaExamImg = getImage("projects", "nalanda-exam");
+const swostiImg = getImage("projects", "swosti");
+const linchansImg = getImage("projects", "linchans");
+const bababrandImg = getImage("projects", "bababrand");
+const sakosalesImg = getImage("projects", "sakosales");
+const cmcinfratechImg = getImage("projects", "cmcinfratech");
+const gatepassImg = getImage("projects", "gatepass");
 
 export const projects = [
   {

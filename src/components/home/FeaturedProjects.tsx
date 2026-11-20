@@ -1,3 +1,4 @@
+import ResponsiveImage from "@/components/ResponsiveImage";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -52,7 +53,7 @@ const FeaturedProjects = () => {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden block"
                 >
-                  <img src={project.image} alt={project.title} className="w-full h-full object-cover" loading="lazy" />
+                  <ResponsiveImage image={project.image} alt={project.title} className="w-full h-full object-cover" loading="lazy" />
                   <NoiseTexture opacity={0.04} />
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/30 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -111,7 +112,7 @@ const FeaturedProjects = () => {
                   whileHover={{ scale: 0.98 }}
                   transition={{ type: "spring", stiffness: 200 }}
                 >
-                  <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
+                  <ResponsiveImage image={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
                   <NoiseTexture opacity={0.04} />
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/30 to-transparent" />
                   <svg className="absolute top-4 left-4 opacity-30" width="40" height="40" viewBox="0 0 40 40">

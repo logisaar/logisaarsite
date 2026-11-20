@@ -1,12 +1,11 @@
+import { getImage } from "@/data/images";
+import ResponsiveImage from "@/components/ResponsiveImage";
 import { motion } from "framer-motion";
-import swosti from "@/assets/projects/swosti.png";
-import nalanda from "@/assets/projects/nalanda.png";
-import sakosales from "@/assets/projects/sakosales.png";
 
 const floatingCards = [
-  { img: swosti, label: "Swosti Premium", delay: 0, x: 0, y: 0, rotate: -3, scale: 1 },
-  { img: nalanda, label: "Nalanda ERP", delay: 0.2, x: 40, y: -30, rotate: 4, scale: 0.9 },
-  { img: sakosales, label: "SakoSales CRM", delay: 0.4, x: -20, y: 50, rotate: -2, scale: 0.85 },
+  { img: getImage("projects", "swosti"), label: "Swosti Premium", delay: 0, x: 0, y: 0, rotate: -3, scale: 1 },
+  { img: getImage("projects", "nalanda"), label: "Nalanda ERP", delay: 0.2, x: 40, y: -30, rotate: 4, scale: 0.9 },
+  { img: getImage("projects", "sakosales"), label: "SakoSales CRM", delay: 0.4, x: -20, y: 50, rotate: -2, scale: 0.85 },
 ];
 
 const HeroVisual = () => {
@@ -39,8 +38,8 @@ const HeroVisual = () => {
             className="rounded-xl overflow-hidden border border-border/30 bg-card shadow-2xl shadow-primary/5"
           >
             <div className="w-64 md:w-72">
-              <img
-                src={card.img}
+              <ResponsiveImage
+                image={card.img}
                 alt={card.label}
                 className="w-full h-40 md:h-44 object-cover object-top"
               />

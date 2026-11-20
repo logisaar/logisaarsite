@@ -1,3 +1,5 @@
+import { getImage } from "@/data/images";
+import ResponsiveImage from "@/components/ResponsiveImage";
 import { useState } from "react";
 import Layout from "@/components/Layout";
 import HeroSection from "@/components/home/HeroSection";
@@ -16,30 +18,30 @@ import MagneticButton from "@/components/creative/MagneticButton";
 import AnimatedButton from "@/components/creative/AnimatedButton";
 
 // Import dashboard assets
-import schoolErpImg from "@/assets/school erp dashboard.png";
-import aiReceptionistImg from "@/assets/ai reception.png";
-import smartCrmImg from "@/assets/smart crm.png";
-import hotelMgmtImg from "@/assets/hotel managment system.png";
+const schoolErpImg = getImage("mockups", "school-erp");
+const aiReceptionistImg = getImage("mockups", "ai-receptionist");
+const smartCrmImg = getImage("mockups", "smart-crm");
+const hotelMgmtImg = getImage("mockups", "hotel-management");
 
 // Import project assets
-import swostiImg from "@/assets/projects/swosti.png";
-import bababrandImg from "@/assets/projects/bababrand.png";
-import nalandaImg from "@/assets/projects/nalanda.png";
-import gatepassImg from "@/assets/projects/gatepass.png";
+const swostiImg = getImage("projects", "swosti");
+const bababrandImg = getImage("projects", "bababrand");
+const nalandaImg = getImage("projects", "nalanda");
+const gatepassImg = getImage("projects", "gatepass");
 
 // Import brand logos
-import brandBabaLogo from "@/assets/all brand logos/baba brand fashion.png";
-import brandEklabhyaLogo from "@/assets/all brand logos/eklabhya classes.png";
-import brandJnsLogo from "@/assets/all brand logos/jns.png";
-import brandLinchansLogo from "@/assets/all brand logos/linchans.png";
-import brandSakoLogo from "@/assets/all brand logos/sako sales.png";
-import brandRenukaLogo from "@/assets/all brand logos/the renuka.png";
-import brandVinayakLogo from "@/assets/all brand logos/vinayak.png";
-import brandCmcLogo from "@/assets/all brand logos/cmc logo.webp";
-import brandNitLogo from "@/assets/all brand logos/nit-logo.png";
-import brandSwostiLogo from "@/assets/all brand logos/swosti logo.png";
-import brandAmrutaLogo from "@/assets/all brand logos/amruta bhojan.png";
-import brandMassomLogo from "@/assets/all brand logos/massom vastu guru.png";
+import brandBabaLogo from "@/assets/brand-logos/baba-brand-fashion.webp";
+import brandEklabhyaLogo from "@/assets/brand-logos/eklabhya-classes.webp";
+import brandJnsLogo from "@/assets/brand-logos/jns.webp";
+import brandLinchansLogo from "@/assets/brand-logos/linchans.webp";
+import brandSakoLogo from "@/assets/brand-logos/sako-sales.webp";
+import brandRenukaLogo from "@/assets/brand-logos/the-renuka.webp";
+import brandVinayakLogo from "@/assets/brand-logos/vinayak.webp";
+import brandCmcLogo from "@/assets/brand-logos/cmc.webp";
+import brandNitLogo from "@/assets/brand-logos/nit.webp";
+import brandSwostiLogo from "@/assets/brand-logos/swosti.webp";
+import brandAmrutaLogo from "@/assets/brand-logos/amruta-bhojan.webp";
+import brandMassomLogo from "@/assets/brand-logos/massom-vastu-guru.webp";
 
 // ─── Local Business Schema ──────────────────────────────────────────────────
 const localBusinessSchema = {
@@ -361,8 +363,8 @@ const Index = () => {
                   className="md:w-[65%] w-full bg-[#F3F4F6] dark:bg-slate-800/40 flex items-center justify-center border-b md:border-b-0 md:border-r border-border/40 shrink-0 self-stretch overflow-hidden md:aspect-auto aspect-[1.65/1]"
                   style={{ aspectRatio: undefined }}
                 >
-                  <img
-                    src={sol.img}
+                  <ResponsiveImage
+                    image={sol.img}
                     alt={sol.title}
                     className="w-full h-full object-contain group-hover:scale-[1.05] transition-transform duration-500 origin-center"
                   />

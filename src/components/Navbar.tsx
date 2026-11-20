@@ -82,7 +82,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between gap-8">
           <Link to="/" className="shrink-0">
             <img
-              src="/logo.png"
+              src="/logo-2x.png"
               alt="LogiSaar"
               className={`w-auto transition-all duration-500 ${scrolled ? "h-9 md:h-11" : "h-12 md:h-15"}`}
             />

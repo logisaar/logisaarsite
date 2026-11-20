@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Trash2, FileBox, CheckCircle, X } from "lucide-react";
 import { submitForm } from "@/lib/submitForm";
 import { useToast } from "@/hooks/use-toast";
-import quoteIllustration from "@/assets/quote-illustration.png";
+import quoteIllustration from "@/assets/quote-illustration.webp";
 import {
   Dialog,
   DialogContent,

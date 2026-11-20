@@ -1,3 +1,4 @@
+import ResponsiveImage from "@/components/ResponsiveImage";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Layout from "@/components/Layout";
@@ -80,7 +81,7 @@ const Portfolio = () => {
                   className={`group rounded-2xl overflow-hidden bg-card border border-border cursor-pointer relative block ${i === 0 ? "md:col-span-2" : ""}`}
                 >
                   <div className={`overflow-hidden relative ${i === 0 ? "aspect-[21/9]" : "aspect-video"}`}>
-                    <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
+                    <ResponsiveImage image={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                       <p className="text-white/60 text-xs uppercase tracking-[0.2em] mb-1">{project.category}</p>
                       {/* Industry tag */}

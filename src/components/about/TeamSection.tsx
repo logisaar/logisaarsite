@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Linkedin, Award } from "lucide-react";
-import chinmayPhoto from "@/assets/team/chinmay.jpg";
-import bpsPhoto from "@/assets/team/bps.jpg";
+import chinmayPhoto from "@/assets/team/chinmay.webp";
+import bpsPhoto from "@/assets/team/bps.webp";
 
 interface TeamMember {
   name: string;

@@ -126,11 +126,11 @@ const HeroSection = () => {
       {/* Responsive hero background images */}
       <div
         className="hero-bg-image absolute inset-0 bg-cover bg-center pointer-events-none z-0 md:hidden"
-        style={{ backgroundImage: "url('/smartphone background.png')" }}
+        style={{ backgroundImage: "url('/hero-bg-mobile.svg')" }}
       />
       <div
         className="hero-bg-image absolute inset-0 bg-cover bg-center pointer-events-none z-0 hidden md:block"
-        style={{ backgroundImage: "url('/hero background.png')" }}
+        style={{ backgroundImage: "url('/hero-bg.svg')" }}
       />
 
       {/* Subtle grid — very faint */}

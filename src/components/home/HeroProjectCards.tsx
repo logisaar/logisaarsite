@@ -1,3 +1,5 @@
+import type { ResponsiveSrc } from "@/data/images";
+import ResponsiveImage from "@/components/ResponsiveImage";
 import { motion, useMotionValue, useTransform, useAnimationControls } from "framer-motion";
 import { useRef, RefObject, useCallback, useEffect, useMemo } from "react";
 import { projects as allProjects } from "@/data/projects";
@@ -47,7 +49,7 @@ const ProjectCard = ({
   index,
   dragConstraintsRef,
 }: {
-  project: { name: string; image: string; rotate: number; posX: number; posY: number };
+  project: { name: string; image: ResponsiveSrc; rotate: number; posX: number; posY: number };
   index: number;
   dragConstraintsRef: RefObject<HTMLDivElement>;
 }) => {
@@ -143,8 +145,8 @@ const ProjectCard = ({
           </div>
         </div>
         <div className="rounded-b-xl overflow-hidden border border-t-0 border-border">
-          <img
-            src={project.image}
+          <ResponsiveImage
+            image={project.image}
             alt={project.name}
             className="w-full h-auto object-cover pointer-events-none"
             loading="lazy"
