@@ -1,243 +1,403 @@
-import { CONTACT } from "@/lib/contact";
-import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
-import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
+import Eyebrow from "@/components/Eyebrow";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import Layout from "@/components/Layout";
-import TextReveal from "@/components/creative/TextReveal";
-import MagneticButton from "@/components/creative/MagneticButton";
-import { useToast } from "@/hooks/use-toast";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { CONTACT, whatsappLink } from "@/lib/contact";
 import { submitForm } from "@/lib/submitForm";
-import contactBg from "@/assets/contact-bg.jpg";
-import SEO from "@/components/SEO";
+
+const NEEDS = [
+  "Software development",
+  "AI agent",
+  "Business automation",
+  "AI software",
+  "Ready-made solution",
+  "IKURO",
+  "HeyLane",
+  "Something else",
+] as const;
+
+const STEPS = [
+  "We read your message",
+  "We reply with questions or a call slot",
+  "You get a clear plan and a fixed quote",
+];
+
+// TODO(owner): confirm each FAQ answer before launch.
+const FAQ = [
+  {
+    q: "How do quotes work?",
+    a: "After we understand the problem, we send a written scope with a fixed price. You see the full cost before any work starts.",
+  },
+  {
+    q: "Do you work with clients outside India?",
+    a: "Yes. We work with clients across India and abroad, and we run calls and delivery online.",
+  },
+  {
+    q: "Can you work with our existing software?",
+    a: "Usually, yes. Tell us what you use today and we will say how a new tool can connect to it, or whether it should replace it.",
+  },
+];
+
+type FieldName = "name" | "email" | "message";
+const WA_TEXT = "Hi Logisaar, I'd like to talk about a project.";
+
+const validate = (field: FieldName, value: string): string => {
+  const v = value.trim();
+  if (field === "name") return v ? "" : "Add your name so we know who to reply to.";
+  if (field === "email") {
+    if (!v) return "Add an email we can reply to.";
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? "" : "Check the email format, for example name@company.com.";
+  }
+  return v ? "" : "Add a few lines about what you need.";
+};
+
+const CARD = "flex h-full flex-col rounded-2xl border border-border bg-card p-6";
+const BTN = "min-h-[2.75rem] rounded-full border-0 bg-primary px-6 font-semibold text-primary-on hover:bg-primary/90";
+
+const Field = ({
+  id,
+  label,
+  optional,
+  helper,
+  error,
+  children,
+}: {
+  id: string;
+  label: string;
+  optional?: boolean;
+  helper?: string;
+  error: string;
+  children: React.ReactNode;
+}) => (
+  <div className="space-y-1.5">
+    <label htmlFor={id} className="block text-body-sm font-medium text-foreground">
+      {label}
+      {optional && <span className="font-normal text-muted-foreground"> (optional)</span>}
+    </label>
+    {children}
+    {helper && (
+      <p id={`${id}-help`} className="text-label text-muted-foreground">
+        {helper}
+      </p>
+    )}
+    <p id={`${id}-err`} aria-live="polite" className="min-h-[1.25rem] text-label text-destructive">
+      {error}
+    </p>
+  </div>
+);
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [submitting, setSubmitting] = useState(false);
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const formRef = useRef(null);
-  const formInView = useInView(formRef, { once: true, amount: 0.2 });
+  const [values, setValues] = useState({ name: "", email: "", phone: "", company: "", message: "" });
+  const [needs, setNeeds] = useState<string[]>([]);
+  const [errors, setErrors] = useState<Record<FieldName, string>>({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "failed">("idle");
+  const [sentTo, setSentTo] = useState({ name: "", email: "" });
+  const doneRef = useRef<HTMLDivElement>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+  useEffect(() => {
+    if (status === "sent") doneRef.current?.focus();
+  }, [status]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitting(true);
-    const result = await submitForm(formData, "contact_page");
-    setSubmitting(false);
-    if (result.success) {
-      toast({ title: "Message sent!", description: "We'll get back to you within 24 hours." });
-      setFormData({ name: "", email: "", message: "" });
-    } else {
-      toast({ title: "Failed to send", description: result.error, variant: "destructive" });
+  const set = (field: keyof typeof values) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const v = e.target.value;
+    setValues((p) => ({ ...p, [field]: v }));
+    if (field === "name" || field === "email" || field === "message") {
+      setErrors((p) => (p[field] ? { ...p, [field]: "" } : p));
     }
   };
+  const blur = (field: FieldName) => () => setErrors((p) => ({ ...p, [field]: validate(field, values[field]) }));
+  const toggleNeed = (n: string) => setNeeds((p) => (p.includes(n) ? p.filter((x) => x !== n) : [...p, n]));
+  const aria = (field: FieldName, helper?: boolean) => ({
+    "aria-invalid": errors[field] ? true : undefined,
+    "aria-describedby": `${helper ? `${field}-help ` : ""}${field}-err`,
+  });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (status === "sending") return;
+    const next = {
+      name: validate("name", values.name),
+      email: validate("email", values.email),
+      message: validate("message", values.message),
+    };
+    setErrors(next);
+    const firstBad = (["name", "email", "message"] as FieldName[]).find((f) => next[f]);
+    if (firstBad) {
+      document.getElementById(firstBad)?.focus();
+      return;
+    }
+    setStatus("sending");
+    const result = await submitForm(
+      {
+        name: values.name.trim(),
+        email: values.email.trim(),
+        phone: values.phone.trim(),
+        message: values.message.trim(),
+        extra: { company: values.company.trim(), needs: needs.join(", ") },
+      },
+      "contact_page",
+    );
+    if (result.success) {
+      setSentTo({ name: values.name.trim(), email: values.email.trim() });
+      setStatus("sent");
+    } else {
+      setStatus("failed");
+    }
+  };
+
+  const reset = () => {
+    setValues({ name: "", email: "", phone: "", company: "", message: "" });
+    setNeeds([]);
+    setErrors({ name: "", email: "", message: "" });
+    setStatus("idle");
+  };
+
+  // TODO(owner): confirm reply time ("within one working day") before launch.
+  const description =
+    "Tell Logisaar what slows your team down. We reply within one working day with a clear next step: a call, a quote or a straight answer.";
 
   return (
     <Layout>
       <SEO
-        title="Contact Logisaar | AI-Native Software Scoping in Odisha"
-        description="Connect with Logisaar via WhatsApp for direct system scoping and project budgets. Active in Cuttack, Bhubaneswar, and all of Odisha."
-        keywords="contact Logisaar, WhatsApp developer Odisha, software agency Cuttack, AI systems Bhubaneswar"
+        title="Contact Logisaar | Software, AI agents and automation"
+        description={description}
         canonical="https://www.logisaar.in/contact"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: "Contact Logisaar",
+          url: "https://www.logisaar.in/contact",
+          mainEntity: {
+            "@type": "Organization",
+            name: "Logisaar Technologies Private Limited",
+            url: "https://www.logisaar.in",
+            email: CONTACT.email,
+            telephone: CONTACT.phone,
+            address: { "@type": "PostalAddress", addressLocality: "Cuttack", addressRegion: "Odisha", addressCountry: "IN" },
+            contactPoint: [
+              { "@type": "ContactPoint", contactType: "customer support", email: CONTACT.email, telephone: CONTACT.phone },
+            ],
+          },
+        }}
       />
-      
-      <section data-logi="WhatsApp is the fastest way to reach the team." className="min-h-[100svh] grid md:grid-cols-2">
-        {/* Left Side — Brand Contacts */}
-        <div className="relative flex items-center justify-center py-32 md:py-0 overflow-hidden">
-          <img src={contactBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-950/85 via-slate-900/80 to-primary/20" />
-          
-          <div className="relative z-10 px-8 md:px-16 text-center md:text-left text-white space-y-6">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-primary-ink font-mono text-xs uppercase tracking-[0.2em]"
-            >
-              Get in Touch
-            </motion.p>
-            
-            <div className="space-y-1">
-              <TextReveal
-                text="Let's build"
-                as="h1"
-                className="font-display text-5xl md:text-7xl font-bold leading-[0.95] text-white"
-                delay={0.2}
-              />
-              <TextReveal
-                text="the future."
-                as="h1"
-                className="font-display text-5xl md:text-7xl font-bold text-gradient leading-[0.95]"
-                delay={0.4}
-              />
-            </div>
-            
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
-              className="text-white/70 text-sm md:text-base max-w-sm leading-relaxed"
-            >
-              Connect with our founders directly. We answer setup and integrations questions within hours.
-            </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1 }}
-              className="space-y-4 pt-4"
-            >
-              {/* WhatsApp direct */}
-              <a
-                href="https://wa.me/918596072510?text=Hi%20Logisaar%2C%20I'm%20scoping%20a%20new%20software%20project%20and%20want%20to%20get%20in%20touch."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-white/80 justify-center md:justify-start hover:text-white transition-colors group"
-              >
-                <div className="w-10 h-10 rounded-xl bg-green-500 flex items-center justify-center shrink-0 shadow-lg shadow-green-500/20 group-hover:scale-105 transition-transform">
-                  <MessageCircle className="text-white" size={18} fill="currentColor" />
-                </div>
-                <div>
-                  <div className="text-xs text-white/40 font-mono uppercase">WhatsApp (Fastest)</div>
-                  <div className="text-sm font-semibold text-green-400 font-mono">+91 85960 72510</div>
-                </div>
-              </a>
-
-              {/* Email */}
-              <a
-                href={CONTACT.mailto}
-                className="flex items-center gap-3 text-white/80 justify-center md:justify-start hover:text-white transition-colors group"
-              >
-                <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                  <Mail className="text-white" size={18} />
-                </div>
-                <div>
-                  <div className="text-xs text-white/40 font-mono uppercase">Email</div>
-                  <div className="text-sm font-mono">{CONTACT.email}</div>
-                </div>
-              </a>
-
-              {/* Phone */}
-              <a
-                href="tel:+918596072510"
-                className="flex items-center gap-3 text-white/80 justify-center md:justify-start hover:text-white transition-colors group"
-              >
-                <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                  <Phone className="text-white" size={18} />
-                </div>
-                <div>
-                  <div className="text-xs text-white/40 font-mono uppercase">Phone Call</div>
-                  <div className="text-sm font-mono">+91 85960 72510</div>
-                </div>
-              </a>
-
-              {/* Office Address */}
-              <div className="flex items-start gap-3 text-white/80 justify-center md:justify-start">
-                <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center shrink-0 mt-1">
-                  <MapPin className="text-white" size={18} />
-                </div>
-                <div>
-                  <div className="text-xs text-white/40 font-mono uppercase">Registered Office</div>
-                  <div className="text-xs leading-relaxed text-white/70">
-                    Logisaar Technologies Private Limited<br />
-                    Cuttack, Odisha, India
-                  </div>
-                  <div className="text-label text-white/40 font-mono mt-1">CIN: U62012OD2026PTC053632</div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+      {/* Hero */}
+      <section
+        data-logi-dock
+        data-logi="WhatsApp is the fastest way to reach us."
+        className="bg-background pb-section-sm pt-section-sm"
+      >
+        <div className="container mx-auto max-w-3xl px-gutter text-center">
+          <Eyebrow>Contact</Eyebrow>
+          <h1 className="mt-4 font-display text-h1 font-bold text-foreground">Let&rsquo;s talk about your project</h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lead text-muted-foreground">{description}</p>
         </div>
+      </section>
 
-        {/* Right Side — Fallback Scoping Form */}
-        <div className="flex items-center justify-center py-20 md:py-0 px-8 md:px-16 bg-secondary/10" ref={formRef}>
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={formInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full max-w-md space-y-8"
-          >
-            {/* Primary Action Call */}
-            <div className="p-6 rounded-2xl bg-green-500/10 border border-green-500/20 text-center space-y-4">
-              <MessageCircle size={32} className="text-green-500 mx-auto" fill="currentColor" />
-              <h3 className="font-display font-bold text-lg text-foreground">Scoping via WhatsApp</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed max-w-xs mx-auto">
-                Skip the lines. Send details of your requirements, timelines, or designs directly to our WhatsApp numbers.
-              </p>
-              <Button asChild size="lg" className="w-full bg-green-500 hover:bg-green-600 text-white rounded-xl py-5 h-auto text-sm font-semibold">
-                <a
-                  href="https://wa.me/918596072510?text=Hi%20Logisaar%2C%20I'm%20interested%20in%20a%20systems%2Fsoftware%20project%20quote."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2"
-                >
-                  <MessageCircle size={18} fill="currentColor" />
-                  Chat Now
-                </a>
-              </Button>
-            </div>
-
-            <div className="relative flex items-center justify-center">
-              <div className="absolute inset-0 flex items-center"><span className="w-full border-t border-border/60"></span></div>
-              <span className="relative bg-background px-4 text-xs font-mono text-muted-foreground uppercase tracking-widest">OR USE FORM</span>
-            </div>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label className="text-xs uppercase tracking-wider font-mono text-muted-foreground mb-2 block">Name</label>
-                <Input
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Your full name"
-                  required
-                  className="bg-background/50 border-border/50 focus:border-primary h-12 rounded-xl transition-all text-sm"
-                />
+      {/* Three ways to reach us */}
+      <section aria-labelledby="ways-h" className="bg-background pb-section-sm">
+        <div className="container mx-auto max-w-[68rem] px-gutter">
+          <h2 id="ways-h" className="sr-only">
+            Three ways to reach us
+          </h2>
+          <ul className="m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(min(100%,16rem),1fr))] gap-5 p-0">
+            <li className={CARD}>
+              <div className="flex items-center justify-between gap-3">
+                <MessageCircle className="text-primary-ink" size={24} aria-hidden="true" />
+                <span className="rounded-full bg-primary/10 px-3 py-1 text-label font-semibold text-primary-ink">Fastest</span>
               </div>
-              
-              <div>
-                <label className="text-xs uppercase tracking-wider font-mono text-muted-foreground mb-2 block">Email</label>
-                <Input
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="your@email.com"
-                  type="email"
-                  required
-                  className="bg-background/50 border-border/50 focus:border-primary h-12 rounded-xl transition-all text-sm"
-                />
-              </div>
-
-              <div>
-                <label className="text-xs uppercase tracking-wider font-mono text-muted-foreground mb-2 block">Message Details</label>
-                <Textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Type outline requirements or scoping requests..."
-                  rows={4}
-                  required
-                  className="bg-background/50 border-border/50 focus:border-primary rounded-xl transition-all resize-none text-sm"
-                />
-              </div>
-
-              <MagneticButton strength={0.1} className="w-full">
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full group bg-gradient-primary hover:opacity-90 border-0 text-primary-on h-14 rounded-xl text-sm"
-                  disabled={submitting}
-                >
-                  {submitting ? "Sending..." : "Submit Form"}
-                  <Send size={15} className="ml-2 group-hover:translate-x-1 transition-transform" />
+              <h3 className="mt-4 font-display text-h3 font-bold text-foreground">WhatsApp</h3>
+              <p className="mt-1 text-body text-muted-foreground">{CONTACT.phone}</p>
+              <div className="mt-auto pt-6">
+                <Button asChild className={BTN}>
+                  <a href={whatsappLink(WA_TEXT)} target="_blank" rel="noopener noreferrer">
+                    Chat on WhatsApp<span className="sr-only"> (opens in a new tab)</span>
+                  </a>
                 </Button>
-              </MagneticButton>
-            </form>
-          </motion.div>
+              </div>
+            </li>
+            <li className={CARD}>
+              <Mail className="text-primary-ink" size={24} aria-hidden="true" />
+              <h3 className="mt-4 font-display text-h3 font-bold text-foreground">Email</h3>
+              <p className="mt-1 break-all text-body text-muted-foreground">{CONTACT.email}</p>
+              <div className="mt-auto pt-6">
+                <Button asChild className={BTN}>
+                  <a href={CONTACT.mailto}>Email us</a>
+                </Button>
+              </div>
+            </li>
+            <li className={CARD}>
+              <Phone className="text-primary-ink" size={24} aria-hidden="true" />
+              <h3 className="mt-4 font-display text-h3 font-bold text-foreground">Call</h3>
+              <p className="mt-1 text-body text-muted-foreground">{CONTACT.phone}</p>
+              <div className="mt-auto pt-6">
+                <Button asChild className={BTN}>
+                  <a href={CONTACT.tel}>Call us</a>
+                </Button>
+              </div>
+            </li>
+          </ul>
+          {/* TODO(owner): working hours line, for example "Mon to Sat, 10:00 to 18:00 IST" */}
+        </div>
+      </section>
+
+      {/* Form + what happens next */}
+      <section aria-labelledby="form-h" className="bg-secondary/40 py-section-sm">
+        <div className="container mx-auto grid max-w-[68rem] gap-10 px-gutter lg:grid-cols-[3fr_2fr]">
+          <div>
+            <h2 id="form-h" className="font-display text-h2 font-bold text-foreground">
+              Tell us about your project
+            </h2>
+
+            {status === "sent" ? (
+              <div
+                ref={doneRef}
+                tabIndex={-1}
+                role="status"
+                className="mt-8 space-y-4 rounded-2xl border border-primary/30 bg-card p-8 outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[hsl(var(--focus-ring))]"
+              >
+                <h3 className="font-display text-h3 font-bold text-foreground">Message received</h3>
+                <p className="text-body text-muted-foreground">
+                  Thanks, {sentTo.name}. We&rsquo;ve got your message and will reply to {sentTo.email}.
+                </p>
+                <Button type="button" variant="outline" className="min-h-[2.75rem] rounded-full" onClick={reset}>
+                  Send another message
+                </Button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} noValidate className="mt-8 rounded-2xl border border-border bg-card p-6 md:p-8">
+                <div className="grid gap-x-5 sm:grid-cols-2">
+                  <Field id="name" label="Name" error={errors.name}>
+                    <Input id="name" name="name" autoComplete="name" className="h-11" value={values.name} onChange={set("name")} onBlur={blur("name")} {...aria("name")} />
+                  </Field>
+                  <Field id="email" label="Work email" error={errors.email}>
+                    <Input id="email" name="email" type="email" autoComplete="email" className="h-11" value={values.email} onChange={set("email")} onBlur={blur("email")} {...aria("email")} />
+                  </Field>
+                  <Field id="phone" label="Phone or WhatsApp" optional error="">
+                    <Input id="phone" name="phone" type="tel" autoComplete="tel" className="h-11" value={values.phone} onChange={set("phone")} />
+                  </Field>
+                  <Field id="company" label="Company" optional error="">
+                    <Input id="company" name="company" autoComplete="organization" className="h-11" value={values.company} onChange={set("company")} />
+                  </Field>
+                </div>
+
+                <fieldset className="mb-5">
+                  <legend className="mb-2 text-body-sm font-medium text-foreground">What do you need?</legend>
+                  <div className="flex flex-wrap gap-2">
+                    {NEEDS.map((n) => (
+                      <label key={n} className="relative cursor-pointer">
+                        <input type="checkbox" className="peer sr-only" checked={needs.includes(n)} onChange={() => toggleNeed(n)} />
+                        <span className="inline-flex min-h-[2.75rem] items-center rounded-full border border-border bg-background px-4 text-body-sm font-medium text-foreground transition-colors peer-checked:border-primary peer-checked:bg-primary/15 peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-[hsl(var(--focus-ring))]">
+                          {n}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+                </fieldset>
+
+                <Field id="message" label="Message" helper="A few lines on the problem is enough." error={errors.message}>
+                  <Textarea id="message" name="message" rows={5} className="min-h-[7.5rem] text-body-sm" value={values.message} onChange={set("message")} onBlur={blur("message")} {...aria("message", true)} />
+                </Field>
+
+                {status === "failed" && (
+                  <div role="alert" className="mb-5 space-y-3 rounded-xl border border-destructive/40 bg-destructive/5 p-4">
+                    <p className="text-body-sm text-foreground">
+                      Your message wasn&rsquo;t sent. Please try again, or reach us on WhatsApp.
+                    </p>
+                    <Button asChild variant="outline" className="min-h-[2.75rem] rounded-full">
+                      <a href={whatsappLink(WA_TEXT)} target="_blank" rel="noopener noreferrer">
+                        Chat on WhatsApp<span className="sr-only"> (opens in a new tab)</span>
+                      </a>
+                    </Button>
+                  </div>
+                )}
+
+                <Button type="submit" aria-disabled={status === "sending"} className={`${BTN} w-full sm:w-auto sm:min-w-[11rem]`}>
+                  {status === "sending" ? "Sending…" : "Send message"}
+                </Button>
+              </form>
+            )}
+          </div>
+
+          <aside aria-labelledby="next-h" className="lg:pt-[4.5rem]">
+            <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+              <h2 id="next-h" className="font-display text-h3 font-bold text-foreground">
+                What happens next
+              </h2>
+              <ol className="m-0 mt-5 list-none space-y-4 p-0">
+                {STEPS.map((s, i) => (
+                  <li key={s} className="flex items-start gap-3">
+                    <span
+                      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-label font-bold text-primary-on"
+                      aria-hidden="true"
+                    >
+                      {i + 1}
+                    </span>
+                    <span className="pt-1 text-body text-foreground">{s}</span>
+                  </li>
+                ))}
+              </ol>
+              {/* TODO(owner): confirm the NDA offer */}
+              <p className="mt-6 border-t border-border pt-4 text-body-sm text-muted-foreground">
+                Need an NDA first? We&rsquo;re happy to sign one before you share details.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      {/* Office */}
+      <section aria-labelledby="office-h" className="bg-background py-section-sm">
+        <div className="container mx-auto max-w-3xl px-gutter text-center">
+          <h2 id="office-h" className="font-display text-h2 font-bold text-foreground">
+            Our office
+          </h2>
+          <p className="mt-5 flex items-start justify-center gap-2 text-body text-foreground">
+            <MapPin size={20} className="mt-1 shrink-0 text-primary-ink" aria-hidden="true" />
+            <span>Registered office: {CONTACT.registeredOffice}</span>
+          </p>
+          <p className="mt-1 text-body-sm text-muted-foreground">CIN: {CONTACT.cin}</p>
+          {/* TODO(owner): confirm wording; don't mention USA/Canada offices until they exist */}
+          <p className="mt-4 text-body text-muted-foreground">We work with clients across India and abroad.</p>
+          {/* TODO(owner): exact address / maps URL (CONTACT.mapsUrl is a search link for now) */}
+          <Button asChild variant="outline" className="mt-6 min-h-[2.75rem] rounded-full">
+            <a href={CONTACT.mapsUrl} target="_blank" rel="noopener noreferrer">
+              Open in Google Maps<span className="sr-only"> (opens in a new tab)</span>
+            </a>
+          </Button>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section aria-labelledby="faq-h" className="bg-secondary/40 py-section-sm">
+        <div className="container mx-auto max-w-3xl px-gutter">
+          <h2 id="faq-h" className="text-center font-display text-h2 font-bold text-foreground">
+            Questions before you write
+          </h2>
+          <Accordion type="single" collapsible className="mt-8 rounded-2xl border border-border bg-card px-6">
+            {FAQ.map((f, i) => (
+              <AccordionItem key={f.q} value={`q${i}`}>
+                <AccordionTrigger className="min-h-[2.75rem] text-left text-body font-medium">{f.q}</AccordionTrigger>
+                <AccordionContent className="text-body text-muted-foreground">{f.a}</AccordionContent>
+              </AccordionItem>
+            ))}
+            <AccordionItem value="hiring" className="border-b-0">
+              <AccordionTrigger className="min-h-[2.75rem] text-left text-body font-medium">Are you hiring?</AccordionTrigger>
+              <AccordionContent className="text-body text-muted-foreground">
+                Sometimes. See current roles on the{" "}
+                <Link to="/careers" className="inline-flex min-h-[2.75rem] items-center gap-1 font-medium text-primary-ink underline underline-offset-4">
+                  Careers page <ArrowRight size={14} aria-hidden="true" />
+                </Link>
+                .
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
     </Layout>
