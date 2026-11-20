@@ -179,7 +179,7 @@ const Contact = () => {
             url: "https://www.logisaar.in",
             email: CONTACT.email,
             telephone: CONTACT.phone,
-            address: { "@type": "PostalAddress", addressLocality: "Cuttack", addressRegion: "Odisha", addressCountry: "IN" },
+            address: { "@type": "PostalAddress", streetAddress: "4th floor, Nalanda Institute of Technology, Khandagiri - Chandaka Rd, Similipatana", addressLocality: "Bhubaneswar", addressRegion: "Odisha", postalCode: "754012", addressCountry: "IN" },
             contactPoint: [
               { "@type": "ContactPoint", contactType: "customer support", email: CONTACT.email, telephone: CONTACT.phone },
             ],
@@ -360,13 +360,12 @@ const Contact = () => {
           </h2>
           <p className="mt-5 flex items-start justify-center gap-2 text-body text-foreground">
             <MapPin size={20} className="mt-1 shrink-0 text-primary-ink" aria-hidden="true" />
-            <span>Registered office: {CONTACT.registeredOffice}</span>
+            <span>Logisaar Technologies Private Limited, {CONTACT.officeAddress}</span>
           </p>
           <p className="mt-1 text-body-sm text-muted-foreground">CIN: {CONTACT.cin}</p>
           {/* TODO(owner): confirm wording; don't mention USA/Canada offices until they exist */}
           <p className="mt-4 text-body text-muted-foreground">We work with clients across India and abroad.</p>
-          {/* TODO(owner): exact address / maps URL (CONTACT.mapsUrl is a search link for now) */}
-          <Button asChild variant="outline" className="mt-6 min-h-[2.75rem] rounded-full">
+                    <Button asChild variant="outline" className="mt-6 min-h-[2.75rem] rounded-full">
             <a href={CONTACT.mapsUrl} target="_blank" rel="noopener noreferrer">
               Open in Google Maps<span className="sr-only"> (opens in a new tab)</span>
             </a>

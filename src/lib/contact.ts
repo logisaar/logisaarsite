@@ -5,10 +5,10 @@ export const CONTACT = {
   tel: "tel:+918596072510",
   whatsapp: "https://wa.me/918596072510",
   address: "Bhubaneswar, Odisha, India",
-  registeredOffice: "Logisaar Technologies Private Limited, Cuttack, Odisha, India",
+  officeAddress: "4th floor, Nalanda Institute of Technology, Khandagiri - Chandaka Rd, Bhubaneswar, Similipatana, Odisha 754012",
   cin: "U62012OD2026PTC053632",
-  // TODO(owner): exact address / Google Maps URL. This is a search link until then.
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Logisaar+Technologies+Cuttack+Odisha",
+  // Search link built from the office address; swap for a pinned Maps URL if the owner has one.
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Nalanda+Institute+of+Technology+Khandagiri+Chandaka+Road+Bhubaneswar+754012",
 } as const;
 
 export const whatsappLink = (text?: string) =>
