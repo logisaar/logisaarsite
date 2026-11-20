@@ -20,7 +20,7 @@ const NotFound = () => {
         description="The page you are looking for does not exist."
         noindex
       />
-      <div className="flex min-h-[80svh] items-center justify-center pt-32">
+      <div className="flex min-h-[80svh] items-center justify-center pt-section-sm">
         <div className="text-center space-y-4">
           <h1 className="font-display text-8xl font-bold text-gradient">404</h1>
           <p className="text-xl text-muted-foreground">Oops! This page doesn't exist.</p>

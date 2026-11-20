@@ -12,7 +12,7 @@ const scrollToId = (id: string) => {
 
 /* 1. Hero */
 export const IkuroHero = () => (
-  <section data-logi-dock className="relative flex min-h-[85svh] items-center bg-background pb-section-sm pt-32 md:pt-44">
+  <section data-logi-dock className="relative flex min-h-[85svh] items-center bg-background pb-section-sm pt-section-sm">
     <div className="container mx-auto px-gutter max-w-[56rem] text-center">
       <picture style={{ display: "contents" }}>
         <source type="image/webp" srcSet="/brand/ikuro/ikuro-logo.webp" />

@@ -32,7 +32,7 @@ const SectionTitle = ({ children, className = "" }: { children: ReactNode; class
 
 /* 1. Hero (night band) */
 export const HlHero = () => (
-  <section data-logi-dock className="hl-night relative overflow-hidden pb-section-sm pt-32 md:pt-44">
+  <section data-logi-dock className="hl-night relative overflow-hidden pb-section-sm" style={{ paddingTop: "calc(var(--header-h) + clamp(1.5rem, 4vw, 3rem))" }}>
     <div className="container mx-auto grid max-w-[75rem] items-center gap-12 px-gutter md:grid-cols-[1.2fr_0.8fr]">
       <div className="space-y-6">
         <HlLogo reverse className="-mb-1 -mt-5 w-[min(15rem,60vw)]" />

@@ -136,18 +136,20 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 80, damping: 20 }}
-      className="fixed top-0 md:top-11 left-0 right-0 z-[9999] flex justify-center"
+      className={`fixed left-0 right-0 flex justify-center ${mobileOpen ? "z-overlay" : "z-header"}`}
+      style={{ top: "var(--topbar-h)" }}
     >
       <motion.div
         className={`transition-all duration-500 ${
           capsule
             ? "mt-4 mx-4 px-6 py-2.5 rounded-full liquid-glass bg-white/90 dark:bg-slate-950/90 max-w-5xl shadow-lg border-white/20 dark:border-white/5"
-            : "mt-0 px-8 py-5 w-full max-w-none bg-transparent"
+            : "mt-0 flex w-full max-w-none items-center border-b border-border bg-background/95 px-gutter"
         }`}
+        style={capsule ? undefined : { minHeight: "var(--nav-h)" }}
         layout
         transition={{ type: "spring", stiffness: 200, damping: 30 }}
       >
-        <div className="flex items-center justify-between gap-8">
+        <div className="flex w-full items-center justify-between gap-8">
           <Link to="/" className="inline-flex min-h-[2.75rem] shrink-0 items-center" aria-label="Logisaar home">
             <BrandLogo
               priority
@@ -225,7 +227,8 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 top-20 bg-background/75 backdrop-blur-2xl z-40 lg:hidden"
+            className="fixed inset-0 bg-background/95 backdrop-blur-2xl lg:hidden"
+            style={{ top: "var(--header-h)" }}
           >
             <nav className="flex flex-col items-center gap-6 pt-16">
               {/* Home */}

@@ -33,6 +33,7 @@ export default {
         h1: ["clamp(2.5rem, 1.6rem + 4.6vw, 5.5rem)", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
         display: ["clamp(3rem, 1.5rem + 7.5vw, 9rem)", { lineHeight: "1.1" }],
       },
+      zIndex: { header: "50", logi: "60", overlay: "70", modal: "80", toast: "90" },
       spacing: {
         section: "clamp(4rem, 3rem + 5vw, 8rem)",
         "section-sm": "clamp(3rem, 2.4rem + 3vw, 5rem)",

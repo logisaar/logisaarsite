@@ -107,7 +107,7 @@ const Location = () => {
       {/* Hero */}
       <section className="min-h-[55svh] flex items-end relative overflow-hidden pb-16">
         <GradientMesh />
-        <div className="container mx-auto px-gutter relative z-10 pt-32">
+        <div className="container mx-auto px-gutter relative z-10 pt-section-sm">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

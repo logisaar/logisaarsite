@@ -100,7 +100,7 @@ const LegalPageLayout = ({
       />
 
       {/* Hero Header */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 via-background to-background pt-32 pb-16">
+      <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 via-background to-background pt-section-sm pb-16">
         <div className="container mx-auto px-gutter">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -128,7 +128,7 @@ const LegalPageLayout = ({
             
             {/* Sidebar Table of Contents */}
             <aside className="hidden lg:block lg:col-span-1">
-              <div className="sticky top-36 overflow-y-auto max-h-[70svh] pr-4 space-y-1 py-1 border-l border-border/40 no-scrollbar">
+              <div className="sticky top-[calc(var(--header-h)+1rem)] overflow-y-auto max-h-[70svh] pr-4 space-y-1 py-1 border-l border-border/40 no-scrollbar">
                 <p className="text-xs font-semibold text-foreground/50 uppercase tracking-widest pl-4 mb-4">
                   Table of Contents
                 </p>

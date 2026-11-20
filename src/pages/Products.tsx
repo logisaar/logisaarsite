@@ -15,7 +15,7 @@ const Products = () => (
       canonical="https://www.logisaar.in/products"
     />
 
-    <section data-logi-dock className="bg-background pb-section-sm pt-32 md:pt-44">
+    <section data-logi-dock className="bg-background pb-section-sm pt-section-sm">
       <div className="container mx-auto max-w-[56rem] px-gutter text-center">
         <Eyebrow>Our products</Eyebrow>
         <h1 className="mt-3 font-display text-h1 font-bold text-foreground">We build our own, too</h1>

@@ -275,7 +275,7 @@ const TechxeraPrograms = () => {
 
       <AnimatePresence>
         {selectedCourse && (
-          <div className="fixed inset-0 z-[99999] flex justify-end">
+          <div className="fixed inset-0 z-modal flex justify-end">
             {/* Dark Overlay backdrop */}
             <motion.div
               initial={{ opacity: 0 }}

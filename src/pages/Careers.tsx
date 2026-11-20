@@ -112,7 +112,7 @@ const Careers = () => {
       />
 
       {/* Hero */}
-      <section data-logi="We're hiring! Freshers are welcome." className="relative overflow-hidden pt-36 pb-20 md:pt-44 md:pb-24 bg-background">
+      <section data-logi="We're hiring! Freshers are welcome." className="relative overflow-hidden pt-section-sm pb-20 md:pb-24 bg-background">
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.04]"
           style={{ backgroundImage: "radial-gradient(circle, hsl(var(--primary)) 1.5px, transparent 1.5px)", backgroundSize: "28px 28px" }}

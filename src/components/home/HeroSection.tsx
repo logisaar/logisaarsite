@@ -142,7 +142,7 @@ const HeroSection = () => {
       {/* Subtle grid — very faint */}
       <div className="absolute inset-0 animated-grid pointer-events-none z-[1] opacity-40" />
 
-      <div className="container mx-auto px-gutter relative z-10 pt-24 pb-12 md:pt-36">
+      <div className="container mx-auto px-gutter relative z-10 pb-12" style={{ paddingTop: "calc(var(--header-h) + clamp(1.5rem, 4vw, 3rem))" }}>
         <div className="flex flex-col items-center text-center">
           {/* Tagline / Subpoint */}
           <div

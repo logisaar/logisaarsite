@@ -28,7 +28,7 @@ const About = () => {
       <section className="min-h-[50svh] flex items-center relative overflow-hidden">
         <GradientMesh />
         <DecorativeShapes variant="hero" />
-        <div className="container mx-auto px-gutter relative z-10 pt-32 pb-20">
+        <div className="container mx-auto px-gutter relative z-10 pt-section-sm pb-20">
           <div className="max-w-3xl">
             <motion.p
               initial={{ opacity: 0, y: 15 }}

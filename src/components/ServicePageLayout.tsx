@@ -89,7 +89,7 @@ export default function ServicePageLayout({
       {/* ── SECTION A — Hero ── */}
       <section className="min-h-[90svh] flex items-center relative overflow-hidden">
         <GradientMesh />
-        <div className="container mx-auto px-gutter relative z-10 pt-32 pb-16">
+        <div className="container mx-auto px-gutter relative z-10 pt-section-sm pb-16">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left */}
             <div>

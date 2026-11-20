@@ -37,7 +37,7 @@ const socialLinks = [
 
 const TopBar = () => {
   return (
-    <aside aria-label="Contact details and social links" className="fixed top-0 left-0 right-0 z-[10000] hidden md:block bg-foreground text-background">
+    <aside aria-label="Contact details and social links" className="fixed top-0 left-0 right-0 z-header hidden overflow-hidden bg-foreground text-background md:block" style={{ height: "var(--topbar-h)" }}>
       <div className="container mx-auto px-gutter">
         <div className="flex items-center justify-between text-label">
           <div className="flex items-center gap-5">

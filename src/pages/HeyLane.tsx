@@ -12,7 +12,7 @@ const LEAD =
 
 /** /heylane: Logisaar telling the HeyLane story, in HeyLane's own colours and fonts (night green, paper, gold). */
 const HeyLane = () => (
-  <Layout>
+  <Layout heroUnderHeader>
     <SEO
       title="HeyLane: neighbourhood app for local places and businesses | Logisaar"
       description={LEAD}

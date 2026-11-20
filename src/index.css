@@ -28,6 +28,18 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --topbar-h: 0rem;
+  --nav-h: 4.5rem;
+  --header-h: calc(var(--topbar-h) + var(--nav-h));
+}
+@media (min-width: 48em) {
+  :root {
+    --topbar-h: 2.75rem;
+    --nav-h: 5rem;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -137,7 +149,7 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 8rem; /* keyboard focus and anchors never land under the fixed header */
+    scroll-padding-top: calc(var(--header-h) + 1rem); /* keyboard focus and anchors never land under the fixed header */
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }

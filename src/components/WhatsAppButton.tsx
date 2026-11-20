@@ -12,7 +12,7 @@ const WhatsAppButton = () => {
       {/* Draggable viewport constraint boundary */}
       <div
         ref={constraintsRef}
-        className="fixed inset-6 pointer-events-none z-[9999]"
+        className="fixed inset-6 pointer-events-none z-logi"
       />
 
       <motion.div
@@ -20,7 +20,7 @@ const WhatsAppButton = () => {
         dragConstraints={constraintsRef}
         dragElastic={0.1}
         dragMomentum={false}
-        className="fixed bottom-20 left-6 z-[9999] group cursor-grab active:cursor-grabbing select-none"
+        className="fixed bottom-20 left-6 z-logi group cursor-grab active:cursor-grabbing select-none"
         title="Drag me! Chat on WhatsApp"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}

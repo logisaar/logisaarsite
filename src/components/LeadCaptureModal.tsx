@@ -289,7 +289,7 @@ const LeadCaptureModal = () => {
       <AnimatePresence>
         {isClosing && (
           <motion.div
-            className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[60] flex items-center justify-center"
+            className="fixed bottom-8 left-1/2 -translate-x-1/2 z-logi flex items-center justify-center"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.5 }}
@@ -320,7 +320,7 @@ const LeadCaptureModal = () => {
       <AnimatePresence>
         {showNotification && (
           <motion.div
-            className="fixed top-5 left-1/2 -translate-x-1/2 z-[70] w-[22.5rem] max-w-[90vw]"
+            className="fixed top-5 left-1/2 -translate-x-1/2 z-modal w-[22.5rem] max-w-[90vw]"
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -100, opacity: 0 }}

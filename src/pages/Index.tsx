@@ -323,7 +323,7 @@ const brandLogos = [
 
 const Index = () => {
   return (
-    <Layout>
+    <Layout heroUnderHeader>
       <SEO
         title="Logisaar | Software, AI Agents & Business Automation"
         description="Logisaar builds custom software, AI agents and business automation for growing businesses in India and abroad. Makers of HeyLane and IKURO."

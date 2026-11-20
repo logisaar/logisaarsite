@@ -134,7 +134,7 @@ const Pricing = () => {
       {/* Hero */}
       <section className="min-h-[50svh] flex items-end relative overflow-hidden pb-16">
         <GradientMesh />
-        <div className="container mx-auto px-gutter relative z-10 pt-32 text-center">
+        <div className="container mx-auto px-gutter relative z-10 pt-section-sm text-center">
           <TextReveal
             text="Transparent"
             as="h1"

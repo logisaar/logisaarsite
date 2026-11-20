@@ -102,7 +102,7 @@ const ChalkToChoice = () => {
 
       <AnimatePresence>
         {isChalkToChoiceOpen && (
-          <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 sm:p-6 overflow-hidden">
+          <div className="fixed inset-0 z-modal flex items-center justify-center p-4 sm:p-6 overflow-hidden">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}

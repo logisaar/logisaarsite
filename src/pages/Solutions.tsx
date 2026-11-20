@@ -292,7 +292,7 @@ const Solutions = () => {
       {/* Hero */}
       <section data-logi="Pick a solution and I'll explain it." className="min-h-[50svh] flex items-end relative overflow-hidden pb-16">
         <GradientMesh />
-        <div className="container mx-auto px-gutter relative z-10 pt-32">
+        <div className="container mx-auto px-gutter relative z-10 pt-section-sm">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
