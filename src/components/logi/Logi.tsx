@@ -224,7 +224,7 @@ const Logi = () => {
       }
       cands.push(c, { x: c.x, y: clamp(innerHeight * 0.55, TOP_SAFE, c.y) }, { x: c.x, y: clamp(innerHeight * 0.35, TOP_SAFE, c.y) });
       // crowded layouts (narrow phones, full-width headings): peek in from the right edge, about 40% tucked off screen
-      const peekX = innerWidth - s * 0.6;
+      const peekX = innerWidth - s * 0.62; // at least 44px stays on screen to tap
       for (const f of [1, 0.75, 0.55, 0.35]) cands.push({ x: peekX, y: clamp(innerHeight * f - s, TOP_SAFE, c.y) });
       // last resort on a very small screen: tuck into the bottom-right corner, mostly off screen
       cands.push({ x: peekX, y: innerHeight - s * 0.35 });

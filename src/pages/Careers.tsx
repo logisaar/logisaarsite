@@ -293,7 +293,7 @@ const Careers = () => {
                 {status === "sending" ? (<><Loader2 size={16} className="mr-2 animate-spin" /> Sending</>) : "Send application"}
               </Button>
               <p className="text-xs text-muted-foreground text-center">
-                Prefer email? Write to <a className="text-primary-ink underline underline-offset-2" href={CONTACT.mailto}>{CONTACT.email}</a>.
+                Prefer email? Write to <a className="inline-flex min-h-[2.75rem] items-center text-primary-ink underline underline-offset-2" href={CONTACT.mailto}>{CONTACT.email}</a>.
               </p>
             </form>
           )}

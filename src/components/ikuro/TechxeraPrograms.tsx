@@ -97,7 +97,7 @@ const TechxeraPrograms = () => {
                             <IconComponent size={24} />
                           </div>
                           <div>
-                            <span className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 text-label font-semibold px-3 py-1 rounded-full">
+                            <span className="bg-primary/10 text-primary-ink dark:text-primary-ink border border-primary/20 text-label font-semibold px-3 py-1 rounded-full">
                               Ecosystem Flagship
                             </span>
                           </div>
@@ -239,11 +239,11 @@ const TechxeraPrograms = () => {
                   </div>
 
                   {/* Actions & Price Footer */}
-                  <div className="mt-6 pt-4 border-t border-border/20 flex items-center justify-between gap-3">
+                  <div className="mt-6 pt-4 border-t border-border/20 flex flex-wrap items-center justify-between gap-3">
                     <div className="text-body-sm font-bold text-foreground font-mono">
                       {course.price}
                     </div>
-                    <div className="flex gap-2 shrink-0">
+                    <div className="flex flex-wrap gap-2">
                       <Button asChild variant="default" size="sm" className="bg-primary hover:opacity-90 border-0 text-primary-on rounded-full text-label font-semibold h-11 px-3.5">
                         <a
                           href={`https://wa.me/918596072510?text=Hi%20Logisaar%2C%20I'm%20interested%20in%20joining%20the%20${encodeURIComponent(course.title)}%20program.`}
@@ -414,7 +414,7 @@ const TechxeraPrograms = () => {
                                     <ul className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
                                       {mod.items.map(item => (
                                         <li key={item} className="flex items-start gap-2 text-label text-muted-foreground">
-                                          <Check size={11} className="text-emerald-500 stroke-[3px] shrink-0 mt-0.5" />
+                                          <Check size={11} className="text-primary-ink stroke-[3px] shrink-0 mt-0.5" />
                                           <span>{item}</span>
                                         </li>
                                       ))}

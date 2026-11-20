@@ -26,9 +26,9 @@ const MapScreen = () => (
     <div className="mx-4 mt-6 flex items-center gap-2 rounded-xl border border-[var(--hl-line)] bg-white px-3 py-2 text-body-sm text-[var(--hl-ink-2)]">
       <Search size={16} aria-hidden="true" /> Near you
     </div>
-    <div className="mx-4 mt-3 flex gap-2 overflow-hidden text-label">
+    <div className="mx-4 mt-3 flex flex-wrap gap-1.5 text-label">
       {["Cafés", "Salons", "Stays", "Grocery"].map((c, i) => (
-        <span key={c} className={`rounded-full px-3 py-1 font-medium ${i === 0 ? "bg-[var(--hl-emerald)] text-white" : "bg-[var(--hl-mint)] text-[var(--hl-emerald-deep)]"}`}>{c}</span>
+        <span key={c} className={`rounded-full px-2.5 py-1 font-medium ${i === 0 ? "bg-[var(--hl-emerald)] text-white" : "bg-[var(--hl-mint)] text-[var(--hl-emerald-deep)]"}`}>{c}</span>
       ))}
     </div>
     <div className="relative mx-4 mt-3 flex-1 overflow-hidden rounded-2xl bg-[#e7efe8]">

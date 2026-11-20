@@ -15,7 +15,7 @@ for (const route of routes) {
     await p.waitForTimeout(1500);
     const h = await p.evaluate(() => document.documentElement.scrollHeight);
     for (let y = 0; y < h; y += 600) { await p.evaluate((y) => window.scrollTo(0, y), y); await p.waitForTimeout(80); }
-    await p.evaluate(() => window.scrollTo(0, 0)); await p.waitForTimeout(600);
+    await p.evaluate(() => window.scrollTo(0, 0)); await p.waitForTimeout(1800); // let reveal animations finish
     const res = await p.evaluate(() => {
       const skip = (el) => el.closest("[data-agentation-root], [data-feedback-toolbar]");
       const parse = (c) => { const m = c.match(/rgba?\(([^)]+)\)/); if (!m) return null; const [r, g, b, a = 1] = m[1].split(/[ ,/]+/).filter(Boolean).map(Number); return { r, g, b, a }; };

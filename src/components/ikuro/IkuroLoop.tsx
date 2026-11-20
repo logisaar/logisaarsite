@@ -61,7 +61,7 @@ const IkuroLoop = () => {
       <div className="container mx-auto px-gutter max-w-[75rem]">
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
           <Eyebrow>How IKURO thinks</Eyebrow>
-          <h2 className="font-display text-h2 font-bold text-foreground">Five steps, on repeat</h2>
+          <h2 className="font-display text-h2 font-bold text-foreground">IKURO’s five-step loop</h2>
           <p className="text-lead text-muted-foreground">Most AI answers a question. IKURO starts from your context.</p>
         </div>
 

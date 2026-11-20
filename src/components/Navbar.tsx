@@ -119,12 +119,14 @@ const Navbar = () => {
   const isAboutActive =
     location.pathname === "/about" || location.pathname === "/portfolio";
   const isProductsActive = location.pathname === "/products" || location.pathname === "/heylane";
+  // The HeyLane page opens on a dark green band: keep the header as a light capsule there so links and logo stay readable.
+  const capsule = scrolled || location.pathname === "/heylane";
 
   const linkBaseClass = (active: boolean) =>
     `relative inline-flex min-h-[2.75rem] items-center text-body-sm font-medium px-3 rounded-full transition-colors ${
       active
         ? "text-primary-ink"
-        : scrolled
+        : capsule
         ? "text-slate-700 hover:text-slate-950 dark:text-slate-300 dark:hover:text-white"
         : "text-muted-foreground hover:text-foreground"
     }`;
@@ -138,7 +140,7 @@ const Navbar = () => {
     >
       <motion.div
         className={`transition-all duration-500 ${
-          scrolled
+          capsule
             ? "mt-4 mx-4 px-6 py-2.5 rounded-full liquid-glass bg-white/90 dark:bg-slate-950/90 max-w-5xl shadow-lg border-white/20 dark:border-white/5"
             : "mt-0 px-8 py-5 w-full max-w-none bg-transparent"
         }`}
@@ -149,7 +151,7 @@ const Navbar = () => {
           <Link to="/" className="inline-flex min-h-[2.75rem] shrink-0 items-center" aria-label="Logisaar home">
             <BrandLogo
               priority
-              className={`transition-all duration-500 ${scrolled ? "h-[2.375rem]" : "h-9 md:h-11"}`}
+              className={`transition-all duration-500 ${capsule ? "h-[2.375rem]" : "h-9 md:h-11"}`}
             />
           </Link>
 

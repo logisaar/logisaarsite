@@ -838,7 +838,7 @@ const Index = () => {
               <Button
                 asChild
                 size="lg"
-                className="bg-green-500 hover:bg-green-600 border-0 text-white font-medium rounded-full px-10 py-6 text-body shadow-lg shadow-green-500/20"
+                className="bg-primary hover:bg-primary/90 border-0 text-primary-on font-semibold rounded-full px-10 py-6 text-body"
               >
                 <a
                   href="https://wa.me/918596072510?text=Hi%20Logisaar%2C%20I'm%20planning%20a%20new%20AI%20systems%20%2F%20software%20project%20and%20want%20to%20get%20a%20scoping%20quote."

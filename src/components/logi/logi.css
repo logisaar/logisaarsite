@@ -62,7 +62,7 @@
 .logi-chat .logi-title b { font-family: "Space Grotesk", sans-serif; font-size: 1.0625rem; }
 .logi-chat .logi-title span { font-size: 0.8125rem; color: hsl(var(--muted-foreground)); white-space: nowrap; }
 .logi-chat .logi-online { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: #00d162; box-shadow: 0 0 0 3px rgba(0, 209, 98, 0.2); flex-shrink: 0; }
-.logi-chat .logi-x { margin-left: auto; font-size: 1.375rem; line-height: 1; width: 2rem; height: 2rem; border-radius: 50%; }
+.logi-chat .logi-x { margin-left: auto; font-size: 1.375rem; line-height: 1; width: 2.75rem; height: 2.75rem; border-radius: 50%; }
 .logi-chat .logi-x:hover { background: hsl(var(--secondary)); }
 .logi-chat button:focus-visible, .logi-chat input:focus-visible, .logi-chat a:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 2px; }
 .logi-log { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem; min-height: 10rem; }

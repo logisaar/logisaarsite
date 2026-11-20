@@ -51,7 +51,7 @@ export const IkuroDecide = () => (
     <div className="container mx-auto px-gutter max-w-[75rem]">
       <div className="mx-auto mb-12 max-w-3xl space-y-4 text-center">
         <Eyebrow>What it helps you decide</Eyebrow>
-        <h2 className="font-display text-h2 font-bold text-foreground">Six choices, one place</h2>
+        <h2 className="font-display text-h2 font-bold text-foreground">Six decisions IKURO helps with</h2>
       </div>
       <ul className="m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(min(100%,16rem),1fr))] gap-5 p-0">
         {DECISIONS.map(({ title, text, icon: Icon }) => (

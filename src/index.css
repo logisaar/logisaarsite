@@ -42,7 +42,7 @@
     --primary: 148 100% 41%;
     --primary-foreground: 152 78% 5%;   /* near-black label on the bright green fill */
     --on-primary: 152 78% 5%;           /* #04130B */
-    --primary-ink: 148 100% 26%;        /* #00853E: green text on light backgrounds */
+    --primary-ink: 148 100% 23%;        /* #007537: green text on light backgrounds (the brief's #00853E measured 4.4:1 on tinted pills; this is 5:1 or better) */
     --focus-ring: var(--primary-ink);
 
     --secondary: 0 0% 96%;
@@ -59,7 +59,7 @@
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 148 100% 41%;
+    --ring: 148 100% 26%;
 
     --radius: 0.75rem;
 
@@ -137,6 +137,7 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 8rem; /* keyboard focus and anchors never land under the fixed header */
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
@@ -349,6 +350,7 @@
   --secondary: var(--ikuro-sand);
   --muted: var(--ikuro-sand);
   --border: 20 25% 88%;
+  --muted-foreground: 240 8% 28%;   /* body text on cream at 7:1 or better */
   --ring: var(--ikuro-orange-ink);
   --accent: var(--ikuro-orange);
   --focus-ring: var(--ikuro-orange-ink);
