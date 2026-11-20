@@ -21,3 +21,11 @@ Folder: `round-5-header-contact/`
   2. Redesign the Contact page: centred hero, three contact cards, accessible project form with inline success and failure states, "what happens next", office, FAQ.
   3. QA.
 - Root `CLAUDE.md` now holds the standing project context for Claude Code (read it after `/clear`).
+
+## Round 6: hide Portfolio, About redesign, Solutions redesign
+Folder: `round-6-about-solutions-portfolio/`
+- `ROUND6.md`:
+  1. Unlink `/portfolio` everywhere. It stays live, indexable and in the sitemap.
+  2. Redesign About: one business-first story, fixed facts, a single project count.
+  3. Redesign Solutions: four service anchors, ready-made solutions from one data file with filters, an honesty sweep.
+  4. QA.

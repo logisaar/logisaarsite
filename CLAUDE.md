@@ -36,7 +36,8 @@ Read this first in every session (especially after `/clear`). Then read only the
 | 2 | `round-2-fixes` | done (new logo everywhere, Logi auto-tour, footer CTA removed, popup only from buttons) |
 | 3 | `round-3-logi-redesign` | done (plush OpenDots-style Logi, MIT notice) |
 | 4 | `round-4-audit-ikuro-heylane-responsive` | done (responsive units, 27 home fixes, IKURO theme, /heylane) |
-| 5 | `round-5-header-contact` | **next**: header overlap fix site-wide + Contact page redesign |
+| 5 | `round-5-header-contact` | done (header offset/z-index fix, Contact redesign) |
+| 6 | `round-6-about-solutions-portfolio` | **next**: hide /portfolio (SEO only), About redesign, Solutions redesign |
 
 Branch: `redesign/home-v2`.
 
@@ -107,6 +108,7 @@ Branch: `redesign/home-v2`.
 - **Skills available:**
   - `.claude/skills` (taste-skill `design-taste-frontend`, stageshow): use them for faux product UI and QA (`gate.mjs`, `consistency.mjs`, `copy-lint.mjs`).
   - VectorLab UX rules: blur validation, verb-first buttons, visible labels.
+- **Hidden page:** `/portfolio` stays routed, indexable and in `sitemap.xml`, but nothing on the site links to it.
 - **QA before finishing a round:**
   - Playwright at 320/375/414/768/1024/1280/1440/1920 plus 200% root font: no page overflow, no text under 12px, no small targets.
   - axe with 0 serious/critical issues.
