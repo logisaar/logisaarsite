@@ -20,7 +20,7 @@ const WhatsAppButton = () => {
         dragConstraints={constraintsRef}
         dragElastic={0.1}
         dragMomentum={false}
-        className="fixed bottom-6 right-6 z-[9999] group cursor-grab active:cursor-grabbing select-none"
+        className="fixed bottom-20 left-6 z-[9999] group cursor-grab active:cursor-grabbing select-none"
         title="Drag me! Chat on WhatsApp"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -30,7 +30,7 @@ const WhatsAppButton = () => {
         <span className="absolute inset-0 rounded-full bg-green-500 pointer-events-none animate-ripple-2" />
 
         {/* Tooltip */}
-        <span className="absolute bottom-full right-0 mb-2 whitespace-nowrap bg-gray-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+        <span className="absolute bottom-full left-0 mb-2 whitespace-nowrap bg-gray-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
           Drag me anywhere • Chat on WhatsApp
         </span>
 

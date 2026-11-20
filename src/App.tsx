@@ -22,6 +22,7 @@ import RefundPolicy from "./pages/RefundPolicy";
 import NotFound from "./pages/NotFound";
 import PageTransition from "./components/PageTransition";
 import RouteScrollReset from "./components/RouteScrollReset";
+import Logi from "./components/logi/Logi";
 // Solution pages
 import AIPoweredSchoolERP from "./pages/solutions/AIPoweredSchoolERP";
 import HotelManagement from "./pages/solutions/HotelManagement";
@@ -82,6 +83,8 @@ const App = () => (
       <BrowserRouter>
         <RouteScrollReset />
         <AnimatedRoutes />
+        {/* Mounted once here (not in Layout, which remounts on every route change) so Logi keeps its position and chat. */}
+        <Logi />
       </BrowserRouter>
       {import.meta.env.DEV && (
         <Agentation

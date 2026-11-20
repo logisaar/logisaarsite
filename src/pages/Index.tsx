@@ -335,7 +335,7 @@ const Index = () => {
       <MarqueeText text="SOFTWARE DEVELOPMENT  ·  AI AGENTS  ·  BUSINESS AUTOMATION  ·  AI SOFTWARE  ·  " />
 
       {/* ── Section: What We Do ── */}
-      <section className="py-24 relative overflow-hidden bg-background">
+      <section data-logi="Four ways we take work off your plate." className="py-24 relative overflow-hidden bg-background">
         <div className="w-full max-w-[1400px] mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-5">
             <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
@@ -390,7 +390,7 @@ const Index = () => {
       <GradientDivider />
 
       {/* ── Section: Solutions Snapshot ── */}
-      <section className="py-24 relative overflow-hidden bg-background">
+      <section data-logi="Ready-made, then made yours." className="py-24 relative overflow-hidden bg-background">
         <div className="w-full max-w-[1540px] mx-auto px-6 relative z-10">
           {/* Centered Header Section */}
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-5">
@@ -491,7 +491,7 @@ const Index = () => {
       <GradientDivider />
 
       {/* ── Section: Chalk to Choice ── */}
-      <section className="py-20 md:py-28 relative overflow-hidden bg-white dark:bg-background">
+      <section data-logi="IKURO is made by Logisaar too!" className="py-20 md:py-28 relative overflow-hidden bg-white dark:bg-background">
         {/* Subtle background dot grid */}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.04] dark:opacity-[0.06]"
@@ -667,7 +667,7 @@ const Index = () => {
       <GradientDivider />
 
       {/* ── Section: Products Snapshot ── */}
-      <section className="py-24 relative overflow-hidden bg-background">
+      <section data-logi="We build our own products as well." className="py-24 relative overflow-hidden bg-background">
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 space-y-6">
@@ -778,7 +778,7 @@ const Index = () => {
       <GradientDivider />
 
       {/* ── Section: Portfolio Snapshot ── */}
-      <section className="py-24 relative overflow-hidden bg-background">
+      <section data-logi="25+ businesses and counting." className="py-24 relative overflow-hidden bg-background">
         <div className="w-full max-w-[1400px] mx-auto px-6 relative z-10">
           
           {/* Centered Header Section */}
@@ -906,7 +906,7 @@ const Index = () => {
       <TestimonialsSection />
 
       {/* ── Closing CTA Section (WhatsApp First) ── */}
-      <section className="py-28 relative overflow-hidden bg-slate-950 text-white">
+      <section data-logi="Quotes are free. Tell us the one task you hate." className="py-28 relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0 animated-grid pointer-events-none opacity-[0.03]" />
         
         <div className="container mx-auto px-4 relative z-10 text-center space-y-8">

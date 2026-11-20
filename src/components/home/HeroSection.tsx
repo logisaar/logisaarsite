@@ -171,6 +171,7 @@ const HeroSection = () => {
             <AnimatedButton
               as={Link}
               to="/contact"
+              data-logi-hover="Let's build something!"
               className="shadow-glow"
             >
               Start a Project
