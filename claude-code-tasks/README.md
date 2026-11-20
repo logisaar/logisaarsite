@@ -13,3 +13,11 @@ Folder: `round-4-audit-ikuro-heylane-responsive/`
 - `ROUND4.md`: five phases. (1) Site-wide responsive units (rem/clamp/svh/em breakpoints, px audit script). (2) The 27 home-page audit fixes, H-01 to H-27. (3) The `/ikuro` page in IKURO colours. (4) A new `/heylane` page in HeyLane colours, following HeyLane's honesty and price rules. (5) QA.
 - `audit/`: evidence screenshots from the Cowork audit.
 - Assets added for this round: `public/brand/ikuro/`, `public/brand/heylane/`, `public/fonts/heylane/`, `public/images/heylane/places/`.
+
+## Round 5: header overlap fix + Contact redesign
+Folder: `round-5-header-contact/`
+- `ROUND5.md`:
+  1. Fix the fixed header overlapping page content: one `--header-h` variable, Layout reserves the space, solid header bar at the top, z-index scale.
+  2. Redesign the Contact page: centred hero, three contact cards, accessible project form with inline success and failure states, "what happens next", office, FAQ.
+  3. QA.
+- Root `CLAUDE.md` now holds the standing project context for Claude Code (read it after `/clear`).
