@@ -2,7 +2,7 @@
 import { chromium } from "playwright-core";
 import fs from "node:fs";
 const [phase, ...routes] = process.argv.slice(2);
-const out = `Claude outputs/screens/${phase}`;
+const out = process.env.OUT || `Claude outputs/screens/${phase}`;
 fs.mkdirSync(out, { recursive: true });
 const browser = await chromium.launch({ channel: "chrome" });
 for (const r of routes) {
@@ -10,7 +10,7 @@ for (const r of routes) {
   for (const [w, h] of [[1440, 900], [768, 1024], [390, 844]]) {
     const page = await browser.newPage({ viewport: { width: w, height: h } });
     await page.addInitScript(() => { try { sessionStorage.setItem("lead_capture_shown", "1"); } catch { /* ignore */ } });
-    await page.goto("http://localhost:8080/" + r.replace(/^\/+/, ""), { waitUntil: "load", timeout: 30000 });
+    await page.goto((process.env.BASE || "http://localhost:8080") + "/" + r.replace(/^\/+/, ""), { waitUntil: "load", timeout: 30000 });
     await page.waitForTimeout(1200);
     // scroll through so whileInView reveals fire
     const total = await page.evaluate(() => document.documentElement.scrollHeight);

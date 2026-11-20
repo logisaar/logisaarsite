@@ -117,7 +117,7 @@ const Footer = () => {
               <ul>
                 {links.map((link) => (
                   <li key={link.label}>
-                    <Link to={link.to} className="inline-flex min-h-[2.75rem] items-center text-body-sm text-background/60 hover:text-primary-ink transition-colors">
+                    <Link to={link.to} className="inline-flex min-h-[2.75rem] min-w-[2.75rem] items-center text-body-sm text-background/60 hover:text-primary-ink transition-colors">
                       {link.label}
                     </Link>
                   </li>

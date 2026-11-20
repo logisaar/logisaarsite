@@ -81,7 +81,7 @@ const Navbar = () => {
         transition={{ type: "spring", stiffness: 200, damping: 30 }}
       >
         <div className="flex items-center justify-between gap-8">
-          <Link to="/" className="shrink-0">
+          <Link to="/" className="inline-flex min-h-[2.75rem] shrink-0 items-center" aria-label="Logisaar home">
             <BrandLogo
               priority
               className={`transition-all duration-500 ${scrolled ? "h-[2.375rem]" : "h-9 md:h-11"}`}
@@ -205,7 +205,7 @@ const Navbar = () => {
           <div className="hidden lg:block shrink-0">
             <MagneticButton strength={0.15}>
               <Button asChild size="sm" className="bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full px-6">
-                <button type="button" onClick={openLeadModal}>Get a Quote</button>
+                <button type="button" onClick={() => openLeadModal()}>Get a Quote</button>
               </Button>
             </MagneticButton>
           </div>
@@ -318,7 +318,7 @@ const Navbar = () => {
                 transition={{ delay: 0.35 }}
               >
                 <Button asChild className="mt-4 bg-gradient-primary hover:opacity-90 border-0 text-primary-on px-10">
-                  <button type="button" onClick={openLeadModal}>Get a Quote</button>
+                  <button type="button" onClick={() => openLeadModal()}>Get a Quote</button>
                 </Button>
               </motion.div>
             </nav>

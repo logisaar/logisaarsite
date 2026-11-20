@@ -1,37 +1,39 @@
 {
- "home@375": {
+ "ikuro@375": {
   "http": 200,
   "overflow": 0,
   "smallText": 0,
-  "smallTargets": 3,
-  "height": 9971,
+  "smallTargets": 30,
+  "height": 14493,
   "sampleText": [],
   "sampleTargets": [
    "151x36 a \"\"",
-   "86x17 a \"heylane.in\"",
-   "43x44 a \"IKURO\""
+   "106x37 button \"All Programs\"",
+   "109x37 button \"Development\"",
+   "152x37 button \"Artificial Intelligence\"",
+   "110x37 button \"Business & BI\"",
+   "120x37 button \"Creative Media\""
   ]
  },
- "home@1280": {
+ "ikuro@1280": {
   "http": 200,
   "overflow": 0,
   "smallText": 0,
-  "smallTargets": 1,
-  "height": 8558,
+  "smallTargets": 22,
+  "height": 8950,
   "sampleText": [],
   "sampleTargets": [
-   "92x18 a \"heylane.in\""
+   "90x36 a \"Enroll\"",
+   "88x36 button \"Syllabus\""
   ]
  },
- "home@1280-zoom200": {
+ "ikuro@1280-zoom200": {
   "http": 200,
   "overflow": 0,
   "smallText": 0,
-  "smallTargets": 1,
-  "height": 18743,
+  "smallTargets": 0,
+  "height": 18455,
   "sampleText": [],
-  "sampleTargets": [
-   "166x34 a \"heylane.in\""
-  ]
+  "sampleTargets": []
  }
 }

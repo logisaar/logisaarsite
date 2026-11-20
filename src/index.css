@@ -330,3 +330,36 @@
     scroll-behavior: auto !important;
   }
 }
+
+
+/* ── IKURO page theme: orange and navy on warm cream. The shared header, footer and Logi stay Logisaar green. ── */
+[data-theme="ikuro"] {
+  --ikuro-orange: 8 95% 58%;        /* #FA482E  logo, large display words, fills behind navy text */
+  --ikuro-orange-ink: 8 74% 45%;    /* a touch darker than the brief's #D93A22 (4.6:1 on white): that measured 4.4:1 on cream and 4.25:1 on sand; this is 5:1 or better on both */
+  --ikuro-navy: 240 17% 14%;        /* #1E1E2A  ink and dark sections */
+  --ikuro-cream: 30 33% 98%;        /* #FCFAF8  page background */
+  --ikuro-sand: 20 40% 95%;         /* #F8EFEA  soft bands, pill backgrounds */
+
+  --primary: var(--ikuro-orange-ink);
+  --primary-foreground: 0 0% 100%;
+  --on-primary: 0 0% 100%;
+  --primary-ink: var(--ikuro-orange-ink);
+  --background: var(--ikuro-cream);
+  --foreground: var(--ikuro-navy);
+  --secondary: var(--ikuro-sand);
+  --muted: var(--ikuro-sand);
+  --border: 20 25% 88%;
+  --ring: var(--ikuro-orange-ink);
+  --accent: var(--ikuro-orange);
+  --focus-ring: var(--ikuro-orange-ink);
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+/* dark navy bands: orange glyphs and white focus rings */
+[data-theme="ikuro"] .on-dark { --primary-ink: var(--ikuro-orange); --focus-ring: 0 0% 100%; }
+/* the shared green utilities become flat IKURO colour on this page */
+[data-theme="ikuro"] .bg-gradient-primary,
+[data-theme="ikuro"] .bg-gradient-primary-hover { background: hsl(var(--primary)); }
+[data-theme="ikuro"] .text-gradient { background: none; -webkit-background-clip: border-box; background-clip: border-box; -webkit-text-fill-color: currentColor; color: hsl(var(--ikuro-orange-ink)); }
+[data-theme="ikuro"] .shadow-glow,
+[data-theme="ikuro"] .shadow-glow-sm { box-shadow: none; }

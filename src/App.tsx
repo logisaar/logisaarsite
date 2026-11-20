@@ -9,7 +9,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Solutions from "./pages/Solutions";
 import Portfolio from "./pages/Portfolio";
-import TechXera from "./pages/TechXera";
+import Ikuro from "./pages/Ikuro";
 import Products from "./pages/Products";
 import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
@@ -51,7 +51,7 @@ const AnimatedRoutes = () => {
           <Route path="/about" element={<About />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/ikuro" element={<TechXera />} />
+          <Route path="/ikuro" element={<Ikuro />} />
           <Route path="/techxera" element={<Navigate to="/ikuro" replace />} />
           <Route path="/products" element={<Products />} />
           <Route path="/contact" element={<Contact />} />

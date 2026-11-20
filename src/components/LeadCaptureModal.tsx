@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion, AnimatePresence } from "framer-motion";
 import { Trash2, FileBox, CheckCircle, X } from "lucide-react";
-import { submitForm } from "@/lib/submitForm";
+import { submitForm, type LeadSource } from "@/lib/submitForm";
 import { useToast } from "@/hooks/use-toast";
 import quoteIllustration from "@/assets/quote-illustration.webp";
 import {
@@ -40,7 +40,9 @@ type AnimState = "visible" | "closing-trash" | "closing-submit" | "closed";
 
 const SESSION_KEY = "lead_capture_shown";
 export const OPEN_EVENT = "open-lead-modal";
-export const openLeadModal = () => window.dispatchEvent(new Event(OPEN_EVENT));
+/** Opens the quote form. `source` is recorded with the lead (default "lead_capture"). */
+export const openLeadModal = (source: LeadSource = "lead_capture") =>
+  window.dispatchEvent(new CustomEvent<LeadSource>(OPEN_EVENT, { detail: source }));
 
 const LeadCaptureModal = () => {
   const [open, setOpen] = useState(false);
@@ -53,6 +55,8 @@ const LeadCaptureModal = () => {
     defaultValues: { name: "", email: "", mobile: "", message: "" },
   });
 
+  const [source, setSource] = useState<LeadSource>("lead_capture");
+
   const openModal = useCallback(() => {
     setOpen(true);
     setAnimState("visible");
@@ -61,7 +65,12 @@ const LeadCaptureModal = () => {
 
   // Open from any "Get a Quote" button
   useEffect(() => {
-    const handler = () => { if (animState === "closed") openModal(); };
+    const handler = (e: Event) => {
+      if (animState !== "closed") return;
+      const detail = (e as CustomEvent<LeadSource>).detail;
+      setSource(detail === "ikuro-pilot" || detail === "ikuro-college" || detail === "heylane" ? detail : "lead_capture");
+      openModal();
+    };
     window.addEventListener(OPEN_EVENT, handler);
     return () => window.removeEventListener(OPEN_EVENT, handler);
   }, [animState, openModal]);
@@ -74,14 +83,14 @@ const LeadCaptureModal = () => {
   const onSubmit = useCallback(async (data: LeadFormValues) => {
     const result = await submitForm(
       { name: data.name, email: data.email, phone: data.mobile, message: data.message },
-      "lead_capture"
+      source
     );
     if (result.success) {
       setAnimState("closing-submit");
     } else {
       toast({ title: "Error", description: result.error, variant: "destructive" });
     }
-  }, [toast]);
+  }, [toast, source]);
 
   const handleAnimationComplete = useCallback(() => {
     if (animState === "closing-trash") {

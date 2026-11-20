@@ -1,5 +1,7 @@
 import { GOOGLE_SCRIPT_URL } from "./config";
 
+export type LeadSource = "lead_capture" | "contact_page" | "careers" | "ikuro-pilot" | "ikuro-college" | "heylane";
+
 interface FormData {
   name: string;
   email: string;
@@ -19,7 +21,7 @@ interface SubmitResult {
  */
 export function submitForm(
   data: FormData,
-  source: "lead_capture" | "contact_page" | "careers"
+  source: LeadSource
 ): Promise<SubmitResult> {
   return new Promise((resolve) => {
     const timeout = setTimeout(() => {
