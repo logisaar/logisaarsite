@@ -1,3 +1,4 @@
+import { CONTACT } from "@/lib/contact";
 import LegalPageLayout from "@/components/legal/LegalPageLayout";
 
 const sections = [
@@ -20,7 +21,7 @@ const sections = [
         <p><strong>Company Name:</strong> Logisaar Technologies Private Limited</p>
         <p><strong>CIN:</strong> U62012OD2026PTC053632</p>
         <p><strong>Registered Office:</strong> As updated in the Company's official statutory records maintained under applicable laws.</p>
-        <p><strong>Contact Email:</strong> <a href="mailto:contact@logisaar.in" className="text-primary underline underline-offset-4 hover:opacity-85">contact@logisaar.in</a></p>
+        <p><strong>Contact Email:</strong> <a href={CONTACT.mailto} className="text-primary underline underline-offset-4 hover:opacity-85">{CONTACT.email}</a></p>
       </>
     ),
   },
@@ -338,7 +339,7 @@ const sections = [
           <li>Withdrawal of consent</li>
           <li>Information regarding stored data</li>
         </ul>
-        <p className="mt-4">Requests may be submitted to: <a href="mailto:contact@logisaar.in" className="text-primary underline underline-offset-4 hover:opacity-85">contact@logisaar.in</a></p>
+        <p className="mt-4">Requests may be submitted to: <a href={CONTACT.mailto} className="text-primary underline underline-offset-4 hover:opacity-85">{CONTACT.email}</a></p>
       </>
     ),
   },
@@ -348,7 +349,7 @@ const sections = [
     content: (
       <>
         <p>Where applicable under Indian law, users may exercise rights available under the Digital Personal Data Protection Act, 2023 and any related regulations.</p>
-        <p>Requests concerning personal data may be submitted to: <a href="mailto:contact@logisaar.in" className="text-primary underline underline-offset-4 hover:opacity-85">contact@logisaar.in</a></p>
+        <p>Requests concerning personal data may be submitted to: <a href={CONTACT.mailto} className="text-primary underline underline-offset-4 hover:opacity-85">{CONTACT.email}</a></p>
       </>
     ),
   },
@@ -451,7 +452,7 @@ const sections = [
     content: (
       <>
         <p>For privacy-related questions, complaints, notices, or requests:</p>
-        <p><strong>Email:</strong> <a href="mailto:contact@logisaar.in" className="text-primary underline underline-offset-4 hover:opacity-85">contact@logisaar.in</a></p>
+        <p><strong>Email:</strong> <a href={CONTACT.mailto} className="text-primary underline underline-offset-4 hover:opacity-85">{CONTACT.email}</a></p>
       </>
     ),
   },

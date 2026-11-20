@@ -10,7 +10,7 @@ import { BookOpen, Fingerprint, Milestone, Cpu, Sparkles, GraduationCap, Beaker,
 const milestones = [
   { year: "Sep 2025", title: "Founded", description: "Logisaar was born with a vision to build intelligent, future-ready digital solutions." },
   { year: "Nov 2025", title: "10+ Projects Delivered", description: "Delivered 10+ projects in just two months across web, software, and automation." },
-  { year: "2025", title: "TECHXERA Launched", description: "Launched TECHXERA in Nalanda as a programming club bridging academics and industry." },
+  { year: "2025", title: "IKURO Launched", description: "Launched IKURO in Nalanda as a programming club bridging academics and industry." },
   { year: "2026", title: "Growing Impact", description: "Expanding globally while nurturing the next generation of technology leaders." },
 ];
 
@@ -19,7 +19,7 @@ const About = () => {
     <Layout>
       <SEO
         title="About Logisaar | AI-Native Technology Company in Odisha"
-        description="Logisaar is an AI-native technology company based in Odisha. We build custom AI systems, ship AI-native products, and train engineers via TechXera."
+        description="Logisaar is an AI-native technology company based in Odisha. We build custom AI systems, ship AI-native products, and train engineers via IKURO."
         keywords="about Logisaar, AI company Odisha, Chinmay Kumar Panda, Biswanath Prasanna Satyabrata Kar, software engineering Bhubaneswar, IT company Cuttack"
         canonical="https://www.logisaar.in/about"
       />
@@ -147,7 +147,7 @@ const About = () => {
                     <div className="space-y-4">
                       <div>
                         <div className="font-bold text-sm text-foreground flex items-center gap-2">
-                          ScanLoyal
+                          HeyLane
                           <span className="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold">
                             Main Product
                           </span>
@@ -177,7 +177,7 @@ const About = () => {
                     </h3>
                     <div className="space-y-3">
                       <div>
-                        <div className="font-semibold text-sm text-foreground">TechXera</div>
+                        <div className="font-semibold text-sm text-foreground">IKURO</div>
                         <ul className="mt-1 space-y-1.5 text-xs text-muted-foreground pl-3 list-disc font-medium">
                           <li>Chalk to Choice</li>
                           <li>Workshops</li>
@@ -318,7 +318,7 @@ const About = () => {
               { title: "Ship Fast", desc: "We value speed, momentum, and continuous iteration to get feedback and deliver value rapidly." },
               { title: "Learn Continuously", desc: "We stay curious, embrace new paradigms, and share knowledge to keep pushing technical boundaries." },
               { title: "Own Outcomes", desc: "We take absolute responsibility for what we build and its ultimate impact on the client and user." },
-              { title: "Help Others Grow", desc: "We support our team, our clients, and our students through education and mentorship via TechXera." },
+              { title: "Help Others Grow", desc: "We support our team, our clients, and our students through education and mentorship via IKURO." },
             ].map((v, i) => (
               <div 
                 key={v.title}

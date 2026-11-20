@@ -5,6 +5,7 @@ interface FormData {
   email: string;
   phone?: string;
   message?: string;
+  extra?: Record<string, string>;
 }
 
 interface SubmitResult {
@@ -18,7 +19,7 @@ interface SubmitResult {
  */
 export function submitForm(
   data: FormData,
-  source: "lead_capture" | "contact_page"
+  source: "lead_capture" | "contact_page" | "careers"
 ): Promise<SubmitResult> {
   return new Promise((resolve) => {
     const timeout = setTimeout(() => {
@@ -43,6 +44,7 @@ export function submitForm(
       email: data.email,
       phone: data.phone || "",
       message: data.message || "",
+      ...(data.extra ?? {}),
       source,
     };
 

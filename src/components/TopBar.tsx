@@ -1,3 +1,4 @@
+import { CONTACT } from "@/lib/contact";
 import { Mail, Phone } from "lucide-react";
 
 const socialLinks = [
@@ -40,9 +41,9 @@ const TopBar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-1.5 text-xs">
           <div className="flex items-center gap-5">
-            <a href="mailto:logisaar@gmail.com" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
+            <a href={CONTACT.mailto} className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
               <Mail size={13} />
-              <span>logisaar@gmail.com</span>
+              <span>{CONTACT.email}</span>
             </a>
             <a href="tel:+918596072510" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
               <Phone size={13} />

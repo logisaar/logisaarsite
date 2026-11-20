@@ -1,3 +1,4 @@
+import { CONTACT } from "@/lib/contact";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
@@ -20,7 +21,7 @@ const footerLinks = {
   Company: [
     { label: "About Us", to: "/about" },
     { label: "Portfolio", to: "/portfolio" },
-    { label: "TechXera", to: "/techxera" },
+    { label: "IKURO", to: "/ikuro" },
     { label: "Products", to: "/products" },
     { label: "Careers", to: "/careers" },
     { label: "Contact", to: "/contact" },
@@ -122,7 +123,7 @@ const Footer = () => {
               <img src={logo} alt="LogiSaar" className="h-24 w-auto drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-background/50">
-              AI-native technology company based in Odisha. We build AI systems and AI-native software, train builders through TechXera, and ship our own products.
+              Software, AI agents and business automation from Bhubaneswar, Odisha. Makers of HeyLane and IKURO.
             </p>
             {/* Social icons */}
             <div className="flex gap-2 mt-6 flex-wrap">
@@ -183,20 +184,18 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2 pt-2">
                 <Mail size={14} className="text-primary shrink-0" />
-                <a href="mailto:logisaar@gmail.com" className="hover:text-primary transition-colors break-all">
-                  logisaar@gmail.com
-                </a>
+                <a href={CONTACT.mailto} className="hover:text-primary transition-colors break-all">{CONTACT.email}</a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={14} className="text-primary shrink-0" />
-                <a href="tel:+917815014638" className="hover:text-primary transition-colors">
-                  +91 78150 14638
+                <a href={CONTACT.tel} className="hover:text-primary transition-colors">
+                  {CONTACT.phone}
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <MessageCircle size={14} className="text-green-400 shrink-0" />
                 <a
-                  href="https://wa.me/917815014638"
+                  href={CONTACT.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-green-400 transition-colors"

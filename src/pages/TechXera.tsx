@@ -1033,10 +1033,10 @@ const TechXera = () => {
   return (
     <Layout>
       <SEO
-        title="TechXera by Logisaar | AI-Augmented Training & Skills in Odisha"
+        title="IKURO by Logisaar | AI-Augmented Training & Skills in Odisha"
         description="Industry skill development courses in Web Dev, App Dev, ML, Cybersecurity and Agentic AI built around modern AI workflows. Home of Chalk to Choice."
-        keywords="TechXera, programming course Bhubaneswar, AI classes Cuttack, Chalk to Choice Odisha, computer training, Logisaar"
-        canonical="https://www.logisaar.in/techxera"
+        keywords="IKURO, programming course Bhubaneswar, AI classes Cuttack, Chalk to Choice Odisha, computer training, Logisaar"
+        canonical="https://www.logisaar.in/ikuro"
       />
 
       {/* Hero Section */}
@@ -1063,7 +1063,7 @@ const TechXera = () => {
                 className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-4 py-1.5 rounded-full"
               >
                 <GraduationCap size={13} />
-                <span>TechXera Division</span>
+                <span>IKURO Division</span>
               </motion.div>
 
               <div className="space-y-4">
@@ -1073,7 +1073,7 @@ const TechXera = () => {
                   transition={{ delay: 0.1, duration: 0.8 }}
                   className="font-display text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-white leading-[1.1]"
                 >
-                  TechXera Learning <br />
+                  IKURO Learning <br />
                   <span className="text-gradient">Ecosystem.</span>
                 </motion.h1>
 
@@ -1117,7 +1117,7 @@ const TechXera = () => {
                   className="rounded-full px-8 gap-2 font-semibold border-border hover:bg-secondary/40 transition-transform hover:-translate-y-0.5"
                 >
                   <a
-                    href="https://wa.me/918596072510?text=Hi%20Logisaar%20TechXera%2C%20I%27m%20interested%20in%20career%20mentorship%20and%20learning%20more%20about%20your%20courses."
+                    href="https://wa.me/918596072510?text=Hi%20Logisaar%20IKURO%2C%20I%27m%20interested%20in%20career%20mentorship%20and%20learning%20more%20about%20your%20courses."
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -1268,7 +1268,7 @@ const TechXera = () => {
                     </Button>
                     <Button asChild className="flex-1 bg-gradient-primary hover:opacity-90 text-white rounded-full py-4 h-auto font-semibold border-0">
                       <a
-                        href="https://wa.me/917815014638?text=Hi%20Logisaar%20TechXera%2C%20I%27m%20interested%20in%20registering%20for%20the%20Chalk%20to%20Choice%20program."
+                        href="https://wa.me/917815014638?text=Hi%20Logisaar%20IKURO%2C%20I%27m%20interested%20in%20registering%20for%20the%20Chalk%20to%20Choice%20program."
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center gap-2"
@@ -1629,7 +1629,7 @@ const TechXera = () => {
               Ecosystem Career Outcomes
             </h2>
             <p className="text-muted-foreground text-sm md:text-base">
-              TechXera is optimized to prepare you directly for the industry. Here is why our training structure stands apart.
+              IKURO is optimized to prepare you directly for the industry. Here is why our training structure stands apart.
             </p>
           </div>
 
@@ -1749,7 +1749,7 @@ const TechXera = () => {
               </h2>
 
               <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                Join TechXera and gain practical, industry-ready skills through project-based learning, AI-powered workflows, structured internships, and placement-focused training.
+                Join IKURO and gain practical, industry-ready skills through project-based learning, AI-powered workflows, structured internships, and placement-focused training.
               </p>
 
               <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
@@ -1767,7 +1767,7 @@ const TechXera = () => {
                   className="rounded-full px-8 gap-2 font-semibold border-border hover:bg-secondary/40 transition-transform hover:-translate-y-0.5"
                 >
                   <a
-                    href="https://wa.me/918596072510?text=Hi%20Logisaar%20TechXera%2C%20I'm%20interested%20in%20a%20career%20guidance%20session."
+                    href="https://wa.me/918596072510?text=Hi%20Logisaar%20IKURO%2C%20I'm%20interested%20in%20a%20career%20guidance%20session."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2"
@@ -2197,7 +2197,7 @@ const TechXera = () => {
                         "Online + Recorded: Attend live or watch anytime on demand",
                         "All Boards Welcome: CBSE, State Board (CHSE), ICSE/ISC",
                         "Digital PDF Notes: Complete study material sent after course",
-                        "Official Completion Certificate from TechXera",
+                        "Official Completion Certificate from IKURO",
                         "Live Q&A: Ask your doubts directly to the instructor every day",
                         "Exam Registration Help: Walkthrough of JEE/NEET forms live on screen",
                         "Personal Roadmap: Signed, personalized career action sheet"
@@ -2227,7 +2227,7 @@ const TechXera = () => {
 
                     <Button asChild className="w-full bg-gradient-primary hover:opacity-95 text-white rounded-full py-4 h-auto font-semibold">
                       <a
-                        href="https://wa.me/917815014638?text=Hi%20Logisaar%20TechXera%2C%20I%27m%20interested%20in%20registering%20for%20the%20Chalk%20to%20Choice%20program."
+                        href="https://wa.me/917815014638?text=Hi%20Logisaar%20IKURO%2C%20I%27m%20interested%20in%20registering%20for%20the%20Chalk%20to%20Choice%20program."
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center gap-2"

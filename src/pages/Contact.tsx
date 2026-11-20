@@ -1,3 +1,4 @@
+import { CONTACT } from "@/lib/contact";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
@@ -108,7 +109,7 @@ const Contact = () => {
 
               {/* Email */}
               <a
-                href="mailto:logisaar@gmail.com"
+                href={CONTACT.mailto}
                 className="flex items-center gap-3 text-white/80 justify-center md:justify-start hover:text-white transition-colors group"
               >
                 <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
@@ -116,7 +117,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="text-xs text-white/40 font-mono uppercase">Email</div>
-                  <div className="text-sm font-mono">logisaar@gmail.com</div>
+                  <div className="text-sm font-mono">{CONTACT.email}</div>
                 </div>
               </a>
 

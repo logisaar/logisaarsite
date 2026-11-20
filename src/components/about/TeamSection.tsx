@@ -34,7 +34,7 @@ const teamMembers: TeamMember[] = [
     initials: "BPS",
     accentColor: "hsl(210, 90%, 55%)",
     photo: bpsPhoto,
-    bio: "Biswanath leads system architecture, cloud infrastructure, and engineering operations. He focuses on building reliable, scalable platforms and mentoring technical teams through TechXera.",
+    bio: "Biswanath leads system architecture, cloud infrastructure, and engineering operations. He focuses on building reliable, scalable platforms and mentoring technical teams through IKURO.",
     expertise: ["System Architecture", "Cloud Engineering", "DevOps", "AI Operations"],
     linkedin: "https://www.linkedin.com/in/biswanath-prasanna-satyabrata-kar-79282330a/",
     quote: "Engineering systems to compile faster, deploy safer, and integrate AI seamlessly."

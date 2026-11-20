@@ -34,3 +34,9 @@ temp-*
 # Custom / Local Assets
 all skills
 all skills/
+
+# Taste Skill (design-taste-frontend) — installed locally, not committed
+.claude/skills/design-taste-frontend/
+.agents/skills/design-taste-frontend/
+.gemini/skills/design-taste-frontend/
+.taste-skill/

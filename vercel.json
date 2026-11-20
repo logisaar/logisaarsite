@@ -14,31 +14,14 @@
             ]
         },
         {
+            "source": "/techxera",
+            "destination": "/ikuro",
+            "permanent": true
+        },
+        {
             "source": "/favicon.ico",
             "destination": "/favicon.png",
             "permanent": true
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.+\\.[^/]+)$",
-            "dest": "/$1"
-        },
-        {
-            "src": "/",
-            "dest": "/index.html"
-        },
-        {
-            "src": "/(about|services|portfolio|pricing|contact|web-development-odisha)",
-            "dest": "/index.html"
-        },
-        {
-            "src": "/services/(school-management-system|hotel-management-system|ai-lead-followup|ai-receptionist|proposal-software|qr-menu-system|travel-website|ai-automation|custom-crm)",
-            "dest": "/index.html"
-        },
-        {
-            "src": "/.*",
-            "status": 404
         }
     ],
     "headers": [
@@ -54,6 +37,12 @@
                     "value": "DENY"
                 }
             ]
+        }
+    ],
+    "rewrites": [
+        {
+            "source": "/((?!.*\\.).*)",
+            "destination": "/index.html"
         }
     ]
 }

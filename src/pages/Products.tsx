@@ -11,8 +11,8 @@ const Products = () => {
     <Layout>
       <SEO
         title="Our Products | Customer Retention SaaS | Logisaar"
-        description="Explore proprietary SaaS applications built and shipped by Logisaar, including ScanLoyal, our customer loyalty and Google Review growth suite."
-        keywords="SaaS products, ScanLoyal, customer loyalty app Odisha, local retail software, Logisaar products"
+        description="Explore proprietary SaaS applications built and shipped by Logisaar, including HeyLane, our customer loyalty and Google Review growth suite."
+        keywords="SaaS products, HeyLane, customer loyalty app Odisha, local retail software, Logisaar products"
         canonical="https://www.logisaar.in/products"
       />
 
@@ -61,13 +61,13 @@ const Products = () => {
                 <span>FLAGSHIP PRODUCT</span>
               </div>
               <h2 className="font-display text-4xl font-bold text-foreground">
-                ScanLoyal
+                HeyLane
               </h2>
               <p className="text-primary text-base font-semibold leading-relaxed">
                 Customer retention &amp; Google reviews growth for local businesses.
               </p>
               <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                ScanLoyal is a contactless loyalty SaaS application built to modernize physical merchant retail shops, cafes, hotels, restaurants, salons, and beauty parlours. Instead of physical cardboard loyalty stamp cards, customers scan a unique QR code at checkout to log visits, compile points, earn rewards, and leave positive Google reviews.
+                HeyLane is a contactless loyalty SaaS application built to modernize physical merchant retail shops, cafes, hotels, restaurants, salons, and beauty parlours. Instead of physical cardboard loyalty stamp cards, customers scan a unique QR code at checkout to log visits, compile points, earn rewards, and leave positive Google reviews.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
@@ -87,14 +87,14 @@ const Products = () => {
 
               <div className="pt-6 flex flex-wrap gap-4">
                 <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 border-0 text-white rounded-xl px-8 h-12 shadow-glow">
-                  <a href="https://loyalty.logisaar.in/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                    Visit ScanLoyal Website
+                  <a href="https://heylane.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                    Visit HeyLane Website
                     <ExternalLink size={16} />
                   </a>
                 </Button>
                 
                 <Button asChild variant="outline" size="lg" className="rounded-xl px-8 h-12 border-border/60 hover:bg-secondary">
-                  <a href="https://wa.me/918596072510?text=Hi%20Logisaar%2C%20I'd%20like%20to%20learn%20more%20about%20deploying%20ScanLoyal%20for%20my%20business." target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/918596072510?text=Hi%20Logisaar%2C%20I'd%20like%20to%20learn%20more%20about%20deploying%20HeyLane%20for%20my%20business." target="_blank" rel="noopener noreferrer">
                     Request Merchant Demo
                   </a>
                 </Button>
@@ -114,7 +114,7 @@ const Products = () => {
                     <span className="w-3 h-3 rounded-full bg-green-500/60" />
                   </div>
                   <div className="bg-secondary/40 border border-border px-4 py-0.5 rounded-md text-[10px] text-muted-foreground font-mono select-none">
-                    loyalty.logisaar.in
+                    heylane.in
                   </div>
                   <div className="w-6" />
                 </div>
@@ -174,8 +174,8 @@ const Products = () => {
                 {/* Footer block */}
                 <div className="border-t border-border/40 mt-3 pt-3 flex justify-between items-center text-[10px] text-muted-foreground">
                   <span className="uppercase tracking-widest font-mono text-[9px] text-muted-foreground/60">PROPRIETARY PLATFORM BY LOGISAAR</span>
-                  <a href="https://loyalty.logisaar.in/" target="_blank" rel="noopener noreferrer" className="text-primary font-mono font-semibold hover:underline inline-flex items-center gap-1">
-                    loyalty.logisaar.in <ArrowRight size={10} />
+                  <a href="https://heylane.in" target="_blank" rel="noopener noreferrer" className="text-primary font-mono font-semibold hover:underline inline-flex items-center gap-1">
+                    heylane.in <ArrowRight size={10} />
                   </a>
                 </div>
               </div>

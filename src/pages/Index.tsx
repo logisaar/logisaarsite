@@ -66,7 +66,7 @@ const localBusinessSchema = {
     "https://facebook.com/share/1CavFRY28Y/",
   ],
   serviceType: [
-    "AI Systems", "Custom Software Development", "TechXera AI Training",
+    "AI Systems", "Custom Software Development", "IKURO AI Training",
     "AI Automation", "E-Commerce Systems", "Custom CRM Solutions",
   ],
   priceRange: "₹₹",
@@ -320,8 +320,8 @@ const Index = () => {
     <Layout>
       <SEO
         title="Logisaar | AI-Native Technology Company in Odisha"
-        description="Logisaar is an AI-native technology company based in Odisha. We build custom AI systems, deploy AI-augmented business software, train professionals through TechXera, and ship our own products."
-        keywords="AI technology company Odisha, custom AI systems Bhubaneswar, software development Cuttack, TechXera AI training, custom CRM systems Odisha, ScanLoyal, Logisaar"
+        description="Logisaar is an AI-native technology company based in Odisha. We build custom AI systems, deploy AI-augmented business software, train professionals through IKURO, and ship our own products."
+        keywords="AI technology company Odisha, custom AI systems Bhubaneswar, software development Cuttack, IKURO AI training, custom CRM systems Odisha, HeyLane, Logisaar"
         canonical="https://www.logisaar.in/"
         jsonLd={localBusinessSchema}
       />
@@ -541,7 +541,7 @@ const Index = () => {
                     size="lg"
                     className="bg-gradient-primary hover:opacity-90 border-0 text-white rounded-full px-8 gap-2 font-semibold shadow-md shadow-primary/20"
                   >
-                    <Link to="/techxera">
+                    <Link to="/ikuro">
                       Explore Chalk to Choice
                       <ArrowRight size={16} />
                     </Link>
@@ -621,13 +621,13 @@ const Index = () => {
                 We build our own <span className="text-gradient">products</span> too.
               </h2>
               <p className="text-muted-foreground text-base leading-relaxed">
-                ScanLoyal is our proprietary customer loyalty SaaS, built specifically for local businesses like cafes, hotels, restaurants, salons, and beauty parlours to drive customer retention and Google Business Profile growth.
+                HeyLane is our proprietary customer loyalty SaaS, built specifically for local businesses like cafes, hotels, restaurants, salons, and beauty parlours to drive customer retention and Google Business Profile growth.
               </p>
               <div>
                 <MagneticButton strength={0.1}>
                   <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 border-0 text-white rounded-full px-8">
-                    <a href="https://loyalty.logisaar.in/" target="_blank" rel="noopener noreferrer">
-                      Visit ScanLoyal
+                    <a href="https://heylane.in" target="_blank" rel="noopener noreferrer">
+                      Visit HeyLane
                       <ArrowRight size={16} className="ml-2" />
                     </a>
                   </Button>
@@ -647,7 +647,7 @@ const Index = () => {
                     <span className="w-3 h-3 rounded-full bg-green-500/60" />
                   </div>
                   <div className="bg-secondary/40 border border-border px-4 py-0.5 rounded-md text-[10px] text-muted-foreground font-mono select-none">
-                    loyalty.logisaar.in
+                    heylane.in
                   </div>
                   <div className="w-6" /> {/* Spacer to center URL */}
                 </div>
@@ -707,8 +707,8 @@ const Index = () => {
                 {/* Footer block */}
                 <div className="border-t border-border/40 mt-3 pt-3 flex justify-between items-center text-[10px] text-muted-foreground">
                   <span>Loyalty & Retention Platform</span>
-                  <a href="https://loyalty.logisaar.in/" target="_blank" rel="noopener noreferrer" className="text-primary font-mono font-semibold hover:underline inline-flex items-center gap-1">
-                    loyalty.logisaar.in <ArrowRight size={10} />
+                  <a href="https://heylane.in" target="_blank" rel="noopener noreferrer" className="text-primary font-mono font-semibold hover:underline inline-flex items-center gap-1">
+                    heylane.in <ArrowRight size={10} />
                   </a>
                 </div>
               </div>

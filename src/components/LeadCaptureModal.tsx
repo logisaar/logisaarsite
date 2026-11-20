@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -37,27 +38,50 @@ type LeadFormValues = z.infer<typeof leadSchema>;
 type AnimState = "visible" | "closing-trash" | "closing-submit" | "closed";
 
 const SESSION_KEY = "lead_capture_shown";
+export const OPEN_EVENT = "open-lead-modal";
+export const openLeadModal = () => window.dispatchEvent(new Event(OPEN_EVENT));
 
 const LeadCaptureModal = () => {
   const [open, setOpen] = useState(false);
   const [animState, setAnimState] = useState<AnimState>("closed");
   const [showNotification, setShowNotification] = useState(false);
   const { toast } = useToast();
+  const { pathname } = useLocation();
 
   const form = useForm<LeadFormValues>({
     resolver: zodResolver(leadSchema),
     defaultValues: { name: "", email: "", mobile: "", message: "" },
   });
 
-  useEffect(() => {
-    if (sessionStorage.getItem(SESSION_KEY)) return;
-    const timer = setTimeout(() => {
-      setOpen(true);
-      setAnimState("visible");
-      sessionStorage.setItem(SESSION_KEY, "1");
-    }, 3000);
-    return () => clearTimeout(timer);
+  const openModal = useCallback(() => {
+    setOpen(true);
+    setAnimState("visible");
+    try { sessionStorage.setItem(SESSION_KEY, "1"); } catch { /* ignore */ }
   }, []);
+
+  // Open from any "Get a Quote" button
+  useEffect(() => {
+    const handler = () => { if (animState === "closed") openModal(); };
+    window.addEventListener(OPEN_EVENT, handler);
+    return () => window.removeEventListener(OPEN_EVENT, handler);
+  }, [animState, openModal]);
+
+  // Home page only: once per session after 60% scroll
+  useEffect(() => {
+    if (pathname !== "/") return;
+    let shown = false;
+    try { shown = !!sessionStorage.getItem(SESSION_KEY); } catch { /* ignore */ }
+    if (shown) return;
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (max > 0 && window.scrollY / max >= 0.6) {
+        window.removeEventListener("scroll", onScroll);
+        openModal();
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [pathname, openModal]);
 
   const handleClose = useCallback(() => {
     if (animState !== "visible") return;

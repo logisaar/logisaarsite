@@ -23,6 +23,8 @@ const SEO = ({ title, description, keywords, canonical, jsonLd, noindex }: SEOPr
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       {canonical && <meta property="og:url" content={canonical} />}
+      <meta property="og:image" content="https://www.logisaar.in/og-image.png" />
+      <meta name="twitter:image" content="https://www.logisaar.in/og-image.png" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />

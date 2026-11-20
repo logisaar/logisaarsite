@@ -3,12 +3,13 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, User, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { openLeadModal } from "@/components/LeadCaptureModal";
 import MagneticButton from "@/components/creative/MagneticButton";
 
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/solutions", label: "Solutions" },
-  { to: "/techxera", label: "TechXera" },
+  { to: "/ikuro", label: "IKURO" },
   { to: "/products", label: "Products" },
   { to: "/careers", label: "Careers" },
   { to: "/contact", label: "Contact" },
@@ -88,7 +89,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-1">
 
             {/* Home */}
             <Link
@@ -201,16 +202,16 @@ const Navbar = () => {
             ))}
           </nav>
 
-          <div className="hidden md:block shrink-0">
+          <div className="hidden lg:block shrink-0">
             <MagneticButton strength={0.15}>
               <Button asChild size="sm" className="bg-gradient-primary hover:opacity-90 border-0 text-white rounded-full px-6">
-                <Link to="/contact">Get a Quote</Link>
+                <button type="button" onClick={openLeadModal}>Get a Quote</button>
               </Button>
             </MagneticButton>
           </div>
 
           {/* Mobile Toggle */}
-          <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
+          <button className="lg:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -223,7 +224,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 top-20 bg-background/75 backdrop-blur-2xl z-40 md:hidden"
+            className="fixed inset-0 top-20 bg-background/75 backdrop-blur-2xl z-40 lg:hidden"
           >
             <nav className="flex flex-col items-center gap-6 pt-16">
               {/* Home */}
@@ -309,7 +310,7 @@ const Navbar = () => {
                 transition={{ delay: 0.35 }}
               >
                 <Button asChild className="mt-4 bg-gradient-primary hover:opacity-90 border-0 text-white px-10">
-                  <Link to="/contact">Get a Quote</Link>
+                  <button type="button" onClick={openLeadModal}>Get a Quote</button>
                 </Button>
               </motion.div>
             </nav>

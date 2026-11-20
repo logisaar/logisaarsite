@@ -1,3 +1,4 @@
+import { CONTACT } from "@/lib/contact";
 import LegalPageLayout from "@/components/legal/LegalPageLayout";
 
 const sections = [
@@ -115,7 +116,7 @@ const sections = [
     content: (
       <>
         <p>For cookie-related questions or notices:</p>
-        <p className="mt-2"><strong>Email:</strong> <a href="mailto:contact@logisaar.in" className="text-primary underline underline-offset-4">contact@logisaar.in</a></p>
+        <p className="mt-2"><strong>Email:</strong> <a href={CONTACT.mailto} className="text-primary underline underline-offset-4">{CONTACT.email}</a></p>
       </>
     ),
   },

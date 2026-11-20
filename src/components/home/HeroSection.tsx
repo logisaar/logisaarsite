@@ -181,8 +181,8 @@ const HeroSection = () => {
               variant="outline"
               className="h-12 px-8 text-base border-2 border-primary/30 hover:border-primary/60 hover:bg-primary/5 hover:text-primary text-foreground rounded-full transition-all duration-200 hover:-translate-y-[2px]"
             >
-              <Link to="/techxera">
-                Explore TechXera
+              <Link to="/ikuro">
+                Explore IKURO
                 <ArrowRight size={18} className="ml-2 opacity-60" />
               </Link>
             </Button>
@@ -192,7 +192,7 @@ const HeroSection = () => {
           <div className="flex flex-wrap items-center justify-center gap-x-1 text-sm text-muted-foreground mb-6">
             <span>Looking for</span>
             <Link
-              to="/techxera#chalk-to-choice"
+              to="/ikuro#chalk-to-choice"
               className="text-primary hover:underline font-medium"
             >
               Chalk to Choice
