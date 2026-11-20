@@ -100,8 +100,8 @@ const HeroSection = () => {
       // Staggered Number Count-Up Animation
       const counters = { products: 0, builders: 0 };
       tl.to(counters, {
-        products: 25,
-        builders: 500,
+        products: 30,
+        builders: 25,
         duration: 1.8,
         ease: "power2.out",
         onUpdate: () => {
@@ -143,7 +143,7 @@ const HeroSection = () => {
             ref={taglineRef}
             className="text-sm md:text-base font-semibold text-primary uppercase tracking-[0.25em] mb-4 font-mono opacity-0"
           >
-            Tech that gives you results
+            Software · AI Agents · Automation
           </div>
 
           {/* Headline — Space Grotesk 700, centered, max-width ~780px */}
@@ -152,7 +152,7 @@ const HeroSection = () => {
             className="font-display font-bold tracking-[-0.02em] leading-[1.05] mb-6 opacity-0 mx-auto"
             style={{ fontSize: "clamp(48px, 6vw, 72px)", maxWidth: "780px" }}
           >
-            We build native <span className="text-gradient">AI</span> technology
+            Less <span className="line-through decoration-[4px] decoration-foreground/70 text-muted-foreground/50">busywork.</span><br />More <span className="text-gradient">business.</span>
           </h1>
 
           {/* Subhead — Inter 400/500 */}
@@ -160,7 +160,7 @@ const HeroSection = () => {
             ref={subheadRef}
             className="text-lg md:text-xl text-muted-foreground font-normal leading-relaxed max-w-2xl mb-8 opacity-0 mx-auto text-balance"
           >
-            AI solutions that deliver business results. Practical AI education that builds future innovators. We build intelligent technology for modern businesses while TechXera equips students with real-world AI skills to build careers, create businesses, and thrive independently.
+            Logisaar builds custom software, AI agents and business automation that take repetitive work off your team, so your people can spend their day on customers and growth.
           </p>
 
           {/* CTA: 2 primary buttons */}
@@ -170,10 +170,10 @@ const HeroSection = () => {
           >
             <AnimatedButton
               as={Link}
-              to="/solutions"
+              to="/contact"
               className="shadow-glow"
             >
-              Our Solutions
+              Start a Project
               <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform relative z-20" />
             </AnimatedButton>
             <Button
@@ -181,8 +181,8 @@ const HeroSection = () => {
               variant="outline"
               className="h-12 px-8 text-base border-2 border-primary/30 hover:border-primary/60 hover:bg-primary/5 hover:text-primary text-foreground rounded-full transition-all duration-200 hover:-translate-y-[2px]"
             >
-              <Link to="/ikuro">
-                Explore IKURO
+              <Link to="/solutions">
+                Explore Services
                 <ArrowRight size={18} className="ml-2 opacity-60" />
               </Link>
             </Button>
@@ -192,12 +192,12 @@ const HeroSection = () => {
           <div className="flex flex-wrap items-center justify-center gap-x-1 text-sm text-muted-foreground mb-6">
             <span>Looking for</span>
             <Link
-              to="/ikuro#chalk-to-choice"
+              to="/products"
               className="text-primary hover:underline font-medium"
             >
-              Chalk to Choice
+              HeyLane or IKURO
             </Link>
-            <span>?</span>
+            <span className="-ml-1">?</span>
             <span className="mx-1">·</span>
             <span>Just want to talk?</span>
             <Link
@@ -223,12 +223,12 @@ const HeroSection = () => {
             className="h-12 min-w-[3rem] px-2.5 rounded-xl bg-gradient-primary flex items-center justify-center text-white font-bold text-lg font-display shrink-0 select-none shadow-sm"
             style={{ filter: "drop-shadow(0 0 3px rgba(255, 255, 255, 0.8))" }}
           >
-            500+
+            25+
           </div>
           <div className="text-left space-y-0.5">
-            <h4 className="font-bold text-foreground text-xs font-display">Future AI Builders</h4>
+            <h4 className="font-bold text-foreground text-xs font-display">Happy Clients</h4>
             <p className="text-[10px] text-muted-foreground leading-relaxed">
-              Project-based programs designed for industry readiness.
+              Schools, hotels, clinics and growing businesses.
             </p>
           </div>
         </div>
@@ -245,12 +245,12 @@ const HeroSection = () => {
             className="h-12 min-w-[3rem] px-2.5 rounded-xl bg-gradient-primary flex items-center justify-center text-white font-bold text-lg font-display shrink-0 select-none shadow-sm"
             style={{ filter: "drop-shadow(0 0 3px rgba(255, 255, 255, 0.8))" }}
           >
-            25+
+            30+
           </div>
           <div className="text-left space-y-0.5">
-            <h4 className="font-bold text-foreground text-xs font-display">Products Shipped</h4>
+            <h4 className="font-bold text-foreground text-xs font-display">Projects Delivered</h4>
             <p className="text-[10px] text-muted-foreground leading-relaxed">
-              Custom AI systems & web platforms deployed to production.
+              Software, AI agents and automations live in production.
             </p>
           </div>
         </div>

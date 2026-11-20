@@ -1,3 +1,4 @@
+import { CONTACT } from "@/lib/contact";
 import { getImage } from "@/data/images";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import { useState } from "react";
@@ -49,13 +50,13 @@ const localBusinessSchema = {
   "@type": "LocalBusiness",
   name: "Logisaar",
   description:
-    "AI-native technology company based in Odisha building custom AI systems, CRM systems, e-commerce platforms and AI-augmented software.",
+    "Custom software, AI agents and business automation for growing businesses in India and abroad. Makers of HeyLane and IKURO.",
   url: "https://www.logisaar.in",
-  telephone: "+918596072510",
-  email: "logisaar@gmail.com",
+  telephone: CONTACT.phone.replace(/\s/g, ""),
+  email: CONTACT.email,
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Cuttack",
+    addressLocality: "Bhubaneswar",
     addressRegion: "Odisha",
     addressCountry: "IN",
   },
@@ -68,8 +69,8 @@ const localBusinessSchema = {
     "https://facebook.com/share/1CavFRY28Y/",
   ],
   serviceType: [
-    "AI Systems", "Custom Software Development", "IKURO AI Training",
-    "AI Automation", "E-Commerce Systems", "Custom CRM Solutions",
+    "Custom Software Development", "AI Agent Development",
+    "Business Automation", "AI Software", "Custom CRM Solutions",
   ],
   priceRange: "₹₹",
 };
@@ -321,9 +322,9 @@ const Index = () => {
   return (
     <Layout>
       <SEO
-        title="Logisaar | AI-Native Technology Company in Odisha"
-        description="Logisaar is an AI-native technology company based in Odisha. We build custom AI systems, deploy AI-augmented business software, train professionals through IKURO, and ship our own products."
-        keywords="AI technology company Odisha, custom AI systems Bhubaneswar, software development Cuttack, IKURO AI training, custom CRM systems Odisha, HeyLane, Logisaar"
+        title="Logisaar | Software, AI Agents & Business Automation"
+        description="Logisaar builds custom software, AI agents and business automation for growing businesses in India and abroad. Makers of HeyLane and IKURO."
+        keywords="custom software development, AI agents, business automation, AI software, HeyLane, IKURO, Logisaar, software company Bhubaneswar"
         canonical="https://www.logisaar.in/"
         jsonLd={localBusinessSchema}
       />
@@ -331,22 +332,77 @@ const Index = () => {
       {/* Hero Section */}
       <HeroSection />
       
-      <MarqueeText text="AI SYSTEMS  ·  SOFTWARE  ·  TRAINING  ·  PRODUCTS  ·  AUTOMATION  ·  " />
+      <MarqueeText text="SOFTWARE DEVELOPMENT  ·  AI AGENTS  ·  BUSINESS AUTOMATION  ·  AI SOFTWARE  ·  " />
 
-       {/* ── Section: Solutions Snapshot ── */}
+      {/* ── Section: What We Do ── */}
+      <section className="py-24 relative overflow-hidden bg-background">
+        <div className="w-full max-w-[1400px] mx-auto px-6 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-5">
+            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
+              <Layers size={13} />
+              <span>WHAT WE DO</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight text-center">
+              Four ways we take work <span className="text-gradient">off your plate</span>
+            </h2>
+            <p className="text-muted-foreground text-base leading-relaxed max-w-2xl mx-auto text-center">
+              Pick one, or let us combine them into one system that fits how your business actually runs.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: Monitor, tag: "Software Development", title: "Your business, as an app.", desc: "Custom web apps, mobile apps, ERP and CRM systems built around how your team already works.", items: ["Web & mobile apps", "ERP & CRM systems", "E-commerce & portals"], out: "One system instead of five spreadsheets." },
+              { icon: Bot, tag: "AI Agent Development", title: "A teammate that never sleeps.", desc: "AI agents that answer calls and chats, qualify leads, book appointments and follow up.", items: ["AI receptionist", "WhatsApp & web chat agents", "Lead follow-up"], out: "Every enquiry answered, day and night." },
+              { icon: Zap, tag: "Business Automation", title: "Repetitive work, gone.", desc: "We connect your tools so invoices, reminders, approvals and reports happen on their own.", items: ["Invoices & GST bills", "Reminders & approvals", "Daily reports"], out: "Hours back for your team, every week." },
+              { icon: Sparkles, tag: "AI Software", title: "Your data, finally useful.", desc: "AI tools trained on your own documents and numbers: assistants, document reading and smart search.", items: ["Document AI", "Team assistants", "Insights & reports"], out: "Answers in seconds, not hours." },
+            ].map(({ icon: Icon, tag, title, desc, items, out }, i) => (
+              <motion.div
+                key={tag}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="bg-card border border-border/80 rounded-[2rem] p-7 flex flex-col hover:shadow-xl hover:border-primary/30 hover:-translate-y-1 transition-all duration-500 group"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <Icon size={22} className="text-primary" />
+                </div>
+                <div className="text-[11px] font-semibold text-primary uppercase tracking-wider mt-6">{tag}</div>
+                <h3 className="font-display text-xl font-bold mt-1 text-foreground group-hover:text-primary transition-colors">{title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mt-2">{desc}</p>
+                <ul className="space-y-1.5 mt-4">
+                  {items.map((it) => (
+                    <li key={it} className="flex items-center gap-2 text-[13px] text-foreground/80 font-medium">
+                      <Check size={13} className="text-emerald-500 stroke-[3px] shrink-0" />
+                      <span>{it}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-auto pt-5">
+                  <div className="pt-4 border-t border-border/40 text-sm font-semibold text-primary">{out}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <GradientDivider />
+
+      {/* ── Section: Solutions Snapshot ── */}
       <section className="py-24 relative overflow-hidden bg-background">
         <div className="w-full max-w-[1540px] mx-auto px-6 relative z-10">
           {/* Centered Header Section */}
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-5">
             <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
               <Bot size={13} />
-              <span>OUR SOLUTIONS</span>
+              <span>READY SOLUTIONS</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight text-center">
-              AI Solutions Built <span className="text-gradient">for Real Businesses</span>
+              Ready-made solutions, <span className="text-gradient">made yours</span>
             </h2>
             <p className="text-muted-foreground text-base leading-relaxed max-w-2xl mx-auto text-center">
-              From custom AI systems to industry-specific software — school & hotel management, AI receptionists, automation suites — deployed faster and priced better because we build with AI, not just for it.
+              Proven systems for schools, hotels, clinics and sales teams, customised to your business so you go live faster and pay less.
             </p>
           </div>
 
@@ -460,18 +516,18 @@ const Index = () => {
               {/* Eyebrow badge */}
               <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/25 text-primary text-xs font-semibold px-3.5 py-1.5 rounded-full">
                 <GraduationCap size={13} />
-                <span>Education Division</span>
+                <span>IKURO · A Logisaar product</span>
               </div>
 
               {/* Heading */}
               <div className="space-y-1">
                 <h2 className="font-display text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
-                  Chalk to Choice
+                  IKURO
                 </h2>
                 <h2 className="font-display text-4xl md:text-5xl font-black tracking-tight text-primary leading-tight">
-                  Your{" "}
+                  Decisions{" "}
                   <span className="relative inline-block">
-                    Clarity
+                    today
                     <svg 
                       className="absolute -bottom-2.5 left-0 w-full h-2.5 text-primary/80 pointer-events-none" 
                       viewBox="0 0 200 10" 
@@ -482,9 +538,9 @@ const Index = () => {
                       <path d="M10,9 C70,5 130,10 190,6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
                     </svg>
                   </span>
-                  . Your{" "}
+                  . Growth{" "}
                   <span className="relative inline-block">
-                    Career
+                    tomorrow
                     <svg 
                       className="absolute -bottom-2.5 left-0 w-full h-2.5 text-primary/80 pointer-events-none" 
                       viewBox="0 0 200 10" 
@@ -501,7 +557,7 @@ const Index = () => {
 
               {/* Description */}
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-lg">
-                Our career-clarity program for Class 11 &amp; 12 students. We help students discover the right path through guidance, real-world exposure and future-ready skills.
+                Our AI-powered platform that helps students make better course, college, skill and career decisions. It includes Chalk to Choice, our career-clarity programme for Class 11 &amp; 12.
               </p>
 
               {/* Feature list */}
@@ -509,18 +565,18 @@ const Index = () => {
                 {[
                   {
                     icon: Users,
-                    title: "1-on-1 Career Guidance",
-                    desc: "Personalized sessions with experts to help you choose the right direction.",
+                    title: "Personalised AI Guidance",
+                    desc: "Understands each student and recommends the right next step.",
                   },
                   {
                     icon: Globe,
-                    title: "Industry Orientation",
-                    desc: "Workshops, talks & insights from top industry professionals.",
+                    title: "Chalk to Choice",
+                    desc: "Career clarity for Class 11 & 12 through guidance and real-world exposure.",
                   },
                   {
                     icon: FolderGit2,
-                    title: "Details on Request",
-                    desc: "Get complete program details, curriculum and upcoming batches.",
+                    title: "For Colleges",
+                    desc: "Dashboards and student insights. College pilots begin in 2026.",
                   },
                 ].map(({ icon: Icon, title, desc }) => (
                   <div key={title} className="flex items-start gap-4 py-4 group">
@@ -544,14 +600,14 @@ const Index = () => {
                     className="bg-gradient-primary hover:opacity-90 border-0 text-white rounded-full px-8 gap-2 font-semibold shadow-md shadow-primary/20"
                   >
                     <Link to="/ikuro">
-                      Explore Chalk to Choice
+                      Visit IKURO
                       <ArrowRight size={16} />
                     </Link>
                   </Button>
                 </MagneticButton>
 
                 <a
-                  href="https://wa.me/918596072510?text=Hi%20LogiSaar%2C%20I%20want%20to%20know%20more%20about%20Chalk%20to%20Choice%20program."
+                  href="https://wa.me/918596072510?text=Hi%20Logisaar%2C%20I%20want%20to%20know%20more%20about%20IKURO."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground hover:text-primary transition-colors group"
@@ -617,18 +673,18 @@ const Index = () => {
             <div className="lg:col-span-5 space-y-6">
               <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
                 <Sparkles size={13} />
-                <span>Proprietary Products</span>
+                <span>HeyLane · A Logisaar product</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight">
-                We build our own <span className="text-gradient">products</span> too.
+                We don't just build for clients. <span className="text-gradient">We build our own.</span>
               </h2>
               <p className="text-muted-foreground text-base leading-relaxed">
-                HeyLane is our proprietary customer loyalty SaaS, built specifically for local businesses like cafes, hotels, restaurants, salons, and beauty parlours to drive customer retention and Google Business Profile growth.
+                HeyLane is our hyperlocal super app connecting local businesses with customers nearby: discovery, direct chat, loyalty rewards and automatic GST invoices, all in one place.
               </p>
               <div>
                 <MagneticButton strength={0.1}>
                   <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 border-0 text-white rounded-full px-8">
-                    <a href="https://heylane.in" target="_blank" rel="noopener noreferrer">
+                    <a href="https://heylane.in/" target="_blank" rel="noopener noreferrer">
                       Visit HeyLane
                       <ArrowRight size={16} className="ml-2" />
                     </a>
@@ -660,7 +716,7 @@ const Index = () => {
                   <div className="col-span-7 bg-secondary/20 rounded-xl border border-border/40 p-3.5 flex flex-col justify-between">
                     <div className="flex justify-between items-start">
                       <div>
-                        <h4 className="font-bold text-foreground text-sm font-display">Coffee Bean Café</h4>
+                        <h4 className="font-bold text-foreground text-sm font-display">Kalinga Café</h4>
                         <p className="text-[10px] text-muted-foreground font-mono">Loyalty Card</p>
                       </div>
                       <span className="bg-green-500/10 text-green-400 border border-green-500/20 text-[9px] px-2 py-0.5 rounded-full font-semibold">Active</span>
@@ -688,9 +744,9 @@ const Index = () => {
                   <div className="col-span-5 flex flex-col gap-3">
                     {/* Google Business Profile Growth Box */}
                     <div className="bg-primary/5 rounded-xl border border-primary/20 p-3 flex flex-col justify-center flex-1">
-                      <p className="text-[10px] uppercase font-mono tracking-wider text-muted-foreground">Google Growth</p>
-                      <h5 className="font-bold text-foreground text-base mt-0.5 font-display">+184%</h5>
-                      <p className="text-[9px] text-muted-foreground mt-0.5 leading-tight">Increase in positive reviews generated at checkout.</p>
+                      <p className="text-[10px] uppercase font-mono tracking-wider text-muted-foreground">GST Invoice</p>
+                      <h5 className="font-bold text-foreground text-base mt-0.5 font-display">Auto</h5>
+                      <p className="text-[9px] text-muted-foreground mt-0.5 leading-tight">Generated for every order for businesses with GSTIN.</p>
                     </div>
 
                     {/* QR Code trigger mockup */}
@@ -699,8 +755,8 @@ const Index = () => {
                         QR
                       </div>
                       <div className="leading-tight">
-                        <p className="font-semibold text-foreground text-[10px]">Merchant QR</p>
-                        <p className="text-[9px] text-muted-foreground mt-0.5">Contactless scan at counter</p>
+                        <p className="font-semibold text-foreground text-[10px]">Shop Chat</p>
+                        <p className="text-[9px] text-muted-foreground mt-0.5">Customers message the shop directly</p>
                       </div>
                     </div>
                   </div>
@@ -708,8 +764,8 @@ const Index = () => {
 
                 {/* Footer block */}
                 <div className="border-t border-border/40 mt-3 pt-3 flex justify-between items-center text-[10px] text-muted-foreground">
-                  <span>Loyalty & Retention Platform</span>
-                  <a href="https://heylane.in" target="_blank" rel="noopener noreferrer" className="text-primary font-mono font-semibold hover:underline inline-flex items-center gap-1">
+                  <span>Hyperlocal super app</span>
+                  <a href="https://heylane.in/" target="_blank" rel="noopener noreferrer" className="text-primary font-mono font-semibold hover:underline inline-flex items-center gap-1">
                     heylane.in <ArrowRight size={10} />
                   </a>
                 </div>
@@ -733,10 +789,10 @@ const Index = () => {
               <span className="w-8 h-px bg-primary/30" />
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight text-center">
-              Technology Powering <span className="text-gradient">Real Businesses</span>
+              25+ businesses already <span className="text-gradient">run on Logisaar</span>
             </h2>
             <p className="text-muted-foreground text-base leading-relaxed max-w-2xl mx-auto text-center">
-              We partner with businesses across industries to build custom software, automation, and digital solutions that drive real impact.
+              Schools, hotels, retailers, consultants and builders trust us with the systems they use every day.
             </p>
           </div>
 
@@ -862,11 +918,11 @@ const Index = () => {
             className="space-y-4 max-w-2xl mx-auto"
           >
             <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tight text-white">
-              Building something? <br />
-              <span className="italic font-light text-gradient">Let's talk.</span>
+              Tell us the one task you hate doing. <br />
+              <span className="italic font-light text-gradient">We'll make it disappear.</span>
             </h2>
             <p className="text-white/60 text-base md:text-lg max-w-lg mx-auto">
-              Get direct operational timelines and budget scopes directly over WhatsApp, or schedule a custom scoping review.
+              A free call. You leave with a clear plan and a fixed quote, whether or not you work with us.
             </p>
           </motion.div>
 
@@ -899,7 +955,7 @@ const Index = () => {
               size="lg"
               className="border border-white/20 bg-transparent hover:bg-white/10 text-white hover:text-white rounded-full px-10 py-6 text-base transition-all duration-300"
             >
-              <Link to="/contact">Scoping Form</Link>
+              <Link to="/contact">Book a Free Call</Link>
             </Button>
           </motion.div>
         </div>

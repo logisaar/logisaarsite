@@ -9,6 +9,7 @@ for (const r of routes) {
   const name = r.replace(/^\//, "").replace(/[/#]/g, "-") || "home";
   for (const [w, h] of [[1440, 900], [768, 1024], [390, 844]]) {
     const page = await browser.newPage({ viewport: { width: w, height: h } });
+    await page.addInitScript(() => { try { sessionStorage.setItem("lead_capture_shown", "1"); } catch { /* ignore */ } });
     await page.goto("http://localhost:8080/" + r.replace(/^\/+/, ""), { waitUntil: "load", timeout: 30000 });
     await page.waitForTimeout(1200);
     // scroll through so whileInView reveals fire
