@@ -210,8 +210,8 @@ const TestimonialsSection = () => {
 
         <div className="text-center mt-10">
           <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-on rounded-full px-8 gap-2 font-semibold min-h-[2.75rem]">
-            <Link to="/portfolio">
-              <span>Read client stories</span>
+            <Link to="/contact">
+              <span>Talk to us</span>
               <ArrowRight size={16} aria-hidden="true" />
             </Link>
           </Button>

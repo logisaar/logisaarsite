@@ -790,10 +790,10 @@ const Index = () => {
           {/* CTA Link */}
           <div className="text-center mt-12">
             <Link 
-              to="/portfolio" 
+              to="/contact" 
               className="inline-flex min-h-[2.75rem] items-center gap-1.5 text-primary-ink hover:opacity-90 font-semibold text-body-sm transition-all duration-300 group"
             >
-              <span>See all work</span>
+              <span>Start a project</span>
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>

@@ -1,7 +1,7 @@
 import { Fragment, useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, User, Briefcase, Sparkles } from "lucide-react";
+import { Menu, X, ChevronDown, Briefcase, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { openLeadModal } from "@/components/LeadCaptureModal";
 import BrandLogo from "@/components/BrandLogo";
@@ -23,12 +23,6 @@ const productSubLinks = [
   { to: "/products", label: "All products", icon: Briefcase, description: "Everything we have built" },
 ];
 const desktopLinks = navLinks.filter((l) => l.to !== "/heylane" && l.to !== "/products");
-
-// Sub-links under "About"
-const aboutSubLinks = [
-  { to: "/about", label: "About Us", icon: User, description: "Our story, team & mission" },
-  { to: "/portfolio", label: "Portfolio", icon: Briefcase, description: "Projects we've delivered" },
-];
 
 interface NavMenuProps {
   label: string;
@@ -103,7 +97,6 @@ const NavMenu = ({ label, links, active, linkClass, pathname }: NavMenuProps) =>
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -116,6 +109,7 @@ const Navbar = () => {
     setMobileOpen(false);
   }, [location]);
 
+  // /portfolio is hidden (no links) but still highlights About if someone lands on it from search
   const isAboutActive =
     location.pathname === "/about" || location.pathname === "/portfolio";
   const isProductsActive = location.pathname === "/products" || location.pathname === "/heylane";
@@ -175,7 +169,16 @@ const Navbar = () => {
               )}
             </Link>
 
-            <NavMenu label="About" links={aboutSubLinks} active={isAboutActive} linkClass={linkBaseClass(isAboutActive)} pathname={location.pathname} />
+            <Link to="/about" className={linkBaseClass(isAboutActive)}>
+              About
+              {isAboutActive && (
+                <motion.div
+                  layoutId="nav-indicator"
+                  className="absolute inset-0 bg-primary/10 rounded-full -z-10"
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                />
+              )}
+            </Link>
 
             {/* Remaining top-level links */}
             {desktopLinks.slice(1).map((link) => (
@@ -243,50 +246,20 @@ const Navbar = () => {
                 </Link>
               </motion.div>
 
-              {/* About (collapsible in mobile) */}
+              {/* About */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.05 }}
-                className="flex flex-col items-center gap-3"
               >
-                <button
-                  onClick={() => setMobileAboutOpen((v) => !v)}
-                  className={`flex items-center gap-2 text-2xl font-display font-bold transition-colors ${
+                <Link
+                  to="/about"
+                  className={`text-2xl font-display font-bold transition-colors ${
                     isAboutActive ? "text-primary-ink" : "text-muted-foreground"
                   }`}
                 >
                   About
-                  <ChevronDown
-                    size={20}
-                    className={`transition-transform duration-200 ${mobileAboutOpen ? "rotate-180" : ""}`}
-                  />
-                </button>
-
-                <AnimatePresence>
-                  {mobileAboutOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="flex flex-col items-center gap-2 overflow-hidden"
-                    >
-                      {aboutSubLinks.map((sub) => (
-                        <Link
-                          key={sub.to}
-                          to={sub.to}
-                          className={`text-lg font-semibold transition-colors px-6 py-1.5 rounded-full ${
-                            location.pathname === sub.to
-                              ? "text-primary-ink bg-primary/10"
-                              : "text-muted-foreground hover:text-foreground"
-                          }`}
-                        >
-                          {sub.label}
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                </Link>
               </motion.div>
 
               {/* Rest of the links */}

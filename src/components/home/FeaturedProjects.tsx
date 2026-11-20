@@ -76,7 +76,7 @@ const FeaturedProjects = () => {
           </div>
 
           <div className="mt-8 text-center">
-            <Link to="/portfolio" className="text-primary-ink font-medium text-sm hover:underline">View all projects →</Link>
+            <Link to="/contact" className="inline-flex min-h-[2.75rem] items-center text-primary-ink font-medium text-body-sm hover:underline">Start a project →</Link>
           </div>
         </div>
       </section>
@@ -92,7 +92,7 @@ const FeaturedProjects = () => {
                   Featured <span className="text-gradient">Projects</span>
                 </h2>
               </div>
-              <Link to="/portfolio" className="text-primary-ink font-medium text-sm hover:underline">View all →</Link>
+              <Link to="/contact" className="inline-flex min-h-[2.75rem] items-center text-primary-ink font-medium text-body-sm hover:underline">Start a project →</Link>
             </div>
             <div className="mt-4 h-[0.125rem] bg-border rounded-full overflow-hidden">
               <motion.div className="h-full bg-gradient-primary rounded-full" style={{ width: progressWidth }} />
