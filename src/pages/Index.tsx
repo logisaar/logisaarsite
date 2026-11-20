@@ -1,5 +1,6 @@
 import { CONTACT } from "@/lib/contact";
 import { getImage } from "@/data/images";
+import { PROJECTS_DELIVERED } from "@/data/company";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import { useState } from "react";
 import Layout from "@/components/Layout";
@@ -765,7 +766,7 @@ const Index = () => {
                 <Users size={18} />
               </div>
               <div>
-                <div className="text-xl font-bold text-foreground leading-tight">30+</div>
+                <div className="text-xl font-bold text-foreground leading-tight">{PROJECTS_DELIVERED}</div>
                 <div className="text-label text-muted-foreground font-medium">Projects Delivered</div>
               </div>
             </div>

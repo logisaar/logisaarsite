@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Linkedin, Award } from "lucide-react";
+import { Linkedin } from "lucide-react";
+import Eyebrow from "@/components/Eyebrow";
+import { FOUNDER_TITLE, COFOUNDER_TITLE } from "@/data/company";
 import chinmayPhoto from "@/assets/team/chinmay.webp";
 import bpsPhoto from "@/assets/team/bps.webp";
 
@@ -8,181 +10,81 @@ interface TeamMember {
   name: string;
   role: string;
   initials: string;
-  accentColor: string;
   photo?: string;
-  bio: string;
-  expertise: string[];
+  focus: string;
   linkedin: string;
-  quote?: string;
 }
 
 const teamMembers: TeamMember[] = [
   {
     name: "Chinmay Kumar Panda",
-    role: "Managing Director & CEO",
+    role: FOUNDER_TITLE,
     initials: "CKP",
-    accentColor: "hsl(170, 80%, 45%)",
     photo: chinmayPhoto,
-    bio: "Chinmay leads product strategy, AI engineering, and business growth at Logisaar. His work focuses on transforming complex business challenges into scalable software products and AI-powered automation systems.",
-    expertise: ["AI Systems", "Product Strategy", "Full-Stack Development"],
+    focus: "Leads product strategy, AI engineering and business growth.",
     linkedin: "https://www.linkedin.com/in/chinmay-kumar-panda-80718525b/",
-    quote: "We build native AI technology that transforms business operations from the ground up."
   },
   {
     name: "Biswanath Prasanna Satyabrata Kar",
-    role: "CTO",
+    role: COFOUNDER_TITLE,
     initials: "BPS",
-    accentColor: "hsl(210, 90%, 55%)",
     photo: bpsPhoto,
-    bio: "Biswanath leads system architecture, cloud infrastructure, and engineering operations. He focuses on building reliable, scalable platforms and mentoring technical teams through IKURO.",
-    expertise: ["System Architecture", "Cloud Engineering", "DevOps", "AI Operations"],
+    focus: "Leads system architecture, cloud infrastructure and engineering operations.",
     linkedin: "https://www.linkedin.com/in/biswanath-prasanna-satyabrata-kar-79282330a/",
-    quote: "Engineering systems to compile faster, deploy safer, and integrate AI seamlessly."
-  }
+  },
 ];
-
-const TeamMemberCard = ({
-  member,
-  index,
-  isInView,
-}: {
-  member: TeamMember;
-  index: number;
-  isInView: boolean;
-}) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ delay: index * 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="relative group rounded-3xl overflow-hidden flex flex-col md:flex-row gap-8 p-8 md:p-10"
-      style={{
-        background: `linear-gradient(145deg, hsl(220 25% 6%), hsl(220 25% 10%))`,
-        border: "1px solid hsl(220 20% 15%)",
-      }}
-    >
-      {/* Accent color top line */}
-      <div
-        className="absolute top-0 left-0 right-0 h-[0.1875rem] opacity-60 group-hover:opacity-100 transition-opacity duration-500"
-        style={{ background: `linear-gradient(90deg, ${member.accentColor}, transparent)` }}
-      />
-
-      {/* Avatar Container */}
-      <div className="shrink-0 flex justify-center items-start">
-        <motion.div
-          className="rounded-2xl w-36 h-36 md:w-44 md:h-44 overflow-hidden border border-border/30 relative flex justify-center items-center bg-secondary"
-          style={{
-            boxShadow: `0 8px 30px ${member.accentColor}15`,
-          }}
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: "spring", stiffness: 200, damping: 20 }}
-        >
-          {member.photo ? (
-            <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
-          ) : (
-            <span className="text-3xl font-display font-bold text-white">{member.initials}</span>
-          )}
-        </motion.div>
-      </div>
-
-      {/* Details Container */}
-      <div className="flex-1 flex flex-col justify-between space-y-4">
-        <div>
-          <div className="flex flex-wrap items-start justify-between gap-4">
-            <div>
-              <h3 className="font-display text-2xl font-bold text-white group-hover:text-primary-ink transition-colors">
-                {member.name}
-              </h3>
-              <p
-                className="font-mono text-xs tracking-wider uppercase mt-1 font-semibold"
-                style={{ color: member.accentColor }}
-              >
-                {member.role}
-              </p>
-            </div>
-            
-            <a
-              href={member.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full border border-white/10 hover:border-primary/40 hover:bg-primary/10 text-white/50 hover:text-primary-ink transition-all duration-300"
-              aria-label={`${member.name} LinkedIn`}
-            >
-              <Linkedin size={18} />
-            </a>
-          </div>
-
-          <p className="text-sm leading-relaxed text-muted-foreground mt-4">
-            {member.bio}
-          </p>
-
-          <div className="flex flex-wrap gap-2 mt-4">
-            {member.expertise.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border font-mono uppercase tracking-wider px-3 py-1 text-label"
-                style={{
-                  color: member.accentColor,
-                  borderColor: `${member.accentColor}30`,
-                  background: `${member.accentColor}08`,
-                }}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {member.quote && (
-          <div
-            className="pl-4 border-l-2 italic text-xs leading-relaxed text-muted-foreground/80 mt-4"
-            style={{ borderColor: member.accentColor }}
-          >
-            "{member.quote}"
-          </div>
-        )}
-      </div>
-    </motion.div>
-  );
-};
 
 const TeamSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.15 });
 
   return (
-    <section
-      className="py-24 relative overflow-hidden"
-      ref={ref}
-      style={{ background: "hsl(220 30% 4%)" }}
-    >
-      <div className="container mx-auto px-gutter relative z-10">
-        
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-16 text-center max-w-2xl mx-auto"
-        >
-          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary-ink text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
-            <Award size={13} />
-            <span>Foundership</span>
-          </div>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white">
-            Meet the <span className="text-gradient">Founders</span>
+    <section data-logi="Meet the two founders." aria-labelledby="founders-h" ref={ref} className="bg-background py-section">
+      <div className="container mx-auto px-gutter">
+        <div className="mx-auto max-w-2xl text-center">
+          <Eyebrow>Founders</Eyebrow>
+          <h2 id="founders-h" className="mt-3 font-display text-h2 font-bold text-foreground">
+            Two Computer Science engineers from Odisha
           </h2>
-          <p className="text-muted-foreground text-sm md:text-base mt-4">
-            Logisaar is run by Computer Science engineers building custom enterprise AI systems and training the next generation of engineers in Odisha.
+          <p className="mt-4 text-body text-muted-foreground">
+            Chinmay and Biswanath founded Logisaar in September 2025 to build software for businesses close to home, and to do it properly. The registered base is in Cuttack; the team works from Bhubaneswar.
           </p>
-        </motion.div>
-
-        {/* Co-founders column/grid layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {teamMembers.map((member, i) => (
-            <TeamMemberCard key={member.name} member={member} index={i} isInView={isInView} />
-          ))}
+          {/* TODO(owner): add the founders' own reason for starting Logisaar, in their voice. */}
         </div>
+
+        <ul className="mx-auto mt-10 grid max-w-4xl gap-6 md:grid-cols-2">
+          {teamMembers.map((m, i) => (
+            <motion.li
+              key={m.name}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: i * 0.12, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="flex items-start gap-5 rounded-2xl border border-border bg-card p-6"
+            >
+              <div className="flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-secondary">
+                {m.photo ? (
+                  <img src={m.photo} alt={m.name} width={96} height={96} loading="lazy" decoding="async" className="h-full w-full object-cover" />
+                ) : (
+                  <span className="font-display text-h3 font-bold text-foreground">{m.initials}</span>
+                )}
+              </div>
+              <div className="min-w-0">
+                <h3 className="font-display text-h3 font-bold text-foreground">{m.name}</h3>
+                <p className="mt-1 text-body-sm font-medium text-primary-ink">{m.role}</p>
+                <p className="mt-3 text-body-sm text-muted-foreground">{m.focus}</p>
+                <a
+                  href={m.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex min-h-[2.75rem] items-center gap-2 text-body-sm font-medium text-foreground underline underline-offset-4 hover:text-primary-ink"
+                >
+                  <Linkedin size={16} aria-hidden="true" />
+                  LinkedIn<span className="sr-only"> profile of {m.name}</span>
+                </a>
+              </div>
+            </motion.li>
+          ))}
+        </ul>
       </div>
     </section>
   );

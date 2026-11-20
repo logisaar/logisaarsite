@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion, MotionValue } from "framer-motion";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 interface Milestone {
@@ -153,14 +153,14 @@ const FloatingParticles = () => {
       <div
         className="absolute top-1/2 left-0 right-0 h-px"
         style={{
-          background: "linear-gradient(90deg, transparent 0%, hsl(170 80% 45% / 0.08) 20%, hsl(210 90% 55% / 0.06) 50%, hsl(170 80% 45% / 0.08) 80%, transparent 100%)",
+          background: "linear-gradient(90deg, transparent 0%, hsl(170 80% 45% / 0.08) 20%, hsl(170 80% 45% / 0.06) 50%, hsl(170 80% 45% / 0.08) 80%, transparent 100%)",
         }}
       />
       {/* Second connecting line slightly offset */}
       <div
         className="absolute top-[55%] left-0 right-0 h-px"
         style={{
-          background: "linear-gradient(90deg, transparent 5%, hsl(260 70% 58% / 0.05) 30%, hsl(170 80% 45% / 0.04) 70%, transparent 95%)",
+          background: "linear-gradient(90deg, transparent 5%, hsl(170 80% 45% / 0.05) 30%, hsl(170 80% 45% / 0.04) 70%, transparent 95%)",
         }}
       />
     </div>
@@ -202,7 +202,7 @@ const ProgressRail = ({
           className="absolute inset-y-0 left-0 origin-left"
           style={{
             scaleX: scrollYProgress,
-            background: "linear-gradient(90deg, hsl(170 80% 45%), hsl(210 90% 55%))",
+            background: "hsl(170 80% 45%)",
           }}
         />
       </div>
@@ -215,7 +215,7 @@ const ProgressRail = ({
             <button
               key={i}
               onClick={() => handleDotClick(i)}
-              className="focus:outline-none transition-transform hover:scale-125 active:scale-95 cursor-pointer z-30 flex items-center justify-center p-1"
+              className="rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[hsl(var(--focus-ring))] transition-transform hover:scale-125 active:scale-95 cursor-pointer z-30 flex h-11 w-11 items-center justify-center"
               aria-label={`Go to milestone ${i + 1}`}
             >
               <RailDot scrollYProgress={scrollYProgress} threshold={dotProgress} />
@@ -261,20 +261,20 @@ const MobileTimeline = ({ milestones }: { milestones: Milestone[] }) => (
   <section className="py-section relative" style={{ background: "hsl(220 30% 4%)" }}>
     <div className="px-6 mb-10">
       <p
-        className="font-mono text-xs tracking-[0.2em] uppercase mb-4"
-        style={{ color: "hsl(170 80% 45% / 0.7)" }}
+        className="text-label font-medium uppercase tracking-[0.06em] mb-4"
+        style={{ color: "hsl(170 80% 45%)" }}
       >
-        Timeline
+        Our journey
       </p>
       <h2 className="font-display text-4xl font-bold" style={{ color: "white" }}>
-        Our <span style={{ color: "hsl(170 80% 45%)" }}>Journey</span>
+        How we got here
       </h2>
     </div>
 
     <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 px-6 pb-6 scrollbar-hide">
       {milestones.map((m, i) => (
         <div
-          key={m.year}
+          key={m.year + m.title}
           className="min-w-[85vw] snap-center rounded-2xl p-8 relative overflow-hidden shrink-0"
           style={{
             background: "hsl(220 25% 8%)",
@@ -319,7 +319,27 @@ const MobileTimeline = ({ milestones }: { milestones: Milestone[] }) => (
   </section>
 );
 
+// Reduced motion: every milestone as a static list, nothing pinned or animated
+const StaticTimeline = ({ milestones }: { milestones: Milestone[] }) => (
+  <section data-logi="Where we started, and where we are." aria-labelledby="journey-h" className="py-section" style={{ background: "hsl(220 30% 4%)" }}>
+    <div className="container mx-auto px-gutter">
+      <p className="text-label font-medium uppercase tracking-[0.06em] mb-3" style={{ color: "hsl(170 80% 45%)" }}>Our journey</p>
+      <h2 id="journey-h" className="font-display text-h2 font-bold mb-10" style={{ color: "white" }}>How we got here</h2>
+      <ol className="space-y-8 max-w-2xl">
+        {milestones.map((m) => (
+          <li key={m.year + m.title} className="border-l-2 pl-6" style={{ borderColor: "hsl(170 80% 45% / 0.5)" }}>
+            <span className="text-label font-medium uppercase tracking-[0.06em]" style={{ color: "hsl(170 80% 45%)" }}>{m.year}</span>
+            <h3 className="font-display text-h3 font-bold mt-1" style={{ color: "white" }}>{m.title}</h3>
+            <p className="text-body mt-2" style={{ color: "hsl(220 15% 70%)" }}>{m.description}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+);
+
 const JourneyTimeline = ({ milestones }: JourneyTimelineProps) => {
+  const reduce = useReducedMotion();
   const isMobile = useIsMobile();
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -330,7 +350,7 @@ const JourneyTimeline = ({ milestones }: JourneyTimelineProps) => {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${((milestones.length - 1) / milestones.length) * 100}%`]);
 
   useEffect(() => {
-    if (isMobile) return;
+    if (isMobile || reduce) return;
 
     let snapTimeout: NodeJS.Timeout;
     let isSnapping = false;
@@ -385,14 +405,18 @@ const JourneyTimeline = ({ milestones }: JourneyTimelineProps) => {
       window.removeEventListener("scroll", handleScroll);
       clearTimeout(snapTimeout);
     };
-  }, [isMobile, milestones.length]);
+  }, [isMobile, reduce, milestones.length]);
+
+  if (reduce) {
+    return <StaticTimeline milestones={milestones} />;
+  }
 
   if (isMobile) {
     return <MobileTimeline milestones={milestones} />;
   }
 
   return (
-    <div ref={containerRef} className="relative" style={{ height: "400vh" }}>
+    <div ref={containerRef} data-logi="Where we started, and where we are." className="relative" style={{ height: `${milestones.length * 100}svh` }}>
       <div
         className="sticky top-0 h-[100svh] overflow-hidden flex items-center"
         style={{ background: "hsl(220 30% 4%)" }}
@@ -402,13 +426,13 @@ const JourneyTimeline = ({ milestones }: JourneyTimelineProps) => {
         {/* Section heading - fixed left */}
         <div className="absolute top-12 left-12 md:left-20 z-20">
           <p
-            className="font-mono text-xs tracking-[0.2em] uppercase mb-3"
-            style={{ color: "hsl(170 80% 45% / 0.7)" }}
+            className="text-label font-medium uppercase tracking-[0.06em] mb-3"
+            style={{ color: "hsl(170 80% 45%)" }}
           >
-            Timeline
+            Our journey
           </p>
           <h2 className="font-display text-2xl md:text-3xl font-bold" style={{ color: "white" }}>
-            Our <span style={{ color: "hsl(170 80% 45%)" }}>Journey</span>
+            How we got here
           </h2>
         </div>
 
@@ -416,7 +440,7 @@ const JourneyTimeline = ({ milestones }: JourneyTimelineProps) => {
         <motion.div style={{ x }} className="flex h-full">
           {milestones.map((m, i) => (
             <MilestonePanel
-              key={m.year}
+              key={m.year + m.title}
               milestone={m}
               index={i}
               total={milestones.length}
