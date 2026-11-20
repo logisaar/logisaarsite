@@ -124,7 +124,7 @@ const Careers = () => {
             transition={{ duration: 0.7 }}
             className="space-y-6"
           >
-            <div className="inline-flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-[0.2em]">
+            <div className="inline-flex items-center gap-2 text-primary-ink text-xs font-bold uppercase tracking-[0.2em]">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               We're hiring
             </div>
@@ -136,7 +136,7 @@ const Careers = () => {
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
               <MagneticButton strength={0.15}>
-                <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 border-0 text-white rounded-full px-8">
+                <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full px-8">
                   <a href="#apply">Apply now <ArrowRight size={16} className="ml-2" /></a>
                 </Button>
               </MagneticButton>
@@ -152,7 +152,7 @@ const Careers = () => {
       <section id="roles" data-logi="Two roles open. Pick the one that fits you." className="py-section bg-secondary/40 scroll-mt-28">
         <div className="container mx-auto px-gutter max-w-5xl">
           <motion.div {...fade()} className="mb-12">
-            <p className="text-primary font-mono text-xs uppercase tracking-widest font-bold mb-3">Open roles</p>
+            <p className="text-primary-ink font-mono text-xs uppercase tracking-widest font-bold mb-3">Open roles</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               Two roles, <span className="text-gradient">start soon</span>
             </h2>
@@ -165,10 +165,10 @@ const Careers = () => {
                 className="liquid-glass rounded-2xl border border-border bg-card p-7 flex flex-col"
               >
                 <div className="flex items-center justify-between mb-5">
-                  <span className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                  <span className="w-11 h-11 rounded-xl bg-primary/10 text-primary-ink flex items-center justify-center">
                     <r.icon size={22} aria-hidden />
                   </span>
-                  <span className="text-xs font-semibold rounded-full bg-primary/10 text-primary px-3 py-1">{r.openings}</span>
+                  <span className="text-xs font-semibold rounded-full bg-primary/10 text-primary-ink px-3 py-1">{r.openings}</span>
                 </div>
                 <h3 className="font-display text-xl font-bold text-foreground">{r.title}</h3>
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-sm text-muted-foreground">
@@ -181,11 +181,11 @@ const Careers = () => {
                 <ul className="mt-4 space-y-2 text-sm text-foreground">
                   {r.points.map((p) => (
                     <li key={p} className="flex gap-2">
-                      <CheckCircle2 size={16} className="text-primary mt-0.5 shrink-0" aria-hidden /> {p}
+                      <CheckCircle2 size={16} className="text-primary-ink mt-0.5 shrink-0" aria-hidden /> {p}
                     </li>
                   ))}
                 </ul>
-                <Button onClick={() => pickRole(r.id)} className="mt-6 self-start bg-gradient-primary hover:opacity-90 border-0 text-white rounded-full px-6">
+                <Button onClick={() => pickRole(r.id)} className="mt-6 self-start bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full px-6">
                   Apply for this role <ArrowRight size={15} className="ml-2" />
                 </Button>
               </motion.article>
@@ -198,7 +198,7 @@ const Careers = () => {
       <section data-logi="Training first, full pay from month two." className="py-section bg-background">
         <div className="container mx-auto px-gutter max-w-5xl">
           <motion.div {...fade()} className="mb-12">
-            <p className="text-primary font-mono text-xs uppercase tracking-widest font-bold mb-3">How it works</p>
+            <p className="text-primary-ink font-mono text-xs uppercase tracking-widest font-bold mb-3">How it works</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               Learn first. <span className="text-gradient">Earn more.</span>
             </h2>
@@ -209,7 +209,7 @@ const Careers = () => {
           <div className="grid md:grid-cols-3 gap-6">
             {PROCESS.map((s, i) => (
               <motion.div key={s.title} {...fade(i * 0.1)} className="rounded-2xl border border-border bg-card p-6">
-                <span className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+                <span className="w-10 h-10 rounded-xl bg-primary/10 text-primary-ink flex items-center justify-center mb-4">
                   <s.icon size={20} aria-hidden />
                 </span>
                 <h3 className="font-display font-bold text-foreground">{s.title}</h3>
@@ -224,7 +224,7 @@ const Careers = () => {
       <section id="apply" data-logi="Two minutes to apply. We call you back." className="py-section bg-secondary/40 scroll-mt-24">
         <div className="container mx-auto px-gutter max-w-3xl">
           <motion.div {...fade()} className="mb-10 text-center">
-            <p className="text-primary font-mono text-xs uppercase tracking-widest font-bold mb-3">Apply</p>
+            <p className="text-primary-ink font-mono text-xs uppercase tracking-widest font-bold mb-3">Apply</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               Tell us <span className="text-gradient">about you</span>
             </h2>
@@ -233,7 +233,7 @@ const Careers = () => {
 
           {status === "success" ? (
             <div role="status" className="rounded-2xl border border-primary/30 bg-card p-10 text-center space-y-4">
-              <CheckCircle2 size={44} className="text-primary mx-auto" aria-hidden />
+              <CheckCircle2 size={44} className="text-primary-ink mx-auto" aria-hidden />
               <h3 className="font-display text-2xl font-bold text-foreground">Application received</h3>
               <p className="text-muted-foreground">Thanks, {form.name.split(" ")[0] || "there"}. We will call you soon on {form.phone}.</p>
               <Button asChild variant="outline" className="rounded-full">
@@ -289,11 +289,11 @@ const Careers = () => {
                 </p>
               )}
 
-              <Button type="submit" disabled={status === "sending"} size="lg" className="w-full bg-gradient-primary hover:opacity-90 border-0 text-white rounded-full">
+              <Button type="submit" disabled={status === "sending"} size="lg" className="w-full bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full">
                 {status === "sending" ? (<><Loader2 size={16} className="mr-2 animate-spin" /> Sending</>) : "Send application"}
               </Button>
               <p className="text-xs text-muted-foreground text-center">
-                Prefer email? Write to <a className="text-primary underline underline-offset-2" href={CONTACT.mailto}>{CONTACT.email}</a>.
+                Prefer email? Write to <a className="text-primary-ink underline underline-offset-2" href={CONTACT.mailto}>{CONTACT.email}</a>.
               </p>
             </form>
           )}

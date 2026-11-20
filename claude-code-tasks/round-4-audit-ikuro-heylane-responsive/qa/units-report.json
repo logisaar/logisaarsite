@@ -2,133 +2,36 @@
  "home@375": {
   "http": 200,
   "overflow": 0,
-  "smallText": 6,
-  "smallTargets": 55,
-  "height": 13380,
-  "sampleText": [
-   "11.0px p \"v\"",
-   "11.0px p \"3.0.2\"",
-   "11.0px p \"MCP connection allows agents\"",
-   "11.0px a \"Learn more\"",
-   "11.0px label \"Auto-Send\"",
-   "11.0px p \"The webhook URL will receive\""
-  ],
+  "smallText": 0,
+  "smallTargets": 3,
+  "height": 9971,
+  "sampleText": [],
   "sampleTargets": [
-   "150x36 a \"\"",
-   "24x24 button \"\"",
-   "124x20 a \"HeyLane or IKURO\"",
-   "72x20 a \"Contact us\"",
-   "62x17 a \"Let's talk\"",
-   "172x32 a \"Watch how it works\""
+   "151x36 a \"\"",
+   "86x17 a \"heylane.in\"",
+   "43x44 a \"IKURO\""
   ]
  },
  "home@1280": {
   "http": 200,
   "overflow": 0,
-  "smallText": 6,
-  "smallTargets": 66,
-  "height": 8539,
-  "sampleText": [
-   "11.0px p \"v\"",
-   "11.0px p \"3.0.2\"",
-   "11.0px p \"MCP connection allows agents\"",
-   "11.0px a \"Learn more\"",
-   "11.0px label \"Auto-Send\"",
-   "11.0px p \"The webhook URL will receive\""
-  ],
+  "smallText": 0,
+  "smallTargets": 1,
+  "height": 8558,
+  "sampleText": [],
   "sampleTargets": [
-   "145x16 a \"contact@logisaar.com\"",
-   "117x16 a \"+91 85960 72510\"",
-   "16x16 a \"Instagram\"",
-   "16x16 a \"Facebook\"",
-   "16x16 a \"LinkedIn\"",
-   "63x36 a \"Home\""
+   "92x18 a \"heylane.in\""
   ]
  },
  "home@1280-zoom200": {
   "http": 200,
   "overflow": 0,
-  "smallText": 3,
-  "smallTargets": 37,
-  "height": 19475,
-  "sampleText": [
-   "11.0px p \"v\"",
-   "11.0px p \"3.0.2\"",
-   "11.0px label \"Auto-Send\""
-  ],
+  "smallText": 0,
+  "smallTargets": 1,
+  "height": 18743,
+  "sampleText": [],
   "sampleTargets": [
-   "277x32 a \"contact@logisaar.com\"",
-   "220x32 a \"+91 85960 72510\"",
-   "16x16 a \"Instagram\"",
-   "16x16 a \"Facebook\"",
-   "16x16 a \"LinkedIn\"",
-   "248x40 a \"HeyLane or IKURO\""
-  ]
- },
- "careers@375": {
-  "http": 200,
-  "overflow": 0,
-  "smallText": 6,
-  "smallTargets": 52,
-  "height": 5411,
-  "sampleText": [
-   "11.0px p \"v\"",
-   "11.0px p \"3.0.2\"",
-   "11.0px p \"MCP connection allows agents\"",
-   "11.0px a \"Learn more\"",
-   "11.0px label \"Auto-Send\"",
-   "11.0px p \"The webhook URL will receive\""
-  ],
-  "sampleTargets": [
-   "151x36 a \"\"",
-   "24x24 button \"\"",
-   "199x40 button \"Apply for this role\"",
-   "126x15 a \"contact@logisaar.com\"",
-   "40x40 a \"GitHub\"",
-   "40x40 a \"LinkedIn\""
-  ]
- },
- "careers@1280": {
-  "http": 200,
-  "overflow": 0,
-  "smallText": 6,
-  "smallTargets": 63,
-  "height": 3390,
-  "sampleText": [
-   "11.0px p \"v\"",
-   "11.0px p \"3.0.2\"",
-   "11.0px p \"MCP connection allows agents\"",
-   "11.0px a \"Learn more\"",
-   "11.0px label \"Auto-Send\"",
-   "11.0px p \"The webhook URL will receive\""
-  ],
-  "sampleTargets": [
-   "145x16 a \"contact@logisaar.com\"",
-   "117x16 a \"+91 85960 72510\"",
-   "16x16 a \"Instagram\"",
-   "16x16 a \"Facebook\"",
-   "16x16 a \"LinkedIn\"",
-   "63x36 a \"Home\""
-  ]
- },
- "careers@1280-zoom200": {
-  "http": 200,
-  "overflow": 0,
-  "smallText": 3,
-  "smallTargets": 33,
-  "height": 7441,
-  "sampleText": [
-   "11.0px p \"v\"",
-   "11.0px p \"3.0.2\"",
-   "11.0px label \"Auto-Send\""
-  ],
-  "sampleTargets": [
-   "277x32 a \"contact@logisaar.com\"",
-   "220x32 a \"+91 85960 72510\"",
-   "16x16 a \"Instagram\"",
-   "16x16 a \"Facebook\"",
-   "16x16 a \"LinkedIn\"",
-   "252x29 a \"contact@logisaar.com\""
+   "166x34 a \"heylane.in\""
   ]
  }
 }

@@ -37,28 +37,28 @@ const socialLinks = [
 
 const TopBar = () => {
   return (
-    <div className="fixed top-0 left-0 right-0 z-[10000] hidden md:block bg-foreground text-background">
+    <aside aria-label="Contact details and social links" className="fixed top-0 left-0 right-0 z-[10000] hidden md:block bg-foreground text-background">
       <div className="container mx-auto px-gutter">
-        <div className="flex items-center justify-between py-1.5 text-xs">
+        <div className="flex items-center justify-between text-label">
           <div className="flex items-center gap-5">
-            <a href={CONTACT.mailto} className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
+            <a href={CONTACT.mailto} className="flex min-h-[2.75rem] items-center gap-1.5 hover:opacity-80 transition-opacity">
               <Mail size={13} />
               <span>{CONTACT.email}</span>
             </a>
-            <a href="tel:+918596072510" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
+            <a href={CONTACT.tel} className="flex min-h-[2.75rem] items-center gap-1.5 hover:opacity-80 transition-opacity">
               <Phone size={13} />
-              <span>+91 85960 72510</span>
+              <span>{CONTACT.phone}</span>
             </a>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center">
             {socialLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={link.label}
-                className="hover:opacity-80 transition-opacity"
+                aria-label={`${link.label} (opens in a new tab)`}
+                className="flex h-11 w-11 items-center justify-center hover:opacity-80 transition-opacity"
               >
                 {link.icon}
               </a>
@@ -66,7 +66,7 @@ const TopBar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </aside>
   );
 };
 

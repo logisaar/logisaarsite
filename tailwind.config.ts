@@ -54,6 +54,8 @@ export default {
           foreground: "hsl(var(--primary-foreground))",
           // darker green for TEXT, links and icons on light backgrounds (4.75:1 on white); the bright green stays a fill
           ink: "hsl(var(--primary-ink))",
+          // near-black label on the bright green fill (9.3:1; white on #00D162 is only 2.04:1)
+          on: "hsl(var(--on-primary))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

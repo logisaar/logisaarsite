@@ -393,7 +393,7 @@ const sections = [
     content: (
       <>
         <p>For legal notices, compliance matters, support requests, and contractual communications:</p>
-        <p><strong>Email:</strong> <a href={CONTACT.mailto} className="text-primary underline underline-offset-4">{CONTACT.email}</a></p>
+        <p><strong>Email:</strong> <a href={CONTACT.mailto} className="text-primary-ink underline underline-offset-4">{CONTACT.email}</a></p>
       </>
     ),
   },

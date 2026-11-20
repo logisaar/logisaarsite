@@ -104,7 +104,7 @@ const Portfolio = () => {
                     </div>
                   </div>
                   <div className="p-6 group-hover:opacity-0 transition-opacity duration-300">
-                    <p className="text-primary text-xs font-medium uppercase tracking-wider mb-1">{project.category}</p>
+                    <p className="text-primary-ink text-xs font-medium uppercase tracking-wider mb-1">{project.category}</p>
                     <h3 className="font-display text-lg font-bold">{project.title}</h3>
                     {project.industryTag && (
                       <span className="inline-block text-xs bg-secondary text-muted-foreground px-2.5 py-1 rounded-full mt-2">
@@ -126,7 +126,7 @@ const Portfolio = () => {
           >
             <p className="text-muted-foreground text-lg">Have a project in mind?</p>
             <MagneticButton strength={0.15}>
-              <Button asChild size="lg" className="group bg-gradient-primary hover:opacity-90 border-0 text-white px-10 py-6 text-base rounded-full">
+              <Button asChild size="lg" className="group bg-gradient-primary hover:opacity-90 border-0 text-primary-on px-10 py-6 text-base rounded-full">
                 <Link to="/contact">
                   Start Your Project
                   <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />

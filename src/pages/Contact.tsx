@@ -56,7 +56,7 @@ const Contact = () => {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-primary font-mono text-xs uppercase tracking-[0.2em]"
+              className="text-primary-ink font-mono text-xs uppercase tracking-[0.2em]"
             >
               Get in Touch
             </motion.p>
@@ -229,7 +229,7 @@ const Contact = () => {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full group bg-gradient-primary hover:opacity-90 border-0 text-white h-14 rounded-xl text-sm"
+                  className="w-full group bg-gradient-primary hover:opacity-90 border-0 text-primary-on h-14 rounded-xl text-sm"
                   disabled={submitting}
                 >
                   {submitting ? "Sending..." : "Submit Form"}

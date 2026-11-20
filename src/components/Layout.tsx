@@ -13,8 +13,10 @@ const Layout = ({ children }: { children: ReactNode }) => {
       <Navbar />
       <main className="flex-1">{children}</main>
       <Footer />
-      <WhatsAppButton />
-      <ScrollToTop />
+      <aside aria-label="Quick actions">
+        <WhatsAppButton />
+        <ScrollToTop />
+      </aside>
       <LeadCaptureModal />
     </div>
   );

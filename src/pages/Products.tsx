@@ -25,7 +25,7 @@ const Products = () => {
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-4 py-1.5 rounded-full mb-6"
+              className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary-ink text-xs font-semibold px-4 py-1.5 rounded-full mb-6"
             >
               <Sparkles size={13} />
               <span>Logisaar Labs</span>
@@ -57,13 +57,13 @@ const Products = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center max-w-6xl mx-auto">
             {/* Details Side — 6 cols */}
             <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2 text-primary font-mono text-xs uppercase tracking-widest font-bold">
+              <div className="inline-flex items-center gap-2 text-primary-ink font-mono text-xs uppercase tracking-widest font-bold">
                 <span>FLAGSHIP PRODUCT</span>
               </div>
               <h2 className="font-display text-4xl font-bold text-foreground">
                 HeyLane
               </h2>
-              <p className="text-primary text-base font-semibold leading-relaxed">
+              <p className="text-primary-ink text-base font-semibold leading-relaxed">
                 Customer retention &amp; Google reviews growth for local businesses.
               </p>
               <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
@@ -72,21 +72,21 @@ const Products = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
                 <div className="flex gap-2 items-start text-xs text-muted-foreground">
-                  <QrCode size={18} className="text-primary mt-0.5 shrink-0" />
+                  <QrCode size={18} className="text-primary-ink mt-0.5 shrink-0" />
                   <span>Unique Table &amp; Counter QRs</span>
                 </div>
                 <div className="flex gap-2 items-start text-xs text-muted-foreground">
-                  <Award size={18} className="text-primary mt-0.5 shrink-0" />
+                  <Award size={18} className="text-primary-ink mt-0.5 shrink-0" />
                   <span>Digital Loyalty Stamps Card</span>
                 </div>
                 <div className="flex gap-2 items-start text-xs text-muted-foreground">
-                  <Share2 size={18} className="text-primary mt-0.5 shrink-0" />
+                  <Share2 size={18} className="text-primary-ink mt-0.5 shrink-0" />
                   <span>Google Review Generation</span>
                 </div>
               </div>
 
               <div className="pt-6 flex flex-wrap gap-4">
-                <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 border-0 text-white rounded-xl px-8 h-12 shadow-glow">
+                <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-xl px-8 h-12 shadow-glow">
                   <a href="https://heylane.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                     Visit HeyLane Website
                     <ExternalLink size={16} />
@@ -134,7 +134,7 @@ const Products = () => {
                     {/* Coffee Cups Stamps Grid */}
                     <div className="grid grid-cols-5 gap-1.5 my-3">
                       {[1, 2, 3, 4].map((i) => (
-                        <div key={i} className="aspect-square bg-primary/20 border border-primary/45 rounded-lg flex items-center justify-center text-primary text-xs font-bold font-mono">
+                        <div key={i} className="aspect-square bg-primary/20 border border-primary/45 rounded-lg flex items-center justify-center text-primary-ink text-xs font-bold font-mono">
                           ✓
                         </div>
                       ))}
@@ -145,7 +145,7 @@ const Products = () => {
 
                     <div className="flex justify-between items-center text-label border-t border-border/20 pt-2 text-muted-foreground">
                       <span>4 of 5 visits complete</span>
-                      <span className="text-primary font-bold">1 Free Coffee next!</span>
+                      <span className="text-primary-ink font-bold">1 Free Coffee next!</span>
                     </div>
                   </div>
 
@@ -174,7 +174,7 @@ const Products = () => {
                 {/* Footer block */}
                 <div className="border-t border-border/40 mt-3 pt-3 flex justify-between items-center text-label text-muted-foreground">
                   <span className="uppercase tracking-widest font-mono text-label text-muted-foreground/60">PROPRIETARY PLATFORM BY LOGISAAR</span>
-                  <a href="https://heylane.in" target="_blank" rel="noopener noreferrer" className="text-primary font-mono font-semibold hover:underline inline-flex items-center gap-1">
+                  <a href="https://heylane.in" target="_blank" rel="noopener noreferrer" className="text-primary-ink font-mono font-semibold hover:underline inline-flex items-center gap-1">
                     heylane.in <ArrowRight size={10} />
                   </a>
                 </div>

@@ -300,7 +300,7 @@ const LeadCaptureModal = () => {
               {targetIcon === "trash" ? (
                 <Trash2 className="w-7 h-7 text-muted-foreground" />
               ) : (
-                <FileBox className="w-7 h-7 text-primary" />
+                <FileBox className="w-7 h-7 text-primary-ink" />
               )}
             </motion.div>
           </motion.div>

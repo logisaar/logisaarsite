@@ -235,7 +235,7 @@ const SolutionCard = ({ sol }: { sol: typeof industrySolutions[0] }) => {
           <h3 className="font-display text-xl font-bold text-foreground">
             {sol.name}
           </h3>
-          <p className="text-primary text-xs font-semibold mt-1">{sol.tagline}</p>
+          <p className="text-primary-ink text-xs font-semibold mt-1">{sol.tagline}</p>
           <p className="text-muted-foreground text-sm leading-relaxed mt-3">{sol.desc}</p>
         </div>
 
@@ -243,7 +243,7 @@ const SolutionCard = ({ sol }: { sol: typeof industrySolutions[0] }) => {
         <ul className="space-y-2 mt-5 flex-1">
           {sol.features.map((f) => (
             <li key={f} className="flex items-start gap-2 text-sm">
-              <Check size={13} className="text-primary mt-1 shrink-0" />
+              <Check size={13} className="text-primary-ink mt-1 shrink-0" />
               <span className="text-muted-foreground leading-relaxed">{f}</span>
             </li>
           ))}
@@ -269,7 +269,7 @@ const SolutionCard = ({ sol }: { sol: typeof industrySolutions[0] }) => {
               Request Details / Order via WhatsApp
             </a>
           </Button>
-          <Link to={sol.path} className="text-xs text-muted-foreground hover:text-primary transition-colors text-center font-mono uppercase tracking-wider mt-1">
+          <Link to={sol.path} className="text-xs text-muted-foreground hover:text-primary-ink transition-colors text-center font-mono uppercase tracking-wider mt-1">
             Explore Direct Link
           </Link>
         </div>
@@ -296,7 +296,7 @@ const Solutions = () => {
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-4 py-1.5 rounded-full mb-6"
+            className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary-ink text-xs font-semibold px-4 py-1.5 rounded-full mb-6"
           >
             <Sparkles size={12} /> 15+ Projects Deployed Globally
           </motion.div>
@@ -317,7 +317,7 @@ const Solutions = () => {
             viewport={{ once: true, amount: 0.15 }}
             className="text-center mb-14"
           >
-            <p className="text-primary text-xs font-mono uppercase tracking-[0.2em] mb-3">Product Menu</p>
+            <p className="text-primary-ink text-xs font-mono uppercase tracking-[0.2em] mb-3">Product Menu</p>
             <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
               Industry-Specific <span className="text-gradient">Solutions</span>
             </h2>

@@ -56,9 +56,9 @@ const Navbar = () => {
     location.pathname === "/about" || location.pathname === "/portfolio";
 
   const linkBaseClass = (active: boolean) =>
-    `relative text-sm font-medium px-3 py-2 rounded-full transition-colors ${
+    `relative inline-flex min-h-[2.75rem] items-center text-body-sm font-medium px-3 rounded-full transition-colors ${
       active
-        ? "text-primary"
+        ? "text-primary-ink"
         : scrolled
         ? "text-slate-700 hover:text-slate-950 dark:text-slate-300 dark:hover:text-white"
         : "text-muted-foreground hover:text-foreground"
@@ -69,7 +69,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 80, damping: 20 }}
-      className="fixed top-0 md:top-9 left-0 right-0 z-[9999] flex justify-center"
+      className="fixed top-0 md:top-11 left-0 right-0 z-[9999] flex justify-center"
     >
       <motion.div
         className={`transition-all duration-500 ${
@@ -158,14 +158,14 @@ const Navbar = () => {
                           >
                             <Link
                               to={sub.to}
-                              className={`group flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-150 hover:bg-primary/15 hover:text-primary ${
+                              className={`group flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-150 hover:bg-primary/15 hover:text-primary-ink ${
                                 isActive
-                                  ? "border-l-2 border-primary pl-2.5 text-primary"
+                                  ? "border-l-2 border-primary pl-2.5 text-primary-ink"
                                   : "text-slate-700 dark:text-slate-300 border-l-2 border-transparent pl-2.5"
                               }`}
                             >
                               <span
-                                className="flex items-center justify-center w-7 h-7 rounded-lg shrink-0 transition-colors bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 group-hover:bg-primary/15 group-hover:text-primary"
+                                className="flex items-center justify-center w-7 h-7 rounded-lg shrink-0 transition-colors bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 group-hover:bg-primary/15 group-hover:text-primary-ink"
                               >
                                 <Icon size={14} />
                               </span>
@@ -204,14 +204,21 @@ const Navbar = () => {
 
           <div className="hidden lg:block shrink-0">
             <MagneticButton strength={0.15}>
-              <Button asChild size="sm" className="bg-gradient-primary hover:opacity-90 border-0 text-white rounded-full px-6">
+              <Button asChild size="sm" className="bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full px-6">
                 <button type="button" onClick={openLeadModal}>Get a Quote</button>
               </Button>
             </MagneticButton>
           </div>
 
           {/* Mobile Toggle */}
-          <button className="lg:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
+          <button
+            type="button"
+            className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full text-foreground"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
+          >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -221,6 +228,7 @@ const Navbar = () => {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -232,7 +240,7 @@ const Navbar = () => {
                 <Link
                   to="/"
                   className={`text-2xl font-display font-bold transition-colors ${
-                    location.pathname === "/" ? "text-primary" : "text-muted-foreground"
+                    location.pathname === "/" ? "text-primary-ink" : "text-muted-foreground"
                   }`}
                 >
                   Home
@@ -249,7 +257,7 @@ const Navbar = () => {
                 <button
                   onClick={() => setMobileAboutOpen((v) => !v)}
                   className={`flex items-center gap-2 text-2xl font-display font-bold transition-colors ${
-                    isAboutActive ? "text-primary" : "text-muted-foreground"
+                    isAboutActive ? "text-primary-ink" : "text-muted-foreground"
                   }`}
                 >
                   About
@@ -273,7 +281,7 @@ const Navbar = () => {
                           to={sub.to}
                           className={`text-lg font-semibold transition-colors px-6 py-1.5 rounded-full ${
                             location.pathname === sub.to
-                              ? "text-primary bg-primary/10"
+                              ? "text-primary-ink bg-primary/10"
                               : "text-muted-foreground hover:text-foreground"
                           }`}
                         >
@@ -296,7 +304,7 @@ const Navbar = () => {
                   <Link
                     to={link.to}
                     className={`text-2xl font-display font-bold transition-colors ${
-                      location.pathname === link.to ? "text-primary" : "text-muted-foreground"
+                      location.pathname === link.to ? "text-primary-ink" : "text-muted-foreground"
                     }`}
                   >
                     {link.label}
@@ -309,7 +317,7 @@ const Navbar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35 }}
               >
-                <Button asChild className="mt-4 bg-gradient-primary hover:opacity-90 border-0 text-white px-10">
+                <Button asChild className="mt-4 bg-gradient-primary hover:opacity-90 border-0 text-primary-on px-10">
                   <button type="button" onClick={openLeadModal}>Get a Quote</button>
                 </Button>
               </motion.div>

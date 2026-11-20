@@ -197,7 +197,7 @@ const Pricing = () => {
                 <ul className="space-y-2 flex-1 mb-6">
                   {plan.features.map((f) => (
                     <li key={f} className="flex items-center gap-2 text-sm">
-                      <Check size={14} className="text-primary shrink-0" />
+                      <Check size={14} className="text-primary-ink shrink-0" />
                       {f}
                     </li>
                   ))}
@@ -206,7 +206,7 @@ const Pricing = () => {
                   <Button
                     asChild
                     variant={plan.popular ? "default" : "outline"}
-                    className={`w-full group/btn rounded-xl ${plan.popular ? "bg-gradient-primary hover:opacity-90 border-0 text-white" : ""}`}
+                    className={`w-full group/btn rounded-xl ${plan.popular ? "bg-gradient-primary hover:opacity-90 border-0 text-primary-on" : ""}`}
                   >
                     <Link to={`/contact?service=${encodeURIComponent(plan.name)}&price=${encodeURIComponent(plan.price)}`}>
                       Get Started
@@ -239,12 +239,12 @@ const Pricing = () => {
                 href="https://wa.me/918596072510?text=Hi%20LogiSaar%2C%20I%20want%20to%20get%20a%20custom%20quote"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary underline underline-offset-4 hover:opacity-80"
+                className="text-primary-ink underline underline-offset-4 hover:opacity-80"
               >
                 WhatsApp us
               </a>{" "}
               or{" "}
-              <a href="tel:+918596072510" className="text-primary underline underline-offset-4 hover:opacity-80">
+              <a href="tel:+918596072510" className="text-primary-ink underline underline-offset-4 hover:opacity-80">
                 call +91 85960 72510
               </a>
             </p>

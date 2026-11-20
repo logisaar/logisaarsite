@@ -58,7 +58,7 @@ const HeroVisual = () => {
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         className="absolute -top-4 right-0 z-10 px-4 py-2 rounded-full bg-card border border-border/40 shadow-lg"
       >
-        <span className="text-xs font-semibold text-primary">99% Success Rate</span>
+        <span className="text-xs font-semibold text-primary-ink">99% Success Rate</span>
       </motion.div>
 
       <motion.div

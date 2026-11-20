@@ -97,7 +97,7 @@ export default function ServicePageLayout({
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-medium px-4 py-1.5 rounded-full mb-6"
+                  className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary-ink text-xs font-medium px-4 py-1.5 rounded-full mb-6"
                 >
                   <span>✦</span>
                   <span>{hero.badge}</span>
@@ -160,7 +160,7 @@ export default function ServicePageLayout({
                 className="flex items-center gap-2 mt-6"
               >
                 <Phone size={13} className="text-muted-foreground" />
-                <a href="tel:+918596072510" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a href="tel:+918596072510" className="text-sm text-muted-foreground hover:text-primary-ink transition-colors">
                   +91 85960 72510
                 </a>
                 <span className="text-muted-foreground/40 text-sm mx-1">•</span>
@@ -189,7 +189,7 @@ export default function ServicePageLayout({
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <p className="text-primary text-xs uppercase tracking-[0.2em] mb-2">The Problem</p>
+            <p className="text-primary-ink text-xs uppercase tracking-[0.2em] mb-2">The Problem</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold">
               Sound <span className="text-gradient">Familiar?</span>
             </h2>
@@ -207,7 +207,7 @@ export default function ServicePageLayout({
                   className="rounded-2xl border border-border bg-card p-6 border-l-4 border-l-primary"
                 >
                   <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                    <Icon size={18} className="text-primary" />
+                    <Icon size={18} className="text-primary-ink" />
                   </div>
                   <h3 className="font-display font-bold text-base mb-2">"{p.title}"</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{p.description}</p>
@@ -226,7 +226,7 @@ export default function ServicePageLayout({
             animate={featInView ? { opacity: 1, y: 0 } : {}}
             className="text-center mb-16"
           >
-            <p className="text-primary text-xs uppercase tracking-[0.2em] mb-2">What You Get</p>
+            <p className="text-primary-ink text-xs uppercase tracking-[0.2em] mb-2">What You Get</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold">
               Everything You <span className="text-gradient">Need</span>
             </h2>
@@ -244,7 +244,7 @@ export default function ServicePageLayout({
                   className="rounded-2xl border border-border bg-card p-6 group hover:border-primary/30 hover:shadow-md transition-all cursor-default"
                 >
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-[hsl(165,80%,45%)]/20 flex items-center justify-center mb-4 group-hover:bg-gradient-primary group-hover:shadow-glow-sm transition-all duration-300">
-                    <Icon size={18} className="text-primary group-hover:text-white transition-colors duration-300" />
+                    <Icon size={18} className="text-primary-ink group-hover:text-white transition-colors duration-300" />
                   </div>
                   <h3 className="font-display font-bold text-sm mb-1.5">{f.name}</h3>
                   <p className="text-muted-foreground text-xs leading-relaxed">{f.desc}</p>
@@ -264,7 +264,7 @@ export default function ServicePageLayout({
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <p className="text-primary text-xs uppercase tracking-[0.2em] mb-2">Process</p>
+            <p className="text-primary-ink text-xs uppercase tracking-[0.2em] mb-2">Process</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold">
               How It <span className="text-gradient">Works</span>
             </h2>
@@ -302,7 +302,7 @@ export default function ServicePageLayout({
             animate={priceInView ? { opacity: 1, y: 0 } : {}}
             className="text-center mb-14"
           >
-            <p className="text-primary text-xs uppercase tracking-[0.2em] mb-2">Investment</p>
+            <p className="text-primary-ink text-xs uppercase tracking-[0.2em] mb-2">Investment</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold">
               Transparent <span className="text-gradient">Pricing</span>
             </h2>
@@ -322,7 +322,7 @@ export default function ServicePageLayout({
                 >
                   <div className="absolute top-0 left-0 right-0 h-[0.125rem] bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
                   {badge && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-white text-xs font-semibold px-4 py-1 rounded-full bg-gradient-primary">
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-primary-on text-xs font-semibold px-4 py-1 rounded-full bg-gradient-primary">
                       {badge}
                     </span>
                   )}
@@ -334,7 +334,7 @@ export default function ServicePageLayout({
                   <ul className="space-y-2.5 flex-1 mb-6">
                     {tier.features.map((f) => (
                       <li key={f} className="flex items-start gap-2 text-sm">
-                        <Check size={13} className="text-primary mt-0.5 shrink-0" />
+                        <Check size={13} className="text-primary-ink mt-0.5 shrink-0" />
                         <span>{f}</span>
                       </li>
                     ))}
@@ -343,7 +343,7 @@ export default function ServicePageLayout({
                     <Button
                       asChild
                       variant={tier.name === "Professional" ? "default" : "outline"}
-                      className={`w-full rounded-xl ${tier.name === "Professional" ? "bg-gradient-primary hover:opacity-90 border-0 text-white" : ""}`}
+                      className={`w-full rounded-xl ${tier.name === "Professional" ? "bg-gradient-primary hover:opacity-90 border-0 text-primary-on" : ""}`}
                     >
                       <a href={waUrl} target="_blank" rel="noopener noreferrer">
                         Get {tier.name}
@@ -367,7 +367,7 @@ export default function ServicePageLayout({
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <p className="text-primary text-xs uppercase tracking-[0.2em] mb-2">FAQ</p>
+            <p className="text-primary-ink text-xs uppercase tracking-[0.2em] mb-2">FAQ</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold">
               Common <span className="text-gradient">Questions</span>
             </h2>
@@ -444,7 +444,7 @@ export default function ServicePageLayout({
             </div>
             <p className="text-muted-foreground text-sm mt-5">
               Or{" "}
-              <Link to="/contact" className="text-primary underline underline-offset-4">
+              <Link to="/contact" className="text-primary-ink underline underline-offset-4">
                 fill our contact form
               </Link>{" "}
               — we reply within 24 hours.

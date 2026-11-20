@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 interface MarqueeTextProps {
   text: string;
@@ -8,12 +8,13 @@ interface MarqueeTextProps {
 
 const MarqueeText = ({ text, reverse = false, className = "" }: MarqueeTextProps) => {
   const items = Array(4).fill(text);
+  const reduceMotion = useReducedMotion();
 
   return (
-    <div className={`overflow-hidden py-8 select-none ${className}`}>
+    <div aria-hidden="true" className={`overflow-hidden py-8 select-none ${className}`}>
       <motion.div
         className="flex whitespace-nowrap"
-        animate={{ x: reverse ? ["0%", "-25%"] : ["-25%", "0%"] }}
+        animate={reduceMotion ? undefined : { x: reverse ? ["0%", "-25%"] : ["-25%", "0%"] }}
         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
       >
         {items.map((t, i) => (

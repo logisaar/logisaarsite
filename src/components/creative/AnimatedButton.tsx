@@ -35,7 +35,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
         mass: 0.5,
       }}
       className={cn(
-        "group inline-flex items-center justify-center h-12 px-8 rounded-full relative overflow-hidden bg-gradient-primary hover:shadow-glow text-white border-0 text-base font-semibold",
+        "group inline-flex items-center justify-center h-12 px-8 rounded-full relative overflow-hidden bg-gradient-primary hover:shadow-glow text-primary-on border-0 text-base font-semibold",
         "transition-all duration-200 hover:-translate-y-[0.125rem] focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
         "[--shine:rgba(255,255,255,.66)]",
         className

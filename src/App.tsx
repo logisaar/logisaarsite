@@ -1,10 +1,10 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
-import { Agentation } from "agentation";
+import { AnimatePresence, MotionConfig } from "framer-motion";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Solutions from "./pages/Solutions";
@@ -33,6 +33,11 @@ import QRMenu from "./pages/solutions/QRMenu";
 import TravelWebsite from "./pages/solutions/TravelWebsite";
 import AIAutomation from "./pages/solutions/AIAutomation";
 import CustomCRM from "./pages/solutions/CustomCRM";
+
+// Dev-only feedback toolbar: a dynamic import behind import.meta.env.DEV, so the production build drops it entirely.
+const Agentation = import.meta.env.DEV
+  ? lazy(() => import("agentation").then((m) => ({ default: m.Agentation })))
+  : null;
 
 const queryClient = new QueryClient();
 
@@ -77,24 +82,28 @@ const AnimatedRoutes = () => {
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
+    <MotionConfig reducedMotion="user">
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <RouteScrollReset />
         <AnimatedRoutes />
         {/* Mounted once here (not in Layout, which remounts on every route change) so Logi keeps its position and chat. */}
         <Logi />
       </BrowserRouter>
-      {import.meta.env.DEV && (
-        <Agentation
-          endpoint="http://localhost:4747"
-          onSessionCreated={(sessionId) => {
-            console.log("Agentation Session started:", sessionId);
-          }}
-        />
+      {Agentation && (
+        <Suspense fallback={null}>
+          <Agentation
+            endpoint="http://localhost:4747"
+            onSessionCreated={(sessionId) => {
+              console.log("Agentation Session started:", sessionId);
+            }}
+          />
+        </Suspense>
       )}
     </TooltipProvider>
+    </MotionConfig>
   </QueryClientProvider>
 );
 

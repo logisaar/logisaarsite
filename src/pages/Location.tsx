@@ -111,7 +111,7 @@ const Location = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-primary font-medium text-xs uppercase tracking-[0.2em] mb-4"
+            className="text-primary-ink font-medium text-xs uppercase tracking-[0.2em] mb-4"
           >
             📍 Proudly Odisha-Based
           </motion.p>
@@ -185,7 +185,7 @@ const Location = () => {
             viewport={{ once: true, amount: 0.2 }}
             className="text-center mb-16"
           >
-            <p className="text-primary text-xs uppercase tracking-[0.2em] mb-3">Service Area</p>
+            <p className="text-primary-ink text-xs uppercase tracking-[0.2em] mb-3">Service Area</p>
             <h2 className="font-display text-3xl md:text-5xl font-bold">
               Cities We Serve <span className="text-gradient">in Odisha</span>
             </h2>
@@ -219,7 +219,7 @@ const Location = () => {
             viewport={{ once: true, amount: 0.2 }}
             className="text-center mb-16"
           >
-            <p className="text-primary text-xs uppercase tracking-[0.2em] mb-3">What We Do</p>
+            <p className="text-primary-ink text-xs uppercase tracking-[0.2em] mb-3">What We Do</p>
             <h2 className="font-display text-3xl md:text-5xl font-bold">
               Services for <span className="text-gradient">Odisha Businesses</span>
             </h2>
@@ -330,7 +330,7 @@ const Location = () => {
             </div>
             <p className="text-muted-foreground text-sm mt-6">
               Or{" "}
-              <Link to="/contact" className="text-primary underline underline-offset-4">
+              <Link to="/contact" className="text-primary-ink underline underline-offset-4">
                 fill out our contact form
               </Link>{" "}
               and we'll reply within 24 hours.

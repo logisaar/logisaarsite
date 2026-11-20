@@ -119,7 +119,7 @@ const sections = [
     title: "8. Payment Failures",
     content: (
       <>
-        <p>Where payments are deducted but services are not activated due to technical issues, users should contact: <a href={CONTACT.mailto} className="text-primary underline underline-offset-4">{CONTACT.email}</a></p>
+        <p>Where payments are deducted but services are not activated due to technical issues, users should contact: <a href={CONTACT.mailto} className="text-primary-ink underline underline-offset-4">{CONTACT.email}</a></p>
         <p className="mt-4">Verified payment failures may be corrected through:</p>
         <ul className="list-disc pl-6 space-y-1 mt-2">
           <li>Service activation</li>
@@ -193,7 +193,7 @@ const sections = [
     content: (
       <>
         <p>For refund requests or payment inquiries:</p>
-        <p className="mt-2"><strong>Email:</strong> <a href={CONTACT.mailto} className="text-primary underline underline-offset-4">{CONTACT.email}</a></p>
+        <p className="mt-2"><strong>Email:</strong> <a href={CONTACT.mailto} className="text-primary-ink underline underline-offset-4">{CONTACT.email}</a></p>
       </>
     ),
   },

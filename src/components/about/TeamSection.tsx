@@ -90,7 +90,7 @@ const TeamMemberCard = ({
         <div>
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
-              <h3 className="font-display text-2xl font-bold text-white group-hover:text-primary transition-colors">
+              <h3 className="font-display text-2xl font-bold text-white group-hover:text-primary-ink transition-colors">
                 {member.name}
               </h3>
               <p
@@ -105,7 +105,7 @@ const TeamMemberCard = ({
               href={member.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full border border-white/10 hover:border-primary/40 hover:bg-primary/10 text-white/50 hover:text-primary transition-all duration-300"
+              className="p-2 rounded-full border border-white/10 hover:border-primary/40 hover:bg-primary/10 text-white/50 hover:text-primary-ink transition-all duration-300"
               aria-label={`${member.name} LinkedIn`}
             >
               <Linkedin size={18} />
@@ -165,7 +165,7 @@ const TeamSection = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mb-16 text-center max-w-2xl mx-auto"
         >
-          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary-ink text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
             <Award size={13} />
             <span>Foundership</span>
           </div>

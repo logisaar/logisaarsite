@@ -47,7 +47,7 @@ const ServicesOverview = () => {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="mb-20"
         >
-          <p className="text-primary font-medium text-sm uppercase tracking-[0.2em] mb-4">What We Do</p>
+          <p className="text-primary-ink font-medium text-sm uppercase tracking-[0.2em] mb-4">What We Do</p>
           <h2 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] -ml-1">
             Our{" "}
             <span className="text-gradient">Solutions</span>

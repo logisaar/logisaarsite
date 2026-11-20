@@ -34,7 +34,7 @@ const About = () => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-primary font-mono text-xs uppercase tracking-[0.2em] mb-4"
+              className="text-primary-ink font-mono text-xs uppercase tracking-[0.2em] mb-4"
             >
               WHO WE ARE
             </motion.p>
@@ -64,7 +64,7 @@ const About = () => {
         <div className="container mx-auto px-gutter relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-5 space-y-4">
-              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
+              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary-ink text-xs font-semibold px-3 py-1.5 rounded-full">
                 <HelpCircle size={13} />
                 <span>Purpose</span>
               </div>
@@ -82,7 +82,7 @@ const About = () => {
                 { label: "03", text: "Developers struggle to build production-ready software." },
               ].map((item) => (
                 <div key={item.label} className="glass-card p-6 border border-border/50 flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-mono font-bold text-sm shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary-ink font-mono font-bold text-sm shrink-0">
                     {item.label}
                   </div>
                   <p className="text-base font-semibold text-foreground">
@@ -101,7 +101,7 @@ const About = () => {
         <div className="container mx-auto px-gutter relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-4 space-y-4">
-              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
+              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary-ink text-xs font-semibold px-3 py-1.5 rounded-full">
                 <Fingerprint size={13} />
                 <span>Portfolio</span>
               </div>
@@ -117,7 +117,7 @@ const About = () => {
                 <div className="glass-card p-6 border border-border/50 flex flex-col justify-between h-full">
                   <div>
                     <h3 className="font-display font-bold text-foreground text-lg mb-4 flex items-center gap-2">
-                      <Cpu size={18} className="text-primary" />
+                      <Cpu size={18} className="text-primary-ink" />
                       AI Software
                     </h3>
                     <ul className="space-y-2 text-sm text-muted-foreground font-medium">
@@ -141,14 +141,14 @@ const About = () => {
                 <div className="glass-card p-6 border border-border/50 flex flex-col justify-between h-full">
                   <div>
                     <h3 className="font-display font-bold text-foreground text-lg mb-4 flex items-center gap-2">
-                      <Sparkles size={18} className="text-primary" />
+                      <Sparkles size={18} className="text-primary-ink" />
                       AI Products
                     </h3>
                     <div className="space-y-4">
                       <div>
                         <div className="font-bold text-sm text-foreground flex items-center gap-2">
                           HeyLane
-                          <span className="bg-primary/10 text-primary text-label px-2 py-0.5 rounded-full font-bold">
+                          <span className="bg-primary/10 text-primary-ink text-label px-2 py-0.5 rounded-full font-bold">
                             Main Product
                           </span>
                         </div>
@@ -172,7 +172,7 @@ const About = () => {
                 <div className="glass-card p-6 border border-border/50 flex flex-col justify-between h-full">
                   <div>
                     <h3 className="font-display font-bold text-foreground text-lg mb-4 flex items-center gap-2">
-                      <GraduationCap size={18} className="text-primary" />
+                      <GraduationCap size={18} className="text-primary-ink" />
                       AI Education
                     </h3>
                     <div className="space-y-3">
@@ -192,7 +192,7 @@ const About = () => {
                 <div className="glass-card p-6 border border-border/50 flex flex-col justify-between h-full">
                   <div>
                     <h3 className="font-display font-bold text-foreground text-lg mb-4 flex items-center gap-2">
-                      <Beaker size={18} className="text-primary" />
+                      <Beaker size={18} className="text-primary-ink" />
                       AI Research
                     </h3>
                     <ul className="space-y-2 text-sm text-muted-foreground font-medium">
@@ -227,7 +227,7 @@ const About = () => {
         <div className="container mx-auto px-gutter relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-4 space-y-4">
-              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
+              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary-ink text-xs font-semibold px-3 py-1.5 rounded-full">
                 <Milestone size={13} />
                 <span>Our Story</span>
               </div>
@@ -250,7 +250,7 @@ const About = () => {
         <div className="container mx-auto px-gutter relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-4 space-y-4">
-              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
+              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary-ink text-xs font-semibold px-3 py-1.5 rounded-full">
                 <BookOpen size={13} />
                 <span>Our Vision</span>
               </div>
@@ -303,7 +303,7 @@ const About = () => {
       <section className="py-section relative overflow-hidden bg-secondary/15 border-t border-border/30">
         <div className="container mx-auto px-gutter relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span className="text-primary text-xs font-mono uppercase tracking-[0.2em] block">
+            <span className="text-primary-ink text-xs font-mono uppercase tracking-[0.2em] block">
               Principles
             </span>
             <h2 className="font-display text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white">
@@ -325,7 +325,7 @@ const About = () => {
                 className="glass-card p-6 border border-border/50 bg-white/40 dark:bg-slate-900/40 flex flex-col justify-between hover:border-primary/30 transition-all duration-300"
               >
                 <div className="space-y-4">
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-mono font-bold text-sm">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary-ink font-mono font-bold text-sm">
                     {String(i + 1).padStart(2, "0")}
                   </div>
                   <div className="space-y-2">

@@ -108,7 +108,7 @@ const LegalPageLayout = ({
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-3xl mx-auto text-center"
           >
-            <p className="text-primary font-medium text-xs uppercase tracking-[0.2em] mb-4">
+            <p className="text-primary-ink font-medium text-xs uppercase tracking-[0.2em] mb-4">
               Legal
             </p>
             <h1 className="font-display text-4xl md:text-6xl font-bold mb-6 text-foreground tracking-tight">
@@ -140,7 +140,7 @@ const LegalPageLayout = ({
                       onClick={() => handleScroll(section.id)}
                       className={`w-full text-left text-sm py-2 pl-4 transition-all duration-300 relative block border-l-2 -ml-[0.125rem] font-medium ${
                         isActive
-                          ? "text-primary border-primary"
+                          ? "text-primary-ink border-primary"
                           : "text-muted-foreground border-transparent hover:text-foreground hover:border-border"
                       }`}
                     >

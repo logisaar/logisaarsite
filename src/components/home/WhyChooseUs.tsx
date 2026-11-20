@@ -45,7 +45,7 @@ const WhyChooseUs = () => {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="mb-20"
         >
-          <p className="text-primary font-medium text-xs uppercase tracking-[0.2em] mb-4">Why Us</p>
+          <p className="text-primary-ink font-medium text-xs uppercase tracking-[0.2em] mb-4">Why Us</p>
           <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.95]">
             Why Choose <span className="text-gradient">LogiSaar</span>
           </h2>

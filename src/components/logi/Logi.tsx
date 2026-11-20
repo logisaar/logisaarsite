@@ -60,6 +60,7 @@ const Logi = () => {
   const bubbleRef = useRef<HTMLDivElement>(null);
   const logRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const chatRef = useRef<HTMLElement>(null);
   const idRef = useRef(0);
 
   const [open, setOpen] = useState(false);
@@ -83,6 +84,7 @@ const Logi = () => {
     userMoved: false,
     lastScroll: performance.now(),
     tipAt: {} as Record<string, number>,
+    tipCleared: false,
     walk: null as gsap.core.Tween | null,
   });
   const api = useRef({
@@ -135,6 +137,8 @@ const Logi = () => {
   }, [open, botSay]);
   useEffect(() => { const el = logRef.current; if (el) el.scrollTop = el.scrollHeight; }, [msgs, typing]);
   useEffect(() => { S.current.thinking = typing; api.current.sync(); }, [typing]);
+  // a closed chat must not be reachable by keyboard or screen reader
+  useEffect(() => { if (chatRef.current) (chatRef.current as HTMLElement & { inert: boolean }).inert = !open; }, [open]);
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") toggleChat(false); };
@@ -182,6 +186,7 @@ const Logi = () => {
     let bubbleT = 0;
     const say = (text: string, ms = 4000) => {
       if (st.open || !text) return;
+      st.tipCleared = false;
       bubble.textContent = text;
       root.classList.add("talk");
       st.talk = true; sync();
@@ -206,8 +211,7 @@ const Logi = () => {
     // ── perch spot beside a section's heading, kept clear of interactive elements ──
     const perchFor = (section: Element | null): Pt => {
       const s = sizeNow(), c = corner();
-      if (!section) return c;
-      const head = section.querySelector("h1, h2, [data-logi-anchor]");
+      const head = section ? section.querySelector("h1, h2, [data-logi-anchor]") : null;
       const cands: Pt[] = [];
       if (head && innerWidth >= 768) {
         const t = textRect(head);
@@ -218,10 +222,16 @@ const Logi = () => {
         }
       }
       cands.push(c, { x: c.x, y: clamp(innerHeight * 0.55, TOP_SAFE, c.y) }, { x: c.x, y: clamp(innerHeight * 0.35, TOP_SAFE, c.y) });
+      // crowded layouts (narrow phones, full-width headings): peek in from the right edge, about 40% tucked off screen
+      const peekX = innerWidth - s * 0.6;
+      for (const f of [1, 0.75, 0.55, 0.35]) cands.push({ x: peekX, y: clamp(innerHeight * f - s, TOP_SAFE, c.y) });
+      // last resort on a very small screen: tuck into the bottom-right corner, mostly off screen
+      cands.push({ x: peekX, y: innerHeight - s * 0.35 });
       const rects = [...document.querySelectorAll(AVOID)]
-        .filter((e) => !root.contains(e) && !e.closest(".logi-chat") && !e.closest("nav, header"))
-        .map((e) => (/^H[1-3]$/.test(e.tagName) ? textRect(e) : e.getBoundingClientRect()))
-        .filter((r) => r.width > 0 && r.bottom > 0 && r.top < innerHeight && r.width * r.height < 60000); // ignore whole-card links
+        .filter((e) => !root.contains(e) && !e.closest(".logi-chat") && !e.closest("nav, header, [data-agentation-root], [data-feedback-toolbar]"))
+        .map((e) => ({ r: /^(H[1-3]|P)$/.test(e.tagName) ? textRect(e) : e.getBoundingClientRect(), text: /^(H[1-3]|P)$/.test(e.tagName) }))
+        .filter(({ r, text }) => r.width > 0 && r.bottom > 0 && r.top < innerHeight && (text || r.width * r.height < 60000)) // ignore whole-card links
+        .map(({ r }) => r);
       let best = cands[0], bestN = Infinity;
       for (const c0 of cands) {
         const n = rects.filter((r) => overlaps(c0, s, r)).length;
@@ -263,7 +273,9 @@ const Logi = () => {
     };
 
     // ── tour ──
-    const stops = (): Element[] => [...document.querySelectorAll("[data-logi]")];
+    // tour stops carry data-logi="tip"; the hero carries data-logi-dock (no tip): Logi waits in the corner there
+    const stops = (): Element[] => [...document.querySelectorAll("[data-logi], [data-logi-dock]")];
+    const isMobile = () => !matchMedia("(min-width: 48em)").matches;
     const activeStop = (): Element | null => {
       const mid = innerHeight * 0.5;
       let best: Element | null = null, bestScore = -1;
@@ -284,19 +296,38 @@ const Logi = () => {
       if (!changed && !force) return;
       st.stopEl = el; st.userMoved = false;
       wake();
-      walkTo(perchFor(el), () => {
-        const key = (el as HTMLElement).dataset.logi || "", now = performance.now();
-        if (key && (!st.tipAt[key] || now - st.tipAt[key] > 15000)) { st.tipAt[key] = now; say(key, 4200); }
-      });
+      const tip = (el as HTMLElement).dataset.logi || "";
+      const isDock = el.hasAttribute("data-logi-dock");
+      // the tip always comes from the CURRENT stop, and only if the user has not scrolled on since
+      const announce = () => {
+        if (st.stopEl !== el || performance.now() - st.lastScroll < 200 || !tip) return;
+        const now = performance.now();
+        if (!st.tipAt[tip] || now - st.tipAt[tip] > 15000) { st.tipAt[tip] = now; say(tip, 4200); }
+      };
+      if (isDock || isMobile()) {
+        // hero, and every stop on a phone: stay docked bottom-right and just announce the section
+        const c = perchFor(null);
+        if (Math.hypot(st.x - c.x, st.y - c.y) > 4) walkTo(c, announce); else announce();
+        return;
+      }
+      walkTo(perchFor(el), announce);
     };
     api.current.evaluate = evaluate;
 
     let scrollT = 0;
     const onScroll = () => {
       wake();
+      if (st.talk) { root.classList.remove("talk"); st.talk = false; st.tipCleared = true; sync(); } // never leave an old line on screen
       window.clearTimeout(scrollT);
       scrollT = window.setTimeout(() => { // tour decisions wait until scrolling settles
-        if (st.userMoved && activeStop() === st.stopEl) return; // a drag pauses the tour until the next stop
+        const cur = activeStop();
+        if (st.userMoved && cur === st.stopEl) return; // a drag pauses the tour until the next stop
+        if (cur && cur === st.stopEl && st.tipCleared && !st.open) { // same section: bring its line back
+          st.tipCleared = false;
+          const tip = (cur as HTMLElement).dataset.logi;
+          if (tip) say(tip, 4200);
+          return;
+        }
         evaluate();
       }, 260);
     };
@@ -368,14 +399,14 @@ const Logi = () => {
 
     if (st.reduce) {
       // static: parked bottom-right, no ticker, no loops
-      const c = corner(); st.x = c.x; st.y = c.y; st.ready = true; st.away = false; st.face = -1;
+      const c = perchFor(null); st.x = c.x; st.y = c.y; st.ready = true; st.away = false; st.face = -1;
       place(); sync();
     } else gsap.ticker.add(tick);
 
     // ── entrance / page changes ──
     const enterPage = (first: boolean) => {
       const greet = PAGE_GREETING[location.pathname] ?? DEFAULT_GREETING;
-      const c = corner();
+      const c = perchFor(null); // clear of hero text and CTAs at every width
       st.stopEl = null; st.userMoved = false;
       const done = () => {
         st.away = false; st.ready = true; faceContent(); sync();
@@ -450,7 +481,7 @@ const Logi = () => {
   };
 
   return (
-    <>
+    <aside aria-label="Site assistant">
       <div id="logi" ref={rootRef} data-state="idle" className={open ? "open" : undefined}>
         <div className="logi-bubble" ref={bubbleRef} aria-live="polite" />
         <button
@@ -476,7 +507,7 @@ const Logi = () => {
         <span className="logi-z" aria-hidden="true">z z</span>
       </div>
 
-      <section id="logi-chat" className={`logi-chat${open ? " on" : ""}`} role="dialog" aria-label="Chat with Logi" aria-hidden={!open}>
+      <section id="logi-chat" ref={chatRef} className={`logi-chat${open ? " on" : ""}`} role="dialog" aria-label="Chat with Logi" aria-modal="false">
         <header>
           <picture>
             <source type="image/webp" srcSet="/logi/logi-256.webp" />
@@ -513,7 +544,7 @@ const Logi = () => {
           <button type="submit" aria-label="Send" tabIndex={open ? 0 : -1}>→</button>
         </form>
       </section>
-    </>
+    </aside>
   );
 };
 

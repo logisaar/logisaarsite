@@ -180,7 +180,7 @@ const ChalkToChoiceAsset = () => {
                 <div className="liquid-glass rounded-2xl p-3.5 border border-primary/15 shadow-sm hover:shadow-md transition-shadow duration-300 group cursor-pointer">
                   {/* Icon badge */}
                   <div className="w-9 h-9 rounded-xl bg-primary/12 border border-primary/20 grid place-items-center mb-2.5 group-hover:bg-primary/20 transition-colors shrink-0">
-                    <Icon size={16} className="text-primary block shrink-0" />
+                    <Icon size={16} className="text-primary-ink block shrink-0" />
                   </div>
                   <div className="text-sm font-bold text-foreground leading-tight">{title}</div>
                   <div className="text-label text-muted-foreground mt-1 leading-snug">{desc}</div>

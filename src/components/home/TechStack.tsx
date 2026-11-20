@@ -41,7 +41,7 @@ const TechStack = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16"
         >
-          <p className="text-primary font-medium text-xs uppercase tracking-[0.2em] mb-4">Tech Stack</p>
+          <p className="text-primary-ink font-medium text-xs uppercase tracking-[0.2em] mb-4">Tech Stack</p>
           <h2 className="font-display text-4xl md:text-6xl font-bold">
             Technologies We <span className="text-gradient">Master</span>
           </h2>

@@ -32,7 +32,7 @@ const FeaturedProjects = () => {
       <section className="md:hidden py-section">
         <div className="container mx-auto px-gutter">
           <div className="mb-8">
-            <p className="text-primary font-medium text-xs uppercase tracking-[0.2em] mb-2">Our Work</p>
+            <p className="text-primary-ink font-medium text-xs uppercase tracking-[0.2em] mb-2">Our Work</p>
             <h2 className="font-display text-3xl font-bold">
               Featured <span className="text-gradient">Projects</span>
             </h2>
@@ -76,7 +76,7 @@ const FeaturedProjects = () => {
           </div>
 
           <div className="mt-8 text-center">
-            <Link to="/portfolio" className="text-primary font-medium text-sm hover:underline">View all projects →</Link>
+            <Link to="/portfolio" className="text-primary-ink font-medium text-sm hover:underline">View all projects →</Link>
           </div>
         </div>
       </section>
@@ -87,12 +87,12 @@ const FeaturedProjects = () => {
           <div className="absolute top-8 left-0 right-0 z-10 container mx-auto px-gutter">
             <div className="flex items-end justify-between">
               <div>
-                <p className="text-primary font-medium text-xs uppercase tracking-[0.2em] mb-2">Our Work</p>
+                <p className="text-primary-ink font-medium text-xs uppercase tracking-[0.2em] mb-2">Our Work</p>
                 <h2 className="font-display text-3xl md:text-5xl font-bold">
                   Featured <span className="text-gradient">Projects</span>
                 </h2>
               </div>
-              <Link to="/portfolio" className="text-primary font-medium text-sm hover:underline">View all →</Link>
+              <Link to="/portfolio" className="text-primary-ink font-medium text-sm hover:underline">View all →</Link>
             </div>
             <div className="mt-4 h-[0.125rem] bg-border rounded-full overflow-hidden">
               <motion.div className="h-full bg-gradient-primary rounded-full" style={{ width: progressWidth }} />

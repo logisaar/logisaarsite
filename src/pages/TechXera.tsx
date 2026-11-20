@@ -1060,7 +1060,7 @@ const TechXera = () => {
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-4 py-1.5 rounded-full"
+                className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary-ink text-xs font-semibold px-4 py-1.5 rounded-full"
               >
                 <GraduationCap size={13} />
                 <span>IKURO Division</span>
@@ -1105,7 +1105,7 @@ const TechXera = () => {
                 <Button
                   onClick={handleScrollToCourses}
                   size="lg"
-                  className="bg-gradient-primary hover:opacity-95 border-0 text-white rounded-full px-8 gap-2 font-semibold shadow-md shadow-primary/20 transition-transform hover:-translate-y-0.5"
+                  className="bg-gradient-primary hover:opacity-95 border-0 text-primary-on rounded-full px-8 gap-2 font-semibold shadow-md shadow-primary/20 transition-transform hover:-translate-y-0.5"
                 >
                   <span>Explore Courses</span>
                   <ArrowRight size={16} />
@@ -1220,7 +1220,7 @@ const TechXera = () => {
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground tracking-tight leading-tight">
                   Chalk to Choice — From Classroom to Career
                 </h2>
-                <p className="text-primary text-sm font-semibold tracking-wide uppercase font-mono leading-relaxed">
+                <p className="text-primary-ink text-sm font-semibold tracking-wide uppercase font-mono leading-relaxed">
                   Career-Clarity Program for Class 11 & 12 Students
                 </p>
                 <blockquote className="border-l-2 border-primary/50 pl-4 italic text-muted-foreground text-sm">
@@ -1266,7 +1266,7 @@ const TechXera = () => {
                     <Button onClick={() => setIsChalkToChoiceOpen(true)} className="flex-1 bg-white dark:bg-card hover:bg-secondary/40 border border-border text-foreground rounded-full py-4 h-auto font-semibold">
                       View Details
                     </Button>
-                    <Button asChild className="flex-1 bg-gradient-primary hover:opacity-90 text-white rounded-full py-4 h-auto font-semibold border-0">
+                    <Button asChild className="flex-1 bg-gradient-primary hover:opacity-90 text-primary-on rounded-full py-4 h-auto font-semibold border-0">
                       <a
                         href="https://wa.me/918596072510?text=Hi%20Logisaar%20IKURO%2C%20I%27m%20interested%20in%20registering%20for%20the%20Chalk%20to%20Choice%20program."
                         target="_blank"
@@ -1352,7 +1352,7 @@ const TechXera = () => {
                       {/* Top Header */}
                       <div className="flex justify-between items-center">
                         <div className="flex items-center gap-2">
-                          <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 group-hover:rotate-6 transition-all">
+                          <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary-ink group-hover:scale-110 group-hover:rotate-6 transition-all">
                             <IconComponent size={24} />
                           </div>
                           <div>
@@ -1368,7 +1368,7 @@ const TechXera = () => {
 
                       {/* Title & Description */}
                       <div className="space-y-2 text-left">
-                        <h3 className="font-display font-bold text-2xl md:text-3xl text-foreground group-hover:text-primary transition-colors duration-300 leading-tight">
+                        <h3 className="font-display font-bold text-2xl md:text-3xl text-foreground group-hover:text-primary-ink transition-colors duration-300 leading-tight">
                           {course.title}
                         </h3>
                         <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
@@ -1379,15 +1379,15 @@ const TechXera = () => {
                       {/* Stats Row */}
                       <div className="flex flex-wrap gap-x-6 gap-y-2 py-4 border-y border-border/40 text-xs font-mono text-muted-foreground/90">
                         <div className="flex items-center gap-1.5">
-                          <Clock size={14} className="text-primary/75" />
+                          <Clock size={14} className="text-primary-ink/75" />
                           <span>{course.duration} ({course.hours})</span>
                         </div>
                         <div className="flex items-center gap-1.5">
-                          <Layers size={14} className="text-primary/75" />
+                          <Layers size={14} className="text-primary-ink/75" />
                           <span>{course.sessions}</span>
                         </div>
                         <div className="flex items-center gap-1.5">
-                          <Target size={14} className="text-primary/75" />
+                          <Target size={14} className="text-primary-ink/75" />
                           <span>{course.projectsCount}</span>
                         </div>
                       </div>
@@ -1406,9 +1406,9 @@ const TechXera = () => {
 
                       {/* Condensed Benefit Icons */}
                       <div className="flex gap-4 items-center text-muted-foreground text-xs pt-2">
-                        <span className="flex items-center gap-1.5"><Award size={14} className="text-primary" /> Certification</span>
-                        <span className="flex items-center gap-1.5"><Briefcase size={14} className="text-primary" /> Internship</span>
-                        <span className="flex items-center gap-1.5"><Zap size={14} className="text-primary" /> Job-Ready</span>
+                        <span className="flex items-center gap-1.5"><Award size={14} className="text-primary-ink" /> Certification</span>
+                        <span className="flex items-center gap-1.5"><Briefcase size={14} className="text-primary-ink" /> Internship</span>
+                        <span className="flex items-center gap-1.5"><Zap size={14} className="text-primary-ink" /> Job-Ready</span>
                       </div>
                     </div>
 
@@ -1418,7 +1418,7 @@ const TechXera = () => {
                         {course.price}
                       </div>
                       <div className="flex gap-3 w-full sm:w-auto">
-                        <Button asChild className="flex-1 sm:flex-initial bg-gradient-primary hover:opacity-90 border-0 text-white rounded-full px-6 h-11 font-semibold">
+                        <Button asChild className="flex-1 sm:flex-initial bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full px-6 h-11 font-semibold">
                           <a
                             href={`https://wa.me/918596072510?text=Hi%20Logisaar%2C%20I'm%20interested%20in%20joining%20the%20${encodeURIComponent(course.title)}%20program.`}
                             target="_blank"
@@ -1455,7 +1455,7 @@ const TechXera = () => {
                   <div className="space-y-4 text-left">
                     {/* Top Header */}
                     <div className="flex justify-between items-start gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 group-hover:rotate-6 transition-all">
+                      <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary-ink group-hover:scale-110 group-hover:rotate-6 transition-all">
                         <IconComponent size={20} />
                       </div>
                       <span className="text-label uppercase font-mono font-bold tracking-wider text-muted-foreground">
@@ -1465,7 +1465,7 @@ const TechXera = () => {
 
                     {/* Title & Description */}
                     <div className="space-y-1">
-                      <h3 className="font-display font-bold text-foreground text-lg leading-snug group-hover:text-primary transition-colors">
+                      <h3 className="font-display font-bold text-foreground text-lg leading-snug group-hover:text-primary-ink transition-colors">
                         {course.title}
                       </h3>
                       <p className="text-xs md:text-sm text-muted-foreground leading-relaxed line-clamp-2">
@@ -1475,9 +1475,9 @@ const TechXera = () => {
 
                     {/* Stats Row */}
                     <div className="flex flex-wrap gap-x-3 gap-y-1 py-2.5 border-y border-border/40 text-label sm:text-xs font-mono text-muted-foreground/90">
-                      <span className="flex items-center gap-1"><Clock size={12} className="text-primary/75" /> {course.duration}</span>
-                      <span className="flex items-center gap-1"><Layers size={12} className="text-primary/75" /> {course.sessions}</span>
-                      <span className="flex items-center gap-1"><Target size={12} className="text-primary/75" /> {course.projectsCount}</span>
+                      <span className="flex items-center gap-1"><Clock size={12} className="text-primary-ink/75" /> {course.duration}</span>
+                      <span className="flex items-center gap-1"><Layers size={12} className="text-primary-ink/75" /> {course.sessions}</span>
+                      <span className="flex items-center gap-1"><Target size={12} className="text-primary-ink/75" /> {course.projectsCount}</span>
                     </div>
 
                     {/* Skills tags */}
@@ -1491,9 +1491,9 @@ const TechXera = () => {
 
                     {/* Benefits condensed row */}
                     <div className="flex gap-3 text-muted-foreground text-label pt-1">
-                      {course.benefits.includes("Certification") && <span className="flex items-center gap-1"><Award size={12} className="text-primary" /> Cert</span>}
-                      {course.benefits.includes("Internship Support") && <span className="flex items-center gap-1"><Briefcase size={12} className="text-primary" /> Intern</span>}
-                      {course.benefits.includes("Placement Ready") && <span className="flex items-center gap-1"><Zap size={12} className="text-primary" /> Job-Ready</span>}
+                      {course.benefits.includes("Certification") && <span className="flex items-center gap-1"><Award size={12} className="text-primary-ink" /> Cert</span>}
+                      {course.benefits.includes("Internship Support") && <span className="flex items-center gap-1"><Briefcase size={12} className="text-primary-ink" /> Intern</span>}
+                      {course.benefits.includes("Placement Ready") && <span className="flex items-center gap-1"><Zap size={12} className="text-primary-ink" /> Job-Ready</span>}
                     </div>
                   </div>
 
@@ -1503,7 +1503,7 @@ const TechXera = () => {
                       {course.price}
                     </div>
                     <div className="flex gap-2 shrink-0">
-                      <Button asChild variant="default" size="sm" className="bg-gradient-primary hover:opacity-90 border-0 text-white rounded-full text-xs font-semibold h-9 px-3.5">
+                      <Button asChild variant="default" size="sm" className="bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full text-xs font-semibold h-9 px-3.5">
                         <a
                           href={`https://wa.me/918596072510?text=Hi%20Logisaar%2C%20I'm%20interested%20in%20joining%20the%20${encodeURIComponent(course.title)}%20program.`}
                           target="_blank"
@@ -1584,10 +1584,10 @@ const TechXera = () => {
                 >
                   {/* Step node dot/circle */}
                   <div className={`w-12 h-12 rounded-full border-[2.5px] flex items-center justify-center font-bold text-sm shrink-0 shadow-sm relative transition-all duration-300 ${step.title === "Get Placed"
-                    ? "border-primary bg-primary text-white shadow-glow-sm scale-110"
+                    ? "border-primary bg-primary text-primary-on shadow-glow-sm scale-110"
                     : "border-border bg-white dark:bg-background text-foreground group-hover:border-primary/80 group-hover:shadow-glow-sm"
                     }`}>
-                    <span className={step.title === "Get Placed" ? "text-white" : "text-muted-foreground group-hover:text-primary transition-colors"}>
+                    <span className={step.title === "Get Placed" ? "text-white" : "text-muted-foreground group-hover:text-primary-ink transition-colors"}>
                       {idx + 1}
                     </span>
                     {step.title === "Get Placed" && (
@@ -1600,7 +1600,7 @@ const TechXera = () => {
 
                   {/* Step texts */}
                   <div className="lg:mt-6 space-y-1.5">
-                    <h4 className="font-display font-bold text-foreground text-base tracking-tight group-hover:text-primary transition-colors duration-300">
+                    <h4 className="font-display font-bold text-foreground text-base tracking-tight group-hover:text-primary-ink transition-colors duration-300">
                       {step.title}
                     </h4>
                     <p className="text-muted-foreground text-xs md:text-label leading-relaxed lg:px-2 max-w-sm lg:max-w-none">
@@ -1621,7 +1621,7 @@ const TechXera = () => {
         <div className="container mx-auto px-gutter max-w-[81.25rem]">
 
           <div className="text-center mb-16 max-w-2xl mx-auto space-y-4">
-            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-4 py-1.5 rounded-full">
+            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary-ink text-xs font-semibold px-4 py-1.5 rounded-full">
               <Award size={13} />
               <span>Measurable Impact</span>
             </div>
@@ -1654,7 +1654,7 @@ const TechXera = () => {
                   className={`bg-white dark:bg-card border border-border/80 hover:border-primary/25 rounded-3xl p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 ${colSpanClass}`}
                 >
                   <div className="space-y-4 text-left">
-                    <div className="text-4xl md:text-5xl font-black text-primary leading-none font-mono">
+                    <div className="text-4xl md:text-5xl font-black text-primary-ink leading-none font-mono">
                       {metric.value}
                     </div>
                     <div>
@@ -1713,11 +1713,11 @@ const TechXera = () => {
 
                 <div className="text-left">
                   <div className="flex justify-between items-center">
-                    <span className="text-xs font-mono font-bold text-primary bg-primary/10 px-2.5 py-0.5 rounded-full">
+                    <span className="text-xs font-mono font-bold text-primary-ink bg-primary/10 px-2.5 py-0.5 rounded-full">
                       Step {step.step}
                     </span>
                   </div>
-                  <h4 className="font-display font-bold text-foreground text-base tracking-tight mt-5 group-hover:text-primary transition-colors">
+                  <h4 className="font-display font-bold text-foreground text-base tracking-tight mt-5 group-hover:text-primary-ink transition-colors">
                     {step.title}
                   </h4>
                   <p className="text-xs md:text-label text-muted-foreground mt-2 leading-relaxed">
@@ -1756,7 +1756,7 @@ const TechXera = () => {
                 <Button
                   onClick={handleScrollToCourses}
                   size="lg"
-                  className="bg-gradient-primary hover:opacity-95 border-0 text-white rounded-full px-8 gap-2 font-semibold shadow-md shadow-primary/20 transition-transform hover:-translate-y-0.5"
+                  className="bg-gradient-primary hover:opacity-95 border-0 text-primary-on rounded-full px-8 gap-2 font-semibold shadow-md shadow-primary/20 transition-transform hover:-translate-y-0.5"
                 >
                   Explore Courses
                 </Button>
@@ -1807,7 +1807,7 @@ const TechXera = () => {
               {/* Drawer Header */}
               <div className="p-6 border-b border-border/80 flex justify-between items-start shrink-0">
                 <div className="space-y-1 max-w-[85%] text-left">
-                  <span className="text-label uppercase font-mono font-bold tracking-widest text-primary">
+                  <span className="text-label uppercase font-mono font-bold tracking-widest text-primary-ink">
                     Course Syllabus Detail
                   </span>
                   <h3 className="font-display font-bold text-2xl text-foreground">
@@ -1820,7 +1820,7 @@ const TechXera = () => {
                     <span className="bg-secondary text-foreground border border-border px-2 py-0.5 rounded-full font-mono font-semibold">
                       {selectedCourse.sessions}
                     </span>
-                    <span className="bg-primary/10 text-primary border border-primary/20 px-2 py-0.5 rounded-full font-mono font-bold">
+                    <span className="bg-primary/10 text-primary-ink border border-primary/20 px-2 py-0.5 rounded-full font-mono font-bold">
                       Fees: {selectedCourse.price}
                     </span>
                   </div>
@@ -1857,7 +1857,7 @@ const TechXera = () => {
                     {/* Dev/Industry Tools */}
                     <div className="space-y-2">
                       <div className="text-xs font-bold text-foreground font-mono flex items-center gap-1.5">
-                        <Layers size={13} className="text-primary" />
+                        <Layers size={13} className="text-primary-ink" />
                         Development &amp; Standard Tools
                       </div>
                       <div className="flex flex-wrap gap-1.5 pt-1">
@@ -1870,13 +1870,13 @@ const TechXera = () => {
                     </div>
                     {/* AI Tools */}
                     <div className="space-y-2">
-                      <div className="text-xs font-bold text-primary font-mono flex items-center gap-1.5">
-                        <Sparkles size={13} className="text-primary" />
+                      <div className="text-xs font-bold text-primary-ink font-mono flex items-center gap-1.5">
+                        <Sparkles size={13} className="text-primary-ink" />
                         AI Innovation Tools
                       </div>
                       <div className="flex flex-wrap gap-1.5 pt-1">
                         {selectedCourse.toolsCovered.ai.map(tool => (
-                          <span key={tool} className="bg-primary/10 text-primary text-xs px-2.5 py-1 rounded-md border border-primary/20 font-semibold">
+                          <span key={tool} className="bg-primary/10 text-primary-ink text-xs px-2.5 py-1 rounded-md border border-primary/20 font-semibold">
                             {tool}
                           </span>
                         ))}
@@ -1896,14 +1896,14 @@ const TechXera = () => {
                       <div key={phase.title} className="py-3 first:pt-0">
                         <button
                           onClick={() => setExpandedPhase(expandedPhase === idx ? null : idx)}
-                          className="w-full py-2.5 text-left flex justify-between items-center hover:text-primary transition-colors"
+                          className="w-full py-2.5 text-left flex justify-between items-center hover:text-primary-ink transition-colors"
                         >
                           <span className="font-display font-bold text-sm text-foreground tracking-tight">
                             {phase.title}
                           </span>
                           <ChevronRight
                             size={16}
-                            className={`text-muted-foreground transition-transform duration-300 ${expandedPhase === idx ? "rotate-90 text-primary" : ""}`}
+                            className={`text-muted-foreground transition-transform duration-300 ${expandedPhase === idx ? "rotate-90 text-primary-ink" : ""}`}
                           />
                         </button>
 
@@ -1919,7 +1919,7 @@ const TechXera = () => {
                               <div className="py-3 pl-2 space-y-4 divide-y divide-border/30">
                                 {phase.modules.map(mod => (
                                   <div key={mod.title} className="pt-3 first:pt-0">
-                                    <div className="text-xs font-mono font-bold text-primary">
+                                    <div className="text-xs font-mono font-bold text-primary-ink">
                                       {mod.title}
                                     </div>
                                     <ul className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -1949,7 +1949,7 @@ const TechXera = () => {
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                     {selectedCourse.projectsList.map((project, idx) => (
                       <li key={project} className="py-2.5 border-b border-border/40 text-xs font-medium text-foreground/80 flex items-center gap-2.5 text-left">
-                        <span className="w-6 h-6 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-mono font-bold shrink-0 text-label">
+                        <span className="w-6 h-6 rounded-lg bg-primary/10 text-primary-ink flex items-center justify-center font-mono font-bold shrink-0 text-label">
                           P{idx + 1}
                         </span>
                         <span>{project}</span>
@@ -1983,7 +1983,7 @@ const TechXera = () => {
                       <thead>
                         <tr className="bg-secondary/40 border-b border-border text-foreground font-mono">
                           <th className="p-3 font-bold border-r border-border w-1/2">Traditional Learning</th>
-                          <th className="p-3 font-bold text-primary w-1/2">AI-Augmented Learning</th>
+                          <th className="p-3 font-bold text-primary-ink w-1/2">AI-Augmented Learning</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-border/60 text-muted-foreground">
@@ -2002,7 +2002,7 @@ const TechXera = () => {
 
               {/* Drawer Footer */}
               <div className="p-6 border-t border-border/80 bg-secondary/10 flex gap-4 shrink-0">
-                <Button asChild className="flex-1 bg-gradient-primary hover:opacity-90 border-0 text-white rounded-full py-5 h-auto font-semibold">
+                <Button asChild className="flex-1 bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full py-5 h-auto font-semibold">
                   <a
                     href={`https://wa.me/918596072510?text=Hi%20Logisaar%2C%20I'm%20interested%20in%20joining%20the%20${encodeURIComponent(selectedCourse.title)}%20program%20for%20${encodeURIComponent(selectedCourse.price)}.`}
                     target="_blank"
@@ -2051,13 +2051,13 @@ const TechXera = () => {
               {/* Header */}
               <div className="sticky top-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md z-20 border-b border-border/60 p-6 flex justify-between items-start">
                 <div className="space-y-1.5 text-left">
-                  <div className="inline-flex items-center gap-1.5 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide font-mono">
+                  <div className="inline-flex items-center gap-1.5 bg-primary/10 border border-primary/20 text-primary-ink text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide font-mono">
                     Featured Initiative
                   </div>
                   <h3 className="font-display text-2xl md:text-3xl font-extrabold text-foreground tracking-tight">
                     Chalk to Choice — From Classroom to Career
                   </h3>
-                  <p className="text-primary text-sm font-semibold tracking-wide uppercase font-mono leading-relaxed">
+                  <p className="text-primary-ink text-sm font-semibold tracking-wide uppercase font-mono leading-relaxed">
                     Career-Clarity Program for Class 11 & 12 Students
                   </p>
                 </div>
@@ -2146,7 +2146,7 @@ const TechXera = () => {
                 {/* Special Workshops */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-border/60">
                   <div className="space-y-2">
-                    <div className="text-sm font-bold text-primary flex items-center gap-1.5 font-display">
+                    <div className="text-sm font-bold text-primary-ink flex items-center gap-1.5 font-display">
                       <Target size={15} />
                       <span>★ IAS / IPS Dream Workshop</span>
                     </div>
@@ -2155,7 +2155,7 @@ const TechXera = () => {
                     </p>
                   </div>
                   <div className="space-y-2">
-                    <div className="text-sm font-bold text-primary flex items-center gap-1.5 font-display">
+                    <div className="text-sm font-bold text-primary-ink flex items-center gap-1.5 font-display">
                       <Laptop size={15} />
                       <span>★ Engineering Dream Path Workshop</span>
                     </div>
@@ -2203,7 +2203,7 @@ const TechXera = () => {
                         "Personal Roadmap: Signed, personalized career action sheet"
                       ].map((item, idx) => (
                         <li key={idx} className="flex items-start gap-2">
-                          <Check size={14} className="text-primary mt-0.5 shrink-0" />
+                          <Check size={14} className="text-primary-ink mt-0.5 shrink-0" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -2225,7 +2225,7 @@ const TechXera = () => {
                       </div>
                     </div>
 
-                    <Button asChild className="w-full bg-gradient-primary hover:opacity-95 text-white rounded-full py-4 h-auto font-semibold">
+                    <Button asChild className="w-full bg-gradient-primary hover:opacity-95 text-primary-on rounded-full py-4 h-auto font-semibold">
                       <a
                         href="https://wa.me/918596072510?text=Hi%20Logisaar%20IKURO%2C%20I%27m%20interested%20in%20registering%20for%20the%20Chalk%20to%20Choice%20program."
                         target="_blank"

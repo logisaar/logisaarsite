@@ -121,13 +121,18 @@ const HeroSection = () => {
   return (
     <section
       ref={containerRef}
-      data-logi="Scroll down. I will walk you through it."
+      data-logi-dock
       className="relative min-h-[85svh] flex flex-col justify-start md:justify-center overflow-hidden bg-white text-foreground"
     >
       {/* Responsive hero background images */}
       <div
         className="hero-bg-image absolute inset-0 bg-cover bg-center pointer-events-none z-0 md:hidden"
-        style={{ backgroundImage: "url('/hero-bg-mobile.svg')" }}
+        style={{
+          backgroundImage: "url('/hero-bg-mobile.svg')",
+          // soft clear zone behind the text column so the art sits in the corners
+          WebkitMaskImage: "radial-gradient(ellipse 85% 48% at 50% 40%, transparent 0 45%, #000 100%)",
+          maskImage: "radial-gradient(ellipse 85% 48% at 50% 40%, transparent 0 45%, #000 100%)",
+        }}
       />
       <div
         className="hero-bg-image absolute inset-0 bg-cover bg-center pointer-events-none z-0 hidden md:block"
@@ -142,7 +147,7 @@ const HeroSection = () => {
           {/* Tagline / Subpoint */}
           <div
             ref={taglineRef}
-            className="text-sm md:text-base font-semibold text-primary uppercase tracking-[0.25em] mb-4 font-mono opacity-0"
+            className="text-label font-medium text-primary-ink uppercase tracking-[0.06em] mb-4 opacity-0"
           >
             Software · AI Agents · Automation
           </div>
@@ -150,16 +155,16 @@ const HeroSection = () => {
           {/* Headline — Space Grotesk 700, centered, max-width ~780px */}
           <h1
             ref={headlineRef}
-            className="font-display font-bold tracking-[-0.02em] leading-[1.05] mb-6 opacity-0 mx-auto"
-            style={{ fontSize: "clamp(48px, 6vw, 72px)", maxWidth: "780px" }}
+            className="font-display text-h1 font-bold mb-6 opacity-0 mx-auto max-w-[48.75rem]"
           >
-            Less <span className="line-through decoration-[4px] decoration-foreground/70 text-muted-foreground/50">busywork.</span><br />More <span className="text-gradient">business.</span>
+            Less <span className="line-through decoration-[4px] decoration-foreground/70 text-muted-foreground">busywork.</span><br />More <span className="text-gradient">business.</span>
           </h1>
 
           {/* Subhead — Inter 400/500 */}
           <p
             ref={subheadRef}
-            className="text-lg md:text-xl text-muted-foreground font-normal leading-relaxed max-w-2xl mb-8 opacity-0 mx-auto text-balance"
+            data-logi-avoid
+            className="text-lead text-muted-foreground font-normal max-w-2xl mb-8 opacity-0 mx-auto text-balance"
           >
             Logisaar builds custom software, AI agents and business automation that take repetitive work off your team, so your people can spend their day on customers and growth.
           </p>
@@ -181,7 +186,7 @@ const HeroSection = () => {
             <Button
               asChild
               variant="outline"
-              className="h-12 px-8 text-base border-2 border-primary/30 hover:border-primary/60 hover:bg-primary/5 hover:text-primary text-foreground rounded-full transition-all duration-200 hover:-translate-y-[0.125rem]"
+              className="h-12 px-8 text-base border-2 border-primary/30 hover:border-primary/60 hover:bg-primary/5 hover:text-primary-ink text-foreground rounded-full transition-all duration-200 hover:-translate-y-[0.125rem]"
             >
               <Link to="/solutions">
                 Explore Services
@@ -195,7 +200,7 @@ const HeroSection = () => {
             <span>Looking for</span>
             <Link
               to="/products"
-              className="text-primary hover:underline font-medium"
+              className="inline-flex min-h-[2.75rem] items-center px-1 text-primary-ink hover:underline font-medium"
             >
               HeyLane or IKURO
             </Link>
@@ -204,7 +209,7 @@ const HeroSection = () => {
             <span>Just want to talk?</span>
             <Link
               to="/contact"
-              className="text-primary hover:underline font-medium ml-1"
+              className="inline-flex min-h-[2.75rem] items-center px-1 text-primary-ink hover:underline font-medium ml-1"
             >
               Contact us
             </Link>
@@ -222,13 +227,13 @@ const HeroSection = () => {
         <div className="liquid-glass p-4 flex items-center gap-3.5 rounded-2xl">
           <div
             ref={buildersValRef}
-            className="h-12 min-w-[3rem] px-2.5 rounded-xl bg-gradient-primary flex items-center justify-center text-white font-bold text-lg font-display shrink-0 select-none shadow-sm"
+            className="h-12 min-w-[3rem] px-2.5 rounded-xl bg-gradient-primary flex items-center justify-center text-primary-on font-bold text-lg font-display shrink-0 select-none shadow-sm"
             style={{ filter: "drop-shadow(0 0 3px rgba(255, 255, 255, 0.8))" }}
           >
             25+
           </div>
           <div className="text-left space-y-0.5">
-            <h4 className="font-bold text-foreground text-xs font-display">Happy Clients</h4>
+            <p className="font-bold text-foreground text-label font-display">Happy Clients</p>
             <p className="text-label text-muted-foreground leading-relaxed">
               Schools, hotels, clinics and growing businesses.
             </p>
@@ -244,13 +249,13 @@ const HeroSection = () => {
         <div className="liquid-glass p-4 flex items-center gap-3.5 rounded-2xl">
           <div
             ref={productsValRef}
-            className="h-12 min-w-[3rem] px-2.5 rounded-xl bg-gradient-primary flex items-center justify-center text-white font-bold text-lg font-display shrink-0 select-none shadow-sm"
+            className="h-12 min-w-[3rem] px-2.5 rounded-xl bg-gradient-primary flex items-center justify-center text-primary-on font-bold text-lg font-display shrink-0 select-none shadow-sm"
             style={{ filter: "drop-shadow(0 0 3px rgba(255, 255, 255, 0.8))" }}
           >
             30+
           </div>
           <div className="text-left space-y-0.5">
-            <h4 className="font-bold text-foreground text-xs font-display">Projects Delivered</h4>
+            <p className="font-bold text-foreground text-label font-display">Projects Delivered</p>
             <p className="text-label text-muted-foreground leading-relaxed">
               Software, AI agents and automations live in production.
             </p>
