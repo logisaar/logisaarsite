@@ -105,9 +105,9 @@ const Location = () => {
       />
 
       {/* Hero */}
-      <section className="min-h-[55vh] flex items-end relative overflow-hidden pb-16">
+      <section className="min-h-[55svh] flex items-end relative overflow-hidden pb-16">
         <GradientMesh />
-        <div className="container mx-auto px-4 relative z-10 pt-32">
+        <div className="container mx-auto px-gutter relative z-10 pt-32">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -140,8 +140,8 @@ const Location = () => {
       </section>
 
       {/* Section 1 — Why Odisha Businesses Choose LogiSaar */}
-      <section className="py-24 bg-secondary/20">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <section className="py-section bg-secondary/20">
+        <div className="container mx-auto px-gutter max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -177,8 +177,8 @@ const Location = () => {
       </section>
 
       {/* Section 2 — Cities We Serve */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
+      <section className="py-section">
+        <div className="container mx-auto px-gutter">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -211,8 +211,8 @@ const Location = () => {
       </section>
 
       {/* Section 3 — Services for Odisha */}
-      <section className="py-24 bg-secondary/20">
-        <div className="container mx-auto px-4">
+      <section className="py-section bg-secondary/20">
+        <div className="container mx-auto px-gutter">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -250,8 +250,8 @@ const Location = () => {
       </section>
 
       {/* Section 4 — FAQ */}
-      <section className="py-24">
-        <div className="container mx-auto px-4 max-w-3xl">
+      <section className="py-section">
+        <div className="container mx-auto px-gutter max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -282,8 +282,8 @@ const Location = () => {
       </section>
 
       {/* Section 5 — CTA */}
-      <section className="py-24 bg-secondary/20">
-        <div className="container mx-auto px-4 text-center max-w-2xl">
+      <section className="py-section bg-secondary/20">
+        <div className="container mx-auto px-gutter text-center max-w-2xl">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}

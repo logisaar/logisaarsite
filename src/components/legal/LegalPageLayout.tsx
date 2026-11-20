@@ -101,7 +101,7 @@ const LegalPageLayout = ({
 
       {/* Hero Header */}
       <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 via-background to-background pt-32 pb-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-gutter">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -123,12 +123,12 @@ const LegalPageLayout = ({
 
       {/* Main Body Grid */}
       <section className="pb-24">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-gutter max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
             
             {/* Sidebar Table of Contents */}
             <aside className="hidden lg:block lg:col-span-1">
-              <div className="sticky top-36 overflow-y-auto max-h-[70vh] pr-4 space-y-1 py-1 border-l border-border/40 no-scrollbar">
+              <div className="sticky top-36 overflow-y-auto max-h-[70svh] pr-4 space-y-1 py-1 border-l border-border/40 no-scrollbar">
                 <p className="text-xs font-semibold text-foreground/50 uppercase tracking-widest pl-4 mb-4">
                   Table of Contents
                 </p>
@@ -138,7 +138,7 @@ const LegalPageLayout = ({
                     <button
                       key={section.id}
                       onClick={() => handleScroll(section.id)}
-                      className={`w-full text-left text-sm py-2 pl-4 transition-all duration-300 relative block border-l-2 -ml-[2px] font-medium ${
+                      className={`w-full text-left text-sm py-2 pl-4 transition-all duration-300 relative block border-l-2 -ml-[0.125rem] font-medium ${
                         isActive
                           ? "text-primary border-primary"
                           : "text-muted-foreground border-transparent hover:text-foreground hover:border-border"

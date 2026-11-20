@@ -43,7 +43,7 @@ const ClientImpact = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section className="py-32 relative overflow-hidden bg-background" ref={ref}>
+    <section className="py-section relative overflow-hidden bg-background" ref={ref}>
       {/* Subtle dot pattern */}
       <div
         className="absolute inset-0 opacity-[0.4]"
@@ -75,7 +75,7 @@ const ClientImpact = () => {
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-gutter relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -120,7 +120,7 @@ const ClientImpact = () => {
                   initial={{ scaleX: 0 }}
                   animate={isInView ? { scaleX: 1 } : {}}
                   transition={{ delay: 0.6 + i * 0.1, duration: 0.6 }}
-                  className={`w-10 h-[2px] bg-gradient-to-r ${item.gradient} mx-auto mt-4 mb-3 origin-left`}
+                  className={`w-10 h-[0.125rem] bg-gradient-to-r ${item.gradient} mx-auto mt-4 mb-3 origin-left`}
                 />
 
                 <p className="text-muted-foreground text-xs uppercase tracking-[0.15em]">

@@ -45,7 +45,7 @@ const HeroVisual = () => {
               />
               <div className="px-4 py-3 bg-card">
                 <p className="text-xs font-semibold text-foreground">{card.label}</p>
-                <p className="text-[10px] text-muted-foreground mt-0.5">Live Project</p>
+                <p className="text-label text-muted-foreground mt-0.5">Live Project</p>
               </div>
             </div>
           </motion.div>

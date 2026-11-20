@@ -25,7 +25,7 @@ const TechStack = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section className="py-24 overflow-hidden relative" ref={ref}>
+    <section className="py-section overflow-hidden relative" ref={ref}>
       {/* Diagonal stripe pattern */}
       <div
         className="absolute inset-0 opacity-[0.015]"
@@ -34,7 +34,7 @@ const TechStack = () => {
         }}
       />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-gutter relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

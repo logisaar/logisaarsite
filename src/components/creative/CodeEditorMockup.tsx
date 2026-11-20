@@ -44,11 +44,11 @@ const CodeEditorMockup = () => {
             <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
             <div className="w-3 h-3 rounded-full bg-green-500/80" />
           </div>
-          <span className="text-[11px] text-white/30 ml-2 font-mono">logisaar.config.ts</span>
+          <span className="text-label text-white/30 ml-2 font-mono">logisaar.config.ts</span>
         </div>
 
         {/* Code */}
-        <div className="p-5 font-mono text-sm leading-7 min-h-[240px]">
+        <div className="p-5 font-mono text-sm leading-7 min-h-[15rem]">
           {codeLines.map((line, i) => (
             <motion.div
               key={i}

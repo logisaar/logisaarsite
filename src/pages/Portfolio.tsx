@@ -25,9 +25,9 @@ const Portfolio = () => {
         canonical="https://www.logisaar.in/portfolio"
       />
       {/* Hero */}
-      <section className="min-h-[50vh] flex items-end relative overflow-hidden pb-16">
+      <section className="min-h-[50svh] flex items-end relative overflow-hidden pb-16">
         <GradientMesh />
-        <div className="container mx-auto px-4 relative z-10 pt-32">
+        <div className="container mx-auto px-gutter relative z-10 pt-32">
           <TextReveal text="Our Work" as="h1" className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95]" delay={0.2} />
           <TextReveal text="Speaks for Itself" as="h2" className="font-display text-3xl md:text-5xl font-bold text-gradient leading-[0.95] mt-2" delay={0.5} />
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} className="text-muted-foreground text-base mt-6 max-w-xl">
@@ -37,8 +37,8 @@ const Portfolio = () => {
       </section>
 
       {/* Filter + Grid */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section className="py-section-sm">
+        <div className="container mx-auto px-gutter">
           {/* Section heading */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

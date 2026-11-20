@@ -175,7 +175,7 @@ const LeadCaptureModal = () => {
                   <h2 className="text-2xl md:text-3xl font-display font-bold leading-tight">
                     Get A Free<br />Quote Now
                   </h2>
-                  <p className="text-white/80 text-sm md:text-base max-w-[240px] mx-auto leading-relaxed">
+                  <p className="text-white/80 text-sm md:text-base max-w-[15rem] mx-auto leading-relaxed">
                     Please complete this form to be connected by one of our experts.
                   </p>
                 </div>
@@ -252,7 +252,7 @@ const LeadCaptureModal = () => {
                           <FormControl>
                             <Textarea
                               placeholder="Enter Message"
-                              className="min-h-[90px] rounded-lg border-border/60 bg-muted/30 placeholder:text-muted-foreground/60 resize-none"
+                              className="min-h-[5.625rem] rounded-lg border-border/60 bg-muted/30 placeholder:text-muted-foreground/60 resize-none"
                               {...field}
                             />
                           </FormControl>
@@ -311,7 +311,7 @@ const LeadCaptureModal = () => {
       <AnimatePresence>
         {showNotification && (
           <motion.div
-            className="fixed top-5 left-1/2 -translate-x-1/2 z-[70] w-[360px] max-w-[90vw]"
+            className="fixed top-5 left-1/2 -translate-x-1/2 z-[70] w-[22.5rem] max-w-[90vw]"
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -100, opacity: 0 }}

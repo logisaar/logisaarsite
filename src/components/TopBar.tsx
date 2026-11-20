@@ -38,7 +38,7 @@ const socialLinks = [
 const TopBar = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-[10000] hidden md:block bg-foreground text-background">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-gutter">
         <div className="flex items-center justify-between py-1.5 text-xs">
           <div className="flex items-center gap-5">
             <a href={CONTACT.mailto} className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">

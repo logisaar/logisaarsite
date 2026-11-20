@@ -117,7 +117,7 @@ const Careers = () => {
           className="absolute inset-0 pointer-events-none opacity-[0.04]"
           style={{ backgroundImage: "radial-gradient(circle, hsl(var(--primary)) 1.5px, transparent 1.5px)", backgroundSize: "28px 28px" }}
         />
-        <div className="container mx-auto px-4 relative z-10 max-w-4xl">
+        <div className="container mx-auto px-gutter relative z-10 max-w-4xl">
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -149,8 +149,8 @@ const Careers = () => {
       </section>
 
       {/* Open roles */}
-      <section id="roles" data-logi="Two roles open. Pick the one that fits you." className="py-20 bg-secondary/40 scroll-mt-28">
-        <div className="container mx-auto px-4 max-w-5xl">
+      <section id="roles" data-logi="Two roles open. Pick the one that fits you." className="py-section bg-secondary/40 scroll-mt-28">
+        <div className="container mx-auto px-gutter max-w-5xl">
           <motion.div {...fade()} className="mb-12">
             <p className="text-primary font-mono text-xs uppercase tracking-widest font-bold mb-3">Open roles</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
@@ -195,8 +195,8 @@ const Careers = () => {
       </section>
 
       {/* How it works */}
-      <section data-logi="Training first, full pay from month two." className="py-20 bg-background">
-        <div className="container mx-auto px-4 max-w-5xl">
+      <section data-logi="Training first, full pay from month two." className="py-section bg-background">
+        <div className="container mx-auto px-gutter max-w-5xl">
           <motion.div {...fade()} className="mb-12">
             <p className="text-primary font-mono text-xs uppercase tracking-widest font-bold mb-3">How it works</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
@@ -221,8 +221,8 @@ const Careers = () => {
       </section>
 
       {/* Apply */}
-      <section id="apply" data-logi="Two minutes to apply. We call you back." className="py-20 bg-secondary/40 scroll-mt-24">
-        <div className="container mx-auto px-4 max-w-3xl">
+      <section id="apply" data-logi="Two minutes to apply. We call you back." className="py-section bg-secondary/40 scroll-mt-24">
+        <div className="container mx-auto px-gutter max-w-3xl">
           <motion.div {...fade()} className="mb-10 text-center">
             <p className="text-primary font-mono text-xs uppercase tracking-widest font-bold mb-3">Apply</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">

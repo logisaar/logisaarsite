@@ -241,9 +241,9 @@ const brandLogos = [
         <img
           src={brandSwostiLogo}
           alt="Swosti Consultancy"
-          className="max-h-[52px] md:max-h-[64px] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+          className="max-h-[3.25rem] md:max-h-[4rem] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
         />
-        <span className="text-[10px] md:text-[11px] font-bold text-slate-700 dark:text-slate-300 tracking-wide mt-1">
+        <span className="text-label md:text-label font-bold text-slate-700 dark:text-slate-300 tracking-wide mt-1">
           Swosti Consultancy
         </span>
       </div>
@@ -335,8 +335,8 @@ const Index = () => {
       <MarqueeText text="SOFTWARE DEVELOPMENT  ·  AI AGENTS  ·  BUSINESS AUTOMATION  ·  AI SOFTWARE  ·  " />
 
       {/* ── Section: What We Do ── */}
-      <section data-logi="Four ways we take work off your plate." className="py-24 relative overflow-hidden bg-background">
-        <div className="w-full max-w-[1400px] mx-auto px-6 relative z-10">
+      <section data-logi="Four ways we take work off your plate." className="py-section relative overflow-hidden bg-background">
+        <div className="w-full max-w-[87.5rem] mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-5">
             <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
               <Layers size={13} />
@@ -367,12 +367,12 @@ const Index = () => {
                 <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <Icon size={22} className="text-primary" />
                 </div>
-                <div className="text-[11px] font-semibold text-primary uppercase tracking-wider mt-6">{tag}</div>
+                <div className="text-label font-semibold text-primary uppercase tracking-wider mt-6">{tag}</div>
                 <h3 className="font-display text-xl font-bold mt-1 text-foreground group-hover:text-primary transition-colors">{title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mt-2">{desc}</p>
                 <ul className="space-y-1.5 mt-4">
                   {items.map((it) => (
-                    <li key={it} className="flex items-center gap-2 text-[13px] text-foreground/80 font-medium">
+                    <li key={it} className="flex items-center gap-2 text-label text-foreground/80 font-medium">
                       <Check size={13} className="text-emerald-500 stroke-[3px] shrink-0" />
                       <span>{it}</span>
                     </li>
@@ -390,8 +390,8 @@ const Index = () => {
       <GradientDivider />
 
       {/* ── Section: Solutions Snapshot ── */}
-      <section data-logi="Ready-made, then made yours." className="py-24 relative overflow-hidden bg-background">
-        <div className="w-full max-w-[1540px] mx-auto px-6 relative z-10">
+      <section data-logi="Ready-made, then made yours." className="py-section relative overflow-hidden bg-background">
+        <div className="w-full max-w-[96.25rem] mx-auto px-6 relative z-10">
           {/* Centered Header Section */}
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-5">
             <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
@@ -430,19 +430,19 @@ const Index = () => {
                 <div className="md:w-[35%] w-full flex flex-col justify-between p-3 md:py-3 md:pr-3 md:pl-0">
                   <div>
                     {/* Title */}
-                    <h3 className="font-display text-[17px] font-bold mt-0 mb-1 text-foreground group-hover:text-primary transition-colors">
+                    <h3 className="font-display text-body font-bold mt-0 mb-1 text-foreground group-hover:text-primary transition-colors">
                       {sol.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-muted-foreground text-[11px] leading-relaxed mb-2">
+                    <p className="text-muted-foreground text-label leading-relaxed mb-2">
                       {sol.desc}
                     </p>
 
                     {/* Checklist Features */}
                     <ul className="space-y-1 mb-2.5">
                       {sol.features.map((feat) => (
-                        <li key={feat} className="flex items-center gap-1.5 text-[11px] text-foreground/80 font-medium">
+                        <li key={feat} className="flex items-center gap-1.5 text-label text-foreground/80 font-medium">
                           <Check size={11} className="text-emerald-500 stroke-[3px] shrink-0" />
                           <span>{feat}</span>
                         </li>
@@ -452,10 +452,10 @@ const Index = () => {
 
                   {/* Footer Row */}
                   <div className="flex items-center justify-between mt-auto pt-2.5 border-t border-border/40">
-                    <div className="text-[10px] font-semibold px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-mono">
+                    <div className="text-label font-semibold px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-mono">
                       From {sol.price}
                     </div>
-                    <span className="text-[11px] font-semibold text-muted-foreground group-hover:text-primary transition-colors flex items-center gap-1">
+                    <span className="text-label font-semibold text-muted-foreground group-hover:text-primary transition-colors flex items-center gap-1">
                       Explore <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform" />
                     </span>
                   </div>
@@ -491,7 +491,7 @@ const Index = () => {
       <GradientDivider />
 
       {/* ── Section: Chalk to Choice ── */}
-      <section data-logi="IKURO is made by Logisaar too!" className="py-20 md:py-28 relative overflow-hidden bg-white dark:bg-background">
+      <section data-logi="IKURO is made by Logisaar too!" className="py-section md:py-28 relative overflow-hidden bg-white dark:bg-background">
         {/* Subtle background dot grid */}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.04] dark:opacity-[0.06]"
@@ -501,7 +501,7 @@ const Index = () => {
           }}
         />
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-gutter relative z-10">
           {/* Main two-column layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center">
 
@@ -655,7 +655,7 @@ const Index = () => {
                 <div>
                   <div className="text-xl font-black text-primary leading-none">{stat}</div>
                   <div className="text-sm font-bold text-foreground mt-0.5">{label}</div>
-                  <div className="text-[11px] text-muted-foreground mt-0.5 leading-snug">{sub}</div>
+                  <div className="text-label text-muted-foreground mt-0.5 leading-snug">{sub}</div>
                 </div>
               </div>
             ))}
@@ -667,8 +667,8 @@ const Index = () => {
       <GradientDivider />
 
       {/* ── Section: Products Snapshot ── */}
-      <section data-logi="We build our own products as well." className="py-24 relative overflow-hidden bg-background">
-        <div className="container mx-auto px-4 relative z-10">
+      <section data-logi="We build our own products as well." className="py-section relative overflow-hidden bg-background">
+        <div className="container mx-auto px-gutter relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 space-y-6">
               <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
@@ -704,7 +704,7 @@ const Index = () => {
                     <span className="w-3 h-3 rounded-full bg-yellow-500/60" />
                     <span className="w-3 h-3 rounded-full bg-green-500/60" />
                   </div>
-                  <div className="bg-secondary/40 border border-border px-4 py-0.5 rounded-md text-[10px] text-muted-foreground font-mono select-none">
+                  <div className="bg-secondary/40 border border-border px-4 py-0.5 rounded-md text-label text-muted-foreground font-mono select-none">
                     heylane.in
                   </div>
                   <div className="w-6" /> {/* Spacer to center URL */}
@@ -717,9 +717,9 @@ const Index = () => {
                     <div className="flex justify-between items-start">
                       <div>
                         <h4 className="font-bold text-foreground text-sm font-display">Kalinga Café</h4>
-                        <p className="text-[10px] text-muted-foreground font-mono">Loyalty Card</p>
+                        <p className="text-label text-muted-foreground font-mono">Loyalty Card</p>
                       </div>
-                      <span className="bg-green-500/10 text-green-400 border border-green-500/20 text-[9px] px-2 py-0.5 rounded-full font-semibold">Active</span>
+                      <span className="bg-green-500/10 text-green-400 border border-green-500/20 text-label px-2 py-0.5 rounded-full font-semibold">Active</span>
                     </div>
 
                     {/* Coffee Cups Stamps Grid */}
@@ -729,12 +729,12 @@ const Index = () => {
                           ✓
                         </div>
                       ))}
-                      <div className="aspect-square bg-secondary border border-border/60 rounded-lg flex items-center justify-center text-muted-foreground/45 text-[10px]">
+                      <div className="aspect-square bg-secondary border border-border/60 rounded-lg flex items-center justify-center text-muted-foreground/45 text-label">
                         5
                       </div>
                     </div>
 
-                    <div className="flex justify-between items-center text-[10px] border-t border-border/20 pt-2 text-muted-foreground">
+                    <div className="flex justify-between items-center text-label border-t border-border/20 pt-2 text-muted-foreground">
                       <span>4 of 5 visits complete</span>
                       <span className="text-primary font-bold">1 Free Coffee next!</span>
                     </div>
@@ -744,9 +744,9 @@ const Index = () => {
                   <div className="col-span-5 flex flex-col gap-3">
                     {/* Google Business Profile Growth Box */}
                     <div className="bg-primary/5 rounded-xl border border-primary/20 p-3 flex flex-col justify-center flex-1">
-                      <p className="text-[10px] uppercase font-mono tracking-wider text-muted-foreground">GST Invoice</p>
+                      <p className="text-label uppercase font-mono tracking-wider text-muted-foreground">GST Invoice</p>
                       <h5 className="font-bold text-foreground text-base mt-0.5 font-display">Auto</h5>
-                      <p className="text-[9px] text-muted-foreground mt-0.5 leading-tight">Generated for every order for businesses with GSTIN.</p>
+                      <p className="text-label text-muted-foreground mt-0.5 leading-tight">Generated for every order for businesses with GSTIN.</p>
                     </div>
 
                     {/* QR Code trigger mockup */}
@@ -755,15 +755,15 @@ const Index = () => {
                         QR
                       </div>
                       <div className="leading-tight">
-                        <p className="font-semibold text-foreground text-[10px]">Shop Chat</p>
-                        <p className="text-[9px] text-muted-foreground mt-0.5">Customers message the shop directly</p>
+                        <p className="font-semibold text-foreground text-label">Shop Chat</p>
+                        <p className="text-label text-muted-foreground mt-0.5">Customers message the shop directly</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Footer block */}
-                <div className="border-t border-border/40 mt-3 pt-3 flex justify-between items-center text-[10px] text-muted-foreground">
+                <div className="border-t border-border/40 mt-3 pt-3 flex justify-between items-center text-label text-muted-foreground">
                   <span>Hyperlocal super app</span>
                   <a href="https://heylane.in/" target="_blank" rel="noopener noreferrer" className="text-primary font-mono font-semibold hover:underline inline-flex items-center gap-1">
                     heylane.in <ArrowRight size={10} />
@@ -778,8 +778,8 @@ const Index = () => {
       <GradientDivider />
 
       {/* ── Section: Portfolio Snapshot ── */}
-      <section data-logi="25+ businesses and counting." className="py-24 relative overflow-hidden bg-background">
-        <div className="w-full max-w-[1400px] mx-auto px-6 relative z-10">
+      <section data-logi="25+ businesses and counting." className="py-section relative overflow-hidden bg-background">
+        <div className="w-full max-w-[87.5rem] mx-auto px-6 relative z-10">
           
           {/* Centered Header Section */}
           <div className="text-center max-w-3xl mx-auto mb-12 space-y-5">
@@ -798,7 +798,7 @@ const Index = () => {
 
           {/* Trusted by Badge */}
           <div className="max-w-5xl mx-auto mb-6 flex justify-start">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-[10px] font-mono font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-label font-mono font-bold uppercase tracking-wider">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
               Trusted by
             </div>
@@ -814,7 +814,7 @@ const Index = () => {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3 }}
                 key={logo.name}
-                className="bg-white dark:bg-slate-900/50 flex items-center justify-center p-6 min-h-[120px] transition-all duration-300 hover:bg-slate-50 dark:hover:bg-slate-800/60 group"
+                className="bg-white dark:bg-slate-900/50 flex items-center justify-center p-6 min-h-[7.5rem] transition-all duration-300 hover:bg-slate-50 dark:hover:bg-slate-800/60 group"
               >
                 {logo.type === "image" ? (
                   <img
@@ -822,8 +822,8 @@ const Index = () => {
                     alt={logo.name}
                     className={`${
                       logo.name === "Sako Sales"
-                        ? "h-[82px] md:h-[96px] max-w-[95%]"
-                        : "h-[64px] md:h-[76px] max-w-[85%]"
+                        ? "h-[5.125rem] md:h-[6rem] max-w-[95%]"
+                        : "h-[4rem] md:h-[4.75rem] max-w-[85%]"
                     } w-auto object-contain transition-transform duration-300 group-hover:scale-105`}
                   />
                 ) : (
@@ -842,7 +842,7 @@ const Index = () => {
               </div>
               <div>
                 <div className="text-xl font-bold text-foreground leading-tight">30+</div>
-                <div className="text-[11px] text-muted-foreground font-medium">Projects Delivered</div>
+                <div className="text-label text-muted-foreground font-medium">Projects Delivered</div>
               </div>
             </div>
 
@@ -855,7 +855,7 @@ const Index = () => {
               </div>
               <div>
                 <div className="text-xl font-bold text-foreground leading-tight">25+</div>
-                <div className="text-[11px] text-muted-foreground font-medium">Happy Clients</div>
+                <div className="text-label text-muted-foreground font-medium">Happy Clients</div>
               </div>
             </div>
 
@@ -868,7 +868,7 @@ const Index = () => {
               </div>
               <div>
                 <div className="text-xl font-bold text-foreground leading-tight">2x</div>
-                <div className="text-[11px] text-muted-foreground font-medium">Faster Delivery</div>
+                <div className="text-label text-muted-foreground font-medium">Faster Delivery</div>
               </div>
             </div>
 
@@ -881,7 +881,7 @@ const Index = () => {
               </div>
               <div>
                 <div className="text-xl font-bold text-foreground leading-tight">90%</div>
-                <div className="text-[11px] text-muted-foreground font-medium">Client Satisfaction</div>
+                <div className="text-label text-muted-foreground font-medium">Client Satisfaction</div>
               </div>
             </div>
           </div>
@@ -906,10 +906,10 @@ const Index = () => {
       <TestimonialsSection />
 
       {/* ── Closing CTA Section (WhatsApp First) ── */}
-      <section data-logi="Quotes are free. Tell us the one task you hate." className="py-28 relative overflow-hidden bg-slate-950 text-white">
+      <section data-logi="Quotes are free. Tell us the one task you hate." className="py-section relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0 animated-grid pointer-events-none opacity-[0.03]" />
         
-        <div className="container mx-auto px-4 relative z-10 text-center space-y-8">
+        <div className="container mx-auto px-gutter relative z-10 text-center space-y-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

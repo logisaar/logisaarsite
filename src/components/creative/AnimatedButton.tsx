@@ -5,9 +5,9 @@ import { cn } from "@/lib/utils";
 type AnimatedButtonProps = Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "as"> &
   MotionProps & {
     children?: React.ReactNode;
-    as?: any;
+    as?: React.ElementType;
     to?: string;
-    [key: string]: any;
+    [key: string]: unknown;
   };
 
 const AnimatedButton: React.FC<AnimatedButtonProps> = ({
@@ -17,7 +17,11 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
   ...rest
 }) => {
   // Wrap custom React components (like react-router-dom Link) using motion()
-  const Component = typeof as === "string" ? ((motion as any)[as] || motion.button) : motion(as);
+  // created once per `as`, not on every render (motion.create replaces the deprecated motion())
+  const Component = React.useMemo(
+    () => (typeof as === "string" ? ((motion as unknown as Record<string, React.ElementType>)[as] || motion.button) : motion.create(as)),
+    [as],
+  );
 
   return (
     <Component
@@ -32,7 +36,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
       }}
       className={cn(
         "group inline-flex items-center justify-center h-12 px-8 rounded-full relative overflow-hidden bg-gradient-primary hover:shadow-glow text-white border-0 text-base font-semibold",
-        "transition-all duration-200 hover:-translate-y-[2px] focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
+        "transition-all duration-200 hover:-translate-y-[0.125rem] focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
         "[--shine:rgba(255,255,255,.66)]",
         className
       )}
@@ -46,8 +50,8 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
           maskImage:
             "linear-gradient(-75deg, white calc(var(--mask-x) + 20%), transparent calc(var(--mask-x) + 30%), white calc(var(--mask-x) + 100%))",
         }}
-        initial={{ ["--mask-x" as any]: "100%" } as any}
-        animate={{ ["--mask-x" as any]: "-100%" } as any}
+        initial={{ "--mask-x": "100%" } as never}
+        animate={{ "--mask-x": "-100%" } as never}
         transition={{
           repeat: Infinity,
           duration: 1.2,

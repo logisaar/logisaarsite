@@ -17,6 +17,7 @@
 
     --primary: 148 100% 41%;
     --primary-foreground: 0 0% 100%;
+    --primary-ink: 148 100% 26%;   /* #00853E: green text on light backgrounds */
 
     --secondary: 0 0% 96%;
     --secondary-foreground: 0 0% 0%;
@@ -58,6 +59,7 @@
 
     --primary: 148 100% 41%;
     --primary-foreground: 0 0% 100%;
+    --primary-ink: 148 100% 41%;
 
     --secondary: 220 20% 15%;
     --secondary-foreground: 220 15% 95%;
@@ -162,9 +164,9 @@
 
 @keyframes code-float {
   0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.15; }
-  25% { transform: translateY(-30px) rotate(5deg); opacity: 0.25; }
-  50% { transform: translateY(-15px) rotate(-3deg); opacity: 0.1; }
-  75% { transform: translateY(-40px) rotate(3deg); opacity: 0.2; }
+  25% { transform: translateY(-1.875rem) rotate(5deg); opacity: 0.25; }
+  50% { transform: translateY(-0.9375rem) rotate(-3deg); opacity: 0.1; }
+  75% { transform: translateY(-2.5rem) rotate(3deg); opacity: 0.2; }
 }
 
 .animate-marquee {
@@ -199,7 +201,7 @@
   box-shadow: 
     0 10px 30px -10px rgba(0, 0, 0, 0.08),
     inset 0 1px 1px 0 rgba(255, 255, 255, 0.85),
-    0 0 15px 0 hsl(var(--primary) / 0.05);
+    0 0 0.9375rem 0 hsl(var(--primary) / 0.05);
 }
 
 .dark .liquid-glass {
@@ -208,7 +210,7 @@
   box-shadow: 
     0 10px 30px -10px rgba(0, 0, 0, 0.45),
     inset 0 1px 1px 0 rgba(255, 255, 255, 0.15),
-    0 0 15px 0 hsl(var(--primary) / 0.08);
+    0 0 0.9375rem 0 hsl(var(--primary) / 0.08);
 }
 
 /* Glass card utility */
@@ -237,10 +239,9 @@
 }
 
 .animated-grid {
-  background-image:
-    linear-gradient(hsl(var(--primary) / 0.08) 1px, transparent 1px),
+  background-image: linear-gradient(hsl(var(--primary) / 0.08) 1px, transparent 1px),
     linear-gradient(90deg, hsl(var(--primary) / 0.08) 1px, transparent 1px);
-  background-size: 60px 60px;
+  background-size: 3.75rem 3.75rem;
   animation: grid-pulse 4s ease-in-out infinite;
 }
 
@@ -249,9 +250,9 @@
   background-image: repeating-linear-gradient(
     -45deg,
     transparent,
-    transparent 10px,
-    hsl(var(--primary) / 0.02) 10px,
-    hsl(var(--primary) / 0.02) 11px
+    transparent 0.625rem,
+    hsl(var(--primary) / 0.02) 0.625rem,
+    hsl(var(--primary) / 0.02) 0.6875rem
   );
 }
 

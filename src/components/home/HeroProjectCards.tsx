@@ -30,7 +30,7 @@ const floatDurations = [5, 6, 4.5];
 
 const playDropSound = () => {
   try {
-    const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
+    const ctx = new (window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext)();
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
     osc.connect(gain);
@@ -41,7 +41,7 @@ const playDropSound = () => {
     gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.08);
     osc.start(ctx.currentTime);
     osc.stop(ctx.currentTime + 0.08);
-  } catch {}
+  } catch { /* audio is optional */ }
 };
 
 const ProjectCard = ({
@@ -120,7 +120,7 @@ const ProjectCard = ({
         transformStyle: "preserve-3d",
         zIndex: 3 - index,
       }}
-      className="absolute w-[180px] md:w-[280px] cursor-grab active:cursor-grabbing shadow-lg rounded-xl"
+      className="absolute w-[11.25rem] md:w-[17.5rem] cursor-grab active:cursor-grabbing shadow-lg rounded-xl"
       whileHover={{ scale: 1.05, zIndex: 30 }}
       whileDrag={{ scale: 1.08, zIndex: 50, boxShadow: "0 20px 60px rgba(0,0,0,0.3)" }}
     >
@@ -139,7 +139,7 @@ const ProjectCard = ({
             <span className="w-2 h-2 rounded-full bg-primary/60" />
           </div>
           <div className="flex-1 text-center">
-            <span className="text-[10px] text-muted-foreground font-medium tracking-wide">
+            <span className="text-label text-muted-foreground font-medium tracking-wide">
               {project.name}
             </span>
           </div>
@@ -166,8 +166,8 @@ const HeroProjectCards = ({ dragConstraintsRef }: { dragConstraintsRef: RefObjec
       className="relative w-full flex items-center justify-center py-12 overflow-visible"
       style={{ perspective: "800px" }}
     >
-      <div className="absolute w-[250px] h-[250px] rounded-full bg-primary/15 blur-[80px] z-0" />
-      <div className="relative w-[280px] md:w-[400px] h-[350px] md:h-[450px]">
+      <div className="absolute w-[15.625rem] h-[15.625rem] rounded-full bg-primary/15 blur-[80px] z-0" />
+      <div className="relative w-[17.5rem] md:w-[25rem] h-[21.875rem] md:h-[28.125rem]">
         {heroProjects.map((project, i) => (
           <ProjectCard key={project.name} project={project} index={i} dragConstraintsRef={dragConstraintsRef} />
         ))}

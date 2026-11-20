@@ -37,10 +37,10 @@ const ServicesOverview = () => {
   const { ref, isInView } = useScrollAnimation();
 
   return (
-    <section className="py-32 relative overflow-hidden" ref={ref}>
+    <section className="py-section relative overflow-hidden" ref={ref}>
       <DecorativeShapes variant="section" />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-gutter relative z-10">
         <motion.div
           initial={{ opacity: 0, x: -80 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -88,7 +88,7 @@ const ServicesOverview = () => {
 
                 {/* Gradient border on top */}
                 <div
-                  className="absolute top-0 left-0 right-0 h-[3px] scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"
+                  className="absolute top-0 left-0 right-0 h-[0.1875rem] scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"
                   style={{ background: `linear-gradient(90deg, ${colors.icon}, transparent)` }}
                 />
 

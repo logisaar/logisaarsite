@@ -462,7 +462,7 @@ const ValueCard = ({ icon: Icon, title, description, tagline, color, size, index
         <div ref={taglineRef} className="font-mono text-xs tracking-wider" style={{ color }}>
           {tagline.slice(0, revealedLetters)}
           {revealedLetters < tagline.length && (
-            <motion.span className="inline-block w-[2px] h-3 ml-0.5 align-middle" style={{ backgroundColor: color }}
+            <motion.span className="inline-block w-[0.125rem] h-3 ml-0.5 align-middle" style={{ backgroundColor: color }}
               animate={{ opacity: [1, 0] }} transition={{ duration: 0.5, repeat: Infinity }} />
           )}
         </div>

@@ -11,7 +11,7 @@ const CTASection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section className="py-32 relative overflow-hidden" ref={ref}>
+    <section className="py-section relative overflow-hidden" ref={ref}>
       {/* Animated gradient background */}
       <motion.div
         className="absolute inset-0 bg-gradient-primary"
@@ -52,7 +52,7 @@ const CTASection = () => {
       <div className="absolute w-40 h-40 rounded-full bg-white/5 blur-3xl" style={{ top: "10%", right: "20%" }} />
       <div className="absolute w-32 h-32 rounded-full bg-white/5 blur-3xl" style={{ bottom: "15%", left: "25%" }} />
 
-      <div className="container mx-auto px-4 text-center relative z-10">
+      <div className="container mx-auto px-gutter text-center relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
           animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}

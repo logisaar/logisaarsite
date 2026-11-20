@@ -19,7 +19,7 @@ const MarqueeText = ({ text, reverse = false, className = "" }: MarqueeTextProps
         {items.map((t, i) => (
           <span
             key={i}
-            className="font-display text-[6vw] md:text-[4vw] font-bold uppercase tracking-wider mx-8"
+            className="font-display text-display font-bold uppercase tracking-wider mx-8"
             style={{
               WebkitTextStroke: "1.5px hsl(var(--primary))",
               WebkitTextFillColor: "transparent",

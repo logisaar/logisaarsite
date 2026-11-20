@@ -1,6 +1,6 @@
 /* Logi, the plush site companion. Scoped under #logi / .logi-chat.
-   Size comes from --logi-size (104px desktop, 80px mobile), set by Logi.tsx. */
-:root { --logi-size: 104px; }
+   Size comes from --logi-size (6.5rem desktop, 5rem mobile), set by Logi.tsx. */
+:root { --logi-size: clamp(4.5rem, 3.6rem + 3vw, 6.5rem); } /* about 72 to 104px, scales with the root font size */
 
 #logi { position: fixed; left: 0; top: 0; z-index: 45; width: var(--logi-size); height: var(--logi-size); will-change: transform; }
 #logi .logi-body { position: relative; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: none; border-radius: 40%; cursor: grab; touch-action: none; -webkit-tap-highlight-color: transparent; }
@@ -8,7 +8,7 @@
 #logi .logi-body:focus-visible { outline: 3px solid hsl(var(--primary)); outline-offset: 4px; }
 
 /* contact shadow: stays on the ground while Logi hops (--lift is the hop height in px) */
-#logi .logi-shadow { position: absolute; left: 14%; right: 14%; bottom: -3px; height: 11%; border-radius: 50%; background: rgba(0, 0, 0, 0.2); filter: blur(4px); transform: translateY(calc(var(--lift, 0) * 1px)) scale(calc(1 - var(--lift, 0) * 0.007)); transform-origin: 50% 50%; pointer-events: none; transition: transform 0.2s; }
+#logi .logi-shadow { position: absolute; left: 14%; right: 14%; bottom: -0.1875rem; height: 11%; border-radius: 50%; background: rgba(0, 0, 0, 0.2); filter: blur(4px); transform: translateY(calc(var(--lift, 0) * 1px)) scale(calc(1 - var(--lift, 0) * 0.007)); transform-origin: 50% 50%; pointer-events: none; transition: transform 0.2s; }
 
 /* figure: CSS state animations live here; flip (JS) is nested inside so the transforms never fight */
 #logi .logi-fig { position: absolute; inset: 0; display: block; transform-origin: 50% 100%; animation: logi-breathe 3.2s ease-in-out infinite; }
@@ -29,62 +29,62 @@
 #logi[data-state="happy"] .logi-shadow { animation: logi-shadow-hop 0.75s ease-out 1; }
 #logi[data-state="sleeping"] .logi-fig { transform: rotate(8deg); filter: saturate(0.6); animation: logi-sleep 4.8s ease-in-out infinite; }
 #logi[data-state="dragging"] .logi-fig { animation: none; transform: scale(1.08); }
-#logi[data-state="dragging"] .logi-shadow { transform: translateY(10px) scale(1.2); opacity: 0.85; }
+#logi[data-state="dragging"] .logi-shadow { transform: translateY(0.625rem) scale(1.2); opacity: 0.85; }
 #logi.hop .logi-fig { animation: logi-smallhop 0.65s ease-out 1; }
 
 @keyframes logi-breathe { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.03); } }
-@keyframes logi-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-@keyframes logi-talk { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
-@keyframes logi-think { 0%, 100% { transform: rotate(-6deg) translateY(0); } 50% { transform: rotate(-6deg) translateY(-4px); } }
-@keyframes logi-happy { 0% { transform: translateY(0) rotate(0); } 40% { transform: translateY(-14px) rotate(4deg); } 100% { transform: translateY(0) rotate(0); } }
-@keyframes logi-smallhop { 0%, 100% { transform: translateY(0); } 40% { transform: translateY(-8px); } }
+@keyframes logi-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-0.3125rem); } }
+@keyframes logi-talk { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-0.25rem); } }
+@keyframes logi-think { 0%, 100% { transform: rotate(-6deg) translateY(0); } 50% { transform: rotate(-6deg) translateY(-0.25rem); } }
+@keyframes logi-happy { 0% { transform: translateY(0) rotate(0); } 40% { transform: translateY(-0.875rem) rotate(4deg); } 100% { transform: translateY(0) rotate(0); } }
+@keyframes logi-smallhop { 0%, 100% { transform: translateY(0); } 40% { transform: translateY(-0.5rem); } }
 @keyframes logi-sleep { 0%, 100% { transform: rotate(8deg) scaleY(1); } 50% { transform: rotate(8deg) scaleY(1.03); } }
 @keyframes logi-shadow-hop { 0%, 100% { transform: scale(1); } 40% { transform: scale(0.8); opacity: 0.6; } }
 
-#logi .logi-z { position: absolute; right: -4px; top: -6px; font: 700 15px "Space Grotesk", sans-serif; letter-spacing: 2px; color: hsl(var(--primary)); opacity: 0; pointer-events: none; }
+#logi .logi-z { position: absolute; right: -0.25rem; top: -0.375rem; font: 700 0.9375rem "Space Grotesk", sans-serif; letter-spacing: 2px; color: hsl(var(--primary)); opacity: 0; pointer-events: none; }
 #logi[data-state="sleeping"] .logi-z { animation: logi-zz 2.4s ease-in-out infinite; }
-@keyframes logi-zz { 0% { opacity: 0; transform: translate(0, 6px); } 50% { opacity: 1; } 100% { opacity: 0; transform: translate(8px, -12px); } }
+@keyframes logi-zz { 0% { opacity: 0; transform: translate(0, 0.375rem); } 50% { opacity: 1; } 100% { opacity: 0; transform: translate(0.5rem, -0.75rem); } }
 
 /* ── speech bubble ── */
-#logi .logi-bubble { position: absolute; bottom: calc(var(--logi-size) + 6px); left: 0; width: max-content; max-width: 240px; padding: 10px 14px; border-radius: 18px; background: #fff; color: #0b0f10; font: 500 14px/1.4 Inter, system-ui, sans-serif; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 12px 32px -8px rgba(0, 0, 0, 0.25); opacity: 0; transform: translateY(6px) scale(0.9); transform-origin: var(--tail, 50%) 100%; pointer-events: none; transition: opacity 0.2s, transform 0.25s cubic-bezier(0.2, 1.3, 0.4, 1); }
-#logi .logi-bubble::after { content: ""; position: absolute; left: var(--tail, 50%); bottom: -5px; width: 10px; height: 10px; background: #fff; transform: translateX(-50%) rotate(45deg); box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.06); }
+#logi .logi-bubble { position: absolute; bottom: calc(var(--logi-size) + 0.375rem); left: 0; width: max-content; max-width: 15rem; padding: 0.625rem 0.875rem; border-radius: 1.125rem; background: #fff; color: #0b0f10; font: 500 0.875rem/1.4 Inter, system-ui, sans-serif; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 12px 32px -8px rgba(0, 0, 0, 0.25); opacity: 0; transform: translateY(0.375rem) scale(0.9); transform-origin: var(--tail, 50%) 100%; pointer-events: none; transition: opacity 0.2s, transform 0.25s cubic-bezier(0.2, 1.3, 0.4, 1); }
+#logi .logi-bubble::after { content: ""; position: absolute; left: var(--tail, 50%); bottom: -0.3125rem; width: 0.625rem; height: 0.625rem; background: #fff; transform: translateX(-50%) rotate(45deg); box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.06); }
 #logi.talk .logi-bubble { opacity: 1; transform: none; }
-#logi.below .logi-bubble { bottom: auto; top: calc(var(--logi-size) + 6px); transform-origin: var(--tail, 50%) 0; }
-#logi.below .logi-bubble::after { bottom: auto; top: -5px; box-shadow: -2px -2px 3px rgba(0, 0, 0, 0.05); }
+#logi.below .logi-bubble { bottom: auto; top: calc(var(--logi-size) + 0.375rem); transform-origin: var(--tail, 50%) 0; }
+#logi.below .logi-bubble::after { bottom: auto; top: -0.3125rem; box-shadow: -2px -2px 3px rgba(0, 0, 0, 0.05); }
 #logi.open .logi-bubble { display: none; }
 
 /* ── chat panel ── */
-.logi-chat { position: fixed; right: 24px; bottom: calc(var(--logi-size) + 40px); z-index: 46; width: 350px; max-height: min(560px, calc(100vh - var(--logi-size) - 64px)); display: flex; flex-direction: column; background: #fff; color: #0b0f10; font-family: Inter, system-ui, sans-serif; font-size: 14px; border-radius: 18px; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 30px 70px -24px rgba(0, 0, 0, 0.4); opacity: 0; visibility: hidden; transform: translateY(12px) scale(0.96); transform-origin: 100% 100%; pointer-events: none; transition: opacity 0.3s, transform 0.35s cubic-bezier(0.2, 1.2, 0.4, 1), visibility 0s 0.35s; overflow: hidden; }
+.logi-chat { position: fixed; right: 1.5rem; bottom: calc(var(--logi-size) + 2.5rem); z-index: 46; width: 21.875rem; max-height: min(35rem, calc(100vh - var(--logi-size) - 4rem)); display: flex; flex-direction: column; background: #fff; color: #0b0f10; font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; border-radius: 1.125rem; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 30px 70px -24px rgba(0, 0, 0, 0.4); opacity: 0; visibility: hidden; transform: translateY(0.75rem) scale(0.96); transform-origin: 100% 100%; pointer-events: none; transition: opacity 0.3s, transform 0.35s cubic-bezier(0.2, 1.2, 0.4, 1), visibility 0s 0.35s; overflow: hidden; }
 .logi-chat.on { opacity: 1; visibility: visible; transform: none; pointer-events: auto; transition-delay: 0s; }
-.logi-chat header { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-bottom: 1px solid hsl(var(--border)); }
-.logi-chat .logi-avatar { width: 36px; height: 36px; border-radius: 50%; background: hsl(var(--primary) / 0.12); object-fit: contain; flex-shrink: 0; }
-.logi-chat .logi-title { display: flex; align-items: baseline; gap: 6px; min-width: 0; }
-.logi-chat .logi-title b { font-family: "Space Grotesk", sans-serif; font-size: 17px; }
-.logi-chat .logi-title span { font-size: 13px; color: hsl(var(--muted-foreground)); white-space: nowrap; }
-.logi-chat .logi-online { width: 8px; height: 8px; border-radius: 50%; background: #00d162; box-shadow: 0 0 0 3px rgba(0, 209, 98, 0.2); flex-shrink: 0; }
-.logi-chat .logi-x { margin-left: auto; font-size: 22px; line-height: 1; width: 32px; height: 32px; border-radius: 50%; }
+.logi-chat header { display: flex; align-items: center; gap: 0.625rem; padding: 0.75rem 0.875rem; border-bottom: 1px solid hsl(var(--border)); }
+.logi-chat .logi-avatar { width: 2.25rem; height: 2.25rem; border-radius: 50%; background: hsl(var(--primary) / 0.12); object-fit: contain; flex-shrink: 0; }
+.logi-chat .logi-title { display: flex; align-items: baseline; gap: 0.375rem; min-width: 0; }
+.logi-chat .logi-title b { font-family: "Space Grotesk", sans-serif; font-size: 1.0625rem; }
+.logi-chat .logi-title span { font-size: 0.8125rem; color: hsl(var(--muted-foreground)); white-space: nowrap; }
+.logi-chat .logi-online { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: #00d162; box-shadow: 0 0 0 3px rgba(0, 209, 98, 0.2); flex-shrink: 0; }
+.logi-chat .logi-x { margin-left: auto; font-size: 1.375rem; line-height: 1; width: 2rem; height: 2rem; border-radius: 50%; }
 .logi-chat .logi-x:hover { background: hsl(var(--secondary)); }
 .logi-chat button:focus-visible, .logi-chat input:focus-visible, .logi-chat a:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 2px; }
-.logi-log { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 8px; min-height: 160px; }
-.logi-m { max-width: 86%; padding: 10px 13px; border-radius: 16px; font-size: 14px; line-height: 1.45; animation: logi-pop 0.35s forwards; opacity: 0; transform: translateY(6px); }
-.logi-m.bot { background: hsl(var(--secondary)); align-self: flex-start; border-bottom-left-radius: 4px; }
-.logi-m.me { background: hsl(var(--primary)); color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; font-weight: 500; }
-.logi-m a { display: inline-block; margin-top: 6px; color: #008a45; font-weight: 700; text-decoration: underline; }
-.logi-m.typing { display: flex; gap: 4px; }
-.logi-m.typing i { width: 6px; height: 6px; border-radius: 50%; background: hsl(var(--muted-foreground)); animation: logi-wv 0.9s infinite; }
+.logi-log { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem; min-height: 10rem; }
+.logi-m { max-width: 86%; padding: 0.625rem 0.8125rem; border-radius: 1rem; font-size: 0.875rem; line-height: 1.45; animation: logi-pop 0.35s forwards; opacity: 0; transform: translateY(0.375rem); }
+.logi-m.bot { background: hsl(var(--secondary)); align-self: flex-start; border-bottom-left-radius: 0.25rem; }
+.logi-m.me { background: hsl(var(--primary)); color: #fff; align-self: flex-end; border-bottom-right-radius: 0.25rem; font-weight: 500; }
+.logi-m a { display: inline-block; margin-top: 0.375rem; color: #008a45; font-weight: 700; text-decoration: underline; }
+.logi-m.typing { display: flex; gap: 0.25rem; }
+.logi-m.typing i { width: 0.375rem; height: 0.375rem; border-radius: 50%; background: hsl(var(--muted-foreground)); animation: logi-wv 0.9s infinite; }
 .logi-m.typing i:nth-child(2) { animation-delay: 0.15s; }
 .logi-m.typing i:nth-child(3) { animation-delay: 0.3s; }
 @keyframes logi-pop { to { opacity: 1; transform: none; } }
-@keyframes logi-wv { 0%, 100% { transform: translateY(0); opacity: 0.5; } 50% { transform: translateY(-4px); opacity: 1; } }
-.logi-quick { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 16px 10px; }
-.logi-quick button { padding: 8px 12px; border-radius: 999px; box-shadow: inset 0 0 0 1.5px hsl(var(--primary) / 0.45); font-size: 13px; font-weight: 600; color: #008a45; transition: background 0.2s; }
+@keyframes logi-wv { 0%, 100% { transform: translateY(0); opacity: 0.5; } 50% { transform: translateY(-0.25rem); opacity: 1; } }
+.logi-quick { display: flex; flex-wrap: wrap; gap: 0.375rem; padding: 0 1rem 0.625rem; }
+.logi-quick button { padding: 0.5rem 0.75rem; border-radius: 62.4375rem; box-shadow: inset 0 0 0 1.5px hsl(var(--primary) / 0.45); font-size: 0.8125rem; font-weight: 600; color: #008a45; transition: background 0.2s; }
 .logi-quick button:hover { background: hsl(var(--primary) / 0.1); }
-.logi-form { display: flex; gap: 8px; padding: 12px; border-top: 1px solid hsl(var(--border)); }
-.logi-form input { flex: 1; min-width: 0; height: 44px; border-radius: 12px; border: 1px solid hsl(var(--border)); padding: 0 12px; font: inherit; font-size: 16px; background: #fff; color: #0b0f10; }
-.logi-form button { width: 44px; height: 44px; border-radius: 12px; background: #0b0f10; color: #fff; font-size: 18px; }
+.logi-form { display: flex; gap: 0.5rem; padding: 0.75rem; border-top: 1px solid hsl(var(--border)); }
+.logi-form input { flex: 1; min-width: 0; height: 2.75rem; border-radius: 0.75rem; border: 1px solid hsl(var(--border)); padding: 0 0.75rem; font: inherit; font-size: 1rem; background: #fff; color: #0b0f10; }
+.logi-form button { width: 2.75rem; height: 2.75rem; border-radius: 0.75rem; background: #0b0f10; color: #fff; font-size: 1.125rem; }
 .logi-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-@media (max-width: 600px) { .logi-chat { left: 12px; right: 12px; bottom: calc(var(--logi-size) + 32px); width: auto; } }
+@media (max-width: 37.5em) { .logi-chat { left: 0.75rem; right: 0.75rem; bottom: calc(var(--logi-size) + 2rem); width: auto; } }
 
 /* reduced motion: no loops, no transitions; Logi stays parked and static */
 @media (prefers-reduced-motion: reduce) {

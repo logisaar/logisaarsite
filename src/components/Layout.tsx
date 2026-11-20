@@ -8,7 +8,7 @@ import LeadCaptureModal from "./LeadCaptureModal";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="min-h-screen flex flex-col overflow-x-clip">
+    <div className="min-h-[100svh] flex flex-col overflow-x-clip">
       <TopBar />
       <Navbar />
       <main className="flex-1">{children}</main>

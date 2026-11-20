@@ -132,9 +132,9 @@ const Pricing = () => {
         canonical="https://www.logisaar.in/pricing"
       />
       {/* Hero */}
-      <section className="min-h-[50vh] flex items-end relative overflow-hidden pb-16">
+      <section className="min-h-[50svh] flex items-end relative overflow-hidden pb-16">
         <GradientMesh />
-        <div className="container mx-auto px-4 relative z-10 pt-32 text-center">
+        <div className="container mx-auto px-gutter relative z-10 pt-32 text-center">
           <TextReveal
             text="Transparent"
             as="h1"
@@ -159,8 +159,8 @@ const Pricing = () => {
       </section>
 
       {/* Pricing Grid */}
-      <section className="py-16" ref={gridRef}>
-        <div className="container mx-auto px-4">
+      <section className="py-section-sm" ref={gridRef}>
+        <div className="container mx-auto px-gutter">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {plans.map((plan, i) => (
               <motion.div
@@ -178,7 +178,7 @@ const Pricing = () => {
                 }`}
               >
                 {/* Hover gradient top */}
-                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
+                <div className="absolute top-0 left-0 right-0 h-[0.125rem] bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
 
                 {plan.badge && (
                   <span className={`absolute -top-3 left-1/2 -translate-x-1/2 text-white text-xs font-semibold px-4 py-1 rounded-full truncate max-w-[90%] text-center ${

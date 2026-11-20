@@ -78,7 +78,7 @@ const ChalkToChoiceAsset = () => {
       {/* Inject keyframes */}
       <style>{rippleCSS}</style>
 
-      <div className="relative w-full max-w-[520px] aspect-square mx-auto select-none">
+      <div className="relative w-full max-w-[32.5rem] aspect-square mx-auto select-none">
 
         {/* ── Circular orbit line ── */}
         <svg
@@ -136,7 +136,7 @@ const ChalkToChoiceAsset = () => {
             <img
               src={capAsset}
               alt="Graduation cap"
-              className="w-[245px] h-auto drop-shadow-2xl"
+              className="w-[15.3125rem] h-auto drop-shadow-2xl"
               draggable={false}
             />
           </motion.div>
@@ -161,7 +161,7 @@ const ChalkToChoiceAsset = () => {
             
             {/* Card wrapper (shifted by radius) */}
             <div
-              className="absolute w-[170px]"
+              className="absolute w-[10.625rem]"
               style={{
                 transform: "translate(210px, -50%)",
                 marginLeft: "8px",
@@ -183,7 +183,7 @@ const ChalkToChoiceAsset = () => {
                     <Icon size={16} className="text-primary block shrink-0" />
                   </div>
                   <div className="text-sm font-bold text-foreground leading-tight">{title}</div>
-                  <div className="text-[10.5px] text-muted-foreground mt-1 leading-snug">{desc}</div>
+                  <div className="text-label text-muted-foreground mt-1 leading-snug">{desc}</div>
                 </div>
               </motion.div>
             </div>

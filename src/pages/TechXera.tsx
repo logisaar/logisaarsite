@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 import ChalkToChoiceAsset from "@/components/home/ChalkToChoiceAsset";
 
 // Icon mapping helper
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, React.ElementType> = {
   Laptop, Smartphone, Shield, Cpu, BarChart3, Binary, Eye, Brain,
   Megaphone, Video, Briefcase, Award
 };
@@ -1040,7 +1040,7 @@ const TechXera = () => {
       />
 
       {/* Hero Section */}
-      <section data-logi="IKURO helps students decide better." className="relative min-h-[90vh] flex items-center overflow-hidden bg-white dark:bg-background pt-24 pb-16">
+      <section data-logi="IKURO helps students decide better." className="relative min-h-[90svh] flex items-center overflow-hidden bg-white dark:bg-background pt-24 pb-16">
         <DecorativeShapes variant="hero" />
 
         {/* Subtle grid background */}
@@ -1052,7 +1052,7 @@ const TechXera = () => {
           }}
         />
 
-        <div className="container mx-auto px-6 relative z-10 max-w-[1340px]">
+        <div className="container mx-auto px-gutter relative z-10 max-w-[83.75rem]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
             {/* Left Content */}
@@ -1134,7 +1134,7 @@ const TechXera = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative w-full max-w-[400px] aspect-square flex items-center justify-center"
+                className="relative w-full max-w-[25rem] aspect-square flex items-center justify-center"
               >
                 {/* Visual Glow */}
                 <div className="absolute w-72 h-72 rounded-full bg-primary/5 blur-[80px]" />
@@ -1184,7 +1184,7 @@ const TechXera = () => {
                       <text
                         x={node.cx} y={node.cy + node.r + 12}
                         textAnchor="middle"
-                        className="fill-muted-foreground font-mono text-[9px] font-bold uppercase tracking-wider"
+                        className="fill-muted-foreground font-mono text-label font-bold uppercase tracking-wider"
                       >
                         {node.label}
                       </text>
@@ -1205,9 +1205,9 @@ const TechXera = () => {
       </section>
 
       {/* Chalk to Choice Segment */}
-      <section data-logi="Chalk to Choice is part of IKURO." className="py-20 relative overflow-hidden border-t border-border/30 bg-secondary/15">
+      <section data-logi="Chalk to Choice is part of IKURO." className="py-section relative overflow-hidden border-t border-border/30 bg-secondary/15">
         <div className="absolute inset-0 animated-grid pointer-events-none opacity-20" />
-        <div className="container mx-auto px-6 relative z-10 max-w-[1300px]">
+        <div className="container mx-auto px-gutter relative z-10 max-w-[81.25rem]">
 
           <div className="max-w-5xl mx-auto rounded-3xl border border-border/80 bg-card p-8 md:p-12 relative overflow-hidden shadow-xl">
             <div className="absolute -right-24 -bottom-24 w-80 h-80 bg-primary/10 rounded-full blur-[80px] -z-10" />
@@ -1244,15 +1244,15 @@ const TechXera = () => {
                 <div className="grid grid-cols-3 gap-4 pb-6 border-b border-border/60">
                   <div className="text-left space-y-1">
                     <div className="text-3xl font-extrabold text-foreground font-mono tracking-tight">15</div>
-                    <div className="text-[10px] font-mono uppercase text-muted-foreground tracking-wider leading-tight">Days Program</div>
+                    <div className="text-label font-mono uppercase text-muted-foreground tracking-wider leading-tight">Days Program</div>
                   </div>
                   <div className="text-left space-y-1">
                     <div className="text-3xl font-extrabold text-foreground font-mono tracking-tight">7+</div>
-                    <div className="text-[10px] font-mono uppercase text-muted-foreground tracking-wider leading-tight">Streams</div>
+                    <div className="text-label font-mono uppercase text-muted-foreground tracking-wider leading-tight">Streams</div>
                   </div>
                   <div className="text-left space-y-1">
                     <div className="text-3xl font-extrabold text-foreground font-mono tracking-tight">50+</div>
-                    <div className="text-[10px] font-mono uppercase text-muted-foreground tracking-wider leading-tight">Exams</div>
+                    <div className="text-label font-mono uppercase text-muted-foreground tracking-wider leading-tight">Exams</div>
                   </div>
                 </div>
 
@@ -1289,8 +1289,8 @@ const TechXera = () => {
       </section>
 
       {/* Flagship Programs / Courses Area */}
-      <section data-logi="Pick a program that fits you." ref={coursesRef} className="py-24 relative overflow-hidden bg-background">
-        <div className="container mx-auto px-6 max-w-[1300px]">
+      <section data-logi="Pick a program that fits you." ref={coursesRef} className="py-section relative overflow-hidden bg-background">
+        <div className="container mx-auto px-gutter max-w-[81.25rem]">
 
           {/* Header block */}
           <div className="text-center mb-12 max-w-3xl mx-auto space-y-4">
@@ -1394,7 +1394,7 @@ const TechXera = () => {
 
                       {/* Skills Stack */}
                       <div className="space-y-2 text-left">
-                        <div className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider">Core Skill Stack</div>
+                        <div className="text-label font-mono text-muted-foreground uppercase tracking-wider">Core Skill Stack</div>
                         <div className="flex flex-wrap gap-1.5">
                           {course.skills.map(skill => (
                             <span key={skill} className="bg-secondary text-foreground text-xs px-2.5 py-1 rounded-md border border-border/80 font-medium">
@@ -1458,7 +1458,7 @@ const TechXera = () => {
                       <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 group-hover:rotate-6 transition-all">
                         <IconComponent size={20} />
                       </div>
-                      <span className="text-[10px] uppercase font-mono font-bold tracking-wider text-muted-foreground">
+                      <span className="text-label uppercase font-mono font-bold tracking-wider text-muted-foreground">
                         {course.difficulty}
                       </span>
                     </div>
@@ -1474,7 +1474,7 @@ const TechXera = () => {
                     </div>
 
                     {/* Stats Row */}
-                    <div className="flex flex-wrap gap-x-3 gap-y-1 py-2.5 border-y border-border/40 text-[10px] sm:text-xs font-mono text-muted-foreground/90">
+                    <div className="flex flex-wrap gap-x-3 gap-y-1 py-2.5 border-y border-border/40 text-label sm:text-xs font-mono text-muted-foreground/90">
                       <span className="flex items-center gap-1"><Clock size={12} className="text-primary/75" /> {course.duration}</span>
                       <span className="flex items-center gap-1"><Layers size={12} className="text-primary/75" /> {course.sessions}</span>
                       <span className="flex items-center gap-1"><Target size={12} className="text-primary/75" /> {course.projectsCount}</span>
@@ -1483,14 +1483,14 @@ const TechXera = () => {
                     {/* Skills tags */}
                     <div className="flex flex-wrap gap-1">
                       {course.skills.slice(0, 3).map(skill => (
-                        <span key={skill} className="bg-secondary text-foreground text-[10px] px-2 py-0.5 rounded border border-border/50">
+                        <span key={skill} className="bg-secondary text-foreground text-label px-2 py-0.5 rounded border border-border/50">
                           {skill}
                         </span>
                       ))}
                     </div>
 
                     {/* Benefits condensed row */}
-                    <div className="flex gap-3 text-muted-foreground text-[10px] pt-1">
+                    <div className="flex gap-3 text-muted-foreground text-label pt-1">
                       {course.benefits.includes("Certification") && <span className="flex items-center gap-1"><Award size={12} className="text-primary" /> Cert</span>}
                       {course.benefits.includes("Internship Support") && <span className="flex items-center gap-1"><Briefcase size={12} className="text-primary" /> Intern</span>}
                       {course.benefits.includes("Placement Ready") && <span className="flex items-center gap-1"><Zap size={12} className="text-primary" /> Job-Ready</span>}
@@ -1533,8 +1533,8 @@ const TechXera = () => {
       </section>
 
       {/* Learning Journey Timeline */}
-      <section data-logi="Why students choose this path." className="py-24 bg-secondary/15 border-t border-b border-border/30 relative overflow-hidden">
-        <div className="container mx-auto px-6 max-w-[1300px]">
+      <section data-logi="Why students choose this path." className="py-section bg-secondary/15 border-t border-b border-border/30 relative overflow-hidden">
+        <div className="container mx-auto px-gutter max-w-[81.25rem]">
 
           <div className="text-center mb-16 max-w-2xl mx-auto space-y-4">
             <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">
@@ -1549,7 +1549,7 @@ const TechXera = () => {
           <div className="relative mt-12">
 
             {/* Connecting Horizontal Line for Desktop */}
-            <div className="hidden lg:block absolute top-[28px] left-[6%] right-[6%] h-[2.5px] bg-border pointer-events-none">
+            <div className="hidden lg:block absolute top-[1.75rem] left-[6%] right-[6%] h-[0.1563rem] bg-border pointer-events-none">
               <motion.div
                 className="h-full bg-gradient-primary"
                 initial={{ width: "0%" }}
@@ -1560,7 +1560,7 @@ const TechXera = () => {
             </div>
 
             {/* Connecting Vertical Line for Mobile */}
-            <div className="lg:hidden absolute top-0 bottom-0 left-[23px] w-[2.5px] bg-border pointer-events-none">
+            <div className="lg:hidden absolute top-0 bottom-0 left-[1.4375rem] w-[0.1563rem] bg-border pointer-events-none">
               <motion.div
                 className="w-full bg-gradient-primary"
                 initial={{ height: "0%" }}
@@ -1603,7 +1603,7 @@ const TechXera = () => {
                     <h4 className="font-display font-bold text-foreground text-base tracking-tight group-hover:text-primary transition-colors duration-300">
                       {step.title}
                     </h4>
-                    <p className="text-muted-foreground text-xs md:text-[13px] leading-relaxed lg:px-2 max-w-sm lg:max-w-none">
+                    <p className="text-muted-foreground text-xs md:text-label leading-relaxed lg:px-2 max-w-sm lg:max-w-none">
                       {step.desc}
                     </p>
                   </div>
@@ -1617,8 +1617,8 @@ const TechXera = () => {
       </section>
 
       {/* Career Outcomes Section */}
-      <section className="py-24 relative overflow-hidden bg-background">
-        <div className="container mx-auto px-6 max-w-[1300px]">
+      <section className="py-section relative overflow-hidden bg-background">
+        <div className="container mx-auto px-gutter max-w-[81.25rem]">
 
           <div className="text-center mb-16 max-w-2xl mx-auto space-y-4">
             <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-4 py-1.5 rounded-full">
@@ -1675,8 +1675,8 @@ const TechXera = () => {
       </section>
 
       {/* Enrollment Flow Process */}
-      <section className="py-24 bg-secondary/15 border-t border-b border-border/30 relative overflow-hidden">
-        <div className="container mx-auto px-6 max-w-[1300px]">
+      <section className="py-section bg-secondary/15 border-t border-b border-border/30 relative overflow-hidden">
+        <div className="container mx-auto px-gutter max-w-[81.25rem]">
 
           <div className="text-center mb-16 max-w-2xl mx-auto space-y-4">
             <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">
@@ -1696,11 +1696,11 @@ const TechXera = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.15, duration: 0.5 }}
-                className="bg-white dark:bg-card border border-border/60 hover:border-primary/30 rounded-3xl p-6 flex flex-col justify-between relative group min-h-[180px]"
+                className="bg-white dark:bg-card border border-border/60 hover:border-primary/30 rounded-3xl p-6 flex flex-col justify-between relative group min-h-[11.25rem]"
               >
                 {/* Connecting line for desktop */}
                 {idx < 3 && (
-                  <div className="hidden lg:block absolute top-[40px] -right-[20px] w-[24px] h-[2px] bg-border/40 overflow-hidden z-20">
+                  <div className="hidden lg:block absolute top-[2.5rem] -right-[1.25rem] w-[1.5rem] h-[0.125rem] bg-border/40 overflow-hidden z-20">
                     <motion.div
                       className="h-full bg-primary"
                       initial={{ width: 0 }}
@@ -1720,7 +1720,7 @@ const TechXera = () => {
                   <h4 className="font-display font-bold text-foreground text-base tracking-tight mt-5 group-hover:text-primary transition-colors">
                     {step.title}
                   </h4>
-                  <p className="text-xs md:text-[13px] text-muted-foreground mt-2 leading-relaxed">
+                  <p className="text-xs md:text-label text-muted-foreground mt-2 leading-relaxed">
                     {step.desc}
                   </p>
                 </div>
@@ -1732,8 +1732,8 @@ const TechXera = () => {
       </section>
 
       {/* Final Call to Action */}
-      <section data-logi="Questions? WhatsApp us anytime." className="py-24 relative overflow-hidden bg-background">
-        <div className="container mx-auto px-6 max-w-[1300px]">
+      <section data-logi="Questions? WhatsApp us anytime." className="py-section relative overflow-hidden bg-background">
+        <div className="container mx-auto px-gutter max-w-[81.25rem]">
 
           <div className="max-w-4xl mx-auto rounded-[2rem] border border-border bg-white dark:bg-card p-10 md:p-16 text-center relative overflow-hidden shadow-2xl">
             {/* Glow overlay */}
@@ -1807,7 +1807,7 @@ const TechXera = () => {
               {/* Drawer Header */}
               <div className="p-6 border-b border-border/80 flex justify-between items-start shrink-0">
                 <div className="space-y-1 max-w-[85%] text-left">
-                  <span className="text-[10px] uppercase font-mono font-bold tracking-widest text-primary">
+                  <span className="text-label uppercase font-mono font-bold tracking-widest text-primary">
                     Course Syllabus Detail
                   </span>
                   <h3 className="font-display font-bold text-2xl text-foreground">
@@ -1949,7 +1949,7 @@ const TechXera = () => {
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                     {selectedCourse.projectsList.map((project, idx) => (
                       <li key={project} className="py-2.5 border-b border-border/40 text-xs font-medium text-foreground/80 flex items-center gap-2.5 text-left">
-                        <span className="w-6 h-6 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-mono font-bold shrink-0 text-[10px]">
+                        <span className="w-6 h-6 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-mono font-bold shrink-0 text-label">
                           P{idx + 1}
                         </span>
                         <span>{project}</span>
@@ -2046,7 +2046,7 @@ const TechXera = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", duration: 0.5 }}
-              className="relative w-full max-w-4xl max-h-[85vh] md:max-h-[90vh] bg-white dark:bg-slate-900 border border-border/80 rounded-3xl shadow-2xl overflow-y-auto flex flex-col z-10"
+              className="relative w-full max-w-4xl max-h-[85svh] md:max-h-[90svh] bg-white dark:bg-slate-900 border border-border/80 rounded-3xl shadow-2xl overflow-y-auto flex flex-col z-10"
             >
               {/* Header */}
               <div className="sticky top-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md z-20 border-b border-border/60 p-6 flex justify-between items-start">
@@ -2180,7 +2180,7 @@ const TechXera = () => {
                       "Digital Skills & Freelancing",
                       "Blockchain & Web3"
                     ].map((tech) => (
-                      <span key={tech} className="bg-secondary/60 border border-border/40 text-[10px] font-mono px-2.5 py-1 rounded-full text-muted-foreground">
+                      <span key={tech} className="bg-secondary/60 border border-border/40 text-label font-mono px-2.5 py-1 rounded-full text-muted-foreground">
                         ✦ {tech}
                       </span>
                     ))}
@@ -2214,11 +2214,11 @@ const TechXera = () => {
                     <div className="space-y-2">
                       <div className="text-xs font-mono uppercase text-muted-foreground tracking-wider font-semibold">Program Cost</div>
                       <div className="text-3xl font-extrabold text-foreground font-mono">₹2,500 <span className="text-xs font-normal text-muted-foreground font-sans">Only</span></div>
-                      <p className="text-[10px] text-muted-foreground">PDF notes, completion certificate, and live Q&A session access included. Printed booklet available as an optional add-on.</p>
+                      <p className="text-label text-muted-foreground">PDF notes, completion certificate, and live Q&A session access included. Printed booklet available as an optional add-on.</p>
                     </div>
 
                     <div className="space-y-2 pt-2 border-t border-border/60">
-                      <div className="text-[10px] font-mono text-muted-foreground">Inquiries &amp; Registration:</div>
+                      <div className="text-label font-mono text-muted-foreground">Inquiries &amp; Registration:</div>
                       <div className="text-xs text-foreground font-medium">
                         📧 techxeraclub@thenalanda.com <br />
                         📞 +91 85960 72510

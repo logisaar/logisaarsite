@@ -63,7 +63,7 @@ const TeamMemberCard = ({
     >
       {/* Accent color top line */}
       <div
-        className="absolute top-0 left-0 right-0 h-[3px] opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+        className="absolute top-0 left-0 right-0 h-[0.1875rem] opacity-60 group-hover:opacity-100 transition-opacity duration-500"
         style={{ background: `linear-gradient(90deg, ${member.accentColor}, transparent)` }}
       />
 
@@ -120,7 +120,7 @@ const TeamMemberCard = ({
             {member.expertise.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border font-mono uppercase tracking-wider px-3 py-1 text-[10px]"
+                className="rounded-full border font-mono uppercase tracking-wider px-3 py-1 text-label"
                 style={{
                   color: member.accentColor,
                   borderColor: `${member.accentColor}30`,
@@ -156,7 +156,7 @@ const TeamSection = () => {
       ref={ref}
       style={{ background: "hsl(220 30% 4%)" }}
     >
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-gutter relative z-10">
         
         {/* Section header */}
         <motion.div

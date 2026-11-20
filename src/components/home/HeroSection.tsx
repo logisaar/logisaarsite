@@ -122,7 +122,7 @@ const HeroSection = () => {
     <section
       ref={containerRef}
       data-logi="Scroll down. I will walk you through it."
-      className="relative min-h-[85vh] flex flex-col justify-start md:justify-center overflow-hidden bg-white text-foreground"
+      className="relative min-h-[85svh] flex flex-col justify-start md:justify-center overflow-hidden bg-white text-foreground"
     >
       {/* Responsive hero background images */}
       <div
@@ -137,7 +137,7 @@ const HeroSection = () => {
       {/* Subtle grid — very faint */}
       <div className="absolute inset-0 animated-grid pointer-events-none z-[1] opacity-40" />
 
-      <div className="container mx-auto px-4 relative z-10 pt-24 pb-12 md:pt-36">
+      <div className="container mx-auto px-gutter relative z-10 pt-24 pb-12 md:pt-36">
         <div className="flex flex-col items-center text-center">
           {/* Tagline / Subpoint */}
           <div
@@ -181,7 +181,7 @@ const HeroSection = () => {
             <Button
               asChild
               variant="outline"
-              className="h-12 px-8 text-base border-2 border-primary/30 hover:border-primary/60 hover:bg-primary/5 hover:text-primary text-foreground rounded-full transition-all duration-200 hover:-translate-y-[2px]"
+              className="h-12 px-8 text-base border-2 border-primary/30 hover:border-primary/60 hover:bg-primary/5 hover:text-primary text-foreground rounded-full transition-all duration-200 hover:-translate-y-[0.125rem]"
             >
               <Link to="/solutions">
                 Explore Services
@@ -217,7 +217,7 @@ const HeroSection = () => {
       {/* Floating 500+ Builders Card at bottom-right */}
       <div
         ref={buildersCardRef}
-        className="absolute bottom-12 right-8 z-20 max-w-[280px] hidden lg:block opacity-0"
+        className="absolute bottom-12 right-8 z-20 max-w-[17.5rem] hidden lg:block opacity-0"
       >
         <div className="liquid-glass p-4 flex items-center gap-3.5 rounded-2xl">
           <div
@@ -229,7 +229,7 @@ const HeroSection = () => {
           </div>
           <div className="text-left space-y-0.5">
             <h4 className="font-bold text-foreground text-xs font-display">Happy Clients</h4>
-            <p className="text-[10px] text-muted-foreground leading-relaxed">
+            <p className="text-label text-muted-foreground leading-relaxed">
               Schools, hotels, clinics and growing businesses.
             </p>
           </div>
@@ -239,7 +239,7 @@ const HeroSection = () => {
       {/* Floating 25+ Products Card at bottom-left */}
       <div
         ref={productsCardRef}
-        className="absolute bottom-12 left-8 z-20 max-w-[280px] hidden lg:block opacity-0"
+        className="absolute bottom-12 left-8 z-20 max-w-[17.5rem] hidden lg:block opacity-0"
       >
         <div className="liquid-glass p-4 flex items-center gap-3.5 rounded-2xl">
           <div
@@ -251,7 +251,7 @@ const HeroSection = () => {
           </div>
           <div className="text-left space-y-0.5">
             <h4 className="font-bold text-foreground text-xs font-display">Projects Delivered</h4>
-            <p className="text-[10px] text-muted-foreground leading-relaxed">
+            <p className="text-label text-muted-foreground leading-relaxed">
               Software, AI agents and automations live in production.
             </p>
           </div>

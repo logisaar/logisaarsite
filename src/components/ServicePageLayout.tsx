@@ -87,9 +87,9 @@ export default function ServicePageLayout({
   return (
     <Layout>
       {/* ── SECTION A — Hero ── */}
-      <section className="min-h-[90vh] flex items-center relative overflow-hidden">
+      <section className="min-h-[90svh] flex items-center relative overflow-hidden">
         <GradientMesh />
-        <div className="container mx-auto px-4 relative z-10 pt-32 pb-16">
+        <div className="container mx-auto px-gutter relative z-10 pt-32 pb-16">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left */}
             <div>
@@ -107,7 +107,7 @@ export default function ServicePageLayout({
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="font-display text-4xl md:text-5xl lg:text-[3.2rem] font-bold leading-[1.1] tracking-tight mb-3"
+                className="font-display text-h1 font-bold leading-[1.1] tracking-tight mb-3"
               >
                 {hero.h1}
               </motion.h1>
@@ -181,8 +181,8 @@ export default function ServicePageLayout({
       </section>
 
       {/* ── SECTION B — Pain Points ── */}
-      <section className="py-20 bg-secondary/20">
-        <div className="container mx-auto px-4">
+      <section className="py-section bg-secondary/20">
+        <div className="container mx-auto px-gutter">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -219,8 +219,8 @@ export default function ServicePageLayout({
       </section>
 
       {/* ── SECTION C — Features Grid ── */}
-      <section className="py-24" ref={featRef}>
-        <div className="container mx-auto px-4">
+      <section className="py-section" ref={featRef}>
+        <div className="container mx-auto px-gutter">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={featInView ? { opacity: 1, y: 0 } : {}}
@@ -256,8 +256,8 @@ export default function ServicePageLayout({
       </section>
 
       {/* ── SECTION D — How It Works ── */}
-      <section className="py-20 bg-secondary/20">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <section className="py-section bg-secondary/20">
+        <div className="container mx-auto px-gutter max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -271,7 +271,7 @@ export default function ServicePageLayout({
           </motion.div>
           <div className="relative">
             {/* Connecting line */}
-            <div className="hidden md:block absolute top-10 left-[16.5%] right-[16.5%] h-[2px] bg-gradient-to-r from-primary/30 via-[hsl(165,80%,45%)]/30 to-primary/30 z-0" />
+            <div className="hidden md:block absolute top-10 left-[16.5%] right-[16.5%] h-[0.125rem] bg-gradient-to-r from-primary/30 via-[hsl(165,80%,45%)]/30 to-primary/30 z-0" />
             <div className="grid md:grid-cols-3 gap-10 relative z-10">
               {howItWorks.map((step, i) => (
                 <motion.div
@@ -295,8 +295,8 @@ export default function ServicePageLayout({
       </section>
 
       {/* ── SECTION E — Pricing ── */}
-      <section className="py-24" id="pricing" ref={priceRef}>
-        <div className="container mx-auto px-4">
+      <section className="py-section" id="pricing" ref={priceRef}>
+        <div className="container mx-auto px-gutter">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={priceInView ? { opacity: 1, y: 0 } : {}}
@@ -320,7 +320,7 @@ export default function ServicePageLayout({
                   whileHover={{ y: -8, transition: { type: "spring", stiffness: 300 } }}
                   className={`relative rounded-2xl border p-7 flex flex-col group overflow-hidden ${tierColors[tier.name]}`}
                 >
-                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
+                  <div className="absolute top-0 left-0 right-0 h-[0.125rem] bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
                   {badge && (
                     <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-white text-xs font-semibold px-4 py-1 rounded-full bg-gradient-primary">
                       {badge}
@@ -359,8 +359,8 @@ export default function ServicePageLayout({
       </section>
 
       {/* ── SECTION F — FAQ ── */}
-      <section className="py-20 bg-secondary/20">
-        <div className="container mx-auto px-4 max-w-3xl">
+      <section className="py-section bg-secondary/20">
+        <div className="container mx-auto px-gutter max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -410,8 +410,8 @@ export default function ServicePageLayout({
       </section>
 
       {/* ── SECTION G — CTA Banner ── */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
+      <section className="py-section">
+        <div className="container mx-auto px-gutter">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

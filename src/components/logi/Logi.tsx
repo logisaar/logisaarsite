@@ -19,7 +19,8 @@ import "./logi.css";
 const MARGIN = 16;
 const TOP_SAFE = 124; // keep clear of the navbar capsule
 const SLEEP_MS = 25000;
-const sizeNow = () => (innerWidth < 640 ? 80 : 104);
+// Logi's size is CSS (clamp, rem based); read the rendered width so all pixel maths follow it
+const sizeNow = () => document.getElementById("logi")?.offsetWidth || 96;
 
 const PAGE_GREETING: Record<string, string> = {
   "/": "Hi! I'm Logi. I'll walk you through Logisaar.",
@@ -147,8 +148,6 @@ const Logi = () => {
     const st = S.current;
     st.reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    const applySize = () => document.documentElement.style.setProperty("--logi-size", sizeNow() + "px");
-    applySize();
     const corner = (): Pt => { const s = sizeNow(); return { x: innerWidth - s - MARGIN, y: innerHeight - s - MARGIN }; };
     const offRight = (y: number): Pt => ({ x: innerWidth + sizeNow(), y });
 
@@ -404,7 +403,6 @@ const Logi = () => {
     };
 
     const onResize = () => {
-      applySize();
       const s = sizeNow();
       if (st.reduce) { const c = corner(); st.x = c.x; st.y = c.y; place(); return; }
       st.x = clamp(st.x, 0, innerWidth - s); st.y = clamp(st.y, 0, innerHeight - s);
@@ -431,7 +429,6 @@ const Logi = () => {
       body.removeEventListener("pointerup", onUp);
       body.removeEventListener("pointercancel", onUp);
       body.removeEventListener("click", onClick);
-      document.documentElement.style.removeProperty("--logi-size");
     };
   }, [toggleChat]);
 

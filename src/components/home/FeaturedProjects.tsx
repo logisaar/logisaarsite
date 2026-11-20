@@ -29,8 +29,8 @@ const FeaturedProjects = () => {
   return (
     <>
       {/* Mobile: vertical stacked layout */}
-      <section className="md:hidden py-20">
-        <div className="container mx-auto px-4">
+      <section className="md:hidden py-section">
+        <div className="container mx-auto px-gutter">
           <div className="mb-8">
             <p className="text-primary font-medium text-xs uppercase tracking-[0.2em] mb-2">Our Work</p>
             <h2 className="font-display text-3xl font-bold">
@@ -83,8 +83,8 @@ const FeaturedProjects = () => {
 
       {/* Desktop: horizontal scroll layout */}
       <div ref={containerRef} className="relative hidden md:block" style={{ height: `${featured.length * 100}vh` }}>
-        <div className="sticky top-0 h-screen overflow-hidden">
-          <div className="absolute top-8 left-0 right-0 z-10 container mx-auto px-4">
+        <div className="sticky top-0 h-[100svh] overflow-hidden">
+          <div className="absolute top-8 left-0 right-0 z-10 container mx-auto px-gutter">
             <div className="flex items-end justify-between">
               <div>
                 <p className="text-primary font-medium text-xs uppercase tracking-[0.2em] mb-2">Our Work</p>
@@ -94,7 +94,7 @@ const FeaturedProjects = () => {
               </div>
               <Link to="/portfolio" className="text-primary font-medium text-sm hover:underline">View all →</Link>
             </div>
-            <div className="mt-4 h-[2px] bg-border rounded-full overflow-hidden">
+            <div className="mt-4 h-[0.125rem] bg-border rounded-full overflow-hidden">
               <motion.div className="h-full bg-gradient-primary rounded-full" style={{ width: progressWidth }} />
             </div>
           </div>
@@ -108,7 +108,7 @@ const FeaturedProjects = () => {
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative flex-shrink-0 w-[65vw] h-[70vh] rounded-2xl overflow-hidden group cursor-pointer block"
+                  className="relative flex-shrink-0 w-[65vw] h-[70svh] rounded-2xl overflow-hidden group cursor-pointer block"
                   whileHover={{ scale: 0.98 }}
                   transition={{ type: "spring", stiffness: 200 }}
                 >

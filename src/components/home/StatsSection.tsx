@@ -31,8 +31,8 @@ const StatsSection = () => {
   const { ref, isInView } = useScrollAnimation();
 
   return (
-    <section className="py-24" ref={ref}>
-      <div className="container mx-auto px-4">
+    <section className="py-section" ref={ref}>
+      <div className="container mx-auto px-gutter">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, i) => (
             <StatItem key={stat.label} {...stat} inView={isInView} delay={i * 0.15} />

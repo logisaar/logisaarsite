@@ -144,12 +144,12 @@ const TestimonialsSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section data-logi="Real words from real clients." className="py-32 bg-secondary/30 relative overflow-hidden" ref={ref}>
+    <section data-logi="Real words from real clients." className="py-section bg-secondary/30 relative overflow-hidden" ref={ref}>
       
       {/* Background watercolor smears and dot matrices */}
       {/* Top-left dotted grid */}
       <div 
-        className="absolute top-10 left-10 w-[200px] h-[150px] text-primary/15 pointer-events-none select-none z-0" 
+        className="absolute top-10 left-10 w-[12.5rem] h-[9.375rem] text-primary/15 pointer-events-none select-none z-0" 
         style={{ 
           backgroundImage: "radial-gradient(circle, currentColor 1.5px, transparent 1.5px)", 
           backgroundSize: "8px 8px" 
@@ -178,7 +178,7 @@ const TestimonialsSection = () => {
 
       {/* Decorative quotes glyph in top-right background */}
       <div className="absolute right-10 top-16 text-slate-200/40 dark:text-slate-800/20 pointer-events-none select-none z-0">
-        <span className="font-serif text-[180px] md:text-[240px] leading-none">”</span>
+        <span className="font-serif text-[length:clamp(8rem,5rem+10vw,15rem)] leading-none">”</span>
       </div>
 
       {/* Decorative background curves at the bottom */}
@@ -189,7 +189,7 @@ const TestimonialsSection = () => {
         </svg>
       </div>
 
-      <div className="w-full max-w-[1400px] mx-auto px-6 relative z-10">
+      <div className="w-full max-w-[87.5rem] mx-auto px-6 relative z-10">
         
         {/* Centered Header Section */}
         <motion.div
@@ -201,13 +201,13 @@ const TestimonialsSection = () => {
           {/* Eyebrow badge with flanking horizontal lines and circle beads */}
           <div className="flex items-center justify-center gap-3 text-primary font-mono text-xs uppercase tracking-widest font-bold mb-4">
             <div className="flex items-center gap-1">
-              <span className="w-8 h-[1.5px] bg-primary/40 rounded-full" />
+              <span className="w-8 h-[0.0938rem] bg-primary/40 rounded-full" />
               <span className="w-1.5 h-1.5 rounded-full border border-primary/40 bg-transparent" />
             </div>
             <span>TESTIMONIALS</span>
             <div className="flex items-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full border border-primary/40 bg-transparent" />
-              <span className="w-8 h-[1.5px] bg-primary/40 rounded-full" />
+              <span className="w-8 h-[0.0938rem] bg-primary/40 rounded-full" />
             </div>
           </div>
 
@@ -232,7 +232,7 @@ const TestimonialsSection = () => {
           </h2>
 
           {/* Subtitle wrap constraint */}
-          <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-[540px] mx-auto text-center">
+          <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-[33.75rem] mx-auto text-center">
             Real stories from real people who trust LogiSaar to build, deliver and grow together.
           </p>
         </motion.div>
@@ -250,7 +250,7 @@ const TestimonialsSection = () => {
                 {TESTIMONIALS_ROW1.map((item, idx) => (
                   <MarqueeItem key={idx}>
                     <Testimonial 
-                      className={`w-[360px] md:w-[380px] p-6 rounded-2xl border transition-all duration-300 liquid-glass bg-white/80 dark:bg-slate-950/80 hover:bg-white/95 dark:hover:bg-slate-900/95 shadow-sm hover:shadow-md ${item.accent}`}
+                      className={`w-[22.5rem] md:w-[23.75rem] p-6 rounded-2xl border transition-all duration-300 liquid-glass bg-white/80 dark:bg-slate-950/80 hover:bg-white/95 dark:hover:bg-slate-900/95 shadow-sm hover:shadow-md ${item.accent}`}
                     >
                       <TestimonialQuote className="px-0 py-0 pb-5 text-slate-800 dark:text-slate-200 text-sm md:text-base leading-relaxed font-semibold">
                         <span className={`${item.quoteColor} font-serif text-2xl leading-none mr-1 inline-block -mt-1`}>“</span>
@@ -296,7 +296,7 @@ const TestimonialsSection = () => {
                 {TESTIMONIALS_ROW2.map((item, idx) => (
                   <MarqueeItem key={idx}>
                     <Testimonial 
-                      className={`w-[360px] md:w-[380px] p-6 rounded-2xl border transition-all duration-300 liquid-glass bg-white/80 dark:bg-slate-950/80 hover:bg-white/95 dark:hover:bg-slate-900/95 shadow-sm hover:shadow-md ${item.accent}`}
+                      className={`w-[22.5rem] md:w-[23.75rem] p-6 rounded-2xl border transition-all duration-300 liquid-glass bg-white/80 dark:bg-slate-950/80 hover:bg-white/95 dark:hover:bg-slate-900/95 shadow-sm hover:shadow-md ${item.accent}`}
                     >
                       <TestimonialQuote className="px-0 py-0 pb-5 text-slate-800 dark:text-slate-200 text-sm md:text-base leading-relaxed font-semibold">
                         <span className={`${item.quoteColor} font-serif text-2xl leading-none mr-1 inline-block -mt-1`}>“</span>
@@ -343,7 +343,7 @@ const TestimonialsSection = () => {
             </div>
             <div>
               <div className="text-sm font-bold text-foreground leading-tight">Trusted by Businesses</div>
-              <div className="text-[11px] text-muted-foreground mt-0.5">Across industries and domains</div>
+              <div className="text-label text-muted-foreground mt-0.5">Across industries and domains</div>
             </div>
           </div>
 
@@ -356,7 +356,7 @@ const TestimonialsSection = () => {
             </div>
             <div>
               <div className="text-sm font-bold text-foreground leading-tight">Results That Matter</div>
-              <div className="text-[11px] text-muted-foreground mt-0.5">Solutions that drive growth and impact</div>
+              <div className="text-label text-muted-foreground mt-0.5">Solutions that drive growth and impact</div>
             </div>
           </div>
 
@@ -369,7 +369,7 @@ const TestimonialsSection = () => {
             </div>
             <div>
               <div className="text-sm font-bold text-foreground leading-tight">Partnership Approach</div>
-              <div className="text-[11px] text-muted-foreground mt-0.5">We grow when you grow</div>
+              <div className="text-label text-muted-foreground mt-0.5">We grow when you grow</div>
             </div>
           </div>
 
@@ -382,7 +382,7 @@ const TestimonialsSection = () => {
             </div>
             <div>
               <div className="text-sm font-bold text-foreground leading-tight">Support That Stays</div>
-              <div className="text-[11px] text-muted-foreground mt-0.5">With you, before and after launch</div>
+              <div className="text-label text-muted-foreground mt-0.5">With you, before and after launch</div>
             </div>
           </div>
         </div>

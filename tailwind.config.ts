@@ -1,18 +1,43 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
+    // em breakpoints: layouts respond to the user's font size too (identical at default settings)
+    screens: {
+      sm: "40em",
+      md: "48em",
+      lg: "64em",
+      xl: "80em",
+      "2xl": "96em",
+    },
     container: {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "87.5rem",
       },
     },
     extend: {
+      // Fluid type scale: rem + clamp, never pure vw (keeps browser zoom working). Nothing under 12px.
+      fontSize: {
+        label: ["clamp(0.75rem, 0.73rem + 0.1vw, 0.8125rem)", { lineHeight: "1.4" }],
+        "body-sm": ["clamp(0.875rem, 0.85rem + 0.1vw, 0.9375rem)", { lineHeight: "1.6" }],
+        body: ["clamp(1rem, 0.96rem + 0.2vw, 1.0625rem)", { lineHeight: "1.6" }],
+        lead: ["clamp(1.0625rem, 1rem + 0.4vw, 1.25rem)", { lineHeight: "1.6" }],
+        h3: ["clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem)", { lineHeight: "1.25" }],
+        h2: ["clamp(1.875rem, 1.4rem + 2.2vw, 3.25rem)", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+        h1: ["clamp(2.5rem, 1.6rem + 4.6vw, 5.5rem)", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+        display: ["clamp(3rem, 1.5rem + 7.5vw, 9rem)", { lineHeight: "1.1" }],
+      },
+      spacing: {
+        section: "clamp(4rem, 3rem + 5vw, 8rem)",
+        "section-sm": "clamp(3rem, 2.4rem + 3vw, 5rem)",
+        gutter: "clamp(1rem, 0.6rem + 2vw, 2rem)",
+      },
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
         display: ["Space Grotesk", "ui-sans-serif", "system-ui", "sans-serif"],
@@ -27,6 +52,8 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          // darker green for TEXT, links and icons on light backgrounds (4.75:1 on white); the bright green stays a fill
+          ink: "hsl(var(--primary-ink))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -116,5 +143,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 } satisfies Config;

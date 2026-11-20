@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 interface Milestone {
@@ -21,7 +21,7 @@ const MilestonePanel = ({
   milestone: Milestone;
   index: number;
   total: number;
-  scrollYProgress: any;
+  scrollYProgress: MotionValue<number>;
 }) => {
   const segmentStart = index / total;
   const segmentEnd = (index + 1) / total;
@@ -48,7 +48,7 @@ const MilestonePanel = ({
     <div className="w-screen shrink-0 h-full relative flex items-center justify-center overflow-hidden px-16 md:px-24">
       {/* Colossal year watermark */}
       <span
-        className="absolute top-1/2 right-4 md:right-16 -translate-y-1/2 font-bold text-[10rem] md:text-[18rem] leading-none select-none pointer-events-none"
+        className="absolute top-1/2 right-4 md:right-16 -translate-y-1/2 font-bold text-display md:text-[length:clamp(10rem,6rem+14vw,18rem)] leading-none select-none pointer-events-none"
         style={{
           opacity: 0.04,
           color: "white",
@@ -172,7 +172,7 @@ const ProgressRail = ({
   total,
   containerRef,
 }: {
-  scrollYProgress: any;
+  scrollYProgress: MotionValue<number>;
   total: number;
   containerRef: React.RefObject<HTMLDivElement>;
 }) => {
@@ -196,7 +196,7 @@ const ProgressRail = ({
   return (
     <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-[60%] max-w-2xl z-20">
       {/* Rail background */}
-      <div className="relative h-[2px] w-full" style={{ background: "hsl(220 20% 20%)" }}>
+      <div className="relative h-[0.125rem] w-full" style={{ background: "hsl(220 20% 20%)" }}>
         {/* Animated fill */}
         <motion.div
           className="absolute inset-y-0 left-0 origin-left"
@@ -231,7 +231,7 @@ const RailDot = ({
   scrollYProgress,
   threshold,
 }: {
-  scrollYProgress: any;
+  scrollYProgress: MotionValue<number>;
   threshold: number;
 }) => {
   const scale = useTransform(
@@ -258,7 +258,7 @@ const RailDot = ({
 
 // Mobile card layout
 const MobileTimeline = ({ milestones }: { milestones: Milestone[] }) => (
-  <section className="py-20 relative" style={{ background: "hsl(220 30% 4%)" }}>
+  <section className="py-section relative" style={{ background: "hsl(220 30% 4%)" }}>
     <div className="px-6 mb-10">
       <p
         className="font-mono text-xs tracking-[0.2em] uppercase mb-4"
@@ -283,7 +283,7 @@ const MobileTimeline = ({ milestones }: { milestones: Milestone[] }) => (
         >
           {/* Year watermark */}
           <span
-            className="absolute -top-4 -right-2 font-bold text-[8rem] leading-none select-none pointer-events-none"
+            className="absolute -top-4 -right-2 font-bold text-display leading-none select-none pointer-events-none"
             style={{ opacity: 0.05, color: "white" }}
           >
             {m.year}
@@ -300,7 +300,7 @@ const MobileTimeline = ({ milestones }: { milestones: Milestone[] }) => (
               {m.title}
             </h3>
             <span
-              className="inline-block font-mono text-[10px] tracking-[0.15em] uppercase mb-4 px-2 py-0.5 rounded-full border"
+              className="inline-block font-mono text-label tracking-[0.15em] uppercase mb-4 px-2 py-0.5 rounded-full border"
               style={{
                 color: "hsl(170 80% 45%)",
                 borderColor: "hsl(170 80% 45% / 0.25)",
@@ -394,7 +394,7 @@ const JourneyTimeline = ({ milestones }: JourneyTimelineProps) => {
   return (
     <div ref={containerRef} className="relative" style={{ height: "400vh" }}>
       <div
-        className="sticky top-0 h-screen overflow-hidden flex items-center"
+        className="sticky top-0 h-[100svh] overflow-hidden flex items-center"
         style={{ background: "hsl(220 30% 4%)" }}
       >
         <FloatingParticles />

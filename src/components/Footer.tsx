@@ -86,12 +86,12 @@ const Footer = () => {
 
       {/* Breathing gradient line */}
       <motion.div
-        className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-primary"
+        className="absolute top-0 left-0 right-0 h-[0.125rem] bg-gradient-primary"
         animate={{ opacity: [0.5, 1, 0.5] }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="container mx-auto px-4 pt-16 pb-8 relative z-10">
+      <div className="container mx-auto px-gutter pt-16 pb-8 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-10 gap-x-6">
           {/* Brand column */}
           <motion.div

@@ -254,7 +254,7 @@ const SolutionCard = ({ sol }: { sol: typeof industrySolutions[0] }) => {
           <h4 className="text-xs uppercase font-mono tracking-wider text-muted-foreground mb-2">Technology Stack</h4>
           <div className="flex flex-wrap gap-2">
             {sol.techStack.map((tech) => (
-              <span key={tech} className="text-[10px] font-mono bg-secondary text-foreground/80 border border-border px-2.5 py-0.5 rounded-md">
+              <span key={tech} className="text-label font-mono bg-secondary text-foreground/80 border border-border px-2.5 py-0.5 rounded-md">
                 {tech}
               </span>
             ))}
@@ -290,9 +290,9 @@ const Solutions = () => {
       />
 
       {/* Hero */}
-      <section data-logi="Pick a solution and I'll explain it." className="min-h-[50vh] flex items-end relative overflow-hidden pb-16">
+      <section data-logi="Pick a solution and I'll explain it." className="min-h-[50svh] flex items-end relative overflow-hidden pb-16">
         <GradientMesh />
-        <div className="container mx-auto px-4 relative z-10 pt-32">
+        <div className="container mx-auto px-gutter relative z-10 pt-32">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -309,8 +309,8 @@ const Solutions = () => {
       </section>
 
       {/* Expandable Solutions Grid */}
-      <section data-logi="Ready-made, then made yours." className="py-20 bg-background">
-        <div className="container mx-auto px-4 animate-fadeIn">
+      <section data-logi="Ready-made, then made yours." className="py-section bg-background">
+        <div className="container mx-auto px-gutter animate-fadeIn">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

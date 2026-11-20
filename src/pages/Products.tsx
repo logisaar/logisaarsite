@@ -17,10 +17,10 @@ const Products = () => {
       />
 
       {/* Hero */}
-      <section className="min-h-[50vh] flex items-center relative overflow-hidden">
+      <section className="min-h-[50svh] flex items-center relative overflow-hidden">
         <GradientMesh />
         <DecorativeShapes variant="hero" />
-        <div className="container mx-auto px-4 relative z-10 pt-32 pb-20">
+        <div className="container mx-auto px-gutter relative z-10 pt-32 pb-20">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: -10 }}
@@ -52,8 +52,8 @@ const Products = () => {
       </section>
 
       {/* Flagship Product Showcase */}
-      <section className="py-24 relative overflow-hidden bg-background">
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="py-section relative overflow-hidden bg-background">
+        <div className="container mx-auto px-gutter relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center max-w-6xl mx-auto">
             {/* Details Side — 6 cols */}
             <div className="lg:col-span-6 space-y-6">
@@ -113,7 +113,7 @@ const Products = () => {
                     <span className="w-3 h-3 rounded-full bg-yellow-500/60" />
                     <span className="w-3 h-3 rounded-full bg-green-500/60" />
                   </div>
-                  <div className="bg-secondary/40 border border-border px-4 py-0.5 rounded-md text-[10px] text-muted-foreground font-mono select-none">
+                  <div className="bg-secondary/40 border border-border px-4 py-0.5 rounded-md text-label text-muted-foreground font-mono select-none">
                     heylane.in
                   </div>
                   <div className="w-6" />
@@ -126,9 +126,9 @@ const Products = () => {
                     <div className="flex justify-between items-start">
                       <div>
                         <h4 className="font-bold text-foreground text-sm font-display">Coffee Bean Café</h4>
-                        <p className="text-[10px] text-muted-foreground font-mono">Loyalty Card</p>
+                        <p className="text-label text-muted-foreground font-mono">Loyalty Card</p>
                       </div>
-                      <span className="bg-green-500/10 text-green-400 border border-green-500/20 text-[9px] px-2 py-0.5 rounded-full font-semibold">Active</span>
+                      <span className="bg-green-500/10 text-green-400 border border-green-500/20 text-label px-2 py-0.5 rounded-full font-semibold">Active</span>
                     </div>
 
                     {/* Coffee Cups Stamps Grid */}
@@ -138,12 +138,12 @@ const Products = () => {
                           ✓
                         </div>
                       ))}
-                      <div className="aspect-square bg-secondary border border-border/60 rounded-lg flex items-center justify-center text-muted-foreground/45 text-[10px]">
+                      <div className="aspect-square bg-secondary border border-border/60 rounded-lg flex items-center justify-center text-muted-foreground/45 text-label">
                         5
                       </div>
                     </div>
 
-                    <div className="flex justify-between items-center text-[10px] border-t border-border/20 pt-2 text-muted-foreground">
+                    <div className="flex justify-between items-center text-label border-t border-border/20 pt-2 text-muted-foreground">
                       <span>4 of 5 visits complete</span>
                       <span className="text-primary font-bold">1 Free Coffee next!</span>
                     </div>
@@ -153,9 +153,9 @@ const Products = () => {
                   <div className="col-span-5 flex flex-col gap-3">
                     {/* Google Business Profile Growth Box */}
                     <div className="bg-primary/5 rounded-xl border border-primary/20 p-3 flex flex-col justify-center flex-1">
-                      <p className="text-[10px] uppercase font-mono tracking-wider text-muted-foreground">Google Growth</p>
+                      <p className="text-label uppercase font-mono tracking-wider text-muted-foreground">Google Growth</p>
                       <h5 className="font-bold text-foreground text-base mt-0.5 font-display">+184%</h5>
-                      <p className="text-[9px] text-muted-foreground mt-0.5 leading-tight">More 5-star reviews at checkout.</p>
+                      <p className="text-label text-muted-foreground mt-0.5 leading-tight">More 5-star reviews at checkout.</p>
                     </div>
 
                     {/* QR Code trigger mockup */}
@@ -164,16 +164,16 @@ const Products = () => {
                         QR
                       </div>
                       <div className="leading-tight">
-                        <p className="font-semibold text-foreground text-[10px]">Merchant QR</p>
-                        <p className="text-[9px] text-muted-foreground mt-0.5">Scan to log visit</p>
+                        <p className="font-semibold text-foreground text-label">Merchant QR</p>
+                        <p className="text-label text-muted-foreground mt-0.5">Scan to log visit</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Footer block */}
-                <div className="border-t border-border/40 mt-3 pt-3 flex justify-between items-center text-[10px] text-muted-foreground">
-                  <span className="uppercase tracking-widest font-mono text-[9px] text-muted-foreground/60">PROPRIETARY PLATFORM BY LOGISAAR</span>
+                <div className="border-t border-border/40 mt-3 pt-3 flex justify-between items-center text-label text-muted-foreground">
+                  <span className="uppercase tracking-widest font-mono text-label text-muted-foreground/60">PROPRIETARY PLATFORM BY LOGISAAR</span>
                   <a href="https://heylane.in" target="_blank" rel="noopener noreferrer" className="text-primary font-mono font-semibold hover:underline inline-flex items-center gap-1">
                     heylane.in <ArrowRight size={10} />
                   </a>
@@ -185,8 +185,8 @@ const Products = () => {
       </section>
 
       {/* Notice Section about other products */}
-      <section className="py-16 relative overflow-hidden bg-secondary/10 border-t border-border/30">
-        <div className="container mx-auto px-4 text-center max-w-xl space-y-4">
+      <section className="py-section-sm relative overflow-hidden bg-secondary/10 border-t border-border/30">
+        <div className="container mx-auto px-gutter text-center max-w-xl space-y-4">
           <h3 className="font-display font-bold text-lg text-foreground">What's in Development?</h3>
           <p className="text-sm text-muted-foreground leading-relaxed">
             Our labs are currently prototyping local automated forms and agentic database tools. Specific releases will be made public once stable.

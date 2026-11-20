@@ -25,10 +25,10 @@ const About = () => {
       />
 
       {/* Hero Header */}
-      <section className="min-h-[50vh] flex items-center relative overflow-hidden">
+      <section className="min-h-[50svh] flex items-center relative overflow-hidden">
         <GradientMesh />
         <DecorativeShapes variant="hero" />
-        <div className="container mx-auto px-4 relative z-10 pt-32 pb-20">
+        <div className="container mx-auto px-gutter relative z-10 pt-32 pb-20">
           <div className="max-w-3xl">
             <motion.p
               initial={{ opacity: 0, y: 15 }}
@@ -60,8 +60,8 @@ const About = () => {
       </section>
 
       {/* ── Section 1: Why Logisaar Exists ── */}
-      <section className="py-24 relative overflow-hidden border-t border-border/30 bg-background">
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="py-section relative overflow-hidden border-t border-border/30 bg-background">
+        <div className="container mx-auto px-gutter relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-5 space-y-4">
               <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
@@ -96,9 +96,9 @@ const About = () => {
       </section>
 
       {/* ── Section 2: What We Build ── */}
-      <section className="py-24 relative overflow-hidden bg-secondary/15 border-t border-border/30">
+      <section className="py-section relative overflow-hidden bg-secondary/15 border-t border-border/30">
         <div className="absolute inset-0 animated-grid pointer-events-none opacity-20" />
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-gutter relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-4 space-y-4">
               <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
@@ -148,7 +148,7 @@ const About = () => {
                       <div>
                         <div className="font-bold text-sm text-foreground flex items-center gap-2">
                           HeyLane
-                          <span className="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold">
+                          <span className="bg-primary/10 text-primary text-label px-2 py-0.5 rounded-full font-bold">
                             Main Product
                           </span>
                         </div>
@@ -223,8 +223,8 @@ const About = () => {
       </section>
 
       {/* ── Section 3: Origins & Foundation ── */}
-      <section className="py-24 relative overflow-hidden border-t border-border/30 bg-background">
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="py-section relative overflow-hidden border-t border-border/30 bg-background">
+        <div className="container mx-auto px-gutter relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-4 space-y-4">
               <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
@@ -246,8 +246,8 @@ const About = () => {
       </section>
 
       {/* ── Section 4: Where We're Going ── */}
-      <section className="py-24 relative overflow-hidden bg-secondary/15 border-t border-border/30">
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="py-section relative overflow-hidden bg-secondary/15 border-t border-border/30">
+        <div className="container mx-auto px-gutter relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-4 space-y-4">
               <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
@@ -300,8 +300,8 @@ const About = () => {
       <TeamSection />
 
       {/* ── Section 7: Our Values ── */}
-      <section className="py-24 relative overflow-hidden bg-secondary/15 border-t border-border/30">
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="py-section relative overflow-hidden bg-secondary/15 border-t border-border/30">
+        <div className="container mx-auto px-gutter relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
             <span className="text-primary text-xs font-mono uppercase tracking-[0.2em] block">
               Principles

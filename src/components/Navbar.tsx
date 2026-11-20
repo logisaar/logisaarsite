@@ -84,7 +84,7 @@ const Navbar = () => {
           <Link to="/" className="shrink-0">
             <BrandLogo
               priority
-              className={`transition-all duration-500 ${scrolled ? "h-[38px]" : "h-9 md:h-11"}`}
+              className={`transition-all duration-500 ${scrolled ? "h-[2.375rem]" : "h-9 md:h-11"}`}
             />
           </Link>
 
@@ -171,7 +171,7 @@ const Navbar = () => {
                               </span>
                               <div className="flex flex-col leading-none">
                                 <span className="text-sm font-semibold">{sub.label}</span>
-                                <span className="text-[10px] text-muted-foreground mt-0.5">{sub.description}</span>
+                                <span className="text-label text-muted-foreground mt-0.5">{sub.description}</span>
                               </div>
                             </Link>
                           </motion.div>
