@@ -1,14 +1,25 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type MutableRefObject } from "react";
 import { Link } from "react-router-dom";
 import { useReducedMotion } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Check, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/data/company";
 import { ServiceDemo } from "@/components/demos";
 
+gsap.registerPlugin(ScrollTrigger);
+
 type Service = (typeof SERVICES)[number];
 
+/** Brand-only tints behind the demo frame: green-50, emerald-50, teal-50, slate-50. */
+const TINTS = ["#f0fdf4", "#ecfdf5", "#f0fdfa", "#f8fafc"];
+const EXPO = "expo.out";
+/** scroll distance of one snap step, in svh */
+const STEP = 80;
+
 const BTN = "h-auto min-h-[2.75rem] whitespace-normal rounded-full border-0 bg-primary px-6 font-semibold text-primary-on hover:bg-primary/90";
+const FOCUS = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[hsl(var(--focus-ring))]";
 
 /** matchMedia as state; the site is a client-rendered SPA, so reading it on first render is safe. */
 const useMinWidth = (query: string) => {
@@ -23,7 +34,7 @@ const useMinWidth = (query: string) => {
   return on;
 };
 
-const Lists = ({ s }: { s: Service }) => (
+const Lists = ({ s, compact = false }: { s: Service; compact?: boolean }) => (
   <>
     <h4 className="font-display text-body font-bold text-foreground">Typical examples</h4>
     <ul className="mt-2 flex flex-wrap gap-2">
@@ -33,8 +44,8 @@ const Lists = ({ s }: { s: Service }) => (
         </li>
       ))}
     </ul>
-    <h4 className="mt-5 font-display text-body font-bold text-foreground">What you get</h4>
-    <ul className="mt-2 space-y-2">
+    <h4 className={`${compact ? "mt-3" : "mt-5"} font-display text-body font-bold text-foreground`}>What you get</h4>
+    <ul className={`mt-2 ${compact ? "space-y-1" : "space-y-2"}`}>
       {s.deliverables.map((e) => (
         <li key={e} className="flex items-start gap-2 text-body-sm text-muted-foreground">
           <Check size={16} aria-hidden="true" className="mt-0.5 shrink-0 text-primary-ink" />
@@ -45,15 +56,15 @@ const Lists = ({ s }: { s: Service }) => (
   </>
 );
 
-const Cta = ({ s }: { s: Service }) => (
-  <Button asChild className={`${BTN} mt-6`}>
+const Cta = ({ s, compact = false }: { s: Service; compact?: boolean }) => (
+  <Button asChild className={`${BTN} ${compact ? "mt-4" : "mt-6"}`}>
     <Link to="/contact">
       Discuss your project<span className="sr-only"> ({s.name})</span>
     </Link>
   </Button>
 );
 
-const Details = ({ s, fold = false }: { s: Service; fold?: boolean }) => (
+const Details = ({ s, fold = false, compact = false }: { s: Service; fold?: boolean; compact?: boolean }) => (
   <>
     <p className="text-body text-muted-foreground">{s.desc}</p>
     {/* TODO(owner): confirm the examples and deliverables for each service. */}
@@ -68,135 +79,363 @@ const Details = ({ s, fold = false }: { s: Service; fold?: boolean }) => (
         </div>
       </details>
     ) : (
-      <div className="mt-5">
-        <Lists s={s} />
+      <div className={compact ? "mt-3" : "mt-5"}>
+        <Lists s={s} compact={compact} />
       </div>
     )}
-    <Cta s={s} />
+    <Cta s={s} compact={compact} />
   </>
 );
 
-/** Desktop: a sticky list on the left, one demo per service scrolling past on the right. */
-const Pinned = () => {
-  const reduce = useReducedMotion();
-  const [active, setActive] = useState(0);
-  const items = useRef<(HTMLDivElement | null)[]>([]);
-  const fills = useRef<(HTMLSpanElement | null)[]>([]);
+type Els = MutableRefObject<(HTMLElement | null)[]>;
+
+/**
+ * Drives the service-to-service transitions. Every frame is mounted and stacked; the inactive ones are hidden.
+ * Each transition is one GSAP timeline (transform, opacity and clip-path only). `k` shortens it for phones.
+ * The same timeline plays in reverse direction when the index goes down.
+ */
+const useServiceTransitions = (active: number, frames: Els, panels: Els, tints: Els, k = 1) => {
+  const prev = useRef(active);
+  const tlRef = useRef<gsap.core.Timeline | null>(null);
+
+  useLayoutEffect(() => {
+    // first paint: only the first service is shown
+    frames.current.forEach((f, i) => f && gsap.set(f, { autoAlpha: i === active ? 1 : 0 }));
+    panels.current.forEach((f, i) => f && gsap.set(f, { autoAlpha: i === active ? 1 : 0 }));
+    tints.current.forEach((f, i) => f && gsap.set(f, { opacity: i === active ? 1 : 0 }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
-    let raf = 0;
-    const update = () => {
-      raf = 0;
-      const line = window.innerHeight * 0.4;
-      let cur = 0;
-      items.current.forEach((el, i) => {
-        if (el && el.getBoundingClientRect().top <= line) cur = i;
+    const from = prev.current;
+    if (from === active) return;
+    prev.current = active;
+    const fo = frames.current[from], fi = frames.current[active];
+    const po = panels.current[from], pi = panels.current[active];
+    if (!fo || !fi || !po || !pi) return;
+    const fwd = active > from;
+    // finish a running transition so the next one starts from a clean state
+    tlRef.current?.progress(1).kill();
+    const d = 0.75 * k;
+    const tl = gsap.timeline({ defaults: { ease: EXPO, duration: d } });
+    tlRef.current = tl;
+
+    // backdrop tint
+    tl.to(tints.current[from], { opacity: 0 }, 0).to(tints.current[active], { opacity: 1 }, 0);
+
+    // text: number, name (line-masked), body
+    const nm = pi.querySelectorAll("[data-name-in]"), body = pi.querySelectorAll("[data-body-in]"), num = pi.querySelectorAll("[data-num-in]");
+    tl.to(po, { autoAlpha: 0, y: fwd ? -16 : 16, duration: d * 0.45 }, 0);
+    tl.fromTo(pi, { autoAlpha: 0, y: fwd ? 16 : -16 }, { autoAlpha: 1, y: 0, duration: d * 0.6 }, d * 0.25);
+    tl.fromTo(nm, { yPercent: 105 }, { yPercent: 0 }, d * 0.25);
+    tl.fromTo(num, { yPercent: fwd ? 60 : -60, opacity: 0 }, { yPercent: 0, opacity: 1 }, d * 0.2);
+    tl.fromTo(body, { opacity: 0, y: 14 }, { opacity: 1, y: 0, stagger: 0.06 }, d * 0.4);
+
+    // frame: a different move for each pair of services
+    gsap.set(fi, { zIndex: 2 });
+    gsap.set(fo, { zIndex: 1 });
+    const lo = Math.min(from, active), hi = Math.max(from, active);
+    const pair = lo * 10 + hi;
+    if (pair === 1) {
+      // the browser frame wipes into the three-column inbox
+      tl.fromTo(
+        fi,
+        { autoAlpha: 1, opacity: 1, clipPath: fwd ? "inset(0 0 0 100% round 1rem)" : "inset(0 100% 0 0 round 1rem)", scale: 0.96 },
+        { clipPath: "inset(0 0 0 0 round 1rem)", scale: 1 },
+        0,
+      );
+      tl.to(fo, { scale: 1.03, opacity: 0.6 }, 0);
+    } else if (pair === 12) {
+      // zoom out, the canvas grid fades in and nodes drop in on a stagger
+      tl.to(fo, { scale: 0.93, opacity: 0, duration: d * 0.8 }, 0);
+      tl.fromTo(fi, { autoAlpha: 1, scale: fwd ? 1.06 : 0.94, opacity: 0 }, { scale: 1, opacity: 1 }, d * 0.1);
+      if (fwd) tl.fromTo(fi.querySelectorAll("[data-n]"), { y: -28, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.07, duration: d * 0.8, ease: "back.out(1.4)" }, d * 0.2);
+    } else if (pair === 23) {
+      // nodes collapse, the document layout expands from the centre
+      if (fwd) tl.to(fo.querySelectorAll("[data-n]"), { scale: 0.2, opacity: 0, stagger: 0.04, duration: d * 0.6 }, 0);
+      tl.to(fo, { opacity: 0, scale: fwd ? 0.9 : 1.06 }, d * (fwd ? 0.25 : 0));
+      tl.fromTo(fi, { autoAlpha: 1, opacity: 1, scale: 1, clipPath: "inset(30% 30% 30% 30% round 1rem)" }, { clipPath: "inset(0% 0% 0% 0% round 1rem)" }, d * 0.2);
+    } else {
+      tl.to(fo, { opacity: 0, scale: 0.96, duration: d * 0.6 }, 0);
+      tl.fromTo(fi, { autoAlpha: 1, opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1 }, d * 0.15);
+    }
+    tl.add(() => {
+      gsap.set(fo, { autoAlpha: 0, clearProps: "clipPath,scale,zIndex,opacity" });
+      gsap.set(fo, { autoAlpha: 0 });
+      gsap.set(fi, { clearProps: "clipPath,zIndex,scale" });
+      gsap.set([fo, fi].flatMap((f) => Array.from(f.querySelectorAll("[data-n]"))), { clearProps: "y,scale,opacity" });
+    }, d * 1.02);
+  }, [active, k, frames, panels, tints]);
+
+  useEffect(() => () => { tlRef.current?.kill(); }, []);
+};
+
+/** One service's text block: big number, name (line-masked), promise, details. */
+const PanelText = ({ s, i }: { s: Service; i: number }) => (
+  <>
+    <p data-num-in className="flex items-baseline gap-2 font-display">
+      <span className="text-h1-page font-extrabold leading-none text-foreground">{String(i + 1).padStart(2, "0")}</span>
+      <span className="text-lead font-bold text-muted-foreground">/ {String(SERVICES.length).padStart(2, "0")}</span>
+    </p>
+    <h3 className="mt-2 overflow-hidden font-display text-h2-page font-bold leading-tight text-foreground">
+      <span data-name-in className="block">{s.name}</span>
+    </h3>
+    <p data-body-in className="mt-2 font-display text-lead font-semibold text-primary-ink">{s.promise}</p>
+    <div data-body-in className="mt-3">
+      <Details s={s} compact />
+    </div>
+  </>
+);
+
+/** Desktop: the stage stays in view (sticky) while four snap points swap the service. */
+const Pinned = () => {
+  const [active, setActive] = useState(0);
+  const track = useRef<HTMLDivElement>(null);
+  const frames = useRef<(HTMLElement | null)[]>([]);
+  const panels = useRef<(HTMLElement | null)[]>([]);
+  const tints = useRef<(HTMLElement | null)[]>([]);
+  const fill = useRef<HTMLSpanElement>(null);
+  const n = SERVICES.length;
+
+  useServiceTransitions(active, frames, panels, tints);
+
+  useLayoutEffect(() => {
+    const el = track.current;
+    if (!el) return;
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: el,
+        start: () => `top top+=${document.querySelector("header")?.getBoundingClientRect().bottom ?? 0}`,
+        end: "bottom bottom",
+        invalidateOnRefresh: true,
+        snap: { snapTo: 1 / (n - 1), duration: { min: 0.25, max: 0.6 }, delay: 0.08, ease: "power2.inOut" },
+        onUpdate: (self) => {
+          const idx = Math.min(n - 1, Math.round(self.progress * (n - 1)));
+          setActive((a) => (a === idx ? a : idx));
+          if (fill.current) fill.current.style.transform = `translateX(${self.progress * (n - 1) * 100}%)`;
+        },
       });
-      const el = items.current[cur];
-      const r = el ? el.getBoundingClientRect() : null;
-      const p = r ? Math.min(1, Math.max(0, (line - r.top) / r.height)) : 0;
-      setActive((a) => (a === cur ? a : cur));
-      fills.current.forEach((f, i) => {
-        if (f) f.style.transform = `scaleY(${i === cur ? (reduce ? 1 : p) : 0})`;
-      });
-    };
-    const onScroll = () => {
-      if (!raf) raf = requestAnimationFrame(update);
-    };
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-      if (raf) cancelAnimationFrame(raf);
-    };
-  }, [reduce]);
+    }, el);
+    return () => ctx.revert();
+  }, [n]);
 
   return (
-    <div className="grid grid-cols-12 items-start gap-x-12">
-      <div className="sticky top-[calc(var(--header-h)+2rem)] col-span-5 self-start">
-        <ul className="space-y-3">
-          {SERVICES.map((s, i) => {
-            const on = i === active;
-            return (
-              <li key={s.id} className="relative pl-6">
-                <span aria-hidden="true" className={`absolute bottom-0 left-0 top-0 w-0.5 ${on ? "bg-primary/25" : "bg-border"}`} />
-                <span
-                  aria-hidden="true"
-                  ref={(el) => (fills.current[i] = el)}
-                  className="absolute bottom-0 left-0 top-0 w-0.5 origin-top bg-primary-ink"
-                  style={{ transform: "scaleY(0)" }}
-                />
-                <h3 className="font-display text-h3 font-bold">
+    <div
+      ref={track}
+      className="relative"
+      style={{ ["--stage-h" as string]: "min(46rem, calc(100svh - var(--header-h) - 1rem))", height: `calc(var(--stage-h) + ${(n - 1) * STEP}svh)` }}
+    >
+      {/* anchors: the jump bar and the rail links land on the matching snap point */}
+      {SERVICES.map((s, i) => (
+        <span
+          key={s.id}
+          id={s.id}
+          data-logi={`${s.name}: ${s.promise}`}
+          aria-hidden="true"
+          className="pointer-events-none absolute left-0 w-px scroll-mt-[var(--header-h)]"
+          style={{ top: `${i * STEP}svh`, height: "var(--stage-h)" }}
+        />
+      ))}
+      <div className="sticky top-[var(--header-h)] grid grid-cols-12 items-center gap-x-12" style={{ height: "var(--stage-h)" }}>
+        <div className="col-span-5 flex flex-col justify-center">
+          <nav aria-label="Services" className="relative mb-5 w-fit">
+            <span aria-hidden="true" className="absolute inset-x-0 bottom-0 h-0.5 bg-border" />
+            <span aria-hidden="true" className="absolute bottom-0 left-0 h-0.5" style={{ width: `${100 / n}%` }}>
+              <span ref={fill} className="absolute inset-0 block bg-primary-ink will-change-transform" />
+            </span>
+            <ul className="flex">
+              {SERVICES.map((s, i) => (
+                <li key={s.id}>
                   <a
                     href={`#${s.id}`}
-                    aria-current={on ? "true" : undefined}
-                    className={`block min-h-[2.75rem] py-2 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[hsl(var(--focus-ring))] ${
-                      on ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-                    }`}
+                    aria-label={s.name}
+                    title={s.name}
+                    aria-current={i === active ? "true" : undefined}
+                    className={`flex min-h-[2.75rem] min-w-[3.5rem] items-center justify-center px-3 font-display text-body font-bold transition-colors ${FOCUS} ${i === active ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
                   >
-                    {s.name}
+                    {String(i + 1).padStart(2, "0")}
                   </a>
-                </h3>
-                <div className={`grid transition-[grid-template-rows,opacity] duration-300 motion-reduce:transition-none ${on ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
-                  <div className="overflow-hidden" {...(on ? {} : ({ inert: "" } as object))}>
-                    <p className="font-display text-lead font-semibold text-primary-ink">{s.promise}</p>
-                    <div className="mt-2 pb-2">
-                      <Details s={s} />
-                    </div>
-                  </div>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-      <div className="col-span-7">
-        {SERVICES.map((s, i) => (
-          <div
-            key={s.id}
-            id={s.id}
-            ref={(el) => (items.current[i] = el)}
-            data-logi={`${s.name}: ${s.promise}`}
-            className={`scroll-mt-4 ${i < SERVICES.length - 1 ? "pb-[18svh] min-h-[70svh]" : ""}`}
-          >
-            <ServiceDemo id={s.id} />
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="grid">
+            {SERVICES.map((s, i) => (
+              <div
+                key={s.id}
+                ref={(el) => (panels.current[i] = el)}
+                className="col-start-1 row-start-1"
+                {...(i !== active ? ({ inert: "" } as object) : {})}
+              >
+                <PanelText s={s} i={i} />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+        <div className="relative col-span-7 self-center">
+          {TINTS.map((c, i) => (
+            <div key={c} ref={(el) => (tints.current[i] = el)} aria-hidden="true" className="absolute -inset-5 rounded-[2rem] border border-slate-200/70" style={{ background: c }} />
+          ))}
+          <div className="relative grid">
+            {SERVICES.map((s, i) => (
+              <div key={s.id} ref={(el) => (frames.current[i] = el)} className="col-start-1 row-start-1">
+                <ServiceDemo id={s.id} active={i === active} />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-/** Tablet and phone: one card per service, demo first, no pinning. */
+/** Tablet and phone: a swipeable tab switcher above one demo frame; same transitions, shorter. */
+const Tabs = () => {
+  const [active, setActive] = useState(0);
+  const frames = useRef<(HTMLElement | null)[]>([]);
+  const panels = useRef<(HTMLElement | null)[]>([]);
+  const tints = useRef<(HTMLElement | null)[]>([]);
+  const tabs = useRef<(HTMLButtonElement | null)[]>([]);
+  const touch = useRef<number | null>(null);
+  const n = SERVICES.length;
+  useServiceTransitions(active, frames, panels, tints, 0.55);
+
+  const go = (i: number, focus = false) => {
+    const j = (i + n) % n;
+    setActive(j);
+    if (focus) tabs.current[j]?.focus();
+  };
+
+  // a #service link (hero jump bar, footer, shared URL) selects that tab
+  useEffect(() => {
+    const idx = (href: string | null) => SERVICES.findIndex((s) => `#${s.id}` === href);
+    const read = () => {
+      const i = idx(window.location.hash);
+      if (i >= 0) setActive(i);
+    };
+    read();
+    const onClick = (e: MouseEvent) => {
+      const a = (e.target as HTMLElement).closest?.("a[href^='#']");
+      const i = a ? idx(a.getAttribute("href")) : -1;
+      if (i >= 0) setActive(i);
+    };
+    window.addEventListener("hashchange", read);
+    document.addEventListener("click", onClick);
+    return () => {
+      window.removeEventListener("hashchange", read);
+      document.removeEventListener("click", onClick);
+    };
+  }, []);
+
+  useEffect(() => {
+    const b = tabs.current[active];
+    const row = b?.parentElement;
+    if (b && row) row.scrollTo({ left: b.offsetLeft - (row.clientWidth - b.offsetWidth) / 2, behavior: "smooth" });
+  }, [active]);
+
+  const cur = SERVICES[active];
+  return (
+    <div id={cur.id} data-logi={`${cur.name}: ${cur.promise}`} className="scroll-mt-[calc(var(--header-h)+1rem)]">
+      <div
+        role="tablist"
+        aria-label="Our services"
+        className="-mx-gutter flex gap-2 overflow-x-auto px-gutter pb-3 md:mx-0 md:grid md:grid-cols-4 md:px-0"
+        onKeyDown={(e) => {
+          if (e.key === "ArrowRight") { e.preventDefault(); go(active + 1, true); }
+          if (e.key === "ArrowLeft") { e.preventDefault(); go(active - 1, true); }
+        }}
+      >
+        {SERVICES.map((s, i) => (
+          <button
+            key={s.id}
+            ref={(el) => (tabs.current[i] = el)}
+            role="tab"
+            id={`tab-${s.id}`}
+            type="button"
+            aria-selected={i === active}
+            aria-controls="service-stage"
+            tabIndex={i === active ? 0 : -1}
+            onClick={() => go(i)}
+            className={`min-h-[2.75rem] shrink-0 whitespace-nowrap rounded-full border px-4 font-display text-body-sm font-bold transition-colors md:whitespace-normal ${FOCUS} ${
+              i === active ? "border-foreground bg-foreground text-background" : "border-border bg-card text-foreground hover:border-foreground/40"
+            }`}
+          >
+            {s.name}
+          </button>
+        ))}
+      </div>
+      <div
+        id="service-stage"
+        role="tabpanel"
+        aria-labelledby={`tab-${cur.id}`}
+        className="touch-pan-y"
+        onTouchStart={(e) => { touch.current = e.touches[0].clientX; }}
+        onTouchEnd={(e) => {
+          if (touch.current === null) return;
+          const dx = e.changedTouches[0].clientX - touch.current;
+          touch.current = null;
+          if (Math.abs(dx) > 50) go(active + (dx < 0 ? 1 : -1));
+        }}
+      >
+        <div className="relative rounded-3xl p-3 md:p-5">
+          {TINTS.map((c, i) => (
+            <div key={c} ref={(el) => (tints.current[i] = el)} aria-hidden="true" className="absolute inset-0 rounded-3xl border border-slate-200/70" style={{ background: c }} />
+          ))}
+          <div className="relative grid">
+            {SERVICES.map((s, i) => (
+              <div key={s.id} ref={(el) => (frames.current[i] = el)} className="col-start-1 row-start-1">
+                <ServiceDemo id={s.id} active={i === active} />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mt-6 grid max-w-[40rem]">
+          {SERVICES.map((s, i) => (
+            <div key={s.id} ref={(el) => (panels.current[i] = el)} className="col-start-1 row-start-1" {...(i !== active ? ({ inert: "" } as object) : {})}>
+              <h3 className="overflow-hidden font-display text-h3 font-bold text-foreground">
+                <span data-name-in className="block">{s.name}</span>
+              </h3>
+              <p data-body-in className="mt-1 font-display text-lead font-semibold text-primary-ink">{s.promise}</p>
+              <div data-body-in className="mt-3">
+                <Details s={s} fold />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/** Reduced motion: stacked static blocks, each demo parked on its final state. */
 const Stacked = () => {
   const wide = useMinWidth("(min-width: 40em)");
   return (
-  <ul className="grid gap-12 md:gap-16">
-    {SERVICES.map((s) => (
-      <li key={s.id} id={s.id} data-logi={`${s.name}: ${s.promise}`} className="scroll-mt-4">
-        <ServiceDemo id={s.id} />
-        <h3 className="mt-6 font-display text-h3 font-bold text-foreground">{s.name}</h3>
-        <p className="mt-1 font-display text-lead font-semibold text-primary-ink">{s.promise}</p>
-        <div className="mt-3 max-w-[40rem]">
-          <Details s={s} fold={!wide} />
-        </div>
-      </li>
-    ))}
-  </ul>
+    <ul className="grid gap-12 md:gap-16">
+      {SERVICES.map((s) => (
+        <li key={s.id} id={s.id} data-logi={`${s.name}: ${s.promise}`} className="scroll-mt-4">
+          <ServiceDemo id={s.id} />
+          <h3 className="mt-6 font-display text-h3 font-bold text-foreground">{s.name}</h3>
+          <p className="mt-1 font-display text-lead font-semibold text-primary-ink">{s.promise}</p>
+          <div className="mt-3 max-w-[40rem]">
+            <Details s={s} fold={!wide} />
+          </div>
+        </li>
+      ))}
+    </ul>
   );
 };
 
 const ServiceExplorer = () => {
-  const desktop = useMinWidth("(min-width: 64em)");
+  const reduce = useReducedMotion();
+  const desktop = useMinWidth("(min-width: 64em) and (min-height: 40rem)");
   return (
     <section aria-labelledby="services-h" id="services" className="bg-background py-section">
       <div className="container mx-auto max-w-[75rem] px-gutter">
         <h2 id="services-h" className="sr-only">
           Our services
         </h2>
-        {desktop ? <Pinned /> : <Stacked />}
+        {reduce ? <Stacked /> : desktop ? <Pinned /> : <Tabs />}
       </div>
     </section>
   );
