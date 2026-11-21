@@ -284,7 +284,7 @@ const Index = () => {
       {/* ── Section: What We Do ── */}
       <section data-logi="Four ways we take work off your plate." className="py-section relative overflow-hidden bg-background">
         <div className="w-full max-w-[87.5rem] mx-auto px-6 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-5">
+          <div className="text-center max-w-3xl mx-auto mb-section-head space-y-5">
             <Eyebrow>What we do</Eyebrow>
             <h2 className="font-display text-h2 font-bold text-center">
               Four ways we take work <span className="text-gradient">off your plate</span>
@@ -342,7 +342,7 @@ const Index = () => {
       <section data-logi="Ready-made, then made yours." className="py-section relative overflow-hidden bg-background">
         <div className="w-full max-w-[96.25rem] mx-auto px-6 relative z-10">
           {/* Centered Header Section */}
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-5">
+          <div className="text-center max-w-3xl mx-auto mb-section-head space-y-5">
             <Eyebrow>Ready solutions</Eyebrow>
             <h2 className="font-display text-h2 font-bold text-center">
               Ready-made solutions, <span className="text-gradient">made yours</span>
@@ -657,7 +657,7 @@ const Index = () => {
         <div className="w-full max-w-[87.5rem] mx-auto px-6 relative z-10">
           
           {/* Centered Header Section */}
-          <div className="text-center max-w-3xl mx-auto mb-12 space-y-5">
+          <div className="text-center max-w-3xl mx-auto mb-section-head space-y-5">
             <Eyebrow>Our work</Eyebrow>
             <h2 className="font-display text-h2 font-bold text-center">
               25+ businesses already <span className="text-gradient">run on Logisaar</span>

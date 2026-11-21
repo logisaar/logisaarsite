@@ -35,19 +35,52 @@ interface NavMenuProps {
 const NavMenu = ({ label, links, active, linkClass, pathname }: NavMenuProps) => {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const closeTimer = useRef<number>();
+
+  const openNow = () => { window.clearTimeout(closeTimer.current); setOpen(true); };
+  const closeSoon = () => { window.clearTimeout(closeTimer.current); closeTimer.current = window.setTimeout(() => setOpen(false), 150); };
+  const items = () => Array.from(ref.current?.querySelectorAll<HTMLElement>("[role=menuitem]") ?? []);
 
   useEffect(() => {
     const outside = (e: MouseEvent) => { if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false); };
-    const esc = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
     document.addEventListener("mousedown", outside);
-    document.addEventListener("keydown", esc);
-    return () => { document.removeEventListener("mousedown", outside); document.removeEventListener("keydown", esc); };
+    return () => { document.removeEventListener("mousedown", outside); window.clearTimeout(closeTimer.current); };
   }, []);
   useEffect(() => { setOpen(false); }, [pathname]);
 
+  // Focus the first item after the panel mounts when opened from the keyboard
+  const focusFirst = useRef(false);
+  useEffect(() => { if (open && focusFirst.current) { focusFirst.current = false; requestAnimationFrame(() => items()[0]?.focus()); } }, [open]);
+
+  const onTriggerKey = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {
+      e.preventDefault();
+      if (open) items()[0]?.focus(); else { focusFirst.current = true; openNow(); }
+    }
+  };
+  const onMenuKey = (e: React.KeyboardEvent) => {
+    const list = items();
+    const i = list.indexOf(document.activeElement as HTMLElement);
+    if (e.key === "ArrowDown") { e.preventDefault(); list[(i + 1) % list.length]?.focus(); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); list[(i - 1 + list.length) % list.length]?.focus(); }
+    else if (e.key === "Home") { e.preventDefault(); list[0]?.focus(); }
+    else if (e.key === "End") { e.preventDefault(); list[list.length - 1]?.focus(); }
+    else if (e.key === "Escape") { e.preventDefault(); setOpen(false); triggerRef.current?.focus(); }
+    else if (e.key === "Tab") setOpen(false);
+  };
+
   return (
-    <div ref={ref} className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-      <button className={`flex items-center gap-1 ${linkClass}`} onClick={() => setOpen((v) => !v)} aria-expanded={open} aria-haspopup="true">
+    <div ref={ref} className="relative" onMouseEnter={openNow} onMouseLeave={closeSoon}>
+      <button
+        ref={triggerRef}
+        type="button"
+        className={`flex items-center gap-1 ${linkClass}`}
+        onClick={() => setOpen((v) => !v)}
+        onKeyDown={onTriggerKey}
+        aria-expanded={open}
+        aria-haspopup="menu"
+      >
         {label}
         <ChevronDown size={14} aria-hidden="true" className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
         {active && (
@@ -57,13 +90,16 @@ const NavMenu = ({ label, links, active, linkClass, pathname }: NavMenuProps) =>
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: 8, scale: 0.97 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 8, scale: 0.97 }}
+            role="menu"
+            aria-label={label}
+            onKeyDown={onMenuKey}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 8 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
-            className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 rounded-2xl liquid-glass bg-white/95 dark:bg-slate-900/95 border-white/30 dark:border-white/10 overflow-hidden z-50"
+            // Solid surface (no glass): headlines behind must never show through. The ::before bridges the hover gap.
+            className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-60 rounded-2xl border border-border bg-white shadow-xl overflow-visible z-overlay before:absolute before:-top-3 before:left-0 before:right-0 before:h-3 before:content-['']"
           >
-            <div className="h-0.5 w-full bg-gradient-to-r from-primary/60 via-primary to-primary/60" />
             <div className="p-2 flex flex-col gap-0.5">
               {links.map((sub) => {
                 const Icon = sub.icon;
@@ -72,16 +108,17 @@ const NavMenu = ({ label, links, active, linkClass, pathname }: NavMenuProps) =>
                   <Link
                     key={sub.to}
                     to={sub.to}
-                    className={`group flex min-h-[2.75rem] items-center gap-3 px-3 py-2 rounded-xl transition-all duration-150 hover:bg-primary/15 hover:text-primary-ink ${
-                      isActive ? "border-l-2 border-primary pl-2.5 text-primary-ink" : "text-slate-700 dark:text-slate-300 border-l-2 border-transparent pl-2.5"
+                    role="menuitem"
+                    className={`group flex min-h-[2.75rem] items-center gap-3 px-3 py-2 rounded-xl transition-colors duration-150 hover:bg-primary/10 hover:text-primary-ink focus-visible:bg-primary/10 ${
+                      isActive ? "border-l-2 border-primary pl-2.5 text-primary-ink" : "text-slate-700 border-l-2 border-transparent pl-2.5"
                     }`}
                   >
-                    <span className="flex items-center justify-center w-7 h-7 rounded-lg shrink-0 transition-colors bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 group-hover:bg-primary/15 group-hover:text-primary-ink">
+                    <span className="flex items-center justify-center w-7 h-7 rounded-lg shrink-0 transition-colors bg-slate-100 text-slate-500 group-hover:bg-primary/15 group-hover:text-primary-ink">
                       <Icon size={14} aria-hidden="true" />
                     </span>
                     <span className="flex flex-col leading-none">
                       <span className="text-body-sm font-semibold">{sub.label}</span>
-                      <span className="text-label text-muted-foreground mt-0.5">{sub.description}</span>
+                      <span className="text-label text-slate-500 mt-0.5">{sub.description}</span>
                     </span>
                   </Link>
                 );
@@ -130,7 +167,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 80, damping: 20 }}
-      className={`fixed left-0 right-0 flex justify-center ${mobileOpen ? "z-overlay" : "z-header"}`}
+      className={`fixed left-0 right-0 flex justify-center z-overlay`}
       style={{ top: "var(--topbar-h)" }}
     >
       <motion.div

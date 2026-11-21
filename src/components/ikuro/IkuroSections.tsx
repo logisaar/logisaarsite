@@ -12,7 +12,7 @@ const scrollToId = (id: string) => {
 
 /* 1. Hero */
 export const IkuroHero = () => (
-  <section data-logi-dock className="relative flex min-h-[85svh] items-center bg-background pb-section-sm pt-section-sm">
+  <section data-logi-dock className="relative flex min-h-[70svh] items-center bg-background pb-section-sm pt-section-sm">
     <div className="container mx-auto px-gutter max-w-[56rem] text-center">
       <picture style={{ display: "contents" }}>
         <source type="image/webp" srcSet="/brand/ikuro/ikuro-logo.webp" />
@@ -49,7 +49,7 @@ export const IkuroHero = () => (
 export const IkuroDecide = () => (
   <section className="bg-background py-section">
     <div className="container mx-auto px-gutter max-w-[75rem]">
-      <div className="mx-auto mb-12 max-w-3xl space-y-4 text-center">
+      <div className="mx-auto mb-section-head max-w-3xl space-y-4 text-center">
         <Eyebrow>What it helps you decide</Eyebrow>
         <h2 className="font-display text-h2 font-bold text-foreground">Six decisions IKURO helps with</h2>
       </div>

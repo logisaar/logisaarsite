@@ -34,7 +34,7 @@ const TechxeraPrograms = () => {
         <div className="container mx-auto px-gutter max-w-[81.25rem]">
 
           {/* Header block */}
-          <div className="text-center mb-12 max-w-3xl mx-auto space-y-4">
+          <div className="text-center mb-section-head max-w-3xl mx-auto space-y-4">
             <h2 className="font-display text-h2 font-bold">
               TechXera <span className="text-gradient">programmes</span>
             </h2>
@@ -45,7 +45,7 @@ const TechxeraPrograms = () => {
           </div>
 
           {/* Course Filter Navigation */}
-          <div className="mb-12 flex justify-center w-full">
+          <div className="mb-section-head flex justify-center w-full">
             <div className="overflow-x-auto no-scrollbar max-w-full px-4 py-1">
               <div className="inline-flex bg-secondary/50 backdrop-blur-md p-1 rounded-full border border-border/60 shadow-sm min-w-max">
                 {filters.map(filter => (

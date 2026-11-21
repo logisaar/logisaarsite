@@ -201,8 +201,9 @@ const Contact = () => {
       </section>
 
       {/* Three ways to reach us */}
-      <section aria-labelledby="ways-h" className="bg-background pb-section-sm">
-        <div className="container mx-auto max-w-[68rem] px-gutter">
+      <section aria-labelledby="form-h" className="bg-background pb-section">
+        <div className="container mx-auto flex max-w-[75rem] flex-col gap-section-head px-gutter">
+         <div aria-labelledby="ways-h" role="group">
           <h2 id="ways-h" className="sr-only">
             Three ways to reach us
           </h2>
@@ -244,12 +245,10 @@ const Contact = () => {
             </li>
           </ul>
           {/* TODO(owner): working hours line, for example "Mon to Sat, 10:00 to 18:00 IST" */}
-        </div>
-      </section>
+         </div>
 
-      {/* Form + what happens next */}
-      <section aria-labelledby="form-h" className="bg-secondary/40 py-section-sm">
-        <div className="container mx-auto grid max-w-[68rem] gap-10 px-gutter lg:grid-cols-[3fr_2fr]">
+        {/* Form + what happens next */}
+        <div className="grid gap-10 lg:grid-cols-[3fr_2fr]">
           <div>
             <h2 id="form-h" className="font-display text-h2-page font-bold text-foreground">
               Tell us about your project
@@ -350,53 +349,53 @@ const Contact = () => {
             </div>
           </aside>
         </div>
-      </section>
-
-      {/* Office */}
-      <section aria-labelledby="office-h" className="bg-background py-section-sm">
-        <div className="container mx-auto max-w-3xl px-gutter text-center">
-          <h2 id="office-h" className="font-display text-h2-page font-bold text-foreground">
-            Our office
-          </h2>
-          <p className="mt-5 flex items-start justify-center gap-2 text-body text-foreground">
-            <MapPin size={20} className="mt-1 shrink-0 text-primary-ink" aria-hidden="true" />
-            <span>Logisaar Technologies Private Limited, {CONTACT.officeAddress}</span>
-          </p>
-          <p className="mt-1 text-body-sm text-muted-foreground">CIN: {CONTACT.cin}</p>
-          {/* TODO(owner): confirm wording; don't mention USA/Canada offices until they exist */}
-          <p className="mt-4 text-body text-muted-foreground">We work with clients across India and abroad.</p>
-                    <Button asChild variant="outline" className="mt-6 min-h-[2.75rem] rounded-full">
-            <a href={CONTACT.mapsUrl} target="_blank" rel="noopener noreferrer">
-              Open in Google Maps<span className="sr-only"> (opens in a new tab)</span>
-            </a>
-          </Button>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section aria-labelledby="faq-h" className="bg-secondary/40 py-section-sm">
-        <div className="container mx-auto max-w-3xl px-gutter">
-          <h2 id="faq-h" className="text-center font-display text-h2-page font-bold text-foreground">
-            Questions before you write
-          </h2>
-          <Accordion type="single" collapsible className="mt-8 rounded-2xl border border-border bg-card px-6">
-            {FAQ.map((f, i) => (
-              <AccordionItem key={f.q} value={`q${i}`}>
-                <AccordionTrigger className="min-h-[2.75rem] text-left text-body font-medium">{f.q}</AccordionTrigger>
-                <AccordionContent className="text-body text-muted-foreground">{f.a}</AccordionContent>
+      {/* Office + FAQ */}
+      <section aria-labelledby="office-h" className="bg-secondary/40 py-section">
+        <div className="container mx-auto grid max-w-[75rem] gap-section-head px-gutter lg:grid-cols-2 lg:gap-16">
+          <div>
+            <h2 id="office-h" className="font-display text-h2-page font-bold text-foreground">
+              Our office
+            </h2>
+            <p className="mt-5 flex items-start gap-2 text-body text-foreground">
+              <MapPin size={20} className="mt-1 shrink-0 text-primary-ink" aria-hidden="true" />
+              <span>Logisaar Technologies Private Limited, {CONTACT.officeAddress}</span>
+            </p>
+            <p className="mt-1 text-body-sm text-muted-foreground">CIN: {CONTACT.cin}</p>
+            {/* TODO(owner): confirm wording; don't mention USA/Canada offices until they exist */}
+            <p className="mt-4 text-body text-muted-foreground">We work with clients across India and abroad.</p>
+            <Button asChild variant="outline" className="mt-6 min-h-[2.75rem] rounded-full">
+              <a href={CONTACT.mapsUrl} target="_blank" rel="noopener noreferrer">
+                Open in Google Maps<span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            </Button>
+          </div>
+
+          <div aria-labelledby="faq-h" role="group">
+            <h2 id="faq-h" className="font-display text-h2-page font-bold text-foreground">
+              Questions before you write
+            </h2>
+            <Accordion type="single" collapsible className="mt-6 rounded-2xl border border-border bg-card px-6">
+              {FAQ.map((f, i) => (
+                <AccordionItem key={f.q} value={`q${i}`}>
+                  <AccordionTrigger className="min-h-[2.75rem] text-left text-body font-medium">{f.q}</AccordionTrigger>
+                  <AccordionContent className="text-body text-muted-foreground">{f.a}</AccordionContent>
+                </AccordionItem>
+              ))}
+              <AccordionItem value="hiring" className="border-b-0">
+                <AccordionTrigger className="min-h-[2.75rem] text-left text-body font-medium">Are you hiring?</AccordionTrigger>
+                <AccordionContent className="text-body text-muted-foreground">
+                  Sometimes. See current roles on the{" "}
+                  <Link to="/careers" className="inline-flex min-h-[2.75rem] items-center gap-1 font-medium text-primary-ink underline underline-offset-4">
+                    Careers page <ArrowRight size={14} aria-hidden="true" />
+                  </Link>
+                  .
+                </AccordionContent>
               </AccordionItem>
-            ))}
-            <AccordionItem value="hiring" className="border-b-0">
-              <AccordionTrigger className="min-h-[2.75rem] text-left text-body font-medium">Are you hiring?</AccordionTrigger>
-              <AccordionContent className="text-body text-muted-foreground">
-                Sometimes. See current roles on the{" "}
-                <Link to="/careers" className="inline-flex min-h-[2.75rem] items-center gap-1 font-medium text-primary-ink underline underline-offset-4">
-                  Careers page <ArrowRight size={14} aria-hidden="true" />
-                </Link>
-                .
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+            </Accordion>
+          </div>
         </div>
       </section>
     </Layout>

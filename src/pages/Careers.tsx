@@ -112,7 +112,7 @@ const Careers = () => {
       />
 
       {/* Hero */}
-      <section data-logi="We're hiring! Freshers are welcome." className="relative overflow-hidden pt-section-sm pb-20 md:pb-24 bg-background">
+      <section data-logi="We're hiring! Freshers are welcome." className="relative overflow-hidden pt-section-sm pb-section-sm bg-background">
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.04]"
           style={{ backgroundImage: "radial-gradient(circle, hsl(var(--primary)) 1.5px, transparent 1.5px)", backgroundSize: "28px 28px" }}
@@ -151,7 +151,7 @@ const Careers = () => {
       {/* Open roles */}
       <section id="roles" data-logi="Two roles open. Pick the one that fits you." className="py-section bg-secondary/40 scroll-mt-28">
         <div className="container mx-auto px-gutter max-w-5xl">
-          <motion.div {...fade()} className="mb-12">
+          <motion.div {...fade()} className="mb-section-head">
             <p className="text-primary-ink font-mono text-xs uppercase tracking-widest font-bold mb-3">Open roles</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               Two roles, <span className="text-gradient">start soon</span>
@@ -197,7 +197,7 @@ const Careers = () => {
       {/* How it works */}
       <section data-logi="Training first, full pay from month two." className="py-section bg-background">
         <div className="container mx-auto px-gutter max-w-5xl">
-          <motion.div {...fade()} className="mb-12">
+          <motion.div {...fade()} className="mb-section-head">
             <p className="text-primary-ink font-mono text-xs uppercase tracking-widest font-bold mb-3">How it works</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               Learn first. <span className="text-gradient">Earn more.</span>

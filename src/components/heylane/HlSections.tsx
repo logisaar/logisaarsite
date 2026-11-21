@@ -56,7 +56,7 @@ export const HlHero = () => (
 export const HlTwoSides = () => (
   <section data-logi="HeyLane is made by Logisaar too." className="bg-[var(--hl-paper)] py-section">
     <div className="container mx-auto max-w-[75rem] px-gutter">
-      <SectionTitle className="mx-auto mb-12 max-w-3xl text-center">Two sides, one app</SectionTitle>
+      <SectionTitle className="mx-auto mb-section-head max-w-3xl text-center">Two sides, one app</SectionTitle>
       <div className="grid gap-6 md:grid-cols-2">
         {[
           { who: "For people", items: ["Discover places near you", "See what your contacts think first", "Chat with the place", "Collect points that turn into member passes"], href: HL_CUSTOMER_URL, cta: "Visit heylane.in", style: "hl-btn-emerald" },
@@ -89,7 +89,7 @@ const Photo = ({ stem, alt, className = "" }: { stem: string; alt: string; class
 export const HlPlaces = () => (
   <section className="bg-[var(--hl-night)] py-section text-white hl-night">
     <div className="container mx-auto max-w-[75rem] px-gutter">
-      <div className="mx-auto mb-12 max-w-3xl text-center">
+      <div className="mx-auto mb-section-head max-w-3xl text-center">
         <SectionTitle>Seven kinds of places. One app</SectionTitle>
         <p className="mt-4 text-lead text-white/85">Your morning coffee, your barber, a weekend stay and the late-night pharmacy run.</p>
       </div>
@@ -203,7 +203,7 @@ const PASSES = [
 export const HlPasses = () => (
   <section data-logi="Points turn into member passes." className="bg-[var(--hl-paper)] py-section">
     <div className="container mx-auto max-w-[75rem] px-gutter">
-      <div className="mx-auto mb-12 max-w-3xl text-center">
+      <div className="mx-auto mb-section-head max-w-3xl text-center">
         <SectionTitle>Collect places, not just points</SectionTitle>
         <p className="mt-4 text-lead text-[var(--hl-ink-2)]">Every place runs its own programme. Your points stay there, and you decide when they become a pass.</p>
       </div>
@@ -299,7 +299,7 @@ export const HlChat = () => (
 export const HlPlans = () => (
   <section className="bg-[var(--hl-paper)] py-section">
     <div className="container mx-auto max-w-[75rem] px-gutter">
-      <div className="mx-auto mb-12 max-w-3xl text-center">
+      <div className="mx-auto mb-section-head max-w-3xl text-center">
         <SectionTitle>Lane Pro works out to about ₹33 a day</SectionTitle>
         <p className="mt-4 text-lead text-[var(--hl-ink-2)]">Every plan runs your counter and puts you on Lane Maps. Pick the one that matches how many regulars you want to keep.</p>
         <p className="mt-3 text-label text-[var(--hl-ink-2)]">Plans are per business, per year, plus applicable taxes.</p>
@@ -349,7 +349,7 @@ export const HlPlans = () => (
 export const HlComingSoon = () => (
   <section className="bg-[#ecece6] py-section">
     <div className="container mx-auto max-w-[75rem] px-gutter">
-      <SectionTitle className="mx-auto mb-12 max-w-3xl text-center">Found your spot? Get there</SectionTitle>
+      <SectionTitle className="mx-auto mb-section-head max-w-3xl text-center">Found your spot? Get there</SectionTitle>
       <ul className="m-0 grid list-none gap-5 p-0 md:grid-cols-3">
         {HL_COMING_SOON.map((c) => (
           <li key={c.title} className="rounded-[var(--hl-radius-card)] border border-dashed border-[var(--hl-ink-3)] bg-transparent p-6">

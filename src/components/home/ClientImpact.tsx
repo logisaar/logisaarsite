@@ -80,7 +80,7 @@ const ClientImpact = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-20"
+          className="text-center mb-section-head"
         >
           <p className="text-emerald-600 font-medium text-xs uppercase tracking-[0.2em] mb-4">
             Impact

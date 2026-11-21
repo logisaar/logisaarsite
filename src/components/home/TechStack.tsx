@@ -39,7 +39,7 @@ const TechStack = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-16"
+          className="text-center mb-section-head"
         >
           <p className="text-primary-ink font-medium text-xs uppercase tracking-[0.2em] mb-4">Tech Stack</p>
           <h2 className="font-display text-4xl md:text-6xl font-bold">

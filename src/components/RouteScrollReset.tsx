@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 /**
  * Resets the browser scroll position to the very top on every route
@@ -15,6 +16,12 @@ const RouteScrollReset = () => {
     // the PageTransition fade-in begins, preventing the
     // "page loads from bottom" bug.
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    // Pinned sections measure once fonts and images are in; refresh so no spacer is left too long or short
+    const refresh = () => ScrollTrigger.refresh();
+    const t = window.setTimeout(refresh, 400);
+    document.fonts?.ready.then(refresh);
+    window.addEventListener("load", refresh, { once: true });
+    return () => { window.clearTimeout(t); window.removeEventListener("load", refresh); };
   }, [pathname]);
 
   useEffect(() => {

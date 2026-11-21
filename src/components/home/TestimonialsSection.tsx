@@ -159,7 +159,7 @@ const TestimonialsSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-12 space-y-4"
+          className="text-center max-w-3xl mx-auto mb-section-head space-y-4"
         >
           <Eyebrow>Testimonials</Eyebrow>
           <h2 className="font-display text-h2 font-bold text-foreground">What our clients say</h2>

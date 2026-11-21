@@ -12,7 +12,7 @@ const ProjectTimeline = ({ steps }: { steps: readonly { title: string; text: str
   const spring = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
 
   return (
-    <ol ref={ref} className="relative mx-auto mt-12 grid max-w-[75rem] gap-10 md:grid-cols-4 md:gap-6">
+    <ol ref={ref} className="relative mx-auto mt-section-head grid max-w-[75rem] gap-10 md:grid-cols-4 md:gap-6">
       <span aria-hidden="true" className="absolute bottom-2 left-[1.1875rem] top-2 w-0.5 bg-border md:bottom-auto md:left-[12.5%] md:right-[12.5%] md:top-[1.1875rem] md:h-0.5 md:w-auto" />
       <motion.span
         aria-hidden="true"

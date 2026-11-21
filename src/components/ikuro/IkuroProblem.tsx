@@ -33,7 +33,7 @@ const IkuroProblem = () => {
   return (
     <section data-logi="IKURO helps students decide." className="py-section bg-background">
       <div className="container mx-auto px-gutter max-w-[75rem]">
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-section-head space-y-4">
           <Eyebrow>The problem</Eyebrow>
           <h2 className="font-display text-h2 font-bold text-foreground">Students don't lack information. They lack clarity.</h2>
           <p className="text-lead text-muted-foreground">

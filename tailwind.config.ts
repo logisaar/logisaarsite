@@ -38,8 +38,9 @@ export default {
       },
       zIndex: { header: "50", logi: "60", overlay: "70", modal: "80", toast: "90" },
       spacing: {
-        section: "clamp(4rem, 3rem + 5vw, 8rem)",
-        "section-sm": "clamp(3rem, 2.4rem + 3vw, 5rem)",
+        section: "clamp(3rem, 2rem + 3.5vw, 5.5rem)",
+        "section-sm": "clamp(2.5rem, 2rem + 2vw, 4rem)",
+        "section-head": "clamp(2rem, 1.5rem + 1.5vw, 3rem)",
         gutter: "clamp(1rem, 0.6rem + 2vw, 2rem)",
       },
       fontFamily: {
