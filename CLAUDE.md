@@ -38,6 +38,7 @@ Read this first in every session (especially after `/clear`). Then read only the
 | 4 | `round-4-audit-ikuro-heylane-responsive` | done (responsive units, 27 home fixes, IKURO theme, /heylane) |
 | 5 | `round-5-header-contact` | done (header offset/z-index fix, Contact redesign) |
 | 6 | `round-6-about-solutions-portfolio` | done (/portfolio hidden, About and Solutions redesigned, shared `src/data/company.ts` and `solutions.ts`, claims in `CLAIMS.md`) |
+| 7 | `round-7-solutions-visual` | **next**: inner-page headline scale + Solutions visual redesign |
 
 Branch: `redesign/home-v2`.
 

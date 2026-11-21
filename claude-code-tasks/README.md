@@ -29,3 +29,11 @@ Folder: `round-6-about-solutions-portfolio/`
   2. Redesign About: one business-first story, fixed facts, a single project count.
   3. Redesign Solutions: four service anchors, ready-made solutions from one data file with filters, an honesty sweep.
   4. QA.
+
+## Round 7: Solutions visual redesign
+Folder: `round-7-solutions-visual/`
+- `ROUND7.md`:
+  1. Inner-page headline scale (`text-h1-page`).
+  2. Solutions page: two-line hero with a jump bar, a pinned service explorer with animated demos, a calmer solution grid, and a horizontal process timeline.
+  3. QA.
+- `evidence/`: screenshots of the current problems.
