@@ -1,11 +1,20 @@
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const WA_LINK =
   "https://wa.me/918596072510?text=Hi%20LogiSaar%2C%20I%20want%20to%20discuss%20a%20project";
 
 const WhatsAppButton = () => {
   const constraintsRef = useRef(null);
+  // On phones the button stays hidden until the visitor has scrolled past the first screen,
+  // so it never sits on top of the hero or the first section.
+  const [pastHero, setPastHero] = useState(() => typeof window !== "undefined" && window.scrollY > window.innerHeight * 0.8);
+  useEffect(() => {
+    const onScroll = () => setPastHero(window.scrollY > window.innerHeight * 0.8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <>
@@ -20,7 +29,7 @@ const WhatsAppButton = () => {
         dragConstraints={constraintsRef}
         dragElastic={0.1}
         dragMomentum={false}
-        className="fixed bottom-20 left-6 z-logi group cursor-grab active:cursor-grabbing select-none"
+        className={`fixed bottom-20 left-6 z-logi group cursor-grab active:cursor-grabbing select-none ${pastHero ? "" : "max-md:hidden"}`}
         title="Drag me! Chat on WhatsApp"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}

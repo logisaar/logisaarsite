@@ -1,23 +1,42 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { AnimatePresence, motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
-import { ArrowRight, Check, MessageCircle } from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { ArrowRight, BrainCircuit, Bot, Code2, Layers, MessageCircle, Workflow, Wrench, CalendarClock, type LucideIcon } from "lucide-react";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import Eyebrow from "@/components/Eyebrow";
 import ResponsiveImage from "@/components/ResponsiveImage";
-import ServiceVignette from "@/components/solutions/ServiceVignette";
+import ServiceExplorer from "@/components/solutions/ServiceExplorer";
+import ProjectTimeline from "@/components/solutions/ProjectTimeline";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { whatsappLink } from "@/lib/contact";
 import { SERVICES } from "@/data/company";
 import { INDUSTRIES, SOLUTIONS, priceLine, type Solution } from "@/data/solutions";
 
-const CARD = "flex h-full flex-col rounded-2xl border border-border bg-card p-6";
 const BTN = "h-auto min-h-[2.75rem] whitespace-normal rounded-full border-0 bg-primary px-6 font-semibold text-primary-on hover:bg-primary/90";
 const BTN_OUTLINE = "h-auto min-h-[2.75rem] whitespace-normal rounded-full border-2 border-primary/40 px-6 font-semibold";
-// The global scroll-padding-top already keeps anchors clear of the fixed header
-const ANCHOR = "";
+const FOCUS = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[hsl(var(--focus-ring))]";
+
+const SERVICE_ICON: Record<(typeof SERVICES)[number]["id"], LucideIcon> = {
+  "software-development": Code2,
+  "ai-agents": Bot,
+  "business-automation": Workflow,
+  "ai-software": BrainCircuit,
+};
+
+// Short chip labels; the full name stays in aria-label and title.
+const SHORT: Record<(typeof INDUSTRIES)[number], string> = {
+  All: "All",
+  Education: "Education",
+  Hospitality: "Hospitality",
+  Sales: "Sales",
+  "Customer service": "Service",
+  "Food & beverage": "Food",
+  Travel: "Travel",
+  "Agencies & freelancers": "Agencies",
+  "Any business": "Any business",
+};
 
 // Keep in step with About "How we work" and the Contact page "What happens next".
 const PROJECT_STEPS = [
@@ -29,13 +48,28 @@ const PROJECT_STEPS = [
 
 // TODO(owner): confirm the wording of these three ways of working.
 const WAYS = [
-  { title: "Ready-made, then customised", text: "Start from one of the systems above and we adapt it to how your business runs. Fastest to go live." },
-  { title: "Custom project", text: "Tell us what you need and we build it from scratch: software, an AI agent or an automation." },
+  {
+    title: "Ready-made, then customised",
+    text: "Start from one of the systems above and we adapt it to how your business runs. Fastest to go live.",
+    icon: Layers,
+    link: "ready-made" as const,
+    cta: "See ready-made solutions",
+  },
+  {
+    title: "Custom project",
+    text: "Tell us what you need and we build it from scratch: software, an AI agent or an automation.",
+    icon: Wrench,
+    link: "contact" as const,
+    cta: "Start a project",
+  },
   {
     title: "Monthly support",
     text: `AI agent solutions have a monthly fee after setup: ${SOLUTIONS.filter((s) => s.monthly)
       .map((s) => `${s.monthly}/month for the ${s.name}`)
       .join(", ")}.`,
+    icon: CalendarClock,
+    link: "agents" as const,
+    cta: "See AI agent solutions",
   },
 ];
 
@@ -50,7 +84,7 @@ const FAQ = [
 const SolutionCard = ({ sol }: { sol: Solution }) => {
   const price = priceLine(sol);
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-transform duration-200 hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
       <div className="bg-secondary/60 p-4">
         <div className="overflow-hidden rounded-xl border border-border bg-card">
           <div className="flex items-center gap-1.5 border-b border-border bg-secondary px-3 py-2" aria-hidden="true">
@@ -63,7 +97,7 @@ const SolutionCard = ({ sol }: { sol: Solution }) => {
               image={sol.img}
               alt={`${sol.name} screen`}
               sizes="(min-width: 64em) 30vw, (min-width: 40em) 45vw, 90vw"
-              className="h-full w-full object-cover object-top"
+              className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
             />
             <span className="absolute left-3 top-3 rounded-full bg-foreground px-3 py-1 text-label font-semibold text-background">{sol.industry}</span>
           </div>
@@ -72,22 +106,33 @@ const SolutionCard = ({ sol }: { sol: Solution }) => {
       <div className="flex flex-1 flex-col p-6">
         <h3 className="font-display text-h3 font-bold text-foreground">{sol.name}</h3>
         <p className="mt-2 text-body-sm text-muted-foreground">{sol.outcome}</p>
-        <p className="mt-4 font-semibold text-foreground">
-          {price.from}
-          {price.monthly && <span className="font-normal text-muted-foreground"> + {price.monthly}</span>}
-        </p>
-        <div className="mt-auto flex flex-col gap-3 pt-5">
-          <Button asChild className={`${BTN} flex-1`}>
-            <Link to={sol.path}>
-              View details<span className="sr-only"> for {sol.name}</span>
-            </Link>
-          </Button>
-          <Button asChild variant="outline" className={`${BTN_OUTLINE} flex-1 gap-2`}>
-            <a href={whatsappLink(sol.wa)} target="_blank" rel="noopener noreferrer">
-              <MessageCircle size={16} aria-hidden="true" />
-              Ask on WhatsApp<span className="sr-only"> about {sol.name} (opens in a new tab)</span>
+        {/* The whole card is this one link (stretched). The WhatsApp button sits above it. */}
+        <Link
+          to={sol.path}
+          className={`mt-3 inline-flex min-h-[2.75rem] items-center gap-1.5 self-start text-body-sm font-semibold text-primary-ink outline-none after:absolute after:inset-0 after:rounded-2xl focus-visible:after:outline focus-visible:after:outline-2 focus-visible:after:outline-offset-2 focus-visible:after:outline-[hsl(var(--focus-ring))]`}
+        >
+          View details<span className="sr-only"> for {sol.name}</span>
+          <ArrowRight size={16} aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />
+        </Link>
+        <div className="mt-auto flex items-center justify-between gap-3 border-t border-border pt-4">
+          <p className="font-semibold text-foreground">
+            {price.from}
+            {price.monthly && <span className="block text-body-sm font-normal text-muted-foreground">+ {price.monthly}</span>}
+          </p>
+          <span className="group/wa relative">
+            <a
+              href={whatsappLink(sol.wa)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Ask about ${sol.name} on WhatsApp (opens in a new tab)`}
+              className={`relative z-10 flex h-11 w-11 items-center justify-center rounded-full border-2 border-primary/40 text-primary-ink transition-colors hover:bg-primary/10 ${FOCUS}`}
+            >
+              <MessageCircle size={20} aria-hidden="true" />
             </a>
-          </Button>
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-full right-0 z-20 mb-2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-label text-background opacity-0 transition-opacity group-focus-within/wa:opacity-100 group-hover/wa:opacity-100">
+              Ask on WhatsApp
+            </span>
+          </span>
         </div>
       </div>
     </article>
@@ -97,12 +142,13 @@ const SolutionCard = ({ sol }: { sol: Solution }) => {
 const Solutions = () => {
   const reduce = useReducedMotion();
   const [industry, setIndustry] = useState<(typeof INDUSTRIES)[number]>("All");
-  const shown = industry === "All" ? SOLUTIONS : SOLUTIONS.filter((s) => s.industry === industry);
+  const [agentsOnly, setAgentsOnly] = useState(false);
+  const shown = agentsOnly ? SOLUTIONS.filter((s) => s.monthly) : industry === "All" ? SOLUTIONS : SOLUTIONS.filter((s) => s.industry === industry);
 
-  // The page's one scroll-drawn line (How a project works)
-  const stepsRef = useRef<HTMLOListElement>(null);
-  const { scrollYProgress } = useScroll({ target: stepsRef, offset: ["start 75%", "end 60%"] });
-  const line = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
+  const pick = (name: (typeof INDUSTRIES)[number]) => {
+    setAgentsOnly(false);
+    setIndustry(name);
+  };
 
   return (
     <Layout>
@@ -113,15 +159,11 @@ const Solutions = () => {
         canonical="https://www.logisaar.in/solutions"
       />
 
-      {/* 1. Hero */}
-      <section
-        data-logi-dock
-        className="relative overflow-hidden bg-background pb-section-sm"
-        style={{ paddingTop: "calc(var(--header-h) + clamp(1.5rem, 4vw, 3rem))" }}
-      >
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden bg-cover bg-center opacity-50 md:block" style={{ backgroundImage: "url('/hero-bg.svg')" }} />
-        <div aria-hidden="true" className="animated-grid pointer-events-none absolute inset-0 opacity-30" />
-        <div className="container relative z-10 mx-auto max-w-3xl px-gutter text-center">
+      {/* 1. Hero (tint) */}
+      <section data-logi-dock className="relative overflow-hidden bg-secondary/40 pb-section-sm" style={{ paddingTop: "clamp(1.5rem, 4vw, 3rem)" }}>
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden bg-cover bg-center opacity-30 md:block" style={{ backgroundImage: "url('/hero-bg.svg')" }} />
+        <div aria-hidden="true" className="animated-grid pointer-events-none absolute inset-0 opacity-20" />
+        <div className="container relative z-10 mx-auto max-w-[75rem] px-gutter text-center">
           <motion.div initial={reduce ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <Eyebrow>Solutions</Eyebrow>
           </motion.div>
@@ -129,16 +171,18 @@ const Solutions = () => {
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.6 }}
-            className="mx-auto mt-4 max-w-[22ch] text-balance font-display text-h1-page font-bold text-foreground"
+            className="mx-auto mt-4 max-w-[40ch] text-balance font-display text-h1-page font-bold text-foreground"
           >
-            Software, AI agents and automation, built around your business
+            <span className="hidden md:inline">Software, AI agents and automation</span>
+            <span className="md:hidden">Software, AI agents &amp; automation</span>
+            <span className="block text-primary-ink">built around your business</span>
           </motion.h1>
           <motion.p
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             data-logi-avoid
-            className="mx-auto mt-6 max-w-[60ch] text-balance text-lead text-muted-foreground"
+            className="mx-auto mt-5 max-w-[60ch] text-balance text-lead text-muted-foreground"
           >
             Start from one of our ready-made systems or have us build exactly what you need. Either way you get a clear plan and a fixed quote first.
           </motion.p>
@@ -146,7 +190,7 @@ const Solutions = () => {
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row"
+            className="mt-7 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <Button asChild className={BTN}>
               <Link to="/contact">Start a project</Link>
@@ -155,110 +199,90 @@ const Solutions = () => {
               <a href="#ready-made">See ready-made solutions</a>
             </Button>
           </motion.div>
+
+          {/* Service jump bar: four equal cards, one scrollable row on phones */}
+          <motion.nav
+            aria-label="Our four services"
+            initial={reduce ? false : { opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="-mx-gutter mt-10 overflow-x-auto px-gutter pb-2 md:mx-0 md:overflow-visible md:px-0 md:pb-0"
+          >
+            <ul className="flex gap-3 md:grid md:grid-cols-4 md:gap-4">
+              {SERVICES.map((s) => {
+                const Ic = SERVICE_ICON[s.id];
+                return (
+                  <li key={s.id} className="w-[15rem] shrink-0 md:w-auto">
+                    <a
+                      href={`#${s.id}`}
+                      className={`group flex h-full flex-col gap-1.5 rounded-2xl border border-border bg-card p-4 text-left transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-primary/60 motion-reduce:transition-none motion-reduce:hover:translate-y-0 ${FOCUS}`}
+                    >
+                      <Ic size={20} aria-hidden="true" className="text-primary-ink" />
+                      <span className="font-display text-body font-bold text-foreground">{s.name}</span>
+                      <span className="text-body-sm text-muted-foreground">{s.promise}</span>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </motion.nav>
         </div>
       </section>
 
-      {/* 2. Four services */}
-      {SERVICES.map((s, i) => (
-        <section
-          key={s.id}
-          id={s.id}
-          aria-labelledby={`${s.id}-h`}
-          data-logi={`${s.name}: ${s.promise}`}
-          className={`${ANCHOR} py-section ${i % 2 === 0 ? "bg-secondary/40" : "bg-background"}`}
-        >
-          <div className="container mx-auto grid max-w-6xl items-center gap-10 px-gutter lg:grid-cols-2 lg:gap-14">
-            <motion.div
-              className={i % 2 === 1 ? "lg:order-2" : ""}
-              initial={reduce ? false : { opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6 }}
-            >
-              <Eyebrow>{s.name}</Eyebrow>
-              <h2 id={`${s.id}-h`} className="mt-3 text-balance font-display text-h2 font-bold text-foreground">{s.promise}</h2>
-              <p className="mt-4 text-body text-muted-foreground">{s.desc}</p>
-              <div className="mt-6 grid gap-6 sm:grid-cols-2">
-                <div>
-                  <h3 className="font-display text-body font-bold text-foreground">Typical examples</h3>
-                  <ul className="mt-3 space-y-2">
-                    {s.examples.map((e) => (
-                      <li key={e} className="flex items-start gap-2 text-body-sm text-muted-foreground">
-                        <Check size={16} aria-hidden="true" className="mt-0.5 shrink-0 text-primary-ink" />
-                        {e}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-display text-body font-bold text-foreground">What you get</h3>
-                  <ul className="mt-3 space-y-2">
-                    {s.deliverables.map((e) => (
-                      <li key={e} className="flex items-start gap-2 text-body-sm text-muted-foreground">
-                        <Check size={16} aria-hidden="true" className="mt-0.5 shrink-0 text-primary-ink" />
-                        {e}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              {/* TODO(owner): confirm the examples and deliverables for each service. */}
-              <Button asChild className={`${BTN} mt-8`}>
-                <Link to="/contact">
-                  Discuss your project<span className="sr-only"> ({s.name})</span>
-                </Link>
-              </Button>
-            </motion.div>
-            <motion.div
-              initial={reduce ? false : { opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <ServiceVignette id={s.id} />
-            </motion.div>
-          </div>
-        </section>
-      ))}
+      {/* 2. Service explorer (white) */}
+      <ServiceExplorer />
 
-      {/* 3. Ready-made solutions */}
-      <section id="ready-made" aria-labelledby="ready-h" data-logi="Ready-made, then made yours." className={`${ANCHOR} bg-background py-section`}>
-        <div className="container mx-auto px-gutter">
+      {/* 3. Ready-made solutions (off-white) */}
+      <section id="ready-made" aria-labelledby="ready-h" data-logi="Ready-made, then made yours." className="bg-secondary/40 py-section">
+        <div className="container mx-auto max-w-[75rem] px-gutter">
           <div className="mx-auto max-w-2xl text-center">
             <Eyebrow>Ready-made solutions</Eyebrow>
-            <h2 id="ready-h" className="mt-3 text-balance font-display text-h2 font-bold text-foreground">Proven systems, customised to your business</h2>
-            <p className="mt-4 text-body text-muted-foreground">Prices are starting prices. After a free call you get a fixed quote in writing.</p>
+            <h2 id="ready-h" className="mt-3 text-balance font-display text-h2-page font-bold text-foreground">Proven systems, customised to your business</h2>
+            <p className="mt-3 text-body text-muted-foreground">Prices are starting prices. After a free call you get a fixed quote in writing.</p>
           </div>
 
-          <div role="group" aria-label="Filter by industry" className="mx-auto mt-8 flex max-w-4xl flex-wrap justify-center gap-2">
-            {INDUSTRIES.map((name) => {
-              const on = industry === name;
-              return (
-                <button
-                  key={name}
-                  type="button"
-                  aria-pressed={on}
-                  onClick={() => setIndustry(name)}
-                  className={`inline-flex min-h-[2.75rem] items-center rounded-full border px-4 text-body-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[hsl(var(--focus-ring))] ${
-                    on ? "border-primary bg-primary text-primary-on" : "border-border bg-card text-foreground hover:border-primary/50"
-                  }`}
-                >
-                  {name}
-                </button>
-              );
-            })}
+          <div
+            role="group"
+            aria-label="Filter by industry"
+            className="-mx-gutter mt-8 overflow-x-auto px-gutter [mask-image:linear-gradient(to_right,transparent,#000_1.25rem,#000_calc(100%-1.25rem),transparent)] lg:mx-0 lg:px-0 lg:[mask-image:none]"
+          >
+            <div className="mx-auto flex w-max gap-2 px-5 lg:px-0">
+              {INDUSTRIES.map((name) => {
+                const on = !agentsOnly && industry === name;
+                return (
+                  <button
+                    key={name}
+                    type="button"
+                    aria-pressed={on}
+                    aria-label={name}
+                    title={name}
+                    onClick={() => pick(name)}
+                    className={`inline-flex min-h-[2.75rem] shrink-0 items-center rounded-full border px-4 text-body-sm font-medium transition-colors ${FOCUS} ${
+                      on ? "border-primary bg-primary text-primary-on" : "border-border bg-card text-foreground hover:border-primary/50"
+                    }`}
+                  >
+                    {SHORT[name]}
+                  </button>
+                );
+              })}
+            </div>
           </div>
-          <p className="mt-4 text-center text-label text-muted-foreground" role="status" aria-live="polite">
+          <p className="mt-4 text-center text-body-sm text-muted-foreground" role="status" aria-live="polite">
             Showing {shown.length} {shown.length === 1 ? "solution" : "solutions"}
-            {industry !== "All" ? ` for ${industry.toLowerCase()}` : ""}
+            {agentsOnly ? " with a monthly fee" : industry !== "All" ? ` for ${industry.toLowerCase()}` : ""}
           </p>
 
-          <motion.ul layout={!reduce} className="mx-auto mt-8 grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Phones: one swipeable row (keeps the page short). From 40em: a grid of equal-height cards. */}
+          <motion.ul
+            layout={!reduce}
+            className="-mx-gutter mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-gutter pb-3 sm:mx-0 sm:grid sm:auto-rows-fr sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3"
+          >
             <AnimatePresence mode="popLayout" initial={false}>
               {shown.map((sol) => (
                 <motion.li
                   key={sol.id}
                   layout={!reduce}
+                  className="w-[84%] shrink-0 snap-center sm:w-auto"
                   initial={reduce ? false : { opacity: 0, scale: 0.97 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={reduce ? { opacity: 0, transition: { duration: 0 } } : { opacity: 0, scale: 0.97 }}
@@ -273,54 +297,64 @@ const Solutions = () => {
         </div>
       </section>
 
-      {/* 4. How a project works */}
-      <section data-logi="Four steps, no surprises." aria-labelledby="steps-h" className="bg-secondary/40 py-section">
-        <div className="container mx-auto max-w-3xl px-gutter">
-          <div className="text-center">
+      {/* 4. How a project works (white) */}
+      <section data-logi="Four steps, no surprises." aria-labelledby="steps-h" className="bg-background py-section">
+        <div className="container mx-auto max-w-[75rem] px-gutter">
+          <div className="mx-auto max-w-2xl text-center">
             <Eyebrow>How a project works</Eyebrow>
-            <h2 id="steps-h" className="mt-3 font-display text-h2 font-bold text-foreground">From first call to launch</h2>
+            <h2 id="steps-h" className="mt-3 font-display text-h2-page font-bold text-foreground">From first call to launch</h2>
           </div>
-          <ol ref={stepsRef} className="relative mt-12 space-y-10 pl-14">
-            <span aria-hidden="true" className="absolute bottom-2 left-[1.1875rem] top-2 w-0.5 bg-border" />
-            <motion.span
-              aria-hidden="true"
-              className="absolute bottom-2 left-[1.1875rem] top-2 w-0.5 origin-top bg-primary"
-              style={{ scaleY: reduce ? 1 : line }}
-            />
-            {PROJECT_STEPS.map((st, i) => (
-              <li key={st.title} className="relative">
-                <span className="absolute -left-14 flex h-10 w-10 items-center justify-center rounded-full bg-primary font-display text-body font-bold text-primary-on">{i + 1}</span>
-                <h3 className="font-display text-h3 font-bold text-foreground">{st.title}</h3>
-                <p className="mt-1 text-body text-muted-foreground">{st.text}</p>
-              </li>
-            ))}
-          </ol>
+          <ProjectTimeline steps={PROJECT_STEPS} />
         </div>
       </section>
 
-      {/* 5. Ways to work with us */}
-      <section data-logi="Pick the way that suits you." aria-labelledby="ways-h" className="bg-background py-section">
-        <div className="container mx-auto px-gutter">
+      {/* 5. Ways to work with us (off-white) */}
+      <section data-logi="Pick the way that suits you." aria-labelledby="ways-h" className="bg-secondary/40 py-section">
+        <div className="container mx-auto max-w-[75rem] px-gutter">
           <div className="mx-auto max-w-2xl text-center">
             <Eyebrow>Ways to work with us</Eyebrow>
-            <h2 id="ways-h" className="mt-3 font-display text-h2 font-bold text-foreground">Three ways to start</h2>
+            <h2 id="ways-h" className="mt-3 font-display text-h2-page font-bold text-foreground">Three ways to start</h2>
           </div>
-          <ul className="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-3">
-            {WAYS.map((w) => (
-              <li key={w.title} className={CARD}>
-                <h3 className="font-display text-h3 font-bold text-foreground">{w.title}</h3>
-                <p className="mt-2 text-body-sm text-muted-foreground">{w.text}</p>
-              </li>
-            ))}
+          <ul className="mx-auto mt-10 grid auto-rows-fr gap-6 md:grid-cols-3">
+            {WAYS.map((w) => {
+              const Ic = w.icon;
+              const cls = `mt-auto inline-flex min-h-[2.75rem] items-center gap-1.5 pt-4 text-body-sm font-semibold text-primary-ink hover:underline ${FOCUS}`;
+              return (
+                <li key={w.title} className="flex h-full flex-col rounded-2xl border border-border bg-card p-5 sm:p-6">
+                  <Ic size={20} aria-hidden="true" className="text-primary-ink" />
+                  <h3 className="mt-3 font-display text-h3 font-bold text-foreground">{w.title}</h3>
+                  <p className="mt-2 text-body-sm text-muted-foreground">{w.text}</p>
+                  {w.link === "contact" ? (
+                    <Link to="/contact" className={cls}>
+                      {w.cta} <ArrowRight size={16} aria-hidden="true" />
+                    </Link>
+                  ) : (
+                    <a
+                      href="#ready-made"
+                      onClick={() => {
+                        setAgentsOnly(w.link === "agents");
+                        if (w.link !== "agents") setIndustry("All");
+                      }}
+                      className={cls}
+                    >
+                      {w.cta} <ArrowRight size={16} aria-hidden="true" />
+                    </a>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
       </section>
 
-      {/* 6. FAQ + contact CTA */}
-      <section aria-labelledby="faq-h" className="bg-secondary/40 py-section-sm">
-        <div className="container mx-auto max-w-3xl px-gutter">
-          <h2 id="faq-h" className="text-center font-display text-h2 font-bold text-foreground">Common questions</h2>
-          <Accordion type="single" collapsible className="mt-8 rounded-2xl border border-border bg-card px-6">
+      {/* 6. FAQ (white) */}
+      <section aria-labelledby="faq-h" className="bg-background py-section">
+        <div className="container mx-auto max-w-[75rem] px-gutter">
+          <div className="mx-auto max-w-2xl text-center">
+            <Eyebrow>Questions</Eyebrow>
+            <h2 id="faq-h" className="mt-3 font-display text-h2-page font-bold text-foreground">Common questions</h2>
+          </div>
+          <Accordion type="single" collapsible className="mx-auto mt-8 max-w-[48rem] rounded-2xl border border-border bg-card px-6">
             {FAQ.map((f, i) => (
               <AccordionItem key={f.q} value={`q${i}`}>
                 <AccordionTrigger className="min-h-[2.75rem] text-left text-body font-semibold">{f.q}</AccordionTrigger>
@@ -328,22 +362,25 @@ const Solutions = () => {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+      </section>
 
-          <div className="mt-14 text-center">
-            <h2 className="font-display text-h2 font-bold text-foreground">Tell us what slows your business down</h2>
-            <p className="mt-3 text-body text-muted-foreground">We reply with questions or a call slot, then send a clear plan and a fixed quote.</p>
-            <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button asChild className={BTN}>
-                <Link to="/contact">
-                  Start a project <ArrowRight size={16} aria-hidden="true" className="ml-2" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className={BTN_OUTLINE}>
-                <a href={whatsappLink("Hi Logisaar, I'd like to talk about a project.")} target="_blank" rel="noopener noreferrer">
-                  Chat on WhatsApp<span className="sr-only"> (opens in a new tab)</span>
-                </a>
-              </Button>
-            </div>
+      {/* 7. Final CTA band (dark slate) */}
+      <section aria-labelledby="cta-h" className="bg-slate-950 py-section">
+        <div className="container mx-auto max-w-[75rem] px-gutter text-center">
+          <h2 id="cta-h" className="mx-auto max-w-[24ch] text-balance font-display text-h2-page font-bold text-white">Tell us what slows your business down</h2>
+          <p className="mx-auto mt-3 max-w-[60ch] text-body text-white/80">We reply with questions or a call slot, then send a clear plan and a fixed quote.</p>
+          <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button asChild className={BTN}>
+              <Link to="/contact">
+                Start a project <ArrowRight size={16} aria-hidden="true" className="ml-2" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className={`${BTN_OUTLINE} border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white`}>
+              <a href={whatsappLink("Hi Logisaar, I'd like to talk about a project.")} target="_blank" rel="noopener noreferrer">
+                Chat on WhatsApp<span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            </Button>
           </div>
         </div>
       </section>

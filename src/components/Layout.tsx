@@ -11,7 +11,7 @@ const Layout = ({ children, heroUnderHeader = false }: { children: ReactNode; he
     <div className="min-h-[100svh] flex flex-col overflow-x-clip">
       <TopBar />
       <Navbar />
-      <main className="flex-1" style={heroUnderHeader ? undefined : { paddingTop: "var(--header-h)" }}>{children}</main>
+      <main className="flex-1 pb-[8.5rem] md:pb-0" style={heroUnderHeader ? undefined : { paddingTop: "var(--header-h)" }}>{children}</main>
       <Footer />
       <aside aria-label="Quick actions">
         <WhatsAppButton />
