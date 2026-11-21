@@ -4,7 +4,8 @@ import { ArrowRight, Bot, Monitor, Sparkles, Zap } from "lucide-react";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import Eyebrow from "@/components/Eyebrow";
-import TeamSection from "@/components/about/TeamSection";
+import FoundersStory from "@/components/about/FoundersStory";
+import ProjectTimeline from "@/components/solutions/ProjectTimeline";
 import JourneyTimeline from "@/components/about/JourneyTimeline";
 import { Button } from "@/components/ui/button";
 import { CONTACT } from "@/lib/contact";
@@ -80,8 +81,8 @@ const About = () => {
 
       {/* At a glance */}
       <section data-logi="Small team, real systems." aria-label="Logisaar at a glance" className="border-y border-border bg-secondary/40 py-section-sm">
-        <div className="container mx-auto px-gutter">
-          <dl className="mx-auto grid max-w-5xl grid-cols-2 gap-x-6 gap-y-8 text-center lg:grid-cols-4">
+        <div className="container mx-auto max-w-[75rem] px-gutter">
+          <dl className="mx-auto grid max-w-[75rem] grid-cols-2 gap-x-6 gap-y-8 text-center lg:grid-cols-4">
             {[
               { k: "Founded", v: FOUNDED },
               { k: "Registered in", v: "Cuttack, Odisha" },
@@ -94,7 +95,7 @@ const About = () => {
               </div>
             ))}
           </dl>
-          <p className="mt-8 text-center text-label text-muted-foreground">
+          <p className="mt-6 text-center text-label text-muted-foreground">
             Logisaar Technologies Pvt Ltd · CIN {CONTACT.cin}
           </p>
         </div>
@@ -122,14 +123,14 @@ const About = () => {
 
       {/* What we do */}
       <section data-logi="Four services, two products." aria-labelledby="do-h" className="bg-secondary/40 py-section">
-        <div className="container mx-auto px-gutter">
-          <div className="mx-auto max-w-2xl text-center">
+        <div className="container mx-auto max-w-[75rem] px-gutter">
+          <div className="mx-auto max-w-[48rem] text-center">
             <Eyebrow>What we do</Eyebrow>
             <h2 id="do-h" className="mt-3 font-display text-h2-page font-bold text-foreground">
               Four services, and two products of our own
             </h2>
           </div>
-          <ul className="mx-auto mt-10 grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="m-0 mt-section-head grid list-none auto-rows-fr gap-6 p-0 sm:grid-cols-2 lg:grid-cols-4">
             {SERVICES.map((s) => {
               const Icon = SERVICE_ICONS[s.id];
               return (
@@ -150,8 +151,8 @@ const About = () => {
           </ul>
 
           {/* TODO(owner): show the unnamed hyperlocal community app here or not. It is left out until it has a name. */}
-          <h3 className="mt-14 text-center font-display text-h3 font-bold text-foreground">Our products</h3>
-          <div className="mx-auto mt-6 grid max-w-4xl gap-6 md:grid-cols-2">
+          <h3 className="mt-section-head text-center font-display text-h3 font-bold text-foreground">Our products</h3>
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
             <Link
               to="/ikuro"
               className={`${CARD} group border-t-4 border-t-[#FA482E] transition-colors hover:border-border`}
@@ -181,29 +182,21 @@ const About = () => {
       </section>
 
       {/* Founders */}
-      <TeamSection />
+      <FoundersStory />
 
       {/* Journey */}
       <JourneyTimeline milestones={milestones} />
 
-      {/* How we work */}
+      {/* How we work: the same step timeline as /solutions */}
       <section data-logi="Four promises we work by." aria-labelledby="work-h" className="bg-background py-section">
-        <div className="container mx-auto px-gutter">
-          <div className="mx-auto max-w-2xl text-center">
+        <div className="container mx-auto max-w-[75rem] px-gutter">
+          <div className="mx-auto max-w-[48rem] text-center">
             <Eyebrow>How we work</Eyebrow>
             <h2 id="work-h" className="mt-3 font-display text-h2-page font-bold text-foreground">
               Clear from the first call to long after launch
             </h2>
           </div>
-          <ol className="mx-auto mt-10 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {HOW_WE_WORK.map((h, i) => (
-              <li key={h.title} className={CARD}>
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-label font-bold text-primary-on">{i + 1}</span>
-                <h3 className="mt-4 font-display text-h3 font-bold text-foreground">{h.title}</h3>
-                <p className="mt-2 text-body-sm text-muted-foreground">{h.desc}</p>
-              </li>
-            ))}
-          </ol>
+          <ProjectTimeline steps={HOW_WE_WORK.map((h) => ({ title: h.title, text: h.desc }))} />
         </div>
       </section>
 
