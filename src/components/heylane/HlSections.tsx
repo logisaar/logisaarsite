@@ -1,7 +1,7 @@
-import { useEffect, useState, type ReactNode } from "react";
-import { useReducedMotion } from "framer-motion";
-import { Check, Pause, Play, X } from "lucide-react";
-import HlPhone from "./HlPhone";
+import type { ReactNode } from "react";
+import { Check, X } from "lucide-react";
+import PhoneFrame from "./PhoneFrame";
+import PassCard from "./PassCard";
 import {
   HL_BUSINESS_URL, HL_CATEGORIES, HL_COMING_SOON, HL_CUSTOMER_URL, HL_PLANS, HL_PRICE_NOTE, HL_PRICING_URL,
   HL_ROLLOUT, HL_SALON_MEN, HL_UPGRADE_NOTE,
@@ -47,7 +47,15 @@ export const HlHero = () => (
         </div>
         <p className="text-body-sm text-white/80">A Logisaar product</p>
       </div>
-      <div className="hidden md:block"><HlPhone screen="place" /></div>
+      {/* real app screens, one phone in front of another (never a drawn placeholder) */}
+      <div className="relative mx-auto hidden h-[min(32rem,70vw)] w-full max-w-[26rem] md:block">
+        <div className="absolute left-0 top-[8%] w-[48%] -rotate-6">
+          <PhoneFrame screens={["08c-lane-maps-place-selected"]} className="w-full" alt="HeyLane Lane Maps with a place selected (sample screen)" />
+        </div>
+        <div className="absolute right-0 top-0 z-10 w-[54%] rotate-2">
+          <PhoneFrame screens={["07-home-with-booking"]} className="w-full" priority alt="HeyLane customer app Home with a booking (sample screen)" />
+        </div>
+      </div>
     </div>
   </section>
 );
@@ -86,6 +94,10 @@ const Photo = ({ stem, alt, className = "" }: { stem: string; alt: string; class
   </picture>
 );
 
+const PLACE_ICON: Record<string, string> = {
+  "Cafés": "cat-cafe", Restaurants: "cat-restaurant", Stays: "cat-stay", "Grocery & Kirana": "cat-grocery", Pharmacies: "cat-pharmacy", Clinics: "cat-clinic", Salons: "cat-salon",
+};
+
 export const HlPlaces = () => (
   <section className="bg-[var(--hl-night)] py-section text-white hl-night">
     <div className="container mx-auto max-w-[75rem] px-gutter">
@@ -93,10 +105,12 @@ export const HlPlaces = () => (
         <SectionTitle>Seven kinds of places. One app</SectionTitle>
         <p className="mt-4 text-lead text-white/85">Your morning coffee, your barber, a weekend stay and the late-night pharmacy run.</p>
       </div>
-      <ul className="m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(min(100%,16rem),1fr))] gap-5 p-0">
+      {/* 4 + 3: the last row is centred, so there is no orphan */}
+      <ul className="m-0 flex list-none flex-wrap justify-center gap-5 p-0">
         {HL_CATEGORIES.map((c) => (
-          <li key={c.name} className="hl-zoom overflow-hidden rounded-[var(--hl-radius-card)] bg-[var(--hl-night-2)]">
-            <div className="aspect-[3/2] overflow-hidden">
+          <li key={c.name} className="hl-zoom w-full overflow-hidden rounded-[var(--hl-radius-card)] bg-[var(--hl-night-2)] sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-3.75rem)/4)]">
+            <div className="relative aspect-[3/2] overflow-hidden">
+              <img src={`/images/heylane/app/icons/duotone-on-dark/${PLACE_ICON[c.name]}.svg`} alt="" width={28} height={28} className="absolute left-3 top-3 z-10 box-content h-7 w-7 rounded-full bg-[var(--hl-night)]/85 p-2" />
               {c.name === "Salons" ? (
                 <div className="grid h-full grid-cols-2 grid-rows-1 gap-0.5">
                   <div className="h-full min-h-0 overflow-hidden"><Photo stem={c.photo} alt={c.alt} /></div>
@@ -117,87 +131,35 @@ export const HlPlaces = () => (
   </section>
 );
 
-/* 5. Lane Vibes */
-const VIBE_TABS = [
-  { id: "circle", label: "Your circle", lead: "Ananya, Kunal and Priya have been here", rows: [["Ask for the window table. Quietest spot to work.", "Kunal · your contact"], ["The member pass paid for itself in a month.", "Priya · your contact"]] },
-  { id: "community", label: "Community", lead: "Reviews from everyone on HeyLane", rows: [["Friendly staff and a quick order.", "Community review"], ["Good place to sit with a laptop.", "Community review"]] },
-];
-
-export const HlVibes = () => {
-  const reduce = useReducedMotion();
-  const [tab, setTab] = useState(0);
-  const [paused, setPaused] = useState(false);
-
-  useEffect(() => {
-    if (reduce || paused) return;
-    const t = window.setInterval(() => setTab((v) => (v + 1) % VIBE_TABS.length), 4500);
-    return () => window.clearInterval(t);
-  }, [reduce, paused]);
-
-  const cur = VIBE_TABS[tab];
-  return (
-    <section className="bg-[var(--hl-paper)] py-section">
-      <div className="container mx-auto grid max-w-[75rem] items-center gap-12 px-gutter lg:grid-cols-2">
-        <div className="space-y-6">
-          <SectionTitle>Strangers give stars. Friends give reasons</SectionTitle>
-          <div className="hl-card p-6">
-            <p className="text-label font-medium text-[var(--hl-ink-3)]">Everywhere else</p>
-            <p className="mt-1 font-display text-h2 font-bold tabular-nums">4.3 ★</p>
-            <p className="mt-2 text-body-sm text-[var(--hl-ink-2)]">An average from thousands of people you’ll never meet, who may not like what you like.</p>
-          </div>
-          <div className="hl-card border-[var(--hl-emerald)] p-6">
-            <p className="text-label font-medium text-[var(--hl-emerald-deep)]">On Lane Vibes</p>
-            <p className="mt-2 text-body">Ananya, Kunal and Priya have been here</p>
-            <p className="mt-2 text-body-sm text-[var(--hl-ink-2)]">Nobody you know has been yet? Every community review is still there, and you can be the first in your circle.</p>
-          </div>
+/* 5. Lane Vibes: the real screen, drifting slowly while in view */
+export const HlVibes = () => (
+  <section className="bg-[var(--hl-paper)] py-section">
+    <div className="container mx-auto grid max-w-[75rem] items-center gap-12 px-gutter lg:grid-cols-2">
+      <div className="space-y-6">
+        <SectionTitle>Strangers give stars. Friends give reasons</SectionTitle>
+        <div className="hl-card p-6">
+          <p className="text-label font-medium text-[var(--hl-ink-3)]">Everywhere else</p>
+          <p className="mt-1 font-display text-h2 font-bold tabular-nums">4.3 ★</p>
+          <p className="mt-2 text-body-sm text-[var(--hl-ink-2)]">An average from thousands of people you’ll never meet, who may not like what you like.</p>
         </div>
-
-        <div className="mx-auto w-full max-w-md" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
-          <div className="hl-card relative p-5 shadow-[0_30px_60px_-30px_rgba(11,51,40,0.35)]">
-            <span className="hl-tag hl-tag-muted absolute right-4 top-4">Illustrative</span>
-            <div role="tablist" aria-label="Lane Vibes preview" className="flex gap-2 pr-24">
-              {VIBE_TABS.map((t, i) => (
-                <button
-                  key={t.id}
-                  role="tab"
-                  type="button"
-                  aria-selected={tab === i}
-                  onClick={() => setTab(i)}
-                  className={`min-h-[2.75rem] rounded-full px-4 text-body-sm font-medium transition-colors ${tab === i ? "bg-[var(--hl-emerald)] text-white" : "bg-[var(--hl-mint)] text-[var(--hl-emerald-deep)]"}`}
-                >
-                  {t.label}
-                </button>
-              ))}
-            </div>
-            <div role="tabpanel" className="mt-5 min-h-[13rem]" aria-live="polite">
-              <p className="font-display text-h3 font-semibold">{cur.lead}</p>
-              <ul className="m-0 mt-4 list-none space-y-3 p-0">
-                {cur.rows.map(([q, who]) => (
-                  <li key={q} className="rounded-xl bg-[var(--hl-paper)] p-3">
-                    <p className="text-body-sm">{q}</p>
-                    <p className="mt-1 text-label text-[var(--hl-ink-2)]">{who}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            {!reduce && (
-              <button type="button" onClick={() => setPaused((v) => !v)} className="mt-2 inline-flex min-h-[2.75rem] items-center gap-2 text-label font-medium text-[var(--hl-ink-2)]">
-                {paused ? <Play size={14} aria-hidden="true" /> : <Pause size={14} aria-hidden="true" />}
-                {paused ? "Play preview" : "Pause preview"}
-              </button>
-            )}
-          </div>
+        <div className="hl-card border-[var(--hl-emerald)] p-6">
+          <p className="text-label font-medium text-[var(--hl-emerald-deep)]">On Lane Vibes</p>
+          <p className="mt-2 text-body">Ananya, Kunal and Priya have been here</p>
+          <p className="mt-2 text-body-sm text-[var(--hl-ink-2)]">Nobody you know has been yet? Every community review is still there, and you can be the first in your circle.</p>
         </div>
       </div>
-    </section>
-  );
-};
+      <div className="flex justify-center">
+        <PhoneFrame screens={["10-lane-vibes"]} scrollFull className="w-[min(17rem,70vw)]" alt="HeyLane Lane Vibes: opinions from your own contacts first, then the community (sample screen)" />
+      </div>
+    </div>
+  </section>
+);
 
 /* 6. Points and member passes */
 const PASSES = [
-  { place: "Example Stay", kind: "Homestay · member pass", perk: "Late checkout for members", pts: "2,000 pts" },
-  { place: "Example Salon", kind: "Unisex salon · member pass", perk: "Priority booking every visit", pts: "500 pts" },
-  { place: "Example Café", kind: "Café · member pass", perk: "10% off eligible bills", pts: "1,000 pts" },
+  { place: "Example Café", kind: "CAFÉ PASS", icon: "cafe" as const, state: "active" as const, benefit: "10% off eligible bills", validity: "Valid 12 months" },
+  { place: "Example Stay", kind: "STAY PASS", icon: "stay" as const, state: "progress" as const, points: 1240, needed: 2000, benefit: "Late checkout for members" },
+  { place: "Example Salon", kind: "SALON PASS", icon: "salon" as const, state: "progress" as const, points: 380, needed: 500, benefit: "Priority booking every visit" },
 ];
 
 export const HlPasses = () => (
@@ -207,18 +169,22 @@ export const HlPasses = () => (
         <SectionTitle>Collect places, not just points</SectionTitle>
         <p className="mt-4 text-lead text-[var(--hl-ink-2)]">Every place runs its own programme. Your points stay there, and you decide when they become a pass.</p>
       </div>
-      <ul className="m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(min(100%,17rem),1fr))] gap-5 p-0">
-        {PASSES.map((p) => (
-          <li key={p.place} className="relative overflow-hidden rounded-[var(--hl-radius-card)] bg-[var(--hl-night)] p-6 text-white">
-            <span className="hl-tag hl-tag-muted absolute right-4 top-4">Sample</span>
-            <p className="font-display text-h3 font-semibold">{p.place}</p>
-            <p className="text-label text-white/80">{p.kind}</p>
-            <p className="mt-10 text-body font-medium">{p.perk}</p>
-            <p className="mt-1 text-label tabular-nums text-white/80">{p.pts}</p>
-          </li>
-        ))}
-      </ul>
-      <p className="mx-auto mt-6 max-w-2xl text-center text-label text-[var(--hl-ink-2)]">
+      <div className="grid items-center gap-12 lg:grid-cols-12">
+        <div className="flex justify-center lg:col-span-5">
+          <PhoneFrame screens={["14-passes", "15-pass-at-counter"]} className="w-[min(16rem,70vw)]" alt="HeyLane Passes tab: member passes stacked like a wallet (sample screen)" />
+        </div>
+        {/* a wallet stack: the cards overlap and every header stays visible, like the app */}
+        <div className="relative mx-auto w-full max-w-[26rem] lg:col-span-7 lg:max-w-[28rem]">
+          <span className="hl-tag hl-tag-muted absolute -top-3 right-0 z-20">Sample</span>
+          {[...PASSES].reverse().map((p, i) => (
+            <div key={p.place} className={`relative ${i ? "-mt-[44%]" : ""}`} style={{ zIndex: i, transform: `scale(${0.94 + i * 0.03})`, transformOrigin: "top center" }}>
+              <PassCard {...p} />
+            </div>
+          ))}
+          
+        </div>
+      </div>
+      <p className="mx-auto mt-10 max-w-2xl text-center text-label text-[var(--hl-ink-2)]">
         Sample programme: 1,000 points · 12 months · 10% off eligible bills · minimum bill ₹300. Each business sets its own.
       </p>
       <ul className="m-0 mt-10 grid list-none gap-5 p-0 md:grid-cols-3">
@@ -350,15 +316,20 @@ export const HlComingSoon = () => (
   <section className="bg-[#ecece6] py-section">
     <div className="container mx-auto max-w-[75rem] px-gutter">
       <SectionTitle className="mx-auto mb-section-head max-w-3xl text-center">Found your spot? Get there</SectionTitle>
-      <ul className="m-0 grid list-none gap-5 p-0 md:grid-cols-3">
-        {HL_COMING_SOON.map((c) => (
-          <li key={c.title} className="rounded-[var(--hl-radius-card)] border border-dashed border-[var(--hl-ink-3)] bg-transparent p-6">
-            <span className="hl-tag hl-tag-muted">Coming soon</span>
-            <h3 className="mt-3 text-h3 font-bold">{c.title}</h3>
-            <p className="mt-2 text-body-sm text-[var(--hl-ink-2)]">{c.text}</p>
-          </li>
-        ))}
-      </ul>
+      <div className="grid items-center gap-10 lg:grid-cols-12">
+        <div className="flex justify-center lg:col-span-4">
+          <PhoneFrame screens={["11-rides-coming-soon"]} className="w-[min(15rem,65vw)]" alt="HeyLane Rides, coming soon (sample screen)" />
+        </div>
+        <ul className="m-0 grid list-none auto-rows-fr gap-5 p-0 lg:col-span-8">
+          {HL_COMING_SOON.map((c) => (
+            <li key={c.title} className="rounded-[var(--hl-radius-card)] border border-dashed border-[var(--hl-ink-3)] bg-transparent p-6">
+              <span className="hl-tag hl-tag-muted">Coming soon</span>
+              <h3 className="mt-3 text-h3 font-bold">{c.title}</h3>
+              <p className="mt-2 text-body-sm text-[var(--hl-ink-2)]">{c.text}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </section>
 );

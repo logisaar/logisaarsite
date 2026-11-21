@@ -45,7 +45,7 @@ const PhoneFrame = ({ screens, active = 0, alt, scrollFull = false, className = 
       return;
     }
     const tl = gsap.timeline({ defaults: { duration: 0.5, ease: "power2.out" } });
-    tl.to(a, { autoAlpha: 0, y: -10 }, 0).fromTo(b, { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0 }, 0.05);
+    tl.fromTo(b, { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0 }, 0).to(a, { autoAlpha: 0, y: -10 }, 0.35);
     return () => { tl.progress(1).kill(); };
   }, [idx, reduce]);
 
@@ -73,7 +73,7 @@ const PhoneFrame = ({ screens, active = 0, alt, scrollFull = false, className = 
   const isRides = (s: HlAppScreen) => s === "11-rides-coming-soon";
 
   return (
-    <figure role="img" aria-label={alt} className={`relative m-0 ${className}`}>
+    <figure role="img" aria-label={alt} data-logi-avoid className={`relative m-0 ${className}`}>
       {/* bezel */}
       <div className="rounded-[3rem] bg-[#0d1714] p-[0.5rem] shadow-[0_30px_60px_-24px_rgba(11,51,40,0.55),0_8px_20px_-8px_rgba(11,51,40,0.35),inset_0_0_0_1px_rgba(255,255,255,0.12)]">
         <div ref={box} className="relative overflow-hidden rounded-[2.5rem] bg-[#f4f3ee]" style={{ aspectRatio: "390 / 845" }}>

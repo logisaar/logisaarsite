@@ -62,7 +62,7 @@ export const DemoShell = ({ w, h, url, label, crop, bare, className = "", childr
   }, [view.w]);
 
   return (
-    <figure role="img" aria-label={label} className={`m-0 w-full ${className}`}>
+    <figure role="img" aria-label={label} data-logi-avoid className={`m-0 w-full ${className}`}>
       <div
         ref={box}
         className="relative w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_1px_2px_rgba(15,23,42,0.06),0_12px_32px_-12px_rgba(15,23,42,0.18)]"
