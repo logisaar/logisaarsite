@@ -39,7 +39,7 @@ Read this first in every session (especially after `/clear`). Then read only the
 | 5 | `round-5-header-contact` | done (header offset/z-index fix, Contact redesign) |
 | 6 | `round-6-about-solutions-portfolio` | done (/portfolio hidden, About and Solutions redesigned, shared `src/data/company.ts` and `solutions.ts`, claims in `CLAIMS.md`) |
 | 7 | `round-7-solutions-visual` | done (`text-h1-page`/`text-h2-page`, Solutions explorer with live demos, calmer cards, timeline) |
-| 8 | `round-8-visual-polish` | **next**: spacing/alignment system, opaque Products dropdown, real-looking demos with GSAP service transitions, real HeyLane app screens, home bento + IKURO path animation, About founders story (no photos) |
+| 8 | `round-8-visual-polish` | **in progress**: phases 1 and 2 done (spacing tokens + `section-head`, solid keyboard Products menu, Contact/Careers restructure; demo kit in `src/components/demos/` wired into Solutions). **Resume at Phase 3** (pinned Solutions stage with GSAP transitions), then 4 Home, 5 HeyLane, 6 About, 7 QA. Phase 1 leftovers: alignment rules 1.4 and the blank-run QA check are finished per page in phases 4-7. `ServiceVignette.tsx` is now unused: ask the owner before deleting. |
 
 Branch: `redesign/home-v2`.
 
@@ -102,6 +102,7 @@ Branch: `redesign/home-v2`.
 - **Focus:** `:focus-visible` ring is always visible.
 - **Contrast:** WCAG 2.1 AA.
 - **Reduced motion:** no loops, nothing hidden, final state shown.
+- **Faux product UI (`src/components/demos/`):** rendered at native size and scaled with `transform`, `aria-hidden` with a described `figure`, so the 12px text rule does not apply inside it. Demos never paint empty: the first frame is populated, and reduced motion parks the final state.
 - **No AI slop:**
   - no glow blobs (`blur-[80px]`), rainbow or multi-colour gradients, emoji icons, or fake stats/stars;
   - one eyebrow style;
