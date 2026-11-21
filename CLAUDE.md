@@ -39,6 +39,7 @@ Read this first in every session (especially after `/clear`). Then read only the
 | 5 | `round-5-header-contact` | done (header offset/z-index fix, Contact redesign) |
 | 6 | `round-6-about-solutions-portfolio` | done (/portfolio hidden, About and Solutions redesigned, shared `src/data/company.ts` and `solutions.ts`, claims in `CLAIMS.md`) |
 | 7 | `round-7-solutions-visual` | done (`text-h1-page`/`text-h2-page`, Solutions explorer with live demos, calmer cards, timeline) |
+| 8 | `round-8-visual-polish` | **next**: spacing/alignment system, opaque Products dropdown, real-looking demos with GSAP service transitions, real HeyLane app screens, home bento + IKURO path animation, About founders story (no photos) |
 
 Branch: `redesign/home-v2`.
 

@@ -37,3 +37,16 @@ Folder: `round-7-solutions-visual/`
   2. Solutions page: two-line hero with a jump bar, a pinned service explorer with animated demos, a calmer solution grid, and a horizontal process timeline.
   3. QA.
 - `evidence/`: screenshots of the current problems.
+
+## Round 8: visual polish site-wide
+Folder: `round-8-visual-polish/`
+- `ROUND8.md`, seven phases:
+  1. Global spacing, pinned-section blank fix, opaque Products dropdown, one alignment system.
+  2. Real-looking demo kit.
+  3. Solutions GSAP service transitions.
+  4. Home redesign items (bento "What we do", IKURO decision-path SVG, real HeyLane phones).
+  5. HeyLane page with the real app screens.
+  6. About: founders story instead of photos.
+  7. QA.
+- `evidence/`: screenshots of each problem, including the owner's.
+- Assets: `public/images/heylane/app/` (real app screens, icons, pins from the HeyLane design handoff).
