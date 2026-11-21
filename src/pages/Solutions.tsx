@@ -160,7 +160,7 @@ const Solutions = () => {
       />
 
       {/* 1. Hero (tint) */}
-      <section data-logi-dock className="relative overflow-hidden bg-secondary/40 pb-section-sm" style={{ paddingTop: "clamp(1.5rem, 4vw, 3rem)" }}>
+      <section data-logi-dock className="relative overflow-hidden bg-secondary/40 py-section-sm">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden bg-cover bg-center opacity-30 md:block" style={{ backgroundImage: "url('/hero-bg.svg')" }} />
         <div aria-hidden="true" className="animated-grid pointer-events-none absolute inset-0 opacity-20" />
         <div className="container relative z-10 mx-auto max-w-[75rem] px-gutter text-center">

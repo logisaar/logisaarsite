@@ -38,7 +38,7 @@ Read this first in every session (especially after `/clear`). Then read only the
 | 4 | `round-4-audit-ikuro-heylane-responsive` | done (responsive units, 27 home fixes, IKURO theme, /heylane) |
 | 5 | `round-5-header-contact` | done (header offset/z-index fix, Contact redesign) |
 | 6 | `round-6-about-solutions-portfolio` | done (/portfolio hidden, About and Solutions redesigned, shared `src/data/company.ts` and `solutions.ts`, claims in `CLAIMS.md`) |
-| 7 | `round-7-solutions-visual` | **next**: inner-page headline scale + Solutions visual redesign |
+| 7 | `round-7-solutions-visual` | done (`text-h1-page`/`text-h2-page`, Solutions explorer with live demos, calmer cards, timeline) |
 
 Branch: `redesign/home-v2`.
 
@@ -109,6 +109,7 @@ Branch: `redesign/home-v2`.
 - **Skills available:**
   - `.claude/skills` (taste-skill `design-taste-frontend`, stageshow): use them for faux product UI and QA (`gate.mjs`, `consistency.mjs`, `copy-lint.mjs`).
   - VectorLab UX rules: blur validation, verb-first buttons, visible labels.
+- **Inner-page heroes use `text-h1-page`; only the home page uses `text-h1`.** Section titles on inner pages use `text-h2-page`.
 - **Hidden page:** `/portfolio` is hidden: indexable and in the sitemap, but never linked.
 - **QA before finishing a round:**
   - Playwright at 320/375/414/768/1024/1280/1440/1920 plus 200% root font: no page overflow, no text under 12px, no small targets.

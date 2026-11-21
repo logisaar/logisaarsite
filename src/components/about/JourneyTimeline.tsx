@@ -266,7 +266,7 @@ const MobileTimeline = ({ milestones }: { milestones: Milestone[] }) => (
       >
         Our journey
       </p>
-      <h2 className="font-display text-4xl font-bold" style={{ color: "white" }}>
+      <h2 className="font-display text-h2-page font-bold" style={{ color: "white" }}>
         How we got here
       </h2>
     </div>
