@@ -65,3 +65,23 @@ export const HL_ROLLOUT = [
   { when: "Within one year", where: "Across Odisha" },
   { when: "Next", where: "Other Indian states" },
 ];
+
+// ── Real HeyLane app screens (public/images/heylane/app/, from the V4 design handoff) ──
+// Screens marked "proposed" are V4 features that are not approved yet (handoff doc 10): chat list/thread and the pass at the counter.
+// TODO(owner): approve showing proposed V4 features (chat cards, status tags, live pass at the counter). Set to false to hide them everywhere.
+export const SHOW_PROPOSED_SCREENS = true;
+
+export type HlAppScreen =
+  | "01-opening-4-welcome" | "07-home-with-booking" | "07b-home-no-booking" | "08-lane-maps-explore"
+  | "08c-lane-maps-place-selected" | "08d-lane-maps-night" | "09-place-page" | "10-lane-vibes"
+  | "11-rides-coming-soon" | "12-chat-list" | "13-chat-thread" | "14-passes" | "15-pass-at-counter";
+
+export const HL_PROPOSED: HlAppScreen[] = ["12-chat-list", "13-chat-thread", "15-pass-at-counter"];
+export const hlScreenAllowed = (s: HlAppScreen) => SHOW_PROPOSED_SCREENS || !HL_PROPOSED.includes(s);
+
+const APP = "/images/heylane/app";
+export const hlScreen = (s: HlAppScreen) => ({
+  src: `${APP}/${s}-780.webp`,
+  srcSet: `${APP}/${s}-390.webp 390w, ${APP}/${s}-780.webp 780w`,
+  full: `${APP}/${s}-full-780.webp`,
+});

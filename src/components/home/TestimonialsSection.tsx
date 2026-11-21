@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
-import { ShieldCheck, Rocket, Users, Headphones, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Eyebrow from "@/components/Eyebrow";
@@ -138,13 +138,6 @@ const TestimonialCard = ({ item }: { item: TestimonialItem }) => (
   </Testimonial>
 );
 
-const HIGHLIGHTS = [
-  { icon: ShieldCheck, title: "Trusted by businesses", text: "Across industries and domains" },
-  { icon: Rocket, title: "Results that matter", text: "Solutions that drive growth and impact" },
-  { icon: Users, title: "A partnership approach", text: "We grow when you grow" },
-  { icon: Headphones, title: "Support that stays", text: "With you, before and after launch" },
-];
-
 // TODO(owner): confirm every quote above is real and approved for public use (no ratings are shown: we have no rating source).
 const TestimonialsSection = () => {
   const ref = useRef(null);
@@ -194,21 +187,7 @@ const TestimonialsSection = () => {
           </div>
         )}
 
-        <ul className="mt-12 grid grid-cols-[repeat(auto-fit,minmax(min(100%,15rem),1fr))] gap-6 rounded-3xl border border-border bg-card p-6 list-none m-0">
-          {HIGHLIGHTS.map(({ icon: Icon, title, text }) => (
-            <li key={title} className="flex items-center gap-4">
-              <span className="w-12 h-12 rounded-2xl bg-primary/10 text-primary-ink flex items-center justify-center shrink-0">
-                <Icon size={20} aria-hidden="true" />
-              </span>
-              <span>
-                <span className="block text-body-sm font-semibold text-foreground leading-tight">{title}</span>
-                <span className="block text-label text-muted-foreground mt-0.5">{text}</span>
-              </span>
-            </li>
-          ))}
-        </ul>
-
-        <div className="text-center mt-10">
+        <div className="text-center mt-section-head">
           <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-on rounded-full px-8 gap-2 font-semibold min-h-[2.75rem]">
             <Link to="/contact">
               <span>Talk to us</span>

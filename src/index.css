@@ -377,3 +377,22 @@
 [data-theme="ikuro"] .text-gradient { background: none; -webkit-background-clip: border-box; background-clip: border-box; -webkit-text-fill-color: currentColor; color: hsl(var(--ikuro-orange-ink)); }
 [data-theme="ikuro"] .shadow-glow,
 [data-theme="ikuro"] .shadow-glow-sm { box-shadow: none; }
+
+/* Home bento: cursor-follow spotlight on the border only (no glow blob) */
+.spot-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(14rem circle at var(--mx, 50%) var(--my, 50%), hsl(var(--primary)), transparent 70%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  opacity: 0;
+  transition: opacity 0.25s;
+  pointer-events: none;
+  z-index: 2;
+}
+.spot-card:hover::before { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .spot-card::before { transition: none; } }

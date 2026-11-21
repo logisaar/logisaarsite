@@ -11,16 +11,13 @@ const HeroSection = () => {
   const subheadRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   const taglineRef = useRef<HTMLDivElement>(null);
-  const productsCardRef = useRef<HTMLDivElement>(null);
-  const buildersCardRef = useRef<HTMLDivElement>(null);
-  const productsValRef = useRef<HTMLDivElement>(null);
-  const buildersValRef = useRef<HTMLDivElement>(null);
+  const statsRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (prefersReducedMotion) {
-      gsap.set([taglineRef.current, headlineRef.current, subheadRef.current, ctaRef.current, productsCardRef.current, buildersCardRef.current], {
+      gsap.set([taglineRef.current, headlineRef.current, subheadRef.current, ctaRef.current, statsRef.current], {
         opacity: 1,
         y: 0,
       });
@@ -66,25 +63,7 @@ const HeroSection = () => {
       );
 
 
-      // 5. Products card fade-up
-      if (productsCardRef.current) {
-        tl.fromTo(
-          productsCardRef.current,
-          { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.6 },
-          "-=0.4"
-        );
-      }
-
-      // 6. Builders card fade-up
-      if (buildersCardRef.current) {
-        tl.fromTo(
-          buildersCardRef.current,
-          { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.6 },
-          "-=0.5"
-        );
-      }
+      tl.fromTo(statsRef.current, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5 }, "-=0.3");
 
       // Ken Burns looping effect on background images
       gsap.to(".hero-bg-image", {
@@ -97,22 +76,6 @@ const HeroSection = () => {
         yoyo: true,
       });
 
-      // Staggered Number Count-Up Animation
-      const counters = { products: 0, builders: 0 };
-      tl.to(counters, {
-        products: 30,
-        builders: 25,
-        duration: 1.8,
-        ease: "power2.out",
-        onUpdate: () => {
-          if (productsValRef.current) {
-            productsValRef.current.innerText = Math.floor(counters.products) + "+";
-          }
-          if (buildersValRef.current) {
-            buildersValRef.current.innerText = Math.floor(counters.builders) + "+";
-          }
-        }
-      }, "-=0.3");
     }, containerRef);
 
     return () => ctx.revert();
@@ -196,7 +159,7 @@ const HeroSection = () => {
           </div>
 
           {/* Secondary text links */}
-          <div className="flex flex-wrap items-center justify-center gap-x-1 text-sm text-muted-foreground mb-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-1 text-sm text-muted-foreground mb-2">
             <span>Looking for</span>
             <Link
               to="/products"
@@ -215,51 +178,12 @@ const HeroSection = () => {
             </Link>
           </div>
 
+          {/* TODO(owner): confirm 30+ projects delivered and 25+ clients are true today. */}
+          <p ref={statsRef} className="font-display text-body-sm font-semibold text-foreground opacity-0">
+            30+ projects delivered · 25+ clients
+          </p>
 
-        </div>
-      </div>
 
-      {/* Floating 500+ Builders Card at bottom-right */}
-      <div
-        ref={buildersCardRef}
-        className="absolute bottom-12 right-8 z-20 max-w-[17.5rem] hidden lg:block opacity-0"
-      >
-        <div className="liquid-glass p-4 flex items-center gap-3.5 rounded-2xl">
-          <div
-            ref={buildersValRef}
-            className="h-12 min-w-[3rem] px-2.5 rounded-xl bg-gradient-primary flex items-center justify-center text-primary-on font-bold text-lg font-display shrink-0 select-none shadow-sm"
-            style={{ filter: "drop-shadow(0 0 3px rgba(255, 255, 255, 0.8))" }}
-          >
-            25+
-          </div>
-          <div className="text-left space-y-0.5">
-            <p className="font-bold text-foreground text-label font-display">Happy Clients</p>
-            <p className="text-label text-muted-foreground leading-relaxed">
-              Schools, hotels, clinics and growing businesses.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Floating 25+ Products Card at bottom-left */}
-      <div
-        ref={productsCardRef}
-        className="absolute bottom-12 left-8 z-20 max-w-[17.5rem] hidden lg:block opacity-0"
-      >
-        <div className="liquid-glass p-4 flex items-center gap-3.5 rounded-2xl">
-          <div
-            ref={productsValRef}
-            className="h-12 min-w-[3rem] px-2.5 rounded-xl bg-gradient-primary flex items-center justify-center text-primary-on font-bold text-lg font-display shrink-0 select-none shadow-sm"
-            style={{ filter: "drop-shadow(0 0 3px rgba(255, 255, 255, 0.8))" }}
-          >
-            30+
-          </div>
-          <div className="text-left space-y-0.5">
-            <p className="font-bold text-foreground text-label font-display">Projects Delivered</p>
-            <p className="text-label text-muted-foreground leading-relaxed">
-              Software, AI agents and automations live in production.
-            </p>
-          </div>
         </div>
       </div>
 

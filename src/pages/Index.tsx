@@ -1,19 +1,17 @@
 import { CONTACT } from "@/lib/contact";
 import { getImage } from "@/data/images";
 import { PROJECTS_DELIVERED } from "@/data/company";
-import { solutionById, priceLine } from "@/data/solutions";
-import ResponsiveImage from "@/components/ResponsiveImage";
-import { useState } from "react";
+import { solutionById } from "@/data/solutions";
 import Layout from "@/components/Layout";
+import ServiceBento from "@/components/home/ServiceBento";
+import IkuroBlock from "@/components/home/IkuroBlock";
+import HeyLaneBlock from "@/components/home/HeyLaneBlock";
+import SolutionCard from "@/components/solutions/SolutionCard";
 import HeroSection from "@/components/home/HeroSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
-import ChalkToChoiceAsset from "@/components/home/ChalkToChoiceAsset";
-import MarqueeText from "@/components/creative/MarqueeText";
 import SEO from "@/components/SEO";
 import Eyebrow from "@/components/Eyebrow";
-import HlPhone from "@/components/heylane/HlPhone";
-import "@/components/heylane/heylane.css";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { 
   ArrowRight, Check, MessageCircle, Bot, GraduationCap, Sparkles, FolderGit2,
@@ -76,30 +74,8 @@ const localBusinessSchema = {
   priceRange: "₹₹",
 };
 
-const GradientDivider = () => (
-  <div className="relative h-px w-full overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/50 to-transparent animate-shimmer" />
-  </div>
-);
-
 // Home shows four of the ready-made solutions, all values from src/data/solutions.ts
 const HOME_SOLUTION_IDS = ["school-management", "hotel-management", "ai-receptionist", "custom-crm"];
-const solutionsData = HOME_SOLUTION_IDS.map((id) => {
-  const s = solutionById(id);
-  const price = priceLine(s);
-  return {
-    id: s.id,
-    title: s.name,
-    desc: s.summary,
-    features: s.highlights,
-    price: s.from,
-    monthly: price.monthly,
-    path: s.path,
-    img: s.mockup ?? s.img,
-  };
-});
-
 const portfolioData = [
   {
     id: "swosti",
@@ -279,382 +255,67 @@ const Index = () => {
       {/* Hero Section */}
       <HeroSection />
       
-      <MarqueeText text="SOFTWARE DEVELOPMENT  ·  AI AGENTS  ·  BUSINESS AUTOMATION  ·  AI SOFTWARE  ·  " />
+      {/* Slim ticker: the four services, solid text, decorative */}
+      <div aria-hidden="true" className="select-none bg-white py-section-sm">
+        <p className="mx-auto flex max-w-[75rem] flex-wrap items-center justify-center gap-x-5 gap-y-1 px-gutter text-center font-display text-h3 font-bold text-slate-400">
+          {["Software development", "AI agents", "Business automation", "AI software"].map((t, i) => (
+            <span key={t} className="flex items-center gap-5">
+              {i > 0 && <span className="h-1.5 w-1.5 rounded-full bg-primary" />}
+              {t}
+            </span>
+          ))}
+        </p>
+      </div>
 
-      {/* ── Section: What We Do ── */}
-      <section data-logi="Four ways we take work off your plate." className="py-section relative overflow-hidden bg-background">
-        <div className="w-full max-w-[87.5rem] mx-auto px-6 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-section-head space-y-5">
-            <Eyebrow>What we do</Eyebrow>
-            <h2 className="font-display text-h2 font-bold text-center">
-              Four ways we take work <span className="text-gradient">off your plate</span>
-            </h2>
-            <p className="text-muted-foreground text-body leading-relaxed max-w-2xl mx-auto text-center">
-              Pick one, or let us combine them into one system that fits how your business actually runs.
-            </p>
-          </div>
-          <div
-            role="region"
-            aria-label="Our four services"
-            tabIndex={0}
-            className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 px-6 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-6 sm:overflow-visible"
-          >
-            {[
-              { icon: Monitor, tag: "Software Development", title: "Your business, as an app.", desc: "Custom web apps, mobile apps, ERP and CRM systems built around how your team already works.", items: ["Web & mobile apps", "ERP & CRM systems", "E-commerce & portals"], out: "One system instead of five spreadsheets." },
-              { icon: Bot, tag: "AI Agent Development", title: "A teammate that never sleeps.", desc: "AI agents that answer calls and chats, qualify leads, book appointments and follow up.", items: ["AI receptionist", "WhatsApp & web chat agents", "Lead follow-up"], out: "Every enquiry answered, day and night." },
-              { icon: Zap, tag: "Business Automation", title: "Repetitive work, gone.", desc: "We connect your tools so invoices, reminders, approvals and reports happen on their own.", items: ["Invoices & GST bills", "Reminders & approvals", "Daily reports"], out: "Hours back for your team, every week." },
-              { icon: Sparkles, tag: "AI Software", title: "Your data, finally useful.", desc: "AI tools trained on your own documents and numbers: assistants, document reading and smart search.", items: ["Document AI", "Team assistants", "Insights & reports"], out: "Answers in seconds, not hours." },
-            ].map(({ icon: Icon, tag, title, desc, items, out }, i) => (
-              <motion.div
-                key={tag}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="shrink-0 basis-[82%] snap-start sm:basis-auto bg-card border border-border/80 rounded-[2rem] p-7 flex flex-col hover:shadow-xl hover:border-primary/30 hover:-translate-y-1 transition-all duration-500 group"
-              >
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <Icon size={22} className="text-primary-ink" />
-                </div>
-                <div className="text-label font-semibold text-primary-ink uppercase tracking-wider mt-6">{tag}</div>
-                <h3 className="font-display text-xl font-bold mt-1 text-foreground group-hover:text-primary-ink transition-colors">{title}</h3>
-                <p className="text-muted-foreground text-body-sm leading-relaxed mt-2">{desc}</p>
-                <ul className="space-y-1.5 mt-4">
-                  {items.map((it) => (
-                    <li key={it} className="flex items-center gap-2 text-label text-foreground/80 font-medium">
-                      <Check size={13} className="text-primary-ink stroke-[3px] shrink-0" />
-                      <span>{it}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-auto pt-5">
-                  <div className="pt-4 border-t border-border/40 text-body-sm font-semibold text-primary-ink">{out}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ── Section: What We Do (bento with mini live demos) ── */}
+      <ServiceBento />
 
-      <GradientDivider />
-
-      {/* ── Section: Solutions Snapshot ── */}
-      <section data-logi="Ready-made, then made yours." className="py-section relative overflow-hidden bg-background">
-        <div className="w-full max-w-[96.25rem] mx-auto px-6 relative z-10">
-          {/* Centered Header Section */}
-          <div className="text-center max-w-3xl mx-auto mb-section-head space-y-5">
+      {/* ── Section: Ready-made solutions (the one Solutions card) ── */}
+      <section data-logi="Ready-made, then made yours." className="bg-secondary/40 py-section">
+        <div className="container mx-auto max-w-[75rem] px-gutter">
+          <div className="mx-auto mb-section-head max-w-[48rem] space-y-5 text-center">
             <Eyebrow>Ready solutions</Eyebrow>
-            <h2 className="font-display text-h2 font-bold text-center">
+            <h2 className="font-display text-h2 font-bold">
               Ready-made solutions, <span className="text-gradient">made yours</span>
             </h2>
-            <p className="text-muted-foreground text-body leading-relaxed max-w-2xl mx-auto text-center">
+            <p className="mx-auto max-w-2xl text-body text-muted-foreground">
               Proven systems for schools, hotels, clinics and sales teams, customised to your business so you go live faster and pay less.
             </p>
           </div>
-
-          {/* Solutions 2x2 Grid */}
-          <div
-            role="region"
-            aria-label="Ready-made solutions"
-            tabIndex={0}
-            className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 px-6 lg:mx-0 lg:px-0 lg:pb-0 lg:grid lg:grid-cols-2 lg:gap-8 lg:overflow-visible w-full"
-          >
-            {solutionsData.map((sol) => (
-              <Link
-                key={sol.id}
-                to={sol.path}
-                className="shrink-0 basis-[88%] snap-start lg:basis-auto bg-card border border-border/80 rounded-[2rem] overflow-hidden flex flex-col md:flex-row gap-4 hover:shadow-xl hover:border-primary/30 transition-all duration-500 group relative"
-              >
-                {/* Left side: one readable panel (stat row + chart) in a browser frame; the full dashboard lives on the detail page */}
-                <div className="md:w-[65%] w-full bg-secondary/60 flex items-center justify-center border-b md:border-b-0 md:border-r border-border/40 shrink-0 self-stretch overflow-hidden p-4 md:p-5">
-                  <div className="w-full overflow-hidden rounded-xl border border-border bg-card shadow-sm">
-                    <div className="flex items-center gap-1.5 border-b border-border bg-secondary px-3 py-2" aria-hidden="true">
-                      <span className="h-2 w-2 rounded-full bg-border" />
-                      <span className="h-2 w-2 rounded-full bg-border" />
-                      <span className="h-2 w-2 rounded-full bg-border" />
-                    </div>
-                    <div className="aspect-[16/10] overflow-hidden">
-                      <ResponsiveImage
-                        image={sol.img}
-                        alt={sol.title}
-                        sizes="(min-width: 64em) 36vw, 90vw"
-                        className="h-full w-full max-w-none object-cover object-[28%_20%] scale-[1.5] origin-[28%_20%] group-hover:scale-[1.55] transition-transform duration-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right Side: Details block */}
-                <div className="md:w-[35%] w-full flex flex-col justify-between p-3 md:py-3 md:pr-3 md:pl-0">
-                  <div>
-                    {/* Title */}
-                    <h3 className="font-display text-body font-bold mt-0 mb-1 text-foreground group-hover:text-primary-ink transition-colors">
-                      {sol.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-muted-foreground text-label leading-relaxed mb-2">
-                      {sol.desc}
-                    </p>
-
-                    {/* Checklist Features */}
-                    <ul className="space-y-1 mb-2.5">
-                      {sol.features.map((feat) => (
-                        <li key={feat} className="flex items-center gap-1.5 text-label text-foreground/80 font-medium">
-                          <Check size={11} className="text-primary-ink stroke-[3px] shrink-0" />
-                          <span>{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Footer Row */}
-                  <div className="flex items-center justify-between mt-auto pt-2.5 border-t border-border/40">
-                    <div className="text-label font-semibold px-2.5 py-1 rounded-md bg-primary/10 text-primary-ink dark:text-primary-ink border border-primary/20 font-mono">
-                      From {sol.price}{sol.monthly ? ` + ${sol.monthly}` : ""}
-                    </div>
-                    <span className="text-label font-semibold text-muted-foreground group-hover:text-primary-ink transition-colors flex items-center gap-1">
-                      Explore <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform" />
-                    </span>
-                  </div>
-                </div>
-              </Link>
+          <ul className="m-0 grid list-none auto-rows-fr grid-cols-1 gap-6 p-0 md:grid-cols-2 xl:grid-cols-4">
+            {HOME_SOLUTION_IDS.map((id) => (
+              <li key={id} className="flex">
+                <div className="w-full"><SolutionCard sol={solutionById(id)} /></div>
+              </li>
             ))}
-          </div>
-
-          {/* Centered CTA and Sub-footer */}
-          <div className="mt-16 flex flex-col items-center gap-4">
-            <AnimatedButton
-              as={Link}
-              to="/solutions"
-              className="bg-gradient-primary hover:opacity-90 text-primary-on shadow-glow"
-            >
+          </ul>
+          <div className="mt-section-head flex flex-col items-center gap-3">
+            <AnimatedButton as={Link} to="/solutions" className="bg-gradient-primary text-primary-on hover:opacity-90">
               View All Solutions
-              <ArrowRight size={16} className="ml-2 relative z-20" />
+              <ArrowRight size={16} className="relative z-20 ml-2" />
             </AnimatedButton>
-
-            <div className="flex items-center gap-2 text-body-sm text-muted-foreground mt-2">
-              <MessageCircle size={16} className="text-primary-ink" />
+            <p className="flex items-center gap-2 text-body-sm text-muted-foreground">
+              <MessageCircle size={16} className="text-primary-ink" aria-hidden="true" />
               <span>
                 Need a custom solution?{" "}
-                <Link to="/contact" className="inline-flex min-h-[2.75rem] items-center px-1 text-primary-ink font-semibold hover:underline">
+                <Link to="/contact" className="inline-flex min-h-[2.75rem] items-center px-1 font-semibold text-primary-ink hover:underline">
                   Let's talk
                 </Link>
               </span>
-            </div>
+            </p>
           </div>
         </div>
       </section>
 
-      <GradientDivider />
+      {/* ── Section: IKURO ── */}
+      <IkuroBlock />
 
-      {/* ── Section: Chalk to Choice ── */}
-      <section data-logi="IKURO is made by Logisaar too!" className="py-section md:py-28 relative overflow-hidden bg-white dark:bg-background">
-        {/* Subtle background dot grid */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-[0.04] dark:opacity-[0.06]"
-          style={{
-            backgroundImage: "radial-gradient(circle, hsl(var(--primary)) 1.5px, transparent 1.5px)",
-            backgroundSize: "28px 28px",
-          }}
-        />
-
-        <div className="container mx-auto px-gutter relative z-10">
-          {/* Main two-column layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center">
-
-            {/* ── LEFT: Text content ── */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="space-y-7"
-            >
-              <Eyebrow>IKURO · A Logisaar product</Eyebrow>
-
-              {/* IKURO's own logo, with a thin accent in the product colour */}
-              <div className="border-l-2 pl-6 space-y-3" style={{ borderColor: "#FA482E" }}>
-                <h2 className="m-0">
-                  <span className="sr-only">IKURO: decisions today, growth tomorrow</span>
-                  <picture style={{ display: "contents" }}>
-                    <source type="image/webp" srcSet="/brand/ikuro/ikuro-lockup-tagline.webp" />
-                    <img
-                      src="/brand/ikuro/ikuro-lockup-tagline.png"
-                      width={1001}
-                      height={319}
-                      alt=""
-                      loading="lazy"
-                      decoding="async"
-                      className="h-auto w-[min(22rem,100%)]"
-                    />
-                  </picture>
-                </h2>
-              </div>
-
-              {/* Description */}
-              <p className="text-muted-foreground text-body md:text-lg leading-relaxed max-w-lg">
-                Our AI-powered platform that helps students make better course, college, skill and career decisions. It includes Chalk to Choice, our career-clarity programme for Class 11 &amp; 12.
-              </p>
-
-              {/* Feature list */}
-              <div className="space-y-0 divide-y divide-border/50">
-                {[
-                  {
-                    icon: Users,
-                    title: "Personalised AI Guidance",
-                    desc: "Understands each student and recommends the right next step.",
-                  },
-                  {
-                    icon: Globe,
-                    title: "Chalk to Choice",
-                    desc: "Career clarity for Class 11 & 12 through guidance and real-world exposure.",
-                  },
-                  {
-                    icon: FolderGit2,
-                    title: "For Colleges",
-                    desc: "Dashboards and student insights. College pilots begin in 2026.",
-                  },
-                ].map(({ icon: Icon, title, desc }) => (
-                  <div key={title} className="flex items-start gap-4 py-4 group">
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                      <Icon size={17} className="text-primary-ink" />
-                    </div>
-                    <div>
-                      <div className="text-body-sm font-bold text-foreground">{title}</div>
-                      <div className="text-label text-muted-foreground mt-0.5 leading-relaxed">{desc}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* CTAs */}
-              <div className="flex flex-wrap items-center gap-4 pt-2">
-                <MagneticButton strength={0.1}>
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full px-8 gap-2 font-semibold shadow-md shadow-primary/20"
-                  >
-                    <Link to="/ikuro">
-                      Visit IKURO
-                      <ArrowRight size={16} />
-                    </Link>
-                  </Button>
-                </MagneticButton>
-
-                <a
-                  href="https://wa.me/918596072510?text=Hi%20Logisaar%2C%20I%20want%20to%20know%20more%20about%20IKURO."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-[2.75rem] items-center gap-2 text-body-sm font-semibold text-muted-foreground hover:text-primary-ink transition-colors group"
-                >
-                  <span className="w-8 h-8 rounded-full border-2 border-border group-hover:border-primary/50 flex items-center justify-center transition-colors">
-                    <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </span>
-                  Watch how it works
-                </a>
-              </div>
-            </motion.div>
-
-            {/* ── RIGHT: Interactive Asset ── */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="flex items-center justify-center"
-            >
-              <ChalkToChoiceAsset />
-            </motion.div>
-          </div>
-
-          {/* ── Bottom Stats Bar ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-16 grid grid-cols-1 gap-6 border-t border-border/60 pt-10"
-          >
-            {[
-              // TODO(owner): "10+ schools connected", "15+ expert mentors" and "100% career focused" were removed (unverifiable; IKURO is pre-pilot).
-              // TODO(owner): confirm 500+ students guided through TechXera and Chalk to Choice.
-              { icon: Users, stat: "500+", label: "Students guided", sub: "Through TechXera and Chalk to Choice." },
-            ].map(({ icon: Icon, stat, label, sub }) => (
-              <div key={label} className="flex items-start gap-4">
-                <div className="w-11 h-11 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
-                  <Icon size={18} className="text-primary-ink" />
-                </div>
-                <div>
-                  <div className="text-xl font-black text-primary-ink leading-none">{stat}</div>
-                  <div className="text-body-sm font-bold text-foreground mt-0.5">{label}</div>
-                  <div className="text-label text-muted-foreground mt-0.5 leading-snug">{sub}</div>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-
-      <GradientDivider />
-
-      {/* ── Section: Products Snapshot (HeyLane) ── */}
-      <section data-logi="We build our own products as well." className="py-section relative overflow-hidden bg-background">
-        <div className="container mx-auto px-gutter relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-6 space-y-6">
-              <Eyebrow>HeyLane · A Logisaar product</Eyebrow>
-              {/* HeyLane's own logo (official SVG, unchanged) and a thin accent in its colour */}
-              <div className="border-l-2 pl-6 space-y-5" style={{ borderColor: "#007F5F" }}>
-                <img src="/brand/heylane/HeyLane-Horizontal.svg" width={1644} height={344} alt="HeyLane" className="-my-3 h-auto w-[min(14rem,70%)]" />
-                <h2 className="font-display text-h2 font-bold">
-                  We don't just build for clients. <span className="text-gradient">We build our own.</span>
-                </h2>
-              </div>
-              <p className="text-muted-foreground text-body leading-relaxed">
-                HeyLane is our neighbourhood app for Bhubaneswar: people find local places and hear from their own contacts first; businesses get billing, chat and a loyalty programme in one product.
-              </p>
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-                <MagneticButton strength={0.1}>
-                  <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full px-8">
-                    <Link to="/heylane">
-                      Explore HeyLane
-                      <ArrowRight size={16} className="ml-2" aria-hidden="true" />
-                    </Link>
-                  </Button>
-                </MagneticButton>
-                <a
-                  href="https://heylane.in"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-[2.75rem] items-center gap-1 font-semibold text-primary-ink hover:underline"
-                >
-                  heylane.in
-                  <ArrowRight size={14} aria-hidden="true" />
-                  <span className="sr-only"> (opens in a new tab)</span>
-                </a>
-              </div>
-            </div>
-
-            {/* A member pass, shown the way the app shows it. Sample data, labelled inside the frame. */}
-            <div className="lg:col-span-6">
-              <div data-theme="heylane" className="mx-auto max-w-md rounded-3xl p-8">
-                <HlPhone screen="pass" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <GradientDivider />
+      {/* ── Section: HeyLane ── */}
+      <HeyLaneBlock />
 
       {/* ── Section: Portfolio Snapshot ── */}
       <section data-logi="25+ businesses and counting." className="py-section relative overflow-hidden bg-background">
-        <div className="w-full max-w-[87.5rem] mx-auto px-6 relative z-10">
+        <div className="container mx-auto max-w-[75rem] px-gutter relative z-10">
           
           {/* Centered Header Section */}
           <div className="text-center max-w-3xl mx-auto mb-section-head space-y-5">
@@ -665,15 +326,17 @@ const Index = () => {
             <p className="text-muted-foreground text-body leading-relaxed max-w-2xl mx-auto text-center">
               Schools, hotels, retailers, consultants and builders trust us with the systems they use every day.
             </p>
+            {/* TODO(owner): confirm 30+ projects delivered and 25+ clients are true today. "2x faster delivery" and "90% client satisfaction" were removed: no source. */}
+            <p className="font-display text-body font-semibold text-foreground">{PROJECTS_DELIVERED} projects · 25+ clients</p>
           </div>
 
           {/* Trusted by Badge */}
-          <div className="max-w-5xl mx-auto mb-6 flex justify-start">
+          <div className="mx-auto mb-6 flex justify-start">
             <Eyebrow>Trusted by</Eyebrow>
           </div>
 
           {/* Logos Border Grid */}
-          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-px bg-border/40 dark:bg-slate-800/40 border border-border/40 dark:border-slate-800/40 rounded-2xl overflow-hidden max-w-5xl mx-auto">
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-px bg-border/40 dark:bg-slate-800/40 border border-border/40 dark:border-slate-800/40 rounded-2xl overflow-hidden mx-auto">
             {brandLogos.map((logo) => (
               <motion.div
                 layout
@@ -701,38 +364,8 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Stats Bar */}
-          <div className="bg-[#FAFAFA] dark:bg-slate-900/30 border border-border/80 dark:border-slate-800/50 rounded-2xl p-6 flex flex-wrap md:flex-nowrap items-center justify-between gap-6 max-w-5xl mx-auto mt-16 shadow-sm">
-            {/* Stat 1 */}
-            <div className="flex items-center gap-3 w-full sm:w-[48%] md:w-auto">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary-ink shrink-0">
-                <Users size={18} />
-              </div>
-              <div>
-                <div className="text-xl font-bold text-foreground leading-tight">{PROJECTS_DELIVERED}</div>
-                <div className="text-label text-muted-foreground font-medium">Projects Delivered</div>
-              </div>
-            </div>
-
-            <div className="hidden md:block h-8 w-px bg-border/80 dark:bg-slate-800" />
-
-            {/* Stat 2 */}
-            <div className="flex items-center gap-3 w-full sm:w-[48%] md:w-auto">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary-ink shrink-0">
-                <Smile size={18} />
-              </div>
-              <div>
-                <div className="text-xl font-bold text-foreground leading-tight">25+</div>
-                <div className="text-label text-muted-foreground font-medium">Happy Clients</div>
-              </div>
-            </div>
-
-            {/* TODO(owner): "2x faster delivery" and "90% client satisfaction" were removed: no source. Add back only with evidence. */}
-            {/* TODO(owner): confirm 30+ projects delivered and 25+ clients are true today. */}
-          </div>
-
           {/* CTA Link */}
-          <div className="text-center mt-12">
+          <div className="text-center mt-section-head">
             <Link 
               to="/contact" 
               className="inline-flex min-h-[2.75rem] items-center gap-1.5 text-primary-ink hover:opacity-90 font-semibold text-body-sm transition-all duration-300 group"
@@ -744,9 +377,6 @@ const Index = () => {
 
         </div>
       </section>
-
-      <GradientDivider />
-      
 
       <TestimonialsSection />
 
