@@ -4,7 +4,7 @@ import { useReducedMotion } from "framer-motion";
 import { Check, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/data/company";
-import ServiceVignette from "./ServiceVignette";
+import { ServiceDemo } from "@/components/demos";
 
 type Service = (typeof SERVICES)[number];
 
@@ -161,7 +161,7 @@ const Pinned = () => {
             data-logi={`${s.name}: ${s.promise}`}
             className={`scroll-mt-4 ${i < SERVICES.length - 1 ? "pb-[18svh] min-h-[70svh]" : ""}`}
           >
-            <ServiceVignette id={s.id} />
+            <ServiceDemo id={s.id} />
           </div>
         ))}
       </div>
@@ -176,7 +176,7 @@ const Stacked = () => {
   <ul className="grid gap-12 md:gap-16">
     {SERVICES.map((s) => (
       <li key={s.id} id={s.id} data-logi={`${s.name}: ${s.promise}`} className="scroll-mt-4">
-        <ServiceVignette id={s.id} />
+        <ServiceDemo id={s.id} />
         <h3 className="mt-6 font-display text-h3 font-bold text-foreground">{s.name}</h3>
         <p className="mt-1 font-display text-lead font-semibold text-primary-ink">{s.promise}</p>
         <div className="mt-3 max-w-[40rem]">
