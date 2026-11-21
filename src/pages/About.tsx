@@ -62,7 +62,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.6 }}
-            className="mt-4 text-balance font-display text-h1 font-bold text-foreground"
+            className="mx-auto mt-4 max-w-[22ch] text-balance font-display text-h1-page font-bold text-foreground"
           >
             Engineers from Odisha, building software that does real work
           </motion.h1>
@@ -71,7 +71,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             data-logi-avoid
-            className="mx-auto mt-6 max-w-2xl text-balance text-lead text-muted-foreground"
+            className="mx-auto mt-6 max-w-[60ch] text-balance text-lead text-muted-foreground"
           >
             Logisaar Technologies builds custom software, AI agents and business automation for growing businesses, and makes its own products, IKURO and HeyLane. We started in September 2025 and work from Bhubaneswar.
           </motion.p>
@@ -104,7 +104,7 @@ const About = () => {
       <section data-logi="We build the right-sized version." aria-labelledby="why-h" className="bg-background py-section">
         <div className="container mx-auto max-w-3xl px-gutter text-center">
           <Eyebrow>Why we exist</Eyebrow>
-          <h2 id="why-h" className="mt-3 font-display text-h2 font-bold text-foreground">
+          <h2 id="why-h" className="mt-3 font-display text-h2-page font-bold text-foreground">
             Right-sized software for growing businesses
           </h2>
           <p className="mt-6 text-lead text-muted-foreground">
@@ -125,7 +125,7 @@ const About = () => {
         <div className="container mx-auto px-gutter">
           <div className="mx-auto max-w-2xl text-center">
             <Eyebrow>What we do</Eyebrow>
-            <h2 id="do-h" className="mt-3 font-display text-h2 font-bold text-foreground">
+            <h2 id="do-h" className="mt-3 font-display text-h2-page font-bold text-foreground">
               Four services, and two products of our own
             </h2>
           </div>
@@ -191,7 +191,7 @@ const About = () => {
         <div className="container mx-auto px-gutter">
           <div className="mx-auto max-w-2xl text-center">
             <Eyebrow>How we work</Eyebrow>
-            <h2 id="work-h" className="mt-3 font-display text-h2 font-bold text-foreground">
+            <h2 id="work-h" className="mt-3 font-display text-h2-page font-bold text-foreground">
               Clear from the first call to long after launch
             </h2>
           </div>
@@ -210,7 +210,7 @@ const About = () => {
       {/* Hiring + contact */}
       <section data-logi="We are hiring." aria-labelledby="hire-h" className="bg-secondary/40 py-section-sm">
         <div className="container mx-auto max-w-3xl px-gutter text-center">
-          <h2 id="hire-h" className="font-display text-h2 font-bold text-foreground">We&rsquo;re hiring in Bhubaneswar</h2>
+          <h2 id="hire-h" className="font-display text-h2-page font-bold text-foreground">We&rsquo;re hiring in Bhubaneswar</h2>
           <p className="mt-4 text-body text-muted-foreground">
             If you like building software that people use every day, see the open roles.
           </p>

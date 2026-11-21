@@ -129,7 +129,7 @@ const Solutions = () => {
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.6 }}
-            className="mt-4 text-balance font-display text-h1 font-bold text-foreground"
+            className="mx-auto mt-4 max-w-[22ch] text-balance font-display text-h1-page font-bold text-foreground"
           >
             Software, AI agents and automation, built around your business
           </motion.h1>
@@ -138,7 +138,7 @@ const Solutions = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             data-logi-avoid
-            className="mx-auto mt-6 max-w-2xl text-balance text-lead text-muted-foreground"
+            className="mx-auto mt-6 max-w-[60ch] text-balance text-lead text-muted-foreground"
           >
             Start from one of our ready-made systems or have us build exactly what you need. Either way you get a clear plan and a fixed quote first.
           </motion.p>

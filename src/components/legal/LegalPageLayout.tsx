@@ -111,7 +111,7 @@ const LegalPageLayout = ({
             <p className="text-primary-ink font-medium text-xs uppercase tracking-[0.2em] mb-4">
               Legal
             </p>
-            <h1 className="font-display text-4xl md:text-6xl font-bold mb-6 text-foreground tracking-tight">
+            <h1 className="font-display text-h1-page font-bold mb-6 text-foreground">
               {title}
             </h1>
             <p className="text-muted-foreground text-sm leading-relaxed">

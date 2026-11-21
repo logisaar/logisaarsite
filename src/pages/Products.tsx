@@ -18,8 +18,8 @@ const Products = () => (
     <section data-logi-dock className="bg-background pb-section-sm pt-section-sm">
       <div className="container mx-auto max-w-[56rem] px-gutter text-center">
         <Eyebrow>Our products</Eyebrow>
-        <h1 className="mt-3 font-display text-h1 font-bold text-foreground">We build our own, too</h1>
-        <p className="mx-auto mt-5 max-w-2xl text-lead text-muted-foreground">
+        <h1 className="mx-auto mt-3 max-w-[22ch] font-display text-h1-page font-bold text-foreground">We build our own, too</h1>
+        <p className="mx-auto mt-5 max-w-[60ch] text-lead text-muted-foreground">
           Alongside client work, Logisaar builds and runs two products of its own.
         </p>
       </div>
@@ -32,7 +32,7 @@ const Products = () => (
             <img src="/brand/heylane/HeyLane-Horizontal.svg" width={1644} height={344} alt="HeyLane" className="-my-3 h-auto w-[min(13rem,70%)]" />
           </div>
           <p className="mt-6 text-label font-medium text-primary-ink">Starting in Bhubaneswar</p>
-          <h2 className="mt-1 font-display text-h2 font-bold text-foreground">HeyLane</h2>
+          <h2 className="mt-1 font-display text-h2-page font-bold text-foreground">HeyLane</h2>
           <p className="mt-3 flex-1 text-body text-muted-foreground">
             A neighbourhood app. People discover local places, see what their own contacts think first, chat with the place and collect points that each business turns into member passes. Businesses get billing, stock, local discovery, chat and a loyalty programme in one product.
           </p>
@@ -55,7 +55,7 @@ const Products = () => (
             </picture>
           </div>
           <p className="mt-6 text-label font-medium text-primary-ink">In development</p>
-          <h2 className="mt-1 font-display text-h2 font-bold text-foreground">IKURO</h2>
+          <h2 className="mt-1 font-display text-h2-page font-bold text-foreground">IKURO</h2>
           <p className="mt-3 flex-1 text-body text-muted-foreground">
             An AI-powered student decision platform. It understands your goals, reasons through your options and helps you choose your next course, college, skill, internship or career step. Pilots start with first-year engineering students.
           </p>
@@ -70,7 +70,7 @@ const Products = () => (
 
     <section className="border-t border-border/40 bg-secondary/40 py-section-sm">
       <div className="container mx-auto max-w-[44rem] px-gutter text-center">
-        <h2 className="font-display text-h2 font-bold text-foreground">Need software built around your business?</h2>
+        <h2 className="font-display text-h2-page font-bold text-foreground">Need software built around your business?</h2>
         <Button asChild size="lg" className="mt-6 rounded-full px-8">
           <Link to="/contact">Talk to us</Link>
         </Button>

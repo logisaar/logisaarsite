@@ -43,7 +43,7 @@ const TeamSection = () => {
       <div className="container mx-auto px-gutter">
         <div className="mx-auto max-w-2xl text-center">
           <Eyebrow>Founders</Eyebrow>
-          <h2 id="founders-h" className="mt-3 font-display text-h2 font-bold text-foreground">
+          <h2 id="founders-h" className="mt-3 font-display text-h2-page font-bold text-foreground">
             Two Computer Science engineers from Odisha
           </h2>
           <p className="mt-4 text-body text-muted-foreground">

@@ -324,7 +324,7 @@ const StaticTimeline = ({ milestones }: { milestones: Milestone[] }) => (
   <section data-logi="Where we started, and where we are." aria-labelledby="journey-h" className="py-section" style={{ background: "hsl(220 30% 4%)" }}>
     <div className="container mx-auto px-gutter">
       <p className="text-label font-medium uppercase tracking-[0.06em] mb-3" style={{ color: "hsl(170 80% 45%)" }}>Our journey</p>
-      <h2 id="journey-h" className="font-display text-h2 font-bold mb-10" style={{ color: "white" }}>How we got here</h2>
+      <h2 id="journey-h" className="font-display text-h2-page font-bold mb-10" style={{ color: "white" }}>How we got here</h2>
       <ol className="space-y-8 max-w-2xl">
         {milestones.map((m) => (
           <li key={m.year + m.title} className="border-l-2 pl-6" style={{ borderColor: "hsl(170 80% 45% / 0.5)" }}>

@@ -22,7 +22,7 @@ const NotFound = () => {
       />
       <div className="flex min-h-[80svh] items-center justify-center pt-section-sm">
         <div className="text-center space-y-4">
-          <h1 className="font-display text-8xl font-bold text-gradient">404</h1>
+          <h1 className="font-display text-h1-page font-bold text-gradient">404</h1>
           <p className="text-xl text-muted-foreground">Oops! This page doesn't exist.</p>
           <MagneticButton strength={0.1}>
             <Button asChild className="bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full px-8 mt-4">

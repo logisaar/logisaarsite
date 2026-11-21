@@ -128,7 +128,7 @@ const Careers = () => {
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               We're hiring
             </div>
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] text-foreground">
+            <h1 className="font-display text-h1-page font-bold text-foreground">
               Build your career <span className="text-gradient">with us.</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">

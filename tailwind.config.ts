@@ -30,6 +30,9 @@ export default {
         lead: ["clamp(1.0625rem, 1rem + 0.4vw, 1.25rem)", { lineHeight: "1.6" }],
         h3: ["clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem)", { lineHeight: "1.25" }],
         h2: ["clamp(1.875rem, 1.4rem + 2.2vw, 3.25rem)", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+        // Inner pages: smaller page title and section title. Home alone uses h1 / h2.
+        "h2-page": ["clamp(1.75rem, 1.3rem + 1.6vw, 2.75rem)", { lineHeight: "1.12", letterSpacing: "-0.02em" }],
+        "h1-page": ["clamp(2.25rem, 1.6rem + 2.6vw, 3.75rem)", { lineHeight: "1.08", letterSpacing: "-0.025em" }],
         h1: ["clamp(2.5rem, 1.6rem + 4.6vw, 5.5rem)", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
         display: ["clamp(3rem, 1.5rem + 7.5vw, 9rem)", { lineHeight: "1.1" }],
       },

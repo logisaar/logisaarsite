@@ -195,8 +195,8 @@ const Contact = () => {
       >
         <div className="container mx-auto max-w-3xl px-gutter text-center">
           <Eyebrow>Contact</Eyebrow>
-          <h1 className="mt-4 font-display text-h1 font-bold text-foreground">Let&rsquo;s talk about your project</h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lead text-muted-foreground">{description}</p>
+          <h1 className="mx-auto mt-4 max-w-[22ch] font-display text-h1-page font-bold text-foreground">Let&rsquo;s talk about your project</h1>
+          <p className="mx-auto mt-6 max-w-[60ch] text-lead text-muted-foreground">{description}</p>
         </div>
       </section>
 
@@ -251,7 +251,7 @@ const Contact = () => {
       <section aria-labelledby="form-h" className="bg-secondary/40 py-section-sm">
         <div className="container mx-auto grid max-w-[68rem] gap-10 px-gutter lg:grid-cols-[3fr_2fr]">
           <div>
-            <h2 id="form-h" className="font-display text-h2 font-bold text-foreground">
+            <h2 id="form-h" className="font-display text-h2-page font-bold text-foreground">
               Tell us about your project
             </h2>
 
@@ -355,7 +355,7 @@ const Contact = () => {
       {/* Office */}
       <section aria-labelledby="office-h" className="bg-background py-section-sm">
         <div className="container mx-auto max-w-3xl px-gutter text-center">
-          <h2 id="office-h" className="font-display text-h2 font-bold text-foreground">
+          <h2 id="office-h" className="font-display text-h2-page font-bold text-foreground">
             Our office
           </h2>
           <p className="mt-5 flex items-start justify-center gap-2 text-body text-foreground">
@@ -376,7 +376,7 @@ const Contact = () => {
       {/* FAQ */}
       <section aria-labelledby="faq-h" className="bg-secondary/40 py-section-sm">
         <div className="container mx-auto max-w-3xl px-gutter">
-          <h2 id="faq-h" className="text-center font-display text-h2 font-bold text-foreground">
+          <h2 id="faq-h" className="text-center font-display text-h2-page font-bold text-foreground">
             Questions before you write
           </h2>
           <Accordion type="single" collapsible className="mt-8 rounded-2xl border border-border bg-card px-6">

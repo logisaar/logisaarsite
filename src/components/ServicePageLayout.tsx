@@ -108,7 +108,7 @@ export default function ServicePageLayout({
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="font-display text-h1 font-bold leading-[1.1] tracking-tight mb-3"
+                className="font-display text-h1-page font-bold mb-3"
               >
                 {hero.h1}
               </motion.h1>
