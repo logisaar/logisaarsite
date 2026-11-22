@@ -155,7 +155,7 @@ const Navbar = () => {
   useEffect(() => {
     if (typeof IntersectionObserver === "undefined") return;
     let io: IntersectionObserver | undefined;
-    let mo: MutationObserver | undefined;
+
     let raf = 0;
     const hits = new Set<Element>();
     const seen = new Set<Element>();
@@ -177,7 +177,7 @@ const Navbar = () => {
       const bottom = Math.max(0, window.innerHeight - mid - 1);
       io = new IntersectionObserver(
         (entries) => {
-          for (const e of entries) (e.isIntersecting ? hits.add(e.target) : hits.delete(e.target));
+          for (const e of entries) { if (e.isIntersecting) hits.add(e.target); else hits.delete(e.target); }
           setOnDark(hits.size > 0);
         },
         { rootMargin: `-${mid}px 0px -${bottom}px 0px` },
@@ -186,10 +186,10 @@ const Navbar = () => {
     };
     setOnDark(false);
     build();
-    mo = new MutationObserver(() => { if (!raf) raf = requestAnimationFrame(sync); });
+    const mo = new MutationObserver(() => { if (!raf) raf = requestAnimationFrame(sync); });
     mo.observe(document.body, { childList: true, subtree: true });
     window.addEventListener("resize", build);
-    return () => { if (raf) cancelAnimationFrame(raf); window.removeEventListener("resize", build); io?.disconnect(); mo?.disconnect(); };
+    return () => { if (raf) cancelAnimationFrame(raf); window.removeEventListener("resize", build); io?.disconnect(); mo.disconnect(); };
   }, [location.pathname]);
 
   // /portfolio is hidden (no links) but still highlights About if someone lands on it from search
