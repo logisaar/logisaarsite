@@ -50,3 +50,12 @@ Folder: `round-8-visual-polish/`
   7. QA.
 - `evidence/`: screenshots of each problem, including the owner's.
 - Assets: `public/images/heylane/app/` (real app screens, icons, pins from the HeyLane design handoff).
+
+## Round 9: scroll timing, Solutions CTA, alive footer
+Folder: `round-9-scroll-footer/`
+- `ROUND9.md`:
+  0. Close the round-8 sub-session and commit its Phase 7.
+  1. Shared `reveal`/`sequence`/`loop` scroll helpers; pin multi-step animations until they finish.
+  2. Solutions CTA always visible while pinned.
+  3. Footer with a filling wordmark, live IST and local clocks, a living background and micro-interactions.
+  4. QA.

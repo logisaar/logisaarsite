@@ -314,7 +314,7 @@ const Index = () => {
       <HeyLaneBlock />
 
       {/* ── Section: Portfolio Snapshot ── */}
-      <section data-logi="25+ businesses and counting." className="py-section relative overflow-hidden bg-background">
+      <section data-logi="25+ businesses and counting." className="pt-section pb-section-sm relative overflow-hidden bg-background">
         <div className="container mx-auto max-w-[75rem] px-gutter relative z-10">
           
           {/* Centered Header Section */}

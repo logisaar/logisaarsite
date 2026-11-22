@@ -49,7 +49,7 @@ const BentoCard = ({ s, i }: { s: (typeof SERVICES)[number]; i: number }) => {
         <h3 className="mt-3 font-display text-h3 font-bold text-foreground">
           <Link
             to={`/solutions#${s.id}`}
-            className="outline-none after:absolute after:inset-0 after:rounded-3xl focus-visible:after:outline focus-visible:after:outline-2 focus-visible:after:outline-offset-2 focus-visible:after:outline-[hsl(var(--focus-ring))]"
+            className="inline-flex min-h-[2.75rem] items-center outline-none after:absolute after:inset-0 after:rounded-3xl focus-visible:after:outline focus-visible:after:outline-2 focus-visible:after:outline-offset-2 focus-visible:after:outline-[hsl(var(--focus-ring))]"
           >
             {s.promise}
             <span className="sr-only"> ({s.name})</span>

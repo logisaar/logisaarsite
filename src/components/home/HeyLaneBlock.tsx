@@ -49,7 +49,7 @@ const HeyLaneBlock = () => {
       <div className="container mx-auto max-w-[75rem] px-gutter">
         <div data-theme="heylane" ref={root} className="grid grid-cols-1 items-center gap-10 overflow-hidden rounded-[2rem] border border-[var(--hl-line)] bg-[#f4f3ee] p-6 sm:p-10 lg:grid-cols-12 lg:gap-8 lg:p-14">
           <div className="space-y-6 lg:col-span-6">
-            <Eyebrow>HeyLane · A Logisaar product</Eyebrow>
+            <Eyebrow className="text-[var(--hl-emerald-deep)]">HeyLane · A Logisaar product</Eyebrow>
             <img src="/brand/heylane/HeyLane-Horizontal.svg" width={1644} height={344} alt="HeyLane" className="-my-3 h-auto w-[min(14rem,70%)]" />
             <h2 className="font-display text-h2 font-bold text-[var(--hl-night)]">We don't just build for clients. We build our own.</h2>
             <p className="max-w-[34rem] text-body text-[var(--hl-ink-2)]">

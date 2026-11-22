@@ -212,7 +212,7 @@ const COMPARE: [string, boolean, boolean, string?][] = [
 export const HlChat = () => (
   <section data-logi="Lane Pro shows visit counts in every chat." className="bg-[var(--hl-night)] py-section text-white hl-night">
     <div className="container mx-auto grid max-w-[75rem] items-center gap-12 px-gutter lg:grid-cols-2">
-      <div className="space-y-6">
+      <div className="min-w-0 space-y-6">
         <span className="hl-tag">HeyLane Chat</span>
         <SectionTitle>Your WhatsApp Business alternative, built for regulars</SectionTitle>
         <p className="text-lead text-white/85">Customers message you from the HeyLane app. Answer questions about tables, slots and stock, and see who you’re talking to while you reply.</p>
