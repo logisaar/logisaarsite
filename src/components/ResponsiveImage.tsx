@@ -21,7 +21,7 @@ const ResponsiveImage = ({ image, alt, priority = false, sizes = "(min-width: 10
       alt={alt}
       loading={priority ? "eager" : "lazy"}
       decoding="async"
-      {...(priority ? { fetchPriority: "high" as const } : {})}
+      {...(priority ? ({ fetchpriority: "high" } as object) : {})}
       {...rest}
     />
   </picture>

@@ -11,7 +11,7 @@ import SolutionCard from "@/components/solutions/SolutionCard";
 import ProjectTimeline from "@/components/solutions/ProjectTimeline";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { SERVICES } from "@/data/company";
+import { SERVICES, PROJECT_STEPS } from "@/data/company";
 import { INDUSTRIES, SOLUTIONS, priceLine, type Solution } from "@/data/solutions";
 
 const BTN = "h-auto min-h-[2.75rem] whitespace-normal rounded-full border-0 bg-primary px-6 font-semibold text-primary-on hover:bg-primary/90";
@@ -39,13 +39,6 @@ const SHORT: Record<(typeof INDUSTRIES)[number], string> = {
 };
 
 // Keep in step with About "How we work" and the Contact page "What happens next".
-const PROJECT_STEPS = [
-  { title: "Free call", text: "Tell us what is slowing your business down. We listen first." },
-  { title: "Clear plan and fixed quote", text: "You get the scope and the full price in writing before any work starts." },
-  { title: "Build with regular demos", text: "You see working software as it grows, and tell us what to change." },
-  { title: "Launch and support", text: "We go live together and stay around afterwards." },
-];
-
 // TODO(owner): confirm the wording of these three ways of working.
 const WAYS = [
   {

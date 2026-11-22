@@ -39,3 +39,9 @@ What counts as proof: a client result the owner can cite, or the provider's own 
 | `/solutions` cards, Lead Follow-Up and Receptionist | "₹5K/mo", "₹4K/mo" | Same values as the detail pages, now written in full from the shared data |
 | `/pricing` page vs Custom CRM detail page | Pricing page and its meta description say "Custom CRM from ₹75,000"; the CRM detail page and home say from ₹45,000 | Kept the detail-page value (₹45,000) in the shared data. TODO(owner): decide which is right and fix `/pricing` |
 | Home card, Custom CRM | Titled "Custom CRM & Business Automation" | Now "Custom CRM System" like the other pages (name only, price unchanged) |
+
+## Round 11: detail pages rebuilt (`SolutionDetail.tsx`, content in `src/data/solution-details.ts`)
+
+Removed outright (not confirmed, no safe rewording needed): the "4-Star Rated" hotel illustration, the three Starter/Professional/Enterprise tiers and their prices (only the owner-set "From" price stays), "30-day post-launch support" (every page), "7-day demo setup / free trial" (Lead Follow-Up), delivery times such as "2-3 weeks" and "6-8 weeks", "2+ hours daily" (attendance), "50+ local keywords" and "works on slow 2G", the ₹30,000 native app add-on (CRM), the ₹12,000/month SEO package (Travel), "Never lose a lead again", "Close more clients faster", "Own your CRM forever" (meta text).
+Reworded: CRM ownership now says terms are in the quote (TODO(owner): confirm "you own the source code" applies to every project). Travel SEO says rankings cannot be promised. Support and timelines now say "agreed in your quote".
+"Works with" chips use only tools the old pages already named: WhatsApp, SMS, Razorpay, PayTM, UPI, Google Calendar, Google Sheets, HubSpot, Zoho, n8n, Make, Python, OpenAI APIs. TODO(owner): confirm each integration is real for the project types listed.

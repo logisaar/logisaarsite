@@ -52,3 +52,11 @@ export const SERVICES = [
  * Shape: { days: [1, 2, 3, 4, 5, 6] (0 = Sunday), open: "10:00", close: "19:00" }
  */
 export const OFFICE_HOURS: { days: number[]; open: string; close: string } | null = null;
+
+/** The four project steps, shared by /solutions and every solution detail page. */
+export const PROJECT_STEPS = [
+  { title: "Free call", text: "Tell us what is slowing your business down. We listen first." },
+  { title: "Clear plan and fixed quote", text: "You get the scope and the full price in writing before any work starts." },
+  { title: "Build with regular demos", text: "You see working software as it grows, and tell us what to change." },
+  { title: "Launch and support", text: "We go live together and stay around afterwards." },
+];

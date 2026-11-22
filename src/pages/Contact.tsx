@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { ArrowRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
@@ -93,8 +93,16 @@ const Field = ({
 );
 
 const Contact = () => {
-  const [values, setValues] = useState({ name: "", email: "", phone: "", company: "", message: "" });
-  const [needs, setNeeds] = useState<string[]>([]);
+  const [params] = useSearchParams();
+  const [values, setValues] = useState(() => {
+    const sol = params.get("solution");
+    return { name: "", email: "", phone: "", company: "", message: sol ? `I'm interested in the ${sol.slice(0, 80)}. ` : "" };
+  });
+  // /contact?need=Ready-made solution&solution=Hotel Management System pre-selects the chip and starts the message
+  const [needs, setNeeds] = useState<string[]>(() => {
+    const n = params.get("need");
+    return n && (NEEDS as readonly string[]).includes(n) ? [n] : [];
+  });
   const [errors, setErrors] = useState<Record<FieldName, string>>({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "failed">("idle");
   const [sentTo, setSentTo] = useState({ name: "", email: "" });
