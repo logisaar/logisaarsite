@@ -229,6 +229,7 @@
   transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .ft[data-in="true"] .ft-sweep-rect { transform: scaleX(1); }
+.ft-sig-auto { fill: none; stroke-width: 2.6; opacity: 0; pointer-events: none; }
 .ft-sig-hl { fill: none; stroke-width: 1.6; opacity: 0; transition: opacity 0.25s; pointer-events: none; }
 
 /* ---------------------------------------------------------------- responsive */

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 /**
  * The footer's live layer, loaded lazily: the background traces and the signature wordmark.
@@ -20,11 +20,48 @@ const Traces = () => (
   </svg>
 );
 
-/** "Logisaar" as SVG text: hairline outline, a 12% green fill that sweeps in once, and a soft green stroke that follows the cursor. */
+const SWEEP_EVERY = 6000; // ms between auto sweeps
+const SWEEP_TIME = 2200;  // ms for the band to cross the word
+const BAND = 220;         // half width of the band, in SVG units
+
+/**
+ * "Logisaar" as SVG text: hairline outline, a 12% green fill that sweeps in once, then a soft green light band that
+ * crosses the outline on its own every ~6s while the footer is on screen (paused off-screen and in hidden tabs, none
+ * under reduced motion). A cursor highlight stays as an extra on pointer devices; nothing depends on it.
+ */
 const Wordmark = () => {
   const svg = useRef<SVGSVGElement>(null);
   const grad = useRef<SVGRadialGradientElement>(null);
   const hl = useRef<SVGTextElement>(null);
+  const auto = useRef<SVGLinearGradientElement>(null);
+  const autoText = useRef<SVGTextElement>(null);
+
+  useEffect(() => {
+    const el = svg.current, g = auto.current, t = autoText.current;
+    if (!el || !g || !t || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let inView = false, raf = 0, timer = 0, t0 = 0;
+    const set = (c: number) => { g.setAttribute("x1", String(c - BAND)); g.setAttribute("x2", String(c + BAND)); };
+    const frame = (now: number) => {
+      const p = Math.min(1, (now - t0) / SWEEP_TIME);
+      const e = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2; // ease in-out
+      set(-BAND + e * (1200 + 2 * BAND));
+      t.style.opacity = "1";
+      if (p < 1) raf = requestAnimationFrame(frame);
+      else { t.style.opacity = "0"; schedule(SWEEP_EVERY - SWEEP_TIME); }
+    };
+    const run = () => { if (!inView || document.hidden) return; t0 = performance.now(); raf = requestAnimationFrame(frame); };
+    const schedule = (ms: number) => { window.clearTimeout(timer); timer = window.setTimeout(run, ms); };
+    const stop = () => { cancelAnimationFrame(raf); window.clearTimeout(timer); t.style.opacity = "0"; };
+    const io = new IntersectionObserver(([e]) => {
+      const was = inView; inView = e.isIntersecting;
+      if (inView && !was) schedule(1800); // let the one-shot fill sweep land first
+      if (!inView) stop();
+    }, { threshold: 0.15 });
+    io.observe(el);
+    const vis = () => { if (document.hidden) stop(); else if (inView) schedule(600); };
+    document.addEventListener("visibilitychange", vis);
+    return () => { io.disconnect(); document.removeEventListener("visibilitychange", vis); stop(); };
+  }, []);
 
   const move = (e: React.PointerEvent) => {
     const s = svg.current;
@@ -42,6 +79,11 @@ const Wordmark = () => {
         <clipPath id="ft-sweep">
           <rect className="ft-sweep-rect" x="0" y="0" width="1200" height="320" />
         </clipPath>
+        <linearGradient ref={auto} id="ft-auto" gradientUnits="userSpaceOnUse" x1="-220" y1="0" x2="220" y2="0">
+          <stop offset="0" stopColor="#00D162" stopOpacity="0" />
+          <stop offset="0.5" stopColor="#00D162" />
+          <stop offset="1" stopColor="#00D162" stopOpacity="0" />
+        </linearGradient>
         <radialGradient ref={grad} id="ft-hl" gradientUnits="userSpaceOnUse" cx="600" cy="130" r="160">
           <stop offset="0" stopColor="#00D162" />
           <stop offset="1" stopColor="#00D162" stopOpacity="0" />
@@ -49,6 +91,7 @@ const Wordmark = () => {
       </defs>
       <text className="ft-sig-fill" x="600" y="230" textAnchor="middle">Logisaar</text>
       <text className="ft-sig-line" x="600" y="230" textAnchor="middle">Logisaar</text>
+      <text ref={autoText} className="ft-sig-auto" x="600" y="230" textAnchor="middle" stroke="url(#ft-auto)">Logisaar</text>
       <text ref={hl} className="ft-sig-hl" x="600" y="230" textAnchor="middle" stroke="url(#ft-hl)">Logisaar</text>
     </svg>
   );
