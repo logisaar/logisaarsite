@@ -4,24 +4,20 @@ const WA_LINK =
   "https://wa.me/918596072510?text=Hi%20LogiSaar%2C%20I%20want%20to%20discuss%20a%20project";
 
 const WhatsAppButton = () => {
-  // Hidden on phones until the visitor passes the first screen, and hidden whenever the footer is in view
-  // (the footer carries its own WhatsApp button).
-  const [pastHero, setPastHero] = useState(() => typeof window !== "undefined" && window.scrollY > window.innerHeight * 0.8);
+  // Hidden on phones (the footer and Logi's chat carry WhatsApp links) and whenever the footer is in view
+  // (the footer has its own WhatsApp button).
   const [footerIn, setFooterIn] = useState(false);
   useEffect(() => {
-    const onScroll = () => setPastHero(window.scrollY > window.innerHeight * 0.8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
     const f = document.querySelector("footer");
     const io = f ? new IntersectionObserver(([e]) => setFooterIn(e.isIntersecting), { threshold: 0 }) : null;
     if (f && io) io.observe(f);
-    return () => { window.removeEventListener("scroll", onScroll); io?.disconnect(); };
+    return () => io?.disconnect();
   }, []);
 
   if (footerIn) return null;
   return (
     <div
-      className={`fixed bottom-[4.5rem] z-logi group ${pastHero ? "" : "max-md:hidden"}`}
+      className="fixed bottom-[4.5rem] z-logi group max-md:hidden"
       style={{ left: "max(0.75rem, calc((100vw - 75rem) / 2 - 3.5rem))" }}
     >
       <span className="pointer-events-none absolute inset-0 rounded-full bg-green-500 animate-ripple-1 motion-reduce:hidden" />

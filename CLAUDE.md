@@ -42,6 +42,7 @@ Read this first in every session (especially after `/clear`). Then read only the
 | 8 | `round-8-visual-polish` | done (pinned Solutions stage + tab switcher, home bento with mini demos, IKURO decision path, real HeyLane app phones via `PhoneFrame`, wallet pass cards, About founders story, `scripts/round8-qa.mjs`). Open items: axe-core and Lighthouse are not installed (owner to approve the packages); `ServiceVignette.tsx`, `TeamSection.tsx`, `ChalkToChoiceAsset.tsx`, `HlPhone.tsx`, `MarqueeText.tsx` and the founder photos in `src/assets/team/` are now unused: ask the owner before deleting. |
 | 9 | `round-9-scroll-footer` | done (`src/lib/scroll.ts` `reveal`/`sequence`/`loop`; pinned Home IKURO and HeyLane blocks, `/heylane` How it works, `/ikuro` loop and problem, Solutions stage with CTA under the promise; alive footer in `src/components/footer/`; `scripts/round9-qa.mjs`, `round9-footer-qa.mjs`). Open: About journey timeline still uses its own animation; Logi footer wave skipped; `OFFICE_HOURS` in `src/data/company.ts` is `null` until the owner confirms (footer shows clocks only); axe/Lighthouse still need package approval. |
 | 10 | `round-10-one-footer` | done (one footer: CTA zone, columns, bottom bar, signature wordmark, one background, `<Footer cta={false}>` on /contact; page-final CTA bands removed; ring back-to-top in `ScrollToTop` only; header turns solid dark over `data-header-tone="dark"` bands; `scripts/round10-qa.mjs`). Open: IKURO and HeyLane keep their product closing bands (different CTAs); footer office city and "serving clients abroad" need owner confirmation. |
+| 11 | `round-11-final-polish-domain` | done (Logi fixed dock with bubble-only tour; floating buttons in the gutter, WhatsApp hidden at the footer and on phones; footer wordmark auto light sweep; empty IKURO visuals fixed; Solutions stage settles to full opacity; nine solution detail pages on `SolutionDetail.tsx` + `src/data/solution-details.ts`; careers via Google Forms (`src/data/careers.ts`); canonical `https://www.logisaar.com` via `src/lib/site.ts`, `scripts/gen-sitemap.mjs` as `prebuild`, `vercel.json` 301s; `scripts/round11-qa.mjs`). No push: owner pushes; Antigravity deploys with `DEPLOY.md`. Open: see the round 11 summary `TODO(owner)` list. |
 
 Branch: `redesign/home-v2`.
 
@@ -52,6 +53,7 @@ Branch: `redesign/home-v2`.
 - Animation: Framer Motion, GSAP + ScrollTrigger, and Lenis.
 - SEO: react-helmet-async (`src/components/SEO.tsx`).
 - Hosting: Vercel with SPA rewrites.
+- Canonical domain `https://www.logisaar.com` (`src/lib/site.ts`: build every full URL with `SITE_URL`/`siteUrl()`); `.in` and the apex `.com` 301 to it (`vercel.json`).
 - **Contact details** come only from `src/lib/contact.ts`: `contact@logisaar.com`, `+91 85960 72510`, `wa.me/918596072510`. Never hard-code them.
 - **Forms** use `src/lib/submitForm.ts`, which posts to Google Apps Script. Lead sources are typed in `LeadSource`.
 - **Images** go through the sharp pipeline: AVIF/WebP at 800w/1600w, served via `getImage(group, name)` and `<ResponsiveImage>`.
@@ -59,7 +61,7 @@ Branch: `redesign/home-v2`.
   - Code: `src/components/logi/` (`Logi.tsx`, `answers.ts`, `logi.css`).
   - Mounted once in `App.tsx`.
   - Tour stops are elements with `data-logi="<line>"`; `data-logi-dock` docks it.
-  - Logi never stands in a hero or over h1/paragraph/CTA text. On mobile it stays docked.
+  - **Logi lives in one fixed dock, bottom-right, on every page and width.** It never walks. It is the only bottom-right element and its click opens the chat. The tour is bubbles only: a `data-logi` section shows its line for about 4s, skipped when the bubble would touch a demo, phone, form or pinned stage (`data-logi-avoid`, `data-demo`, `data-pinned`, `form`).
 
 ## Brand rules
 

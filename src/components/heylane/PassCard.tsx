@@ -53,25 +53,25 @@ const PassCard = ({ place, kind, icon, state, member = "Sample member", points =
         <circle cx="34" cy="34" r="18" fill="#0B3328" stroke={active ? "#F5B321" : "#fff"} strokeOpacity={active ? 1 : 0.3} strokeWidth="1.5" />
         <image href={`/images/heylane/app/icons/duotone-on-dark/cat-${icon}.svg`} x="22" y="22" width="24" height="24" />
         <text x="62" y="31" fill="#fff" fontSize="15" fontWeight="600">{place}</text>
-        <text x="62" y="47" fill="#fff" fillOpacity="0.7" fontSize="11.5" fontWeight="600" letterSpacing="0.9">{kind}</text>
+        <text x="62" y="47" fill="#fff" fillOpacity="0.7" fontSize="12.5" fontWeight="600" letterSpacing="0.9">{kind}</text>
         <image href="/brand/heylane/HeyLane-Symbol-Reverse.svg" x="300" y="18" width="26" height="26" />
         {/* main */}
         {active ? (
           <>
-            <text x="22" y="108" fill="#F5B321" fontSize="11.5" fontWeight="700" letterSpacing="1.8">MEMBER</text>
+            <text x="22" y="108" fill="#F5B321" fontSize="12.5" fontWeight="700" letterSpacing="1.8">MEMBER</text>
             <text x="22" y="134" fill="#fff" fontSize="22" fontWeight="700">{member}</text>
             <text x="22" y="153" fill="#fff" fillOpacity="0.75" fontSize="12.5">Pass active</text>
           </>
         ) : (
           <>
-            <text x="22" y="100" fill="#fff" fillOpacity="0.7" fontSize="11.5" fontWeight="700" letterSpacing="1.8">BUILDING UP</text>
+            <text x="22" y="100" fill="#fff" fillOpacity="0.7" fontSize="12.5" fontWeight="700" letterSpacing="1.8">BUILDING UP</text>
             <text x="22" y="140" fill="#fff" fontSize="40" fontWeight="700">{points.toLocaleString("en-IN")}</text>
             <text x="22" y="158" fill="#fff" fillOpacity="0.75" fontSize="12.5">of {needed.toLocaleString("en-IN")} points</text>
           </>
         )}
         {/* footer */}
         <line x1="22" y1="172" x2="321" y2="172" stroke="#fff" strokeOpacity="0.12" />
-        <text x="22" y="190" fill="#fff" fillOpacity="0.6" fontSize="10" fontWeight="700" letterSpacing="1.4">BENEFIT</text>
+        <text x="22" y="190" fill="#fff" fillOpacity="0.6" fontSize="12.5" fontWeight="700" letterSpacing="1.2">BENEFIT</text>
         <text x="22" y="205" fill="#fff" fontSize="13" fontWeight="500">{benefit}</text>
         <text x="321" y="205" fill="#fff" fillOpacity="0.8" fontSize="12" textAnchor="end">{active ? validity : `${(needed - points).toLocaleString("en-IN")} to go`}</text>
       </g>
