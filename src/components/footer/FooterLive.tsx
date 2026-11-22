@@ -1,187 +1,59 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { MessageCircle } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Link } from "react-router-dom";
-import { CONTACT } from "@/lib/contact";
-import { OFFICE_HOURS } from "@/data/company";
-import { loop, prefersReducedMotion } from "@/lib/scroll";
-import "./footer.css";
+import { useRef } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
-
-/* ------------------------------------------------------------------ clocks */
-
-const IST = "Asia/Kolkata";
-
-/** "9:42 pm" in the given zone (visitor's own zone when omitted). */
-const fmt = (tz?: string) =>
-  new Date()
-    .toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZone: tz })
-    .replace(/\s?(AM|PM)$/i, (m) => ` ${m.trim().toLowerCase()}`);
-
-/** Offset of a zone in minutes right now, to tell whether the visitor is already on IST. */
-const offset = (tz: string) => {
-  const d = new Date();
-  const parts = new Intl.DateTimeFormat("en-US", { timeZone: tz, hourCycle: "h23", year: "numeric", month: "numeric", day: "numeric", hour: "numeric", minute: "numeric" }).formatToParts(d);
-  const g = (t: string) => Number(parts.find((p) => p.type === t)?.value);
-  return (Date.UTC(g("year"), g("month") - 1, g("day"), g("hour"), g("minute")) - Math.floor(d.getTime() / 60000) * 60000) / 60000;
-};
-
-const isOpenNow = () => {
-  if (!OFFICE_HOURS) return null;
-  const ist = new Date(new Date().toLocaleString("en-US", { timeZone: IST }));
-  const mins = ist.getHours() * 60 + ist.getMinutes();
-  const [oh, om] = OFFICE_HOURS.open.split(":").map(Number);
-  const [ch, cm] = OFFICE_HOURS.close.split(":").map(Number);
-  return OFFICE_HOURS.days.includes(ist.getDay()) && mins >= oh * 60 + om && mins < ch * 60 + cm;
-};
-
-/** "It's 9:42 pm in Bhubaneswar · 9:12 am where you are", updated each minute. Nothing is sent anywhere. */
-const NowStrip = () => {
-  const [, tick] = useState(0);
-  useEffect(() => {
-    let t = 0;
-    const next = () => {
-      t = window.setTimeout(() => { tick((n) => n + 1); next(); }, 60000 - (Date.now() % 60000) + 50);
-    };
-    next();
-    const onVis = () => { if (!document.hidden) tick((n) => n + 1); };
-    document.addEventListener("visibilitychange", onVis);
-    return () => { window.clearTimeout(t); document.removeEventListener("visibilitychange", onVis); };
-  }, []);
-
-  let local: string | null = null;
-  try {
-    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    if (tz && offset(tz) !== offset(IST)) local = fmt(tz);
-  } catch {
-    /* no time zone support: the IST clock alone */
-  }
-  const open = isOpenNow();
-
-  return (
-    <p data-ft-now className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center text-body-sm text-background/70">
-      <span>
-        It&rsquo;s <strong data-ft-ist className="font-semibold text-background">{fmt(IST)}</strong> in Bhubaneswar
-      </span>
-      {local && (
-        <span>
-          <span aria-hidden="true">· </span>
-          <strong className="font-semibold text-background">{local}</strong> where you are
-        </span>
-      )}
-      {open !== null && (
-        <span className="inline-flex items-center gap-2">
-          <span aria-hidden="true">·</span>
-          <span aria-hidden="true" className={`h-2 w-2 rounded-full ${open ? "bg-primary" : "bg-background/40"}`} />
-          {open ? "We’re working now" : "We’ll reply next working day"}
-        </span>
-      )}
-    </p>
-  );
-};
-
-/* ------------------------------------------------------------------ wordmark */
-
-const WORD = "Logisaar";
-
-/** Display-font wordmark as a hairline outline. Each letter fills with green, left to right, once, as the footer arrives. */
-const Wordmark = () => {
-  const el = useRef<HTMLDivElement>(null);
-  useLayoutEffect(() => {
-    if (!el.current || prefersReducedMotion()) return;
-    const fills = el.current.querySelectorAll(".ft-letter__fill");
-    const tween = gsap.to(fills, {
-      clipPath: "inset(0 0% 0 0)", duration: 0.7, ease: "power2.out", stagger: 0.11,
-      scrollTrigger: { trigger: el.current, start: "top 80%", once: true },
-    });
-    return () => { tween.scrollTrigger?.kill(); tween.kill(); };
-  }, []);
-  return (
-    <div
-      ref={el}
-      aria-hidden="true"
-      data-ft-wordmark
-      className="flex select-none justify-center overflow-hidden font-display font-extrabold leading-[0.95]"
-      style={{ fontSize: "clamp(4rem, 14vw, 13rem)", letterSpacing: "-0.02em" }}
-    >
-      {WORD.split("").map((c, i) => (
-        <span key={i} className="ft-letter">
-          <span className="ft-letter__line">{c}</span>
-          <span className="ft-letter__fill">{c}</span>
-        </span>
-      ))}
-    </div>
-  );
-};
-
-/* ------------------------------------------------------------------ living background */
+/**
+ * The footer's live layer, loaded lazily: the background traces and the signature wordmark.
+ * Both are decoration (aria-hidden). The sweep and the trace loop are CSS, driven by `data-in` / `data-visible`
+ * on the footer, so they pause off-screen and are static under reduced motion (see footer.css).
+ */
 
 const TRACES = [
-  "M0 120 H180 L240 180 H520 L580 120 H900 L960 60 H1200",
-  "M0 300 H140 L200 360 H420 V460 H760 L820 400 H1200",
-  "M1200 220 H1000 L940 280 H700 V200 H460 L400 140 H260 V40 H0",
+  "M0 140 H260 L320 200 H620 L660 160 H980",
+  "M1440 420 H1180 L1120 480 H860 L820 520 H560",
+  "M80 760 H420 L470 710 H780 L830 760 H1300",
 ];
 
-/** Three traces slowly draw and fade (a 12s loop) at 5% opacity. Static and fully drawn under reduced motion. */
-const Traces = () => {
+const Traces = () => (
+  <svg className="ft-traces" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    {TRACES.map((d) => (
+      <path key={d} d={d} pathLength={900} />
+    ))}
+  </svg>
+);
+
+/** "Logisaar" as SVG text: hairline outline, a 12% green fill that sweeps in once, and a soft green stroke that follows the cursor. */
+const Wordmark = () => {
   const svg = useRef<SVGSVGElement>(null);
-  useLayoutEffect(() => {
+  const grad = useRef<SVGRadialGradientElement>(null);
+  const hl = useRef<SVGTextElement>(null);
+
+  const move = (e: React.PointerEvent) => {
     const s = svg.current;
-    if (!s || prefersReducedMotion()) return;
-    const paths = Array.from(s.querySelectorAll<SVGPathElement>("path"));
-    const tl = gsap.timeline({ paused: true, repeat: -1 });
-    tl.to({}, { duration: 12 }, 0);
-    paths.forEach((p, i) => {
-      const len = p.getTotalLength();
-      tl.fromTo(p, { strokeDasharray: len, strokeDashoffset: len, opacity: 1 }, { strokeDashoffset: 0, duration: 4.5, ease: "power1.inOut" }, i * 3);
-      tl.to(p, { opacity: 0, duration: 3, ease: "power1.in" }, i * 3 + 5.5);
-    });
-    const stop = loop(s, tl);
-    return () => { stop(); tl.kill(); };
-  }, []);
+    if (!s || !grad.current || !hl.current) return;
+    const r = s.getBoundingClientRect();
+    grad.current.setAttribute("cx", String(((e.clientX - r.left) / r.width) * 1200));
+    grad.current.setAttribute("cy", String(((e.clientY - r.top) / r.height) * 260));
+    hl.current.style.opacity = "1";
+  };
+  const leave = () => { if (hl.current) hl.current.style.opacity = "0"; };
+
   return (
-    <svg ref={svg} aria-hidden="true" data-ft-traces viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid slice" className="pointer-events-none absolute inset-x-0 top-0 h-[32rem] w-full" fill="none">
-      {TRACES.map((d, i) => (
-        <g key={i} stroke="hsl(var(--primary))" strokeOpacity="0.05" strokeWidth="2" strokeLinejoin="round">
-          <path d={d} />
-        </g>
-      ))}
+    <svg ref={svg} className="ft-sig-svg" viewBox="0 0 1200 260" aria-hidden="true" focusable="false" onPointerMove={move} onPointerLeave={leave}>
+      <defs>
+        <clipPath id="ft-sweep">
+          <rect className="ft-sweep-rect" x="0" y="0" width="1200" height="320" />
+        </clipPath>
+        <radialGradient ref={grad} id="ft-hl" gradientUnits="userSpaceOnUse" cx="600" cy="130" r="160">
+          <stop offset="0" stopColor="#00D162" />
+          <stop offset="1" stopColor="#00D162" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <text className="ft-sig-fill" x="600" y="230" textAnchor="middle">Logisaar</text>
+      <text className="ft-sig-line" x="600" y="230" textAnchor="middle">Logisaar</text>
+      <text ref={hl} className="ft-sig-hl" x="600" y="230" textAnchor="middle" stroke="url(#ft-hl)">Logisaar</text>
     </svg>
   );
 };
 
-/* ------------------------------------------------------------------ top block */
-
-const FooterLive = () => (
-  <>
-    <Traces />
-    <div data-ft-top className="relative z-10 h-[25rem] border-b border-background/10 pb-8 pt-12 sm:h-[26rem] sm:pt-16">
-      <Wordmark />
-      <div className="mt-4">
-        <NowStrip />
-      </div>
-      {/* one line, not the big "Ready to start?" banner */}
-      <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-center">
-        <p className="text-body text-background/85">Have a task you&rsquo;d rather not do every day?</p>
-        <div className="flex items-center gap-3">
-          <Link to="/contact" className="ft-cta inline-flex min-h-[2.75rem] items-center font-semibold text-primary hover:underline focus-visible:underline">
-            Start a project <span aria-hidden="true" className="ft-arrow ml-1">→</span>
-          </Link>
-          <a
-            href={CONTACT.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Message us on WhatsApp (opens in a new tab)"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-background/20 text-background/80 transition-colors hover:border-primary hover:text-primary"
-          >
-            <MessageCircle size={18} aria-hidden="true" />
-          </a>
-        </div>
-      </div>
-    </div>
-  </>
-);
+const FooterLive = ({ part }: { part: "traces" | "wordmark" }) => (part === "traces" ? <Traces /> : <Wordmark />);
 
 export default FooterLive;

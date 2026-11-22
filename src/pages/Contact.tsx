@@ -163,7 +163,7 @@ const Contact = () => {
     "Tell Logisaar what slows your team down. We reply within one working day with a clear next step: a call, a quote or a straight answer.";
 
   return (
-    <Layout>
+    <Layout footerCta={false}>
       <SEO
         title="Contact Logisaar | Software, AI agents and automation"
         description={description}
