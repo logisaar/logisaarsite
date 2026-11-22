@@ -321,7 +321,7 @@ const MobileTimeline = ({ milestones }: { milestones: Milestone[] }) => (
 
 // Reduced motion: every milestone as a static list, nothing pinned or animated
 const StaticTimeline = ({ milestones }: { milestones: Milestone[] }) => (
-  <section data-logi="Where we started, and where we are." aria-labelledby="journey-h" className="py-section" style={{ background: "hsl(220 30% 4%)" }}>
+  <section data-header-tone="dark" data-logi="Where we started, and where we are." aria-labelledby="journey-h" className="py-section" style={{ background: "hsl(220 30% 4%)" }}>
     <div className="container mx-auto px-gutter">
       <p className="text-label font-medium uppercase tracking-[0.06em] mb-3" style={{ color: "hsl(170 80% 45%)" }}>Our journey</p>
       <h2 id="journey-h" className="font-display text-h2-page font-bold mb-10" style={{ color: "white" }}>How we got here</h2>
@@ -416,7 +416,7 @@ const JourneyTimeline = ({ milestones }: JourneyTimelineProps) => {
   }
 
   return (
-    <div ref={containerRef} data-logi="Where we started, and where we are." className="relative" style={{ height: `${milestones.length * 100}svh` }}>
+    <div ref={containerRef} data-header-tone="dark" data-logi="Where we started, and where we are." className="relative" style={{ height: `${milestones.length * 100}svh` }}>
       <div
         className="sticky top-0 h-[100svh] overflow-hidden flex items-center"
         style={{ background: "hsl(220 30% 4%)" }}

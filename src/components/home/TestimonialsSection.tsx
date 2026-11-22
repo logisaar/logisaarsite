@@ -1,14 +1,10 @@
 import { useRef } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import Eyebrow from "@/components/Eyebrow";
 
 import {
   Marquee,
   MarqueeContent,
-  MarqueeFade,
   MarqueeItem,
 } from "@/components/kibo-ui/marquee";
 
@@ -140,6 +136,7 @@ const TestimonialCard = ({ item }: { item: TestimonialItem }) => (
 );
 
 // TODO(owner): confirm every quote above is real and approved for public use (no ratings are shown: we have no rating source).
+const EDGE_MASK = "linear-gradient(to right, transparent, #000 6%, #000 94%, transparent)";
 const TestimonialsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, REVEAL_VIEWPORT);
@@ -175,9 +172,7 @@ const TestimonialsSection = () => {
               { rows: TESTIMONIALS_ROW1, speed: 35, direction: "left" as const },
               { rows: TESTIMONIALS_ROW2, speed: 30, direction: "right" as const },
             ].map(({ rows, speed, direction }) => (
-              <Marquee key={direction} className="py-2">
-                <MarqueeFade side="left" className="z-20" />
-                <MarqueeFade side="right" className="z-20" />
+              <Marquee key={direction} className="py-2" style={{ maskImage: EDGE_MASK, WebkitMaskImage: EDGE_MASK }}>
                 <MarqueeContent speed={speed} direction={direction}>
                   {rows.map((item) => (
                     <MarqueeItem key={item.authorName}><TestimonialCard item={item} /></MarqueeItem>
@@ -187,15 +182,6 @@ const TestimonialsSection = () => {
             ))}
           </div>
         )}
-
-        <div className="text-center mt-section-head">
-          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-on rounded-full px-8 gap-2 font-semibold min-h-[2.75rem]">
-            <Link to="/contact">
-              <span>Talk to us</span>
-              <ArrowRight size={16} aria-hidden="true" />
-            </Link>
-          </Button>
-        </div>
       </div>
     </section>
   );
