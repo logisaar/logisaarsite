@@ -45,3 +45,10 @@ export const SERVICES = [
     deliverables: ["A working tool on your own data", "Clear notes on what it can and cannot answer", "Access controls for your team", "Improvements as you use it"],
   },
 ] as const;
+
+/**
+ * Office hours in IST, used by the footer's "We're working now" status.
+ * TODO(owner): office hours and working days in IST. While this is null the footer shows only the two clocks, no status.
+ * Shape: { days: [1, 2, 3, 4, 5, 6] (0 = Sunday), open: "10:00", close: "19:00" }
+ */
+export const OFFICE_HOURS: { days: number[]; open: string; close: string } | null = null;

@@ -1,0 +1,75 @@
+/* Footer micro-interactions. Transform and opacity only; reduced motion turns them off. */
+.ft-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.ft-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.55rem;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ft-link:hover,
+.ft-link:focus-visible {
+  transform: translateX(2px);
+  color: hsl(var(--primary));
+}
+.ft-link:hover::after,
+.ft-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.ft-letter {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ft-letter:hover {
+  transform: translateY(-2px);
+}
+.ft-letter__line {
+  color: transparent;
+  -webkit-text-stroke: 1px hsl(var(--primary) / 0.85);
+}
+.ft-letter__fill {
+  position: absolute;
+  inset: 0;
+  color: hsl(var(--primary));
+  clip-path: inset(0 100% 0 0);
+}
+
+.ft-arrow {
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ft-cta:hover .ft-arrow,
+.ft-cta:focus-visible .ft-arrow {
+  transform: translateX(0.3rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ft-link,
+  .ft-link::after,
+  .ft-letter,
+  .ft-arrow {
+    transition: none;
+  }
+  .ft-link:hover,
+  .ft-link:focus-visible,
+  .ft-letter:hover {
+    transform: none;
+  }
+  .ft-letter__fill {
+    clip-path: none;
+  }
+}

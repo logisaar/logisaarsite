@@ -1,11 +1,14 @@
 import { CONTACT } from "@/lib/contact";
-import { motion, useInView, useReducedMotion } from "framer-motion";
-import { useRef } from "react";
+import { Suspense, lazy, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
-import DecorativeShapes from "@/components/creative/DecorativeShapes";
+import { ChevronDown, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import MagneticButton from "@/components/creative/MagneticButton";
 import BrandLogo from "@/components/BrandLogo";
-import { REVEAL_VIEWPORT } from "@/lib/scroll";
+import { prefersReducedMotion, reveal } from "@/lib/scroll";
+import "@/components/footer/footer.css";
+
+// the live layer (wordmark, clocks, traces, call-out) loads when the footer is within one viewport of the screen
+const FooterLive = lazy(() => import("@/components/footer/FooterLive"));
 
 const footerLinks = {
   Solutions: [
@@ -58,120 +61,197 @@ const socialLinks = [
   },
 ];
 
+const useWide = (query: string) => {
+  const [on, setOn] = useState(() => typeof window !== "undefined" && window.matchMedia(query).matches);
+  useEffect(() => {
+    const m = window.matchMedia(query);
+    const fn = () => setOn(m.matches);
+    m.addEventListener("change", fn);
+    return () => m.removeEventListener("change", fn);
+  }, [query]);
+  return on;
+};
+
+const HEADING = "font-display font-semibold text-background text-body-sm uppercase tracking-wider";
+
+/** Under 40em the link columns are accordions; from 40em they are plain, always-open lists. */
+const LinkColumn = ({ title, links, wide }: { title: string; links: { label: string; to: string }[]; wide: boolean }) => {
+  const [open, setOpen] = useState(false);
+  const id = `ft-${title.toLowerCase()}`;
+  const list = (
+    <ul id={id}>
+      {links.map((link) => (
+        <li key={link.label}>
+          <Link to={link.to} className="ft-link text-body-sm text-background/70">
+            {link.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+  if (wide) {
+    return (
+      <div data-ft-col>
+        <h2 className={`${HEADING} mb-2`}>{title}</h2>
+        {list}
+      </div>
+    );
+  }
+  return (
+    <div data-ft-col className="border-b border-background/10">
+      <h2 className="m-0">
+        <button
+          type="button"
+          aria-expanded={open}
+          aria-controls={id}
+          onClick={() => setOpen((o) => !o)}
+          className={`${HEADING} flex min-h-[2.75rem] w-full items-center justify-between text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary`}
+        >
+          {title}
+          <ChevronDown size={16} aria-hidden="true" className={`transition-transform motion-reduce:transition-none ${open ? "rotate-180" : ""}`} />
+        </button>
+      </h2>
+      <div className={open ? "block pb-2" : "hidden"}>{list}</div>
+    </div>
+  );
+};
+
+/** Back to top with a scroll-progress ring. Scrolls smoothly (instantly under reduced motion). */
+const BackToTop = () => {
+  const ring = useRef<SVGCircleElement>(null);
+  useEffect(() => {
+    let raf = 0;
+    const C = 2 * Math.PI * 20;
+    const update = () => {
+      raf = 0;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+      if (ring.current) ring.current.style.strokeDashoffset = String(C * (1 - p));
+    };
+    const on = () => { if (!raf) raf = requestAnimationFrame(update); };
+    update();
+    window.addEventListener("scroll", on, { passive: true });
+    window.addEventListener("resize", on);
+    return () => { window.removeEventListener("scroll", on); window.removeEventListener("resize", on); if (raf) cancelAnimationFrame(raf); };
+  }, []);
+  return (
+    <button
+      type="button"
+      onClick={() => window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" })}
+      aria-label="Back to top"
+      className="relative inline-flex h-11 w-11 items-center justify-center rounded-full text-background/80 transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+    >
+      <svg viewBox="0 0 44 44" aria-hidden="true" className="absolute inset-0 h-full w-full -rotate-90">
+        <circle cx="22" cy="22" r="20" fill="none" stroke="currentColor" strokeOpacity="0.2" strokeWidth="2" />
+        <circle ref={ring} cx="22" cy="22" r="20" fill="none" stroke="hsl(var(--primary))" strokeWidth="2" strokeLinecap="round" strokeDasharray={2 * Math.PI * 20} strokeDashoffset={2 * Math.PI * 20} />
+      </svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true" className="relative h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+  );
+};
+
 const Footer = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, REVEAL_VIEWPORT);
-  const reduceMotion = useReducedMotion();
+  const ref = useRef<HTMLElement>(null);
+  const wide = useWide("(min-width: 40em)");
+  const [near, setNear] = useState(false);
+
+  // load the live layer when the footer is within one viewport of the screen
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") { setNear(true); return; }
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setNear(true); io.disconnect(); } }, { rootMargin: "100% 0px" });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  // column headings and blocks rise in with a small stagger when the footer enters
+  useLayoutEffect(() => {
+    const cols = ref.current ? Array.from(ref.current.querySelectorAll("[data-ft-col]")) : [];
+    return reveal(cols, { y: 16, stagger: 0.08, duration: 0.7, name: "footer-columns" }, ref.current);
+  }, [wide]);
 
   return (
-    <footer className="relative bg-foreground text-background/80 overflow-hidden" ref={ref}>
-      <DecorativeShapes variant="footer" />
+    <footer className="relative overflow-hidden bg-foreground text-background/80" ref={ref}>
+      <div className="container relative z-10 mx-auto px-gutter pb-6">
+        {/* live layer: same reserved height until it loads, so the page never jumps */}
+        {near ? (
+          <Suspense fallback={<div aria-hidden="true" className="h-[22rem] sm:h-[26rem]" />}>
+            <FooterLive />
+          </Suspense>
+        ) : (
+          <div aria-hidden="true" className="h-[22rem] sm:h-[26rem]" />
+        )}
 
-      {/* Breathing gradient line */}
-      <motion.div
-        className="absolute top-0 left-0 right-0 h-[0.125rem] bg-gradient-primary"
-        animate={reduceMotion ? { opacity: 1 } : { opacity: [0.5, 1, 0.5] }}
-        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-      />
-
-      <div className="container mx-auto px-gutter pt-16 pb-8 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-10 gap-x-6">
+        <div className="grid grid-cols-1 gap-x-6 gap-y-8 pt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
           {/* Brand column */}
-          <motion.div
-            className="lg:col-span-1"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.2, duration: 0.8 }}
-          >
-            <Link to="/">
+          <div data-ft-col className="lg:col-span-1">
+            <Link to="/" className="inline-block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
               <BrandLogo variant="white" className="h-14" />
             </Link>
-            <p className="mt-4 text-body-sm leading-relaxed text-background/60">
+            <p className="mt-4 text-body-sm leading-relaxed text-background/70">
               Software, AI agents and business automation from Bhubaneswar, Odisha. Makers of HeyLane and IKURO.
             </p>
-            {/* Social icons */}
-            <div className="flex gap-2 mt-6 flex-wrap">
+            <div className="mt-6 flex flex-wrap gap-4">
               {socialLinks.map((s) => (
-                <a
-                  key={s.label}
-                  href={(s as { href: string }).href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-full border border-background/15 flex items-center justify-center text-background/60 hover:text-primary-ink hover:border-primary/40 transition-colors"
-                  aria-label={`${s.label} (opens in a new tab)`}
-                >
-                  {s.icon}
-                </a>
+                <MagneticButton key={s.label} strength={0.25} className="-m-4 p-4">
+                  <a
+                    href={(s as { href: string }).href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-background/15 text-background/70 transition-[color,border-color,box-shadow] hover:border-primary hover:text-primary hover:shadow-[0_0_0_3px_hsl(var(--primary)/0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                    aria-label={`${s.label} (opens in a new tab)`}
+                  >
+                    {s.icon}
+                  </a>
+                </MagneticButton>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          {/* Link columns */}
-          {Object.entries(footerLinks).map(([title, links], colIdx) => (
-            <motion.div
-              key={title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.3 + colIdx * 0.1, duration: 0.8 }}
-            >
-              <h2 className="font-display font-semibold text-background mb-2 text-body-sm uppercase tracking-wider">{title}</h2>
-              <ul>
-                {links.map((link) => (
-                  <li key={link.label}>
-                    <Link to={link.to} className="inline-flex min-h-[2.75rem] min-w-[2.75rem] items-center text-body-sm text-background/60 hover:text-primary-ink transition-colors">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+          {/* Link columns: accordions under 40em */}
+          {Object.entries(footerLinks).map(([title, links]) => (
+            <LinkColumn key={title} title={title} links={links} wide={wide} />
           ))}
 
-          {/* Contact column */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.7, duration: 0.8 }}
-          >
-            <h2 className="font-display font-semibold text-background mb-2 text-body-sm uppercase tracking-wider">Registered office</h2>
-            <ul className="space-y-1 text-body-sm text-background/60">
+          {/* Contact column: always open */}
+          <div data-ft-col>
+            <h2 className={`${HEADING} mb-2`}>Registered office</h2>
+            <ul className="space-y-1 text-body-sm text-background/70">
               <li className="flex items-start gap-2">
-                <MapPin size={14} className="text-primary-ink shrink-0 mt-1" />
+                <MapPin size={14} aria-hidden="true" className="mt-1 shrink-0 text-primary" />
                 <span>
                   Logisaar Technologies Private Limited<br />
                   Cuttack, Odisha, India
                 </span>
               </li>
-              <li className="text-label text-background/60 font-mono pb-2">
-                CIN: U62012OD2026PTC053632
+              <li className="pb-2 font-mono text-label text-background/70">CIN: U62012OD2026PTC053632</li>
+              <li className="flex items-center gap-2">
+                <Mail size={14} aria-hidden="true" className="shrink-0 text-primary" />
+                <a href={CONTACT.mailto} className="ft-link break-all">{CONTACT.email}</a>
               </li>
               <li className="flex items-center gap-2">
-                <Mail size={14} className="text-primary-ink shrink-0" />
-                <a href={CONTACT.mailto} className="inline-flex min-h-[2.75rem] items-center hover:text-primary-ink transition-colors break-all">{CONTACT.email}</a>
+                <Phone size={14} aria-hidden="true" className="shrink-0 text-primary" />
+                <a href={CONTACT.tel} className="ft-link">{CONTACT.phone}</a>
               </li>
               <li className="flex items-center gap-2">
-                <Phone size={14} className="text-primary-ink shrink-0" />
-                <a href={CONTACT.tel} className="inline-flex min-h-[2.75rem] items-center hover:text-primary-ink transition-colors">
-                  {CONTACT.phone}
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <MessageCircle size={14} className="text-primary-ink shrink-0" />
-                <a
-                  href={CONTACT.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-[2.75rem] items-center hover:text-primary-ink transition-colors"
-                >
-                  WhatsApp Us
+                <MessageCircle size={14} aria-hidden="true" className="shrink-0 text-primary" />
+                <a href={CONTACT.whatsapp} target="_blank" rel="noopener noreferrer" className="ft-link">
+                  WhatsApp Us<span className="sr-only"> (opens in a new tab)</span>
                 </a>
               </li>
             </ul>
-          </motion.div>
+          </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-background/10 text-center text-label text-background/60">
-          © 2025–{new Date().getFullYear()} Logisaar Technologies Pvt. Ltd. Registered in India. Built in Odisha, India
+        <div className="mt-10 flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-t border-background/10 pt-6 text-label text-background/70">
+          <p className="m-0 sm:pl-16 2xl:pl-0">
+            © 2025–{new Date().getFullYear()} Logisaar Technologies Pvt. Ltd. Registered in India.{" "}
+            {/* TODO(owner): confirm "abroad" is accurate before launch. */}
+            <span className="block sm:inline">Built in Odisha, India · Serving clients in India and abroad</span>
+          </p>
+          <BackToTop />
         </div>
       </div>
     </footer>
