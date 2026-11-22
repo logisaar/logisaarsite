@@ -1,0 +1,1297 @@
+[
+ {
+  "y": 0,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0,
+    "tl": 0,
+    "top": 790.25
+   }
+  ]
+ },
+ {
+  "y": 100,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0,
+    "tl": 0,
+    "top": 690.25
+   }
+  ]
+ },
+ {
+  "y": 200,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0,
+    "tl": 0,
+    "top": 590.25
+   }
+  ]
+ },
+ {
+  "y": 300,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0,
+    "tl": 0,
+    "top": 490.25
+   }
+  ]
+ },
+ {
+  "y": 400,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0,
+    "tl": 0,
+    "top": 390.25
+   }
+  ]
+ },
+ {
+  "y": 500,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0,
+    "tl": 0,
+    "top": 290.25
+   }
+  ]
+ },
+ {
+  "y": 600,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0,
+    "tl": 0,
+    "top": 190.25
+   }
+  ]
+ },
+ {
+  "y": 700,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0.015367103016505406,
+    "active": true,
+    "tl": 0.004328995901639344,
+    "pinned": true,
+    "top": 117.25
+   }
+  ]
+ },
+ {
+  "y": 800,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0.07228229937393284,
+    "active": true,
+    "tl": 0.05972,
+    "pinned": true,
+    "top": 117.25
+   }
+  ]
+ },
+ {
+  "y": 900,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0.12919749573136027,
+    "active": true,
+    "tl": 0.10728600409836064,
+    "pinned": true,
+    "top": 117.25
+   }
+  ]
+ },
+ {
+  "y": 1000,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0.1861126920887877,
+    "active": true,
+    "tl": 0.15834899590163934,
+    "pinned": true,
+    "top": 117.25
+   }
+  ]
+ },
+ {
+  "y": 1100,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0.24302788844621515,
+    "active": true,
+    "tl": 0.21361200819672133,
+    "pinned": true,
+    "top": 117.25
+   }
+  ]
+ },
+ {
+  "y": 1200,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0.29994308480364257,
+    "active": true,
+    "tl": 0.2703629918032787,
+    "pinned": true,
+    "top": 117.25
+   }
+  ]
+ },
+ {
+  "y": 1300,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0.35685828116107,
+    "active": true,
+    "tl": 0.308965,
+    "pinned": true,
+    "top": 117.25
+   }
+  ]
+ },
+ {
+  "y": 1400,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0.4137734775184974,
+    "active": true,
+    "tl": 0.392055,
+    "pinned": true,
+    "top": 117.25
+   }
+  ]
+ },
+ {
+  "y": 1500,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0.4706886738759249,
+    "active": true,
+    "tl": 0.4421189959016394,
+    "pinned": true,
+    "top": 117.25
+   }
+  ]
+ },
+ {
+  "y": 1600,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0.5276038702333523,
+    "active": true,
+    "tl": 0.5031379918032787,
+    "pinned": true,
+    "top": 117.25
+   }
+  ]
+ },
+ {
+  "y": 1700,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0.5845190665907798,
+    "active": true,
+    "tl": 0.5558560040983607,
+    "pinned": true,
+    "top": 117.25
+   }
+  ]
+ },
+ {
+  "y": 1800,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0.6414342629482072,
+    "active": true,
+    "tl": 0.611705,
+    "pinned": true,
+    "top": 117.25
+   }
+  ]
+ },
+ {
+  "y": 1900,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0.6983494593056346,
+    "active": true,
+    "tl": 0.673205,
+    "pinned": true,
+    "top": 117.25
+   }
+  ]
+ },
+ {
+  "y": 2000,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0.755264655663062,
+    "active": true,
+    "tl": 0.7275339959016394,
+    "pinned": true,
+    "top": 117.25
+   }
+  ]
+ },
+ {
+  "y": 2100,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0.8121798520204895,
+    "active": true,
+    "tl": 0.7829529918032787,
+    "pinned": true,
+    "top": 117.25
+   }
+  ]
+ },
+ {
+  "y": 2200,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0.869095048377917,
+    "active": true,
+    "tl": 0.8323200000000001,
+    "pinned": true,
+    "top": 117.25
+   }
+  ]
+ },
+ {
+  "y": 2300,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0.9260102447353443,
+    "active": true,
+    "tl": 0.9030139959016393,
+    "pinned": true,
+    "top": 117.25
+   }
+  ]
+ },
+ {
+  "y": 2400,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 0.9829254410927718,
+    "active": true,
+    "tl": 0.9543900000000001,
+    "pinned": true,
+    "top": 117.25
+   }
+  ]
+ },
+ {
+  "y": 2500,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 0.9841560040983606,
+    "pinned": false,
+    "top": 47.25
+   }
+  ]
+ },
+ {
+  "y": 2600,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 0.9938770081967213,
+    "pinned": false,
+    "top": -52.75
+   }
+  ]
+ },
+ {
+  "y": 2700,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 0.9984639959016394,
+    "pinned": false,
+    "top": -152.75
+   }
+  ]
+ },
+ {
+  "y": 2800,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 0.9997420081967213,
+    "pinned": false,
+    "top": -252.75
+   }
+  ]
+ },
+ {
+  "y": 2900,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 0.9999579918032786,
+    "pinned": false,
+    "top": -352.75
+   }
+  ]
+ },
+ {
+  "y": 3000,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 0.9999970081967213,
+    "pinned": false,
+    "top": -452.75
+   }
+  ]
+ },
+ {
+  "y": 3100,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -552.75
+   }
+  ]
+ },
+ {
+  "y": 3200,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -652.75
+   }
+  ]
+ },
+ {
+  "y": 3300,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -752.75
+   }
+  ]
+ },
+ {
+  "y": 3400,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -852.75
+   }
+  ]
+ },
+ {
+  "y": 3500,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -952.75
+   }
+  ]
+ },
+ {
+  "y": 3600,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -1052.75
+   }
+  ]
+ },
+ {
+  "y": 3700,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -1152.75
+   }
+  ]
+ },
+ {
+  "y": 3800,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -1252.75
+   }
+  ]
+ },
+ {
+  "y": 3900,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -1352.75
+   }
+  ]
+ },
+ {
+  "y": 4000,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -1452.75
+   }
+  ]
+ },
+ {
+  "y": 4100,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -1552.75
+   }
+  ]
+ },
+ {
+  "y": 4200,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -1652.75
+   }
+  ]
+ },
+ {
+  "y": 4300,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -1752.75
+   }
+  ]
+ },
+ {
+  "y": 4400,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -1852.75
+   }
+  ]
+ },
+ {
+  "y": 4500,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -1952.75
+   }
+  ]
+ },
+ {
+  "y": 4600,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -2052.75
+   }
+  ]
+ },
+ {
+  "y": 4700,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -2152.75
+   }
+  ]
+ },
+ {
+  "y": 4800,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -2252.75
+   }
+  ]
+ },
+ {
+  "y": 4900,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -2352.75
+   }
+  ]
+ },
+ {
+  "y": 5000,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -2452.75
+   }
+  ]
+ },
+ {
+  "y": 5100,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -2552.75
+   }
+  ]
+ },
+ {
+  "y": 5200,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -2652.75
+   }
+  ]
+ },
+ {
+  "y": 5300,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -2752.75
+   }
+  ]
+ },
+ {
+  "y": 5400,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -2852.75
+   }
+  ]
+ },
+ {
+  "y": 5500,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -2952.75
+   }
+  ]
+ },
+ {
+  "y": 5600,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3052.75
+   }
+  ]
+ },
+ {
+  "y": 5700,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3152.75
+   }
+  ]
+ },
+ {
+  "y": 5800,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3252.75
+   }
+  ]
+ },
+ {
+  "y": 5900,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3352.75
+   }
+  ]
+ },
+ {
+  "y": 6000,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3452.75
+   }
+  ]
+ },
+ {
+  "y": 6100,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3552.75
+   }
+  ]
+ },
+ {
+  "y": 6200,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3652.75
+   }
+  ]
+ },
+ {
+  "y": 6300,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3752.75
+   }
+  ]
+ },
+ {
+  "y": 6400,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3852.75
+   }
+  ]
+ },
+ {
+  "y": 6500,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3952.75
+   }
+  ]
+ },
+ {
+  "y": 6600,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4052.75
+   }
+  ]
+ },
+ {
+  "y": 6700,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4152.75
+   }
+  ]
+ },
+ {
+  "y": 6800,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4252.75
+   }
+  ]
+ },
+ {
+  "y": 6900,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4339.75
+   }
+  ]
+ },
+ {
+  "y": 7000,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4339.75
+   }
+  ]
+ },
+ {
+  "y": 7100,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4339.75
+   }
+  ]
+ },
+ {
+  "y": 7200,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4339.75
+   }
+  ]
+ },
+ {
+  "y": 7300,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4339.75
+   }
+  ]
+ },
+ {
+  "y": 7400,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4339.75
+   }
+  ]
+ },
+ {
+  "y": 7500,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4339.75
+   }
+  ]
+ },
+ {
+  "y": 7600,
+  "snap": [
+   {
+    "name": "solutions-stage",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 673,
+    "end": 2430,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4339.75
+   }
+  ]
+ }
+]

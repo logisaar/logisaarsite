@@ -7,6 +7,7 @@ import { Check, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/data/company";
 import { ServiceDemo } from "@/components/demos";
+import { sequence, type SequenceHandle } from "@/lib/scroll";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,8 +16,6 @@ type Service = (typeof SERVICES)[number];
 /** Brand-only tints behind the demo frame: green-50, emerald-50, teal-50, slate-50. */
 const TINTS = ["#f0fdf4", "#ecfdf5", "#f0fdfa", "#f8fafc"];
 const EXPO = "expo.out";
-/** scroll distance of one snap step, in svh */
-const STEP = 80;
 
 const BTN = "h-auto min-h-[2.75rem] whitespace-normal rounded-full border-0 bg-primary px-6 font-semibold text-primary-on hover:bg-primary/90";
 const FOCUS = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[hsl(var(--focus-ring))]";
@@ -170,104 +169,108 @@ const useServiceTransitions = (active: number, frames: Els, panels: Els, tints: 
   useEffect(() => () => { tlRef.current?.kill(); }, []);
 };
 
-/** One service's text block: big number, name (line-masked), promise, details. */
-const PanelText = ({ s, i }: { s: Service; i: number }) => (
+/**
+ * One service's text block in the pinned stage. Everything must fit in the stage height (100svh - header) at 1280x720:
+ * title, promise, then the CTA directly under it, then the description, example chips and a two-column deliverables list.
+ */
+const PanelText = ({ s }: { s: Service }) => (
   <>
-    <p data-num-in className="flex items-baseline gap-2 font-display">
-      <span className="text-h1-page font-extrabold leading-none text-foreground">{String(i + 1).padStart(2, "0")}</span>
-      <span className="text-lead font-bold text-muted-foreground">/ {String(SERVICES.length).padStart(2, "0")}</span>
-    </p>
-    <h3 className="mt-2 overflow-hidden font-display text-h2-page font-bold leading-tight text-foreground">
+    <h3 className="overflow-hidden font-display text-h2-page font-bold leading-tight text-foreground">
       <span data-name-in className="block">{s.name}</span>
     </h3>
     <p data-body-in className="mt-2 font-display text-lead font-semibold text-primary-ink">{s.promise}</p>
-    <div data-body-in className="mt-3">
-      <Details s={s} compact />
+    <div data-body-in>
+      <Cta s={s} compact />
     </div>
+    {/* TODO(owner): confirm the examples and deliverables for each service. */}
+    <p data-body-in className="mt-4 text-body-sm text-muted-foreground">{s.desc}</p>
+    <ul data-body-in className="mt-3 flex max-h-[4.75rem] flex-wrap gap-1.5 overflow-hidden">
+      {s.examples.map((e) => (
+        <li key={e} className="rounded-full border border-border bg-secondary/60 px-2.5 py-0.5 text-body-sm text-foreground">{e}</li>
+      ))}
+    </ul>
+    <h4 data-body-in className="mt-3 font-display text-body-sm font-bold text-foreground">What you get</h4>
+    <ul data-body-in className="mt-1 grid grid-cols-2 gap-x-4 gap-y-1">
+      {s.deliverables.map((e) => (
+        <li key={e} className="flex items-start gap-1.5 text-body-sm text-muted-foreground">
+          <Check size={16} aria-hidden="true" className="mt-0.5 shrink-0 text-primary-ink" />
+          {e}
+        </li>
+      ))}
+    </ul>
   </>
 );
 
-/** Desktop: the stage stays in view (sticky) while four snap points swap the service. */
+/** Desktop: the stage is pinned by `sequence()` (4 steps, snap to each) and swaps the service at every step. */
 const Pinned = () => {
   const [active, setActive] = useState(0);
   const track = useRef<HTMLDivElement>(null);
+  const stage = useRef<HTMLDivElement>(null);
   const frames = useRef<(HTMLElement | null)[]>([]);
   const panels = useRef<(HTMLElement | null)[]>([]);
   const tints = useRef<(HTMLElement | null)[]>([]);
   const fill = useRef<HTMLSpanElement>(null);
+  const handle = useRef<SequenceHandle | null>(null);
   const n = SERVICES.length;
 
   useServiceTransitions(active, frames, panels, tints);
 
   useLayoutEffect(() => {
-    const el = track.current;
-    if (!el) return;
-    const ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: el,
-        start: () => `top top+=${document.querySelector("header")?.getBoundingClientRect().bottom ?? 0}`,
-        end: "bottom bottom",
-        invalidateOnRefresh: true,
-        snap: { snapTo: 1 / (n - 1), duration: { min: 0.25, max: 0.6 }, delay: 0.08, ease: "power2.inOut" },
-        onUpdate: (self) => {
-          const idx = Math.min(n - 1, Math.round(self.progress * (n - 1)));
-          setActive((a) => (a === idx ? a : idx));
-          if (fill.current) fill.current.style.transform = `translateX(${self.progress * (n - 1) * 100}%)`;
-        },
-      });
-    }, el);
-    return () => ctx.revert();
+    const h = sequence(track.current, {
+      name: "solutions-stage",
+      steps: n,
+      pinEl: stage.current,
+      noPin: false,
+      onStep: setActive,
+      build: (tl) => { if (fill.current) tl.fromTo(fill.current, { scaleX: 1 / n }, { scaleX: 1, duration: n - 1, ease: "none" }, 0); },
+    });
+    handle.current = h;
+    // a #service link (hero jump bar, footer, shared URL) scrolls to that step
+    const idx = (href: string | null) => SERVICES.findIndex((s) => `#${s.id}` === href);
+    const jump = (i: number, smooth = true) => {
+      const y = h.yOf(i);
+      if (y !== null) window.scrollTo({ top: y, behavior: smooth ? "smooth" : "auto" });
+    };
+    const onClick = (e: MouseEvent) => {
+      const a = (e.target as HTMLElement).closest?.("a[href^='#']");
+      const i = a ? idx(a.getAttribute("href")) : -1;
+      if (i >= 0 && h.yOf(i) !== null) { e.preventDefault(); history.replaceState(null, "", `#${SERVICES[i].id}`); jump(i); }
+    };
+    document.addEventListener("click", onClick);
+    const first = idx(window.location.hash);
+    const t = first > 0 ? window.setTimeout(() => { ScrollTrigger.refresh(); jump(first, false); }, 120) : 0;
+    return () => { window.clearTimeout(t); document.removeEventListener("click", onClick); h.kill(); };
   }, [n]);
 
+  const cur = SERVICES[active];
   return (
-    <div
-      ref={track}
-      className="relative"
-      style={{ ["--stage-h" as string]: "min(46rem, calc(100svh - var(--header-h) - 1rem))", height: `calc(var(--stage-h) + ${(n - 1) * STEP}svh)` }}
-    >
-      {/* anchors: the jump bar and the rail links land on the matching snap point */}
-      {SERVICES.map((s, i) => (
-        <span
-          key={s.id}
-          id={s.id}
-          data-logi={`${s.name}: ${s.promise}`}
-          aria-hidden="true"
-          className="pointer-events-none absolute left-0 w-px scroll-mt-[var(--header-h)]"
-          style={{ top: `${i * STEP}svh`, height: "var(--stage-h)" }}
-        />
-      ))}
-      <div className="sticky top-[var(--header-h)] grid grid-cols-12 items-center gap-x-12" style={{ height: "var(--stage-h)" }}>
+    <div ref={track} className="relative" style={{ ["--stage-h" as string]: "min(46rem, calc(100svh - var(--header-h) - 1rem))" }}>
+      <div ref={stage} data-logi-dock data-cur={cur.id} className="grid grid-cols-12 items-center gap-x-12" style={{ height: "var(--stage-h)" }}>
         <div className="col-span-5 flex flex-col justify-center">
-          <nav aria-label="Services" className="relative mb-5 w-fit">
-            <span aria-hidden="true" className="absolute inset-x-0 bottom-0 h-0.5 bg-border" />
-            <span aria-hidden="true" className="absolute bottom-0 left-0 h-0.5" style={{ width: `${100 / n}%` }}>
-              <span ref={fill} className="absolute inset-0 block bg-primary-ink will-change-transform" />
+          {/* the one step indicator: 01 / 04 with a progress bar */}
+          <div className="mb-3 flex items-center gap-3" aria-hidden="true">
+            <p className="flex items-baseline gap-1.5 font-display text-body font-bold text-foreground">
+              {String(active + 1).padStart(2, "0")}
+              <span className="text-body-sm font-semibold text-muted-foreground">/ {String(n).padStart(2, "0")}</span>
+            </p>
+            <span className="relative h-0.5 w-24 overflow-hidden rounded-full bg-border">
+              <span ref={fill} className="absolute inset-0 block origin-left bg-primary-ink will-change-transform" style={{ transform: `scaleX(${(active + 1) / n})` }} />
             </span>
-            <ul className="flex">
-              {SERVICES.map((s, i) => (
+          </div>
+          {/* keyboard route to every step (visible on focus) */}
+          <nav aria-label="Services" className="sr-only focus-within:not-sr-only focus-within:mb-2">
+            <ul className="flex flex-wrap gap-2">
+              {SERVICES.map((s) => (
                 <li key={s.id}>
-                  <a
-                    href={`#${s.id}`}
-                    aria-label={s.name}
-                    title={s.name}
-                    aria-current={i === active ? "true" : undefined}
-                    className={`flex min-h-[2.75rem] min-w-[3.5rem] items-center justify-center px-3 font-display text-body font-bold transition-colors ${FOCUS} ${i === active ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </a>
+                  <a href={`#${s.id}`} className={`inline-flex min-h-[2.75rem] items-center rounded-full border border-border px-3 text-body-sm font-semibold text-foreground ${FOCUS}`}>{s.name}</a>
                 </li>
               ))}
             </ul>
           </nav>
           <div className="grid">
             {SERVICES.map((s, i) => (
-              <div
-                key={s.id}
-                ref={(el) => (panels.current[i] = el)}
-                className="col-start-1 row-start-1"
-                {...(i !== active ? ({ inert: "" } as object) : {})}
-              >
-                <PanelText s={s} i={i} />
+              <div key={s.id} ref={(el) => (panels.current[i] = el)} className="col-start-1 row-start-1" {...(i !== active ? ({ inert: "" } as object) : {})}>
+                <PanelText s={s} />
               </div>
             ))}
           </div>

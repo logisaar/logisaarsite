@@ -1,0 +1,1863 @@
+[
+ {
+  "y": 0,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0,
+    "tl": 0,
+    "top": 1475.21875
+   }
+  ]
+ },
+ {
+  "y": 100,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0,
+    "tl": 0,
+    "top": 1375.21875
+   }
+  ]
+ },
+ {
+  "y": 200,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0,
+    "tl": 0,
+    "top": 1275.21875
+   }
+  ]
+ },
+ {
+  "y": 300,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0,
+    "tl": 0,
+    "top": 1175.21875
+   }
+  ]
+ },
+ {
+  "y": 400,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0,
+    "tl": 0,
+    "top": 1075.21875
+   }
+  ]
+ },
+ {
+  "y": 500,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0,
+    "tl": 0,
+    "top": 975.21875
+   }
+  ]
+ },
+ {
+  "y": 600,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0,
+    "tl": 0,
+    "top": 875.21875
+   }
+  ]
+ },
+ {
+  "y": 700,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0,
+    "tl": 0,
+    "top": 775.21875
+   }
+  ]
+ },
+ {
+  "y": 800,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0,
+    "tl": 0,
+    "top": 675.21875
+   }
+  ]
+ },
+ {
+  "y": 900,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0,
+    "tl": 0,
+    "top": 575.21875
+   }
+  ]
+ },
+ {
+  "y": 1000,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0,
+    "tl": 0,
+    "top": 475.21875
+   }
+  ]
+ },
+ {
+  "y": 1100,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0,
+    "tl": 0,
+    "top": 375.21875
+   }
+  ]
+ },
+ {
+  "y": 1200,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0,
+    "tl": 0,
+    "top": 275.21875
+   }
+  ]
+ },
+ {
+  "y": 1300,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.0001,
+    "active": true,
+    "tl": 0.00006500000000000001,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 1400,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.0377959927140255,
+    "active": true,
+    "tl": 0.024507,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 1500,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.08333333333333333,
+    "active": true,
+    "tl": 0.061299,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 1600,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.12887067395264118,
+    "active": true,
+    "tl": 0.10578400000000002,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 1700,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.174408014571949,
+    "active": true,
+    "tl": 0.150569,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 1800,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.21994535519125682,
+    "active": true,
+    "tl": 0.19551000000000002,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 1900,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.26548269581056466,
+    "active": true,
+    "tl": 0.241957,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 2000,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.31102003642987247,
+    "active": true,
+    "tl": 0.28669500000000003,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 2100,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.35655737704918034,
+    "active": true,
+    "tl": 0.332288,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 2200,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.40209471766848814,
+    "active": true,
+    "tl": 0.379773,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 2300,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.447632058287796,
+    "active": true,
+    "tl": 0.42373200000000005,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 2400,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.4931693989071038,
+    "active": true,
+    "tl": 0.469048,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 2500,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.5387067395264117,
+    "active": true,
+    "tl": 0.5141720000000001,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 2600,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.5842440801457195,
+    "active": true,
+    "tl": 0.558065,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 2700,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.6297814207650273,
+    "active": true,
+    "tl": 0.604522,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 2800,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.6753187613843351,
+    "active": true,
+    "tl": 0.649128,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 2900,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.720856102003643,
+    "active": true,
+    "tl": 0.6964400000000001,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 3000,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.7663934426229508,
+    "active": true,
+    "tl": 0.7420930000000001,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 3100,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.8119307832422586,
+    "active": true,
+    "tl": 0.787333,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 3200,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.8574681238615665,
+    "active": true,
+    "tl": 0.833104,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 3300,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.9030054644808743,
+    "active": true,
+    "tl": 0.878386,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 3400,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.9485428051001822,
+    "active": true,
+    "tl": 0.924171,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 3500,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 0.99408014571949,
+    "active": true,
+    "tl": 0.969458,
+    "pinned": true,
+    "top": 158.21875
+   }
+  ]
+ },
+ {
+  "y": 3600,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 0.990178,
+    "pinned": false,
+    "top": 71.21875
+   }
+  ]
+ },
+ {
+  "y": 3700,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 0.9966800000000001,
+    "pinned": false,
+    "top": -28.78125
+   }
+  ]
+ },
+ {
+  "y": 3800,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 0.9987860000000001,
+    "pinned": false,
+    "top": -128.78125
+   }
+  ]
+ },
+ {
+  "y": 3900,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 0.9997490000000001,
+    "pinned": false,
+    "top": -228.78125
+   }
+  ]
+ },
+ {
+  "y": 4000,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 0.9999570000000001,
+    "pinned": false,
+    "top": -328.78125
+   }
+  ]
+ },
+ {
+  "y": 4100,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 0.9999950000000001,
+    "pinned": false,
+    "top": -428.78125
+   }
+  ]
+ },
+ {
+  "y": 4200,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -528.78125
+   }
+  ]
+ },
+ {
+  "y": 4300,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -628.78125
+   }
+  ]
+ },
+ {
+  "y": 4400,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -728.78125
+   }
+  ]
+ },
+ {
+  "y": 4500,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -828.78125
+   }
+  ]
+ },
+ {
+  "y": 4600,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -928.78125
+   }
+  ]
+ },
+ {
+  "y": 4700,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -1028.78125
+   }
+  ]
+ },
+ {
+  "y": 4800,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -1128.78125
+   }
+  ]
+ },
+ {
+  "y": 4900,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -1228.78125
+   }
+  ]
+ },
+ {
+  "y": 5000,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -1328.78125
+   }
+  ]
+ },
+ {
+  "y": 5100,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -1428.78125
+   }
+  ]
+ },
+ {
+  "y": 5200,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -1528.78125
+   }
+  ]
+ },
+ {
+  "y": 5300,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -1628.78125
+   }
+  ]
+ },
+ {
+  "y": 5400,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -1728.78125
+   }
+  ]
+ },
+ {
+  "y": 5500,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -1828.78125
+   }
+  ]
+ },
+ {
+  "y": 5600,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -1928.78125
+   }
+  ]
+ },
+ {
+  "y": 5700,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -2028.78125
+   }
+  ]
+ },
+ {
+  "y": 5800,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -2128.78125
+   }
+  ]
+ },
+ {
+  "y": 5900,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -2228.78125
+   }
+  ]
+ },
+ {
+  "y": 6000,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -2328.78125
+   }
+  ]
+ },
+ {
+  "y": 6100,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -2428.78125
+   }
+  ]
+ },
+ {
+  "y": 6200,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -2528.78125
+   }
+  ]
+ },
+ {
+  "y": 6300,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -2628.78125
+   }
+  ]
+ },
+ {
+  "y": 6400,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -2728.78125
+   }
+  ]
+ },
+ {
+  "y": 6500,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -2828.78125
+   }
+  ]
+ },
+ {
+  "y": 6600,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -2928.78125
+   }
+  ]
+ },
+ {
+  "y": 6700,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3028.78125
+   }
+  ]
+ },
+ {
+  "y": 6800,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3128.78125
+   }
+  ]
+ },
+ {
+  "y": 6900,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3228.78125
+   }
+  ]
+ },
+ {
+  "y": 7000,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3328.78125
+   }
+  ]
+ },
+ {
+  "y": 7100,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3428.78125
+   }
+  ]
+ },
+ {
+  "y": 7200,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3528.78125
+   }
+  ]
+ },
+ {
+  "y": 7300,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3628.78125
+   }
+  ]
+ },
+ {
+  "y": 7400,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3728.78125
+   }
+  ]
+ },
+ {
+  "y": 7500,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3828.78125
+   }
+  ]
+ },
+ {
+  "y": 7600,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3928.78125
+   }
+  ]
+ },
+ {
+  "y": 7700,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4028.78125
+   }
+  ]
+ },
+ {
+  "y": 7800,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4128.78125
+   }
+  ]
+ },
+ {
+  "y": 7900,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4228.78125
+   }
+  ]
+ },
+ {
+  "y": 8000,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4328.78125
+   }
+  ]
+ },
+ {
+  "y": 8100,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4428.78125
+   }
+  ]
+ },
+ {
+  "y": 8200,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4528.78125
+   }
+  ]
+ },
+ {
+  "y": 8300,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4628.78125
+   }
+  ]
+ },
+ {
+  "y": 8400,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4728.78125
+   }
+  ]
+ },
+ {
+  "y": 8500,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4828.78125
+   }
+  ]
+ },
+ {
+  "y": 8600,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -4928.78125
+   }
+  ]
+ },
+ {
+  "y": 8700,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -5028.78125
+   }
+  ]
+ },
+ {
+  "y": 8800,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -5128.78125
+   }
+  ]
+ },
+ {
+  "y": 8900,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -5228.78125
+   }
+  ]
+ },
+ {
+  "y": 9000,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -5328.78125
+   }
+  ]
+ },
+ {
+  "y": 9100,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -5428.78125
+   }
+  ]
+ },
+ {
+  "y": 9200,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -5528.78125
+   }
+  ]
+ },
+ {
+  "y": 9300,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -5628.78125
+   }
+  ]
+ },
+ {
+  "y": 9400,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -5728.78125
+   }
+  ]
+ },
+ {
+  "y": 9500,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -5828.78125
+   }
+  ]
+ },
+ {
+  "y": 9600,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -5928.78125
+   }
+  ]
+ },
+ {
+  "y": 9700,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6028.78125
+   }
+  ]
+ },
+ {
+  "y": 9800,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6128.78125
+   }
+  ]
+ },
+ {
+  "y": 9900,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6228.78125
+   }
+  ]
+ },
+ {
+  "y": 10000,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6328.78125
+   }
+  ]
+ },
+ {
+  "y": 10100,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6428.78125
+   }
+  ]
+ },
+ {
+  "y": 10200,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6528.78125
+   }
+  ]
+ },
+ {
+  "y": 10300,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6594.78125
+   }
+  ]
+ },
+ {
+  "y": 10400,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6594.78125
+   }
+  ]
+ },
+ {
+  "y": 10500,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6594.78125
+   }
+  ]
+ },
+ {
+  "y": 10600,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6594.78125
+   }
+  ]
+ },
+ {
+  "y": 10700,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6594.78125
+   }
+  ]
+ },
+ {
+  "y": 10800,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6594.78125
+   }
+  ]
+ },
+ {
+  "y": 10900,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6594.78125
+   }
+  ]
+ },
+ {
+  "y": 11000,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1317,
+    "end": 3513,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6594.78125
+   }
+  ]
+ }
+]

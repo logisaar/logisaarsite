@@ -230,8 +230,8 @@ const Logi = () => {
       cands.push({ x: peekX, y: innerHeight - s * 0.35 });
       const rects = [...document.querySelectorAll(AVOID)]
         .filter((e) => !root.contains(e) && !e.closest(".logi-chat") && !e.closest("nav, header, [data-agentation-root], [data-feedback-toolbar]"))
-        .map((e) => ({ r: /^(H[1-3]|P)$/.test(e.tagName) ? textRect(e) : e.getBoundingClientRect(), text: /^(H[1-3]|P)$/.test(e.tagName) }))
-        .filter(({ r, text }) => r.width > 0 && r.bottom > 0 && r.top < innerHeight && (text || r.width * r.height < 60000)) // ignore whole-card links
+        .map((e) => ({ r: /^(H[1-3]|P)$/.test(e.tagName) ? textRect(e) : e.getBoundingClientRect(), text: /^(H[1-3]|P)$/.test(e.tagName), keep: e.hasAttribute("data-logi-avoid") }))
+        .filter(({ r, text, keep }) => r.width > 0 && r.bottom > 0 && r.top < innerHeight && (text || keep || r.width * r.height < 60000)) // ignore whole-card links, but never a demo frame (data-logi-avoid)
         .map(({ r }) => r);
       let best = cands[0], bestN = Infinity;
       for (const c0 of cands) {
