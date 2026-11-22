@@ -99,7 +99,7 @@ const PLACE_ICON: Record<string, string> = {
 };
 
 export const HlPlaces = () => (
-  <section className="bg-[var(--hl-night)] py-section text-white hl-night">
+  <section className="bg-[var(--hl-night)] pt-section pb-8 text-white hl-night">
     <div className="container mx-auto max-w-[75rem] px-gutter">
       <div className="mx-auto mb-section-head max-w-3xl text-center">
         <SectionTitle>Seven kinds of places. One app</SectionTitle>

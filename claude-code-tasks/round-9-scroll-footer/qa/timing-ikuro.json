@@ -17,11 +17,21 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 0,
     "tl": 0,
     "top": 1974.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 10097.1875
    },
    {
     "name": "reveal",
@@ -243,11 +253,21 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 0,
     "tl": 0,
     "top": 1874.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9997.1875
    },
    {
     "name": "reveal",
@@ -460,8 +480,7 @@
     "mode": "timed",
     "start": 124,
     "end": 1898,
-    "sprog": 0.04284103720405862,
-    "active": true,
+    "sprog": 0,
     "tl": 0,
     "pinned": false,
     "top": 724.015625
@@ -470,11 +489,21 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 0,
     "tl": 0,
     "top": 1774.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9897.1875
    },
    {
     "name": "reveal",
@@ -687,7 +716,7 @@
     "mode": "timed",
     "start": 124,
     "end": 1898,
-    "sprog": 0.04284103720405862,
+    "sprog": 0.0992108229988726,
     "active": true,
     "tl": 0,
     "pinned": false,
@@ -697,11 +726,21 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 0,
     "tl": 0,
     "top": 1674.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9797.1875
    },
    {
     "name": "reveal",
@@ -924,11 +963,21 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 0,
     "tl": 0,
     "top": 1574.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9697.1875
    },
    {
     "name": "reveal",
@@ -1151,11 +1200,21 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 0,
     "tl": 0,
     "top": 1474.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9597.1875
    },
    {
     "name": "reveal",
@@ -1166,7 +1225,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 547.2512817382812
+    "top": 547.4943237304688
    },
    {
     "name": "reveal",
@@ -1379,11 +1438,21 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 0,
     "tl": 0,
     "top": 1374.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9497.1875
    },
    {
     "name": "reveal",
@@ -1394,7 +1463,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 440.6997985839844
+    "top": 440.8757019042969
    },
    {
     "name": "reveal",
@@ -1607,11 +1676,21 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 0,
     "tl": 0,
     "top": 1274.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9397.1875
    },
    {
     "name": "reveal",
@@ -1622,7 +1701,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 337.556396484375
+    "top": 337.61358642578125
    },
    {
     "name": "reveal",
@@ -1633,7 +1712,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 474.7130432128906
+    "top": 474.23175048828125
    },
    {
     "name": "reveal",
@@ -1828,7 +1907,7 @@
     "end": 1898,
     "sprog": 0.3810597519729425,
     "active": true,
-    "tl": 0.017930327868852458,
+    "tl": 0.01767418032786885,
     "pinned": false,
     "top": 124.015625
    },
@@ -1836,11 +1915,21 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 0,
     "tl": 0,
     "top": 1174.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9297.1875
    },
    {
     "name": "reveal",
@@ -1851,7 +1940,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 235.93589782714844
+    "top": 235.97320556640625
    },
    {
     "name": "reveal",
@@ -1862,7 +1951,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 367.63616943359375
+    "top": 367.47283935546875
    },
    {
     "name": "reveal",
@@ -2065,11 +2154,21 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 0,
     "tl": 0,
     "top": 1074.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9197.1875
    },
    {
     "name": "reveal",
@@ -2080,7 +2179,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 135.305908203125
+    "top": 135.31640625
    },
    {
     "name": "reveal",
@@ -2091,7 +2190,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 264.6370544433594
+    "top": 264.5311279296875
    },
    {
     "name": "reveal",
@@ -2294,11 +2393,21 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 0,
     "tl": 0,
     "top": 974.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9097.1875
    },
    {
     "name": "reveal",
@@ -2309,7 +2418,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 35.055198669433594
+    "top": 35.058998107910156
    },
    {
     "name": "reveal",
@@ -2320,7 +2429,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 163.19195556640625
+    "top": 163.1424560546875
    },
    {
     "name": "reveal",
@@ -2523,11 +2632,21 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 0,
     "tl": 0,
     "top": 874.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8997.1875
    },
    {
     "name": "reveal",
@@ -2538,7 +2657,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -65.03050231933594
+    "top": -65.029296875
    },
    {
     "name": "reveal",
@@ -2549,7 +2668,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 62.53515625
+    "top": 62.51445007324219
    },
    {
     "name": "reveal",
@@ -2744,7 +2863,7 @@
     "end": 1898,
     "sprog": 0.6065388951521984,
     "active": true,
-    "tl": 0.09810450819672131,
+    "tl": 0.09605532786885246,
     "pinned": false,
     "top": -275.984375
    },
@@ -2752,11 +2871,21 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 0,
     "tl": 0,
     "top": 774.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8897.1875
    },
    {
     "name": "reveal",
@@ -2767,7 +2896,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -165.05630493164062
+    "top": -165.05470275878906
    },
    {
     "name": "reveal",
@@ -2778,7 +2907,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -37.736846923828125
+    "top": -37.72975158691406
    },
    {
     "name": "reveal",
@@ -2973,7 +3102,7 @@
     "end": 1898,
     "sprog": 0.6629086809470124,
     "active": true,
-    "tl": 0.1175717213114754,
+    "tl": 0.1173155737704918,
     "pinned": false,
     "top": -375.984375
    },
@@ -2981,11 +3110,21 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 0,
     "tl": 0,
     "top": 674.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8797.1875
    },
    {
     "name": "reveal",
@@ -2996,7 +3135,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -265.06231689453125
+    "top": -265.06219482421875
    },
    {
     "name": "reveal",
@@ -3007,7 +3146,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -137.814453125
+    "top": -137.81605529785156
    },
    {
     "name": "reveal",
@@ -3202,7 +3341,7 @@
     "end": 1898,
     "sprog": 0.7192784667418264,
     "active": true,
-    "tl": 0.13524590163934427,
+    "tl": 0.1370389344262295,
     "pinned": false,
     "top": -475.984375
    },
@@ -3210,11 +3349,21 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 0,
     "tl": 0,
     "top": 574.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8697.1875
    },
    {
     "name": "reveal",
@@ -3236,7 +3385,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -237.83595275878906
+    "top": -237.837646484375
    },
    {
     "name": "reveal",
@@ -3431,7 +3580,7 @@
     "end": 1898,
     "sprog": 0.7756482525366404,
     "active": true,
-    "tl": 0.1567622950819672,
+    "tl": 0.15650614754098363,
     "pinned": false,
     "top": -575.984375
    },
@@ -3439,11 +3588,21 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 0,
     "tl": 0,
     "top": 474.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8597.1875
    },
    {
     "name": "reveal",
@@ -3465,7 +3624,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -337.84344482421875
+    "top": -337.84356689453125
    },
    {
     "name": "reveal",
@@ -3476,7 +3635,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 520.4500732421875
+    "top": 521.2564697265625
    },
    {
     "name": "reveal",
@@ -3669,11 +3828,21 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 0,
     "tl": 0,
     "top": 374.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8497.1875
    },
    {
     "name": "reveal",
@@ -3706,7 +3875,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 414.4329833984375
+    "top": 414.7673034667969
    },
    {
     "name": "reveal",
@@ -3717,7 +3886,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 492.8658752441406
+    "top": 492.74737548828125
    },
    {
     "name": "reveal",
@@ -3892,7 +4061,7 @@
     "end": 1898,
     "sprog": 0.8883878241262683,
     "active": true,
-    "tl": 0.19595286885245902,
+    "tl": 0.19569672131147542,
     "pinned": false,
     "top": -775.984375
    },
@@ -3900,13 +4069,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 0.0001,
     "active": true,
-    "tl": 0.000062,
+    "tl": 0.00006500000000000001,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8397.1875
    },
    {
     "name": "reveal",
@@ -3939,7 +4118,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 247.4635009765625
+    "top": 248.6531982421875
    },
    {
     "name": "reveal",
@@ -3950,7 +4129,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 322.3766784667969
+    "top": 323.3766784667969
    },
    {
     "name": "reveal",
@@ -4133,13 +4312,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.01639344262295082,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.016848816029143898,
     "active": true,
-    "tl": 0.010061,
+    "tl": 0.01043,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8297.1875
    },
    {
     "name": "reveal",
@@ -4172,7 +4361,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 246.06089782714844
+    "top": 247.13670349121094
    },
    {
     "name": "reveal",
@@ -4183,7 +4372,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 319.2625732421875
+    "top": 320.2347717285156
    },
    {
     "name": "reveal",
@@ -4366,13 +4555,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.061930783242258654,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.06238615664845173,
     "active": true,
-    "tl": 0.042311999999999995,
+    "tl": 0.042465,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8197.1875
    },
    {
     "name": "reveal",
@@ -4405,7 +4604,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 245.42579650878906
+    "top": 246.46310424804688
    },
    {
     "name": "reveal",
@@ -4416,7 +4615,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 317.74609375
+    "top": 318.74609375
    },
    {
     "name": "reveal",
@@ -4599,13 +4798,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.10746812386156648,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.10792349726775956,
     "active": true,
-    "tl": 0.08493200000000001,
+    "tl": 0.08529,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8097.1875
    },
    {
     "name": "reveal",
@@ -4638,7 +4847,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 245.16600036621094
+    "top": 246.1782989501953
    },
    {
     "name": "reveal",
@@ -4649,7 +4858,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 317.03515625
+    "top": 318.03515625
    },
    {
     "name": "reveal",
@@ -4832,13 +5041,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.15300546448087432,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.1534608378870674,
     "active": true,
-    "tl": 0.129029,
+    "tl": 0.129779,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7997.1875
    },
    {
     "name": "reveal",
@@ -4871,7 +5090,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 245.09080505371094
+    "top": 246.093994140625
    },
    {
     "name": "reveal",
@@ -4882,7 +5101,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 316.78765869140625
+    "top": 317.785888671875
    },
    {
     "name": "reveal",
@@ -5065,13 +5284,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.19854280510018216,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.19899817850637522,
     "active": true,
-    "tl": 0.170201,
+    "tl": 0.167928,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7897.1875
    },
    {
     "name": "reveal",
@@ -5104,7 +5333,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 245.06979370117188
+    "top": 246.0720977783203
    },
    {
     "name": "reveal",
@@ -5115,7 +5344,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 316.70745849609375
+    "top": 317.71148681640625
    },
    {
     "name": "reveal",
@@ -5298,13 +5527,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.24408014571949,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.24453551912568305,
     "active": true,
-    "tl": 0.22078,
+    "tl": 0.21832300000000002,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7797.1875
    },
    {
     "name": "reveal",
@@ -5337,7 +5576,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 245.0626983642578
+    "top": 246.06300354003906
    },
    {
     "name": "reveal",
@@ -5348,7 +5587,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 316.6789855957031
+    "top": 317.6789855957031
    },
    {
     "name": "reveal",
@@ -5531,13 +5770,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.2896174863387978,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.2900728597449909,
     "active": true,
-    "tl": 0.263515,
+    "tl": 0.263181,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7697.1875
    },
    {
     "name": "reveal",
@@ -5570,7 +5819,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 245.0625
+    "top": 246.0625
    },
    {
     "name": "reveal",
@@ -5581,7 +5830,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 316.67236328125
+    "top": 317.67236328125
    },
    {
     "name": "reveal",
@@ -5764,13 +6013,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.33515482695810567,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.3356102003642987,
     "active": true,
-    "tl": 0.310881,
+    "tl": 0.311087,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7597.1875
    },
    {
     "name": "reveal",
@@ -5803,7 +6062,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 245.0625
+    "top": 246.0625
    },
    {
     "name": "reveal",
@@ -5814,7 +6073,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 316.671875
+    "top": 317.671875
    },
    {
     "name": "reveal",
@@ -5997,13 +6256,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.3806921675774135,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.38114754098360654,
     "active": true,
-    "tl": 0.35472600000000004,
+    "tl": 0.356472,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7497.1875
    },
    {
     "name": "reveal",
@@ -6036,7 +6305,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 245.0625
+    "top": 246.0625
    },
    {
     "name": "reveal",
@@ -6047,7 +6316,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 316.671875
+    "top": 317.671875
    },
    {
     "name": "reveal",
@@ -6230,13 +6499,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.4262295081967213,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.4266848816029144,
     "active": true,
-    "tl": 0.39942400000000006,
+    "tl": 0.402294,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7397.1875
    },
    {
     "name": "reveal",
@@ -6269,7 +6548,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 245.0625
+    "top": 246.0625
    },
    {
     "name": "reveal",
@@ -6280,7 +6559,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 316.671875
+    "top": 317.671875
    },
    {
     "name": "reveal",
@@ -6463,13 +6742,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.47176684881602915,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.4722222222222222,
     "active": true,
-    "tl": 0.44503600000000004,
+    "tl": 0.44597500000000007,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7297.1875
    },
    {
     "name": "reveal",
@@ -6502,7 +6791,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 245.0625
+    "top": 246.0625
    },
    {
     "name": "reveal",
@@ -6513,7 +6802,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 316.671875
+    "top": 317.671875
    },
    {
     "name": "reveal",
@@ -6696,13 +6985,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.517304189435337,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.51775956284153,
     "active": true,
-    "tl": 0.492493,
+    "tl": 0.49122200000000005,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7197.1875
    },
    {
     "name": "reveal",
@@ -6735,7 +7034,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 245.0625
+    "top": 246.0625
    },
    {
     "name": "reveal",
@@ -6746,7 +7045,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 316.671875
+    "top": 317.671875
    },
    {
     "name": "reveal",
@@ -6929,13 +7228,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.5628415300546448,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.5632969034608379,
     "active": true,
-    "tl": 0.536806,
+    "tl": 0.5362910000000001,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7097.1875
    },
    {
     "name": "reveal",
@@ -6968,7 +7277,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 245.0625
+    "top": 246.0625
    },
    {
     "name": "reveal",
@@ -6979,7 +7288,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 316.671875
+    "top": 317.671875
    },
    {
     "name": "reveal",
@@ -7162,13 +7471,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.6083788706739527,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.6088342440801457,
     "active": true,
-    "tl": 0.581549,
+    "tl": 0.584275,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6997.1875
    },
    {
     "name": "reveal",
@@ -7201,7 +7520,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 245.0625
+    "top": 246.0625
    },
    {
     "name": "reveal",
@@ -7212,7 +7531,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 316.671875
+    "top": 317.671875
    },
    {
     "name": "reveal",
@@ -7395,13 +7714,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.6539162112932605,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.6543715846994536,
     "active": true,
-    "tl": 0.629413,
+    "tl": 0.628065,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6897.1875
    },
    {
     "name": "reveal",
@@ -7434,7 +7763,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 245.0625
+    "top": 246.0625
    },
    {
     "name": "reveal",
@@ -7445,7 +7774,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 316.671875
+    "top": 317.671875
    },
    {
     "name": "reveal",
@@ -7628,13 +7957,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.6994535519125683,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.6999089253187614,
     "active": true,
-    "tl": 0.673166,
+    "tl": 0.673351,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6797.1875
    },
    {
     "name": "reveal",
@@ -7667,7 +8006,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 245.0625
+    "top": 246.0625
    },
    {
     "name": "reveal",
@@ -7678,7 +8017,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 316.671875
+    "top": 317.671875
    },
    {
     "name": "reveal",
@@ -7861,13 +8200,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.7449908925318761,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.7454462659380692,
     "active": true,
-    "tl": 0.71844,
+    "tl": 0.718433,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6697.1875
    },
    {
     "name": "reveal",
@@ -7900,7 +8249,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 245.0625
+    "top": 246.0625
    },
    {
     "name": "reveal",
@@ -7911,7 +8260,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 316.671875
+    "top": 317.671875
    },
    {
     "name": "reveal",
@@ -8094,13 +8443,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.7905282331511839,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.7909836065573771,
     "active": true,
-    "tl": 0.763758,
+    "tl": 0.7635660000000001,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6597.1875
    },
    {
     "name": "reveal",
@@ -8133,7 +8492,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 245.0625
+    "top": 246.0625
    },
    {
     "name": "reveal",
@@ -8144,7 +8503,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 316.671875
+    "top": 317.671875
    },
    {
     "name": "reveal",
@@ -8327,13 +8686,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.8360655737704918,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.8365209471766849,
     "active": true,
-    "tl": 0.8114640000000001,
+    "tl": 0.8120510000000001,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6497.1875
    },
    {
     "name": "reveal",
@@ -8366,7 +8735,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 245.0625
+    "top": 246.0625
    },
    {
     "name": "reveal",
@@ -8377,7 +8746,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 316.671875
+    "top": 317.671875
    },
    {
     "name": "reveal",
@@ -8560,13 +8929,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.8816029143897997,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.8820582877959927,
     "active": true,
-    "tl": 0.8556400000000001,
+    "tl": 0.8557830000000001,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6397.1875
    },
    {
     "name": "reveal",
@@ -8599,7 +8978,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 245.0625
+    "top": 246.0625
    },
    {
     "name": "reveal",
@@ -8610,7 +8989,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 316.671875
+    "top": 317.671875
    },
    {
     "name": "reveal",
@@ -8793,13 +9172,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.9271402550091075,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.9275956284153005,
     "active": true,
-    "tl": 0.900337,
+    "tl": 0.902649,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6297.1875
    },
    {
     "name": "reveal",
@@ -8832,7 +9221,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 245.0625
+    "top": 246.0625
    },
    {
     "name": "reveal",
@@ -8843,7 +9232,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 316.671875
+    "top": 317.671875
    },
    {
     "name": "reveal",
@@ -9026,13 +9415,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
-    "sprog": 0.9726775956284153,
+    "start": 1763,
+    "end": 3959,
+    "sprog": 0.9731329690346083,
     "active": true,
-    "tl": 0.9459470000000001,
+    "tl": 0.9466900000000001,
     "pinned": true,
-    "top": 210.9375
+    "top": 211.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6197.1875
    },
    {
     "name": "reveal",
@@ -9065,7 +9464,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 245.0625
+    "top": 246.0625
    },
    {
     "name": "reveal",
@@ -9076,7 +9475,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 316.671875
+    "top": 317.671875
    },
    {
     "name": "reveal",
@@ -9259,13 +9658,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
-    "tl": 0.97999,
+    "tl": 0.9803950000000001,
     "pinned": false,
     "top": 170.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6097.1875
    },
    {
     "name": "reveal",
@@ -9492,13 +9901,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
-    "tl": 0.9932760000000002,
+    "tl": 0.9933130000000001,
     "pinned": false,
     "top": 70.9375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5997.1875
    },
    {
     "name": "reveal",
@@ -9725,13 +10144,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
-    "tl": 0.998232,
+    "tl": 0.998267,
     "pinned": false,
     "top": -29.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5897.1875
    },
    {
     "name": "reveal",
@@ -9958,13 +10387,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 0.999604,
     "pinned": false,
     "top": -129.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5797.1875
    },
    {
     "name": "reveal",
@@ -10191,13 +10630,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
-    "tl": 0.999932,
+    "tl": 0.9999340000000001,
     "pinned": false,
     "top": -229.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5697.1875
    },
    {
     "name": "reveal",
@@ -10252,7 +10701,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 453.8502502441406
+    "top": 453.73175048828125
    },
    {
     "name": "reveal",
@@ -10425,13 +10874,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 0.999993,
     "pinned": false,
     "top": -329.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5597.1875
    },
    {
     "name": "reveal",
@@ -10497,7 +10956,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 464.3837585449219
+    "top": 464.3856201171875
    },
    {
     "name": "reveal",
@@ -10663,13 +11122,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -429.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5497.1875
    },
    {
     "name": "reveal",
@@ -10724,7 +11193,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 244.2469482421875
+    "top": 244.21914672851562
    },
    {
     "name": "reveal",
@@ -10735,7 +11204,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 364.1900329589844
+    "top": 364.1926574707031
    },
    {
     "name": "reveal",
@@ -10746,7 +11215,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 364.3485107421875
+    "top": 364.349853515625
    },
    {
     "name": "reveal",
@@ -10757,7 +11226,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 364.445068359375
+    "top": 364.4451904296875
    },
    {
     "name": "reveal",
@@ -10901,13 +11370,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -529.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5397.1875
    },
    {
     "name": "reveal",
@@ -10962,7 +11441,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 142.74354553222656
+    "top": 142.6424560546875
    },
    {
     "name": "reveal",
@@ -10973,7 +11452,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 263.9385986328125
+    "top": 263.91607666015625
    },
    {
     "name": "reveal",
@@ -10984,7 +11463,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 264.1383972167969
+    "top": 264.1174011230469
    },
    {
     "name": "reveal",
@@ -10995,7 +11474,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 264.31036376953125
+    "top": 264.2933654785156
    },
    {
     "name": "reveal",
@@ -11006,7 +11485,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 264.4263610839844
+    "top": 264.419677734375
    },
    {
     "name": "reveal",
@@ -11017,7 +11496,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 473.36834716796875
+    "top": 473.35565185546875
    },
    {
     "name": "reveal",
@@ -11028,7 +11507,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 473.4375
+    "top": 473.43505859375
    },
    {
     "name": "reveal",
@@ -11141,13 +11620,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -629.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5297.1875
    },
    {
     "name": "reveal",
@@ -11202,7 +11691,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 42.05685043334961
+    "top": 42.01445007324219
    },
    {
     "name": "reveal",
@@ -11213,7 +11702,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 163.66055297851562
+    "top": 163.6372528076172
    },
    {
     "name": "reveal",
@@ -11224,7 +11713,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 163.8789520263672
+    "top": 163.85577392578125
    },
    {
     "name": "reveal",
@@ -11235,7 +11724,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 164.08609008789062
+    "top": 164.0644073486328
    },
    {
     "name": "reveal",
@@ -11246,7 +11735,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 164.26651000976562
+    "top": 164.2505645751953
    },
    {
     "name": "reveal",
@@ -11257,7 +11746,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 373.1746826171875
+    "top": 373.1551513671875
    },
    {
     "name": "reveal",
@@ -11268,7 +11757,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 373.33355712890625
+    "top": 373.3179931640625
    },
    {
     "name": "reveal",
@@ -11381,13 +11870,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -729.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5197.1875
    },
    {
     "name": "reveal",
@@ -11442,7 +11941,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -58.22795104980469
+    "top": -58.22975158691406
    },
    {
     "name": "reveal",
@@ -11453,7 +11952,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 63.34534454345703
+    "top": 63.34844970703125
    },
    {
     "name": "reveal",
@@ -11464,7 +11963,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 63.57109069824219
+    "top": 63.57341003417969
    },
    {
     "name": "reveal",
@@ -11475,7 +11974,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 63.79437255859375
+    "top": 63.79633712768555
    },
    {
     "name": "reveal",
@@ -11486,7 +11985,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 64.00602722167969
+    "top": 64.01022338867188
    },
    {
     "name": "reveal",
@@ -11497,7 +11996,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 272.897705078125
+    "top": 272.9001770019531
    },
    {
     "name": "reveal",
@@ -11508,7 +12007,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 273.10040283203125
+    "top": 273.10198974609375
    },
    {
     "name": "reveal",
@@ -11621,13 +12120,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -829.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5097.1875
    },
    {
     "name": "reveal",
@@ -11682,7 +12191,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -158.312255859375
+    "top": -158.31285095214844
    },
    {
     "name": "reveal",
@@ -11693,7 +12202,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -36.945274353027344
+    "top": -36.94221496582031
    },
    {
     "name": "reveal",
@@ -11704,7 +12213,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -36.71856689453125
+    "top": -36.71625900268555
    },
    {
     "name": "reveal",
@@ -11715,7 +12224,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -36.4904670715332
+    "top": -36.48846435546875
    },
    {
     "name": "reveal",
@@ -11726,7 +12235,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -36.26720428466797
+    "top": -36.262939453125
    },
    {
     "name": "reveal",
@@ -11737,7 +12246,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 172.6181640625
+    "top": 172.62069702148438
    },
    {
     "name": "reveal",
@@ -11748,7 +12257,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 172.83804321289062
+    "top": 172.8397674560547
    },
    {
     "name": "reveal",
@@ -11861,13 +12370,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -929.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4997.1875
    },
    {
     "name": "reveal",
@@ -11922,7 +12441,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -258.3366394042969
+    "top": -258.337646484375
    },
    {
     "name": "reveal",
@@ -11933,7 +12452,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -137.2342987060547
+    "top": -137.2569122314453
    },
    {
     "name": "reveal",
@@ -11944,7 +12463,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -137.00909423828125
+    "top": -137.0326385498047
    },
    {
     "name": "reveal",
@@ -11955,7 +12474,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -136.78077697753906
+    "top": -136.80470275878906
    },
    {
     "name": "reveal",
@@ -11966,7 +12485,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -136.55397033691406
+    "top": -136.57554626464844
    },
    {
     "name": "reveal",
@@ -11977,7 +12496,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 72.32925415039062
+    "top": 72.30586242675781
    },
    {
     "name": "reveal",
@@ -11988,7 +12507,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 72.55546569824219
+    "top": 72.53160095214844
    },
    {
     "name": "reveal",
@@ -11999,7 +12518,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 496.21612548828125
+    "top": 495.5282287597656
    },
    {
     "name": "reveal",
@@ -12102,13 +12621,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1029.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4897.1875
    },
    {
     "name": "reveal",
@@ -12174,7 +12703,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -237.5448760986328
+    "top": -237.5425262451172
    },
    {
     "name": "reveal",
@@ -12185,7 +12714,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -237.32237243652344
+    "top": -237.32073974609375
    },
    {
     "name": "reveal",
@@ -12196,7 +12725,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -237.09608459472656
+    "top": -237.0947265625
    },
    {
     "name": "reveal",
@@ -12207,7 +12736,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -236.86978149414062
+    "top": -236.86618041992188
    },
    {
     "name": "reveal",
@@ -12218,7 +12747,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -27.986602783203125
+    "top": -27.984725952148438
    },
    {
     "name": "reveal",
@@ -12229,7 +12758,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -27.759506225585938
+    "top": -27.758331298828125
    },
    {
     "name": "reveal",
@@ -12240,7 +12769,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 389.45721435546875
+    "top": 389.5111083984375
    },
    {
     "name": "reveal",
@@ -12251,7 +12780,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 530.6361694335938
+    "top": 531.5533447265625
    },
    {
     "name": "reveal",
@@ -12344,13 +12873,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1129.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4797.1875
    },
    {
     "name": "reveal",
@@ -12416,7 +12955,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -337.8269958496094
+    "top": -337.82391357421875
    },
    {
     "name": "reveal",
@@ -12427,7 +12966,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -337.60723876953125
+    "top": -337.6048583984375
    },
    {
     "name": "reveal",
@@ -12438,7 +12977,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -337.383544921875
+    "top": -337.3814697265625
    },
    {
     "name": "reveal",
@@ -12449,7 +12988,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -337.15936279296875
+    "top": -337.155029296875
    },
    {
     "name": "reveal",
@@ -12460,7 +12999,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -128.27532958984375
+    "top": -128.272705078125
    },
    {
     "name": "reveal",
@@ -12471,7 +13010,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -128.04986572265625
+    "top": -128.04794311523438
    },
    {
     "name": "reveal",
@@ -12493,7 +13032,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 424.67596435546875
+    "top": 425.0641784667969
    },
    {
     "name": "reveal",
@@ -12586,13 +13125,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1229.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4697.1875
    },
    {
     "name": "reveal",
@@ -12658,7 +13207,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -442.0644836425781
+    "top": -442.0626220703125
    },
    {
     "name": "reveal",
@@ -12669,7 +13218,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -437.8878173828125
+    "top": -437.88623046875
    },
    {
     "name": "reveal",
@@ -12680,7 +13229,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -437.6669006347656
+    "top": -437.66558837890625
    },
    {
     "name": "reveal",
@@ -12691,7 +13240,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -437.44537353515625
+    "top": -437.4418640136719
    },
    {
     "name": "reveal",
@@ -12702,7 +13251,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -228.5601806640625
+    "top": -228.558349609375
    },
    {
     "name": "reveal",
@@ -12713,7 +13262,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -228.3372039794922
+    "top": -228.33607482910156
    },
    {
     "name": "reveal",
@@ -12724,7 +13273,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 185.1268310546875
+    "top": 185.13902282714844
    },
    {
     "name": "reveal",
@@ -12735,7 +13284,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 321.7342529296875
+    "top": 321.9500732421875
    },
    {
     "name": "reveal",
@@ -12828,13 +13377,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1329.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4597.1875
    },
    {
     "name": "reveal",
@@ -12900,7 +13459,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -554.9363403320312
+    "top": -554.9358520507812
    },
    {
     "name": "reveal",
@@ -12911,7 +13470,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -545.9255981445312
+    "top": -545.9246215820312
    },
    {
     "name": "reveal",
@@ -12922,7 +13481,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -538.6311645507812
+    "top": -538.6305541992188
    },
    {
     "name": "reveal",
@@ -12933,7 +13492,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -537.754638671875
+    "top": -537.7518310546875
    },
    {
     "name": "reveal",
@@ -12944,7 +13503,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -328.86810302734375
+    "top": -328.8669128417969
    },
    {
     "name": "reveal",
@@ -12955,7 +13514,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -328.64813232421875
+    "top": -328.64764404296875
    },
    {
     "name": "reveal",
@@ -12977,7 +13536,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 220.26397705078125
+    "top": 220.3455810546875
    },
    {
     "name": "reveal",
@@ -13070,13 +13629,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1429.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4497.1875
    },
    {
     "name": "reveal",
@@ -13142,7 +13711,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -658.7750244140625
+    "top": -658.7774047851562
    },
    {
     "name": "reveal",
@@ -13153,7 +13722,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -656.0314331054688
+    "top": -656.0381469726562
    },
    {
     "name": "reveal",
@@ -13164,7 +13733,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -649.7769165039062
+    "top": -649.7933349609375
    },
    {
     "name": "reveal",
@@ -13175,7 +13744,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -639.5791015625
+    "top": -639.5851440429688
    },
    {
     "name": "reveal",
@@ -13186,7 +13755,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -434.2459716796875
+    "top": -434.2628173828125
    },
    {
     "name": "reveal",
@@ -13197,7 +13766,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -428.9842224121094
+    "top": -428.9853515625
    },
    {
     "name": "reveal",
@@ -13208,7 +13777,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -15.757575988769531
+    "top": -15.755874633789062
    },
    {
     "name": "reveal",
@@ -13219,7 +13788,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 119.68377685546875
+    "top": 119.72267150878906
    },
    {
     "name": "reveal",
@@ -13312,13 +13881,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1529.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4397.1875
    },
    {
     "name": "reveal",
@@ -13406,7 +13985,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -757.2669677734375
+    "top": -757.2669067382812
    },
    {
     "name": "reveal",
@@ -13417,7 +13996,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -751.887451171875
+    "top": -751.8864135742188
    },
    {
     "name": "reveal",
@@ -13428,7 +14007,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -545.951904296875
+    "top": -545.95166015625
    },
    {
     "name": "reveal",
@@ -13439,7 +14018,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -536.9214477539062
+    "top": -536.921142578125
    },
    {
     "name": "reveal",
@@ -13461,7 +14040,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 19.461181640625
+    "top": 19.473373413085938
    },
    {
     "name": "reveal",
@@ -13554,13 +14133,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1629.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4297.1875
    },
    {
     "name": "reveal",
@@ -13648,7 +14237,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -859.368408203125
+    "top": -859.4335327148438
    },
    {
     "name": "reveal",
@@ -13659,7 +14248,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -857.8894653320312
+    "top": -858.1543579101562
    },
    {
     "name": "reveal",
@@ -13670,7 +14259,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -649.7906494140625
+    "top": -649.9503784179688
    },
    {
     "name": "reveal",
@@ -13681,7 +14270,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -647.0400390625
+    "top": -647.503173828125
    },
    {
     "name": "reveal",
@@ -13692,7 +14281,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -215.853271484375
+    "top": -215.8540802001953
    },
    {
     "name": "reveal",
@@ -13703,7 +14292,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -80.61332702636719
+    "top": -80.61293029785156
    },
    {
     "name": "reveal",
@@ -13714,7 +14303,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 510.84112548828125
+    "top": 510.26513671875
    },
    {
     "name": "reveal",
@@ -13797,13 +14386,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1729.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4197.1875
    },
    {
     "name": "reveal",
@@ -13902,7 +14501,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -959.4824829101562
+    "top": -959.5175170898438
    },
    {
     "name": "reveal",
@@ -13924,7 +14523,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -750.088623046875
+    "top": -750.206298828125
    },
    {
     "name": "reveal",
@@ -13935,7 +14534,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -315.85919189453125
+    "top": -315.859375
    },
    {
     "name": "reveal",
@@ -13957,7 +14556,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 404.4704284667969
+    "top": 404.1361083984375
    },
    {
     "name": "reveal",
@@ -14040,13 +14639,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1829.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4097.1875
    },
    {
     "name": "reveal",
@@ -14189,7 +14798,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -280.640625
+    "top": -280.64044189453125
    },
    {
     "name": "reveal",
@@ -14200,7 +14809,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 301.1405334472656
+    "top": 301.19293212890625
    },
    {
     "name": "reveal",
@@ -14211,7 +14820,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 496.87054443359375
+    "top": 497.7877502441406
    },
    {
     "name": "reveal",
@@ -14284,13 +14893,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1929.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3997.1875
    },
    {
     "name": "reveal",
@@ -14444,7 +15063,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 199.7518310546875
+    "top": 199.7763214111328
    },
    {
     "name": "reveal",
@@ -14455,7 +15074,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 390.91033935546875
+    "top": 391.3560485839844
    },
    {
     "name": "reveal",
@@ -14528,13 +15147,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2029.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3897.1875
    },
    {
     "name": "reveal",
@@ -14688,7 +15317,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 99.12892150878906
+    "top": 99.09942626953125
    },
    {
     "name": "reveal",
@@ -14772,13 +15401,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2129.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3797.1875
    },
    {
     "name": "reveal",
@@ -14932,7 +15571,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -1.1203765869140625
+    "top": -1.1292762756347656
    },
    {
     "name": "reveal",
@@ -14943,7 +15582,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 186.5799560546875
+    "top": 186.59214782714844
    },
    {
     "name": "reveal",
@@ -14954,7 +15593,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 454.43487548828125
+    "top": 454.5533752441406
    },
    {
     "name": "reveal",
@@ -14965,7 +15604,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 526.0442504882812
+    "top": 526.1627197265625
    },
    {
     "name": "reveal",
@@ -15018,13 +15657,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2229.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3697.1875
    },
    {
     "name": "reveal",
@@ -15178,7 +15827,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -101.20287322998047
+    "top": -101.20606994628906
    },
    {
     "name": "reveal",
@@ -15264,13 +15913,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2329.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3597.1875
    },
    {
     "name": "reveal",
@@ -15424,7 +16083,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -201.228271484375
+    "top": -201.22796630859375
    },
    {
     "name": "reveal",
@@ -15435,7 +16094,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -14.304443359375
+    "top": -14.290451049804688
    },
    {
     "name": "reveal",
@@ -15446,7 +16105,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 244.73426818847656
+    "top": 244.9500732421875
    },
    {
     "name": "reveal",
@@ -15457,7 +16116,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 316.3436584472656
+    "top": 316.5594482421875
    },
    {
     "name": "reveal",
@@ -15468,7 +16127,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 514.1219482421875
+    "top": 514.9283447265625
    },
    {
     "name": "reveal",
@@ -15511,13 +16170,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2429.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3497.1875
    },
    {
     "name": "reveal",
@@ -15682,7 +16351,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -114.37855529785156
+    "top": -114.374755859375
    },
    {
     "name": "reveal",
@@ -15693,7 +16362,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 143.3455810546875
+    "top": 143.43357849121094
    },
    {
     "name": "reveal",
@@ -15704,7 +16373,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 214.9549560546875
+    "top": 215.04295349121094
    },
    {
     "name": "reveal",
@@ -15715,7 +16384,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 408.1048889160156
+    "top": 408.4391784667969
    },
    {
     "name": "reveal",
@@ -15726,7 +16395,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 486.5377502441406
+    "top": 486.41925048828125
    },
    {
     "name": "reveal",
@@ -15759,13 +16428,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2529.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3397.1875
    },
    {
     "name": "reveal",
@@ -15930,7 +16609,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -214.400146484375
+    "top": -214.39895629882812
    },
    {
     "name": "reveal",
@@ -15941,7 +16620,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 42.71757507324219
+    "top": 42.75997543334961
    },
    {
     "name": "reveal",
@@ -15952,7 +16631,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 114.32695007324219
+    "top": 114.36934661865234
    },
    {
     "name": "reveal",
@@ -15963,7 +16642,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 305.1353759765625
+    "top": 305.3250732421875
    },
    {
     "name": "reveal",
@@ -16007,13 +16686,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2629.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3297.1875
    },
    {
     "name": "reveal",
@@ -16178,7 +16867,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -314.40606689453125
+    "top": -314.40576171875
    },
    {
     "name": "reveal",
@@ -16189,7 +16878,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -57.52662658691406
+    "top": -57.51322555541992
    },
    {
     "name": "reveal",
@@ -16200,7 +16889,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 14.082748413085938
+    "top": 14.096153259277344
    },
    {
     "name": "reveal",
@@ -16211,7 +16900,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 203.73277282714844
+    "top": 203.80857849121094
    },
    {
     "name": "reveal",
@@ -16222,7 +16911,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 276.9344482421875
+    "top": 276.9066467285156
    },
    {
     "name": "reveal",
@@ -16255,13 +16944,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2729.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3197.1875
    },
    {
     "name": "reveal",
@@ -16437,7 +17136,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -157.6133270263672
+    "top": -157.6050262451172
    },
    {
     "name": "reveal",
@@ -16448,7 +17147,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -86.00395202636719
+    "top": -85.99565124511719
    },
    {
     "name": "reveal",
@@ -16459,7 +17158,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 103.0633773803711
+    "top": 103.13497161865234
    },
    {
     "name": "reveal",
@@ -16470,7 +17169,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 175.3299560546875
+    "top": 175.41795349121094
    },
    {
     "name": "reveal",
@@ -16503,13 +17202,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2829.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3097.1875
    },
    {
     "name": "reveal",
@@ -16685,7 +17394,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -257.634521484375
+    "top": -257.63232421875
    },
    {
     "name": "reveal",
@@ -16696,7 +17405,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -186.025146484375
+    "top": -186.02294921875
    },
    {
     "name": "reveal",
@@ -16707,7 +17416,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 2.8378748893737793
+    "top": 2.8617749214172363
    },
    {
     "name": "reveal",
@@ -16718,7 +17427,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 74.70704650878906
+    "top": 74.73885345458984
    },
    {
     "name": "reveal",
@@ -16751,13 +17460,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2929.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2997.1875
    },
    {
     "name": "reveal",
@@ -16933,7 +17652,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -357.6405334472656
+    "top": -357.63983154296875
    },
    {
     "name": "reveal",
@@ -16944,7 +17663,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -286.0311584472656
+    "top": -286.03045654296875
    },
    {
     "name": "reveal",
@@ -16955,7 +17674,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -97.23792266845703
+    "top": -97.23002624511719
    },
    {
     "name": "reveal",
@@ -16966,7 +17685,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": -25.542251586914062
+    "top": -25.528846740722656
    },
    {
     "name": "reveal",
@@ -16999,13 +17718,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -3029.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2897.1875
    },
    {
     "name": "reveal",
@@ -17203,7 +17932,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -197.2608184814453
+    "top": -197.25852966308594
    },
    {
     "name": "reveal",
@@ -17214,7 +17943,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -125.63044738769531
+    "top": -125.62535095214844
    },
    {
     "name": "reveal",
@@ -17247,13 +17976,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -3129.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2797.1875
    },
    {
     "name": "reveal",
@@ -17451,7 +18190,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -297.265625
+    "top": -297.26513671875
    },
    {
     "name": "reveal",
@@ -17462,7 +18201,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -225.65174865722656
+    "top": -225.64913940429688
    },
    {
     "name": "reveal",
@@ -17495,13 +18234,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -3229.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2697.1875
    },
    {
     "name": "reveal",
@@ -17710,7 +18459,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -325.65625
+    "top": -325.6558532714844
    },
    {
     "name": "reveal",
@@ -17743,13 +18492,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -3329.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2597.1875
    },
    {
     "name": "reveal",
@@ -17991,13 +18750,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -3429.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2497.1875
    },
    {
     "name": "reveal",
@@ -18239,13 +19008,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -3529.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2397.1875
    },
    {
     "name": "reveal",
@@ -18487,13 +19266,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -3629.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2297.1875
    },
    {
     "name": "reveal",
@@ -18735,13 +19524,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -3729.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2197.1875
    },
    {
     "name": "reveal",
@@ -18983,13 +19782,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -3829.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2097.1875
    },
    {
     "name": "reveal",
@@ -19231,13 +20040,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -3929.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1997.1875
    },
    {
     "name": "reveal",
@@ -19479,13 +20298,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -4029.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1897.1875
    },
    {
     "name": "reveal",
@@ -19727,13 +20556,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -4129.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1797.1875
    },
    {
     "name": "reveal",
@@ -19975,13 +20814,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -4229.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1697.1875
    },
    {
     "name": "reveal",
@@ -20223,13 +21072,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -4329.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1597.1875
    },
    {
     "name": "reveal",
@@ -20471,13 +21330,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -4429.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1497.1875
    },
    {
     "name": "reveal",
@@ -20719,13 +21588,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -4529.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1397.1875
    },
    {
     "name": "reveal",
@@ -20967,13 +21846,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -4629.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1297.1875
    },
    {
     "name": "reveal",
@@ -21215,13 +22104,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -4729.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1197.1875
    },
    {
     "name": "reveal",
@@ -21463,13 +22362,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -4829.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1097.1875
    },
    {
     "name": "reveal",
@@ -21711,13 +22620,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -4929.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 997.1875
    },
    {
     "name": "reveal",
@@ -21959,13 +22878,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -5029.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 897.1875
    },
    {
     "name": "reveal",
@@ -22207,13 +23136,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -5129.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 797.1875
    },
    {
     "name": "reveal",
@@ -22433,7 +23372,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 541.2473754882812
+    "top": 541.3658447265625
    }
   ]
  },
@@ -22456,13 +23395,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -5229.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 697.1875
    },
    {
     "name": "reveal",
@@ -22682,7 +23631,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 434.48846435546875
+    "top": 434.8766784667969
    }
   ]
  },
@@ -22705,13 +23654,23 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -5329.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 597.1875
    },
    {
     "name": "reveal",
@@ -22931,7 +23890,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 331.5467834472656
+    "top": 331.5728759765625
    }
   ]
  },
@@ -22954,13 +23913,24 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -5429.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0.04359861591695502,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": 497.1875
    },
    {
     "name": "reveal",
@@ -23203,13 +24173,24 @@
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -5529.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0.11280276816608996,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": 397.1875
    },
    {
     "name": "reveal",
@@ -23429,7 +24410,7 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 129.5300750732422
+    "top": 129.53517150878906
    }
   ]
  },
@@ -23446,19 +24427,30 @@
     "active": false,
     "tl": 0,
     "pinned": false,
-    "top": -8863.984375
+    "top": -8875.984375
    },
    {
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -5617.0625
+    "top": -5629.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0.18200692041522493,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": 297.1875
    },
    {
     "name": "reveal",
@@ -23469,7 +24461,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -8753.0625
+    "top": -8765.0625
    },
    {
     "name": "reveal",
@@ -23480,7 +24472,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -8625.84375
+    "top": -8637.84375
    },
    {
     "name": "reveal",
@@ -23491,7 +24483,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -5582.9375
+    "top": -5594.9375
    },
    {
     "name": "reveal",
@@ -23502,7 +24494,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -5511.328125
+    "top": -5523.328125
    },
    {
     "name": "reveal",
@@ -23513,7 +24505,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4946.34375
+    "top": -4958.34375
    },
    {
     "name": "reveal",
@@ -23524,7 +24516,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -4859.546875
    },
    {
     "name": "reveal",
@@ -23535,7 +24527,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -4859.546875
    },
    {
     "name": "reveal",
@@ -23546,7 +24538,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -4859.546875
    },
    {
     "name": "reveal",
@@ -23557,7 +24549,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -4859.546875
    },
    {
     "name": "reveal",
@@ -23568,7 +24560,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4638.5625
+    "top": -4650.5625
    },
    {
     "name": "reveal",
@@ -23579,7 +24571,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4638.5625
+    "top": -4650.5625
    },
    {
     "name": "reveal",
@@ -23590,7 +24582,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4203.859375
+    "top": -4215.859375
    },
    {
     "name": "reveal",
@@ -23601,7 +24593,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4068.640625
+    "top": -4080.640625
    },
    {
     "name": "reveal",
@@ -23612,7 +24604,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3489.234375
+    "top": -3501.234375
    },
    {
     "name": "reveal",
@@ -23623,7 +24615,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3302.40625
+    "top": -3314.40625
    },
    {
     "name": "reveal",
@@ -23634,7 +24626,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3045.640625
+    "top": -3057.640625
    },
    {
     "name": "reveal",
@@ -23645,7 +24637,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2974.03125
+    "top": -2986.03125
    },
    {
     "name": "reveal",
@@ -23656,7 +24648,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2785.265625
+    "top": -2797.265625
    },
    {
     "name": "reveal",
@@ -23667,18 +24659,18 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2713.65625
+    "top": -2725.65625
    },
    {
     "name": "reveal",
     "kind": "reveal",
     "start": 9293,
     "end": 9964,
-    "sprog": 0.7377049180327869,
+    "sprog": 0.7555886736214605,
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 41.27367401123047
+    "top": 29.287673950195312
    }
   ]
  },
@@ -23695,19 +24687,30 @@
     "active": false,
     "tl": 0,
     "pinned": false,
-    "top": -8863.984375
+    "top": -8975.984375
    },
    {
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -5617.0625
+    "top": -5729.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0.2512110726643599,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": 197.1875
    },
    {
     "name": "reveal",
@@ -23718,7 +24721,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -8753.0625
+    "top": -8865.0625
    },
    {
     "name": "reveal",
@@ -23729,7 +24732,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -8625.84375
+    "top": -8737.84375
    },
    {
     "name": "reveal",
@@ -23740,7 +24743,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -5582.9375
+    "top": -5694.9375
    },
    {
     "name": "reveal",
@@ -23751,7 +24754,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -5511.328125
+    "top": -5623.328125
    },
    {
     "name": "reveal",
@@ -23762,7 +24765,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4946.34375
+    "top": -5058.34375
    },
    {
     "name": "reveal",
@@ -23773,7 +24776,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -4959.546875
    },
    {
     "name": "reveal",
@@ -23784,7 +24787,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -4959.546875
    },
    {
     "name": "reveal",
@@ -23795,7 +24798,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -4959.546875
    },
    {
     "name": "reveal",
@@ -23806,7 +24809,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -4959.546875
    },
    {
     "name": "reveal",
@@ -23817,7 +24820,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4638.5625
+    "top": -4750.5625
    },
    {
     "name": "reveal",
@@ -23828,7 +24831,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4638.5625
+    "top": -4750.5625
    },
    {
     "name": "reveal",
@@ -23839,7 +24842,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4203.859375
+    "top": -4315.859375
    },
    {
     "name": "reveal",
@@ -23850,7 +24853,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4068.640625
+    "top": -4180.640625
    },
    {
     "name": "reveal",
@@ -23861,7 +24864,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3489.234375
+    "top": -3601.234375
    },
    {
     "name": "reveal",
@@ -23872,7 +24875,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3302.40625
+    "top": -3414.40625
    },
    {
     "name": "reveal",
@@ -23883,7 +24886,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3045.640625
+    "top": -3157.640625
    },
    {
     "name": "reveal",
@@ -23894,7 +24897,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2974.03125
+    "top": -3086.03125
    },
    {
     "name": "reveal",
@@ -23905,7 +24908,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2785.265625
+    "top": -2897.265625
    },
    {
     "name": "reveal",
@@ -23916,18 +24919,18 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2713.65625
+    "top": -2825.65625
    },
    {
     "name": "reveal",
     "kind": "reveal",
     "start": 9293,
     "end": 9964,
-    "sprog": 0.7377049180327869,
+    "sprog": 0.9046199701937406,
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 41.19957733154297
+    "top": -70.79662322998047
    }
   ]
  },
@@ -23944,19 +24947,30 @@
     "active": false,
     "tl": 0,
     "pinned": false,
-    "top": -8863.984375
+    "top": -9075.984375
    },
    {
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -5617.0625
+    "top": -5829.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0.32041522491349483,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": 97.1875
    },
    {
     "name": "reveal",
@@ -23967,7 +24981,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -8753.0625
+    "top": -8965.0625
    },
    {
     "name": "reveal",
@@ -23978,7 +24992,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -8625.84375
+    "top": -8837.84375
    },
    {
     "name": "reveal",
@@ -23989,7 +25003,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -5582.9375
+    "top": -5794.9375
    },
    {
     "name": "reveal",
@@ -24000,7 +25014,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -5511.328125
+    "top": -5723.328125
    },
    {
     "name": "reveal",
@@ -24011,7 +25025,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4946.34375
+    "top": -5158.34375
    },
    {
     "name": "reveal",
@@ -24022,7 +25036,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5059.546875
    },
    {
     "name": "reveal",
@@ -24033,7 +25047,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5059.546875
    },
    {
     "name": "reveal",
@@ -24044,7 +25058,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5059.546875
    },
    {
     "name": "reveal",
@@ -24055,7 +25069,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5059.546875
    },
    {
     "name": "reveal",
@@ -24066,7 +25080,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4638.5625
+    "top": -4850.5625
    },
    {
     "name": "reveal",
@@ -24077,7 +25091,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4638.5625
+    "top": -4850.5625
    },
    {
     "name": "reveal",
@@ -24088,7 +25102,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4203.859375
+    "top": -4415.859375
    },
    {
     "name": "reveal",
@@ -24099,7 +25113,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4068.640625
+    "top": -4280.640625
    },
    {
     "name": "reveal",
@@ -24110,7 +25124,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3489.234375
+    "top": -3701.234375
    },
    {
     "name": "reveal",
@@ -24121,7 +25135,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3302.40625
+    "top": -3514.40625
    },
    {
     "name": "reveal",
@@ -24132,7 +25146,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3045.640625
+    "top": -3257.640625
    },
    {
     "name": "reveal",
@@ -24143,7 +25157,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2974.03125
+    "top": -3186.03125
    },
    {
     "name": "reveal",
@@ -24154,7 +25168,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2785.265625
+    "top": -2997.265625
    },
    {
     "name": "reveal",
@@ -24165,18 +25179,18 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2713.65625
+    "top": -2925.65625
    },
    {
     "name": "reveal",
     "kind": "reveal",
     "start": 9293,
     "end": 9964,
-    "sprog": 0.7377049180327869,
-    "active": true,
+    "sprog": 1,
+    "active": false,
     "tl": null,
     "pinned": false,
-    "top": 41.177978515625
+    "top": -170.82083129882812
    }
   ]
  },
@@ -24193,19 +25207,30 @@
     "active": false,
     "tl": 0,
     "pinned": false,
-    "top": -8863.984375
+    "top": -9175.984375
    },
    {
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -5617.0625
+    "top": -5929.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0.38961937716262973,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -2.8125
    },
    {
     "name": "reveal",
@@ -24216,7 +25241,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -8753.0625
+    "top": -9065.0625
    },
    {
     "name": "reveal",
@@ -24227,7 +25252,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -8625.84375
+    "top": -8937.84375
    },
    {
     "name": "reveal",
@@ -24238,7 +25263,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -5582.9375
+    "top": -5894.9375
    },
    {
     "name": "reveal",
@@ -24249,7 +25274,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -5511.328125
+    "top": -5823.328125
    },
    {
     "name": "reveal",
@@ -24260,7 +25285,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4946.34375
+    "top": -5258.34375
    },
    {
     "name": "reveal",
@@ -24271,7 +25296,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5159.546875
    },
    {
     "name": "reveal",
@@ -24282,7 +25307,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5159.546875
    },
    {
     "name": "reveal",
@@ -24293,7 +25318,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5159.546875
    },
    {
     "name": "reveal",
@@ -24304,7 +25329,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5159.546875
    },
    {
     "name": "reveal",
@@ -24315,7 +25340,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4638.5625
+    "top": -4950.5625
    },
    {
     "name": "reveal",
@@ -24326,7 +25351,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4638.5625
+    "top": -4950.5625
    },
    {
     "name": "reveal",
@@ -24337,7 +25362,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4203.859375
+    "top": -4515.859375
    },
    {
     "name": "reveal",
@@ -24348,7 +25373,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4068.640625
+    "top": -4380.640625
    },
    {
     "name": "reveal",
@@ -24359,7 +25384,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3489.234375
+    "top": -3801.234375
    },
    {
     "name": "reveal",
@@ -24370,7 +25395,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3302.40625
+    "top": -3614.40625
    },
    {
     "name": "reveal",
@@ -24381,7 +25406,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3045.640625
+    "top": -3357.640625
    },
    {
     "name": "reveal",
@@ -24392,7 +25417,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2974.03125
+    "top": -3286.03125
    },
    {
     "name": "reveal",
@@ -24403,7 +25428,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2785.265625
+    "top": -3097.265625
    },
    {
     "name": "reveal",
@@ -24414,18 +25439,18 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2713.65625
+    "top": -3025.65625
    },
    {
     "name": "reveal",
     "kind": "reveal",
     "start": 9293,
     "end": 9964,
-    "sprog": 0.7377049180327869,
-    "active": true,
+    "sprog": 1,
+    "active": false,
     "tl": null,
     "pinned": false,
-    "top": 41.17207336425781
+    "top": -270.82794189453125
    }
   ]
  },
@@ -24442,19 +25467,30 @@
     "active": false,
     "tl": 0,
     "pinned": false,
-    "top": -8863.984375
+    "top": -9257.984375
    },
    {
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -5617.0625
+    "top": -6011.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -84.8125
    },
    {
     "name": "reveal",
@@ -24465,7 +25501,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -8753.0625
+    "top": -9147.0625
    },
    {
     "name": "reveal",
@@ -24476,7 +25512,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -8625.84375
+    "top": -9019.84375
    },
    {
     "name": "reveal",
@@ -24487,7 +25523,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -5582.9375
+    "top": -5976.9375
    },
    {
     "name": "reveal",
@@ -24498,7 +25534,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -5511.328125
+    "top": -5905.328125
    },
    {
     "name": "reveal",
@@ -24509,7 +25545,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4946.34375
+    "top": -5340.34375
    },
    {
     "name": "reveal",
@@ -24520,7 +25556,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5241.546875
    },
    {
     "name": "reveal",
@@ -24531,7 +25567,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5241.546875
    },
    {
     "name": "reveal",
@@ -24542,7 +25578,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5241.546875
    },
    {
     "name": "reveal",
@@ -24553,7 +25589,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5241.546875
    },
    {
     "name": "reveal",
@@ -24564,7 +25600,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4638.5625
+    "top": -5032.5625
    },
    {
     "name": "reveal",
@@ -24575,7 +25611,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4638.5625
+    "top": -5032.5625
    },
    {
     "name": "reveal",
@@ -24586,7 +25622,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4203.859375
+    "top": -4597.859375
    },
    {
     "name": "reveal",
@@ -24597,7 +25633,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4068.640625
+    "top": -4462.640625
    },
    {
     "name": "reveal",
@@ -24608,7 +25644,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3489.234375
+    "top": -3883.234375
    },
    {
     "name": "reveal",
@@ -24619,7 +25655,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3302.40625
+    "top": -3696.40625
    },
    {
     "name": "reveal",
@@ -24630,7 +25666,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3045.640625
+    "top": -3439.640625
    },
    {
     "name": "reveal",
@@ -24641,7 +25677,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2974.03125
+    "top": -3368.03125
    },
    {
     "name": "reveal",
@@ -24652,7 +25688,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2785.265625
+    "top": -3179.265625
    },
    {
     "name": "reveal",
@@ -24663,18 +25699,18 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2713.65625
+    "top": -3107.65625
    },
    {
     "name": "reveal",
     "kind": "reveal",
     "start": 9293,
     "end": 9964,
-    "sprog": 0.7377049180327869,
-    "active": true,
+    "sprog": 1,
+    "active": false,
     "tl": null,
     "pinned": false,
-    "top": 41.171875
+    "top": -352.828125
    }
   ]
  },
@@ -24691,19 +25727,30 @@
     "active": false,
     "tl": 0,
     "pinned": false,
-    "top": -8863.984375
+    "top": -9257.984375
    },
    {
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -5617.0625
+    "top": -6011.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -84.8125
    },
    {
     "name": "reveal",
@@ -24714,7 +25761,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -8753.0625
+    "top": -9147.0625
    },
    {
     "name": "reveal",
@@ -24725,7 +25772,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -8625.84375
+    "top": -9019.84375
    },
    {
     "name": "reveal",
@@ -24736,7 +25783,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -5582.9375
+    "top": -5976.9375
    },
    {
     "name": "reveal",
@@ -24747,7 +25794,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -5511.328125
+    "top": -5905.328125
    },
    {
     "name": "reveal",
@@ -24758,7 +25805,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4946.34375
+    "top": -5340.34375
    },
    {
     "name": "reveal",
@@ -24769,7 +25816,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5241.546875
    },
    {
     "name": "reveal",
@@ -24780,7 +25827,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5241.546875
    },
    {
     "name": "reveal",
@@ -24791,7 +25838,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5241.546875
    },
    {
     "name": "reveal",
@@ -24802,7 +25849,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5241.546875
    },
    {
     "name": "reveal",
@@ -24813,7 +25860,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4638.5625
+    "top": -5032.5625
    },
    {
     "name": "reveal",
@@ -24824,7 +25871,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4638.5625
+    "top": -5032.5625
    },
    {
     "name": "reveal",
@@ -24835,7 +25882,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4203.859375
+    "top": -4597.859375
    },
    {
     "name": "reveal",
@@ -24846,7 +25893,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4068.640625
+    "top": -4462.640625
    },
    {
     "name": "reveal",
@@ -24857,7 +25904,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3489.234375
+    "top": -3883.234375
    },
    {
     "name": "reveal",
@@ -24868,7 +25915,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3302.40625
+    "top": -3696.40625
    },
    {
     "name": "reveal",
@@ -24879,7 +25926,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3045.640625
+    "top": -3439.640625
    },
    {
     "name": "reveal",
@@ -24890,7 +25937,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2974.03125
+    "top": -3368.03125
    },
    {
     "name": "reveal",
@@ -24901,7 +25948,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2785.265625
+    "top": -3179.265625
    },
    {
     "name": "reveal",
@@ -24912,18 +25959,18 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2713.65625
+    "top": -3107.65625
    },
    {
     "name": "reveal",
     "kind": "reveal",
     "start": 9293,
     "end": 9964,
-    "sprog": 0.7377049180327869,
-    "active": true,
+    "sprog": 1,
+    "active": false,
     "tl": null,
     "pinned": false,
-    "top": 41.171875
+    "top": -352.828125
    }
   ]
  },
@@ -24940,19 +25987,30 @@
     "active": false,
     "tl": 0,
     "pinned": false,
-    "top": -8863.984375
+    "top": -9257.984375
    },
    {
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -5617.0625
+    "top": -6011.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -84.8125
    },
    {
     "name": "reveal",
@@ -24963,7 +26021,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -8753.0625
+    "top": -9147.0625
    },
    {
     "name": "reveal",
@@ -24974,7 +26032,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -8625.84375
+    "top": -9019.84375
    },
    {
     "name": "reveal",
@@ -24985,7 +26043,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -5582.9375
+    "top": -5976.9375
    },
    {
     "name": "reveal",
@@ -24996,7 +26054,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -5511.328125
+    "top": -5905.328125
    },
    {
     "name": "reveal",
@@ -25007,7 +26065,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4946.34375
+    "top": -5340.34375
    },
    {
     "name": "reveal",
@@ -25018,7 +26076,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5241.546875
    },
    {
     "name": "reveal",
@@ -25029,7 +26087,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5241.546875
    },
    {
     "name": "reveal",
@@ -25040,7 +26098,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5241.546875
    },
    {
     "name": "reveal",
@@ -25051,7 +26109,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5241.546875
    },
    {
     "name": "reveal",
@@ -25062,7 +26120,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4638.5625
+    "top": -5032.5625
    },
    {
     "name": "reveal",
@@ -25073,7 +26131,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4638.5625
+    "top": -5032.5625
    },
    {
     "name": "reveal",
@@ -25084,7 +26142,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4203.859375
+    "top": -4597.859375
    },
    {
     "name": "reveal",
@@ -25095,7 +26153,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4068.640625
+    "top": -4462.640625
    },
    {
     "name": "reveal",
@@ -25106,7 +26164,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3489.234375
+    "top": -3883.234375
    },
    {
     "name": "reveal",
@@ -25117,7 +26175,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3302.40625
+    "top": -3696.40625
    },
    {
     "name": "reveal",
@@ -25128,7 +26186,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3045.640625
+    "top": -3439.640625
    },
    {
     "name": "reveal",
@@ -25139,7 +26197,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2974.03125
+    "top": -3368.03125
    },
    {
     "name": "reveal",
@@ -25150,7 +26208,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2785.265625
+    "top": -3179.265625
    },
    {
     "name": "reveal",
@@ -25161,18 +26219,18 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2713.65625
+    "top": -3107.65625
    },
    {
     "name": "reveal",
     "kind": "reveal",
     "start": 9293,
     "end": 9964,
-    "sprog": 0.7377049180327869,
-    "active": true,
+    "sprog": 1,
+    "active": false,
     "tl": null,
     "pinned": false,
-    "top": 41.171875
+    "top": -352.828125
    }
   ]
  },
@@ -25189,19 +26247,30 @@
     "active": false,
     "tl": 0,
     "pinned": false,
-    "top": -8863.984375
+    "top": -9257.984375
    },
    {
     "name": "ikuro-loop",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1764,
-    "end": 3960,
+    "start": 1763,
+    "end": 3959,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -5617.0625
+    "top": -6011.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -84.8125
    },
    {
     "name": "reveal",
@@ -25212,7 +26281,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -8753.0625
+    "top": -9147.0625
    },
    {
     "name": "reveal",
@@ -25223,7 +26292,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -8625.84375
+    "top": -9019.84375
    },
    {
     "name": "reveal",
@@ -25234,7 +26303,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -5582.9375
+    "top": -5976.9375
    },
    {
     "name": "reveal",
@@ -25245,7 +26314,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -5511.328125
+    "top": -5905.328125
    },
    {
     "name": "reveal",
@@ -25256,7 +26325,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4946.34375
+    "top": -5340.34375
    },
    {
     "name": "reveal",
@@ -25267,7 +26336,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5241.546875
    },
    {
     "name": "reveal",
@@ -25278,7 +26347,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5241.546875
    },
    {
     "name": "reveal",
@@ -25289,7 +26358,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5241.546875
    },
    {
     "name": "reveal",
@@ -25300,7 +26369,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4847.546875
+    "top": -5241.546875
    },
    {
     "name": "reveal",
@@ -25311,7 +26380,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4638.5625
+    "top": -5032.5625
    },
    {
     "name": "reveal",
@@ -25322,7 +26391,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4638.5625
+    "top": -5032.5625
    },
    {
     "name": "reveal",
@@ -25333,7 +26402,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4203.859375
+    "top": -4597.859375
    },
    {
     "name": "reveal",
@@ -25344,7 +26413,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -4068.640625
+    "top": -4462.640625
    },
    {
     "name": "reveal",
@@ -25355,7 +26424,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3489.234375
+    "top": -3883.234375
    },
    {
     "name": "reveal",
@@ -25366,7 +26435,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3302.40625
+    "top": -3696.40625
    },
    {
     "name": "reveal",
@@ -25377,7 +26446,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -3045.640625
+    "top": -3439.640625
    },
    {
     "name": "reveal",
@@ -25388,7 +26457,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2974.03125
+    "top": -3368.03125
    },
    {
     "name": "reveal",
@@ -25399,7 +26468,7 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2785.265625
+    "top": -3179.265625
    },
    {
     "name": "reveal",
@@ -25410,18 +26479,1058 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2713.65625
+    "top": -3107.65625
    },
    {
     "name": "reveal",
     "kind": "reveal",
     "start": 9293,
     "end": 9964,
-    "sprog": 0.7377049180327869,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -352.828125
+   }
+  ]
+ },
+ {
+  "y": 10600,
+  "snap": [
+   {
+    "name": "ikuro-problem",
+    "kind": "sequence",
+    "mode": "timed",
+    "start": 124,
+    "end": 1898,
+    "sprog": 1,
+    "active": false,
+    "tl": 0,
+    "pinned": false,
+    "top": -9257.984375
+   },
+   {
+    "name": "ikuro-loop",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1763,
+    "end": 3959,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6011.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0.4463667820069204,
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 41.171875
+    "top": -84.8125
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 499,
+    "end": 1170,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -9147.0625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 626,
+    "end": 1250,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -9019.84375
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 1473,
+    "end": 2089,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5976.9375
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 1545,
+    "end": 2137,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5905.328125
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4306,
+    "end": 4921,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5340.34375
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4404,
+    "end": 5153,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5241.546875
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4404,
+    "end": 5153,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5241.546875
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4404,
+    "end": 5153,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5241.546875
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4404,
+    "end": 5153,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5241.546875
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4613,
+    "end": 5362,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5032.5625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4613,
+    "end": 5362,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5032.5625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 5048,
+    "end": 5719,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -4597.859375
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 5183,
+    "end": 5768,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -4462.640625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 5763,
+    "end": 6490,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3883.234375
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 5950,
+    "end": 6564,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3696.40625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 6206,
+    "end": 6822,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3439.640625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 6278,
+    "end": 6892,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3368.03125
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 6467,
+    "end": 7082,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3179.265625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 6538,
+    "end": 7122,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3107.65625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 9293,
+    "end": 9964,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -352.828125
+   }
+  ]
+ },
+ {
+  "y": 10700,
+  "snap": [
+   {
+    "name": "ikuro-problem",
+    "kind": "sequence",
+    "mode": "timed",
+    "start": 124,
+    "end": 1898,
+    "sprog": 1,
+    "active": false,
+    "tl": 0,
+    "pinned": false,
+    "top": -9257.984375
+   },
+   {
+    "name": "ikuro-loop",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1763,
+    "end": 3959,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6011.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -84.8125
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 499,
+    "end": 1170,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -9147.0625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 626,
+    "end": 1250,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -9019.84375
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 1473,
+    "end": 2089,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5976.9375
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 1545,
+    "end": 2137,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5905.328125
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4306,
+    "end": 4921,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5340.34375
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4404,
+    "end": 5153,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5241.546875
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4404,
+    "end": 5153,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5241.546875
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4404,
+    "end": 5153,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5241.546875
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4404,
+    "end": 5153,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5241.546875
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4613,
+    "end": 5362,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5032.5625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4613,
+    "end": 5362,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5032.5625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 5048,
+    "end": 5719,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -4597.859375
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 5183,
+    "end": 5768,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -4462.640625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 5763,
+    "end": 6490,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3883.234375
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 5950,
+    "end": 6564,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3696.40625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 6206,
+    "end": 6822,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3439.640625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 6278,
+    "end": 6892,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3368.03125
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 6467,
+    "end": 7082,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3179.265625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 6538,
+    "end": 7122,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3107.65625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 9293,
+    "end": 9964,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -352.828125
+   }
+  ]
+ },
+ {
+  "y": 10800,
+  "snap": [
+   {
+    "name": "ikuro-problem",
+    "kind": "sequence",
+    "mode": "timed",
+    "start": 124,
+    "end": 1898,
+    "sprog": 1,
+    "active": false,
+    "tl": 0,
+    "pinned": false,
+    "top": -9257.984375
+   },
+   {
+    "name": "ikuro-loop",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1763,
+    "end": 3959,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6011.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -84.8125
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 499,
+    "end": 1170,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -9147.0625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 626,
+    "end": 1250,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -9019.84375
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 1473,
+    "end": 2089,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5976.9375
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 1545,
+    "end": 2137,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5905.328125
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4306,
+    "end": 4921,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5340.34375
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4404,
+    "end": 5153,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5241.546875
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4404,
+    "end": 5153,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5241.546875
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4404,
+    "end": 5153,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5241.546875
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4404,
+    "end": 5153,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5241.546875
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4613,
+    "end": 5362,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5032.5625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4613,
+    "end": 5362,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5032.5625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 5048,
+    "end": 5719,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -4597.859375
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 5183,
+    "end": 5768,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -4462.640625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 5763,
+    "end": 6490,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3883.234375
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 5950,
+    "end": 6564,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3696.40625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 6206,
+    "end": 6822,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3439.640625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 6278,
+    "end": 6892,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3368.03125
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 6467,
+    "end": 7082,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3179.265625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 6538,
+    "end": 7122,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3107.65625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 9293,
+    "end": 9964,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -352.828125
+   }
+  ]
+ },
+ {
+  "y": 10900,
+  "snap": [
+   {
+    "name": "ikuro-problem",
+    "kind": "sequence",
+    "mode": "timed",
+    "start": 124,
+    "end": 1898,
+    "sprog": 1,
+    "active": false,
+    "tl": 0,
+    "pinned": false,
+    "top": -9257.984375
+   },
+   {
+    "name": "ikuro-loop",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1763,
+    "end": 3959,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6011.0625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9537,
+    "end": 10982,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -84.8125
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 499,
+    "end": 1170,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -9147.0625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 626,
+    "end": 1250,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -9019.84375
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 1473,
+    "end": 2089,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5976.9375
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 1545,
+    "end": 2137,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5905.328125
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4306,
+    "end": 4921,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5340.34375
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4404,
+    "end": 5153,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5241.546875
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4404,
+    "end": 5153,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5241.546875
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4404,
+    "end": 5153,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5241.546875
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4404,
+    "end": 5153,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5241.546875
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4613,
+    "end": 5362,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5032.5625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 4613,
+    "end": 5362,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -5032.5625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 5048,
+    "end": 5719,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -4597.859375
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 5183,
+    "end": 5768,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -4462.640625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 5763,
+    "end": 6490,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3883.234375
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 5950,
+    "end": 6564,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3696.40625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 6206,
+    "end": 6822,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3439.640625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 6278,
+    "end": 6892,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3368.03125
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 6467,
+    "end": 7082,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3179.265625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 6538,
+    "end": 7122,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3107.65625
+   },
+   {
+    "name": "reveal",
+    "kind": "reveal",
+    "start": 9293,
+    "end": 9964,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -352.828125
    }
   ]
  }

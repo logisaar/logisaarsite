@@ -66,11 +66,13 @@ const toEnd = async (page) => { await page.evaluate(() => window.scrollTo(0, doc
   if (clips.every((c) => /0%|inset\(0px\)|inset\(0px 0px 0px 0px\)/.test(c) || c === "inset(0px)")) ok("wordmark fills after the footer enters"); else fail(`clip-paths after entering: ${clips[0]}`);
   await ctx.close();
 }
-for (const w of [320, 375]) {
+for (const w of [320, 375, 768, 1280, 1920]) {
   const ctx = await b.newContext({ viewport: { width: w, height: 700 } });
   const page = await ctx.newPage();
   await page.goto(`${BASE}/`, { waitUntil: "networkidle" });
   await toEnd(page);
+  const fit = await page.evaluate(() => { const t = document.querySelector("[data-ft-top]"); return t ? t.scrollHeight - t.clientHeight : -1; });
+  if (fit <= 1) ok(`${w}: footer top block fits its reserved height`); else fail(`${w}: footer top block overflows its reserved height by ${fit}px`);
   const over = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
   if (over <= 0) ok(`${w}: no horizontal overflow`); else fail(`${w}: overflow ${over}px`);
   if (w === 375) {

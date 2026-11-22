@@ -6,8 +6,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 3880.421875
@@ -26,11 +26,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 6906.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 11463.28125
    }
   ]
  },
@@ -41,8 +51,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 3780.421875
@@ -61,11 +71,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 6806.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 11363.28125
    }
   ]
  },
@@ -76,8 +96,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 3680.421875
@@ -96,11 +116,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 6706.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 11263.28125
    }
   ]
  },
@@ -111,8 +141,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 3580.421875
@@ -131,11 +161,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 6606.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 11163.28125
    }
   ]
  },
@@ -146,8 +186,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 3480.421875
@@ -166,11 +206,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 6506.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 11063.28125
    }
   ]
  },
@@ -181,8 +231,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 3380.421875
@@ -201,11 +251,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 6406.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 10963.28125
    }
   ]
  },
@@ -216,8 +276,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 3280.421875
@@ -236,11 +296,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 6306.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 10863.28125
    }
   ]
  },
@@ -251,8 +321,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 3180.421875
@@ -271,11 +341,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 6206.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 10763.28125
    }
   ]
  },
@@ -286,8 +366,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 3080.421875
@@ -306,11 +386,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 6106.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 10663.28125
    }
   ]
  },
@@ -321,8 +411,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 2980.421875
@@ -341,11 +431,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 6006.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 10563.28125
    }
   ]
  },
@@ -356,8 +456,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 2880.421875
@@ -376,11 +476,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 5906.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 10463.28125
    }
   ]
  },
@@ -391,8 +501,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 2780.421875
@@ -411,11 +521,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 5806.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 10363.28125
    }
   ]
  },
@@ -426,8 +546,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 2680.421875
@@ -446,11 +566,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 5706.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 10263.28125
    }
   ]
  },
@@ -461,8 +591,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 2580.421875
@@ -481,11 +611,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 5606.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 10163.28125
    }
   ]
  },
@@ -496,8 +636,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 2480.421875
@@ -516,11 +656,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 5506.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 10063.28125
    }
   ]
  },
@@ -531,8 +681,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 2380.421875
@@ -551,11 +701,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 5406.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9963.28125
    }
   ]
  },
@@ -566,8 +726,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 2280.421875
@@ -586,11 +746,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 5306.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9863.28125
    }
   ]
  },
@@ -601,8 +771,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 2180.421875
@@ -621,11 +791,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 5206.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9763.28125
    }
   ]
  },
@@ -636,8 +816,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 2080.421875
@@ -656,11 +836,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 5106.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9663.28125
    }
   ]
  },
@@ -671,8 +861,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 1980.421875
@@ -691,11 +881,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 5006.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9563.28125
    }
   ]
  },
@@ -706,8 +906,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 1880.421875
@@ -726,11 +926,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 4906.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9463.28125
    }
   ]
  },
@@ -741,8 +951,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 1780.421875
@@ -761,11 +971,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 4806.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9363.28125
    }
   ]
  },
@@ -776,8 +996,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 1680.421875
@@ -796,11 +1016,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 4706.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9263.28125
    }
   ]
  },
@@ -811,8 +1041,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 1580.421875
@@ -831,11 +1061,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 4606.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9163.28125
    }
   ]
  },
@@ -846,8 +1086,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 1480.421875
@@ -866,11 +1106,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 4506.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9063.28125
    }
   ]
  },
@@ -881,8 +1131,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 1380.421875
@@ -901,11 +1151,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 4406.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8963.28125
    }
   ]
  },
@@ -916,8 +1176,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 1280.421875
@@ -936,11 +1196,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 4306.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8863.28125
    }
   ]
  },
@@ -951,8 +1221,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 1180.421875
@@ -971,11 +1241,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 4206.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8763.28125
    }
   ]
  },
@@ -986,8 +1266,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 1080.421875
@@ -1006,11 +1286,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 4106.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8663.28125
    }
   ]
  },
@@ -1021,8 +1311,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 980.421875
@@ -1041,11 +1331,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 4006.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8563.28125
    }
   ]
  },
@@ -1056,8 +1356,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 880.421875
@@ -1076,11 +1376,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 3906.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8463.28125
    }
   ]
  },
@@ -1091,8 +1401,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 780.421875
@@ -1111,11 +1421,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 3806.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8363.28125
    }
   ]
  },
@@ -1126,8 +1446,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 680.421875
@@ -1146,11 +1466,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 3706.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8263.28125
    }
   ]
  },
@@ -1161,8 +1491,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 580.421875
@@ -1181,11 +1511,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 3606.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8163.28125
    }
   ]
  },
@@ -1196,8 +1536,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 480.421875
@@ -1216,11 +1556,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 3506.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8063.28125
    }
   ]
  },
@@ -1231,8 +1581,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 380.421875
@@ -1251,11 +1601,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 3406.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7963.28125
    }
   ]
  },
@@ -1266,8 +1626,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 280.421875
@@ -1286,11 +1646,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 3306.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7863.28125
    }
   ]
  },
@@ -1301,8 +1671,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 0,
     "tl": 0,
     "top": 180.421875
@@ -1321,11 +1691,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 3206.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7763.28125
    }
   ]
  },
@@ -1336,13 +1716,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.002276867030965392,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.006375227686703097,
     "active": true,
-    "tl": 0.001549,
+    "tl": 0.00413,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -1358,11 +1738,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 3106.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7663.28125
    }
   ]
  },
@@ -1373,13 +1763,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.04781420765027322,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.05191256830601093,
     "active": true,
-    "tl": 0.033837,
+    "tl": 0.035385,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -1395,11 +1785,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 3006.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7563.28125
    }
   ]
  },
@@ -1410,13 +1810,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.09335154826958106,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.09744990892531877,
     "active": true,
-    "tl": 0.073538,
+    "tl": 0.07397100000000001,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -1432,11 +1832,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 2906.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7463.28125
    }
   ]
  },
@@ -1447,13 +1857,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.1388888888888889,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.1429872495446266,
     "active": true,
-    "tl": 0.114569,
+    "tl": 0.119012,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -1469,11 +1879,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 2806.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7363.28125
    }
   ]
  },
@@ -1484,13 +1904,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.18442622950819673,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.1885245901639344,
     "active": true,
-    "tl": 0.159135,
+    "tl": 0.162424,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -1506,11 +1926,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 2706.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7263.28125
    }
   ]
  },
@@ -1521,13 +1951,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.22996357012750454,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.23406193078324225,
     "active": true,
-    "tl": 0.206904,
+    "tl": 0.209674,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -1543,11 +1973,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 2606.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7163.28125
    }
   ]
  },
@@ -1558,13 +1998,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.2755009107468124,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.2795992714025501,
     "active": true,
-    "tl": 0.25578,
+    "tl": 0.253711,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -1580,11 +2020,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 2506.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7063.28125
    }
   ]
  },
@@ -1595,13 +2045,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.32103825136612024,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.3251366120218579,
     "active": true,
-    "tl": 0.281465,
+    "tl": 0.278187,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -1617,11 +2067,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 2406.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6963.28125
    }
   ]
  },
@@ -1632,13 +2092,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.36657559198542805,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.37067395264116576,
     "active": true,
-    "tl": 0.348173,
+    "tl": 0.352569,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -1654,11 +2114,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 2306.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6863.28125
    }
   ]
  },
@@ -1669,13 +2139,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.41211293260473586,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.41621129326047357,
     "active": true,
-    "tl": 0.387992,
+    "tl": 0.394405,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -1691,11 +2161,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 2206.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6763.28125
    }
   ]
  },
@@ -1706,13 +2186,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.4576502732240437,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.46174863387978143,
     "active": true,
-    "tl": 0.431852,
+    "tl": 0.436757,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -1728,11 +2208,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 2106.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6663.28125
    }
   ]
  },
@@ -1743,13 +2233,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.5031876138433515,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.5072859744990893,
     "active": true,
-    "tl": 0.4788970000000001,
+    "tl": 0.48082400000000003,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -1765,11 +2255,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 2006.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6563.28125
    }
   ]
  },
@@ -1780,13 +2280,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.5487249544626593,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.5528233151183971,
     "active": true,
-    "tl": 0.523915,
+    "tl": 0.5278120000000001,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -1802,11 +2302,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 1906.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6463.28125
    }
   ]
  },
@@ -1817,13 +2327,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.5942622950819673,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.5983606557377049,
     "active": true,
-    "tl": 0.5715760000000001,
+    "tl": 0.5743240000000001,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -1839,11 +2349,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 1806.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6363.28125
    }
   ]
  },
@@ -1854,13 +2374,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.6397996357012751,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.6438979963570127,
     "active": true,
-    "tl": 0.6141540000000001,
+    "tl": 0.6197290000000001,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -1876,11 +2396,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 1706.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6263.28125
    }
   ]
  },
@@ -1891,13 +2421,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.6853369763205829,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.6894353369763205,
     "active": true,
-    "tl": 0.661207,
+    "tl": 0.663506,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -1913,11 +2443,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 1606.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6163.28125
    }
   ]
  },
@@ -1928,13 +2468,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.7308743169398907,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.7349726775956285,
     "active": true,
-    "tl": 0.7063370000000001,
+    "tl": 0.709802,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -1950,11 +2490,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 1506.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6063.28125
    }
   ]
  },
@@ -1965,13 +2515,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.7764116575591985,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.7805100182149363,
     "active": true,
-    "tl": 0.750471,
+    "tl": 0.7559470000000001,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -1987,11 +2537,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 1406.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5963.28125
    }
   ]
  },
@@ -2002,13 +2562,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.8219489981785064,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.8260473588342441,
     "active": true,
-    "tl": 0.795153,
+    "tl": 0.7997390000000001,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -2024,11 +2584,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 1306.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5863.28125
    }
   ]
  },
@@ -2039,13 +2609,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.8674863387978142,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.8715846994535519,
     "active": true,
-    "tl": 0.8432130000000001,
+    "tl": 0.847466,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -2061,11 +2631,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 1206.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5763.28125
    }
   ]
  },
@@ -2076,13 +2656,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.913023679417122,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.9171220400728597,
     "active": true,
-    "tl": 0.888436,
+    "tl": 0.8925890000000001,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -2098,11 +2678,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 1106.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5663.28125
    }
   ]
  },
@@ -2113,13 +2703,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
-    "sprog": 0.9585610200364298,
+    "start": 3786,
+    "end": 5982,
+    "sprog": 0.9626593806921676,
     "active": true,
-    "tl": 0.9338620000000001,
+    "tl": 0.9367200000000001,
     "pinned": true,
-    "top": 85.421875
+    "top": 94.421875
    },
    {
     "name": "home-heylane-phones",
@@ -2135,11 +2725,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 1006.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5563.28125
    }
   ]
  },
@@ -2150,11 +2750,11 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
-    "tl": 0.977024,
+    "tl": 0.977712,
     "pinned": false,
     "top": 76.421875
    },
@@ -2172,11 +2772,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 906.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5463.28125
    }
   ]
  },
@@ -2187,11 +2797,11 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
-    "tl": 0.992235,
+    "tl": 0.9925710000000001,
     "pinned": false,
     "top": -23.578125
    },
@@ -2209,11 +2819,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 806.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5363.28125
    }
   ]
  },
@@ -2224,11 +2844,11 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
-    "tl": 0.997773,
+    "tl": 0.998085,
     "pinned": false,
     "top": -123.578125
    },
@@ -2246,11 +2866,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 706.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5263.28125
    }
   ]
  },
@@ -2261,11 +2891,11 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
-    "tl": 0.9995640000000001,
+    "tl": 0.9995830000000001,
     "pinned": false,
     "top": -223.578125
    },
@@ -2283,11 +2913,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 606.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5163.28125
    }
   ]
  },
@@ -2298,11 +2938,11 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
-    "tl": 0.999932,
+    "tl": 0.9999300000000001,
     "pinned": false,
     "top": -323.578125
    },
@@ -2321,11 +2961,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 506.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5063.28125
    }
   ]
  },
@@ -2336,11 +2986,11 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
-    "tl": 0.999993,
+    "tl": 0.9999950000000001,
     "pinned": false,
     "top": -423.578125
    },
@@ -2359,11 +3009,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 406.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4963.28125
    }
   ]
  },
@@ -2374,8 +3034,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -2397,11 +3057,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 306.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4863.28125
    }
   ]
  },
@@ -2412,8 +3082,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -2435,11 +3105,21 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0,
     "tl": 0,
     "top": 206.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4763.28125
    }
   ]
  },
@@ -2450,8 +3130,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -2467,19 +3147,29 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 64.015625
+    "top": 73.015625
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 0.0001,
     "active": true,
     "tl": 0.000065,
     "pinned": true,
-    "top": 64.015625
+    "top": 73.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4663.28125
    }
   ]
  },
@@ -2490,8 +3180,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -2507,19 +3197,29 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 64.015625
+    "top": 73.015625
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
-    "sprog": 0.04400606980273141,
+    "start": 6833,
+    "end": 8151,
+    "sprog": 0.05083459787556904,
     "active": true,
-    "tl": 0.028529999999999996,
+    "tl": 0.03319898907103825,
     "pinned": true,
-    "top": 64.015625
+    "top": 73.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4563.28125
    }
   ]
  },
@@ -2530,8 +3230,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -2547,19 +3247,29 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 64.015625
+    "top": 73.015625
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
-    "sprog": 0.11987860394537178,
+    "start": 6833,
+    "end": 8151,
+    "sprog": 0.1267071320182094,
     "active": true,
-    "tl": 0.08814499999999999,
+    "tl": 0.09377300546448086,
     "pinned": true,
-    "top": 64.015625
+    "top": 73.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4463.28125
    }
   ]
  },
@@ -2570,8 +3280,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -2587,19 +3297,29 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 64.015625
+    "top": 73.015625
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
-    "sprog": 0.19575113808801214,
+    "start": 6833,
+    "end": 8151,
+    "sprog": 0.20257966616084977,
     "active": true,
-    "tl": 0.15515398907103825,
+    "tl": 0.16425699453551912,
     "pinned": true,
-    "top": 64.015625
+    "top": 73.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4363.28125
    }
   ]
  },
@@ -2610,8 +3330,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -2627,19 +3347,29 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 64.015625
+    "top": 73.015625
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
-    "sprog": 0.2716236722306525,
+    "start": 6833,
+    "end": 8151,
+    "sprog": 0.27845220030349016,
     "active": true,
-    "tl": 0.23245800546448084,
+    "tl": 0.23878199453551913,
     "pinned": true,
-    "top": 64.015625
+    "top": 73.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4263.28125
    }
   ]
  },
@@ -2650,8 +3380,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -2667,19 +3397,29 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 64.015625
+    "top": 73.015625
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
-    "sprog": 0.34749620637329287,
+    "start": 6833,
+    "end": 8151,
+    "sprog": 0.3543247344461305,
     "active": true,
-    "tl": 0.30487199453551916,
+    "tl": 0.31363,
     "pinned": true,
-    "top": 64.015625
+    "top": 73.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4163.28125
    }
   ]
  },
@@ -2690,8 +3430,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -2707,19 +3447,29 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 64.015625
+    "top": 73.015625
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
-    "sprog": 0.4233687405159332,
+    "start": 6833,
+    "end": 8151,
+    "sprog": 0.4301972685887709,
     "active": true,
-    "tl": 0.38672898907103825,
+    "tl": 0.38970300546448083,
     "pinned": true,
-    "top": 64.015625
+    "top": 73.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4063.28125
    }
   ]
  },
@@ -2730,8 +3480,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -2747,19 +3497,29 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 64.015625
+    "top": 73.015625
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
-    "sprog": 0.4992412746585736,
+    "start": 6833,
+    "end": 8151,
+    "sprog": 0.5060698027314112,
     "active": true,
-    "tl": 0.46117101092896173,
+    "tl": 0.4663989890710382,
     "pinned": true,
-    "top": 64.015625
+    "top": 73.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3963.28125
    }
   ]
  },
@@ -2770,8 +3530,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -2787,19 +3547,29 @@
     "active": true,
     "tl": null,
     "pinned": false,
-    "top": 64.015625
+    "top": 73.015625
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
-    "sprog": 0.575113808801214,
+    "start": 6833,
+    "end": 8151,
+    "sprog": 0.5819423368740516,
     "active": true,
-    "tl": 0.5131230054644809,
+    "tl": 0.5418039890710382,
     "pinned": true,
-    "top": 64.015625
+    "top": 73.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3863.28125
    }
   ]
  },
@@ -2810,8 +3580,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -2827,19 +3597,29 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 64.015625
+    "top": 73.015625
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
-    "sprog": 0.6509863429438544,
+    "start": 6833,
+    "end": 8151,
+    "sprog": 0.657814871016692,
     "active": true,
-    "tl": 0.618085,
+    "tl": 0.6207180054644809,
     "pinned": true,
-    "top": 64.015625
+    "top": 73.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3763.28125
    }
   ]
  },
@@ -2850,8 +3630,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -2867,19 +3647,29 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 64.015625
+    "top": 73.015625
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
-    "sprog": 0.7268588770864947,
+    "start": 6833,
+    "end": 8151,
+    "sprog": 0.7336874051593323,
     "active": true,
-    "tl": 0.6858739890710382,
+    "tl": 0.6944430054644809,
     "pinned": true,
-    "top": 64.015625
+    "top": 73.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3663.28125
    }
   ]
  },
@@ -2890,8 +3680,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -2907,19 +3697,29 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 64.015625
+    "top": 73.015625
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
-    "sprog": 0.802731411229135,
+    "start": 6833,
+    "end": 8151,
+    "sprog": 0.8095599393019727,
     "active": true,
-    "tl": 0.7594710109289617,
+    "tl": 0.7690149999999999,
     "pinned": true,
-    "top": 64.015625
+    "top": 73.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3563.28125
    }
   ]
  },
@@ -2930,8 +3730,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -2947,19 +3747,29 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 64.015625
+    "top": 73.015625
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
-    "sprog": 0.8786039453717754,
+    "start": 6833,
+    "end": 8151,
+    "sprog": 0.8854324734446131,
     "active": true,
-    "tl": 0.8339439890710383,
+    "tl": 0.8417330054644808,
     "pinned": true,
-    "top": 64.015625
+    "top": 73.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3463.28125
    }
   ]
  },
@@ -2970,8 +3780,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -2987,19 +3797,29 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": 64.015625
+    "top": 73.015625
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
-    "sprog": 0.9544764795144158,
+    "start": 6833,
+    "end": 8151,
+    "sprog": 0.9613050075872535,
     "active": true,
-    "tl": 0.9136639890710382,
+    "tl": 0.9235949999999999,
     "pinned": true,
-    "top": 64.015625
+    "top": 73.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3363.28125
    }
   ]
  },
@@ -3010,8 +3830,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3033,13 +3853,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
-    "tl": 0.969591994535519,
+    "tl": 0.9738210109289617,
     "pinned": false,
     "top": 24.015625
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3263.28125
    }
   ]
  },
@@ -3050,8 +3880,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3073,13 +3903,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
-    "tl": 0.9898639890710382,
+    "tl": 0.99103,
     "pinned": false,
     "top": -75.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3163.28125
    }
   ]
  },
@@ -3090,8 +3930,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3113,13 +3953,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
-    "tl": 0.997386994535519,
+    "tl": 0.9973810109289617,
     "pinned": false,
     "top": -175.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3063.28125
    }
   ]
  },
@@ -3130,8 +3980,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3153,13 +4003,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
-    "tl": 0.9994180054644809,
+    "tl": 0.9994269945355191,
     "pinned": false,
     "top": -275.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2963.28125
    }
   ]
  },
@@ -3170,8 +4030,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3193,13 +4053,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
-    "tl": 0.9999049999999999,
+    "tl": 0.9999,
     "pinned": false,
     "top": -375.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2863.28125
    }
   ]
  },
@@ -3210,8 +4080,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3233,13 +4103,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
-    "tl": 0.9999910109289617,
+    "tl": 0.9999889890710382,
     "pinned": false,
     "top": -475.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2763.28125
    }
   ]
  },
@@ -3250,8 +4130,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3273,13 +4153,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -575.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2663.28125
    }
   ]
  },
@@ -3290,8 +4180,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3313,13 +4203,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -675.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2563.28125
    }
   ]
  },
@@ -3330,8 +4230,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3353,13 +4253,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -775.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2463.28125
    }
   ]
  },
@@ -3370,8 +4280,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3393,13 +4303,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -875.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2363.28125
    }
   ]
  },
@@ -3410,8 +4330,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3433,13 +4353,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -975.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2263.28125
    }
   ]
  },
@@ -3450,8 +4380,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3473,13 +4403,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1075.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2163.28125
    }
   ]
  },
@@ -3490,8 +4430,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3513,13 +4453,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1175.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2063.28125
    }
   ]
  },
@@ -3530,8 +4480,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3553,13 +4503,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1275.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1963.28125
    }
   ]
  },
@@ -3570,8 +4530,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3593,13 +4553,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1375.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1863.28125
    }
   ]
  },
@@ -3610,8 +4580,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3633,13 +4603,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1475.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1763.28125
    }
   ]
  },
@@ -3650,8 +4630,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3673,13 +4653,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1575.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1663.28125
    }
   ]
  },
@@ -3690,8 +4680,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3713,13 +4703,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1675.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1563.28125
    }
   ]
  },
@@ -3730,8 +4730,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3753,13 +4753,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1775.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1463.28125
    }
   ]
  },
@@ -3770,8 +4780,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3793,13 +4803,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1875.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1363.28125
    }
   ]
  },
@@ -3810,8 +4830,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3833,13 +4853,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1975.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1263.28125
    }
   ]
  },
@@ -3850,8 +4880,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3873,13 +4903,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2075.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1163.28125
    }
   ]
  },
@@ -3890,8 +4930,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3913,13 +4953,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2175.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1063.28125
    }
   ]
  },
@@ -3930,8 +4980,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3953,13 +5003,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2275.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 963.28125
    }
   ]
  },
@@ -3970,8 +5030,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -3993,13 +5053,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2375.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 863.28125
    }
   ]
  },
@@ -4010,8 +5080,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -4033,13 +5103,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2475.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 763.28125
    }
   ]
  },
@@ -4050,8 +5130,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -4073,13 +5153,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2575.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 663.28125
    }
   ]
  },
@@ -4090,8 +5180,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -4113,13 +5203,23 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2675.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 563.28125
    }
   ]
  },
@@ -4130,8 +5230,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -4153,13 +5253,24 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2775.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0.0671280276816609,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": 463.28125
    }
   ]
  },
@@ -4170,8 +5281,8 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
@@ -4193,13 +5304,24 @@
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2875.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0.13633217993079585,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": 363.28125
    }
   ]
  },
@@ -4210,13 +5332,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -5077.578125
+    "top": -5123.578125
    },
    {
     "name": "home-heylane-phones",
@@ -4227,19 +5349,30 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2929.984375
+    "top": -2975.984375
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -2929.984375
+    "top": -2975.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0.2055363321799308,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": 263.28125
    }
   ]
  },
@@ -4250,13 +5383,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -5077.578125
+    "top": -5223.578125
    },
    {
     "name": "home-heylane-phones",
@@ -4267,19 +5400,30 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2929.984375
+    "top": -3075.984375
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -2929.984375
+    "top": -3075.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0.27474048442906573,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": 163.28125
    }
   ]
  },
@@ -4290,13 +5434,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -5077.578125
+    "top": -5323.578125
    },
    {
     "name": "home-heylane-phones",
@@ -4307,19 +5451,30 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2929.984375
+    "top": -3175.984375
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -2929.984375
+    "top": -3175.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0.3439446366782007,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": 63.28125
    }
   ]
  },
@@ -4330,13 +5485,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -5077.578125
+    "top": -5423.578125
    },
    {
     "name": "home-heylane-phones",
@@ -4347,19 +5502,30 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2929.984375
+    "top": -3275.984375
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -2929.984375
+    "top": -3275.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0.41314878892733564,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -36.71875
    }
   ]
  },
@@ -4370,13 +5536,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -5077.578125
+    "top": -5471.578125
    },
    {
     "name": "home-heylane-phones",
@@ -4387,19 +5553,30 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2929.984375
+    "top": -3323.984375
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -2929.984375
+    "top": -3323.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -84.71875
    }
   ]
  },
@@ -4410,13 +5587,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -5077.578125
+    "top": -5471.578125
    },
    {
     "name": "home-heylane-phones",
@@ -4427,19 +5604,30 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2929.984375
+    "top": -3323.984375
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -2929.984375
+    "top": -3323.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -84.71875
    }
   ]
  },
@@ -4450,13 +5638,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -5077.578125
+    "top": -5471.578125
    },
    {
     "name": "home-heylane-phones",
@@ -4467,19 +5655,30 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2929.984375
+    "top": -3323.984375
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -2929.984375
+    "top": -3323.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -84.71875
    }
   ]
  },
@@ -4490,13 +5689,13 @@
     "name": "home-ikuro",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 3795,
-    "end": 5991,
+    "start": 3786,
+    "end": 5982,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -5077.578125
+    "top": -5471.578125
    },
    {
     "name": "home-heylane-phones",
@@ -4507,19 +5706,234 @@
     "active": false,
     "tl": null,
     "pinned": false,
-    "top": -2929.984375
+    "top": -3323.984375
    },
    {
     "name": "home-heylane",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 6842,
-    "end": 8160,
+    "start": 6833,
+    "end": 8151,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -2929.984375
+    "top": -3323.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -84.71875
+   }
+  ]
+ },
+ {
+  "y": 12000,
+  "snap": [
+   {
+    "name": "home-ikuro",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 3786,
+    "end": 5982,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -5471.578125
+   },
+   {
+    "name": "home-heylane-phones",
+    "kind": "reveal",
+    "start": 6346,
+    "end": 7624,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3323.984375
+   },
+   {
+    "name": "home-heylane",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 6833,
+    "end": 8151,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3323.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -84.71875
+   }
+  ]
+ },
+ {
+  "y": 12100,
+  "snap": [
+   {
+    "name": "home-ikuro",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 3786,
+    "end": 5982,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -5471.578125
+   },
+   {
+    "name": "home-heylane-phones",
+    "kind": "reveal",
+    "start": 6346,
+    "end": 7624,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3323.984375
+   },
+   {
+    "name": "home-heylane",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 6833,
+    "end": 8151,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3323.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -84.71875
+   }
+  ]
+ },
+ {
+  "y": 12200,
+  "snap": [
+   {
+    "name": "home-ikuro",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 3786,
+    "end": 5982,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -5471.578125
+   },
+   {
+    "name": "home-heylane-phones",
+    "kind": "reveal",
+    "start": 6346,
+    "end": 7624,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3323.984375
+   },
+   {
+    "name": "home-heylane",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 6833,
+    "end": 8151,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3323.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -84.71875
+   }
+  ]
+ },
+ {
+  "y": 12300,
+  "snap": [
+   {
+    "name": "home-ikuro",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 3786,
+    "end": 5982,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -5471.578125
+   },
+   {
+    "name": "home-heylane-phones",
+    "kind": "reveal",
+    "start": 6346,
+    "end": 7624,
+    "sprog": 1,
+    "active": false,
+    "tl": null,
+    "pinned": false,
+    "top": -3323.984375
+   },
+   {
+    "name": "home-heylane",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 6833,
+    "end": 8151,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -3323.984375
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 10903,
+    "end": 12348,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -84.71875
    }
   ]
  }

@@ -177,11 +177,11 @@ const Footer = () => {
       <div className="container relative z-10 mx-auto px-gutter pb-6">
         {/* live layer: same reserved height until it loads, so the page never jumps */}
         {near ? (
-          <Suspense fallback={<div aria-hidden="true" className="h-[22rem] sm:h-[26rem]" />}>
+          <Suspense fallback={<div aria-hidden="true" className="h-[25rem] sm:h-[26rem]" />}>
             <FooterLive />
           </Suspense>
         ) : (
-          <div aria-hidden="true" className="h-[22rem] sm:h-[26rem]" />
+          <div aria-hidden="true" className="h-[25rem] sm:h-[26rem]" />
         )}
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-8 pt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">

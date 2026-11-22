@@ -157,7 +157,7 @@ const Traces = () => {
 const FooterLive = () => (
   <>
     <Traces />
-    <div className="relative z-10 border-b border-background/10 pb-8 pt-12 sm:pt-16">
+    <div data-ft-top className="relative z-10 h-[25rem] border-b border-background/10 pb-8 pt-12 sm:h-[26rem] sm:pt-16">
       <Wordmark />
       <div className="mt-4">
         <NowStrip />

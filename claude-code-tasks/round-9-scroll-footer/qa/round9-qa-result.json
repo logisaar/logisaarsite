@@ -1,9 +1,3 @@
 {
- "fails": [
-  "home/home-ikuro: final state held 0px of 2124px pinned",
-  "home/home-heylane: final state held 0px of 1274px pinned",
-  "solutions/solutions-stage: final state held 0px of 1699px pinned",
-  "ikuro/ikuro-loop: final state held 0px of 2124px pinned",
-  "heylane/heylane-how: final state held 0px of 2124px pinned"
- ]
+ "fails": []
 }

@@ -5,7 +5,7 @@ import fs from "node:fs";
 const BASE = process.env.BASE || "http://localhost:8080";
 const OUT = process.argv[2] || "claude-code-tasks/round-8-visual-polish/qa";
 fs.mkdirSync(OUT, { recursive: true });
-const routes = ["", "about", "solutions", "contact", "careers", "ikuro", "heylane"];
+const routes = (process.env.ROUTES ? process.env.ROUTES.split(",") : ["", "about", "solutions", "contact", "careers", "ikuro", "heylane"]);
 const widths = (process.env.WIDTHS || "320,375,768,1024,1280,1440,1920").split(",").map(Number);
 const zooms = (process.env.ZOOMS || "100,200").split(",").map(Number);
 const b = await chromium.launch({ channel: "chrome" });
@@ -67,6 +67,7 @@ const blankRuns = () => {
     const border = parseFloat(cs.borderTopWidth) > 0 || parseFloat(cs.borderBottomWidth) > 0;
     if (own || media || bg || border) iv.push([r.top + sy, r.bottom + sy]);
     // pinned scenes (sticky stage) count as content for their whole track
+    if (e.classList.contains("pin-spacer")) iv.push([r.top + sy, r.bottom + sy]); // GSAP pin spacer: the pinned stage is on screen for this whole range
     if (cs.position === "sticky" && e.parentElement) { const pr = e.parentElement.getBoundingClientRect(); iv.push([pr.top + sy, pr.bottom + sy]); }
   });
   iv.sort((a, b) => a[0] - b[0]);

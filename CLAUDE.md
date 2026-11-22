@@ -40,7 +40,7 @@ Read this first in every session (especially after `/clear`). Then read only the
 | 6 | `round-6-about-solutions-portfolio` | done (/portfolio hidden, About and Solutions redesigned, shared `src/data/company.ts` and `solutions.ts`, claims in `CLAIMS.md`) |
 | 7 | `round-7-solutions-visual` | done (`text-h1-page`/`text-h2-page`, Solutions explorer with live demos, calmer cards, timeline) |
 | 8 | `round-8-visual-polish` | done (pinned Solutions stage + tab switcher, home bento with mini demos, IKURO decision path, real HeyLane app phones via `PhoneFrame`, wallet pass cards, About founders story, `scripts/round8-qa.mjs`). Open items: axe-core and Lighthouse are not installed (owner to approve the packages); `ServiceVignette.tsx`, `TeamSection.tsx`, `ChalkToChoiceAsset.tsx`, `HlPhone.tsx`, `MarqueeText.tsx` and the founder photos in `src/assets/team/` are now unused: ask the owner before deleting. |
-| 9 | `round-9-scroll-footer` | **next**: close the round-8 sub-session, commit Phase 7, scroll choreography contract (no animation finishing before or after the visitor sees it), Solutions CTA always visible, alive footer |
+| 9 | `round-9-scroll-footer` | done (`src/lib/scroll.ts` `reveal`/`sequence`/`loop`; pinned Home IKURO and HeyLane blocks, `/heylane` How it works, `/ikuro` loop and problem, Solutions stage with CTA under the promise; alive footer in `src/components/footer/`; `scripts/round9-qa.mjs`, `round9-footer-qa.mjs`). Open: About journey timeline still uses its own animation; Logi footer wave skipped; `OFFICE_HOURS` in `src/data/company.ts` is `null` until the owner confirms (footer shows clocks only); axe/Lighthouse still need package approval. |
 
 Branch: `redesign/home-v2`.
 
@@ -104,6 +104,7 @@ Branch: `redesign/home-v2`.
 - **Contrast:** WCAG 2.1 AA.
 - **Reduced motion:** no loops, nothing hidden, final state shown.
 - **Faux product UI (`src/components/demos/`):** rendered at native size and scaled with `transform`, `aria-hidden` with a described `figure`, so the 12px text rule does not apply inside it. Demos never paint empty: the first frame is populated, and reduced motion parks the final state.
+- **Scroll choreography:** use `reveal`/`sequence`/`loop` from `src/lib/scroll.ts`; scrubbed sequences run only while pinned and fully visible, and everything else is a one-shot reveal at 70% or a loop from 60% visible. Framer `whileInView`/`useInView` use `REVEAL_VIEWPORT`.
 - **Blank runs:** at 1280 there is no vertical run of more than 160px of empty background between two pieces of content inside `main` (pinned/sticky stages excepted). `scripts/round8-qa.mjs` checks it.
 - **HeyLane phones:** real app screens live in `public/images/heylane/app/`; never draw a fake HeyLane phone. Use `<PhoneFrame>` (`src/components/heylane/PhoneFrame.tsx`). Proposed V4 screens (chat, pass at the counter) sit behind `SHOW_PROPOSED_SCREENS` in `src/data/heylane.ts`.
 - **No AI slop:**

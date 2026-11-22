@@ -6,11 +6,21 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 0,
     "tl": 0,
     "top": 1475.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 10529.90625
    }
   ]
  },
@@ -21,11 +31,21 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 0,
     "tl": 0,
     "top": 1375.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 10429.90625
    }
   ]
  },
@@ -36,11 +56,21 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 0,
     "tl": 0,
     "top": 1275.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 10329.90625
    }
   ]
  },
@@ -51,11 +81,21 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 0,
     "tl": 0,
     "top": 1175.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 10229.90625
    }
   ]
  },
@@ -66,11 +106,21 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 0,
     "tl": 0,
     "top": 1075.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 10129.90625
    }
   ]
  },
@@ -81,11 +131,21 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 0,
     "tl": 0,
     "top": 975.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 10029.90625
    }
   ]
  },
@@ -96,11 +156,21 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 0,
     "tl": 0,
     "top": 875.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9929.90625
    }
   ]
  },
@@ -111,11 +181,21 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 0,
     "tl": 0,
     "top": 775.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9829.90625
    }
   ]
  },
@@ -126,11 +206,21 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 0,
     "tl": 0,
     "top": 675.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9729.90625
    }
   ]
  },
@@ -141,11 +231,21 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 0,
     "tl": 0,
     "top": 575.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9629.90625
    }
   ]
  },
@@ -156,11 +256,21 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 0,
     "tl": 0,
     "top": 475.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9529.90625
    }
   ]
  },
@@ -171,11 +281,21 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 0,
     "tl": 0,
     "top": 375.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9429.90625
    }
   ]
  },
@@ -186,11 +306,21 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 0,
     "tl": 0,
     "top": 275.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9329.90625
    }
   ]
  },
@@ -201,13 +331,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.0001,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.001366120218579235,
     "active": true,
-    "tl": 0.00006500000000000001,
+    "tl": 0.000885,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9229.90625
    }
   ]
  },
@@ -218,13 +358,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.0377959927140255,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.046903460837887066,
     "active": true,
-    "tl": 0.024507,
+    "tl": 0.030917000000000004,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9129.90625
    }
   ]
  },
@@ -235,13 +385,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.08333333333333333,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.0924408014571949,
     "active": true,
-    "tl": 0.061299,
+    "tl": 0.069152,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 9029.90625
    }
   ]
  },
@@ -252,13 +412,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.12887067395264118,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.13797814207650272,
     "active": true,
-    "tl": 0.10578400000000002,
+    "tl": 0.114069,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8929.90625
    }
   ]
  },
@@ -269,13 +439,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.174408014571949,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.18351548269581056,
     "active": true,
-    "tl": 0.150569,
+    "tl": 0.15983200000000003,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8829.90625
    }
   ]
  },
@@ -286,13 +466,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.21994535519125682,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.2290528233151184,
     "active": true,
-    "tl": 0.19551000000000002,
+    "tl": 0.204673,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8729.90625
    }
   ]
  },
@@ -303,13 +493,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.26548269581056466,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.27459016393442626,
     "active": true,
-    "tl": 0.241957,
+    "tl": 0.250302,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8629.90625
    }
   ]
  },
@@ -320,13 +520,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.31102003642987247,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.32012750455373407,
     "active": true,
-    "tl": 0.28669500000000003,
+    "tl": 0.295534,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8529.90625
    }
   ]
  },
@@ -337,13 +547,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.35655737704918034,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.3656648451730419,
     "active": true,
-    "tl": 0.332288,
+    "tl": 0.3394650000000001,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8429.90625
    }
   ]
  },
@@ -354,13 +574,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.40209471766848814,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.41120218579234974,
     "active": true,
-    "tl": 0.379773,
+    "tl": 0.38678300000000004,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8329.90625
    }
   ]
  },
@@ -371,13 +601,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.447632058287796,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.45673952641165755,
     "active": true,
-    "tl": 0.42373200000000005,
+    "tl": 0.43243800000000004,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8229.90625
    }
   ]
  },
@@ -388,13 +628,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.4931693989071038,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.5022768670309654,
     "active": true,
-    "tl": 0.469048,
+    "tl": 0.477679,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8129.90625
    }
   ]
  },
@@ -405,13 +655,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.5387067395264117,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.5478142076502732,
     "active": true,
-    "tl": 0.5141720000000001,
+    "tl": 0.5234500000000001,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 8029.90625
    }
   ]
  },
@@ -422,13 +682,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.5842440801457195,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.593351548269581,
     "active": true,
-    "tl": 0.558065,
+    "tl": 0.569849,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7929.90625
    }
   ]
  },
@@ -439,13 +709,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.6297814207650273,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.6388888888888888,
     "active": true,
-    "tl": 0.604522,
+    "tl": 0.614573,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7829.90625
    }
   ]
  },
@@ -456,13 +736,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.6753187613843351,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.6844262295081968,
     "active": true,
-    "tl": 0.649128,
+    "tl": 0.659823,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7729.90625
    }
   ]
  },
@@ -473,13 +763,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.720856102003643,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.7299635701275046,
     "active": true,
-    "tl": 0.6964400000000001,
+    "tl": 0.7055980000000001,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7629.90625
    }
   ]
  },
@@ -490,13 +790,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.7663934426229508,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.7755009107468124,
     "active": true,
-    "tl": 0.7420930000000001,
+    "tl": 0.7508810000000001,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7529.90625
    }
   ]
  },
@@ -507,13 +817,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.8119307832422586,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.8210382513661202,
     "active": true,
-    "tl": 0.787333,
+    "tl": 0.7989120000000001,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7429.90625
    }
   ]
  },
@@ -524,13 +844,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.8574681238615665,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.8665755919854281,
     "active": true,
-    "tl": 0.833104,
+    "tl": 0.842744,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7329.90625
    }
   ]
  },
@@ -541,13 +871,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.9030054644808743,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.9121129326047359,
     "active": true,
-    "tl": 0.878386,
+    "tl": 0.887681,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7229.90625
    }
   ]
  },
@@ -558,13 +898,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.9485428051001822,
+    "start": 1297,
+    "end": 3493,
+    "sprog": 0.9576502732240437,
     "active": true,
-    "tl": 0.924171,
+    "tl": 0.928187,
     "pinned": true,
-    "top": 158.21875
+    "top": 178.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7129.90625
    }
   ]
  },
@@ -575,13 +925,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
-    "sprog": 0.99408014571949,
-    "active": true,
-    "tl": 0.969458,
-    "pinned": true,
-    "top": 158.21875
+    "start": 1297,
+    "end": 3493,
+    "sprog": 1,
+    "active": false,
+    "tl": 0.97253,
+    "pinned": false,
+    "top": 171.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 7029.90625
    }
   ]
  },
@@ -592,13 +952,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
-    "tl": 0.990178,
+    "tl": 0.991569,
     "pinned": false,
     "top": 71.21875
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6929.90625
    }
   ]
  },
@@ -609,13 +979,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
-    "tl": 0.9966800000000001,
+    "tl": 0.9975390000000001,
     "pinned": false,
     "top": -28.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6829.90625
    }
   ]
  },
@@ -626,13 +1006,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
-    "tl": 0.9987860000000001,
+    "tl": 0.999527,
     "pinned": false,
     "top": -128.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6729.90625
    }
   ]
  },
@@ -643,13 +1033,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
-    "tl": 0.9997490000000001,
+    "tl": 0.9999210000000001,
     "pinned": false,
     "top": -228.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6629.90625
    }
   ]
  },
@@ -660,13 +1060,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
-    "tl": 0.9999570000000001,
+    "tl": 0.999992,
     "pinned": false,
     "top": -328.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6529.90625
    }
   ]
  },
@@ -677,13 +1087,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
-    "tl": 0.9999950000000001,
+    "tl": 1,
     "pinned": false,
     "top": -428.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6429.90625
    }
   ]
  },
@@ -694,13 +1114,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -528.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6329.90625
    }
   ]
  },
@@ -711,13 +1141,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -628.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6229.90625
    }
   ]
  },
@@ -728,13 +1168,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -728.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6129.90625
    }
   ]
  },
@@ -745,13 +1195,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -828.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 6029.90625
    }
   ]
  },
@@ -762,13 +1222,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -928.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5929.90625
    }
   ]
  },
@@ -779,13 +1249,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1028.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5829.90625
    }
   ]
  },
@@ -796,13 +1276,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1128.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5729.90625
    }
   ]
  },
@@ -813,13 +1303,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1228.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5629.90625
    }
   ]
  },
@@ -830,13 +1330,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1328.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5529.90625
    }
   ]
  },
@@ -847,13 +1357,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1428.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5429.90625
    }
   ]
  },
@@ -864,13 +1384,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1528.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5329.90625
    }
   ]
  },
@@ -881,13 +1411,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1628.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5229.90625
    }
   ]
  },
@@ -898,13 +1438,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1728.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5129.90625
    }
   ]
  },
@@ -915,13 +1465,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1828.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 5029.90625
    }
   ]
  },
@@ -932,13 +1492,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -1928.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4929.90625
    }
   ]
  },
@@ -949,13 +1519,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2028.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4829.90625
    }
   ]
  },
@@ -966,13 +1546,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2128.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4729.90625
    }
   ]
  },
@@ -983,13 +1573,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2228.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4629.90625
    }
   ]
  },
@@ -1000,13 +1600,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2328.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4529.90625
    }
   ]
  },
@@ -1017,13 +1627,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2428.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4429.90625
    }
   ]
  },
@@ -1034,13 +1654,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2528.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4329.90625
    }
   ]
  },
@@ -1051,13 +1681,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2628.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4229.90625
    }
   ]
  },
@@ -1068,13 +1708,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2728.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4129.90625
    }
   ]
  },
@@ -1085,13 +1735,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2828.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 4029.90625
    }
   ]
  },
@@ -1102,13 +1762,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -2928.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3929.90625
    }
   ]
  },
@@ -1119,13 +1789,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -3028.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3829.90625
    }
   ]
  },
@@ -1136,13 +1816,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -3128.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3729.90625
    }
   ]
  },
@@ -1153,13 +1843,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -3228.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3629.90625
    }
   ]
  },
@@ -1170,13 +1870,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -3328.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3529.90625
    }
   ]
  },
@@ -1187,13 +1897,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -3428.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3429.90625
    }
   ]
  },
@@ -1204,13 +1924,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -3528.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3329.90625
    }
   ]
  },
@@ -1221,13 +1951,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -3628.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3229.90625
    }
   ]
  },
@@ -1238,13 +1978,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -3728.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3129.90625
    }
   ]
  },
@@ -1255,13 +2005,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -3828.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 3029.90625
    }
   ]
  },
@@ -1272,13 +2032,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -3928.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2929.90625
    }
   ]
  },
@@ -1289,13 +2059,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -4028.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2829.90625
    }
   ]
  },
@@ -1306,13 +2086,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -4128.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2729.90625
    }
   ]
  },
@@ -1323,13 +2113,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -4228.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2629.90625
    }
   ]
  },
@@ -1340,13 +2140,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -4328.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2529.90625
    }
   ]
  },
@@ -1357,13 +2167,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -4428.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2429.90625
    }
   ]
  },
@@ -1374,13 +2194,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -4528.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2329.90625
    }
   ]
  },
@@ -1391,13 +2221,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -4628.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2229.90625
    }
   ]
  },
@@ -1408,13 +2248,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -4728.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2129.90625
    }
   ]
  },
@@ -1425,13 +2275,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -4828.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 2029.90625
    }
   ]
  },
@@ -1442,13 +2302,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -4928.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1929.90625
    }
   ]
  },
@@ -1459,13 +2329,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -5028.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1829.90625
    }
   ]
  },
@@ -1476,13 +2356,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -5128.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1729.90625
    }
   ]
  },
@@ -1493,13 +2383,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -5228.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1629.90625
    }
   ]
  },
@@ -1510,13 +2410,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -5328.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1529.90625
    }
   ]
  },
@@ -1527,13 +2437,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -5428.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1429.90625
    }
   ]
  },
@@ -1544,13 +2464,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -5528.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1329.90625
    }
   ]
  },
@@ -1561,13 +2491,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -5628.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1229.90625
    }
   ]
  },
@@ -1578,13 +2518,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -5728.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1129.90625
    }
   ]
  },
@@ -1595,13 +2545,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -5828.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 1029.90625
    }
   ]
  },
@@ -1612,13 +2572,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -5928.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 929.90625
    }
   ]
  },
@@ -1629,13 +2599,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -6028.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 829.90625
    }
   ]
  },
@@ -1646,13 +2626,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -6128.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 729.90625
    }
   ]
  },
@@ -1663,13 +2653,23 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -6228.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0,
+    "tl": null,
+    "pinned": false,
+    "top": 629.90625
    }
   ]
  },
@@ -1680,13 +2680,24 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -6328.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0.020761245674740483,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": 529.90625
    }
   ]
  },
@@ -1697,13 +2708,24 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -6428.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0.08996539792387544,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": 429.90625
    }
   ]
  },
@@ -1714,13 +2736,24 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
     "top": -6528.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0.15916955017301038,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": 329.90625
    }
   ]
  },
@@ -1731,13 +2764,24 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -6594.78125
+    "top": -6628.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0.22837370242214533,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": 229.90625
    }
   ]
  },
@@ -1748,13 +2792,24 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -6594.78125
+    "top": -6728.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0.2975778546712803,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": 129.90625
    }
   ]
  },
@@ -1765,13 +2820,24 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -6594.78125
+    "top": -6828.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0.36678200692041524,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": 29.90625
    }
   ]
  },
@@ -1782,13 +2848,24 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -6594.78125
+    "top": -6928.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0.4359861591695502,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -70.09375
    }
   ]
  },
@@ -1799,13 +2876,24 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -6594.78125
+    "top": -6943.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -85.09375
    }
   ]
  },
@@ -1816,13 +2904,24 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -6594.78125
+    "top": -6943.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -85.09375
    }
   ]
  },
@@ -1833,13 +2932,24 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -6594.78125
+    "top": -6943.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -85.09375
    }
   ]
  },
@@ -1850,13 +2960,136 @@
     "name": "heylane-how",
     "kind": "sequence",
     "mode": "pinned",
-    "start": 1317,
-    "end": 3513,
+    "start": 1297,
+    "end": 3493,
     "sprog": 1,
     "active": false,
     "tl": 1,
     "pinned": false,
-    "top": -6594.78125
+    "top": -6943.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -85.09375
+   }
+  ]
+ },
+ {
+  "y": 11100,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1297,
+    "end": 3493,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6943.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -85.09375
+   }
+  ]
+ },
+ {
+  "y": 11200,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1297,
+    "end": 3493,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6943.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -85.09375
+   }
+  ]
+ },
+ {
+  "y": 11300,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1297,
+    "end": 3493,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6943.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -85.09375
+   }
+  ]
+ },
+ {
+  "y": 11400,
+  "snap": [
+   {
+    "name": "heylane-how",
+    "kind": "sequence",
+    "mode": "pinned",
+    "start": 1297,
+    "end": 3493,
+    "sprog": 1,
+    "active": false,
+    "tl": 1,
+    "pinned": false,
+    "top": -6943.78125
+   },
+   {
+    "name": "footer-columns",
+    "kind": "reveal",
+    "start": 9970,
+    "end": 11415,
+    "sprog": 0.4463667820069204,
+    "active": true,
+    "tl": null,
+    "pinned": false,
+    "top": -85.09375
    }
   ]
  }
