@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Award, BarChart3, Binary, BookOpen, Brain, Briefcase, Check, ChevronRight, Clock, Cpu, Eye, Laptop, Layers, Megaphone, MessageCircle, Shield, Smartphone, Sparkles, Target, Video, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { coursesData, filters, spotlightCourse, type Course } from "@/data/ikuro-programs";
+import { REVEAL_VIEWPORT } from "@/lib/scroll";
 
 const iconMap: Record<string, React.ElementType> = {
   Laptop, Smartphone, Shield, Cpu, BarChart3, Binary, Eye, Brain,
@@ -83,7 +84,7 @@ const TechxeraPrograms = () => {
                     key={course.title}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.1 }}
+                    viewport={REVEAL_VIEWPORT}
                     whileHover={{ y: -4 }}
                     className="md:col-span-2 md:row-span-2 bg-card border border-border/80 hover:border-primary/40 rounded-3xl p-8 flex flex-col justify-between shadow-lg transition-all duration-300 relative group overflow-hidden"
                   >
@@ -188,7 +189,7 @@ const TechxeraPrograms = () => {
                   key={course.title}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.1 }}
+                  viewport={REVEAL_VIEWPORT}
                   transition={{ delay: (idx % 3) * 0.08, duration: 0.5 }}
                   whileHover={{ y: -4 }}
                   className="bg-card border border-border/80 hover:border-primary/45 rounded-3xl p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 relative group overflow-hidden"

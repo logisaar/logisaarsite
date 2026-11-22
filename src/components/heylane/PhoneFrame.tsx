@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useReducedMotion } from "framer-motion";
 import gsap from "gsap";
+import { loop } from "@/lib/scroll";
 import { hlScreen, hlScreenAllowed, type HlAppScreen } from "@/data/heylane";
 
 /**
@@ -54,19 +55,19 @@ const PhoneFrame = ({ screens, active = 0, alt, scrollFull = false, className = 
     const img = drift.current, el = box.current;
     if (!scrollFull || !img || !el || reduce) return;
     let tween: gsap.core.Tween | null = null;
+    let stop = () => {};
+    // starts at 60% visible, pauses off-screen or when the tab is hidden, restarts from the top on re-entry
     const build = () => {
+      stop();
       tween?.kill();
       const over = img.offsetHeight - el.clientHeight;
       if (over <= 0) return;
       tween = gsap.fromTo(img, { y: 0 }, { y: -over, duration: Math.max(10, over / 40), ease: "none", repeat: -1, yoyo: true, repeatDelay: 1.5, paused: true });
-      if (visible) tween.play();
+      stop = loop(el, tween);
     };
-    let visible = false;
-    const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting && !document.hidden; if (visible) tween?.play(); else tween?.pause(); }, { threshold: 0.3 });
-    io.observe(el);
     img.addEventListener("load", build);
     build();
-    return () => { io.disconnect(); img.removeEventListener("load", build); tween?.kill(); };
+    return () => { stop(); img.removeEventListener("load", build); tween?.kill(); };
   }, [scrollFull, reduce]);
 
   if (!list.length) return null;

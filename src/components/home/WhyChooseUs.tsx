@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Zap, Shield, Headphones, Clock, Award, Heart } from "lucide-react";
 import DecorativeShapes from "@/components/creative/DecorativeShapes";
+import { REVEAL_VIEWPORT } from "@/lib/scroll";
 
 const featureColors = [
   "hsl(170 80% 45%)",
@@ -23,7 +24,7 @@ const features = [
 
 const WhyChooseUs = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, REVEAL_VIEWPORT);
 
   return (
     <section className="py-section relative overflow-hidden" ref={ref}>

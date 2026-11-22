@@ -42,6 +42,7 @@ import brandNitLogo from "@/assets/brand-logos/nit.webp";
 import brandSwostiLogo from "@/assets/brand-logos/swosti.webp";
 import brandAmrutaLogo from "@/assets/brand-logos/amruta-bhojan.webp";
 import brandMassomLogo from "@/assets/brand-logos/massom-vastu-guru.webp";
+import { REVEAL_VIEWPORT } from "@/lib/scroll";
 
 // ─── Local Business Schema ──────────────────────────────────────────────────
 const localBusinessSchema = {
@@ -388,7 +389,7 @@ const Index = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={REVEAL_VIEWPORT}
             transition={{ duration: 0.8 }}
             className="space-y-4 max-w-2xl mx-auto"
           >
@@ -404,7 +405,7 @@ const Index = () => {
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={REVEAL_VIEWPORT}
             transition={{ delay: 0.2, duration: 0.6 }}
             className="flex flex-wrap gap-4 justify-center"
           >

@@ -4,6 +4,7 @@ import Eyebrow from "@/components/Eyebrow";
 import { Button } from "@/components/ui/button";
 import { openLeadModal } from "@/components/LeadCaptureModal";
 import { DECISIONS, IKURO_PILOT_STATUS, IKURO_PLANS, SHOW_IKURO_PRICING } from "@/data/ikuro";
+import { REVEAL_VIEWPORT } from "@/lib/scroll";
 
 const scrollToId = (id: string) => {
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -104,7 +105,7 @@ export const IkuroColleges = () => {
                     style={{ background: "hsl(var(--ikuro-orange))" }}
                     initial={reduce ? { width: `${w}%` } : { width: 0 }}
                     whileInView={{ width: `${w}%` }}
-                    viewport={{ once: true, amount: 0.6 }}
+                    viewport={REVEAL_VIEWPORT}
                     transition={{ duration: 0.8, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
                   />
                 </div>

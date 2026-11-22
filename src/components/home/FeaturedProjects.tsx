@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { projects } from "@/data/projects";
 import NoiseTexture from "@/components/creative/NoiseTexture";
 import { ExternalLink } from "lucide-react";
+import { REVEAL_VIEWPORT } from "@/lib/scroll";
 
 const projectColors = [
   "hsl(170 80% 45%)",
@@ -49,7 +50,7 @@ const FeaturedProjects = () => {
                   rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
+                  viewport={REVEAL_VIEWPORT}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden block"
                 >

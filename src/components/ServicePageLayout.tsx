@@ -7,6 +7,7 @@ import Layout from "@/components/Layout";
 import { CONTACT } from "@/lib/contact";
 import GradientMesh from "@/components/creative/GradientMesh";
 import MagneticButton from "@/components/creative/MagneticButton";
+import { REVEAL_VIEWPORT } from "@/lib/scroll";
 
 export interface PainPoint {
   icon: LucideIcon;
@@ -80,8 +81,8 @@ export default function ServicePageLayout({
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const featRef = useRef(null);
   const priceRef = useRef(null);
-  const featInView = useInView(featRef, { once: true, amount: 0.1 });
-  const priceInView = useInView(priceRef, { once: true, amount: 0.1 });
+  const featInView = useInView(featRef, REVEAL_VIEWPORT);
+  const priceInView = useInView(priceRef, REVEAL_VIEWPORT);
 
   const waUrl = WHATSAPP_BASE + encodeURIComponent(hero.waMessage);
 
@@ -187,7 +188,7 @@ export default function ServicePageLayout({
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={REVEAL_VIEWPORT}
             className="text-center mb-12"
           >
             <p className="text-primary-ink text-xs uppercase tracking-[0.2em] mb-2">The Problem</p>
@@ -203,7 +204,7 @@ export default function ServicePageLayout({
                   key={p.title}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={REVEAL_VIEWPORT}
                   transition={{ delay: i * 0.1 }}
                   className="rounded-2xl border border-border bg-card p-6 border-l-4 border-l-primary"
                 >
@@ -262,7 +263,7 @@ export default function ServicePageLayout({
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={REVEAL_VIEWPORT}
             className="text-center mb-14"
           >
             <p className="text-primary-ink text-xs uppercase tracking-[0.2em] mb-2">Process</p>
@@ -279,7 +280,7 @@ export default function ServicePageLayout({
                   key={step.n}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={REVEAL_VIEWPORT}
                   transition={{ delay: i * 0.15 }}
                   className="text-center"
                 >
@@ -365,7 +366,7 @@ export default function ServicePageLayout({
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={REVEAL_VIEWPORT}
             className="text-center mb-12"
           >
             <p className="text-primary-ink text-xs uppercase tracking-[0.2em] mb-2">FAQ</p>
@@ -379,7 +380,7 @@ export default function ServicePageLayout({
                 key={i}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={REVEAL_VIEWPORT}
                 transition={{ delay: i * 0.05 }}
                 className="rounded-2xl border border-border bg-card overflow-hidden"
               >
@@ -416,7 +417,7 @@ export default function ServicePageLayout({
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={REVEAL_VIEWPORT}
             className="rounded-3xl bg-gradient-to-br from-primary/10 via-background to-[hsl(165,80%,45%)]/10 border border-primary/20 p-12 text-center max-w-3xl mx-auto"
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">

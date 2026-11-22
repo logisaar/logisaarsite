@@ -7,6 +7,7 @@ import MagneticButton from "@/components/creative/MagneticButton";
 import GradientMesh from "@/components/creative/GradientMesh";
 import TextReveal from "@/components/creative/TextReveal";
 import { MessageCircle, Phone, ArrowRight, Globe, Smartphone, Bot, Megaphone, Palette, Play } from "lucide-react";
+import { REVEAL_VIEWPORT } from "@/lib/scroll";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -145,7 +146,7 @@ const Location = () => {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={REVEAL_VIEWPORT}
             transition={{ duration: 0.8 }}
           >
             <h2 className="font-display text-3xl md:text-5xl font-bold mb-8">
@@ -182,7 +183,7 @@ const Location = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={REVEAL_VIEWPORT}
             className="text-center mb-16"
           >
             <p className="text-primary-ink text-xs uppercase tracking-[0.2em] mb-3">Service Area</p>
@@ -197,7 +198,7 @@ const Location = () => {
                 key={city}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
+                viewport={REVEAL_VIEWPORT}
                 transition={{ delay: i * 0.05, duration: 0.6 }}
                 className="group rounded-2xl border border-border bg-card p-5 text-center hover:border-primary/50 hover:bg-primary/5 transition-all"
               >
@@ -216,7 +217,7 @@ const Location = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={REVEAL_VIEWPORT}
             className="text-center mb-16"
           >
             <p className="text-primary-ink text-xs uppercase tracking-[0.2em] mb-3">What We Do</p>
@@ -233,7 +234,7 @@ const Location = () => {
                   key={s.title}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
+                  viewport={REVEAL_VIEWPORT}
                   transition={{ delay: i * 0.1, duration: 0.7 }}
                   className="rounded-2xl border border-border bg-card p-7 group hover:border-primary/30 transition-all"
                 >
@@ -255,7 +256,7 @@ const Location = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={REVEAL_VIEWPORT}
             className="text-center mb-12"
           >
             <h2 className="font-display text-3xl md:text-5xl font-bold">
@@ -269,7 +270,7 @@ const Location = () => {
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={REVEAL_VIEWPORT}
                 transition={{ delay: i * 0.1 }}
                 className="rounded-2xl border border-border bg-card p-6"
               >
@@ -287,7 +288,7 @@ const Location = () => {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={REVEAL_VIEWPORT}
             className="space-y-6"
           >
             <h2 className="font-display text-3xl md:text-5xl font-bold">

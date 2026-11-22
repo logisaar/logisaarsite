@@ -1,15 +1,11 @@
-import { useEffect, useRef } from "react";
-import { useReducedMotion } from "framer-motion";
+import { forwardRef } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 /**
  * "The decision path": original IKURO-coloured artwork (does not trace or redraw the logo).
- * One winding path draws on scroll; five nodes light up in turn; choice chips fade as the path picks one;
- * a four-point star sparkles once at the end. Only transform, opacity and stroke-dashoffset animate.
- * Reduced motion: the finished state is shown, nothing loops.
+ * One winding path draws; five nodes light up in turn; choice chips fade as the path picks one; a four-point star
+ * sparkles at the end. The timeline is driven by `sequence()` from the block that owns it (IkuroBlock). Only transform,
+ * opacity and stroke-dashoffset animate. Reduced motion: the finished state is shown.
  */
 const ORANGE = "#FA482E";
 const NAVY = "#1E1E2A";
@@ -32,46 +28,50 @@ const CHIPS = [
   { label: "Higher studies", from: 3, x: 40, y: 58, w: 128, pick: false },
 ];
 
-const DecisionPath = ({ className = "" }: { className?: string }) => {
-  const reduce = useReducedMotion();
-  const root = useRef<SVGSVGElement>(null);
+/**
+ * Adds the decision path to a `sequence` timeline (one unit of time per step, five steps: Understand, Reason,
+ * Recommend, Reflect, Grow; the star lands in the last one). Start states are set here, so when the helper does not
+ * run (reduced motion) the markup is already the finished state.
+ */
+export const buildDecisionPath = (svg: SVGSVGElement, tl: gsap.core.Timeline) => {
+  const path = svg.querySelector<SVGPathElement>("[data-path]")!;
+  const len = path.getTotalLength();
+  const q = gsap.utils.selector(svg);
+  gsap.set(path, { strokeDasharray: len, strokeDashoffset: len * (1 - NODES[0].at) });
+  gsap.set(q("[data-node]"), { scale: 0.6, transformOrigin: "50% 50%", opacity: 0.35 });
+  gsap.set(q("[data-ring]"), { opacity: 0 });
+  gsap.set(q("[data-node-label]"), { opacity: 0.45 });
+  gsap.set(q("[data-branch]"), { opacity: 0 });
+  gsap.set(q("[data-chip]"), { opacity: 0, y: 6 });
+  gsap.set(q("[data-star]"), { scale: 0, opacity: 0, transformOrigin: "50% 50%" });
 
-  useEffect(() => {
-    const svg = root.current;
-    if (!svg || reduce) return;
-    const ctx = gsap.context(() => {
-      const path = svg.querySelector<SVGPathElement>("[data-path]")!;
-      const len = path.getTotalLength();
-      const q = gsap.utils.selector(svg);
-      gsap.set(path, { strokeDasharray: len, strokeDashoffset: len });
-      gsap.set(q("[data-node]"), { scale: 0.6, transformOrigin: "50% 50%", opacity: 0.35 });
-      gsap.set(q("[data-ring]"), { opacity: 0 });
-      gsap.set(q("[data-node-label]"), { opacity: 0.45 });
-      gsap.set(q("[data-branch]"), { opacity: 0 });
-      gsap.set(q("[data-chip]"), { opacity: 0, y: 6 });
-      gsap.set(q("[data-star]"), { scale: 0, opacity: 0, transformOrigin: "50% 50%" });
+  const light = (i: number, t: number) => {
+    tl.to(q(`[data-node="${i}"]`), { scale: 1, opacity: 1, duration: 0.25, ease: "back.out(2)" }, t);
+    tl.to(q(`[data-node-label="${i}"]`), { opacity: 1, duration: 0.25 }, t);
+    tl.to(q(`[data-ring="${i}"]`), { opacity: 1, duration: 0.25 }, t);
+  };
+  light(0, 0);
+  tl.to(q("[data-chip]"), { opacity: 0.7, y: 0, stagger: 0.08, duration: 0.3, ease: "power2.out" }, 0.1);
+  tl.to(q("[data-branch]"), { opacity: 0.5, duration: 0.3 }, 0.1);
+  for (let i = 1; i < NODES.length; i++) {
+    // the line travels to node i during step i, and the node lights as it arrives
+    tl.to(path, { strokeDashoffset: len * (1 - NODES[i].at), duration: 0.7, ease: "power1.inOut" }, i - 1 + 0.2);
+    light(i, i - 1 + 0.75);
+  }
+  // the path picks: kept chips light up, the rest fade
+  CHIPS.forEach((c, i) => {
+    const at = c.from - 1 + 0.9;
+    tl.to(q(`[data-chip="${i}"]`), c.pick ? { opacity: 1, duration: 0.3 } : { opacity: 0.12, duration: 0.3 }, at);
+    tl.to(q(`[data-branch="${i}"]`), { opacity: c.pick ? 1 : 0.1, duration: 0.3 }, at);
+  });
+  // the star lands in the last step, after Grow
+  tl.to(q("[data-star]"), { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(3)" }, NODES.length - 1 + 0.3);
+  tl.to(q("[data-star]"), { scale: 1.25, duration: 0.12 }, NODES.length - 1 + 0.65).to(q("[data-star]"), { scale: 1, duration: 0.12 }, ">");
+};
 
-      const tl = gsap.timeline({ defaults: { ease: "none" }, scrollTrigger: { trigger: svg, start: "top 80%", end: "bottom 45%", scrub: 0.6, invalidateOnRefresh: true } });
-      tl.to(path, { strokeDashoffset: 0, duration: 1 }, 0);
-      tl.to(q("[data-chip]"), { opacity: 0.7, y: 0, stagger: 0.04, duration: 0.15, ease: "power2.out" }, 0.05);
-      tl.to(q("[data-branch]"), { opacity: 0.5, duration: 0.15 }, 0.05);
-      NODES.forEach((n, i) => {
-        tl.to(q(`[data-node="${i}"]`), { scale: 1, opacity: 1, duration: 0.06, ease: "back.out(2)" }, n.at);
-        tl.to(q(`[data-node-label="${i}"]`), { opacity: 1, duration: 0.06 }, n.at);
-        tl.to(q(`[data-ring="${i}"]`), { opacity: 1, duration: 0.06 }, n.at);
-      });
-      // the path picks: kept chips light up, the rest fade
-      CHIPS.forEach((c, i) => {
-        const at = NODES[c.from].at + 0.03;
-        tl.to(q(`[data-chip="${i}"]`), c.pick ? { opacity: 1, duration: 0.08 } : { opacity: 0.12, duration: 0.1 }, at);
-        tl.to(q(`[data-branch="${i}"]`), { opacity: c.pick ? 1 : 0.1, duration: 0.08 }, at);
-      });
-      tl.to(q("[data-star]"), { scale: 1, opacity: 1, duration: 0.06, ease: "back.out(3)" }, 0.97);
-      tl.to(q("[data-star]"), { scale: 1.25, duration: 0.03 }, 0.99).to(q("[data-star]"), { scale: 1, duration: 0.03 }, 1.02);
-    }, svg);
-    return () => ctx.revert();
-  }, [reduce]);
+export const DECISION_STEPS = NODES.length;
 
+const DecisionPath = forwardRef<SVGSVGElement, { className?: string }>(({ className = "" }, root) => {
   return (
     <svg ref={root} viewBox="0 0 520 440" role="img" aria-label="A winding path from Understand through Reason, Recommend and Reflect to Grow, choosing among options such as B.Tech CSE, internship, Python and higher studies." className={`h-auto w-full ${className}`}>
       {/* faint track */}
@@ -101,6 +101,7 @@ const DecisionPath = ({ className = "" }: { className?: string }) => {
       </g>
     </svg>
   );
-};
+});
+DecisionPath.displayName = "DecisionPath";
 
 export default DecisionPath;

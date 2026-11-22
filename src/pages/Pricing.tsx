@@ -8,6 +8,7 @@ import GradientMesh from "@/components/creative/GradientMesh";
 import TextReveal from "@/components/creative/TextReveal";
 import MagneticButton from "@/components/creative/MagneticButton";
 import SEO from "@/components/SEO";
+import { REVEAL_VIEWPORT } from "@/lib/scroll";
 
 const plans = [
   {
@@ -121,7 +122,7 @@ const plans = [
 
 const Pricing = () => {
   const gridRef = useRef(null);
-  const gridInView = useInView(gridRef, { once: true, amount: 0.1 });
+  const gridInView = useInView(gridRef, REVEAL_VIEWPORT);
 
   return (
     <Layout>

@@ -1,6 +1,7 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { LucideIcon } from "lucide-react";
+import { REVEAL_VIEWPORT } from "@/lib/scroll";
 
 interface ValueCardProps {
   icon: LucideIcon;
@@ -226,7 +227,7 @@ const ValueCard = ({ icon: Icon, title, description, tagline, color, size, index
   const cardRef = useRef<HTMLDivElement>(null);
   const [revealedLetters, setRevealedLetters] = useState(0);
   const taglineRef = useRef(null);
-  const taglineInView = useInView(taglineRef, { once: true, amount: 0.5 });
+  const taglineInView = useInView(taglineRef, REVEAL_VIEWPORT);
   const [impactPoint, setImpactPoint] = useState({ x: 50, y: 50 });
 
   const cracks = useMemo(() => generateCracks(impactPoint.x, impactPoint.y), [impactPoint]);

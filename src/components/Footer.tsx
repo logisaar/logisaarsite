@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import DecorativeShapes from "@/components/creative/DecorativeShapes";
 import BrandLogo from "@/components/BrandLogo";
+import { REVEAL_VIEWPORT } from "@/lib/scroll";
 
 const footerLinks = {
   Solutions: [
@@ -59,7 +60,7 @@ const socialLinks = [
 
 const Footer = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, REVEAL_VIEWPORT);
   const reduceMotion = useReducedMotion();
 
   return (

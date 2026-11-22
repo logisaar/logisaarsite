@@ -1,11 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { useReducedMotion } from "framer-motion";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Eyebrow from "@/components/Eyebrow";
 import { PROBLEM_TABS } from "@/data/ikuro";
-
-gsap.registerPlugin(ScrollTrigger);
+import { sequence } from "@/lib/scroll";
 
 /**
  * "The problem": eight scattered sources converge into one IKURO card as you scroll.
@@ -13,26 +11,32 @@ gsap.registerPlugin(ScrollTrigger);
  * IKURO card are both shown still.
  */
 const IkuroProblem = () => {
+  const section = useRef<HTMLElement>(null);
+  const inner = useRef<HTMLDivElement>(null);
   const frame = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
 
-  useEffect(() => {
+  // two steps: the eight tabs converge, then the IKURO card lands
+  useLayoutEffect(() => {
     if (reduce || !frame.current) return;
-    const ctx = gsap.context(() => {
-      const tabs = gsap.utils.toArray<HTMLElement>("[data-tab]");
-      const card = frame.current!.querySelector("[data-card]");
-      const tl = gsap.timeline({
-        scrollTrigger: { trigger: frame.current, start: "top 75%", end: "center 40%", scrub: 0.6 },
-      });
-      tl.to(tabs, { left: "50%", top: "50%", xPercent: -50, yPercent: -50, scale: 0.5, rotate: 0, opacity: 0, ease: "power2.inOut", stagger: 0.04, duration: 1 }, 0)
-        .fromTo(card, { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, ease: "power2.out", duration: 0.6 }, 0.7);
-    }, frame);
-    return () => ctx.revert();
+    const tabs = gsap.utils.toArray<HTMLElement>("[data-tab]", frame.current);
+    const card = frame.current.querySelector("[data-card]");
+    const h = sequence(section.current, {
+      name: "ikuro-problem",
+      steps: 2,
+      pinEl: inner.current,
+      build: (tl) => {
+        gsap.set(card, { opacity: 0, scale: 0.85 });
+        tl.to(tabs, { left: "50%", top: "50%", xPercent: -50, yPercent: -50, scale: 0.5, rotate: 0, opacity: 0, ease: "power2.inOut", stagger: 0.06, duration: 0.9 }, 0.1);
+        tl.to(card, { opacity: 1, scale: 1, ease: "power2.out", duration: 0.7 }, 1.1);
+      },
+    });
+    return h.kill;
   }, [reduce]);
 
   return (
-    <section data-logi="IKURO helps students decide." className="py-section bg-background">
-      <div className="container mx-auto px-gutter max-w-[75rem]">
+    <section ref={section} data-seq data-logi="IKURO helps students decide." className="py-section bg-background">
+      <div ref={inner} className="container mx-auto px-gutter max-w-[75rem]">
         <div className="text-center max-w-3xl mx-auto mb-section-head space-y-4">
           <Eyebrow>The problem</Eyebrow>
           <h2 className="font-display text-h2 font-bold text-foreground">Students don't lack information. They lack clarity.</h2>
@@ -65,7 +69,7 @@ const IkuroProblem = () => {
             <div
               data-card
               className="absolute left-1/2 top-1/2 w-[min(18rem,80%)] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-border bg-card p-5 shadow-lg"
-              style={{ opacity: reduce ? 1 : 0 }}
+              style={{ opacity: 1 }}
             >
               <picture style={{ display: "contents" }}>
                 <source type="image/webp" srcSet="/brand/ikuro/ikuro-mark.webp" />

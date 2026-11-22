@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Compass, LayoutGrid, Rocket } from "lucide-react";
 import capAsset from "@/assets/chalk to choice asset cap.webp";
+import { REVEAL_VIEWPORT } from "@/lib/scroll";
 
 /* ─── Ripple keyframes injected once ─── */
 const rippleCSS = `
@@ -129,7 +130,7 @@ const ChalkToChoiceAsset = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={REVEAL_VIEWPORT}
             transition={{ type: "spring", stiffness: 100, damping: 14, delay: 0.15 }}
             style={{ animation: "chalk-float 4s ease-in-out infinite" }}
           >
@@ -171,7 +172,7 @@ const ChalkToChoiceAsset = () => {
               <motion.div
                 initial={{ opacity: 0, scale: 0.85 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+                viewport={REVEAL_VIEWPORT}
                 transition={{ duration: 0.5, delay }}
                 style={{
                   animation: `card-counter-${index} 55s linear infinite`,

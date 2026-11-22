@@ -1,3 +1,4 @@
+import { whenVisible } from "@/lib/scroll";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useReducedMotion } from "framer-motion";
@@ -18,13 +19,8 @@ const BentoCard = ({ s, i }: { s: (typeof SERVICES)[number]; i: number }) => {
   const [inView, setInView] = useState(false);
   const [hover, setHover] = useState(false);
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el || typeof IntersectionObserver === "undefined") return;
-    const io = new IntersectionObserver(([e]) => setInView(e.isIntersecting), { threshold: 0.35 });
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
+  // mini demos play from 60% visible (shared contract) and stop when the card leaves
+  useEffect(() => whenVisible(ref.current, setInView), []);
 
   const move = (e: React.PointerEvent<HTMLElement>) => {
     const r = e.currentTarget.getBoundingClientRect();

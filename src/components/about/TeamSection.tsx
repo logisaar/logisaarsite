@@ -5,6 +5,7 @@ import Eyebrow from "@/components/Eyebrow";
 import { FOUNDER_TITLE, COFOUNDER_TITLE } from "@/data/company";
 import chinmayPhoto from "@/assets/team/chinmay.webp";
 import bpsPhoto from "@/assets/team/bps.webp";
+import { REVEAL_VIEWPORT } from "@/lib/scroll";
 
 interface TeamMember {
   name: string;
@@ -36,7 +37,7 @@ const teamMembers: TeamMember[] = [
 
 const TeamSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.15 });
+  const isInView = useInView(ref, REVEAL_VIEWPORT);
 
   return (
     <section data-logi="Meet the two founders." aria-labelledby="founders-h" ref={ref} className="bg-background py-section">

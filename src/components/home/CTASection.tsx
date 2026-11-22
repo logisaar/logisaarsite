@@ -5,10 +5,11 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import MagneticButton from "@/components/creative/MagneticButton";
 import NoiseTexture from "@/components/creative/NoiseTexture";
+import { REVEAL_VIEWPORT } from "@/lib/scroll";
 
 const CTASection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, REVEAL_VIEWPORT);
 
   return (
     <section className="py-section relative overflow-hidden" ref={ref}>

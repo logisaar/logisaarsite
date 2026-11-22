@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { REVEAL_VIEWPORT } from "@/lib/scroll";
 
 const techs = [
   { name: "React", color: "hsl(195 100% 50%)", icon: "⚛" },
@@ -22,7 +23,7 @@ const techs = [
 
 const TechStack = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, REVEAL_VIEWPORT);
 
   return (
     <section className="py-section overflow-hidden relative" ref={ref}>

@@ -1,11 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { useReducedMotion } from "framer-motion";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Eyebrow from "@/components/Eyebrow";
 import { LOOP_STEPS } from "@/data/ikuro";
-
-gsap.registerPlugin(ScrollTrigger);
+import { sequence } from "@/lib/scroll";
 
 // One winding path through the five steps, ending at a four-point star. Drawn for this page (not traced from the logo).
 // The five nodes sit at 10, 30, 50, 70 and 90% of the width: the centres of five equal grid columns.
@@ -26,39 +24,38 @@ const STAR = "M0,-13 L3.2,-3.2 L13,0 L3.2,3.2 L0,13 L-3.2,3.2 L-13,0 L-3.2,-3.2 
 const IkuroLoop = () => {
   const reduce = useReducedMotion();
   const section = useRef<HTMLElement>(null);
+  const inner = useRef<HTMLDivElement>(null);
   const path = useRef<SVGPathElement>(null);
   const star = useRef<SVGGElement>(null);
-  const [progress, setProgress] = useState(0); // 0..1 across the section
+  const [step, setStep] = useState(reduce ? NODES.length - 1 : 0); // active step 0..4
 
-  useEffect(() => {
+  // five steps; the line reaches node i during step i and the star lands in the last one
+  useLayoutEffect(() => {
     const p = path.current;
-    if (!p || !section.current) return;
+    if (!p || reduce) return;
     const len = p.getTotalLength();
-    p.style.strokeDasharray = String(len);
-    if (reduce) { p.style.strokeDashoffset = "0"; setProgress(1); return; }
-    p.style.strokeDashoffset = String(len);
-    const ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: section.current,
-        start: "top 65%",
-        end: "bottom 70%",
-        scrub: 0.5,
-        onUpdate: (self) => {
-          const v = self.progress;
-          p.style.strokeDashoffset = String(len * (1 - v));
-          if (star.current) star.current.style.opacity = v > 0.97 ? "1" : "0";
-          setProgress((old) => (Math.abs(old - v) > 0.02 ? v : old));
-        },
-      });
-    }, section);
-    return () => ctx.revert();
+    const frac = (i: number) => NODES[i][0] / 985;
+    const h = sequence(section.current, {
+      name: "ikuro-loop",
+      steps: NODES.length,
+      pinEl: inner.current,
+      onStep: setStep,
+      build: (tl) => {
+        gsap.set(p, { strokeDasharray: len, strokeDashoffset: len * (1 - frac(0)) });
+        gsap.set(star.current, { opacity: 0, scale: 0.4, transformOrigin: "50% 50%" });
+        for (let i = 1; i < NODES.length; i++) tl.to(p, { strokeDashoffset: len * (1 - frac(i)), duration: 0.75, ease: "power1.inOut" }, i - 1 + 0.15);
+        tl.to(p, { strokeDashoffset: 0, duration: 0.2, ease: "power1.out" }, NODES.length - 1 + 0.5);
+        tl.to(star.current, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(3)" }, NODES.length - 1 + 0.65);
+      },
+    });
+    return h.kill;
   }, [reduce]);
 
-  const lit = (i: number) => reduce || progress >= (NODES[i][0] - 60) / 940;
+  const lit = (i: number) => reduce || i <= step;
 
   return (
-    <section ref={section} data-logi="This loop is how it thinks." className="py-section bg-secondary/60">
-      <div className="container mx-auto px-gutter max-w-[75rem]">
+    <section ref={section} data-seq data-logi="This loop is how it thinks." className="py-section bg-secondary/60">
+      <div ref={inner} className="container mx-auto px-gutter max-w-[75rem]">
         <div className="text-center max-w-3xl mx-auto mb-section-head space-y-4">
           <Eyebrow>How IKURO thinks</Eyebrow>
           <h2 className="font-display text-h2 font-bold text-foreground">IKURO’s five-step loop</h2>
@@ -72,9 +69,9 @@ const IkuroLoop = () => {
           {NODES.map(([x, y], i) => (
             <circle key={i} cx={x} cy={y} r="9" fill={lit(i) ? "hsl(var(--ikuro-orange-ink))" : "hsl(var(--card))"} stroke="hsl(var(--ikuro-orange-ink))" strokeWidth="3" />
           ))}
-          <g ref={star} transform="translate(985 42)" fill="hsl(var(--ikuro-orange))" style={{ opacity: reduce ? 1 : 0, transition: "opacity 0.3s" }}>
+          <g transform="translate(985 42)"><g ref={star} fill="hsl(var(--ikuro-orange))">
             <path d={STAR} />
-          </g>
+          </g></g>
         </svg>
 
         <ol className="mt-2 md:mt-6 grid list-none grid-cols-1 gap-4 p-0 md:grid-cols-5">

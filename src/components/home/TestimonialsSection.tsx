@@ -37,6 +37,7 @@ import logoNit from "@/assets/brand-logos/nit.webp";
 import logoSako from "@/assets/brand-logos/sako-sales.webp";
 import logoRenuka from "@/assets/brand-logos/the-renuka.webp";
 import logoVinayak from "@/assets/brand-logos/vinayak.webp";
+import { REVEAL_VIEWPORT } from "@/lib/scroll";
 
 const TESTIMONIALS_ROW1 = [
   {
@@ -141,7 +142,7 @@ const TestimonialCard = ({ item }: { item: TestimonialItem }) => (
 // TODO(owner): confirm every quote above is real and approved for public use (no ratings are shown: we have no rating source).
 const TestimonialsSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const isInView = useInView(ref, REVEAL_VIEWPORT);
   const reduceMotion = useReducedMotion();
   const all = [...TESTIMONIALS_ROW1, ...TESTIMONIALS_ROW2];
 

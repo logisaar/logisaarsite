@@ -1,14 +1,25 @@
+import { useLayoutEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Eyebrow from "@/components/Eyebrow";
-import DecisionPath from "@/components/home/DecisionPath";
+import DecisionPath, { buildDecisionPath, DECISION_STEPS } from "@/components/home/DecisionPath";
+import { sequence } from "@/lib/scroll";
 
 /** Home block for IKURO: a cream, IKURO-tinted panel inside the Logisaar page, 6/6 split, text left and the decision path right. */
-const IkuroBlock = () => (
-  <section data-logi="IKURO is made by Logisaar too!" className="bg-background py-section">
+const IkuroBlock = () => {
+  const section = useRef<HTMLElement>(null);
+  const panel = useRef<HTMLDivElement>(null);
+  const svg = useRef<SVGSVGElement>(null);
+  // pinned (desktop) until the star appears; timed below 64em or when the panel does not fit under the header
+  useLayoutEffect(() => {
+    const h = sequence(section.current, { name: "home-ikuro", steps: DECISION_STEPS, pinEl: panel.current, build: (tl) => svg.current && buildDecisionPath(svg.current, tl) });
+    return h.kill;
+  }, []);
+  return (
+  <section ref={section} data-logi="IKURO is made by Logisaar too!" className="bg-background py-section">
     <div className="container mx-auto max-w-[75rem] px-gutter">
-      <div data-theme="ikuro" className="grid grid-cols-1 items-center gap-10 rounded-[2rem] border border-[#FA482E]/25 bg-[#FCFAF8] p-6 text-foreground sm:p-10 lg:grid-cols-12 lg:gap-10 lg:p-14">
+      <div ref={panel} data-theme="ikuro" className="grid grid-cols-1 items-center gap-10 rounded-[2rem] border border-[#FA482E]/25 bg-[#FCFAF8] p-6 text-foreground sm:p-10 lg:grid-cols-12 lg:gap-10 lg:p-14">
         <div className="space-y-6 lg:col-span-6">
           <Eyebrow>IKURO · A Logisaar product</Eyebrow>
           <h2 className="m-0">
@@ -46,12 +57,13 @@ const IkuroBlock = () => (
         </div>
         <div className="lg:col-span-6">
           <div className="mx-auto w-full max-w-[32rem]">
-            <DecisionPath />
+            <DecisionPath ref={svg} />
           </div>
         </div>
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default IkuroBlock;

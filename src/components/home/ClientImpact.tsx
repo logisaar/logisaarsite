@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import AnimatedCounter from "@/components/creative/AnimatedCounter";
 import { TrendingUp, Users, Zap, Clock } from "lucide-react";
+import { REVEAL_VIEWPORT } from "@/lib/scroll";
 
 const impacts = [
   {
@@ -40,7 +41,7 @@ const impacts = [
 
 const ClientImpact = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, REVEAL_VIEWPORT);
 
   return (
     <section className="py-section relative overflow-hidden bg-background" ref={ref}>

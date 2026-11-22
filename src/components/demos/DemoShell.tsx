@@ -179,7 +179,15 @@ export const useDemoLoop = (root: RefObject<HTMLDivElement>, { build, active = t
   useEffect(() => {
     const el = root.current;
     if (!el || reduce || typeof IntersectionObserver === "undefined") return;
-    const io = new IntersectionObserver(([e]) => { visible.current = e.isIntersecting; sync(); }, { threshold: 0.2 });
+    // contract: start at 60% visible from the populated first frame, pause when off-screen
+    const io = new IntersectionObserver(
+      ([e]) => {
+        const on = e.intersectionRatio >= 0.6 || e.intersectionRect.height >= window.innerHeight * 0.6;
+        if (on && !visible.current) { visible.current = true; tlRef.current?.restart().pause(); sync(); }
+        else if (!e.isIntersecting && visible.current) { visible.current = false; tlRef.current?.pause(0); }
+      },
+      { threshold: [0, 0.2, 0.4, 0.6, 0.8, 1] },
+    );
     io.observe(el);
     document.addEventListener("visibilitychange", sync);
     return () => { io.disconnect(); document.removeEventListener("visibilitychange", sync); };

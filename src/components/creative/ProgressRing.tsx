@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { REVEAL_VIEWPORT } from "@/lib/scroll";
 
 interface ProgressRingProps {
   value: number;
@@ -11,7 +12,7 @@ interface ProgressRingProps {
 
 const ProgressRing = ({ value, max = 100, size = 120, strokeWidth = 4, color }: ProgressRingProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const isInView = useInView(ref, REVEAL_VIEWPORT);
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
   const progress = Math.min(value / max, 1);
