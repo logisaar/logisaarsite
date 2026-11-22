@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import MagneticButton from "@/components/creative/MagneticButton";
 import { ArrowRight } from "lucide-react";
 import SEO from "@/components/SEO";
+import { siteUrl } from "@/lib/site";
 
 const Portfolio = () => {
   const [active, setActive] = useState("All");
@@ -22,7 +23,7 @@ const Portfolio = () => {
         title="Our Work | Web Development Projects in Odisha | LogiSaar"
         description="View LogiSaar's portfolio — 15+ projects including corporate websites, restaurant platforms, e-commerce stores, CRM systems and AI tools built for Odisha businesses."
         keywords="web development portfolio Odisha, LogiSaar projects, websites built in Odisha, e-commerce Odisha"
-        canonical="https://www.logisaar.in/portfolio"
+        canonical={siteUrl("/portfolio")}
       />
       {/* Hero */}
       <section className="min-h-[50svh] flex items-end relative overflow-hidden pb-16">

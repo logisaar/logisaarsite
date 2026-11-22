@@ -5,6 +5,7 @@ import GradientMesh from "@/components/creative/GradientMesh";
 import TextReveal from "@/components/creative/TextReveal";
 import { Globe, Smartphone, Bot, Megaphone, Palette, Play } from "lucide-react";
 import { REVEAL_VIEWPORT } from "@/lib/scroll";
+import { siteUrl } from "@/lib/site";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -98,7 +99,7 @@ const Location = () => {
         title="Web Development Company in Odisha | Bhubaneswar, Cuttack, Bhadrak & Rourkela | LogiSaar"
         description="LogiSaar is Odisha's trusted web development company. We build custom websites, CRM, e-commerce & AI tools for businesses in Bhubaneswar, Cuttack, Bhadrak, Rourkela, Puri, Sambalpur and all of Odisha. Call +91 85960 72510."
         keywords="web development company Odisha, web design Bhubaneswar, web design Cuttack, website developer Bhadrak, website developer Rourkela, website developer Puri, SEO Odisha, CRM development Odisha, mobile app development Odisha"
-        canonical="https://www.logisaar.in/web-development-odisha"
+        canonical={siteUrl("/web-development-odisha")}
         jsonLd={faqSchema}
       />
 

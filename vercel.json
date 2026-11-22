@@ -4,14 +4,21 @@
     "redirects": [
         {
             "source": "/:path*",
-            "destination": "https://www.logisaar.in/:path*",
+            "destination": "https://www.logisaar.com/:path*",
             "permanent": true,
-            "has": [
-                {
-                    "type": "host",
-                    "value": "logisaar.in"
-                }
-            ]
+            "has": [{ "type": "host", "value": "logisaar.com" }]
+        },
+        {
+            "source": "/:path*",
+            "destination": "https://www.logisaar.com/:path*",
+            "permanent": true,
+            "has": [{ "type": "host", "value": "logisaar.in" }]
+        },
+        {
+            "source": "/:path*",
+            "destination": "https://www.logisaar.com/:path*",
+            "permanent": true,
+            "has": [{ "type": "host", "value": "www.logisaar.in" }]
         },
         {
             "source": "/techxera",

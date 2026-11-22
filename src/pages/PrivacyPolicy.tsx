@@ -1,5 +1,6 @@
 import { CONTACT } from "@/lib/contact";
 import LegalPageLayout from "@/components/legal/LegalPageLayout";
+import { siteUrl } from "@/lib/site";
 
 const sections = [
   {
@@ -33,6 +34,7 @@ const sections = [
         <p>This Privacy Policy applies to:</p>
         <h3 className="font-semibold text-foreground mt-4 text-lg">A. Corporate Website</h3>
         <ul className="list-disc pl-6 space-y-2 mt-2">
+          <li>logisaar.com</li>
           <li>logisaar.in</li>
           <li>All Logisaar-owned domains and subdomains</li>
         </ul>
@@ -466,7 +468,7 @@ const PrivacyPolicy = () => {
       seoTitle="Privacy Policy | Logisaar Technologies Private Limited"
       seoDescription="Read the Privacy Policy of Logisaar Technologies Private Limited. Learn how we collect, use, process, and protect your personal information."
       seoKeywords="privacy policy, Logisaar, Logisaar Technologies, data protection, privacy policy software company, India data privacy"
-      seoCanonical="https://logisaar.in/privacy-policy"
+      seoCanonical={siteUrl("/privacy-policy")}
       sections={sections}
     />
   );

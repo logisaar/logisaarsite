@@ -1,5 +1,6 @@
 import { CONTACT } from "@/lib/contact";
 import LegalPageLayout from "@/components/legal/LegalPageLayout";
+import { siteUrl } from "@/lib/site";
 
 const sections = [
   {
@@ -20,6 +21,7 @@ const sections = [
       <>
         <p>These Terms apply to:</p>
         <ul className="list-disc pl-6 space-y-1 mt-2">
+          <li>logisaar.com</li>
           <li>logisaar.in</li>
           <li>All Logisaar websites</li>
           <li>Mobile applications</li>
@@ -407,7 +409,7 @@ const TermsConditions = () => {
       seoTitle="Terms of Service | Logisaar Technologies Private Limited"
       seoDescription="Read the Terms of Service of Logisaar Technologies Private Limited. Learn about the terms governing the use of our websites, platforms, applications, and services."
       seoKeywords="terms of service, Logisaar, Logisaar Technologies, terms software company, Logisaar terms, website conditions"
-      seoCanonical="https://logisaar.in/terms-conditions"
+      seoCanonical={siteUrl("/terms-conditions")}
       sections={sections}
     />
   );

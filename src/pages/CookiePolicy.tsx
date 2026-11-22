@@ -1,5 +1,6 @@
 import { CONTACT } from "@/lib/contact";
 import LegalPageLayout from "@/components/legal/LegalPageLayout";
+import { siteUrl } from "@/lib/site";
 
 const sections = [
   {
@@ -130,7 +131,7 @@ const CookiePolicy = () => {
       seoTitle="Cookie Policy | Logisaar Technologies Private Limited"
       seoDescription="Read the Cookie Policy of Logisaar Technologies Private Limited. Learn how we use cookies and tracking technologies to improve our services."
       seoKeywords="cookie policy, Logisaar, Logisaar Technologies, tracking technologies, website cookies"
-      seoCanonical="https://logisaar.in/cookie-policy"
+      seoCanonical={siteUrl("/cookie-policy")}
       sections={sections}
     />
   );

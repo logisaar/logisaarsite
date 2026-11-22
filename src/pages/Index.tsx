@@ -40,6 +40,7 @@ import brandNitLogo from "@/assets/brand-logos/nit.webp";
 import brandSwostiLogo from "@/assets/brand-logos/swosti.webp";
 import brandAmrutaLogo from "@/assets/brand-logos/amruta-bhojan.webp";
 import brandMassomLogo from "@/assets/brand-logos/massom-vastu-guru.webp";
+import { siteUrl } from "@/lib/site";
 
 // ─── Local Business Schema ──────────────────────────────────────────────────
 const localBusinessSchema = {
@@ -48,7 +49,7 @@ const localBusinessSchema = {
   name: "Logisaar",
   description:
     "Custom software, AI agents and business automation for growing businesses in India and abroad. Makers of HeyLane and IKURO.",
-  url: "https://www.logisaar.in",
+  url: siteUrl("/"),
   telephone: CONTACT.phone.replace(/\s/g, ""),
   email: CONTACT.email,
   address: {
@@ -246,7 +247,7 @@ const Index = () => {
         title="Logisaar | Software, AI Agents & Business Automation"
         description="Logisaar builds custom software, AI agents and business automation for growing businesses in India and abroad. Makers of HeyLane and IKURO."
         keywords="custom software development, AI agents, business automation, AI software, HeyLane, IKURO, Logisaar, software company Bhubaneswar"
-        canonical="https://www.logisaar.in/"
+        canonical={siteUrl("/")}
         jsonLd={localBusinessSchema}
       />
 

@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import Eyebrow from "@/components/Eyebrow";
 import { Button } from "@/components/ui/button";
+import { siteUrl } from "@/lib/site";
 
 // HeyLane facts: HeyLane docs/01-PRODUCT.md. IKURO facts: the IKURO founder deck v1.0 (in development).
 const Products = () => (
@@ -12,7 +13,7 @@ const Products = () => (
       title="Our products: HeyLane and IKURO | Logisaar"
       description="Products built by Logisaar: HeyLane, a neighbourhood app for local places and businesses starting in Bhubaneswar, and IKURO, an AI student decision platform in development."
       keywords="Logisaar products, HeyLane, IKURO, neighbourhood app, student decision platform"
-      canonical="https://www.logisaar.in/products"
+      canonical={siteUrl("/products")}
     />
 
     <section data-logi-dock className="bg-background pb-section-sm pt-section-sm">

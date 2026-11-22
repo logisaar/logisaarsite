@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { siteUrl } from "@/lib/site";
 
 interface SEOProps {
   title: string;
@@ -11,7 +12,7 @@ interface SEOProps {
   image?: string;
 }
 
-const SEO = ({ title, description, keywords, canonical, jsonLd, noindex, image = "https://www.logisaar.in/og-image.png" }: SEOProps) => {
+const SEO = ({ title, description, keywords, canonical, jsonLd, noindex, image = siteUrl("/og-image.png") }: SEOProps) => {
   const scripts = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 
   return (

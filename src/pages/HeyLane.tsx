@@ -6,6 +6,7 @@ import {
   HlHero, HlTwoSides, HlPlaces, HlVibes, HlPasses, HlChat, HlPlans, HlComingSoon, HlRollout, HlClosing,
 } from "@/components/heylane/HlSections";
 import "@/components/heylane/heylane.css";
+import { siteUrl } from "@/lib/site";
 
 const LEAD =
   "HeyLane is a neighbourhood app starting in Bhubaneswar. The cafés, salons, stays and shops you keep going back to, finally treating you like a regular: points that become member perks, opinions from people you actually know, and a direct line to every place.";
@@ -17,8 +18,8 @@ const HeyLane = () => (
       title="HeyLane: neighbourhood app for local places and businesses | Logisaar"
       description={LEAD}
       keywords="HeyLane, neighbourhood app, local businesses Bhubaneswar, loyalty member pass, Lane Maps, Lane Vibes, HeyLane Chat, Logisaar"
-      canonical="https://www.logisaar.in/heylane"
-      image="https://www.logisaar.in/og-heylane.png"
+      canonical={siteUrl("/heylane")}
+      image={siteUrl("/og-heylane.png")}
     />
     {/* HeyLane fonts load on this route only */}
     <Helmet>

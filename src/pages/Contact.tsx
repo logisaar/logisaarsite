@@ -10,6 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CONTACT, whatsappLink } from "@/lib/contact";
 import { submitForm } from "@/lib/submitForm";
+import { siteUrl } from "@/lib/site";
 
 const NEEDS = [
   "Software development",
@@ -175,16 +176,16 @@ const Contact = () => {
       <SEO
         title="Contact Logisaar | Software, AI agents and automation"
         description={description}
-        canonical="https://www.logisaar.in/contact"
+        canonical={siteUrl("/contact")}
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "ContactPage",
           name: "Contact Logisaar",
-          url: "https://www.logisaar.in/contact",
+          url: siteUrl("/contact"),
           mainEntity: {
             "@type": "Organization",
             name: "Logisaar Technologies Private Limited",
-            url: "https://www.logisaar.in",
+            url: siteUrl("/"),
             email: CONTACT.email,
             telephone: CONTACT.phone,
             address: { "@type": "PostalAddress", streetAddress: "4th floor, Nalanda Institute of Technology, Khandagiri - Chandaka Rd, Similipatana", addressLocality: "Bhubaneswar", addressRegion: "Odisha", postalCode: "754012", addressCountry: "IN" },

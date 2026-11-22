@@ -10,6 +10,7 @@ import JourneyTimeline from "@/components/about/JourneyTimeline";
 import { Button } from "@/components/ui/button";
 import { CONTACT } from "@/lib/contact";
 import { FOUNDED, PROJECTS_DELIVERED, SERVICES } from "@/data/company";
+import { siteUrl } from "@/lib/site";
 
 const SERVICE_ICONS = {
   "software-development": Monitor,
@@ -44,7 +45,7 @@ const About = () => {
         title="About Logisaar | Software, AI agents and automation from Odisha"
         description="Logisaar builds custom software, AI agents and business automation for growing businesses, and makes its own products, IKURO and HeyLane. Based in Bhubaneswar, Odisha."
         keywords="about Logisaar, software company Odisha, AI agents, business automation, Chinmay Kumar Panda, Biswanath Prasanna Satyabrata Kar, Bhubaneswar, Cuttack"
-        canonical="https://www.logisaar.in/about"
+        canonical={siteUrl("/about")}
       />
 
       {/* Hero */}

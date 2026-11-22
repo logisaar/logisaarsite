@@ -7,6 +7,7 @@ import IkuroLoop from "@/components/ikuro/IkuroLoop";
 import ChalkToChoice from "@/components/ikuro/ChalkToChoice";
 import TechxeraPrograms from "@/components/ikuro/TechxeraPrograms";
 import { IkuroHero, IkuroDecide, IkuroColleges, IkuroTrust, IkuroPricing, IkuroClosing } from "@/components/ikuro/IkuroSections";
+import { siteUrl } from "@/lib/site";
 
 const LEAD =
   "IKURO is an AI-powered student decision platform by Logisaar. It understands your goals, reasons through your options and helps you choose your next course, college, skill, internship or career step.";
@@ -28,8 +29,8 @@ const Ikuro = () => {
       title="IKURO: AI student decision platform by Logisaar"
       description={LEAD}
       keywords="IKURO, student decision platform, AI career guidance, course and college choice, Chalk to Choice, TechXera, Logisaar"
-      canonical="https://www.logisaar.in/ikuro"
-      image="https://www.logisaar.in/og-ikuro.png"
+      canonical={siteUrl("/ikuro")}
+      image={siteUrl("/og-ikuro.png")}
     />
     <div ref={root} data-theme="ikuro">
       <IkuroHero />

@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SERVICES, PROJECT_STEPS } from "@/data/company";
 import { INDUSTRIES, SOLUTIONS, priceLine, type Solution } from "@/data/solutions";
+import { siteUrl } from "@/lib/site";
 
 const BTN = "h-auto min-h-[2.75rem] whitespace-normal rounded-full border-0 bg-primary px-6 font-semibold text-primary-on hover:bg-primary/90";
 const BTN_OUTLINE = "h-auto min-h-[2.75rem] whitespace-normal rounded-full border-2 border-primary/40 px-6 font-semibold";
@@ -91,7 +92,7 @@ const Solutions = () => {
         title="Solutions | Custom software, AI agents and business automation | Logisaar"
         description="Custom software, AI agents and business automation for growing businesses, plus ready-made systems for schools, hotels, sales teams and more. Fixed quote before we start."
         keywords="custom software development, AI agent development, business automation, AI software, school management software Odisha, hotel software, AI receptionist, custom CRM, Logisaar"
-        canonical="https://www.logisaar.in/solutions"
+        canonical={siteUrl("/solutions")}
       />
 
       {/* 1. Hero (tint) */}

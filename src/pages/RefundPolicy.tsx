@@ -1,5 +1,6 @@
 import { CONTACT } from "@/lib/contact";
 import LegalPageLayout from "@/components/legal/LegalPageLayout";
+import { siteUrl } from "@/lib/site";
 
 const sections = [
   {
@@ -207,7 +208,7 @@ const RefundPolicy = () => {
       seoTitle="Refund & Cancellation Policy | Logisaar Technologies Private Limited"
       seoDescription="Read the Refund and Cancellation Policy of Logisaar Technologies Private Limited. Learn about service cancellations and refund rules."
       seoKeywords="refund policy, cancellation policy, Logisaar, Logisaar Technologies, software refund, SaaS cancellation"
-      seoCanonical="https://logisaar.in/refund-policy"
+      seoCanonical={siteUrl("/refund-policy")}
       sections={sections}
     />
   );
