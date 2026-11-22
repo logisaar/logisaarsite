@@ -1,16 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import {
-  ArrowRight, Briefcase, CheckCircle2, MapPin, MessageCircle, PenTool,
-  Users, Utensils, TrendingUp, Loader2, AlertCircle,
+  ArrowRight, Briefcase, CheckCircle2, MapPin, PenTool,
+  Users, Utensils, TrendingUp, ExternalLink,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import MagneticButton from "@/components/creative/MagneticButton";
-import { CONTACT, whatsappLink } from "@/lib/contact";
-import { submitForm } from "@/lib/submitForm";
+import { CONTACT } from "@/lib/contact";
+import { CAREER_ROLES, careerRole } from "@/data/careers";
+import { siteUrl } from "@/lib/site";
+// submitForm's "careers" lead source stays in code but is no longer used here: applications go to Google Forms.
 
 const ROLES = [
   {
@@ -43,20 +45,9 @@ const PROCESS = [
   { icon: Users, title: "Incentives on top", text: "Incentives are added on top of your pay as you grow." },
 ];
 
-type Status = "idle" | "sending" | "success" | "error";
-
-const fieldClass =
-  "w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition";
-
 const Careers = () => {
   const reduce = useReducedMotion();
   const { hash } = useLocation();
-  const [status, setStatus] = useState<Status>("idle");
-  const [errorMsg, setErrorMsg] = useState("");
-  const [form, setForm] = useState({
-    name: "", phone: "", email: "", role: "", city: "", resume: "", note: "",
-  });
-
   // Direct visits to /careers#apply (QR codes) land on the form.
   useEffect(() => {
     if (hash !== "#apply") return;
@@ -65,37 +56,6 @@ const Careers = () => {
     }, 600);
     return () => clearTimeout(t);
   }, [hash, reduce]);
-
-  const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
-    setForm((f) => ({ ...f, [k]: e.target.value }));
-
-  const pickRole = (role: string) => {
-    setForm((f) => ({ ...f, role }));
-    document.getElementById("apply")?.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
-  };
-
-  const onSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (status === "sending") return;
-    setStatus("sending");
-    setErrorMsg("");
-    const message = [
-      `Role: ${form.role}`,
-      `City: ${form.city}`,
-      form.resume ? `Resume: ${form.resume}` : "",
-      form.note ? `Note: ${form.note}` : "",
-    ].filter(Boolean).join("\n");
-    const result = await submitForm(
-      { name: form.name, email: form.email, phone: form.phone, message, extra: { role: form.role, city: form.city, resume: form.resume } },
-      "careers"
-    );
-    if (result.success) {
-      setStatus("success");
-    } else {
-      setStatus("error");
-      setErrorMsg(result.error || "Something went wrong.");
-    }
-  };
 
   const fade = (delay = 0) =>
     reduce
@@ -108,7 +68,7 @@ const Careers = () => {
         title="Careers at Logisaar | We're Hiring in Bhubaneswar"
         description="Join Logisaar in Bhubaneswar. Open roles: Business Development Associate (3 openings, freshers welcome) and Content Creator & Graphic Designer."
         keywords="Logisaar careers, jobs in Bhubaneswar, business development associate Bhubaneswar, content creator jobs Odisha, freshers jobs Bhubaneswar"
-        canonical="https://www.logisaar.in/careers"
+        canonical={siteUrl("/careers")}
       />
 
       {/* Hero */}
@@ -137,19 +97,16 @@ const Careers = () => {
             <div className="flex flex-wrap gap-3 pt-2">
               <MagneticButton strength={0.15}>
                 <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full px-8">
-                  <a href="#apply">Apply now <ArrowRight size={16} className="ml-2" /></a>
+                  <a href="#roles">Apply now <ArrowRight size={16} className="ml-2" aria-hidden="true" /></a>
                 </Button>
               </MagneticButton>
-              <Button asChild size="lg" variant="outline" className="rounded-full px-8">
-                <a href="#roles">See open roles</a>
-              </Button>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Open roles */}
-      <section id="roles" data-logi="Two roles open. Pick the one that fits you." className="py-section bg-secondary/40 scroll-mt-28">
+      <section id="roles" data-logi="Pick a role and apply in two minutes." className="py-section bg-secondary/40 scroll-mt-28">
         <div className="container mx-auto px-gutter max-w-5xl">
           <motion.div {...fade()} className="mb-section-head">
             <p className="text-primary-ink font-mono text-xs uppercase tracking-widest font-bold mb-3">Open roles</p>
@@ -185,8 +142,11 @@ const Careers = () => {
                     </li>
                   ))}
                 </ul>
-                <Button onClick={() => pickRole(r.id)} className="mt-6 self-start bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full px-6">
-                  Apply for this role <ArrowRight size={15} className="ml-2" />
+                <Button asChild className="mt-6 self-start bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full px-6">
+                  <a href={careerRole(r.id).formUrl} target="_blank" rel="noopener noreferrer">
+                    Apply for this role <ArrowRight size={15} className="ml-2" aria-hidden="true" />
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  </a>
                 </Button>
               </motion.article>
             ))}
@@ -220,83 +180,35 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Apply */}
-      <section id="apply" data-logi="Two minutes to apply. We call you back." className="py-section bg-secondary/40 scroll-mt-24">
-        <div className="container mx-auto px-gutter max-w-3xl">
+      {/* Apply: one Google Form per role */}
+      <section id="apply" data-logi="Two roles, two short forms." aria-labelledby="apply-h" className="py-section bg-secondary/40 scroll-mt-24">
+        <div className="container mx-auto px-gutter max-w-5xl">
           <motion.div {...fade()} className="mb-10 text-center">
             <p className="text-primary-ink font-mono text-xs uppercase tracking-widest font-bold mb-3">Apply</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              Tell us <span className="text-gradient">about you</span>
-            </h2>
-            <p className="mt-3 text-muted-foreground">Takes two minutes. We reply on the phone number you share.</p>
+            <h2 id="apply-h" className="font-display text-h2-page font-bold text-foreground">Apply in two minutes</h2>
+            <p className="mt-3 text-muted-foreground">Pick the role, fill in the short form, and we will get back to you.</p>
           </motion.div>
-
-          {status === "success" ? (
-            <div role="status" className="rounded-2xl border border-primary/30 bg-card p-10 text-center space-y-4">
-              <CheckCircle2 size={44} className="text-primary-ink mx-auto" aria-hidden />
-              <h3 className="font-display text-2xl font-bold text-foreground">Application received</h3>
-              <p className="text-muted-foreground">Thanks, {form.name.split(" ")[0] || "there"}. We will call you soon on {form.phone}.</p>
-              <Button asChild variant="outline" className="rounded-full">
-                <a href={whatsappLink(`Hi Logisaar, I just applied for ${form.role}.`)} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle size={16} className="mr-2" /> Say hi on WhatsApp
-                </a>
-              </Button>
-            </div>
-          ) : (
-            <form onSubmit={onSubmit} className="rounded-2xl border border-border bg-card p-6 md:p-8 space-y-5">
-              <div className="grid sm:grid-cols-2 gap-5">
-                <div>
-                  <label htmlFor="c-name" className="block text-sm font-medium mb-1.5">Full name</label>
-                  <input id="c-name" required autoComplete="name" value={form.name} onChange={set("name")} className={fieldClass} />
-                </div>
-                <div>
-                  <label htmlFor="c-phone" className="block text-sm font-medium mb-1.5">Phone</label>
-                  <input id="c-phone" required type="tel" inputMode="tel" autoComplete="tel" pattern="[0-9+\-\s()]{7,15}" title="Enter a valid phone number" value={form.phone} onChange={set("phone")} className={fieldClass} />
-                </div>
-                <div>
-                  <label htmlFor="c-email" className="block text-sm font-medium mb-1.5">Email</label>
-                  <input id="c-email" required type="email" autoComplete="email" value={form.email} onChange={set("email")} className={fieldClass} />
-                </div>
-                <div>
-                  <label htmlFor="c-city" className="block text-sm font-medium mb-1.5">City</label>
-                  <input id="c-city" required autoComplete="address-level2" value={form.city} onChange={set("city")} className={fieldClass} />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="c-role" className="block text-sm font-medium mb-1.5">Role</label>
-                <select id="c-role" required value={form.role} onChange={set("role")} className={fieldClass}>
-                  <option value="" disabled>Choose a role</option>
-                  {ROLES.map((r) => <option key={r.id} value={r.id}>{r.title}</option>)}
-                </select>
-              </div>
-              <div>
-                <label htmlFor="c-resume" className="block text-sm font-medium mb-1.5">
-                  Resume or portfolio link <span className="text-muted-foreground font-normal">(optional)</span>
-                </label>
-                <input id="c-resume" type="url" placeholder="https://" value={form.resume} onChange={set("resume")} className={fieldClass} />
-              </div>
-              <div>
-                <label htmlFor="c-note" className="block text-sm font-medium mb-1.5">
-                  Anything we should know? <span className="text-muted-foreground font-normal">(optional)</span>
-                </label>
-                <textarea id="c-note" rows={3} maxLength={600} value={form.note} onChange={set("note")} className={fieldClass} />
-              </div>
-
-              {status === "error" && (
-                <p role="alert" className="flex items-start gap-2 text-sm text-destructive">
-                  <AlertCircle size={16} className="mt-0.5 shrink-0" aria-hidden />
-                  <span>{errorMsg} You can also WhatsApp us on {CONTACT.phone}.</span>
+          <ul className="m-0 grid list-none gap-6 p-0 md:grid-cols-2">
+            {CAREER_ROLES.map((r) => (
+              <li key={r.id} className="flex flex-col rounded-2xl border border-border bg-card p-6">
+                <h3 className="font-display text-h3 font-bold text-foreground">{r.title}</h3>
+                <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-body-sm text-muted-foreground">
+                  <span className="inline-flex items-center gap-1"><MapPin size={14} aria-hidden="true" /> {r.place}</span>
+                  <span>{r.type}</span>
                 </p>
-              )}
-
-              <Button type="submit" disabled={status === "sending"} size="lg" className="w-full bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full">
-                {status === "sending" ? (<><Loader2 size={16} className="mr-2 animate-spin" /> Sending</>) : "Send application"}
-              </Button>
-              <p className="text-xs text-muted-foreground text-center">
-                Prefer email? Write to <a className="inline-flex min-h-[2.75rem] items-center text-primary-ink underline underline-offset-2" href={CONTACT.mailto}>{CONTACT.email}</a>.
-              </p>
-            </form>
-          )}
+                <Button asChild className="mt-6 self-start bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full px-6 min-h-[2.75rem]">
+                  <a href={r.formUrl} target="_blank" rel="noopener noreferrer">
+                    Apply on Google Forms <ExternalLink size={15} className="ml-2" aria-hidden="true" />
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  </a>
+                </Button>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-8 text-center text-body-sm text-muted-foreground">
+            Questions? Write to{" "}
+            <a className="inline-flex min-h-[2.75rem] items-center text-primary-ink underline underline-offset-2" href={CONTACT.mailto}>{CONTACT.email}</a>
+          </p>
         </div>
       </section>
     </Layout>
