@@ -105,6 +105,23 @@ const useServiceTransitions = (active: number, frames: Els, panels: Els, tints: 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Hard-set the resting state for service `idx`: the active text, frame and tint fully opaque, the rest hidden.
+  // Run when a transition ends and whenever one is interrupted, so a fast scroll or snap can never leave text mid-fade.
+  const settle = (idx: number) => {
+    frames.current.forEach((f, i) => {
+      if (!f) return;
+      gsap.set(f, { autoAlpha: i === idx ? 1 : 0, opacity: i === idx ? 1 : 0, clearProps: "clipPath,scale,zIndex" });
+      gsap.set(Array.from(f.querySelectorAll("[data-n]")), { clearProps: "y,scale,opacity" });
+    });
+    panels.current.forEach((p, i) => {
+      if (!p) return;
+      gsap.set(p, { autoAlpha: i === idx ? 1 : 0, y: 0 });
+      gsap.set(p.querySelectorAll("[data-name-in]"), { yPercent: 0 });
+      gsap.set(p.querySelectorAll("[data-body-in], [data-num-in]"), { opacity: 1, y: 0, yPercent: 0 });
+    });
+    tints.current.forEach((t, i) => t && gsap.set(t, { opacity: i === idx ? 1 : 0 }));
+  };
+
   useEffect(() => {
     const from = prev.current;
     if (from === active) return;
@@ -114,9 +131,9 @@ const useServiceTransitions = (active: number, frames: Els, panels: Els, tints: 
     if (!fo || !fi || !po || !pi) return;
     const fwd = active > from;
     // finish a running transition so the next one starts from a clean state
-    tlRef.current?.progress(1).kill();
+    if (tlRef.current) { tlRef.current.kill(); settle(from); }
     const d = 0.75 * k;
-    const tl = gsap.timeline({ defaults: { ease: EXPO, duration: d } });
+    const tl = gsap.timeline({ defaults: { ease: EXPO, duration: d }, onComplete: () => settle(active) });
     tlRef.current = tl;
 
     // backdrop tint
@@ -342,7 +359,7 @@ const Tabs = () => {
       <div
         role="tablist"
         aria-label="Our services"
-        className="-mx-gutter flex gap-2 overflow-x-auto px-gutter pb-3 md:mx-0 md:grid md:grid-cols-4 md:px-0"
+        className="sol-tabs -mx-gutter flex gap-2 overflow-x-auto px-gutter pb-3 md:mx-0 md:grid md:grid-cols-4 md:px-0"
         onKeyDown={(e) => {
           if (e.key === "ArrowRight") { e.preventDefault(); go(active + 1, true); }
           if (e.key === "ArrowLeft") { e.preventDefault(); go(active - 1, true); }

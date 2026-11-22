@@ -396,3 +396,13 @@
 }
 .spot-card:hover::before { opacity: 1; }
 @media (prefers-reduced-motion: reduce) { .spot-card::before { transition: none; } }
+
+/* Solutions tab row on phones: edge fade so the row reads as scrollable */
+@media (max-width: 47.99em) {
+  .sol-tabs {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 1.25rem, #000 calc(100% - 1.25rem), transparent);
+    mask-image: linear-gradient(to right, transparent, #000 1.25rem, #000 calc(100% - 1.25rem), transparent);
+    scrollbar-width: none;
+  }
+  .sol-tabs::-webkit-scrollbar { display: none; }
+}

@@ -86,11 +86,9 @@ const TechxeraPrograms = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={REVEAL_VIEWPORT}
                     whileHover={{ y: -4 }}
-                    className="md:col-span-2 md:row-span-2 bg-card border border-border/80 hover:border-primary/40 rounded-3xl p-8 flex flex-col justify-between shadow-lg transition-all duration-300 relative group overflow-hidden"
+                    className="md:col-span-2 lg:col-span-3 bg-card border border-border/80 hover:border-primary/40 rounded-3xl p-6 md:p-8 grid gap-x-10 gap-y-6 lg:grid-cols-[1.15fr_1fr] shadow-lg transition-all duration-300 relative group overflow-hidden"
                   >
-                    {/* Highlight Background Glow */}
-
-                    <div className="space-y-6">
+                    <div className="flex flex-col gap-6">
                       {/* Top Header */}
                       <div className="flex justify-between items-center">
                         <div className="flex items-center gap-2">
@@ -118,6 +116,36 @@ const TechxeraPrograms = () => {
                         </p>
                       </div>
 
+                      {/* Footer Row */}
+                      <div className="mt-auto pt-4 border-t border-border/20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <div className="text-xl font-bold text-foreground font-mono">
+                          {course.price}
+                        </div>
+                        <div className="flex gap-3 w-full sm:w-auto">
+                          <Button asChild className="flex-1 sm:flex-initial bg-primary hover:opacity-90 border-0 text-primary-on rounded-full px-6 h-11 font-semibold">
+                            <a
+                              href={`https://wa.me/918596072510?text=Hi%20Logisaar%2C%20I'm%20interested%20in%20joining%20the%20${encodeURIComponent(course.title)}%20program.`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-center gap-2"
+                            >
+                              <MessageCircle size={16} fill="currentColor" />
+                              Enroll
+                            </a>
+                          </Button>
+                          <Button
+                            onClick={() => setSelectedCourse(course)}
+                            variant="outline"
+                            className="flex-1 sm:flex-initial rounded-full px-6 h-11 font-semibold border-border bg-white dark:bg-card"
+                          >
+                            Syllabus
+                          </Button>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div className="flex flex-col justify-center gap-6 lg:border-l lg:border-border/40 lg:pl-10">
                       {/* Stats Row */}
                       <div className="flex flex-wrap gap-x-6 gap-y-2 py-4 border-y border-border/40 text-label font-mono text-muted-foreground/90">
                         <div className="flex items-center gap-1.5">
@@ -151,33 +179,6 @@ const TechxeraPrograms = () => {
                         <span className="flex items-center gap-1.5"><Award size={14} className="text-primary-ink" /> Certification</span>
                         <span className="flex items-center gap-1.5"><Briefcase size={14} className="text-primary-ink" /> Internship</span>
                         <span className="flex items-center gap-1.5"><Zap size={14} className="text-primary-ink" /> Job-Ready</span>
-                      </div>
-                    </div>
-
-                    {/* Footer Row */}
-                    <div className="mt-8 pt-4 border-t border-border/20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                      <div className="text-xl font-bold text-foreground font-mono">
-                        {course.price}
-                      </div>
-                      <div className="flex gap-3 w-full sm:w-auto">
-                        <Button asChild className="flex-1 sm:flex-initial bg-primary hover:opacity-90 border-0 text-primary-on rounded-full px-6 h-11 font-semibold">
-                          <a
-                            href={`https://wa.me/918596072510?text=Hi%20Logisaar%2C%20I'm%20interested%20in%20joining%20the%20${encodeURIComponent(course.title)}%20program.`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-2"
-                          >
-                            <MessageCircle size={16} fill="currentColor" />
-                            Enroll
-                          </a>
-                        </Button>
-                        <Button
-                          onClick={() => setSelectedCourse(course)}
-                          variant="outline"
-                          className="flex-1 sm:flex-initial rounded-full px-6 h-11 font-semibold border-border bg-white dark:bg-card"
-                        >
-                          Syllabus
-                        </Button>
                       </div>
                     </div>
                   </motion.div>

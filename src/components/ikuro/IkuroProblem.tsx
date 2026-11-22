@@ -6,28 +6,32 @@ import { PROBLEM_TABS } from "@/data/ikuro";
 import { sequence } from "@/lib/scroll";
 
 /**
- * "The problem": eight scattered sources converge into one IKURO card as you scroll.
- * A faux product window (labelled Illustrative inside the frame). Reduced motion: the scattered state and the
- * IKURO card are both shown still.
+ * "The problem": eight sources of advice scatter across the frame, then settle into a tidy stack that feeds one IKURO card.
+ * The DOM is the FINAL state (stack on the left, IKURO card on the right), so the frame is complete at rest and under
+ * reduced motion; `build` only applies the scattered start. A faux product window (labelled Illustrative).
  */
+const FINAL_LEFT = [3, 51];
+const FINAL_TOP = [4, 28, 52, 76];
 const IkuroProblem = () => {
   const section = useRef<HTMLElement>(null);
   const inner = useRef<HTMLDivElement>(null);
   const frame = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
 
-  // two steps: the eight tabs converge, then the IKURO card lands
+  // two steps: the eight sources settle into the stack, then the IKURO card lights up
   useLayoutEffect(() => {
     if (reduce || !frame.current) return;
-    const tabs = gsap.utils.toArray<HTMLElement>("[data-tab]", frame.current);
     const card = frame.current.querySelector("[data-card]");
     const h = sequence(section.current, {
       name: "ikuro-problem",
       steps: 2,
       pinEl: inner.current,
       build: (tl) => {
-        gsap.set(card, { opacity: 0, scale: 0.85 });
-        tl.to(tabs, { left: "50%", top: "50%", xPercent: -50, yPercent: -50, scale: 0.5, rotate: 0, opacity: 0, ease: "power2.inOut", stagger: 0.06, duration: 0.9 }, 0.1);
+        PROBLEM_TABS.forEach(({ id, x, y, r }) => {
+          const el = frame.current!.querySelector(`[data-tab="${id}"]`);
+          if (el) tl.from(el, { left: `${Math.min(x, 52)}%`, top: `${y}%`, rotate: r * 2, ease: "power2.inOut", duration: 0.9 }, 0.1 + PROBLEM_TABS.findIndex((t) => t.id === id) * 0.05);
+        });
+        gsap.set(card, { opacity: 0.4, scale: 0.94 });
         tl.to(card, { opacity: 1, scale: 1, ease: "power2.out", duration: 0.7 }, 1.1);
       },
     });
@@ -53,31 +57,31 @@ const IkuroProblem = () => {
             <span className="ml-auto rounded-full bg-background px-2.5 py-0.5 text-label text-muted-foreground">Illustrative</span>
           </div>
 
-          <div className="relative aspect-[4/3] sm:aspect-[16/9]" role="img" aria-label="Eight scattered sources of advice converging into one IKURO recommendation">
-            {PROBLEM_TABS.map(({ id, label, icon: Icon, x, y, r }) => (
-              <div
-                key={id}
-                data-tab
-                className="absolute inline-flex items-center gap-2 rounded-lg border border-border bg-secondary px-3 py-2 text-label font-medium text-foreground"
-                style={{ left: `${x}%`, top: `${y}%`, transform: `rotate(${r}deg)`, opacity: reduce ? 0.55 : 1 }}
-              >
-                <Icon size={16} aria-hidden="true" className="text-primary-ink" />
-                {label}
-              </div>
-            ))}
+          <div className="grid items-stretch md:grid-cols-[1.2fr_1fr]" role="img" aria-label="Eight scattered sources of advice settling into one IKURO recommendation">
+            <div className="relative min-h-[18rem]" aria-hidden="true">
+              {PROBLEM_TABS.map(({ id, label, icon: Icon }, i) => (
+                <div
+                  key={id}
+                  data-tab={id}
+                  className="absolute inline-flex items-center gap-2 rounded-lg border border-border bg-secondary px-3 py-2 text-label font-medium text-foreground"
+                  style={{ left: `${FINAL_LEFT[i % 2]}%`, top: `${FINAL_TOP[Math.floor(i / 2)]}%` }}
+                >
+                  <Icon size={16} aria-hidden="true" className="text-primary-ink" />
+                  {label}
+                </div>
+              ))}
+            </div>
 
-            <div
-              data-card
-              className="absolute left-1/2 top-1/2 w-[min(18rem,80%)] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-border bg-card p-5 shadow-lg"
-              style={{ opacity: 1 }}
-            >
-              <picture style={{ display: "contents" }}>
-                <source type="image/webp" srcSet="/brand/ikuro/ikuro-mark.webp" />
-                <img src="/brand/ikuro/ikuro-mark.png" width={518} height={519} alt="" loading="lazy" decoding="async" className="h-10 w-10" />
-              </picture>
-              <p className="mt-3 text-label font-medium text-primary-ink">Your next step</p>
-              <p className="mt-1 font-display text-h3 font-bold text-foreground">Learn SQL basics, then apply to two analyst internships</p>
-              <p className="mt-2 text-label text-muted-foreground">Sample recommendation</p>
+            <div className="flex items-center justify-center border-t border-border bg-secondary/50 p-6 md:border-l md:border-t-0">
+              <div data-card className="w-full max-w-[18rem] rounded-2xl border border-border bg-card p-5 shadow-lg">
+                <picture style={{ display: "contents" }}>
+                  <source type="image/webp" srcSet="/brand/ikuro/ikuro-mark.webp" />
+                  <img src="/brand/ikuro/ikuro-mark.png" width={518} height={519} alt="" loading="lazy" decoding="async" className="h-10 w-10" />
+                </picture>
+                <p className="mt-3 text-label font-medium text-primary-ink">Your next step</p>
+                <p className="mt-1 font-display text-h3 font-bold text-foreground">Learn SQL basics, then apply to two analyst internships</p>
+                <p className="mt-2 text-label text-muted-foreground">Sample recommendation</p>
+              </div>
             </div>
           </div>
         </div>

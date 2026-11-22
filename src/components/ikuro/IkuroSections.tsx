@@ -70,7 +70,9 @@ export const IkuroDecide = () => (
 );
 
 /* 6. For colleges */
+// sample values, painted from the first frame; the bars then shift a little (demos never paint empty)
 const BARS = [72, 54, 86, 41, 63];
+const BARS_TO = [78, 49, 90, 47, 58];
 export const IkuroColleges = () => {
   const reduce = useReducedMotion();
   return (
@@ -103,8 +105,8 @@ export const IkuroColleges = () => {
                   <motion.div
                     className="h-full rounded-full"
                     style={{ background: "hsl(var(--ikuro-orange))" }}
-                    initial={reduce ? { width: `${w}%` } : { width: 0 }}
-                    whileInView={{ width: `${w}%` }}
+                    initial={{ width: `${w}%` }}
+                    whileInView={reduce ? undefined : { width: `${BARS_TO[i]}%` }}
                     viewport={REVEAL_VIEWPORT}
                     transition={{ duration: 0.8, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
                   />
