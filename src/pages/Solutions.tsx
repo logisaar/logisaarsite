@@ -11,7 +11,6 @@ import SolutionCard from "@/components/solutions/SolutionCard";
 import ProjectTimeline from "@/components/solutions/ProjectTimeline";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { whatsappLink } from "@/lib/contact";
 import { SERVICES } from "@/data/company";
 import { INDUSTRIES, SOLUTIONS, priceLine, type Solution } from "@/data/solutions";
 
@@ -308,25 +307,6 @@ const Solutions = () => {
         </div>
       </section>
 
-      {/* 7. Final CTA band (dark slate) */}
-      <section aria-labelledby="cta-h" className="bg-slate-950 py-section">
-        <div className="container mx-auto max-w-[75rem] px-gutter text-center">
-          <h2 id="cta-h" className="mx-auto max-w-[24ch] text-balance font-display text-h2-page font-bold text-white">Tell us what slows your business down</h2>
-          <p className="mx-auto mt-3 max-w-[60ch] text-body text-white/80">We reply with questions or a call slot, then send a clear plan and a fixed quote.</p>
-          <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button asChild className={BTN}>
-              <Link to="/contact">
-                Start a project <ArrowRight size={16} aria-hidden="true" className="ml-2" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" className={`${BTN_OUTLINE} border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white`}>
-              <a href={whatsappLink("Hi Logisaar, I'd like to talk about a project.")} target="_blank" rel="noopener noreferrer">
-                Chat on WhatsApp<span className="sr-only"> (opens in a new tab)</span>
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 };

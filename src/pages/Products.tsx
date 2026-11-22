@@ -67,15 +67,6 @@ const Products = () => (
         </article>
       </div>
     </section>
-
-    <section className="border-t border-border/40 bg-secondary/40 py-section-sm">
-      <div className="container mx-auto max-w-[44rem] px-gutter text-center">
-        <h2 className="font-display text-h2-page font-bold text-foreground">Need software built around your business?</h2>
-        <Button asChild size="lg" className="mt-6 rounded-full px-8">
-          <Link to="/contact">Talk to us</Link>
-        </Button>
-      </div>
-    </section>
   </Layout>
 );
 

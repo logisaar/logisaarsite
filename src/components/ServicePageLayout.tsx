@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Link } from "react-router-dom";
 import { LucideIcon, ChevronDown, MessageCircle, Phone, ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
@@ -76,7 +75,6 @@ export default function ServicePageLayout({
   features,
   pricing,
   faqs,
-  cta,
 }: ServicePageProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const featRef = useRef(null);
@@ -411,49 +409,6 @@ export default function ServicePageLayout({
         </div>
       </section>
 
-      {/* ── SECTION G — CTA Banner ── */}
-      <section className="py-section">
-        <div className="container mx-auto px-gutter">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={REVEAL_VIEWPORT}
-            className="rounded-3xl bg-gradient-to-br from-primary/10 via-background to-[hsl(165,80%,45%)]/10 border border-primary/20 p-12 text-center max-w-3xl mx-auto"
-          >
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">
-              {cta?.headline || "Ready to Get Started?"}
-            </h2>
-            <p className="text-muted-foreground mb-8">
-              Talk to us today — no pressure, just honest advice on the best solution for your business.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <MagneticButton strength={0.15}>
-                <Button asChild size="lg" className="group bg-primary hover:bg-primary/90 border-0 text-primary-on px-10 rounded-full">
-                  <a href={waUrl} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle size={17} className="mr-2" />
-                    WhatsApp Us Now
-                  </a>
-                </Button>
-              </MagneticButton>
-              <MagneticButton strength={0.1}>
-                <Button asChild variant="outline" size="lg" className="rounded-full border-2 border-primary/20 hover:border-primary/50 px-10">
-                  <a href={CONTACT.tel}>
-                    <Phone size={15} className="mr-2" />
-                    {CONTACT.phone}
-                  </a>
-                </Button>
-              </MagneticButton>
-            </div>
-            <p className="text-muted-foreground text-sm mt-5">
-              Or{" "}
-              <Link to="/contact" className="text-primary-ink underline underline-offset-4">
-                fill our contact form
-              </Link>{" "}
-              — we reply within 24 hours.
-            </p>
-          </motion.div>
-        </div>
-      </section>
     </Layout>
   );
 }

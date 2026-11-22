@@ -17,8 +17,6 @@ import {
   ArrowRight, Check, MessageCircle, Bot, GraduationCap, Sparkles, FolderGit2,
   Globe, ShoppingCart, Cpu, Monitor, ShieldCheck, Smartphone, TrendingUp, Users, Zap, Layers, Smile 
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import MagneticButton from "@/components/creative/MagneticButton";
 import AnimatedButton from "@/components/creative/AnimatedButton";
 
 // Import dashboard assets
@@ -42,7 +40,6 @@ import brandNitLogo from "@/assets/brand-logos/nit.webp";
 import brandSwostiLogo from "@/assets/brand-logos/swosti.webp";
 import brandAmrutaLogo from "@/assets/brand-logos/amruta-bhojan.webp";
 import brandMassomLogo from "@/assets/brand-logos/massom-vastu-guru.webp";
-import { REVEAL_VIEWPORT } from "@/lib/scroll";
 
 // ─── Local Business Schema ──────────────────────────────────────────────────
 const localBusinessSchema = {
@@ -381,61 +378,6 @@ const Index = () => {
 
       <TestimonialsSection />
 
-      {/* ── Closing CTA Section (WhatsApp First) ── */}
-      <section data-logi="Quotes are free. Tell us the one task you hate." className="py-section relative overflow-hidden bg-slate-950 text-white">
-        <div className="absolute inset-0 animated-grid pointer-events-none opacity-[0.03]" />
-        
-        <div className="container mx-auto px-gutter relative z-10 text-center space-y-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={REVEAL_VIEWPORT}
-            transition={{ duration: 0.8 }}
-            className="space-y-4 max-w-2xl mx-auto"
-          >
-            <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tight text-white">
-              Tell us the one task you hate doing. <br />
-              <span className="italic font-light text-gradient">We'll make it disappear.</span>
-            </h2>
-            <p className="text-white/60 text-body md:text-lg max-w-lg mx-auto">
-              A free call. You leave with a clear plan and a fixed quote, whether or not you work with us.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={REVEAL_VIEWPORT}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="flex flex-wrap gap-4 justify-center"
-          >
-            <MagneticButton strength={0.15}>
-              <Button
-                asChild
-                size="lg"
-                className="bg-primary hover:bg-primary/90 border-0 text-primary-on font-semibold rounded-full px-10 py-6 text-body"
-              >
-                <a
-                  href="https://wa.me/918596072510?text=Hi%20Logisaar%2C%20I'm%20planning%20a%20new%20AI%20systems%20%2F%20software%20project%20and%20want%20to%20get%20a%20scoping%20quote."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
-                >
-                  <MessageCircle size={20} fill="currentColor" />
-                  WhatsApp Us
-                </a>
-              </Button>
-            </MagneticButton>
-            <Button
-              asChild
-              size="lg"
-              className="border border-white/20 bg-transparent hover:bg-white/10 text-white hover:text-white rounded-full px-10 py-6 text-body transition-all duration-300"
-            >
-              <Link to="/contact">Book a Free Call</Link>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
     </Layout>
   );
 };

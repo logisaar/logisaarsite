@@ -1,12 +1,9 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
-import { Button } from "@/components/ui/button";
-import MagneticButton from "@/components/creative/MagneticButton";
 import GradientMesh from "@/components/creative/GradientMesh";
 import TextReveal from "@/components/creative/TextReveal";
-import { MessageCircle, Phone, ArrowRight, Globe, Smartphone, Bot, Megaphone, Palette, Play } from "lucide-react";
+import { Globe, Smartphone, Bot, Megaphone, Palette, Play } from "lucide-react";
 import { REVEAL_VIEWPORT } from "@/lib/scroll";
 
 const faqSchema = {
@@ -282,63 +279,6 @@ const Location = () => {
         </div>
       </section>
 
-      {/* Section 5 — CTA */}
-      <section className="py-section bg-secondary/20">
-        <div className="container mx-auto px-gutter text-center max-w-2xl">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={REVEAL_VIEWPORT}
-            className="space-y-6"
-          >
-            <h2 className="font-display text-3xl md:text-5xl font-bold">
-              Get a <span className="text-gradient">Free Website Quote</span>
-              <br />for Your Odisha Business
-            </h2>
-            <p className="text-muted-foreground">
-              Talk to us today — no commitment, no pressure. Just honest advice on how to grow online.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <MagneticButton strength={0.15}>
-                <Button
-                  asChild
-                  size="lg"
-                  className="group bg-green-500 hover:bg-green-600 border-0 text-white px-10 py-6 text-base rounded-full"
-                >
-                  <a
-                    href="https://wa.me/918596072510?text=Hi%20LogiSaar%2C%20I%20want%20a%20free%20website%20quote%20for%20my%20Odisha%20business"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <MessageCircle size={18} className="mr-2" />
-                    WhatsApp Us Now
-                  </a>
-                </Button>
-              </MagneticButton>
-              <MagneticButton strength={0.15}>
-                <Button
-                  asChild
-                  size="lg"
-                  variant="outline"
-                  className="px-10 py-6 text-base rounded-full border-2 border-primary/20 hover:border-primary/50"
-                >
-                  <a href="tel:+918596072510">
-                    <Phone size={18} className="mr-2" />
-                    +91 85960 72510
-                  </a>
-                </Button>
-              </MagneticButton>
-            </div>
-            <p className="text-muted-foreground text-sm mt-6">
-              Or{" "}
-              <Link to="/contact" className="text-primary-ink underline underline-offset-4">
-                fill out our contact form
-              </Link>{" "}
-              and we'll reply within 24 hours.
-            </p>
-          </motion.div>
-        </div>
-      </section>
     </Layout>
   );
 };
