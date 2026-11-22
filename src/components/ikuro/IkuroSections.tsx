@@ -158,7 +158,7 @@ export const IkuroPricing = () => {
 
 /* 10. Closing band (navy) */
 export const IkuroClosing = () => (
-  <section className="on-dark bg-[hsl(var(--ikuro-navy))] py-section text-white">
+  <section data-header-tone="dark" className="on-dark bg-[hsl(var(--ikuro-navy))] py-section text-white">
     <div className="container mx-auto max-w-[56rem] px-gutter text-center">
       <picture style={{ display: "contents" }}>
         <source type="image/webp" srcSet="/brand/ikuro/ikuro-wordmark-white.webp" />

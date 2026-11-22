@@ -32,7 +32,7 @@ const SectionTitle = ({ children, className = "" }: { children: ReactNode; class
 
 /* 1. Hero (night band) */
 export const HlHero = () => (
-  <section data-logi-dock className="hl-night relative overflow-hidden pb-section-sm" style={{ paddingTop: "calc(var(--header-h) + clamp(1.5rem, 4vw, 3rem))" }}>
+  <section data-header-tone="dark" data-logi-dock className="hl-night relative overflow-hidden pb-section-sm" style={{ paddingTop: "calc(var(--header-h) + clamp(1.5rem, 4vw, 3rem))" }}>
     <div className="container mx-auto grid max-w-[75rem] items-center gap-12 px-gutter md:grid-cols-[1.2fr_0.8fr]">
       <div className="space-y-6">
         <HlLogo reverse className="-mb-1 -mt-5 w-[min(15rem,60vw)]" />
@@ -99,7 +99,7 @@ const PLACE_ICON: Record<string, string> = {
 };
 
 export const HlPlaces = () => (
-  <section className="bg-[var(--hl-night)] pt-section pb-8 text-white hl-night">
+  <section data-header-tone="dark" className="bg-[var(--hl-night)] pt-section pb-8 text-white hl-night">
     <div className="container mx-auto max-w-[75rem] px-gutter">
       <div className="mx-auto mb-section-head max-w-3xl text-center">
         <SectionTitle>Seven kinds of places. One app</SectionTitle>
@@ -210,7 +210,7 @@ const COMPARE: [string, boolean, boolean, string?][] = [
 ];
 
 export const HlChat = () => (
-  <section data-logi="Lane Pro shows visit counts in every chat." className="bg-[var(--hl-night)] py-section text-white hl-night">
+  <section data-header-tone="dark" data-logi="Lane Pro shows visit counts in every chat." className="bg-[var(--hl-night)] py-section text-white hl-night">
     <div className="container mx-auto grid max-w-[75rem] items-center gap-12 px-gutter lg:grid-cols-2">
       <div className="min-w-0 space-y-6">
         <span className="hl-tag">HeyLane Chat</span>
@@ -354,7 +354,7 @@ export const HlRollout = () => (
 
 /* 11. Closing band */
 export const HlClosing = () => (
-  <section className="hl-night py-section">
+  <section data-header-tone="dark" className="hl-night py-section">
     <div className="container mx-auto max-w-[56rem] px-gutter text-center">
       <HlLogo reverse className="mx-auto -my-6 w-[min(18rem,70vw)]" />
       <h2 className="mt-6 text-h2 font-bold">Be one of the first regulars</h2>

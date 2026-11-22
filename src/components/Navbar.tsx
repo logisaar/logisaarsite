@@ -29,10 +29,11 @@ interface NavMenuProps {
   links: { to: string; label: string; icon: React.ElementType; description: string }[];
   active: boolean;
   linkClass: string;
+  pillClass: string;
   pathname: string;
 }
 
-const NavMenu = ({ label, links, active, linkClass, pathname }: NavMenuProps) => {
+const NavMenu = ({ label, links, active, linkClass, pillClass, pathname }: NavMenuProps) => {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -84,7 +85,7 @@ const NavMenu = ({ label, links, active, linkClass, pathname }: NavMenuProps) =>
         {label}
         <ChevronDown size={14} aria-hidden="true" className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
         {active && (
-          <motion.div layoutId="nav-indicator" className="absolute inset-0 bg-primary/10 rounded-full -z-10" transition={{ type: "spring", stiffness: 300, damping: 30 }} />
+          <motion.div layoutId="nav-indicator" className={`absolute inset-0 rounded-full -z-10 ${pillClass}`} transition={{ type: "spring", stiffness: 300, damping: 30 }} />
         )}
       </button>
       <AnimatePresence>
@@ -134,6 +135,8 @@ const NavMenu = ({ label, links, active, linkClass, pathname }: NavMenuProps) =>
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [onDark, setOnDark] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -146,16 +149,65 @@ const Navbar = () => {
     setMobileOpen(false);
   }, [location]);
 
+  // Over a dark band (the footer, HeyLane night, IKURO navy: data-header-tone="dark") the header becomes a solid dark capsule.
+  // An IntersectionObserver watches a thin strip at the header's vertical centre; a band crossing it flips the tone.
+  // Bands that mount later (lazy sections) are picked up by a MutationObserver.
+  useEffect(() => {
+    if (typeof IntersectionObserver === "undefined") return;
+    let io: IntersectionObserver | undefined;
+    let mo: MutationObserver | undefined;
+    let raf = 0;
+    const hits = new Set<Element>();
+    const seen = new Set<Element>();
+    const sync = () => {
+      raf = 0;
+      document.querySelectorAll("[data-header-tone='dark']").forEach((el) => {
+        if (!seen.has(el)) { seen.add(el); io?.observe(el); }
+      });
+      let changed = false;
+      hits.forEach((el) => { if (!el.isConnected) { hits.delete(el); changed = true; } });
+      if (changed) setOnDark(hits.size > 0);
+    };
+    const build = () => {
+      io?.disconnect();
+      hits.clear();
+      seen.clear();
+      // the header slides in on mount, so measure from its fixed offset (not its animated position): the capsule's centre sits about 3rem below it
+      const mid = Math.round((headerRef.current?.offsetTop ?? 0) + 48);
+      const bottom = Math.max(0, window.innerHeight - mid - 1);
+      io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) (e.isIntersecting ? hits.add(e.target) : hits.delete(e.target));
+          setOnDark(hits.size > 0);
+        },
+        { rootMargin: `-${mid}px 0px -${bottom}px 0px` },
+      );
+      sync();
+    };
+    setOnDark(false);
+    build();
+    mo = new MutationObserver(() => { if (!raf) raf = requestAnimationFrame(sync); });
+    mo.observe(document.body, { childList: true, subtree: true });
+    window.addEventListener("resize", build);
+    return () => { if (raf) cancelAnimationFrame(raf); window.removeEventListener("resize", build); io?.disconnect(); mo?.disconnect(); };
+  }, [location.pathname]);
+
   // /portfolio is hidden (no links) but still highlights About if someone lands on it from search
   const isAboutActive =
     location.pathname === "/about" || location.pathname === "/portfolio";
   const isProductsActive = location.pathname === "/products" || location.pathname === "/heylane";
   // The HeyLane page opens on a dark green band: keep the header as a light capsule there so links and logo stay readable.
-  const capsule = scrolled || location.pathname === "/heylane";
+  const capsule = scrolled || location.pathname === "/heylane" || onDark;
+
+  const pillClass = onDark ? "bg-white/10" : "bg-primary/10";
 
   const linkBaseClass = (active: boolean) =>
     `relative inline-flex min-h-[2.75rem] items-center text-body-sm font-medium px-3 rounded-full transition-colors ${
-      active
+      onDark
+        ? active
+          ? "text-white"
+          : "text-white/80 hover:text-white"
+        : active
         ? "text-primary-ink"
         : capsule
         ? "text-slate-700 hover:text-slate-950 dark:text-slate-300 dark:hover:text-white"
@@ -164,6 +216,7 @@ const Navbar = () => {
 
   return (
     <motion.header
+      ref={headerRef}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 80, damping: 20 }}
@@ -173,7 +226,11 @@ const Navbar = () => {
       <motion.div
         className={`transition-all duration-500 ${
           capsule
-            ? "mt-4 mx-4 px-6 py-2.5 rounded-full liquid-glass bg-white/90 dark:bg-slate-950/90 max-w-5xl shadow-lg border-white/20 dark:border-white/5"
+            ? `mt-4 mx-4 px-6 py-2.5 rounded-full max-w-5xl shadow-lg ${
+                onDark
+                  ? "border border-white/10 bg-slate-950/95"
+                  : "liquid-glass bg-white/90 dark:bg-slate-950/90 border-white/20 dark:border-white/5"
+              }`
             : "mt-0 flex w-full max-w-none items-center border-b border-border bg-background/95 px-gutter"
         }`}
         style={capsule ? undefined : { minHeight: "var(--nav-h)" }}
@@ -184,6 +241,7 @@ const Navbar = () => {
           <Link to="/" className="inline-flex min-h-[2.75rem] shrink-0 items-center" aria-label="Logisaar home">
             <BrandLogo
               priority
+              variant={onDark ? "white" : "light"}
               className={`transition-all duration-500 ${capsule ? "h-[2.375rem]" : "h-9 md:h-11"}`}
             />
           </Link>
@@ -200,7 +258,7 @@ const Navbar = () => {
               {location.pathname === "/" && (
                 <motion.div
                   layoutId="nav-indicator"
-                  className="absolute inset-0 bg-primary/10 rounded-full -z-10"
+                  className={`absolute inset-0 rounded-full -z-10 ${pillClass}`}
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
               )}
@@ -211,7 +269,7 @@ const Navbar = () => {
               {isAboutActive && (
                 <motion.div
                   layoutId="nav-indicator"
-                  className="absolute inset-0 bg-primary/10 rounded-full -z-10"
+                  className={`absolute inset-0 rounded-full -z-10 ${pillClass}`}
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
               )}
@@ -225,13 +283,13 @@ const Navbar = () => {
                   {location.pathname === link.to && (
                     <motion.div
                       layoutId="nav-indicator"
-                      className="absolute inset-0 bg-primary/10 rounded-full -z-10"
+                      className={`absolute inset-0 rounded-full -z-10 ${pillClass}`}
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
                 </Link>
                 {link.to === "/ikuro" && (
-                  <NavMenu label="Products" links={productSubLinks} active={isProductsActive} linkClass={linkBaseClass(isProductsActive)} pathname={location.pathname} />
+                  <NavMenu label="Products" links={productSubLinks} active={isProductsActive} linkClass={linkBaseClass(isProductsActive)} pillClass={pillClass} pathname={location.pathname} />
                 )}
               </Fragment>
             ))}
@@ -248,7 +306,7 @@ const Navbar = () => {
           {/* Mobile Toggle */}
           <button
             type="button"
-            className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full text-foreground"
+            className={`lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full ${onDark ? "text-white" : "text-foreground"}`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
