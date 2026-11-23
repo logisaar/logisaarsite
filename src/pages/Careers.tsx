@@ -3,7 +3,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import {
   ArrowRight, Briefcase, CheckCircle2, MapPin, PenTool,
-  Users, Utensils, TrendingUp, ExternalLink,
+  Users, Utensils, TrendingUp, ExternalLink, FileText,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
@@ -142,12 +142,18 @@ const Careers = () => {
                     </li>
                   ))}
                 </ul>
-                <Button asChild className="mt-6 self-start bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full px-6">
+                <div className="mt-auto flex flex-wrap pt-6 items-center gap-3">
+                <Button asChild className="self-start bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full px-6">
                   <a href={careerRole(r.id).formUrl} target="_blank" rel="noopener noreferrer">
                     Apply for this role <ArrowRight size={15} className="ml-2" aria-hidden="true" />
                     <span className="sr-only"> (opens in a new tab)</span>
                   </a>
                 </Button>
+                <a href={careerRole(r.id).jdUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[2.75rem] items-center gap-1.5 rounded-full border border-border px-5 text-body-sm font-semibold text-foreground transition-colors hover:border-primary/50 hover:text-primary-ink">
+                  <FileText size={15} aria-hidden="true" /> Job description
+                  <span className="sr-only"> for {careerRole(r.id).title} (opens in a new tab)</span>
+                </a>
+                </div>
               </motion.article>
             ))}
           </div>
@@ -196,12 +202,18 @@ const Careers = () => {
                   <span className="inline-flex items-center gap-1"><MapPin size={14} aria-hidden="true" /> {r.place}</span>
                   <span>{r.type}</span>
                 </p>
-                <Button asChild className="mt-6 self-start bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full px-6 min-h-[2.75rem]">
+                <div className="mt-6 flex flex-wrap items-center gap-3">
+                <Button asChild className="self-start bg-gradient-primary hover:opacity-90 border-0 text-primary-on rounded-full px-6 min-h-[2.75rem]">
                   <a href={r.formUrl} target="_blank" rel="noopener noreferrer">
                     Apply on Google Forms <ExternalLink size={15} className="ml-2" aria-hidden="true" />
                     <span className="sr-only"> (opens in a new tab)</span>
                   </a>
                 </Button>
+                <a href={r.jdUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[2.75rem] items-center gap-1.5 rounded-full border border-border px-5 text-body-sm font-semibold text-foreground transition-colors hover:border-primary/50 hover:text-primary-ink">
+                  <FileText size={15} aria-hidden="true" /> Job description
+                  <span className="sr-only"> for {r.title} (opens in a new tab)</span>
+                </a>
+                </div>
               </li>
             ))}
           </ul>
