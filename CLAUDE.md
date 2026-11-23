@@ -43,8 +43,9 @@ Read this first in every session (especially after `/clear`). Then read only the
 | 9 | `round-9-scroll-footer` | done (`src/lib/scroll.ts` `reveal`/`sequence`/`loop`; pinned Home IKURO and HeyLane blocks, `/heylane` How it works, `/ikuro` loop and problem, Solutions stage with CTA under the promise; alive footer in `src/components/footer/`; `scripts/round9-qa.mjs`, `round9-footer-qa.mjs`). Open: About journey timeline still uses its own animation; Logi footer wave skipped; `OFFICE_HOURS` in `src/data/company.ts` is `null` until the owner confirms (footer shows clocks only); axe/Lighthouse still need package approval. |
 | 10 | `round-10-one-footer` | done (one footer: CTA zone, columns, bottom bar, signature wordmark, one background, `<Footer cta={false}>` on /contact; page-final CTA bands removed; ring back-to-top in `ScrollToTop` only; header turns solid dark over `data-header-tone="dark"` bands; `scripts/round10-qa.mjs`). Open: IKURO and HeyLane keep their product closing bands (different CTAs); footer office city and "serving clients abroad" need owner confirmation. |
 | 11 | `round-11-final-polish-domain` | done (Logi fixed dock with bubble-only tour; floating buttons in the gutter, WhatsApp hidden at the footer and on phones; footer wordmark auto light sweep; empty IKURO visuals fixed; Solutions stage settles to full opacity; nine solution detail pages on `SolutionDetail.tsx` + `src/data/solution-details.ts`; careers via Google Forms (`src/data/careers.ts`); canonical `https://www.logisaar.com` via `src/lib/site.ts`, `scripts/gen-sitemap.mjs` as `prebuild`, `vercel.json` 301s; `scripts/round11-qa.mjs`). No push: owner pushes; Antigravity deploys with `DEPLOY.md`. Open: see the round 11 summary `TODO(owner)` list. |
+| 12 | `round-12-heylane-steps-logi-drag` | done on branch `fix/round-12` (not pushed: owner pushes, checks the Vercel preview, merges to `main`): HeyLane step indicator beside the phones (vertical stepper from 64em, pill bar below), pinned block fits under the header (`PIN_GAP`, `--header-h` in `src/lib/scroll.ts`); Logi draggable again (session-persisted, double-click home), still no autonomous walking; `scripts/round12-qa.mjs`, `round12-logi-qa.mjs` |
 
-Branch: `redesign/home-v2`.
+Branch: `fix/round-12` (off live `main`); earlier rounds were on `redesign/home-v2`.
 
 ## Stack
 
@@ -61,7 +62,7 @@ Branch: `redesign/home-v2`.
   - Code: `src/components/logi/` (`Logi.tsx`, `answers.ts`, `logi.css`).
   - Mounted once in `App.tsx`.
   - Tour stops are elements with `data-logi="<line>"`; `data-logi-dock` docks it.
-  - **Logi lives in one fixed dock, bottom-right, on every page and width.** It never walks. It is the only bottom-right element and its click opens the chat. The tour is bubbles only: a `data-logi` section shows its line for about 4s, skipped when the bubble would touch a demo, phone, form or pinned stage (`data-logi-avoid`, `data-demo`, `data-pinned`, `form`).
+  - **Logi never walks by itself; users can drag it anywhere (session-persisted as viewport fractions), and double-click, Home or "Send Logi home" sends it back to the bottom-right dock, where it starts on every page and width.** Arrow keys move it when focused. Its click opens the chat (the only chat toggle). The tour is bubbles only, placed beside Logi wherever it is: a `data-logi` section shows its line for about 4s, skipped when the bubble would touch a demo, phone, form or pinned stage (`data-logi-avoid`, `data-demo`, `data-pinned`, `form`).
 
 ## Brand rules
 
