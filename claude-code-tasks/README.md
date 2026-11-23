@@ -76,3 +76,7 @@ Folder: `round-11-final-polish-domain/`
   7. Canonical `www.logisaar.com`, with sitemap and redirects.
   8. QA. No git push.
 - `DEPLOY.md`: owner/Antigravity checklist covering Vercel domains, DNS (keep the mail records), redirect checks, the Search Console Domain property, sitemap, and Change of address.
+
+## Round 12: HeyLane steps and Logi drag
+Folder: `round-12-heylane-steps-logi-drag/`
+- `ROUND12.md`: step labels next to the phones; Logi can be dragged anywhere again. Work on branch `fix/round-12`. No push.
