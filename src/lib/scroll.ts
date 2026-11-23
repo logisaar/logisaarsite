@@ -32,7 +32,17 @@ export const STEP_SECONDS = 1.6;
 export const prefersReducedMotion = () =>
   typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-const headerH = () => document.querySelector("header")?.getBoundingClientRect().bottom ?? 0;
+/** Minimum gap (px) between the header and a pinned block. */
+const PIN_GAP = 16;
+/** Header height in px, read from `--header-h` (stable: the header's own rect moves while the top bar scrolls away). */
+const headerH = () => {
+  const probe = document.createElement("div");
+  probe.style.cssText = "position:absolute;visibility:hidden;pointer-events:none;height:var(--header-h)";
+  document.body.appendChild(probe);
+  const h = probe.getBoundingClientRect().height;
+  probe.remove();
+  return h || (document.querySelector("header")?.getBoundingClientRect().bottom ?? 0);
+};
 
 /* ------------------------------------------------------------------ trace (QA) */
 
@@ -140,7 +150,7 @@ export const sequence = (section: HTMLElement | null, opts: SequenceOpts): Seque
   const desiredMode = (): "pinned" | "timed" => {
     if (noPin || !window.matchMedia(DESKTOP_QUERY).matches) return "timed";
     // a section taller than the space under the header cannot be pinned without clipping: play it timed instead
-    return pinEl.offsetHeight <= window.innerHeight - headerH() ? "pinned" : "timed";
+    return pinEl.offsetHeight <= window.innerHeight - headerH() - PIN_GAP ? "pinned" : "timed";
   };
 
   const setup = () => {
@@ -157,7 +167,7 @@ export const sequence = (section: HTMLElement | null, opts: SequenceOpts): Seque
         const h = pinEl.offsetHeight;
         const startFn = () => {
           const avail = window.innerHeight - headerH();
-          const pad = Math.max(0, (avail - h) / 2);
+          const pad = Math.max(PIN_GAP, (avail - h) / 2);
           return `top top+=${headerH() + pad}`;
         };
         const b = boundaries(steps);

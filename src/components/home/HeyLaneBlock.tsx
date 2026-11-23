@@ -38,7 +38,7 @@ const HeyLaneBlock = () => {
   return (
     <section ref={section} data-logi="We build our own products as well." className="bg-secondary/40 py-section">
       <div className="container mx-auto max-w-[75rem] px-gutter">
-        <div data-theme="heylane" ref={root} className="grid grid-cols-1 items-center gap-10 overflow-hidden rounded-[2rem] border border-[var(--hl-line)] bg-[#f4f3ee] p-6 sm:p-10 lg:grid-cols-12 lg:gap-8 lg:p-14">
+        <div data-theme="heylane" ref={root} className="grid grid-cols-1 items-center gap-10 overflow-hidden rounded-[2rem] border border-[var(--hl-line)] bg-[#f4f3ee] p-6 sm:p-10 lg:grid-cols-12 lg:gap-8 lg:px-14 lg:py-8">
           <div className="space-y-6 lg:col-span-6">
             <Eyebrow className="text-[var(--hl-emerald-deep)]">HeyLane · A Logisaar product</Eyebrow>
             <img src="/brand/heylane/HeyLane-Horizontal.svg" width={1644} height={344} alt="HeyLane" className="-my-3 h-auto w-[min(14rem,70%)]" />
@@ -62,40 +62,50 @@ const HeyLaneBlock = () => {
           </div>
 
           <div className="lg:col-span-6">
-            <div
-              className="relative mx-auto flex h-[min(34rem,120vw)] w-full max-w-[28rem] touch-pan-y items-center justify-center"
-              onTouchStart={(e) => { touchX.current = e.touches[0].clientX; }}
-              onTouchEnd={(e) => {
-                if (touchX.current === null) return;
-                const dx = e.changedTouches[0].clientX - touchX.current;
-                touchX.current = null;
-                if (Math.abs(dx) > 50) go(shown + (dx < 0 ? 1 : -1));
-              }}
-            >
-              <div ref={back} className="absolute left-[2%] top-[8%] w-[46%] -rotate-6 opacity-95 sm:left-[8%]">
-                <PhoneFrame screens={["08c-lane-maps-place-selected"]} className="w-full" alt="HeyLane Lane Maps with a place selected (sample screen)" />
-              </div>
-              <div ref={front} className="absolute right-[2%] top-0 z-10 w-[52%] rotate-2 sm:right-[8%]">
-                <PhoneFrame screens={[...FRONT]} active={reduce ? 0 : shown} className="w-full" priority alt="HeyLane customer app: Home with a booking, Lane Maps, and Passes (sample screens)" />
+            <div className="relative mx-auto flex w-full max-w-[34rem] items-stretch gap-6">
+              {!reduce && (
+                <ol
+                  aria-label="Screens"
+                  className="absolute inset-x-0 bottom-3 z-20 m-0 mx-auto flex w-max max-w-[92%] list-none items-center justify-center gap-x-1 rounded-full bg-[#f4f3ee]/90 p-1 shadow-sm lg:static lg:inset-auto lg:z-auto lg:mx-0 lg:w-auto lg:max-w-none lg:flex-col lg:items-start lg:justify-between lg:gap-0 lg:self-center lg:rounded-none lg:bg-transparent lg:p-0 lg:shadow-none"
+                >
+                  {FRONT_LABELS.map((l, i) => (
+                    <li key={l} className="relative">
+                      <button
+                        type="button"
+                        onClick={() => go(i)}
+                        aria-current={i === shown ? "step" : undefined}
+                        className={`inline-flex min-h-[2.75rem] items-center gap-2 whitespace-nowrap rounded-full bg-transparent px-3 text-body-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[hsl(var(--focus-ring))] lg:px-0 ${i === shown ? "text-[var(--hl-night)]" : "text-[var(--hl-ink-2)] hover:text-[var(--hl-night)]"}`}
+                      >
+                        <span aria-hidden="true" className={`inline-block h-2.5 w-2.5 shrink-0 rounded-full transition-colors ${i === shown ? "bg-[var(--hl-emerald)]" : "bg-[var(--hl-line)]"}`} />
+                        <span className="tabular-nums">{i + 1}</span> {l}
+                      </button>
+                      {i < FRONT_LABELS.length - 1 && (
+                        <span aria-hidden="true" className="absolute left-[0.3rem] top-[calc(50%+0.4rem)] hidden h-[calc(100%-0.8rem)] w-px bg-[var(--hl-line)] lg:block">
+                          <span className="block w-full origin-top bg-[var(--hl-emerald)] transition-transform duration-500 motion-reduce:transition-none" style={{ height: "100%", transform: `scaleY(${i < shown ? 1 : 0})` }} />
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ol>
+              )}
+              <div
+                className="relative mx-auto flex h-[min(34rem,120vw)] w-full max-w-[28rem] touch-pan-y items-center justify-center lg:h-[min(34rem,calc(100svh-var(--header-h)-6rem))]"
+                onTouchStart={(e) => { touchX.current = e.touches[0].clientX; }}
+                onTouchEnd={(e) => {
+                  if (touchX.current === null) return;
+                  const dx = e.changedTouches[0].clientX - touchX.current;
+                  touchX.current = null;
+                  if (Math.abs(dx) > 50) go(shown + (dx < 0 ? 1 : -1));
+                }}
+              >
+                <div ref={back} className="absolute left-[2%] top-[8%] w-[46%] -rotate-6 opacity-95 sm:left-[8%]">
+                  <PhoneFrame screens={["08c-lane-maps-place-selected"]} className="w-full" alt="HeyLane Lane Maps with a place selected (sample screen)" />
+                </div>
+                <div ref={front} className="absolute right-[2%] top-0 z-10 w-[52%] rotate-2 sm:right-[8%]">
+                  <PhoneFrame screens={[...FRONT]} active={reduce ? 0 : shown} className="w-full" priority alt="HeyLane customer app: Home with a booking, Lane Maps, and Passes (sample screens)" />
+                </div>
               </div>
             </div>
-            {!reduce && (
-              <ol aria-label="Screens" className="m-0 mx-auto mt-4 flex max-w-[28rem] list-none flex-wrap justify-center gap-x-1 p-0">
-                {FRONT_LABELS.map((l, i) => (
-                  <li key={l}>
-                    <button
-                      type="button"
-                      onClick={() => go(i)}
-                      aria-current={i === shown ? "step" : undefined}
-                      className={`inline-flex min-h-[2.75rem] items-center gap-2 rounded-full px-3 text-body-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[hsl(var(--focus-ring))] ${i === shown ? "text-[var(--hl-night)]" : "text-[var(--hl-ink-2)] hover:text-[var(--hl-night)]"}`}
-                    >
-                      <span aria-hidden="true" className={`inline-block h-2 w-2 rounded-full transition-colors ${i === shown ? "bg-[var(--hl-emerald)]" : "bg-[var(--hl-line)]"}`} />
-                      <span className="tabular-nums">{i + 1}</span> {l}
-                    </button>
-                  </li>
-                ))}
-              </ol>
-            )}
           </div>
         </div>
       </div>
