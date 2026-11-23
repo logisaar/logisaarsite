@@ -59,3 +59,20 @@ Folder: `round-9-scroll-footer/`
   2. Solutions CTA always visible while pinned.
   3. Footer with a filling wordmark, live IST and local clocks, a living background and micro-interactions.
   4. QA.
+
+## Round 10: one footer
+Folder: `round-10-one-footer/`
+- `ROUND10.md`: merge the home CTA band and the footer into one continuous footer. Remove the duplicate CTA and the duplicate back-to-top. The wordmark becomes a quiet signature at the very bottom. The header capsule turns dark over dark bands.
+
+## Round 11: final polish and .com domain (pre-deploy)
+Folder: `round-11-final-polish-domain/`
+- `ROUND11.md`: eight phases:
+  1. Logi docked only.
+  2. Floating buttons and duplicates.
+  3. Automatic footer wordmark sweep.
+  4. Empty or unfinished visuals.
+  5. The 9 solution detail pages on one template.
+  6. Careers through Google Forms.
+  7. Canonical `www.logisaar.com`, with sitemap and redirects.
+  8. QA. No git push.
+- `DEPLOY.md`: owner/Antigravity checklist covering Vercel domains, DNS (keep the mail records), redirect checks, the Search Console Domain property, sitemap, and Change of address.

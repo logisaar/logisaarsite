@@ -40,3 +40,7 @@ all skills/
 .agents/skills/design-taste-frontend/
 .gemini/skills/design-taste-frontend/
 .taste-skill/
+
+Claude outputs/
+.agents/
+.gemini/
