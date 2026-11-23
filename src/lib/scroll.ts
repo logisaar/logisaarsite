@@ -111,6 +111,8 @@ export type SequenceOpts = {
   onStep?: (i: number) => void;
   /** Never pin; always use the time-based mode. */
   noPin?: boolean;
+  /** Seconds per step in the time-based mode (default `STEP_SECONDS`). Short artwork sequences use less so they finish while visible. */
+  stepSeconds?: number;
 };
 
 export type SequenceHandle = {
@@ -130,7 +132,7 @@ const boundaries = (steps: number) => {
 export const sequence = (section: HTMLElement | null, opts: SequenceOpts): SequenceHandle => {
   const none: SequenceHandle = { kill: () => {}, goTo: () => {}, yOf: () => null };
   if (!section || prefersReducedMotion()) return none;
-  const { name, steps, build, onStep, noPin } = opts;
+  const { name, steps, build, onStep, noPin, stepSeconds = STEP_SECONDS } = opts;
   const pinEl = opts.pinEl ?? section;
 
   let ctx: gsap.Context | null = null;
@@ -184,7 +186,7 @@ export const sequence = (section: HTMLElement | null, opts: SequenceOpts): Seque
           onUpdate: (self) => emit(Math.floor(Math.min(0.999999, self.progress * (1 + HOLD)) * steps)),
         });
       } else {
-        tl.timeScale(1 / STEP_SECONDS);
+        tl.timeScale(1 / stepSeconds);
         tl.eventCallback("onUpdate", () => emit(Math.floor(Math.min(steps - 1e-6, tl.time()))));
         let visible = false;
         io = new IntersectionObserver(

@@ -38,6 +38,7 @@ const IkuroLoop = () => {
     const h = sequence(section.current, {
       name: "ikuro-loop",
       steps: NODES.length,
+      stepSeconds: 0.9,
       pinEl: inner.current,
       onStep: setStep,
       build: (tl) => {

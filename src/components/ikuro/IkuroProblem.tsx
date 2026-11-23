@@ -25,6 +25,7 @@ const IkuroProblem = () => {
     const h = sequence(section.current, {
       name: "ikuro-problem",
       steps: 2,
+      stepSeconds: 0.9,
       pinEl: inner.current,
       build: (tl) => {
         PROBLEM_TABS.forEach(({ id, x, y, r }) => {
@@ -41,7 +42,7 @@ const IkuroProblem = () => {
   return (
     <section ref={section} data-seq data-logi="IKURO helps students decide." className="py-section bg-background">
       <div ref={inner} className="container mx-auto px-gutter max-w-[75rem]">
-        <div className="text-center max-w-3xl mx-auto mb-section-head space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-section-head space-y-4 [@media(max-height:50em)]:mb-6 [@media(max-height:50em)]:space-y-2">
           <Eyebrow>The problem</Eyebrow>
           <h2 className="font-display text-h2 font-bold text-foreground">Students don't lack information. They lack clarity.</h2>
           <p className="text-lead text-muted-foreground">
@@ -58,7 +59,7 @@ const IkuroProblem = () => {
           </div>
 
           <div className="grid items-stretch md:grid-cols-[1.2fr_1fr]" role="img" aria-label="Eight scattered sources of advice settling into one IKURO recommendation">
-            <div className="relative min-h-[18rem]" aria-hidden="true">
+            <div className="relative min-h-[18rem] [@media(max-height:50em)]:min-h-[15rem]" aria-hidden="true">
               {PROBLEM_TABS.map(({ id, label, icon: Icon }, i) => (
                 <div
                   key={id}
